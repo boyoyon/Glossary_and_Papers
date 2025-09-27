@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Glossary and Papers</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+<h1><center>Glossary and Papers</center></h1>
+
+<h2 id="0-9">0～9</h2>
+
+<p>
+<div class="styleBullet">
+<ul>
+
+<li><strong>3D Gaussian Splatting</strong><br>
+複数の画像から3D空間を高精細に再現し、リアルタイムにレンダリングする手法。<br>
+新たな視点からの画像を生成するタスク (<strong>NVS</strong>) の一手法として使われる。<br>
+<br>(関連項目)<br>
+・NVS: Novel View Sysnthesis
+</li>
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="A">A</h2>
+<p>
+<div class="styleBullet">
+<ul>
+
+<li>
+<strong>Acquiescence Bias (黙認バイアス)</strong><br>
+アンケートやインタビューなどの調査において、質問の内容によらず肯定的な回答（「はい」「同意する」など）をしやすくなる、回答者の心理的な偏りのこと。<br>日本語では 「同意バイアス」や「黙従傾向」とも呼ばれる。 <br>
+<br>
+<a href="data/Papers_AcquiescenceBias.html">Papers</a><br>
+<a href="https://en.wikipedia.org/wiki/Acquiescence_bias">wikipedia「Acquiescence Bias」</a>
+</li>
+
+<br>
+
+<li>
+<strong><a href="data/ActiveLearning.html">Active learning</a> (能動学習)</strong><br>
+学習アルゴリズムが自身の訓練データに影響を与えたり選択したりする能力、あるいはその必要性を持つ問題。<br>
+<br>
+<a href="data/Papers_ActiveLearning.html">Papers</a>
+</li>
+
+<br>
+
+<li>
+<strong>Adversarial Vulnerabilities (敵対的脆弱性)</strong><br>
+機械学習モデルが、意図的に改ざんされた入力データ（敵対的サンプル）によって誤った予測や判断を下してしまう脆弱性
+。
+</li>
+
+<br>
+
+<li>
+<strong><a href="data/AIAgent.html">AI Agent</a> (AIエージェント)</strong><br>
+自律的に行動し、目標を達成するために環境と相互作用するソフトウェアシステムのこと。<br>
+<br>(関連項目)<br>
+・Cognitive Agent (認知エージェント)<br>
+　AIエージェントの中でも、特に人間の認知プロセス（思考、学習、推論など）を模倣する高度なもの。
+</li>
+<br>
+
+<li>
+<strong>AI Alignment (AIアライメント)</strong><br>
+AIを人間の意図する目的や嗜好、倫理原則に合致させること。<br>
+<br>(関連項目)<br>
+・DPO: Direct Preference Optimization [手法]<br>
+・FAI: Friendly AI [上位概念]<br>
+・RLHF: Reinforcement Learning from Human Feedback [手法]<br>
+・Sycophancy (おべっか, 追従性) [副作用, 課題]
+</li>
+
+<br>
+
+<li>
+<strong>Attention Sinks</strong><br>
+大規模言語モデル（LLM）において、系列の最初のほうにあるトークンに、意味的な重要性にかかわらず不釣り合いなほど過剰なアテンション（注意）が向けられる現象。<br>
+Vision Transformer (ViT) でも同様の現象が確認されている。
+
+</li>
+</ul></div></p>
+
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="B">B</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Baldwin effect (ボールドウィン効果)</strong><br>
+個体が生涯で獲得した学習や行動が、世代を超えた遺伝的選択を通じて、まるで生得的な本能であるかのように固定化されていく進化的な現象。<br>
+獲得形質が遺伝するというラマルク説とは異なり、ネオダーウィニズムの枠組みで説明される。<br>
+進化的アルゴリズム（遺伝的アルゴリズムなど）と機械学習（ニューラルネットワークなど）を組み合わせたAI研究において、重要な概念として応用されている。
+</li>
+
+<br>
+
+<li>
+<strong>Bening Overfitting (良性過学習)</strong><br>
+深層学習モデルが訓練データに含まれるノイズまで完全に学習（補間）しているにもかかわらず、未知のデータに対して高い汎化性能を発揮する現象。<br>
+従来の機械学習の教科書では、過学習（オーバーフィッティング）は汎化性能を低下させる「悪性」なものだとされてきた。<br>
+
+</li>
+</il></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="C">C</h2>
+<p>
+<div class="styleBullet">
+<ul>
+
+<li>
+
+<strong>Catastrophic Forgetting (破局的忘却)</strong><br>
+機械学習モデルが新しいタスクを学習する際に、過去に学習したタスクの情報を急激かつ大幅に忘れてしまう現象。<br>
+<br>(関連項目)<br>
+・Continual Learning (継続学習) [対処法を含む研究テーマ]
+</li>
+
+<br>
+
+<li>
+<strong>Cognitive Agent (認知エージェント)</strong><br>
+人間の認知プロセス（知覚、学習、推論、意思決定など）を模倣するように設計された、AIエージェントのこと。<br>
+<br>(関連項目)<br>
+・AI Agent (AI エージェント)<br>
+　定義されたルールやスクリプトに従って動作する。特定のタスクを効率的に実行できるが、予期せぬ状況への対応は苦手。
+</li>
+
+<br>
+
+<li>
+<strong>CoT: Chain-of-Thought (思考連鎖)</strong><br>
+大規模言語モデル（LLM）の性能を向上させるためのプロンプト技術の一種。<br>
+複雑な問題を解く際に、最終的な答えだけでなく、その答えに至るまでの論理的な思考プロセスを段階的に示すようモデルに促すことで、推論能力を高める。
+
+</li>
+
+<br>
+
+<li>
+<strong>Continual Learning (継続学習)</strong><br>
+機械学習モデルが、新しいタスクやデータに順次対応しながらも、これまでに獲得した知識を忘れないように学習し続けることを目指す技術。<br>
+別名, Lifelong Learning (生涯学習)。
+</li>
+
+<br>
+
+<li>
+<strong>Contrastive Learning (対照学習)</strong><br>
+機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
+データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。
+</li>
+
+<br>
+
+<li>
+<strong>Curriculum learning (カリキュラム学習)</strong><br>
+
+人間や動物は、例がランダムに提示されるのではなく、意味のある順序で整理され、徐々に多くの概念、そして徐々に複雑な概念を示すように提示されると、はるかによく学習する。このような学習戦略を機械学習の文脈で定式化し、「カリキュラム学習」と呼ぶ。
+
+</li>
+
+<br>
+
+<li>
+<strong>Curse of Dimensionality (次元の呪い)</strong><br>
+
+データや問題の次元数（特徴量の数）が増えるにつれて、必要なデータ数や計算量が指数関数的に増加し、計算効率の低下やモデルの精度低下を招く現象。
+
+</li>
+
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="D">D</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
+強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの
+
+</li>
+
+<br>
+
+<li>
+<strong>Diffusion Model (拡散モデル)</strong><br>
+画像や音声、テキストなどのデータを生成するための深層学習モデルの一種。<br>
+拡散モデルと連想記憶との間の関連性が確立され, 拡散モデルにおける暗記から汎化への移行について、統計物理学における相転移として特徴づけられている。<br>
+<br>(関連項目)<br>
+・Memorization to Generalization (暗記から汎化へ) 
+</li>
+
+<br>
+
+<li>
+<strong>Dimensional Collapse (次元崩壊)</strong><br>
+主に自己教師あり学習（特にコントラスティブ学習）において、モデルが学習した埋め込み（特徴）ベクトルが、利用可能な高次元空間を十分に活用せず、低次元の部分空間に集中してしまう現象。<br>
+<br>(関連項目)<br>
+・Contrastive Learning (対照学習)<br>
+・SSL: Self-Supervised Learning (自己教師あり学習)
+
+</li>
+
+<br>
+
+<li>
+<strong>Double Descent (二重降下)</strong><br>
+機械学習モデルの複雑さ（パラメータ数）を増やしていくと、汎化誤差（未知のデータに対する誤差）が一度増加した後に、再び減少するという現象。<br>
+従来の機械学習の常識である「バイアス・バリアンスのトレードオフ」を覆すものとして、深層学習の研究で注目された。 <br>
+従来の「汎化誤差が増加し始めたら学習を停止する」(Early Stopping: 早期停止) という手法の再考を促すことになった。
+</li>
+
+<br>
+
+<li>
+<strong>Dropout</strong><br>
+ニューラルネットワークの学習時に、一部のニューロン（ノード）をランダムに無効化する正則化手法の一つ。
+</li>
+
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="E">E</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Episodic Memory (エピソード記憶)</strong><br>
+個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。<br>
+一般的な知識を記憶する「意味記憶」とは区別される。
+</li>
+
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="F">F</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Flat minima hypothesis (平坦な最適解空間仮説)</strong><br>
+機械学習モデル、特に深層学習モデルの訓練において、損失関数の「平坦な」最小値に収束したモデルは、未知のデータに対する汎化性能が「鋭い」最小値に収束したモデルよりも優れている、という仮説。<br>
+・Dinh et al. (2017) らは、モデルのパラメータを再パラメータ化（重みのスケーリングなど）することで、汎化性能を変えずに最小値の鋭さを人為的に操作できることを示し、この仮説に疑問を投げかけた。<br>
+・スケール不変な「平坦さ」の定義が提案されたり、平坦さの定義自体が再考されたりする研究が進められている。
+</li>
+
+<br>
+
+<li>
+<strong>FAI: Fiendly AI (友好的な人工知能)</strong><br>
+人間に対して悪影響を与えることなく、良い影響を与えるように設計された、倫理的な AGI(汎用人工知能) を指す仮説的な概念。<br>
+<br>(関連項目)<br>
+・AI Alignment ･･･ Friendly AIを実現するための技術的課題を解決する研究分野
+</li>
+
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="G">G</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Generative Model (生成モデル)</strong><br>
+学習したデータの特徴やパターンを理解し、その知識に基づいて、訓練データに類似した新しいデータを自律的に生成できるAI（人工知能）モデル。<br>
+従来の AI モデル (Discriminative Model: 識別モデル) が、与えられたデータを「識別する（分類する）」ことに特化していたのに対し、生成モデルは「創造する（生成する）」ことに特化している点が大きな違い。
+</li>
+
+<br>
+
+<li>
+<strong>GNN: Graph Neural Networks</strong><br>
+
+</li>
+
+<br>
+
+<li>
+<strong>Goal Understanding (目標理解)</strong><br>
+AI (人工知能) の分野において、人間や他のエージェントがどのような目標を持って行動しているのかを推測・理解する能力。<br>
+表面的な指示をこなすだけでなく、その指示の背後にある意図や目的を読み解くことが, 目標理解の本質。<br>
+<br>(関連項目)<br>
+・AI Alignment <br>
+・FAI: Friendly AI<br>
+・Intent Extraction (意図抽出)
+</li>
+
+<br>
+
+<li><strong>Grokking</strong><br>
+機械学習モデルの学習過程で発生する、「遅れて現れる汎化」を指す現象。<br>
+モデルが学習データを完全に記憶（過学習）した状態になった後、長い時間が経ってから突然、未知のデータに対する高い汎化性能を獲得する。<br>
+<br>
+この用語は、SF作家ロバート・ハインラインの小説『異星の客』に出てくる「完全に、深く理解する」という意味の造語「grok」に由来する。<br>
+<br>(関連項目)<br>
+・Memorization to Generalization (暗記から汎化へ)
+</li>
+
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="H">H</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Hallucination (幻覚)</strong><br>
+生成AIが、事実に基づかない情報や誤った内容を、もっともらしく、あたかも真実であるかのように出力する現象。<br>
+<br>(関連項目)<br>
+・RAG: Retrieval-Augmented Generation (検索拡張生成)<br>
+・RLHF: Reinforcement Learning from Human Feedback (人間のフィードバックによる学習)
+</li>
+
+<br>
+
+<li>
+<strong>Hubness (ハブ性)</strong><br>
+
+機械学習、特に高次元データ空間で発生する現象。<br>
+データセット内のごく一部のデータポイント（「ハブ」と呼ばれる）が、他の多くのデータポイントの k-Nearest Neighbors (k-近傍)に異常なほど頻繁に出現するようになる現象を指す。 一方、ほとんどどのデータポイントの k-近傍に現れない「アンチハブ」と呼ばれるデータポイントも同時に発生する。<br>
+ハブネスは、「Curse of Dimensionality (次元の呪い)」の一側面とされている。高次元空間では、データポイント間の距離のコントラストが低下し、ほとんどのデータポイント間の距離がほぼ等しくなってしまう。その結果、データ空間の特定の場所に位置するごく一部のデータポイントが、多くのデータポイントから「近い」と認識されやすくなる。<br>
+ハブネスは、kNN (k-近傍法) などの距離ベースのアルゴリズムに悪影響を及ぼす。
+
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="I">I</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Implicit Bias (暗黙のバイアス)</strong><br>
+無意識のうちに抱いている偏見、思い込み、先入観のこと。日本語では「潜在的バイアス」や「アンコンシャス・バイアス」とも呼ばれる。
+</li>
+
+<br>
+
+<li>
+<strong>Intent Extraction (意図抽出)</strong><br>
+ユーザーが発した言葉や文章の背後にある「意図」や「目的」を特定する技術。<br>
+</li>
+
+<br>
+
+<li>
+<strong>Intrinsic Motivation (内発的動機付け)</strong><br>
+報酬や評価といった外部の刺激に関係なく、個人の内面から自然と湧き上がる興味・関心、意欲によって行動すること
+</li>
+
+<br>
+
+<li>
+<strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
+熟練者や人間の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。
+</li>
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="J">J</h2>
+<h2 id="K">K</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Knowledge Distillation (知識蒸留)</strong><br>
+機械学習の技術の一つで、大規模で高性能なAIモデル（教師モデル）が持つ知識を、より小型で軽量なAIモデル（生徒モデル）に移転・圧縮する手法
+</li>
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="L">L</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Latent learning (潜在学習)</strong><br>
+学習した内容が行動にすぐには現れず、適切な動機づけやきっかけが与えられたときに初めて表面化する学習の形態。<br>
+エドワード・トルーマンは、報酬のない状態で迷路を探検させたラットが、後で報酬が与えられるようになると、すぐに迷路を効率的に通り抜けられるようになることを示した。これは、報酬がなくても環境の認知地図（cognitive map）が形成されていたことを示している。<br>
+機械学習では、この概念はデータの「latent space (潜在空間)」と結びつけられることがある。
+
+</li>
+
+<br>
+
+<li>
+<strong>Latent Space (潜在空間) </strong><br>
+モデルが学習した、データの隠された本質的な特徴を捉えた、低次元で抽象的なベクトル空間のこと。
+
+</li>
+
+<br>
+
+<li>
+<strong>Lifelong Learning(生涯学習)</strong><br>
+Continual Learning (継続学習) の別名。
+
+</li>
+
+<br>
+
+<li>
+<strong>LoRA: Low-rank adaptation of LLM (低ランク適応)</strong><br>
+大規模言語モデル（LLM）を、効率的かつ少ない計算コストで特定のタスクやデータに適応（ファインチューニング）させるための技術
+
+</li>
+
+<br>
+
+<li>
+
+<strong>Loss Landscape (損失景観)</strong><br>
+ニューラルネットワークのパラメータ（重み）を軸とし、対応する損失関数の値を高さとした多次元の景観。モデルの学習は、この景観の低い場所（最適解）を探すことに相当する。<br>
+<br>(関連項目)<br>
+・Mode Connectivity (モード連結性)
+</li>
+
+<br>
+
+<li>
+
+<strong>Loss of Plasticity (可塑性喪失) </strong><br>
+あるシステムが、新しい情報に適応したり、学習したりする能力を徐々に失っていく現象。
+
+</li>
+
+<br>
+
+<li>
+<strong>Lost in the Middle (「真ん中が失われる」現象)</strong><br>
+モデルが長いコンテキスト（入力テキスト）を与えられた際、そのコンテキストの中間に存在する重要な情報を無視したり、見つけられなくなったりする現象。
+</li>
+
+<br>
+
+<li>
+<strong>LTH: Lottery Ticket Hyposis (宝くじ仮説)</strong><br>
+大規模なニューラルネットワークの中に、元のネットワークと同じかそれ以上の性能を発揮する、より小さな「サブネットワーク」が存在するという仮説。
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="M">M</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Mamba</strong><br>
+トランスフォーマーモデルに代わる、効率的な次世代ネットワークアーキテクチャとして2023年に発表された、新しい機械学習モデル。<br>
+トランスフォーマーが抱える「長いシーケンス（入力テキスト）を扱う際の計算コストの増大」という課題を解決するために開発された。
+</li>
+
+<br>
+
+<li>
+<strong>Measurement Semantics (計測意味論)</strong><br>
+言葉や文章の「意味」を、ある尺度や指標で定量的に測定・評価するための考え方や手法
+</li>
+
+<br>
+
+<li>
+<strong>Memorization to Generalization (暗記から汎化へ)</strong><br>
+機械学習モデル、特にニューラルネットワークが、訓練データを単に丸暗記する段階（Memorization）から、学習したパターンを組み合わせて未知のデータにも応用できる段階（Generalization）へと移行するプロセス。<br>
+<br>
+(関連項目)<br>
+・Grokking<br>
+・Diffusion Model (拡散モデル)の相転移
+</li>
+
+<br>
+
+<li>
+<strong>Mental Rotation (心的回転)</strong><br>
+心の中で二次元または三次元の物体を回転させる認知機能のこと。
+</li>
+
+<br>
+
+<li>
+<strong>Modality Gap </strong><br>
+画像とテキストのように異なる種類のデータ（モダリティ）を扱うマルチモーダルモデルにおいて、それぞれのモダリティの表現が、モデルの共通の埋め込み空間上で離れてしまう現象。
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Mode Connectivity (モード連結性)</strong><br>
+ニューラルネットワークのパラメータ空間において、学習によって得られた複数の局所的最適解（ミニマム）が、低い損失関数の値を保ったまま経路で接続されている現象。<br>
+<br>(関連項目)<br>
+・Loss Landscape (損失景観)
+</li>
+
+<br>
+
+<li>
+
+<strong>Model soups (モデルスープ)</strong><br>
+異なるハイパーパラメータ（学習率、エポック数など）でファインチューニングされた複数のモデルの重みパラメータを平均化し、単一の高性能モデルを作成する手法。<br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
+複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。
+</li>
+
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="N">N</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>NAS: Neural Architecture Search</strong><br>
+特定のタスクにおいて、最も性能が良いニューラルネットワークの構造（アーキテクチャ）を自動的に見つけ出す技術。
+</li>
+
+<br>
+
+<li>
+<strong>Neural Collapse </strong><br>
+十分に訓練されたニューラルネットワークの最終層の表現が高度に構造化された形状に収束する現象。<br>
+
+<br>
+各クラスの特徴ベクトルがクラスごとの平均ベクトルに収束し、それらのクラス平均が「等角な単純体」（Simplex Equiangular Tight Frame: ETF）と呼ばれる非常に均整の取れた構造を形成する。<br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Neural ODE</strong><br>
+ニューラルネットワークの層の連なりを、連続的な常微分方程式として表現する革新的なモデル。<br>
+従来のニューラルネットワークが、層ごとに離散的な変換を適用するのに対し、Neural ODEは隠れ状態の連続的な時間発展を学習する。<br>
+</li>
+
+<br>
+
+<li>
+<strong>NFL: No Free Lunch Theorem (ノーフリーランチ定理)</strong><br>
+あらゆる問題に普遍的に通用する万能なアルゴリズムは存在しない,という定理。
+</li>
+
+<br>
+
+<li>
+<strong>Novelty Search (新規性探索)</strong><br>
+進化計算や強化学習などの分野で用いられる探索アルゴリズムの一種。あらかじめ定義された目標や適応度関数を直接的に最適化するのではなく、過去に生成された解とは異なる「新奇性」を持つ行動や解を探索・評価することに焦点を当てる。
+</li>
+
+<br>
+
+<li>
+<strong>NTK: Neural Tanget Kernel</strong><br>
+幅が無限大のニューラルネットワークを、ある特殊な「カーネル法」で訓練されたモデルとして捉え、その学習過程と挙動を理論的に解析するための概念。
+</li>
+
+<br>
+
+<li>
+
+<strong>NTM: Neural Turing Machines</strong><br>
+ニューラルネットワークのパターンマッチング能力と、チューリングマシンのようなコンピューターのアルゴリズム処理能力を組み合わせた、リカレントニューラルネットワークの一種。<br>
+DeepMind社によって2014年に発表された。<br>
+その後、この研究を発展させた微分可能ニューラル・コンピューター（DNC）が登場し、より洗練されたアテンション機構によってパフォーマンスが向上した。<br>
+しかし、2020年代に入ると、NTM や DNC の役割は、Transformer のような大規模言語モデル（LLM）の発展によって部分的に代替されている。
+
+</li>
+
+<br>
+
+<li>
+<strong>NVS: Novel view synthesis (新規視点合成)</strong><br>
+撮影された複数の画像データから、撮影されていない新しい視点からの画像を合成する技術。
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="O">O</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Open-Ended Generation </strong><br>
+明確な答えや単一の目標を設定することなく、AIが創造的かつ多様なコンテンツを生成する能力のこと。
+</li>
+
+<br>
+
+<li>
+<strong>Over-Squashing</strong><br>
+グラフニューラルネットワーク（GNN）でメッセージ伝播を行う際に、遠く離れたノードからの情報がボトルネックによって圧縮され、情報が歪んだり失われたりする現象のこと。<br>
+これにより、GNNがグラフ上の長距離にあるノード間の関係性を効率的に学習できなくなるという問題が生じる。<br>
+※ 直訳は「スカッシュ(押しつぶし)し過ぎ」
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="P">P</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>PAC Learning: Probably Approximately Correct Learning (高確率で近似的に正しい学習) </strong><br>
+機械学習の計算論的学習理論における数学的な枠組みの一つ。<br>
+「高い確率で、近似的に正しい学習ができること」を数学的に保証するための理論。
+</li>
+
+<br>
+
+<li>
+
+<strong>Perceptual Metric (知覚メトリック, 知覚的距離)</strong><br>
+画像や音声などの信号を、人間が感じる品質や類似性にどれだけ近い形で評価できるかを測る指標のこと。<br>
+LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Distance)などがある。
+</li>
+
+<br>
+
+<li><strong>PINNs: Physics-Informed Neural Networks</strong><br>
+ニューラルネットワークの出力が、物理法則の方程式を満たすように学習を制約する。通常の Loss の他に Physics Loss (物理損失) を使う。
+</li>
+
+<br>
+
+<li>
+
+<strong>Policy Collapse (ポリシー崩壊)</strong><br>
+学習中のエージェントの行動方針（方策）が、望ましくない、または極めて限定的な状態に陥り、パフォーマンスが大幅に低下する現象のこと。
+</li>
+
+<br>
+
+<li>
+<strong>Policy Optimization(方策最適化)</strong><br>
+エージェントが環境でより良い行動を取れるように、その行動方針（方策）を直接的に改善していく手法の総称。<br>
+・Policy Gradient (方策勾配法)<br>
+・Actor-Critic (アクター・クリティック法)<br>
+・PPO: Proximal Policy Optimization (近傍方策最適化)<br>
+・TRPO: Trust Region Policy Optimization (トラスト・リージョン方策最適化)<br> などがある。
+</li>
+
+<br>
+
+<li>
+<strong>POMDPs: Partially Observable Markov Decision Process (部分観測マルコフ決定過程)</strong><br>
+環境の「真の状態」をエージェントが完全には観測できない状況下での意思決定をモデル化するための数学的枠組み。<br>
+強化学習の基本的なモデルであるマルコフ決定過程 (MDP: Markov Decision Process) では、エージェントは常に現在の状態を完全に把握できることを前提とする。しかし、現実世界の問題の多くでは、センサーのノイズや情報の制限などにより、完全な状態を知ることはできない。POMDPは、このような不確実性を考慮して意思決定を行うための拡張版。
+</li>
+
+<br>
+
+<li>
+<strong>Primacy Bias (プライマシーバイアス, 初頭バイアス)</strong><br>
+最初に受け取った情報や、経験の初期段階で得られた情報が、その後の判断や評価に過度な影響を与える認知バイアスのこと。<br>
+日本語では「初頭効果」や「優先バイアス」とも呼ばれる。
+</li>
+
+<br>
+
+<li>
+<strong>Priming</strong><br>
+先行する刺激（プライマー）が、その後の行動や判断に無意識的な影響を与える心理現象。<br>
+
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Prospective Learning (展望学習)</strong><br>
+未来の動的な変化に対応するための学習。<br>
+特徴<br>
+・データ分布や目的が時間と共に変化する動的な世界を想定する<br>
+・未来のデータ分布の変化を予測し、将来にわたって高い性能を維持することを目的とする。<br>
+・時間の経過に伴うデータの「分布シフト」に対処する。
+</li>
+
+<br>
+
+<li>
+
+<strong>Pruning (枝刈り)</strong><br>
+学習済みのモデルから重要度の低いパラメータや接続を削除することで、モデルを圧縮する手法、
+
+</li>
+
+<br>
+
+<li>
+
+<strong>"Pushcut" Phenomenon  </strong><br>
+訓練中のモデルが、事前に与えられた教師データには含まれていなかった、より効率的で洗練された新しい行動パターンを自律的に発見することを指す。<br>
+モデルが単に与えられたデータを模倣するのではなく、データにない独自の解決策を「押し出し（push）」、問題を「切り開いていく（cut）」ような振る舞いをすることから名付けられた。 
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="Q">Q</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+
+<strong>Qualia (クオリア)</strong><br>
+哲学や脳科学において、意識に現れる主観的で個人的な「感覚的な質感」や「感じ」のこと。<br>
+<a href="data/Papers_Qualia.html">Papers</a>
+</li>
+
+<br>
+
+<li>
+
+<strong>Quality-Diversity Optimization (品質多様性最適化)</strong><br>
+単一の最適な解を見つけるのではなく、高品質で多様な解の集合を生成することを目指す最適化手法の一種。<br>
+進化計算(生物の進化（突然変異、淘汰、交叉など）を模倣し、複雑な問題の最適解を探索する一連のアルゴリズムを指す枠組み)の新しいサブカテゴリー。
+
+</li>
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="R">R</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>RAG: Retrieval-Augmented Generation (検索拡張生成, 取得拡張生成)</strong><br>
+質問に関連する文書を検索(Retrieval)し, 取得した文書をもとに(Augmented) LLM で回答を生成(Generation)することで、より正確で信頼性の高い回答を生成する技術。<br>
+<br>
+RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
+例)『Reading Wikipedia to answer open-domain questions』(2017)<br>
+<br>
+⇔ "closed-book" QAパラダイム：知識をモデルのパラメータ内に完全に格納する<br>
+例)『How much knowledge can you pack into the parameters of a language model?』(2020)
+</li>
+
+<br>
+
+<li>
+
+<strong>Regularization (正則化)</strong><br>
+機械学習モデルの「過学習」を防ぎ、未知のデータに対する「汎化能力」を向上させるための手法。<br>
+</li>
+
+<br>
+
+<li>
+
+<strong>ReLU: Rectified Linear Unit </strong><br>
+深層学習（ディープラーニング）で最も広く使われる活性化関数のひとつ。
+</li>
+
+<br>
+
+<li>
+
+
+
+<strong>Representation Biases (表現バイアス)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Representation Learning (表現学習)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Reversal Curse (反転の呪い), Latent learning (潜在学習) </strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Reward Hacking (報酬ハッキング)</strong><br>
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="S">S</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Saliency (顕著性)</strong><br>
+</li>
+
+<br>
+
+<li>
+<strong>Scaling Law (スケーリング則)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Scientific Discovery (科学的発見),  Scientific Research (科学研究)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Scientific Surprise</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>self-consistency (自己無撞着性, 自己整合性) </strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Self-Play(自己対局), Without human knowledge (人間知識なし)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Self-Replicating (自己複製)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Self-rewarding (自己報酬)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Semantic hub hypothesis (意味ハブ仮説)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Shortcut Learning</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Skip Connection (スキップ接続)</strong><br>
+</li>
+
+<br>
+
+<li>
+<strong>Small Data</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Softmax Collapse</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Spatial Reasoning (空間推論) </strong><br>
+前, 後, 左, 右, 上,下 など, オブジェクト間の基本的な関係を推論すること。
+
+調整し、空間推論のパフォーマンスを大幅に向上させる新しいデコード方法であるAdaptVisを提案する。
+
+</li>
+
+<br>
+
+<li>
+
+<strong>Spectral Bias (スペクトルバイアス) </strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>SSL: Self-Supervised Learning (自己教師あり学習)</strong><br>
+
+</li>
+
+<br>
+
+<li>
+
+<strong>Sycophancy (おべっか, 追従性)</strong><br>
+
+</li>
+
+<br>
+
+<li>
+<strong>Symbol Grounding (記号接地)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+<strong>Syntax Dependencies (統語的依存関係)</strong><br>
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="T">T</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Task Arithmetic (タスク算術)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+
+
+<strong>ToM: Theory of Mind (心の理論)</strong><br>
+
+</li>
+
+<br>
+
+<li>
+
+<strong>ToT: Tree of Thoughts (思考ツリー)</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Transformer</strong><br>
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="U">U</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Unified Tokenizer (統合トークナイザー)</strong><br>
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="V">V</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>VAE: Variational Auto Encoder</strong><br>
+</li>
+
+<br>
+
+<li>
+
+<strong>Vanishing gradient problems (勾配消失問題), gradient exploding  problems (勾配爆発問題)</strong><br>
+
+</li>
+
+<br>
+
+<li>
+
+<strong>Variable-Binding (変数束縛), VSA: Vector Symbolic Architectures </strong><br>
+
+</li>
+
+<br>
+
+<li>
+
+<strong>Visual Planning (視覚計画)</strong><br>
+</li>
+
+</ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+<h2 id="W">W</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+<strong>Weak-to-strong generalization (弱から強への一般化)</strong><br>
+</li>
+
+<br>
+
+<li>
+<strong>Word Embeddings (単語埋め込み) </strong><br>
+
+</li>
+
+<br>
+
+<li>
+
+<strong>World Model</strong><br>
+AIが外部の観測情報（画像や音声など）から、環境のダイナミクス（物理法則や因果関係）を学習して獲得する、内部的なシミュレーションモデルのこと。<br>
+
+</li>
+</ul></div><p>
+
+<h2 id="X">X</h2>
+
+<h2 id="Y">Y</h2>
+
+<h2 id="Z">Z</h2>
+
+    </body>
+</html>
