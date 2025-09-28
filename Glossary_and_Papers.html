@@ -61,11 +61,11 @@
 <div class="styleBullet">
 <ul>
 
-<li><strong>3D Gaussian Splatting</strong><br>
+<li id="3DGS"><strong>3D Gaussian Splatting</strong><br>
 複数の画像から3D空間を高精細に再現し、リアルタイムにレンダリングする手法。<br>
 新たな視点からの画像を生成するタスク (<strong>NVS</strong>) の一手法として使われる。<br>
 <br>(関連項目)<br>
-・NVS: Novel View Sysnthesis
+・<a href="#NVS">NVS: Novel View Sysnthesis</a>
 </li>
 </ul></div></p>
 
@@ -98,16 +98,31 @@
 <li>
 <strong>Adversarial Vulnerabilities (敵対的脆弱性)</strong><br>
 機械学習モデルが、意図的に改ざんされた入力データ（敵対的サンプル）によって誤った予測や判断を下してしまう脆弱性
-。
+。<br>
+<br>
+<a href="data/papers_AdversarialVulnerabilities.html">Papers</a>
 </li>
 
 <br>
 
-<li>
+<li id="AhaMoment">
+<strong><a href="data/AhaMoment.html">Aha Moment</a> (アハ体験)</strong><br>
+モデルが長期間停滞した学習状態から、ある瞬間に突然、飛躍的なパフォーマンス向上や、より高度な推論能力を示すようになる現象。<br>
+<br>
+<a href="data/Papers_AhaMoment.html">Papers</a><br>
+<br>
+(関連項目)<br>
+・<a href="#Grokking">Grokking</a><br>
+・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
+</li>
+
+<br>
+
+<li id="AIAgent">
 <strong><a href="data/AIAgent.html">AI Agent</a> (AIエージェント)</strong><br>
 自律的に行動し、目標を達成するために環境と相互作用するソフトウェアシステムのこと。<br>
 <br>(関連項目)<br>
-・Cognitive Agent (認知エージェント)<br>
+・<a href="#CognitiveAgent">Cognitive Agent</a> (認知エージェント)<br>
 　AIエージェントの中でも、特に人間の認知プロセス（思考、学習、推論など）を模倣する高度なもの。
 </li>
 <br>
@@ -115,11 +130,11 @@
 <li>
 <strong>AI Alignment (AIアライメント)</strong><br>
 AIを人間の意図する目的や嗜好、倫理原則に合致させること。<br>
-<br>(関連項目)<br>
 ・DPO: Direct Preference Optimization [手法]<br>
-・FAI: Friendly AI [上位概念]<br>
 ・RLHF: Reinforcement Learning from Human Feedback [手法]<br>
-・Sycophancy (おべっか, 追従性) [副作用, 課題]
+<br>(関連項目)<br>
+・<a href="#FAI">FAI: Friendly AI</a> [上位概念]<br>
+・<a href="#Sycophancy">Sycophancy</a> (おべっか, 追従性) [副作用, 課題]
 </li>
 
 <br>
@@ -163,21 +178,21 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 <div class="styleBullet">
 <ul>
 
-<li>
+<li id="CatastrophicForgetting">
 
 <strong>Catastrophic Forgetting (破局的忘却)</strong><br>
 機械学習モデルが新しいタスクを学習する際に、過去に学習したタスクの情報を急激かつ大幅に忘れてしまう現象。<br>
 <br>(関連項目)<br>
-・Continual Learning (継続学習) [対処法を含む研究テーマ]
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習) [対処法を含む研究テーマ]
 </li>
 
 <br>
 
-<li>
+<li id="CognitiveAgent">
 <strong>Cognitive Agent (認知エージェント)</strong><br>
 人間の認知プロセス（知覚、学習、推論、意思決定など）を模倣するように設計された、AIエージェントのこと。<br>
 <br>(関連項目)<br>
-・AI Agent (AI エージェント)<br>
+・<a href="#AIAgent">AI Agent</a> (AI エージェント)<br>
 　定義されたルールやスクリプトに従って動作する。特定のタスクを効率的に実行できるが、予期せぬ状況への対応は苦手。
 </li>
 
@@ -192,11 +207,15 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 
 <br>
 
-<li>
+<li id="ContinualLearning">
 <strong>Continual Learning (継続学習)</strong><br>
 機械学習モデルが、新しいタスクやデータに順次対応しながらも、これまでに獲得した知識を忘れないように学習し続けることを目指す技術。<br>
-別名, Lifelong Learning (生涯学習)。
+別名, Lifelong Learning (生涯学習)。<br>
+<br>(関連項目)<br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
+・<a href="#LossOfPlasticity">Loss of Plasticity</a> (可塑性喪失)<br>
 </li>
+・<a href="#PrimacyBias">Primacy Bias</a> (プライマシーバイアス, 初頭バイアス)<br>
 
 <br>
 
@@ -240,12 +259,12 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 
 <br>
 
-<li>
+<li id="DiffusionModel">
 <strong>Diffusion Model (拡散モデル)</strong><br>
 画像や音声、テキストなどのデータを生成するための深層学習モデルの一種。<br>
 拡散モデルと連想記憶との間の関連性が確立され, 拡散モデルにおける暗記から汎化への移行について、統計物理学における相転移として特徴づけられている。<br>
 <br>(関連項目)<br>
-・Memorization to Generalization (暗記から汎化へ) 
+・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) 
 </li>
 
 <br>
@@ -306,7 +325,7 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 
 <br>
 
-<li>
+<li id="FAI">
 <strong>FAI: Fiendly AI (友好的な人工知能)</strong><br>
 人間に対して悪影響を与えることなく、良い影響を与えるように設計された、倫理的な AGI(汎用人工知能) を指す仮説的な概念。<br>
 <br>(関連項目)<br>
@@ -341,20 +360,19 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 AI (人工知能) の分野において、人間や他のエージェントがどのような目標を持って行動しているのかを推測・理解する能力。<br>
 表面的な指示をこなすだけでなく、その指示の背後にある意図や目的を読み解くことが, 目標理解の本質。<br>
 <br>(関連項目)<br>
-・AI Alignment <br>
-・FAI: Friendly AI<br>
-・Intent Extraction (意図抽出)
+・<a href="#IntentExtraction">Intent Extraction</a> (意図抽出)
 </li>
 
 <br>
 
-<li><strong>Grokking</strong><br>
+<li id="Grokking"><strong>Grokking</strong><br>
 機械学習モデルの学習過程で発生する、「遅れて現れる汎化」を指す現象。<br>
 モデルが学習データを完全に記憶（過学習）した状態になった後、長い時間が経ってから突然、未知のデータに対する高い汎化性能を獲得する。<br>
 <br>
 この用語は、SF作家ロバート・ハインラインの小説『異星の客』に出てくる「完全に、深く理解する」という意味の造語「grok」に由来する。<br>
 <br>(関連項目)<br>
-・Memorization to Generalization (暗記から汎化へ)
+・<a href="#AhaMoment">Aha Moment</a> (アハ体験)<br>
+・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
 </li>
 
 </ul></div></p>
@@ -369,8 +387,8 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <strong>Hallucination (幻覚)</strong><br>
 生成AIが、事実に基づかない情報や誤った内容を、もっともらしく、あたかも真実であるかのように出力する現象。<br>
 <br>(関連項目)<br>
-・RAG: Retrieval-Augmented Generation (検索拡張生成)<br>
-・RLHF: Reinforcement Learning from Human Feedback (人間のフィードバックによる学習)
+・<a href="#RAG">RAG: Retrieval-Augmented Generation</a> (検索拡張生成)<br>
+・<a href="#RLHF">RLHF: Reinforcement Learning from Human Feedback</a> (人間のフィードバックによる学習)
 </li>
 
 <br>
@@ -400,7 +418,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li>
+<li id="IntentExtraction">
 <strong>Intent Extraction (意図抽出)</strong><br>
 ユーザーが発した言葉や文章の背後にある「意図」や「目的」を特定する技術。<br>
 </li>
@@ -473,20 +491,22 @@ Continual Learning (継続学習) の別名。
 
 <br>
 
-<li>
+<li id="LossLandscape">
 
 <strong>Loss Landscape (損失景観)</strong><br>
 ニューラルネットワークのパラメータ（重み）を軸とし、対応する損失関数の値を高さとした多次元の景観。モデルの学習は、この景観の低い場所（最適解）を探すことに相当する。<br>
 <br>(関連項目)<br>
-・Mode Connectivity (モード連結性)
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)
 </li>
 
 <br>
 
-<li>
+<li id="LossOfPlasticity">
 
 <strong>Loss of Plasticity (可塑性喪失) </strong><br>
-あるシステムが、新しい情報に適応したり、学習したりする能力を徐々に失っていく現象。
+あるシステムが、新しい情報に適応したり、学習したりする能力を徐々に失っていく現象。<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
 
 </li>
 
@@ -527,13 +547,13 @@ Continual Learning (継続学習) の別名。
 
 <br>
 
-<li>
+<li id="Memorization">
 <strong>Memorization to Generalization (暗記から汎化へ)</strong><br>
 機械学習モデル、特にニューラルネットワークが、訓練データを単に丸暗記する段階（Memorization）から、学習したパターンを組み合わせて未知のデータにも応用できる段階（Generalization）へと移行するプロセス。<br>
 <br>
 (関連項目)<br>
-・Grokking<br>
-・Diffusion Model (拡散モデル)の相転移
+・<a href="#Grokking">Grokking</a><br>
+・<a href="#DiffusionModel">Diffusion Model</a> (拡散モデル)の相転移
 </li>
 
 <br>
@@ -552,13 +572,12 @@ Continual Learning (継続学習) の別名。
 
 <br>
 
-<li>
-
+<li id="ModeConnectivity">
 
 <strong>Mode Connectivity (モード連結性)</strong><br>
 ニューラルネットワークのパラメータ空間において、学習によって得られた複数の局所的最適解（ミニマム）が、低い損失関数の値を保ったまま経路で接続されている現象。<br>
 <br>(関連項目)<br>
-・Loss Landscape (損失景観)
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)
 </li>
 
 <br>
@@ -646,9 +665,13 @@ DeepMind社によって2014年に発表された。<br>
 
 <br>
 
-<li>
+<li id="NVS">
 <strong>NVS: Novel view synthesis (新規視点合成)</strong><br>
-撮影された複数の画像データから、撮影されていない新しい視点からの画像を合成する技術。
+撮影された複数の画像データから、撮影されていない新しい視点からの画像を合成する技術。<br>
+<br>
+(関連項目)<br>
+・<a href="#3DGS">3D Gaussian Splating</a><br>
+・<a href="#NeRF">NeRF</a><br>
 </li>
 
 </ul></div><p>
@@ -731,10 +754,13 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 
 <br>
 
-<li>
+<li id="PrimacyBias">
 <strong>Primacy Bias (プライマシーバイアス, 初頭バイアス)</strong><br>
 最初に受け取った情報や、経験の初期段階で得られた情報が、その後の判断や評価に過度な影響を与える認知バイアスのこと。<br>
-日本語では「初頭効果」や「優先バイアス」とも呼ばれる。
+日本語では「初頭効果」や「優先バイアス」とも呼ばれる。<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#Grokking">Grokking</a><br>
 </li>
 
 <br>
@@ -808,7 +834,7 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="RAG">
 <strong>RAG: Retrieval-Augmented Generation (検索拡張生成, 取得拡張生成)</strong><br>
 質問に関連する文書を検索(Retrieval)し, 取得した文書をもとに(Augmented) LLM で回答を生成(Generation)することで、より正確で信頼性の高い回答を生成する技術。<br>
 <br>
@@ -946,7 +972,7 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
-<li>
+<li id="SkipConnection">
 
 <strong>Skip Connection (スキップ接続)</strong><br>
 </li>
@@ -992,7 +1018,7 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
-<li>
+<li id="Sycophancy">
 
 <strong>Sycophancy (おべっか, 追従性)</strong><br>
 
@@ -1077,7 +1103,8 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <li>
 
 <strong>Vanishing gradient problems (勾配消失問題), gradient exploding  problems (勾配爆発問題)</strong><br>
-
+<br>(関連項目)<br>
+・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)</br>
 </li>
 
 <br>
