@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Supervised Fine-Tuning</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>SFT: Supervised Fine-Tuning (教師あり微調整)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h2>テキスト分類のためのユニバーサル言語モデルの微調整 (2018)</h2>
+(Universal Language Model Fine-tuning for Text Classification (ULMFiT))
+
+<p>
+<strong><span style="color:magenta;">自然言語処理のための深層学習モデルの開発方法を根本的に変えた転移学習手法</span></strong>。<br>
+<br>
+
+ULMFiTのステップ構成
+<div class="styleBullet">
+<ul>
+<li><strong>Step 1：汎用ドメイン言語モデルの事前学習</strong><br>
+大規模な汎用コーパスを使用して言語モデルを事前学習させる。この段階で、モデルは文法や単語の関係性など、一般的な言語の知識を幅広く学習する。<br> 
+大規模な汎用ドメインコーパスで言語モデルをトレーニングする。<br>
+例) 「NLPのためのImageNet」:Wikipediaの記事からなる1億300万語を含むWikitext-103
+</li>
+<br>
+<li><strong>Step 2：タスク固有の言語モデル・ファインチューニング</strong><br>
+解きたいタスク（例：映画レビューの感情分析）のデータを使って、事前に学習した言語モデルを調整する。この段階では、特定のタスクのデータ分布に適応させるためにモデルを微調整する。
+</li>
+<br>
+<li><strong>Step 3. タスク固有の分類器のファインチューニング</strong><br>
+ファインチューニングされた言語モデルに、タスク固有の分類器（テキスト分類であれば、線形ブロック）を追加して学習させる。この分類器のパラメーターはゼロから学習し、より正確な予測ができるように調整する。
+</li> 
+</ul></div></p>
+<p>
+ULMFiTで導入された手法
+<div class="styleBullet">
+<ul>
+
+<li><strong>段階的凍結解除 (Gradual Unfreezing)</strong><br>
+モデルのすべての層を同時にファインチューニングするのではなく、最後の層から徐々に下の層を凍結解除して学習させる。これにより、学習中にモデルがそれまでに学習した知識を忘れてしまう「破滅的忘却」を防ぐ。
+</li>
+<br>
+
+<li><strong>識別的ファインチューニング (Discriminative Fine-tuning)</strong><br>
+モデルの層ごとに異なる学習率を設定する手法。一般的に、入力に近い層ほど汎用的な特徴を学習しているため、より小さい学習率を設定し、出力に近い層ほどタスク固有の特徴を学習させるために、より大きい学習率を設定する。
+</li>
+<br>
+
+<li><strong>傾斜型三角形学習率 (Slanted Triangular Learning Rates)</strong><br>
+
+短い線形増加期間の後に長い線形減衰期間が続く学習率スケジュールを実装。これにより、「傾斜した三角形」のパターンが作成され、モデルは初期にパラメータ空間を積極的に探索し、その後、過学習を防ぐために安定した最適化に落ち着くことができる。
+</li>
+</ul></div>
+</p>
+<center><img src="images/STLR.png"></center>
+
+<p>
+<a href="https://arxiv.org/abs/1801.06146">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1801.06146v5">要約はこちら</a><br>
+</p>
+
+
+
+
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h2></h2>
+()
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>
