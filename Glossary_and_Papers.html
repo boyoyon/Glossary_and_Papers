@@ -149,7 +149,9 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 
 <br>(関連項目)<br>
 ・<a href="#FAI">FAI: Friendly AI</a> [上位概念]<br>
-・<a href="#Sycophancy">Sycophancy</a> (おべっか, 追従性) [副作用, 課題]
+・<a href="#Sycophancy">Sycophancy</a> (おべっか, 追従性) [副作用, 課題]<br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning<a/> (逆強化学習) ･･･ 報酬をモデル化し学習する<br>
+・<a href="#RewardHacking">Reward Hacking<a/> (報酬ハッキング) ･･･ 報酬モデルが過剰最適化すると報酬ハッキングになる。
 </li>
 
 <br>
@@ -470,7 +472,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li>
+<li id="IRL">
 <strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
 熟練者や人間の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。
 </li>
@@ -947,7 +949,7 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
-<li>
+<li id="RewardHacking">
 
 <strong>Reward Hacking (報酬ハッキング)</strong><br>
 強化学習エージェントが、設計者が意図した本来の目的を達成するのではなく、報酬関数の欠陥や抜け穴を悪用して不当に高い報酬を得ようとする現象。「仕様の悪用（Specification Gaming）」とも呼ばる。 
