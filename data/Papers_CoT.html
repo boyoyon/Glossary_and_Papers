@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>CoT: Chain-of-Thought</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>CoT: Chain-of-Thought (思考連鎖)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>Chain-of-thought prompting elicits reasoning in large language models (2022)<br><span style="color:blue;">思考連鎖の促進が大規模言語モデルにおける推論を引き出す</span></h3>
+
+<p>
+<strong><span style="color:magenta;">Chain-of-Thought (CoT) プロンプティングを導入し、普及させた画期的な論文。</span></strong>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2201.11903">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2201.11903v6">要約はこちら</a><br>
+</p>
+
+
+<h3>Large language models are zero-shot reasoners (2022)<br><span style="color:blue;">大規模言語モデルはゼロショット推論器である)</span></h3>
+
+<p>
+本論文は、<strong><span style="color:magenta;">影響力のある「Let's think step by step」プロンプトを導入し、zero-shot Chain-of-Thought (CoT) パラダイムを確立</span></strong>した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2205.11916">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2205.11916v4">要約はこちら</a><br>
+</p>
+
+<h3>Self-Consistency Improves Chain of Thought Reasoning in Language Models (2022)<br><span style="color:blue;">言語モデルにおける思考連鎖推論の自己整合性による改善</span></h3>
+
+<p>
+Chain-of-Thought（CoT）プロンプティングは、最終的な回答を出す前に中間的な推論ステップを生成することで、LLMが多段階推論問題を解決できるようになり、大きな進歩として登場した。しかし、標準的なCoTアプローチは貪欲デコーディングに依存しており、最も確率の高い単一の推論パスのみを選択するため、最適ではない解に陥る可能性があった。<br>
+<strong><span style="color:magenta;">「自己整合性（self-consistency）」というシンプルかつ強力なデコーディング戦略を導入</span></strong>。これは、複雑な推論問題には、同じ正しい答えに収束する複数の有効な解経路が存在するという基本的な洞察を活用することで、思考連鎖推論を強化する。<strong><span style="color:magenta;">自己矛盾解消は、大規模言語モデルから推論能力を引き出す方法におけるパラダイムシフト。</span></strong>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2203.11171">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2203.11171v4">要約はこちら</a><br>
+</p>
+
+<h3>ReAct: Synergizing Reasoning and Acting in Language Models (2022)<br><span style="color:blue;">ReAct: 言語モデルにおける推論と行動の相乗的な連携</span></h3>
+
+<p>
+大規模言語モデル（LLM）は、2つの異なる分野で目覚ましい能力を示してきた。<br>
+・CoT プロンプティングによる推論<br>
+・対話型環境のためのアクションを生成<br>
+これらの能力はこれまで個別に研究されてきた。<br>
+大規模言語モデルが<strong><span style="color:magenta;">内部の思考と外部のアクションを交互に実行することで、推論と行動を相乗的に組み合わせることを可能にするReActというパラダイムを発表した</span></strong>。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2210.03629">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2210.03629v3">要約はこちら</a><br>
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

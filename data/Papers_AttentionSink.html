@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Attension Sink</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Attention Sink (アテンションシンク)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>Efficient streaming language models with attention sinks (2023)<br><span style="color:blue;">アテンションシンクを備えた効率的なストリーミング言語モデル</span></h3>
+
+<p>
+<strong><span style="color:magenta;">「アテンションシンク」現象を初めて特定し、命名した基礎的な論文。</span></strong><br>
+
+『言語モデリング タスクとの関連性に関係なく、初期トークンに驚くほど多くのアテンション スコアが割り当てられる。これらのトークンを「アテンション シンク」と呼ぶ。意味的重要性がないにもかかわらず、重要なアテンション スコアを集める。これは、すべてのコンテキスト トークンのアテンション スコアの合計が 1 になることを要求するソフトマックス操作によるものだと考えている。』
+</p>
+<p>
+<a href="https://arxiv.org/abs/2309.17453">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2309.17453v4">要約はこちら</a><br>
+</p>
+
+<h3>Vision transformers need registers (2023)<br><span style="color:blue;">ビジョン・トランスフォーマーにはレジスタが必要</span></h3>
+
+<p>
+<strong><span style="color:magenta;">Vision Transformerにおける高ノルム外れ値トークンを最初に特定</span></strong>し、それらを創発的なレジスタとして解釈し、<strong><span style="color:magenta;">専用のレジスタトークンを用いてモデルを再学習させることを解決策として提案</span></strong>した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2309.16588">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2309.16588v2">要約はこちら</a><br>
+</p>
+
+<h3 id="latest">Vision Transformers Don't Need Trained Registers (2025)<br><span style="color:blue;">ビジョン・トランスフォーマーに学習済みレジスタは不要</span></h3>
+
+<p>
+Vision Transformer (ViT) のMLPブロック内の特定の「レジスタニューロン」が、高ノルムトークンの因果的な発生源であることを特定した。未学習のトークンを付加し、これらの高ノルム活性をリダイレクトする<strong><span style="color:magenta;">訓練不要の手法「テスト時レジスタ」を導入</span></strong>した。これにより、よりクリーンなアテンションマップ、密な視覚タスクと物体発見における性能向上、そしてVision-Languageモデルにおける解釈可能性の向上がもたらされた。<br>
+
+言語モデルにおける同様の現象（「アテンションシンク」）と関連しており、このような計算パターンが<strong><span style="color:magenta;">モダリティを超えたトランスフォーマーアーキテクチャにとって基本的なものである可能性を示唆</span></strong>している。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2506.08010">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2506.08010v4">要約はこちら</a><br>
+</p>
+
+
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>
