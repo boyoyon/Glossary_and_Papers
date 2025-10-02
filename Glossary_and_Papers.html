@@ -87,7 +87,7 @@
 <br>
 
 <li>
-<strong><a href="data/ActiveLearning.html">Active Learning</a> (能動学習)</strong><br>
+<strong>Active Learning (能動学習)</strong><br>
 学習アルゴリズムが自身の訓練データに影響を与えたり選択したりする能力、あるいはその必要性を持つ問題。<br>
 <br>
 <a href="data/Papers_ActiveLearning.html">Papers</a>
@@ -99,28 +99,35 @@
 <strong>Adversarial Vulnerabilities (敵対的脆弱性)</strong><br>
 機械学習モデルが、意図的に改ざんされた入力データ（敵対的サンプル）によって誤った予測や判断を下してしまう脆弱性
 。<br>
+(例)<br>
+・画像分類 ･･･ 知覚できないノイズを加えて誤分類させる。<br>
+　<center><img src="data/images/panda.svg"></center><br>
+・生成モデル ･･･ プロンプトで学習データを引き出す。反社会的な出力を生成させる。フリーズさせる。<br>
 <br>
 <a href="data/Papers_AdversarialVulnerabilities.html">Papers</a>
+
+
 </li>
 
 <br>
 
 <li id="AhaMoment">
-<strong><a href="data/AhaMoment.html">Aha Moment</a> (アハ体験)</strong><br>
-モデルが長期間停滞した学習状態から、ある瞬間に突然、飛躍的なパフォーマンス向上や、より高度な推論能力を示すようになる現象。<br>
+<strong>Aha Moment (アハ体験)</strong><br>
+モデルが自律的に高度な推論戦略を獲得する、トレーニング中の「ひらめき」のような現象<br>
+2025 年に公開された DeepSeek-R1 モデルのトレーニング過程で報告され、注目を集めた。<br> 
+「Wait, wait. Wait. That's an aha moment I can flag here」<br>
+(ちょっと待って。ちょっと待って。これは「アハ！」体験だ。)<br>
 <br>
+
 <a href="data/Papers_AhaMoment.html">Papers</a><br>
-<br>
-(関連項目)<br>
-・<a href="#Grokking">Grokking</a><br>
-・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
 </li>
 
 <br>
 
 <li id="AIAgent">
-<strong><a href="data/AIAgent.html">AI Agent</a> (AIエージェント)</strong><br>
+<strong>AI Agent (AIエージェント)</strong><br>
 自律的に行動し、目標を達成するために環境と相互作用するソフトウェアシステムのこと。<br>
+AIエージェントの概念の基盤となる理論は、1970年代から1980年代にかけての研究にまでさかのぼることができるが, 最も影響力のある定義を提示したのは, ラッセルとノーヴィグの『エージェントアプローチ人工知能』(1995)。エージェントを「センサーを通して環境を認識し、アクチュエーターを通してその環境に作用する、あらゆるもの」と定義した。
 
 <center><img src="data/images/AIAgent.svg"></center>
 
@@ -148,7 +155,7 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 
 
 <br>(関連項目)<br>
-・<a href="#FAI">FAI: Friendly AI</a> [上位概念]<br>
+・<a href="#FAI">FAI: Friendly AI</a> [上位概念] ･･･ AGI, ASI 登場の前に AI を Friendly にしておく必要があり, AI Alignment は必要な要素技術の一つ。<br>
 ・<a href="#Sycophancy">Sycophancy</a> (おべっか, 追従性) [副作用, 課題]<br>
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning<a/> (逆強化学習) ･･･ 報酬をモデル化し学習する<br>
 ・<a href="#RewardHacking">Reward Hacking<a/> (報酬ハッキング) ･･･ 報酬モデルが過剰最適化すると報酬ハッキングになる。
@@ -159,8 +166,9 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <li>
 <strong>Attention Sinks</strong><br>
 大規模言語モデル（LLM）において、系列の最初のほうにあるトークンに、意味的な重要性にかかわらず不釣り合いなほど過剰なアテンション（注意）が向けられる現象。<br>
-Vision Transformer (ViT) でも同様の現象が確認されている。
-
+Vision Transformer (ViT) でも同様の現象が確認されており、モダリティを超えたトランスフォーマーアーキテクチャにとって基本的なものである可能性が示唆されている。<br>
+<br>
+<a href="data/Papers_AttentionSink.html">Papers</a>
 </li>
 </ul></div></p>
 
@@ -175,17 +183,21 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 <strong>Baldwin effect (ボールドウィン効果)</strong><br>
 個体が生涯で獲得した学習や行動が、世代を超えた遺伝的選択を通じて、まるで生得的な本能であるかのように固定化されていく進化的な現象。<br>
 獲得形質が遺伝するというラマルク説とは異なり、ネオダーウィニズムの枠組みで説明される。<br>
-進化的アルゴリズム（遺伝的アルゴリズムなど）と機械学習（ニューラルネットワークなど）を組み合わせたAI研究において、重要な概念として応用されている。
+進化的アルゴリズム（遺伝的アルゴリズムなど）と機械学習（ニューラルネットワークなど）を組み合わせたAI研究において、重要な概念として応用されている。<br>
+<br>
+<a href="data/Papers_BaldwinEffect.html">Papers</a>
 </li>
-
+<center><img src="data/images/BaldwinEffect.svg"></center>
 <br>
 
 <li>
 <strong>Bening Overfitting (良性過学習)</strong><br>
 深層学習モデルが訓練データに含まれるノイズまで完全に学習（補間）しているにもかかわらず、未知のデータに対して高い汎化性能を発揮する現象。<br>
 従来の機械学習の教科書では、過学習（オーバーフィッティング）は汎化性能を低下させる「悪性」なものだとされてきた。<br>
-
-</li>
+<br>
+<a href="data/Papers_BeningOverfitting.html">Papers</a>
+<br>
+<center><img src="data/images/BeningOverfitting.svg"></center>
 </il></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -199,6 +211,11 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 
 <strong>Catastrophic Forgetting (破局的忘却)</strong><br>
 機械学習モデルが新しいタスクを学習する際に、過去に学習したタスクの情報を急激かつ大幅に忘れてしまう現象。<br>
+<br>
+<a href="data/Papers_CatastrophicForgetting.html">Papers</a><br>
+<br>
+<center><img src="data/images/RLRazor.svg"></center>
+
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習) [対処法を含む研究テーマ]
 </li>
@@ -208,6 +225,9 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 <li id="CognitiveAgent">
 <strong>Cognitive Agent (認知エージェント)</strong><br>
 人間の認知プロセス（知覚、学習、推論、意思決定など）を模倣するように設計された、AIエージェントのこと。<br>
+<br>
+<a href="data/Papers_CognitiveAgent.html">Papers</a><br>
+<br>
 
 <center><img src="data/images/CognitiveAgent.svg"></center>
 
@@ -221,7 +241,15 @@ Vision Transformer (ViT) でも同様の現象が確認されている。
 <li>
 <strong>CoT: Chain-of-Thought (思考連鎖)</strong><br>
 大規模言語モデル（LLM）の性能を向上させるためのプロンプト技術の一種。<br>
-複雑な問題を解く際に、最終的な答えだけでなく、その答えに至るまでの論理的な思考プロセスを段階的に示すようモデルに促すことで、推論能力を高める。
+複雑な問題を解く際に、最終的な答えだけでなく、その答えに至るまでの論理的な思考プロセスを段階的に示すようモデルに促すことで、推論能力を高める。<br>
+<br>
+<a href="data/Papers_CoT.html">Papers</a>
+</li>
+
+<br>
+
+<li><strong>Compositionality Gap (合成性のギャップ)</strong><br>
+AIモデルが、個々の独立した事実は知っているにもかかわらず、それらを組み合わせて複雑な問題を解くことが苦手な現象。<br>
 
 </li>
 
@@ -403,8 +431,8 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <br>
 <center><img src="data/images/Grokking.svg"></center>
 <br>(関連項目)<br>
-・<a href="#AhaMoment">Aha Moment</a> (アハ体験)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
+・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking できれば Primacy Bias を克服できる
 </li>
 
 </ul></div></p>
