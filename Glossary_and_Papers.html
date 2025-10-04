@@ -144,7 +144,12 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <br>
 <a href="data/Papers_AIAlignment.html">Papers</a><br>
 <br>
+<ul><li>
 ・<a href="data/Papers_AIAlignment.html#RLHF">RLHF</a>: Reinforcement Learning from Human Feedback [手法]<br>
+
+<strong><span style="color:magenta;">人間のフィードバックが手作業で設計された報酬関数よりも優れた報酬形を提供できる可能性を示唆しており,従来の報酬設計が非現実的である実世界の課題に強化学習を適用する新たな可能性を開いた。</span></strong><br>
+「Deep reinforcement learning from human preferences」(2017)
+</li></ul>
 <br>
 <center><img src="data/images/RLHF.svg"></center>
 <center><img src="data/images/RLHF2.svg"></center>
@@ -248,9 +253,10 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 
 <br>
 
-<li><strong>Compositionality Gap (合成性のギャップ)</strong><br>
+<li><strong>Compositionality Gap (構成性ギャップ)</strong><br>
 AIモデルが、個々の独立した事実は知っているにもかかわらず、それらを組み合わせて複雑な問題を解くことが苦手な現象。<br>
-
+<br>
+<a href="data/Papers_CompositionalityGap.html">Papers</a>
 </li>
 
 <br>
@@ -259,6 +265,8 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <strong>Continual Learning (継続学習)</strong><br>
 機械学習モデルが、新しいタスクやデータに順次対応しながらも、これまでに獲得した知識を忘れないように学習し続けることを目指す技術。<br>
 別名, Lifelong Learning (生涯学習)。<br>
+<br>
+<a href="data/Papers_ContinualLearning.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
 ・<a href="#LossOfPlasticity">Loss of Plasticity</a> (可塑性喪失)<br>
@@ -270,7 +278,9 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <li>
 <strong>Contrastive Learning (対照学習)</strong><br>
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
-データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。
+データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。<br>
+<br>
+<a href="data/Papers_ContrastiveLearning.html">Papers</a>
 </li>
 
 <br>
@@ -278,8 +288,9 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <li>
 <strong>Curriculum learning (カリキュラム学習)</strong><br>
 
-人間や動物は、例がランダムに提示されるのではなく、意味のある順序で整理され、徐々に多くの概念、そして徐々に複雑な概念を示すように提示されると、はるかによく学習する。このような学習戦略を機械学習の文脈で定式化し、「カリキュラム学習」と呼ぶ。
-
+人間や動物は、例がランダムに提示されるのではなく、意味のある順序で整理され、徐々に多くの概念、そして徐々に複雑な概念を示すように提示されると、はるかによく学習する。このような学習戦略を機械学習の文脈で定式化し、「カリキュラム学習」と呼ぶ。<br>
+<br>
+<a href="data/Papers_CurriculumLearning.html">Papers</a>
 </li>
 
 <br>
@@ -287,7 +298,12 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <li>
 <strong>Curse of Dimensionality (次元の呪い)</strong><br>
 
-データや問題の次元数（特徴量の数）が増えるにつれて、必要なデータ数や計算量が指数関数的に増加し、計算効率の低下やモデルの精度低下を招く現象。
+データや問題の次元数（特徴量の数）が増えるにつれて、必要なデータ数や計算量が指数関数的に増加し、計算効率の低下やモデルの精度低下を招く現象。<br>
+「次元の呪い」と「次元の祝福」がある。<br>
+・高次元ではデータが疎になり、通常の統計手法がうまく機能しなくなるという問題<br>
+・高次元空間には特有の構造（例えば、低次元の多様体など）があり, 新たな手法が生まれる可能性がある。<br>
+<br>
+<a href="data/Papers_Curse_of_Dimensionality.html">Papers</a>
 
 </li>
 
@@ -301,17 +317,20 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <ul>
 <li>
 <strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
-強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの
+強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの<br>
+<br>
+<a href="data/Papers_DRL.html">Papers</a>
 </li>
 <br>
 <center><img src="data/images/DRL.svg"></center>
-
 
 
 <li id="DiffusionModel">
 <strong>Diffusion Model (拡散モデル)</strong><br>
 画像や音声、テキストなどのデータを生成するための深層学習モデルの一種。<br>
 拡散モデルと連想記憶との間の関連性が確立され, 拡散モデルにおける暗記から汎化への移行について、統計物理学における相転移として特徴づけられている。<br>
+<br>
+<a href="data/Papers_DiffusionModel.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) 
 </li>
@@ -321,6 +340,8 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <li>
 <strong>Dimensional Collapse (次元崩壊)</strong><br>
 主に自己教師あり学習（特にコントラスティブ学習）において、モデルが学習した埋め込み（特徴）ベクトルが、利用可能な高次元空間を十分に活用せず、低次元の部分空間に集中してしまう現象。<br>
+<br>
+<a href="data/Papers_DimensionCollapse.html">Papers</a><br>
 <br>(関連項目)<br>
 ・Contrastive Learning (対照学習)<br>
 ・SSL: Self-Supervised Learning (自己教師あり学習)
@@ -331,9 +352,16 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <li id="DoubleDescent">
 <strong>Double Descent (二重降下)</strong><br>
-機械学習モデルの複雑さ（パラメータ数）を増やしていくと、汎化誤差（未知のデータに対する誤差）が一度増加した後に、再び減少するという現象。<br>
+
+モデルの複雑さを増していき, モデルが過剰パラメータ化された領域ではテスト誤差が再び減少し始めるという現象。<br>
+
 従来の機械学習の常識である「バイアス・バリアンスのトレードオフ」を覆すものとして、深層学習の研究で注目された。 <br>
+
+「補間閾値」（モデルが訓練データを完全に記憶する点）でテスト誤差がピークに達し、それを超えてさらにパラメータを増やし、モデルを大きくする（過剰パラメータ化する）ことでテスト誤差が再び低下していく。<br>
+
 従来の「汎化誤差が増加し始めたら学習を停止する」(Early Stopping: 早期停止) という手法の再考を促すことになった。<br>
+<br>
+<a href="data/Papers_DoubleDescent.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)
 </li>
@@ -342,9 +370,18 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <li>
 <strong>Dropout</strong><br>
-ニューラルネットワークの学習時に、一部のニューロン（ノード）をランダムに無効化する正則化手法の一つ。
+ニューラルネットワークの学習時に、一部のニューロン（ノード）をランダムに無効化する正則化手法の一つ。<br>
+<br>
+<ul>
+<li><strong>過学習の抑制</strong><br>
+ディープニューラルネットワークは多くのパラメータを持つため、訓練データに過剰に適合し、未知のデータに対する汎化性能が低下しがちだった。Dropoutは、学習時にランダムに一部のニューロンとその接続を無効化することで、ニューロン間の過度な「共適応」を防ぎ、この問題を効果的に解決した。
+</li><br><li>
+<strong>アンサンブル学習の近似</strong><br>
+Dropoutは、学習ごとに異なるサブネットワークを生成し、あたかも多数の異なるネットワークを学習しているかのような効果をもたらす。推論時には、すべてのニューロンを使いつつ、出力に重み付けを行うことで、これらのサブネットワークの予測を平均化するような効果を得られ、計算コストを抑えながらアンサンブル学習と同等の性能を発揮した。
 </li>
-
+</ul>
+<a href="data/Papers_Dropout.html">Papers</a>
+</li>
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -355,8 +392,11 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <ul>
 <li>
 <strong>Episodic Memory (エピソード記憶)</strong><br>
-個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。<br>
-一般的な知識を記憶する「意味記憶」とは区別される。
+個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。一般的な知識を記憶する「意味記憶」とは区別される。<br>
+<br>
+『入力トークンを「ベイジアン・サプライズ」（予測外の情報）に基づいてイベント単位に分割する。<strong><span style="color:magenta;">人間が予期せぬ出来事によって新しいエピソードを記憶するように、LLMも予測誤差が大きい箇所でイベント境界を認識し、記憶を形成する。</span></strong>』Human-like Episodic Memory for Infinite Context LLMs (EM-LLM)(2024)<br>
+<br>
+<a href="data/Papers_EpisodicMemory.html">Papers</a>
 </li>
 
 <br>
@@ -378,7 +418,9 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 <strong>Flat minima hypothesis (平坦な最適解空間仮説)</strong><br>
 機械学習モデル、特に深層学習モデルの訓練において、損失関数の「平坦な」最小値に収束したモデルは、未知のデータに対する汎化性能が「鋭い」最小値に収束したモデルよりも優れている、という仮説。<br>
 ・Dinh et al. (2017) らは、モデルのパラメータを再パラメータ化（重みのスケーリングなど）することで、汎化性能を変えずに最小値の鋭さを人為的に操作できることを示し、この仮説に疑問を投げかけた。<br>
-・スケール不変な「平坦さ」の定義が提案されたり、平坦さの定義自体が再考されたりする研究が進められている。
+・スケール不変な「平坦さ」の定義が提案されたり、平坦さの定義自体が再考されたりする研究が進められている。<br>
+<br>
+<a href="data/Papers_FlatMinimaHypothesis.html">Papers</a>
 </li>
 
 <br>
@@ -386,6 +428,7 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 <li id="FAI">
 <strong>FAI: Fiendly AI (友好的な人工知能)</strong><br>
 人間に対して悪影響を与えることなく、良い影響を与えるように設計された、倫理的な AGI(汎用人工知能) を指す仮説的な概念。<br>
+<a href="https://intelligence.org/files/CFAI.pdf">Creating Friendly AI 1.0</a> (2001)で概念が提唱された。<br>
 <br>(関連項目)<br>
 ・<a href="#AIAlignment">AI Alignment</a> ･･･ Friendly AIを実現するための技術的課題を解決する研究分野
 </li>
@@ -399,16 +442,35 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 <div class="styleBullet">
 <ul>
 <li>
+<strong>GAN:Generative Adversarial Network (敵対的生成ネットワーク)</strong><br>
+生成ネットワークと識別ネットワークの2つのニューラルネットワークを競合させながら学習させることで、現実世界に存在するデータと区別がつかないほどの新しいデータを生成するAI技術。<br>
+<br>
+<a href="data/Papers_GAN.html">Papers</a>
+</li>
+
+<br>
+
+<li>
 <strong>Generative Model (生成モデル)</strong><br>
 学習したデータの特徴やパターンを理解し、その知識に基づいて、訓練データに類似した新しいデータを自律的に生成できるAI（人工知能）モデル。<br>
-従来の AI モデル (Discriminative Model: 識別モデル) が、与えられたデータを「識別する（分類する）」ことに特化していたのに対し、生成モデルは「創造する（生成する）」ことに特化している点が大きな違い。
+従来の AI モデル (Discriminative Model: 識別モデル) が、与えられたデータを「識別する（分類する）」ことに特化していたのに対し、生成モデルは「創造する（生成する）」ことに特化している点が大きな違い。<br>
+・Boltzmann Machine (BM) → Restricted Boltzmann Machine (RBM)<br>
+・VAE: Variational Auto Encoder<br>
+・GAN: Generative Adversarial Networks <br>
+・Normalizing Flow <br>
+・DDPM: Denoising Diffusion Probabilistic Model<br>
+などがある。<br>
+<br>
+<a href="data/Papers_GenerativeModel.html">Papers</a>
 </li>
 
 <br>
 
 <li>
 <strong>GNN: Graph Neural Networks</strong><br>
-グラフ構造のデータ（ノードとエッジで構成されるデータ）を直接扱えるように設計された、特別なタイプのニューラルネットワーク。
+グラフ構造のデータ（ノードとエッジで構成されるデータ）を直接扱えるように設計された、特別なタイプのニューラルネットワーク。<br>
+<br>
+<a href="data/Papers_GNN.html">Papers</a>
 </li>
 
 <br>
@@ -481,7 +543,11 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <li><strong>Inductive Bias (帰納バイアス)</strong><br>
 学習時に遭遇したことのない入力に対する出力の予測を可能にするために用いる一連の仮定から生じるバイアスのこと。<br>
 『学習とは、過去の経験から一般化を行い、その経験に「関連する」新しい状況に対処する能力を伴う。新しい状況に対処するために必要な帰納的飛躍は、状況のある一般化を他の一般化よりも選択するための特定のバイアスがある場合にのみ可能となるように思われる･･･』<br>
-～The need for biases in learning generalizations(1980)～
+～The need for biases in learning generalizations(1980)～<br>
+<br>
+事前分布はベイズ推論における帰納バイアスの一種と見なすことができる。
+ここで「帰納的」という言葉は、帰納法の厳密な数学的意味を持つのではなく、以前の知識に基づいて何らかの推論を行うという事実を意味する。<br>
+
 </li>
 
 <br>
@@ -839,10 +905,24 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 
 <br>
 
+<li><strong>Potemkin Understanding (ポチョムキン(的)理解)</strong><br>
+大規模言語モデルがベンチマークの成功に基づいて概念を理解しているように見えるが、真に一貫性のある理解を欠いているという失敗モード。<br>
+・「ポチョムキン理解」   ･･･ 誤った概念的一貫性を捏造する。<br>
+・「Hallucination(幻覚)」･･･ 誤った事実を捏造する。<br>
+<br>
+※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来しています。<br>
+<br>
+<a href="data/Papers_PotemkinUnderstanding.html">Papers</a>
+</li>
+
+<br>
+
 <li id="PrimacyBias">
 <strong>Primacy Bias (プライマシーバイアス, 初頭バイアス)</strong><br>
 最初に受け取った情報や、経験の初期段階で得られた情報が、その後の判断や評価に過度な影響を与える認知バイアスのこと。<br>
+機械学習では, あるタスクで最初に学習されたモデルが、異なるデータ分布や目的（あるいはその両方）で学習されると、新しいタスクにおいてランダムに初期化されたモデルよりもパフォーマンスが低下する現象を指す。<br>
 日本語では「初頭効果」や「優先バイアス」とも呼ばれる。<br>
+
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
 ・<a href="#Grokking">Grokking</a><br>
@@ -1232,6 +1312,15 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <li>
 <strong>VAE: Variational Auto Encoder</strong><br>
 深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。 
+</li>
+
+<br>
+
+<li><strong>Value (価値)</strong><br>
+エージェントが特定の状態から特定のポリシーに従って達成すると期待される長期的な収益、つまり累積報酬。<br>
+<br>
+<a href="data/Papers_Value.html">Papers</a>
+
 </li>
 
 <br>
