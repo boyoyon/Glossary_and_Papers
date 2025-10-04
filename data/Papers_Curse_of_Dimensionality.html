@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Curse of Dimensionality</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center> Curse of Dimensionality (次元の呪い)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>[書籍] Dynamic Programming (1957)<br><span style="color:blue;">動的計画法</span></h3>
+
+<p>
+ベルマンは、動的計画法を用いて多段階の意思決定問題を解く際に、<strong><span style="color:magenta;">変数の数が多くなると計算量が指数関数的に増加する現象を説明するために、「次元の呪い」という言葉を初めて用いた。</span></strong>この著作は、動的計画法という革新的な数学的手法を紹介すると同時に、高次元空間がもたらす計算上の困難さという根本的な問題を提起した。
+</p>
+<p>
+<a href="https://gwern.net/doc/statistics/decision/1957-bellman-dynamicprogramming.pdf">書籍 pdf はこちら</a>
+</p>
+
+<h3>High-dimensional data analysis: The curses and blessings of dimensionality (2000)<br><span style="color:blue;">高次元データ分析：次元の呪いと次元の祝福</span></h3>
+
+<p>
+ドノホは、この論文で、高次元データ分析における「次元の呪い」と「次元の祝福」を再定義した。
+<div class="styleBullet">
+<ul>
+<li><strong>「呪い（Curse）」</strong><br>
+高次元ではデータが疎になり、通常の統計手法がうまく機能しなくなるという問題。
+</li><li>
+<strong>「祝福（Blessings）」</strong><br>
+同時に、高次元空間には特有の構造（例えば、データの大部分が低次元の多様体上にあるなど）が存在するため、データ圧縮や信号処理の分野で新たな手法が生まれる可能性も示した。
+</li></ul></div>
+</p>
+<p>
+<a href="https://sunju.org/teach/TMML-Fall-2021/Donoho-2000.pdf">論文はこちら</a><br>
+</p>
+
+<h3>[書籍]Deep Learning (2016)<br><span style="color:blue;">深層学習</span></h3>
+
+<p>
+5.9節<br>
+『ディープラーニングが登場する以前は、非線形モデルを学習する主な方法は、カーネルトリックを線形モデルと組み合わせて使用​​することだった。多くのカーネル学習アルゴリズムは、\(m×m\) 行列 \(G_{i,j} = k(\mathbf{x}^{(i)}, \mathbf{x}^{(j)})\) の構築を必要とする。この行列の構築には計算コスト \(O(m^2)\) がかかり、数十億の例を含むデータセットでは明らかに望ましくない。2006年以降、学術界では、数万の例を含む中規模のデータセットで学習した場合、競合するアルゴリズムよりも新しい例への一般化が優れているため、ディープラーニングが注目を集めた。その後まもなく、<strong><span style="color:magenta;">ディープラーニングは、大規模データセットで非線形モデルを学習するためのスケーラブルな方法を提供する</span></strong>ことから、産業界でもさらなる関心を集めた。
+</p>
+<p>
+<a href="https://github.com/janishar/mit-deep-learning-book-pdf">書籍 pdf はこちら</a>
+</p>
+
+<h3>Neural Galerkin Schemes with Active Learning for High-Dimensional Evolution Equations (2022)<br><span style="color:blue;">高次元発展方程式に対するアクティブラーニングを用いたニューラルガラーキンスキーム</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・アクティブラーニングを伴うニューラルガラーキン法は、高次元の発展方程式の正確なシミュレーションを可能にする。
+</li><li>
+・Physics-Inforcemed Neural Networks（PINNs）のような既存のアプローチは、非効率なサンプリング戦略と因果関係を無視したグローバルな最適化アプローチのため、高次元の時間依存問題で苦戦することがよくある。
+</li><li>
+・<strong><span style="color:magenta;">この手法は、特に局所的で発展する特徴を持つシステムにおいて、「次元の呪い」を効果的に克服する。</span></strong>
+</li></ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2203.01360">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2203.01360v4">要約はこちら</a><br>
+</p>
+
+
+<h3 id="latest">The Emergence of Reproducibility and Generalizability in Diffusion Models (2023)<br><span style="color:blue;">拡散モデルにおける再現性および汎化性の創発)</span></h3>
+
+<p>
+拡散モデルが汎化レジームにおいて基礎となるデータ分布を首尾よく学習することを示す経験的証拠を提供する。<strong><span style="color:magenta;">拡散モデルが以前考えられていたよりも効果的に次元の呪いを克服できることを示唆している。</span></strong>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2310.05264">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2310.05264v4">要約はこちら</a><br>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

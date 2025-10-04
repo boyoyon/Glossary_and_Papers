@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>GAN: Generative Adversarial Networks</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>GAN: Generative Adversarial Networks (敵対的生成ネットワーク)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>Generative Adversarial Networks (2014)<br><span style="color:blue;">敵対的生成ネットワーク：深層生成モデルへの革新的なアプローチ</span></h3>
+
+<p>
+生成モデルと識別モデルという2つのネットワークを敵対的に競わせる、新しい学習フレームワークを提案した。<br>
+これにより、非常にリアルで高品質な画像を生成する能力が飛躍的に向上した。<br>
+VAEとは異なるアプローチで、当時の生成モデル研究に大きな影響を与え、多くの派生技術を生み出した。<br>
+</p>
+<p>
+<a href="https://arxiv.org/abs/1406.2661">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1406.2661">要約はこちら</a><br>
+</p>
+
+
+<h3>Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (DCGAN) (2015)<br><span style="color:blue;">深層畳み込み生成敵対的ネットワークを用いた教師なし表現学習</span></h3>
+
+<p>
+GANにCNNを導入し、安定した学習で高品質な画像を生成できるようになった。
+これらのモデルがロバストな教師なし特徴表現を学習し、生成されたコンテンツの直感的な操作を可能にする意味のある潜在空間を持つことを示している。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1511.06434">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1511.06434v2">要約はこちら</a><br>
+</p>
+
+
+<h3>Wasserstein GAN (WGAN) (2017)<br><span style="color:blue;">ワッサースタイン GAN</span></h3>
+
+<p>
+損失関数にワッサースタイン距離を導入し、GANの学習の安定性を向上させた。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1701.07875">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1701.07875v3">要約はこちら</a><br>
+</p>
+
+<h3>A Style-Based Generator Architecture for Generative Adversarial Networks (StyleGAN) (2018)<br><span style="color:blue;">敵対的生成ネットワーク向けのスタイルベース生成器アーキテクチャ</span></h3>
+
+<p>
+スタイル操作により、高精細な画像を細かく制御しながら生成できる手法を提案した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1812.04948">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1812.04948v3">要約はこちら</a><br>
+</p>
+
+<h3 id="latest">The GAN is dead; long live the GAN! A Modern GAN Baseline (2025)<br><span style="color:blue;">GANは死んだ。GAN万歳！現代のGANベースライン</span></h3>
+
+<p>
+アドホックなトリックをすべて捨て、一般的なGANで使用されている時代遅れのバックボーンを現代的なアーキテクチャに置き換えた。 FFHQ、ImageNet、CIFAR、Stacked MNIST データセットで StyleGAN2 を上回り、最先端の GAN や拡散モデルと比べても遜色ない。<br>
+<br>
+※タイトルは英語の古い慣用句「The king is dead; long live the king!（王は死んだ、王万歳！）」をもじったもの。前の王が亡くなった瞬間に新しい王が即位することを意味し、王位の継続性を強調する表現。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2501.05441">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2501.05441v1">要約はこちら</a><br>
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

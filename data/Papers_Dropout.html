@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Dropout</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Dropout</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>Improving neural networks by preventing co-adaptation of feature detectors (2012)<br><span style="color:blue;">特徴検出器の共適応を防ぐことによるニューラルネットワークの改善</span></h3>
+
+<p>
+ニューラルネットワークユニットをトレーニング中にランダムに省略することで、相互適応を防ぎ、汎化性能を向上させる正則化手法であるドロップアウトを導入した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1207.0580">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1207.0580v1">要約はこちら</a><br>
+</p>
+
+
+<h3 id="latest">Dropout: a simple way to prevent neural networks from overfitting (2014)<br><span style="color:blue;">ドロップアウト: ニューラルネットワークの過剰適合を防ぐ簡単な方法</span></h3>
+
+<p>
+過学習を防ぐための正則化手法としてのドロップアウトについて包括的な分析を提供した。
+<div class="styleBullet">
+<ul>
+<li><strong>過学習の抑制</strong><br>
+ディープニューラルネットワークは多くのパラメータを持つため、訓練データに過剰に適合し、未知のデータに対する汎化性能が低下しがちだった。Dropoutは、学習時にランダムに一部のニューロンとその接続を無効化することで、ニューロン間の過度な「共適応」を防ぎ、この問題を効果的に解決した。
+</li><br><li>
+<strong>アンサンブル学習の近似</strong><br>
+Dropoutは、学習ごとに異なるサブネットワークを生成し、あたかも多数の異なるネットワークを学習しているかのような効果をもたらす。推論時には、すべてのニューロンを使いつつ、出力に重み付けを行うことで、これらのサブネットワークの予測を平均化するような効果を得られ、計算コストを抑えながらアンサンブル学習と同等の性能を発揮した。
+</li><br><li>
+<strong>実装の容易さ</strong><br>
+そのシンプルなアルゴリズムから、実装が非常に簡単であったことも普及を後押しした。
+</li></ul></div> 
+</p>
+<p>
+<a href="https://www.jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf">論文はこちら</a>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

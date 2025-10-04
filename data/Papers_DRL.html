@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>DRL: Deep Reinforcement Learning</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>DRL: Deep Reinforcement Learning (深層強化学習)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>Playing Atari with Deep Reinforcement Learning (2013)<br><span style="color:blue;">深層強化学習で Atari をプレイする</span></h3>
+
+<p>
+後の DQN (Deep Q-Network) の基礎となる手法を提案した。<br>
+
+<strong><span style="color:magenta;">ディープラーニングと強化学習の大規模な統合に初めて成功したものであり、単一のニューラルネットワークアーキテクチャが、生のピクセル入力から直接複数のAtari 2600ゲームをプレイすることを学習し、そのいくつかで人間レベルのパフォーマンスを達成できることを示した。</span></strong>
+
+</p>
+<p>
+<a href="https://arxiv.org/abs/1312.5602">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1312.5602v1">要約はこちら</a><br>
+</p>
+
+<h3>Human-level control through deep reinforcement learning (2015)
+<br><span style="color:blue;">深層強化学習による人間レベルの制御</span></h3>
+
+<p>
+2013年の先行研究をさらに改良し、<strong><span style="color:magenta;">多くのAtariゲームで人間の専門家を上回る性能を達成</span></strong>した。
+</p>
+<p>
+<a href="https://training.incf.org/sites/default/files/2023-05/Human-level%20control%20through%20deep%20reinforcement%20learning.pdf">論文はこちら</a><br>
+</p>
+
+<h3>Mastering the game of Go with deep neural networks and tree search (AlphaGo) (2016)<br><span style="color:blue;">ディープニューラルネットワークとツリー探索で囲碁をマスターする</span></h3>
+
+<p>
+ディープラーニングとモンテカルロ木探索を組み合わせることで、<strong><span style="color:magenta;">囲碁のトッププロ棋士に勝利</span></strong>した。
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+
+<h3>Mastering the game of Go without human knowledge (AlphaGo Zero) (2017)<br><span style="color:blue;">人間の知識なしに囲碁をマスターする</span></h3>
+
+<p>
+AlphaGo は人間の棋譜データを用いて教師あり学習を行ったが、AlphaGo Zero は<strong><span style="color:magenta;">人間の知識を一切使わずに、自己対局のみで学習</span></strong>した。この自己対局とモンテカルロ木探索を組み合わせる手法は、より効率的で強力なアルゴリズムを生み出した。
+</p>
+<p>
+<a href="https://discovery.ucl.ac.uk/id/eprint/10045895/1/agz_unformatted_nature.pdf">論文はこちら</a><br>
+</p>
+
+
+<h3>A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play (AlphaZero) (2018)<br><span style="color:blue;">チェス、将棋、囲碁を自己対戦でマスターする汎用強化学習アルゴリズム</span></h3>
+
+<p>
+AlphaGo Zero の手法をさらに汎用化し、囲碁だけでなく、将棋やチェスでも世界最強レベルのプログラムを、わずか数時間の自己対局で生み出した。<br>
+特定のゲームに特化せず、<strong><span style="color:magenta;">ルール情報のみを与えれば、どんなゲームでも最強AIを生み出せる汎用的なアルゴリズム</span></strong>であることを証明した。
+</p>
+<p>
+<a href="https://starcraft.ai/documents/260/alphazero_preprint.pdf">論文はこちら</a><br>
+</p>
+
+
+<h3 id="latest">Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model (MuZero) (2019)<br><span style="color:blue;">学習モデルを用いた計画によるアタリ、囲碁、チェス、将棋の習得</span></h3>
+
+<p>
+AlphaZeroからさらに進歩し、<strong><span style="color:magenta;">ゲームのルール (環境モデル) を事前に知らなくても</span></strong>、内部で環境モデルを学習しながら、囲碁、チェス、将棋、そして Atari ゲームでも<strong><span style="color:magenta;">高い性能を発揮</span></strong>した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1911.08265">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1911.08265v2">要約はこちら</a><br>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

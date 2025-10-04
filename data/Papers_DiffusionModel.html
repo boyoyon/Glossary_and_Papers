@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Diffusion Model</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Diffusion Model (拡散モデル)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>Deep Unsupervised Learning using Nonequilibrium Thermodynamics (2015)<br><span style="color:blue;">非平衡熱力学を用いた深層教師なし学習</span></h3>
+
+<p>
+熱力学の非平衡統計力学を応用し、データに段階的にノイズを加えていく「前方拡散過程」と、ノイズからデータを復元する「逆拡散過程」を学習するという、ディフュージョンモデルの基本的な枠組みを初めて提案した。当時はまだ生成される画像の品質は低かったものの、その後の研究の基盤となった。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1503.03585">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1503.03585v8">要約はこちら</a><br>
+</p>
+
+
+<h3>Denoising diffusion probabilistic models (DDPM) (2020)<br><span style="color:blue;">拡散モデル</span></h3>
+
+<p>
+2015年の研究を発展させ、U-Netモデルと組み合わせることで、ディフュージョンモデルによる高品質な画像生成に初めて成功した。VAE(変分オートエンコーダー)との関係性を示し、学習方法を大幅に改善したことで、ディフュージョンモデルの可能性を広く知らしめた。この論文が、現在の画像生成AIブームの火付け役の一つになったとされている。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2006.11239">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2006.11239v2">要約はこちら</a><br>
+</p>
+
+<h3>Score-Based Generative Modeling through Stochastic Differential Equations (SDE) <br><span style="color:blue;">確率微分方程式によるスコアベース生成モデリング</span></h3>
+
+<p>
+SDEの枠組みを導入し、DDPMを含む既存手法を統一的に扱える汎用的な理論を提示した。これにより、より効率的なサンプリング手法の開発につながった。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2011.13456">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2011.13456v2">要約はこちら</a><br>
+</p>
+
+<h3>Improved Denoising Diffusion Probabilistic Models (2021)<br><span style="color:blue;">改良型ノイズ除去拡散確率モデル：生成モデリングの進歩</span></h3>
+
+<p>
+Variational Lower Bound (VLB) を改善し、生成速度を大幅に向上させた。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2102.09672">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2102.09672v1">要約はこちら</a><br>
+</p>
+
+<h3>Diffusion Models Beat GANs on Image Synthesis (2021)<br><span style="color:blue;">拡散モデルは画像生成においてGANsを凌駕する</span></h3>
+
+<p>
+ディフュージョンモデルがGANsを凌駕する生成品質を達成できることを示し、モデルのアーキテクチャ改良やクラス分類器を用いたガイダンス手法を提案した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2105.05233">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2105.05233v4">要約はこちら</a><br>
+</p>
+
+<h3>Fast Sampling of Diffusion Models via Operator Learning (DFNO) (2022)<br><span style="color:blue;">オペレーター学習による拡散モデルの高速サンプリング</span></h3>
+
+<p>
+サンプリングを常微分方程式（ODE）を解く問題として捉え、オペレーター学習を用いてワンステップでの生成を実現する手法を提案した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2211.13449">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2211.13449v3">要約はこちら</a><br>
+</p>
+
+<h3>Progressive Distillation for Fast Sampling (2022)<br><span style="color:blue;"></span></h3>
+
+<p>
+教師モデルから徐々に学習することで、必要なサンプリングステップ数を段階的に減らしていく手法を提案した。 
+</p>
+<p>
+<a href="https://arxiv.org/abs/2202.00512">論文はこちら</a><br>
+</p>
+
+
+<h3>Consistency Models (2023)<br><span style="color:blue;">一貫性モデル</span></h3>
+
+<p>
+ディフュージョンモデルのサンプリングプロセスを、一貫性 (consistency) という概念で再構築した。<br>
+元のディフュージョンモデルの拡散過程の異なるタイムステップ上の画像が、同じノイズから生成された場合には、一貫した画像(同じ画像)にマッピングされるという特性を利用する。<br>
+このアプローチにより、学習済みのディフュージョンモデルから直接、ワンステップで画像を生成する「コンシステンシーサンプラー」を抽出する、知識蒸留 (knowledge distillation) の手法を提案した。これにより、数百ステップかかっていた生成プロセスを、わずか1〜4ステップ程度にまで高速化することが可能になった。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2303.01469">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2303.01469v2">要約はこちら</a><br>
+</p>
+
+<h3>Latent Consistency Models: Synthesizing High-Resolution Images with Few-Step Inference (LCM) (2023)<br><span style="color:blue;">Latent Consistency Models: 少数ステップ推論による高解像度画像の合成</span></h3>
+
+<p>
+上記の「Consistency Models」の理論を、Stable Diffusionなどの潜在拡散モデル（Latent Diffusion Model）に適用したモデル。<br>
+潜在空間（Latent Space）上でコンシステンシー蒸留を行うことで、Stable Diffusionをわずか1〜4ステップで高速にサンプリングできるようにした。<br>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2310.04378">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2310.04378v1">要約はこちら</a><br>
+</p>
+
+<h3>Generative Diffusion Models Are Associative Memory Networks (2023)<br><span style="color:blue;">散在する記憶を求めて：生成拡散モデルは連想記憶ネットワークである</span></h3>
+
+<p>
+拡散モデルがエネルギーベースモデルとして解釈でき、そのエネルギー関数が、ホップフィールド・ネットワーク（特に、ホップフィールドとクロトフが考案した近代的な「高密度」連想記憶モデル）のエネルギー関数と漸近的に一致することを数学的に証明した。<br>
+この等価性に基づき、拡散モデルの学習プロセスが連想記憶における記憶の「符号化」（学習データをネットワークの重み構造に格納するプロセス）に相当し、生成プロセスが記憶の「想起」に相当することを提唱した。<br>
+訓練データから新しい画像を生成する「創造的な生成」と、特定の記憶を呼び出す「想起」が、この統一的な枠組みの中で連続的なプロセスとして捉えられる可能性を示した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2309.17290">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2309.17290v2">要約はこちら</a><br>
+</p>
+
+<h3>Memory in Plain Sight: Surveying the Uncanny Resemblances of Associative Memories and Diffusion Models (2023)
+<br><span style="color:blue;">記憶の明瞭な視覚：連想記憶と拡散モデルの不思議な類似点を探る</span></h3>
+
+<p>
+拡散モデルを「反復的なノイズ除去器」として捉える従来の理解に加え、エネルギーベースの連想記憶の数学的枠組みを用いて、拡散モデルを「記憶想起」のプロセスとして記述する新しい視点を提供した。<br>
+連想記憶モデルではリヤプノフ安定性保証が必要だったが、拡散モデルはノイズとステップサイズのスケジュールを巧妙に設計することで、この安定性保証を回避しながら、連想記憶システムと同様の振る舞いを実現していることを論じている。<br>
+拡散モデルが連想記憶に期待される振る舞いを示す、多くの実証的証拠を提示し、この2つの分野を統合することによって新たな研究機会が生まれることを示唆している。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2309.16750">論文はこちら</a><br>
+</p>
+
+<h3 id="latest">Emergence of Diffusion Models from Associative Memory
+ (2025)<br><span style="color:blue;">記憶から汎化へ：連想記憶からの拡散モデルの創発</span></h3>
+
+<p>
+学習データの記憶から汎化への移行過程を、連想記憶、特にホップフィールド・ネットワークの観点から分析した。<br>
+<strong><span style="color:magenta;">学習データが少ない「記憶フェーズ」では、ホップフィールド・ネットワークと同様に各サンプルを安定したアトラクターとして記憶する一方、学習データが増えると新しいアトラクターが形成され、汎化フェーズに移行する様子を明らかにした。</span></strong><br>
+記憶と汎化の境界領域で、ホップフィールド・ネットワークの「偽のアトラクター」に相当する、意図しない安定状態が発生することを予測した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2505.21777">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2505.21777">要約はこちら</a><br>
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>
