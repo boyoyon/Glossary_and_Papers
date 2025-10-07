@@ -64,6 +64,11 @@
 <li id="3DGS"><strong>3D Gaussian Splatting</strong><br>
 複数の画像から3D空間を高精細に再現し、リアルタイムにレンダリングする手法。<br>
 新たな視点からの画像を生成するタスク (<strong>NVS</strong>) の一手法として使われる。<br>
+<br>
+<strong>「Splatting」</strong>･･･3次元のデータ（ボクセル）を2次元の画像平面へと投影してレンダリングするプロセスを「Splatting」（ぶちまける）という比喩で説明している。3D空間にあるボクセルを「雪玉」、画像平面を「壁」に見立て、雪玉を壁に投げつけることで、その情報が壁に飛び散って画像が作られる、というイメージ。<br>
+(Lee Alan Westover氏が1991年に提出した博士論文「SPLATTING: A Parallel, Feed-Forward Volume Rendering Algorithm」で使われた)<br>
+<br>
+<a href="data/Papers_3DGS.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#NVS">NVS: Novel View Sysnthesis</a>
 </li>
@@ -253,7 +258,7 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 
 <br>
 
-<li><strong>Compositionality Gap (構成性ギャップ)</strong><br>
+<li id="CompositionalityGap"><strong>Compositionality Gap (構成性ギャップ)</strong><br>
 AIモデルが、個々の独立した事実は知っているにもかかわらず、それらを組み合わせて複雑な問題を解くことが苦手な現象。<br>
 <br>
 <a href="data/Papers_CompositionalityGap.html">Papers</a>
@@ -265,16 +270,22 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <strong>Continual Learning (継続学習)</strong><br>
 機械学習モデルが、新しいタスクやデータに順次対応しながらも、これまでに獲得した知識を忘れないように学習し続けることを目指す技術。<br>
 別名, Lifelong Learning (生涯学習)。<br>
+・Continual Learning(継続学習), Lifelong Learning(生涯学習)は、将来の分布シフトの予測までは行わない。<br>
+・Prospective Learning(展望学習), Inductive Learning(帰納学習)は将来の分布シフトを(時間パラメータ付き)仮説として出力する<br>
+<br>
+<center><img src="data/images/OOD.svg"></center>
 <br>
 <a href="data/Papers_ContinualLearning.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
-・<a href="#LossOfPlasticity">Loss of Plasticity</a> (可塑性喪失)<br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)[課題]<br>
+・<a href="#LossOfPlasticity">Loss of Plasticity</a> (可塑性喪失)[課題]<br>
 </li>
-・<a href="#PrimacyBias">Primacy Bias</a> (プライマシーバイアス, 初頭バイアス)<br>
-
+・<a href="#PrimacyBias">Primacy Bias</a> (プライマシーバイアス, 初頭バイアス)[課題]<br>
+・<a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
+・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
+・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 <br>
-
 <li>
 <strong>Contrastive Learning (対照学習)</strong><br>
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
@@ -305,6 +316,21 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <br>
 <a href="data/Papers_Curse_of_Dimensionality.html">Papers</a>
 
+</li>
+
+<br>
+
+<li><strong>Curse of two-hop reasoning（2ホップ推論の呪い）</strong><br>
+大規模言語モデル（LLM）が、個別に学習した2つの事実（例: A→B と B→C）を結びつけて推論する（例: A→C）ことができない、または非常に困難であるという現象。<br>
+(例)1ホップの質問：「『イマジン』の演奏者は誰?」「ジョン・レノンの配偶者は誰?」には答えられる。<br>
+　　2ホップの質問：「『イマジン』の演奏者の配偶者は誰?」）には答えられない。<br>
+<a href="https://arxiv.org/abs/2411.16353v1">The Two-Hop Curse: LLMs trained on A->B, B->C fail to learn A-->C</a> (2024)<br>
+
+推論のステップを明示的に示す「思考の連鎖（Chain-of-Thought）」プロンプティングがあれば、2ホップ推論を実行できる。しかし、そうした明示的な指示がないと、個々の事実を結合できない。<br>
+これは、LLMが学習データから自動的に、あるいは「潜在的に」推論ステップを結びつける能力が欠けていることを示唆している。<br>
+Compositionality Gapの一例。<br>
+<br>(関連項目)<br>
+・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)
 </li>
 
 </ul></div></p>
@@ -350,6 +376,29 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <br>
 
+<li id="DistributionalHypothesis">
+<strong>Distributional Hypothesis (分布仮説)</strong><br>
+・同じ文脈(Context: 前後関係)で使われる単語は、似た意味を持つ」という考え方。<br>
+　「I drink beer.」（私はビールを飲む）<br>
+　「I drink wine.」（私はワインを飲む）<br>
+　「ビール」と「ワイン」が何らかの共通点（ここでは「飲み物」という属性）を持つと推測できる。<br>
+
+・Distributional Structure (1954)<br>
+　単語の意味がその文脈（共起する他の単語）の分布によって決定されるという考え方を定式化。<br>
+・A synopsis of linguistic theory, 1930-1955 (1957)<br>
+　"You shall know a word by the company it keeps."<br>
+　(あなたは言葉がいつも一緒にいる仲間によって、その言葉を知るだろう)<br>
+　という有名な言葉で、この概念を簡潔かつ詩的に表現し、広く知らしめた。<br>
+　英語の古い格言 "A man is known by the company he keeps" をもじったものだと考えられている。<br> 
+・Efficient Estimation of Word Representations in Vector Space』（Word2Vec）(2013)<br>
+　<strong><span style="color:magenta;">分布仮説を、計算効率の高いニューラルネットワークモデルで実装した。</span></strong><br>
+
+<br>(関連項目)<br>
+・<a href="#WordEmbeddings">Word Embeddings</a> (単語埋め込み)
+</li>
+
+<br>
+
 <li id="DoubleDescent">
 <strong>Double Descent (二重降下)</strong><br>
 
@@ -374,12 +423,13 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <br>
 <ul>
 <li><strong>過学習の抑制</strong><br>
-ディープニューラルネットワークは多くのパラメータを持つため、訓練データに過剰に適合し、未知のデータに対する汎化性能が低下しがちだった。Dropoutは、学習時にランダムに一部のニューロンとその接続を無効化することで、ニューロン間の過度な「共適応」を防ぎ、この問題を効果的に解決した。
+ディープニューラルネットワークは多くのパラメータを持つため、訓練データに過剰に適合し、未知のデータに対する汎化性能が低下しがちだった。Dropoutは、学習時にランダムに一部のニューロンとその接続を無効化することで、<strong><span style="color:magenta;">ニューロン間の過度な「共適応」を防ぎ</span></strong>、この問題を効果的に解決した。
 </li><br><li>
 <strong>アンサンブル学習の近似</strong><br>
-Dropoutは、学習ごとに異なるサブネットワークを生成し、あたかも多数の異なるネットワークを学習しているかのような効果をもたらす。推論時には、すべてのニューロンを使いつつ、出力に重み付けを行うことで、これらのサブネットワークの予測を平均化するような効果を得られ、計算コストを抑えながらアンサンブル学習と同等の性能を発揮した。
+Dropoutは、学習ごとに異なるサブネットワークを生成し、<strong><span style="color:magenta;">あたかも多数の異なるネットワークを学習しているかのような効果をもたらす</span></strong>。推論時には、すべてのニューロンを使いつつ、出力に重み付けを行うことで、これらのサブネットワークの予測を平均化するような効果を得られ、計算コストを抑えながらアンサンブル学習と同等の性能を発揮した。
 </li>
 </ul>
+<br>
 <a href="data/Papers_Dropout.html">Papers</a>
 </li>
 </ul></div></p>
@@ -394,6 +444,10 @@ Dropoutは、学習ごとに異なるサブネットワークを生成し、あ�
 <strong>Episodic Memory (エピソード記憶)</strong><br>
 個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。一般的な知識を記憶する「意味記憶」とは区別される。<br>
 <br>
+Prediction errors disrupt hippocampal representations and update episodic memories (2021)<br>
+(予測エラーは海馬の表現を混乱させ、エピソード記憶を更新する)<br>
+予測誤差に直面すると海馬の記憶表現が中断され、その後の記憶更新に関連することが、fMRIを用いた研究で示唆されている。この現象は前脳基底部の活動と関連し、神経調節物質が海馬の処理を調整している可能性が指摘されている。<br>
+<br>
 『入力トークンを「ベイジアン・サプライズ」（予測外の情報）に基づいてイベント単位に分割する。<strong><span style="color:magenta;">人間が予期せぬ出来事によって新しいエピソードを記憶するように、LLMも予測誤差が大きい箇所でイベント境界を認識し、記憶を形成する。</span></strong>』Human-like Episodic Memory for Infinite Context LLMs (EM-LLM)(2024)<br>
 <br>
 <a href="data/Papers_EpisodicMemory.html">Papers</a>
@@ -403,7 +457,11 @@ Dropoutは、学習ごとに異なるサブネットワークを生成し、あ�
 
 <li><strong>Era of Experience (経験の時代)</strong><br>
 AI（人工知能）が人間から与えられたデータだけでなく、AI自身の「経験」を通して自律的に学習・進化していくという、AI研究における新たな方向性を示す概念。<br>
-Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者のひとり Richard S. Sutton が2025年4月に発表した論文『Welcome to the Era of Experience』で提唱された。
+Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者のひとり Richard S. Sutton が2025年4月に発表した論文『Welcome to the Era of Experience』で提唱された。<br>
+<br>
+『<strong><span style="color:magenta;">例えば、あるエージェントが5,000年前の人間の思考と専門家の回答を用いて推論するように訓練されていたとしたら、物理的な問題についてアニミズムの観点から推論していたかもしれません。</span></strong>』<br>
+→ 人間を教師にしていることがネックになる･･･<br>
+<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2025_Welcome%20to%20the%20Era%20of%20Experience/2025_Welcome%20to%20the%20Era%20of%20Experience.html">機械翻訳はこちら</a>
 </li>
 
 </ul></div></p>
@@ -492,6 +550,8 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 この用語は、SF作家ロバート・ハインラインの小説『異星の客』に出てくる「完全に、深く理解する」という意味の造語「grok」に由来する。<br>
 <br>
 <center><img src="data/images/Grokking.svg"></center>
+<br>
+<a href="data/Papers_Grokking.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
 ・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking できれば Primacy Bias を克服できる
@@ -508,6 +568,8 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <li>
 <strong>Hallucination (幻覚)</strong><br>
 生成AIが、事実に基づかない情報や誤った内容を、もっともらしく、あたかも真実であるかのように出力する現象。<br>
+<br>
+<a href="data/Papers_Hallucination.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#RAG">RAG: Retrieval-Augmented Generation</a> (検索拡張生成)<br>
 ・<a href="#RLHF">RLHF: Reinforcement Learning from Human Feedback</a> (人間のフィードバックによる学習)
@@ -521,8 +583,9 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 機械学習、特に高次元データ空間で発生する現象。<br>
 データセット内のごく一部のデータポイント（「ハブ」と呼ばれる）が、他の多くのデータポイントの k-Nearest Neighbors (k-近傍)に異常なほど頻繁に出現するようになる現象を指す。 一方、ほとんどどのデータポイントの k-近傍に現れない「アンチハブ」と呼ばれるデータポイントも同時に発生する。<br>
 ハブネスは、「Curse of Dimensionality (次元の呪い)」の一側面とされている。高次元空間では、データポイント間の距離のコントラストが低下し、ほとんどのデータポイント間の距離がほぼ等しくなってしまう。その結果、データ空間の特定の場所に位置するごく一部のデータポイントが、多くのデータポイントから「近い」と認識されやすくなる。<br>
-ハブネスは、kNN (k-近傍法) などの距離ベースのアルゴリズムに悪影響を及ぼす。
-
+ハブネスは、kNN (k-近傍法) などの距離ベースのアルゴリズムに悪影響を及ぼす。<br>
+<br>
+<a href="data/Papers_Hubness.html">Papers</a>
 </li>
 
 </ul></div><p>
@@ -535,7 +598,13 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <ul>
 <li>
 <strong>Implicit Bias (暗黙のバイアス)</strong><br>
-無意識のうちに抱いている偏見、思い込み、先入観のこと。日本語では「潜在的バイアス」や「アンコンシャス・バイアス」とも呼ばれる。
+無意識のうちに抱いている偏見、思い込み、先入観のこと。日本語では「潜在的バイアス」や「アンコンシャス・バイアス」とも呼ばれる。<br>
+<br>
+『Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings』(2016)<br>
+　(男性とコンピュータープログラマーの関係は、女性と主婦の関係と同じ？単語埋め込みのバイアス除去する)<br>
+言語モデルにおけるバイアスへの懸念を高めた主要な研究の一つ。 単語埋め込みにおける強い性別ステレオタイプを実証した。<br>
+<br>
+<a href="data/Papers_ImplicitBias.html">Papers</a>
 </li>
 
 <br>
@@ -547,28 +616,61 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <br>
 事前分布はベイズ推論における帰納バイアスの一種と見なすことができる。
 ここで「帰納的」という言葉は、帰納法の厳密な数学的意味を持つのではなく、以前の知識に基づいて何らかの推論を行うという事実を意味する。<br>
-
+<br>
+<a href="data/Papers_InductiveBias.html">Papers</a>
 </li>
 
+<br>
+
+<li><strong>Inductive Leap (帰納的飛躍)</strong><br>
+いくつかの具体的な観察や事例から、それらを超えた普遍的な結論や一般法則を導き出す思考の飛躍のこと。<br>
+<br>
+・論理的に必ず正しいと保証されるものではない。<br>
+　不適切な帰納的飛躍が、結果として偏見を生み出すことがある。<br>
+　<strong>確証バイアス</strong>（自分の既存の信念を補強する情報を優先する傾向）などの認知バイアスよって行われることがよくある。<br>
+　例外が見つかれば、結論は崩れる可能性がある。<br>
+<br>
+・<strong>演繹法</strong>がすでに知っていることから結論を導き出すのに対し、帰納的飛躍は新たな知識や仮説を生み出す。この点で、科学的探求や日常生活における問題解決において重要な役割を果たす。<br>
+<br>
+・<strong>帰納的飛躍</strong>は、多くの個別事例から一般法則を導き出すプロセス。<br>
+　<strong>アブダクション</strong>は, 驚くべき観察結果や事実に直面した際に、それを最もよく説明できる仮説を形成すること。
+
+</li>
+<br>
+
+
+<li id="InductiveLearning"><strong>Inductive Learning (帰納学習)</strong><br>
+『Learning Model Successors』(2025) における Inductive Learning (帰納的学習) は、ある抽象度のレベルで得られたモデルから、さらに高レベルのモデル（「モデルの後継者」）を学習する、という新しいパラダイムを指す。<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習), <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
+・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
+</li>
 <br>
 
 <li id="IntentExtraction">
 <strong>Intent Extraction (意図抽出)</strong><br>
 ユーザーが発した言葉や文章の背後にある「意図」や「目的」を特定する技術。<br>
+<br>
+<a href="data/Papers_IntentExtraction.html">Papers</a>
 </li>
 
 <br>
 
 <li>
 <strong>Intrinsic Motivation (内発的動機付け)</strong><br>
-報酬や評価といった外部の刺激に関係なく、個人の内面から自然と湧き上がる興味・関心、意欲によって行動すること
+報酬や評価といった外部の刺激に関係なく、個人の内面から自然と湧き上がる興味・関心、意欲によって行動すること。<br>
+<br>
+<a href="data/Papers_IntrinsicMotivation.html">Papers</a>
 </li>
 
 <br>
 
 <li id="IRL">
 <strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
-熟練者や人間の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。
+熟練者や人間の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。<br>
+<br>
+<a href="data/Papers_IRL.html">Papers</a>
 </li>
 </ul></div><p>
 
@@ -581,7 +683,9 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <ul>
 <li>
 <strong>Knowledge Distillation (知識蒸留)</strong><br>
-機械学習の技術の一つで、大規模で高性能なAIモデル（教師モデル）が持つ知識を、より小型で軽量なAIモデル（生徒モデル）に移転・圧縮する手法
+機械学習の技術の一つで、大規模で高性能なAIモデル（教師モデル）が持つ知識を、より小型で軽量なAIモデル（生徒モデル）に移転・圧縮する手法。<br>
+<br>
+<a href="data/papers_KD.html">Papers</a>
 </li>
 <br>
 <center><img src="data/images/KnowledgeDistillation.svg"></center>
@@ -611,10 +715,14 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li>
+<li id="LifelongLearning">
 <strong>Lifelong Learning(生涯学習)</strong><br>
-Continual Learning (継続学習) の別名。
-
+Continual Learning (継続学習) の別名。<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
+・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
+・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 </li>
 
 <br>
@@ -692,6 +800,15 @@ Continual Learning (継続学習) の別名。
 <strong>Memorization to Generalization (暗記から汎化へ)</strong><br>
 機械学習モデル、特にニューラルネットワークが、訓練データを単に丸暗記する段階（Memorization）から、学習したパターンを組み合わせて未知のデータにも応用できる段階（Generalization）へと移行するプロセス。<br>
 <br>
+Memorization to Generalization: Emergence of Diffusion Models from Associative Memory (2025)<br>
+・訓練中に「偽の状態(スプリアスフェーズ)」が出現することが、モデルの記憶から汎化への移行を示すことを実証。<br>
+・スプリアス状態は通常、記憶容量を超えたときに現れる望ましくないアーティファクトと見なされていたが、<strong><span style="color:magenta;">出現するパターンは、モデルの創造的合成、つまり基本的な記憶を組み合わせて新しい組み合わせを生み出すことを表していると提案している。</span></strong><br>
+<br>
+<center><img src="data/images/Memorization_to_Generalization.svg">
+</center>
+<center>スプリアスフェーズを経由して記憶(暗記)から汎化に移行する</center>
+
+<br>
 (関連項目)<br>
 ・<a href="#Grokking">Grokking</a><br>
 ・<a href="#DiffusionModel">Diffusion Model</a> (拡散モデル)の相転移
@@ -702,6 +819,12 @@ Continual Learning (継続学習) の別名。
 <li>
 <strong>Mental Rotation (心的回転)</strong><br>
 心の中で二次元または三次元の物体を回転させる認知機能のこと。
+</li>
+
+<br>
+
+<li><strong>Meta Learning (メタ学習)</strong><br>
+「学習の仕方を学習する」ための機械学習技術。
 </li>
 
 <br>
@@ -824,6 +947,15 @@ DeepMind社によって2014年に発表された。<br>
 <p>
 <div class="styleBullet">
 <ul>
+<li id="OOD">
+<strong>OOD: Out-of-Distribution Generalization (分布外汎化)</strong><br>
+機械学習モデルが、訓練データとは統計的な性質（分布）が異なる未知のデータに対しても、高い性能を発揮する能力を指す。<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習), <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
+・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
+</li>
+<br>
 <li>
 <strong>Open-Ended Generation </strong><br>
 明確な答えや単一の目標を設定することなく、AIが創造的かつ多様なコンテンツを生成する能力のこと。
@@ -923,6 +1055,9 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 機械学習では, あるタスクで最初に学習されたモデルが、異なるデータ分布や目的（あるいはその両方）で学習されると、新しいタスクにおいてランダムに初期化されたモデルよりもパフォーマンスが低下する現象を指す。<br>
 日本語では「初頭効果」や「優先バイアス」とも呼ばれる。<br>
 
+<center><img src="data/images/PrimacyBias.svg"></center>
+<center>Grokking 出来れば, Primacy Biasに打ち合って継続学習できる</center>
+<center>『What Can Grokking Teach Us About Learning Under Nonstationarity?』(2025)</center>
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
 ・<a href="#Grokking">Grokking</a><br>
@@ -938,7 +1073,7 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 
 <br>
 
-<li>
+<li id="ProspectiveLearning">
 
 
 <strong>Prospective Learning (展望学習)</strong><br>
@@ -946,7 +1081,11 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 特徴<br>
 ・データ分布や目的が時間と共に変化する動的な世界を想定する<br>
 ・未来のデータ分布の変化を予測し、将来にわたって高い性能を維持することを目的とする。<br>
-・時間の経過に伴うデータの「分布シフト」に対処する。
+・時間の経過に伴うデータの「分布シフト」に対処する。<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習), <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
+・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 </li>
 
 <br>
@@ -980,6 +1119,11 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 
 <strong>Qualia (クオリア)</strong><br>
 哲学や脳科学において、意識に現れる主観的で個人的な「感覚的な質感」や「感じ」のこと。<br>
+<br>
+『<strong><span style="color:magenta;">クオリア間の類似性が距離の公理（最小性、対称性、三角不等式）を満たすかどうかといった根本的な疑問さえも未だ解決されていない</span></strong>。 クオリアの「空間」については様々な種類が提案されているが、すべてのクオリアを何らかの高次元空間内の点とみなせるかどうかは不明である。現段階では、クオリアのための何らかの空間の存在を仮定するのではなく、<strong><span style="color:magenta;">一歩下がってクオリアの数学的「構造」の可能性を探る方がよいかもしれない。これが、「クオリア構造」パラダイムである･･･</span></strong>』<br>
+The Qualia Structure Paradigm: towards a construction of a Qualia Periodic Table for the dissolution of the Hard Problem of Consciousness (2024)<br>
+(クオリア構造パラダイム：意識の難問解決のためのクオリア周期表の構築に向けて)<br>
+<br>
 <a href="data/Papers_Qualia.html">Papers</a>
 </li>
 
@@ -1108,9 +1252,10 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 <li>
 
 <strong>self-consistency (自己無撞着性, 自己整合性) </strong><br>
-</li>
 大規模言語モデル（LLM）の推論能力を向上させるためのプロンプトエンジニアリング手法の一つ。
+</li>
 <br>
+
 
 <li>
 
@@ -1149,17 +1294,17 @@ AIシステムが自らのコードや構造を複製、または改良して新
 
 <li id="ShortcutLearning">
 
-<strong>Shortcut Learning</strong><br>
-機械学習モデルが、意図された本質的な特徴ではなく、訓練データに存在する安易で表層的なパターンや無関係な相関関係を学習してしまう現象。<br>
+<strong>Shortcut Learning (ショートカット学習)</strong><br>
+機械学習モデルが、意図された本質的な特徴ではなく、訓練データに存在する安易で表層的なパターンや無関係な相関関係を学習してしまう現象。Simplicity Biasが原因で起こる現象。<br>
 <br>(関連項目)<br>
-・<a href="#SimpleBias">Simple Bias</a>
+・<a href="#SimplicityBias">Simplicity Bias</a>
 </li>
 
 <br>
 
-<li id="SimpleBias">
-<strong>Simple Bias </strong><br>
-AIモデルが複雑なデータや特徴を無視して、単純で表面的なパターンに基づいて判断や予測を行ってしまう傾向のこと。<br>
+<li id="SimplicityBias">
+<strong>Simplicity Bias (単純性バイアス)</strong><br>
+AIモデルが複雑なデータや特徴を無視して、単純で表面的なパターンに基づいて判断や予測を行ってしまう傾向のこと。結果として Sortcut Learning を行ってしまう。<br>
 
 <br>(関連項目)<br>
 ・<a href="#ShortcutLearning">Shortcut Learning</a>
@@ -1382,9 +1527,21 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 
 <li>
 
-<li>
+<li id="WordEmbeddings">
 <strong>Word Embeddings (単語埋め込み) </strong><br>
-自然言語処理（NLP）において、単語の意味や文法的な関係を、コンピューターが計算しやすい数値の列（ベクトル）で表現する技術。
+自然言語処理（NLP）において、単語の意味や文法的な関係を、コンピューターが計算しやすい数値の列（ベクトル）で表現する技術。<br>
+
+<br>
+・静的埋め込み: Word2Vec(2013), GloVe(2014)<br>
+　大量のテキストデータから単語の出現パターンを学習。<br>
+　その意味を数値ベクトル(埋め込み)として表現した。<br>
+<br>
+・文脈依存埋め込み: ELMo(2018), BERT(2018)<br>
+　文脈に応じて動的に単語ベクトルを生成する。<br>
+　これにより、<strong><span style="color:magenta;">多義語　（例：「apple」が「リンゴ」か「会社」か）の意味の違いを区別できるようになった。</span></strong><br>
+
+<br>(関連項目)<br>
+・<a href="#DistributionalHypothesis">Distributional Hypothesis</a> (分布仮説)
 </li>
 
 <br>
@@ -1393,7 +1550,10 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 
 <strong>World Model</strong><br>
 AIが外部の観測情報（画像や音声など）から、環境のダイナミクス（物理法則や因果関係）を学習して獲得する、内部的なシミュレーションモデルのこと。<br>
-
+<br>
+1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。<br>
+<br>
+<a href="data/Papers_WorldModel.html">Papers</a>
 </li>
 </ul></div><p>
 
