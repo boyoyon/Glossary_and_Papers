@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Grokking</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Grokking</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+
+<h3>Grokking: Generalization beyond overfitting on small algorithmic datasets (2022)<br><span style="color:blue;">グロッキング: 小規模アルゴリズムデータセットにおける過剰適合を超える汎化</span></h3>
+
+<p>
+最初に「グロッキング」現象を発見し、命名し、調査した論文。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2201.02177">論文はこちら</a><br>
+<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2022_GROKKING%20-%20GENERALIZATION%20BEYOND%20OVERFITTING%20ON%20SMALL%20ALGORITHMIC%20DATASETS/GROKKING%20-%20GENERALIZATION%20BEYOND%20OVERFITTING%20ON%20SMALL%20ALGORITHMIC%20DATASETS.html">機械翻訳はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2201.02177v1">要約はこちら</a><br>
+</p>
+
+<h3>Grokking as the Transition from Lazy to Rich Training Dynamic (2023)<br><span style="color:blue;">グロッキング：怠惰な訓練ダイナミクスから豊かな訓練ダイナミクスへの移行</span></h3>
+
+<p>
+ニューラルネットワークにおけるグロッキング現象を、初期の「怠惰な(lazy)」訓練フェーズから「豊かな(rich)」特徴学習フェーズへの移行として説明した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2310.06110">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2310.06110v3">要約はこちら</a><br>
+</p>
+
+
+<h3>Explaining grokking through circuit efficiency (2023)<br><span style="color:blue;">回路効率を通じたグロッキングの解明</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・「訓練データをそのまま記憶する回路」と「データの背後にある普遍的なパターンを学習する汎化回路」という、2種類の解法が存在する。<br>
+</li><li>
+・記憶回路は学習が速い一方で非効率的であり、汎化回路は学習が遅いがより効率的<br>
+</li><li>
+・学習の初期段階では、より早く形成される非効率な記憶回路が優位になるため、モデルは訓練データを暗記する。<br>
+</li><li>
+・訓練が長期間続くにつれて、「重み減衰（weight decay）」などの効果により,効率的な汎化回路が徐々に形成され、最終的に記憶回路に取って代わる。この移行が完了したときに、モデルの汎化能力が劇的に向上し、Grokking として観察される
+</li>
+</ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2309.02390">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2309.02390v1">要約はこちら</a><br>
+</p>
+
+
+<h3>GROKKING AT THE EDGE OF NUMERICAL STABILITY (2025)<br><span style="color:blue;">数値的安定性の限界を突き止める</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・グロッキングなしで過剰適合するケースは、浮動小数点エラーが極端な値によって引き起こされる。これをソフトマックス崩壊 (SC) と呼ぶ 。<br>
+</li><li>
+・SCを回避するための介入、例えば浮動小数点精度の向上や数値的に安定したSoftmaxの新しいバージョン（ステーブルマックス）、正規化なしではこれまで存在しなかった設定でグロッキングが発生する<br>
+</li><li>
+・過剰適合と交差エントロピー損失がモデルを制御されていないロジット成長の方向に押し進めるため、　モデルがSCに近づくことがわる。これをナイーブ損失最小化（NLM）と呼ぶ<br>
+</li><li>
+・新しい最適化手法によってNLMを回避できることを実証した(⟂Grad)<br>
+</li></ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2501.04697">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2501.04697v2">要約はこちら</a><br>
+</p>
+
+
+<h3>What Can Grokking Teach Us About Learning Under Nonstationarity? (2025)<br><span style="color:blue;">非定常状態での学習について グロッキングから 何が学べるか?</span></h3>
+
+<p>
+グロッキングできれば、継続的に学習できる。
+</p>
+<center><img src="images/PrimacyBias.svg"></center>
+<p>
+プライマシーバイアス（上段）とグロッキング（下段）はどちらも、特徴学習の欠如（黄色）によりネットワークの汎化能力が低下する期間を示す。プライマシーバイアスでは、これは初期トレーニングフェーズで学習した不適切な特徴（青）が原因である。グロッキングでは、ネットワークは最終的に特徴学習のダイナミクス（緑）を回復し、汎化能力を発揮する。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2507.20057">論文はこちら</a><br>
+<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2025_WHAT%20CAN%20GROKKING%20TEACH%20US%20ABOUT%20LEARNING/WHAT%20CAN%20GROKKING%20TEACH%20US%20ABOUT%20LEARNING%20UNDER%20NONSTATIONARITY.html">機械翻訳はこちら</a>
+</p>
+
+
+<h3>Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking (2025)<br><span style="color:blue;">平坦性は必要だが、ニューラルコラプスは不要：グロッキングによる汎化の再考</span></h3>
+
+<p>
+ニューラルコラプスと損失ランドスケープの平坦性は理論的にも経験的にも汎化と結び付けられてきた。しかし、どちらの現象の因果関係も依然として不明だった。グロッキングを用いてこれらの疑問を解明した。 ニューラルコラプスと相対的平坦性はどちらも汎化の開始時に出現するが、平坦性のみが一貫して汎化を予測できることが分かった。
+グロッキングが幾何学的基礎を分離するための強力なプローブとしてどのように機能するかを実証した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2509.17738">論文はこちら</a><br>
+
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

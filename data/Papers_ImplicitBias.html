@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Implicit Bias</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Implicit Bias (暗黙のバイアス)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+
+<!--●--> <h3>Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings (2014)<br><span style="color:blue;">男性とコンピュータープログラマーの関係は、女性と主婦の関係と同じ？単語埋め込みのバイアス除去する</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・<strong><span style="color:magenta;">Word2vecのような単語埋め込み（word embeddings）に、人種的・性的なステレオタイプがどのように反映されているかを示した。</span></strong>
+</li><li>
+・単語の類似性を数学的に扱うことで、man と computer programmer の関係が woman と homemaker の関係に似ているといった、言語モデルが学習した偏見を具体的に示した。
+</li><li>
+・この論文は、機械学習モデルの公平性に関する研究の先駆けとなり、その後の研究に大きな影響を与えた。
+</li></ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/1607.06520">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1607.06520v1">要約はこちら</a><br>
+</p>
+
+<!--●--> <h3>Machine Bias: There's Software Used Across the Country to Predict Future Criminals. And It's Biased Against Blacks (2016)<br><span style="color:blue;">機械による偏見：将来の犯罪者を予測するソフトウェアが全米で使われている。しかも、黒人に対しては偏見がある</span></h3>
+
+<p>
+AIの偏見の危険性を一般に広く知らしめた画期的な調査報道。
+<div class="styleBullet">
+<ul><li>
+・<strong><span style="color:magenta;">犯罪者の再犯リスクを予測する「COMPAS」と呼ばれるソフトウェアが、白人被告に比べて黒人被告の再犯リスクを過大に予測する傾向があることを明らかにした。</span></strong>
+</li><li>
+・複雑なアルゴリズムの不透明さが、人種的格差を助長する危険性を世間に知らしめた。この問題は、AIの公平性、透明性、説明責任に関するその後の研究と議論を促した。
+</li></ul></div> 
+</p>
+<p>
+<a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">投稿はこちら</a>
+</p>
+
+
+<!--●--> <h3>Quantifying and Reducing Gender Bias in Word Embeddings (2016)<br><span style="color:blue;">単語埋め込みにおけるジェンダーバイアスの定量化と削減</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・<strong><span style="color:magenta;">NLPモデルに組み込まれたジェンダーバイアスの度合いを定量化する新しい手法を提案した。</span></strong>
+</li><li>
+・バイアスの評価をより厳密に行うことで、公平性の改善に向けた研究が進んだ。
+</li></ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/1606.06121">論文はこちら</a>
+</p>
+
+
+<!--●--> <h3>Men Also Like Shopping: Reducing Gender Bias Amplification using Corpus-level Constraints (2017)<br><span style="color:blue;">男性もショッピングが好き：コーパスレベルの制約を用いたジェンダーバイアス増幅の低減</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・集合体としての<strong><span style="color:magenta;">テキストデータ（コーパス）に含まれるジェンダーバイアスを特定し、AIモデルがこれを増幅するメカニズムを分析した。</span></strong>
+</li><li>
+・特定の職業（例：「プログラマー」）とジェンダー（例：「男性」）との関連付けを修正し、ジェンダーバイアスの増幅を減らすための手法を提案した。
+</li></ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/1707.09457">論文はこちら</a>
+</p>
+
+<!--●--> <h3 id="latest">Gender Shades: Intersectional Phenotypic and Gender Bias in Commercial Artificial Intelligence Services (2018)<br><span style="color:blue;">ジェンダー・シェード：商用人工知能サービスにおける交差的表現型とジェンダーバイアス</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・<strong><span style="color:magenta;">商業的に利用されている顔認識AIサービスについて、肌の色や性別によって性能に大きなばらつきがあることを示した。</span></strong>
+</li><li>
+・肌の色の濃い女性を認識する際の誤り率が、肌の色の薄い男性を認識する際の誤り率よりもはるかに高いことを明らかにした。これは、AIのバイアスが人種とジェンダーの複合的な交差性（インターセクショナリティ）によって悪化することを示す画期的な研究であり、学術界や社会に大きな影響を与えた。
+</li></ul></div>
+</p>
+<p>
+<a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">論文はこちら</a>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<!--●-- <h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

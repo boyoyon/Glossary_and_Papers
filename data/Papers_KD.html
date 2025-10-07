@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Knowledge Distillation</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Knowledge Distillation (知識蒸留)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<!--●--> <h3>Distilling the knowledge in a neural network (2015)<br><span style="color:blue;">ニューラルネットワーク内の知識を蒸留する</span></h3>
+
+<p>
+より小さな「生徒」ネットワークがより大きな「教師」ネットワークから学習するという、知識蒸留（KD）の概念を導入した基礎となる論文。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1503.02531">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1503.02531v1">要約はこちら</a><br>
+</p>
+
+
+<!--●--> <h3>Fantastic Gains and Where to Find Them: On the Existence and Prospect of General Knowledge Transfer between Any Pretrained Model (2023)<br><span style="color:blue;">目覚ましい成果とその見つけ方：あらゆる事前学習済みモデル間での汎用的な知識転移の存在と展望</span></h3>
+
+<p>
+事前学習済み深層学習モデルの任意のペア間で、<strong><span style="color:magenta;">弱いモデルから強いモデルへの転送を含め、相補的な知識を一貫して転送し、学生モデルの精度を向上させる</span></strong>手法を提案している。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2310.17653">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2310.17653v2">要約はこちら</a><br>
+</p>
+
+
+<!--●--> <h3 id="latest">Merge-of-Thought Distillation (2025)<br><span style="color:blue;">思考の統合蒸留</span></h3>
+
+<p>
+複数の多様な教師モデルからの複雑なChain-of-Thought推論を、コンパクトな学生LLMに統合する反復フレームワークを提示し、単一教師および単純な複数教師蒸留法を上回る性能を発揮する。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2509.08814">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2509.08814v2">要約はこちら</a><br>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<!--●-- <h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+
+
+<div class="styleBullet">
+<ul><li>
+
+</li><br><li>
+
+</li></ul></div>
+
+-->
+
+    </body>
+</html>

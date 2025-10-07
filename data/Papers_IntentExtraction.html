@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Intent Extraction</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Intent Extraction (意図抽出)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<!--●--> <h3>CLINC-150: A Dataset for In-Domain and Out-of-Distribution Intent Classification (2019)<br><span style="color:blue;">CLINC-150: ドメイン内および分布外の意図分類のためのデータセット</span></h3>
+
+<p>
+・意図抽出のベンチマークデータセットとして広く利用されている論文。<br>
+・150のドメイン内意図クラスと、未知の意図（out-of-scope）を検出するタスクの両方に対応している。
+</p>
+<p>
+<a href="https://archive.ics.uci.edu/dataset/570/clinc150">データセットはこちら</a>
+</p>
+
+
+<!--●--> <h3>Learning Intents behind Interactions with Knowledge Graph for Recommendation (2021) <br><span style="color:blue;">推薦のための知識グラフを用いたインタラクションの背後にある意図学習</span></h3>
+
+<p>
+インタラクションデータのみからユーザーの意図をモデル化し、知識グラフを用いてユーザーの嗜好の多様な側面を捉えるための基礎的な研究
+</p>
+<p>
+<a href="https://arxiv.org/abs/2102.07057">論文はこちら</a>
+</p>
+
+<!--●--> <h3>Open Intent Extraction from Natural Language Interactions (2021)<br><span style="color:blue;">自然言語インタラクションからのオープンインテント抽出</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+・従来の一つの発話に対して一つの意図を分類するタスクを超え、未知の意図タイプを「発見」する新しい問題を提案した。
+</li><li>
+・教師なし学習に近く、事前学習で遭遇していない意図を発見する能力に焦点を当てている。
+</li><li>
+・LSTMとCRFを組み合わせたモデル（OPINE）を使用し、オープンワールド設定で意図をシーケンスタギングとして抽出する。
+</li></ul></div>
+</p>
+<p>
+<a href="https://www.ijcai.org/proceedings/2021/0663.pdf">論文はこちら</a>
+</p>
+
+<!--●--> <h3>Identifying User Goals from UI Trajectories (2024)<br><span style="color:blue;">UI軌跡からのユーザー目標の特定</span></h3>
+
+<p>
+UI軌跡からの目標識別の最初の形式的な定義を提供し、タスクの成功裏の完了とユーザーの熟練度に関する明確な前提を確立した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2406.14314">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2406.14314v2">要約はこちら</a><br>
+</p>
+
+
+<!--●--> <h3 id="latest">Achieving Superior Intent Extraction through Decomposition (2025)<br><span style="color:blue;">分解による優れた意図抽出の実現</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+ユーザーインターフェース（UI）の操作履歴から、ユーザーの意図を抽出しようとする画期的な研究。
+</i><li>
+リソース制約のある小型モデルでも、高性能な大型マルチモーダルLLMに匹敵する性能を達成。
+</li><li>
+「分解」アプローチを採用し、まず構造化された要約を生成し、次にその要約から意図を抽出することで、複雑なタスクを効率化している。
+</li></ul></div>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2509.12423">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2509.12423v1)">要約はこちら</a><br>
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<!--●-- <h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+
+
+<div class="styleBullet">
+<ul><li>
+
+</li><br><li>
+
+</li></ul></div>
+
+-->
+
+    </body>
+</html>

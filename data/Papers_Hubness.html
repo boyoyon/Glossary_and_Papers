@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Hubness</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Hubness (ハブ性)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+
+<!--●--> <h3>Hubs in space: Popular nearest neighbors in high-dimensional data (2010)<br><span style="color:blue;">空間内のハブ：高次元データにおける人気の最近傍点</span></h3>
+
+<p>
+高次元データにおけるハブ性現象を提唱し、定義した基礎的な論文。
+<br>
+<div class="styleBullet">
+<ul><li>
+<strong>Hubness現象の体系的記述</strong><br>
+高次元データ空間において、一部のデータ点（「ハブ」）が他の多くのデータ点の\(k\)近傍に頻繁に現れる現象を初めて体系的に明らかにした。
+</li><br><li>
+<strong>次元の呪いとの関連性</strong><br>
+この現象が、高次元データに固有の性質（「次元の呪い」）であることを理論的・経験的に示した。
+</li><br><li>
+<strong>機械学習への影響</strong><br>
+ハブが、k近傍法（kNN）に基づくさまざまな機械学習アルゴリズム（分類、半教師あり学習、クラスタリングなど）に悪影響を及ぼすことを明らかにしまた。
+</li></ul></div> 
+</p>
+<p>
+<a href="https://www.jmlr.org/papers/volume11/radovanovic10a/radovanovic10a.pdf">論文はこちら</a>
+</p>
+
+<!--●--> <h3>The Hubness Phenomenon: Fact or Artifact ? (2014)<br><span style="color:blue;">ハブネス現象：事実か、それとも作り話か ?</span></h3>
+
+<p>
+<div class="styleBullet">
+<ul><li>
+<strong>「次元の呪い」に代わる原因を提示</strong><br>
+Hubnessがデータの次元性そのものに起因するのではなく、データ空間内の密度勾配、特に境界効果に起因するものである可能性が高いと主張した。
+</li><br><li>
+<strong>低次元データでのハブネス</strong><br>
+適切な密度勾配を設定することで、低次元データでもハブネス現象を人為的に引き起こすことができることを示した。
+</li></ul></div>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+
+<!--●--> <h3 id="latest">Hubs and Hyperspheres: Reducing Hubness and Improving Transductive Few-shot Learning with Hyperspherical Embeddings (2023)<br><span style="color:blue;">ハブと超球：超球面埋め込みによるハブ性の低減とトランスダクティブ少数ショット学習の改善</span></h3>
+
+<p>
+高次元空間では、データ ポイントはハブと呼ばれる特定の典型的なポイントの周りに集まる傾向があり、最近傍ベースの FSL(Few-Shot Learning) アプローチのパフォーマンスに悪影響を及ぼす。<br>
+<br>
+入力空間と埋め込み空間の両方で局所的な類似性を維持しながら、データ表現を超球面上に均一に埋め込む手法を提示する。この手法は、ハブ性を低減し、トランスダクティブ・フューショット学習で現在使用されている最先端のFSL分類器の性能を向上させることが示されている。この新しい埋め込み手法であるno-HUBと関連するnoHUB-Sは、分類器に依存しないため、現在使用されているほとんどの市販のFSL分類器で使用できる。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2303.09352">論文はこちら</a>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<!--●-- <h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>

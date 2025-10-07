@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>World Model</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>World Model (世界モデル)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<h3>[書籍] The Nature of Explanation (1943)<br><span style="color:blue;">説明の本質</span></h3>
+
+<p>
+1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。クレイクのメンタルモデルまたはシミュレーションの概念は、「認知革命」の先駆けとなった。
+</p>
+<p>
+<a href="https://markhuckvale.com/research/hp/Craik_NOE_Chapter_5.pdf">5章はこちら</a><br>
+</p>
+
+<h3>Making the world differentiable (1990)<br><span style="color:blue;">世界を微分可能にする</span></h3>
+
+<p>
+RNN を予測的な世界モデルとして訓練する「コントローラー–モデル(C–M)アーキテクチャ」を最初に提案した論文のひとつ。
+</p>
+<p>
+<a href="https://people.idsia.ch/~juergen/FKI-126-90_(revised)bw_ocr.pdf">論文はこちら</a><br>
+</p>
+
+<h3>World models (2018)<br><span style="color:blue;">世界モデル</span></h3>
+
+<p>
+生成ニューラルネットワーク (VAEとMDN-RNN) を用いて環境の圧縮された予測モデルを学習し、効率的なエージェント制御を促進する。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1803.10122">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1803.10122v4">要約はこちら</a><br>
+</p>
+
+
+<h3>Recurrent world models facilitate policy evolution (2018)<br><span style="color:blue;">再帰的世界モデルはポリシーの進化を促進する</span></h3>
+
+<p>
+「ワールドモデル」の概念を定義した初期の研究の一つ。
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a hr
+
+
+<h3>General agents need world models (2025)<br><span style="color:blue;">ジェネラルエージェントには世界モデルが必要</span></h3>
+
+<p>
+多段階の目標指向タスクを確実に達成できるあらゆる人工エージェントが、その環境の正確な予測モデルを学習している必要があることを形式的に証明している。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2506.01622">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2506.01622v2">要約はこちら</a><br>
+
+
+<h3>What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models (2025)<br><span style="color:blue;">基礎モデルは何を発見したか？帰納的バイアスを用いて世界モデルを探る</span></h3>
+
+<p>
+　基盤モデルが真に根底にある「世界モデル」を学習しているのか、それとも単によく予測するだけなのかを評価するために「帰納バイアスプローブ」を導入している。この結果、これらのモデルは予測に優れている一方で、物理学、格子問題、ゲームの各ドメインにおいて、根本的な支配原理ではなく、タスク固有のヒューリスティックや粗い表現を学習していることが一貫して示され、真の世界モデルに対する帰納バイアスが弱いことが明らかになった。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2507.06952">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2507.06952v2">要約はこちら</a><br>
+</p>
+
+
+<h3 id="latest">Training Agents Inside of Scalable World Models (2025)<br><span style="color:blue;">スケーラブルな世界モデル内でのエージェントのトレーニング</span></h3>
+
+<p>
+ワールドモデルは、動画から一般的な知識を学習し、想像の中で行動を訓練するための経験をシミュレートすることで、知能エージェントへの道を開く。しかしながら、従来のワールドモデルは、複雑な環境における物体の相互作用を正確に予測することができなかった。本研究では、高速かつ高精度なワールドモデル内で強化学習によって制御タスクを学習するスケーラブルなエージェント、Dreamer 4を紹介する。複雑なビデオゲーム「Minecraft」において、このワールドモデルは物体の相互作用とゲームメカニクスを正確に予測し、従来のワールドモデルを大幅に上回る性能を発揮する。
+</p>
+<p>
+<a href="https://www.arxiv.org/abs/2509.24527">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2509.24527v1">要約はこちら</a><br>
+</p>
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>
