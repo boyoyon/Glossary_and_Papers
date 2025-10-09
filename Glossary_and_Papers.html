@@ -173,12 +173,49 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 
 <br>
 
+<li><strong>AI for ･･･　(･･･のためのAI)</strong><br>
+<br>
+<ul>
+<li><strong>AI for Science (科学のためのAI)</strong><br>
+<br>
+・飛躍的なスピードアップ<br>
+・人間の認知限界やバイアスを超えた仮説生成と知識発見<br>
+・自律的な研究サイクル「AIサイエンティスト」<br>
+・代理モデル（サロゲートモデル）によるシミュレーションの高度化<br>
+
+<br>(関連項目)<br>
+・<a href="#ScientificDiscovery">Scientific Discovery (科学的発見), Scientific Research (科学研究)</a>
+</li><br>
+
+<li><strong>AI for Healthcare (医療)</strong><br>
+・診断・治療の高度化 / 創薬 / ヘルスケア管理
+</li><br>
+
+<li><strong>AI for Manufacturing (製造)</strong><br>
+・予知保全(故障の予兆を検知) / 品質管理 / プロセス最適化
+</li><br>
+
+<li><strong>AI for Materials Science (材料科学)</strong><br>
+・新素材開発 / マテリアル・データ基盤
+</li>
+
+</ul>
+</li>
+
+<br>
+
 <li>
 <strong>Attention Sinks</strong><br>
 大規模言語モデル（LLM）において、系列の最初のほうにあるトークンに、意味的な重要性にかかわらず不釣り合いなほど過剰なアテンション（注意）が向けられる現象。<br>
 Vision Transformer (ViT) でも同様の現象が確認されており、モダリティを超えたトランスフォーマーアーキテクチャにとって基本的なものである可能性が示唆されている。<br>
 <br>
 <a href="data/Papers_AttentionSink.html">Papers</a>
+</li>
+
+<br>
+
+<li><strong>Auto(matic) ･･･, Autonomous ･･･ (自動･･･, 自律･･･)</strong><br>
+たくさんあるので, Auto(matic), Autonomous を削除した項目を参照
 </li>
 </ul></div></p>
 
@@ -200,7 +237,7 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <center><img src="data/images/BaldwinEffect.svg"></center>
 <br>
 
-<li>
+<li id="BeningOverfitting">
 <strong>Bening Overfitting (良性過学習)</strong><br>
 深層学習モデルが訓練データに含まれるノイズまで完全に学習（補間）しているにもかかわらず、未知のデータに対して高い汎化性能を発揮する現象。<br>
 従来の機械学習の教科書では、過学習（オーバーフィッティング）は汎化性能を低下させる「悪性」なものだとされてきた。<br>
@@ -208,7 +245,24 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <a href="data/Papers_BeningOverfitting.html">Papers</a>
 <br>
 <center><img src="data/images/BeningOverfitting.svg"></center>
-</il></div></p>
+
+<br>
+<br>(関連項目)<br>
+・<a href="#DoubleDescent">Double Descent</a> (二重降下)<br>
+・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)
+
+</li>
+
+<br>
+
+<li><strong>BIBO: Bias In, Bias Out</strong><br>
+「BIASの掛かったデータを入力すると, BIASの掛かった推論結果が出力される」。AI分野で使われる格言。<br>
+GIGO: Garbage in, garbage out（ゴミを入れれば、ゴミが出る）に由来し,GIGO は FIFO: First in, first out (最初に入力されたデータが最初に出力される) に由来するといわれている。
+
+</li>
+
+</div>
+</p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -248,12 +302,18 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 
 <br>
 
-<li>
+<li id="CoT">
 <strong>CoT: Chain-of-Thought (思考連鎖)</strong><br>
 大規模言語モデル（LLM）の性能を向上させるためのプロンプト技術の一種。<br>
 複雑な問題を解く際に、最終的な答えだけでなく、その答えに至るまでの論理的な思考プロセスを段階的に示すようモデルに促すことで、推論能力を高める。<br>
 <br>
 <a href="data/Papers_CoT.html">Papers</a>
+<br>
+<center><img src="data/images/CoT.svg"></center>
+<br>(関連項目)<br>
+・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
+・<a href="#SelfConsistency">Self-Consistency</a> (自己無撞着性, 自己整合性)<br>
+・<a href="#ToT">ToT: Tree of Thoughts</a> (思考ツリー)
 </li>
 
 <br>
@@ -261,7 +321,11 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <li id="CompositionalityGap"><strong>Compositionality Gap (構成性ギャップ)</strong><br>
 AIモデルが、個々の独立した事実は知っているにもかかわらず、それらを組み合わせて複雑な問題を解くことが苦手な現象。<br>
 <br>
-<a href="data/Papers_CompositionalityGap.html">Papers</a>
+<a href="data/Papers_CompositionalityGap.html">Papers</a><br>
+
+<br>(関連項目)<br>
+・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
+
 </li>
 
 <br>
@@ -310,8 +374,13 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <strong>Curse of Dimensionality (次元の呪い)</strong><br>
 
 データや問題の次元数（特徴量の数）が増えるにつれて、必要なデータ数や計算量が指数関数的に増加し、計算効率の低下やモデルの精度低下を招く現象。<br>
-「次元の呪い」と「次元の祝福」がある。<br>
-・高次元ではデータが疎になり、通常の統計手法がうまく機能しなくなるという問題<br>
+・計算コストの爆発：計算量が \(2^{次元},(次元)^2\), ･･･ だと手に負えなくなる。<br>
+・疎らなデータ:　高次元ではデータがまばらになる<br>
+・距離の均一化:　どのデータもほぼ同じ距離になる<br>
+・球面集中現象(concentration on the sphere): ほとんどのデータが球の表面近くに分布するようになる<br>
+　：<br>
+「次元の呪い」だけでなく「次元の祝福」もある。<br>
+『The curses and blessings of dimensionality』(2000)<br>
 ・高次元空間には特有の構造（例えば、低次元の多様体など）があり, 新たな手法が生まれる可能性がある。<br>
 <br>
 <a href="data/Papers_Curse_of_Dimensionality.html">Papers</a>
@@ -320,17 +389,19 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <br>
 
-<li><strong>Curse of two-hop reasoning（2ホップ推論の呪い）</strong><br>
+<li id="CurseOf2hopReasoning"><strong>Curse of two-hop reasoning（2ホップ推論の呪い）</strong><br>
 大規模言語モデル（LLM）が、個別に学習した2つの事実（例: A→B と B→C）を結びつけて推論する（例: A→C）ことができない、または非常に困難であるという現象。<br>
 (例)1ホップの質問：「『イマジン』の演奏者は誰?」「ジョン・レノンの配偶者は誰?」には答えられる。<br>
 　　2ホップの質問：「『イマジン』の演奏者の配偶者は誰?」）には答えられない。<br>
-<a href="https://arxiv.org/abs/2411.16353v1">The Two-Hop Curse: LLMs trained on A->B, B->C fail to learn A-->C</a> (2024)<br>
+<br>
+『<a href="https://arxiv.org/abs/2411.16353v1">The Two-Hop Curse: LLMs trained on A->B, B->C fail to learn A-->C</a> (2024)』<br>
 
 推論のステップを明示的に示す「思考の連鎖（Chain-of-Thought）」プロンプティングがあれば、2ホップ推論を実行できる。しかし、そうした明示的な指示がないと、個々の事実を結合できない。<br>
 これは、LLMが学習データから自動的に、あるいは「潜在的に」推論ステップを結びつける能力が欠けていることを示唆している。<br>
 Compositionality Gapの一例。<br>
 <br>(関連項目)<br>
-・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)
+・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
+・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)
 </li>
 
 </ul></div></p>
@@ -412,6 +483,7 @@ Compositionality Gapの一例。<br>
 <br>
 <a href="data/Papers_DoubleDescent.html">Papers</a><br>
 <br>(関連項目)<br>
+・<a href="#BeningOverfitting">Bening Overfitting</a> (良性過学習)<br>
 ・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)
 </li>
 <center><img src="data/images/DoubleDescent.svg"></center>
@@ -427,11 +499,28 @@ Compositionality Gapの一例。<br>
 </li><br><li>
 <strong>アンサンブル学習の近似</strong><br>
 Dropoutは、学習ごとに異なるサブネットワークを生成し、<strong><span style="color:magenta;">あたかも多数の異なるネットワークを学習しているかのような効果をもたらす</span></strong>。推論時には、すべてのニューロンを使いつつ、出力に重み付けを行うことで、これらのサブネットワークの予測を平均化するような効果を得られ、計算コストを抑えながらアンサンブル学習と同等の性能を発揮した。
-</li>
-</ul>
 <br>
 <a href="data/Papers_Dropout.html">Papers</a>
 </li>
+</ul>
+</li>
+<br>
+
+<li>
+<strong>Dunning-Kruger Effect (ダニング・クルーガー効果)</strong><br>
+能力の低い人が、自分の能力を過大評価してしまう認知バイアスの一種。<br>
+<br>
+AIモデルもこの効果を起こす。<br>
+・コード モデルはダニング・クルーガー効果の影響を受けるか ?(2025)<br>
+・大規模言語モデルは自信過剰になり、エラーを増幅させる(2025)<br>
+人間もAIの影響を受けてこの効果が変化する。<br>
+・AIはあなたを賢くするが、賢者にはしない(2025)<br>
+<br>
+<a href="data/Papers_Dunning-KrugerEffect.html">Papers</a>
+</li>
+<br>
+<center><img src="data/images/Dunning-Kruger_Effect_Curve.svg"></center>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -472,13 +561,17 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="FlatMinima">
 <strong>Flat minima hypothesis (平坦な最適解空間仮説)</strong><br>
 機械学習モデル、特に深層学習モデルの訓練において、損失関数の「平坦な」最小値に収束したモデルは、未知のデータに対する汎化性能が「鋭い」最小値に収束したモデルよりも優れている、という仮説。<br>
 ・Dinh et al. (2017) らは、モデルのパラメータを再パラメータ化（重みのスケーリングなど）することで、汎化性能を変えずに最小値の鋭さを人為的に操作できることを示し、この仮説に疑問を投げかけた。<br>
 ・スケール不変な「平坦さ」の定義が提案されたり、平坦さの定義自体が再考されたりする研究が進められている。<br>
+<center><img src="data/images/FlatMinima.png"></center>
 <br>
-<a href="data/Papers_FlatMinimaHypothesis.html">Papers</a>
+<a href="data/Papers_FlatMinimaHypothesis.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)</br>
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)
 </li>
 
 <br>
@@ -677,10 +770,64 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
 <h2 id="J">J</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li><strong>Jensen's inequality (イェンセンの不等式)</strong><br>
+<br>
+凸関数 \(f\) と確率変数 \(X\) について、\(E[f(X)]\ge f(E[X])\) という関係が成り立つことを示している。<br>
+直感的には, 凸関数に平均値を代入した値は、関数に代入してから平均をとった値よりも小さくなる、というもの。<br>
+<br>
+・変分ベイズやEMアルゴリズムでは、イェンセンの不等式を使って尤度の下限 (ELBO: Evidence Lower Bound) を導出する。<br>
+<br>
+・2つの確率分布間の違いを測る指標である KL (カルバック・ライブラー)ダイバージェンスが非負 (0以上) であることの証明に使われる。
+</li>
+
+<br>
+
+<li><strong>Japanese Missing Cat Method</strong><br>
+<br>
+AIとは(今のところ)関係ない。Jの項目が少ないのでスペースホルダーとして･･･<br>
+行方不明になった猫を捜す際に、近所にいる野良猫や「ボス猫」に、探している猫の特徴を伝えて協力を求めるという、日本に古くから伝わるという都市伝説的な手法。2025年ごろに海外のSNS、特にTikTokで話題になり、一気に広まった。<br>
+<br>
+<ul>
+<li><strong>1. 近所の猫を探す</strong><br>
+家の近所にいる野良猫、特に縄張りを仕切っていると見られるボス猫を探す。
+</li><li>
+<strong>2. 猫の目線になる</strong><br>
+探してもらう猫の近くでしゃがみこみ、同じ目線になる。
+</li><li>
+<strong>3. 情報を伝える</strong><br>
+行方不明になった猫の名前や特徴を具体的に、ささやくように伝える。
+</li><li>
+<strong>4. 感謝と熱意を伝える</strong><br>
+猫がいかに大切な存在かを訴え、見つけてくれたらお礼をすることを伝える。
+</li><li>
+<strong>5. お礼の品を渡す</strong><br>
+報酬として、その場でキャットフードなどを与える。
+</li></ul>
+</li>
+
+</ul></div>
+</p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
 <h2 id="K">K</h2>
 <p>
 <div class="styleBullet">
 <ul>
+<li>
+<strong>Kan Extension (Kan拡張)</strong><br>
+圏論における「最も普遍的な方法」で関手を拡張するための構成。ある関数をより広い定義域に拡張する操作を、圏論の文脈で一般化したもの。<br>
+1960年に極限を用いてこの拡張を構成した ダニエル・カン (Daniel Marinus Kan) の名に由来している。<br>
+<br>
+『Learning Is a Kan Extension』(2025)<br>
+すべてのエラー最小化アルゴリズムが Kan 拡張として表現できることを証明する。
+</li>
+
+<br>
+
 <li>
 <strong>Knowledge Distillation (知識蒸留)</strong><br>
 機械学習の技術の一つで、大規模で高性能なAIモデル（教師モデル）が持つ知識を、より小型で軽量なAIモデル（生徒モデル）に移転・圧縮する手法。<br>
@@ -701,17 +848,23 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <strong>Latent learning (潜在学習)</strong><br>
 学習した内容が行動にすぐには現れず、適切な動機づけやきっかけが与えられたときに初めて表面化する学習の形態。<br>
 エドワード・トルーマンは、報酬のない状態で迷路を探検させたラットが、後で報酬が与えられるようになると、すぐに迷路を効率的に通り抜けられるようになることを示した。これは、報酬がなくても環境の認知地図（cognitive map）が形成されていたことを示している。<br>
-機械学習では、この概念はデータの「latent space (潜在空間)」と結びつけられることがある。
-
+機械学習では、この概念はデータの「latent space (潜在空間)」と結びつけられることがある。<br>
+<br>
+<a href="data/Papers_LatentLearning.html">Papers</a>
 </li>
 
 <br>
 
 <li>
 <strong>Latent Space (潜在空間) </strong><br>
-モデルが学習した、データの隠された本質的な特徴を捉えた、低次元で抽象的なベクトル空間のこと。
-
+モデルが学習した、データの隠された本質的な特徴を捉えた、低次元で抽象的なベクトル空間のこと。<br>
+<center><img src="data/images/LatentSpace.svg"></center>
+<br>
+『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)<br>
+　(潜在ゾーニングネットワーク：生成モデリング、表現学習、および分類の統一的原理)<br>
+統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。
 </li>
+<center><img src="data/images/LatentZone.svg"></center>
 
 <br>
 
@@ -729,16 +882,36 @@ Continual Learning (継続学習) の別名。<br>
 
 <li>
 <strong>LoRA: Low-rank adaptation of LLM (低ランク適応)</strong><br>
-大規模言語モデル（LLM）を、効率的かつ少ない計算コストで特定のタスクやデータに適応（ファインチューニング）させるための技術
+大規模言語モデル（LLM）を、効率的かつ少ない計算コストで特定のタスクやデータに適応（ファインチューニング）させるための技術。<br>
+<br>
+『LoRA: Low-Rank Adaptation of Large Language Models』 (2021)<br>
+大規模言語モデル（LLM）の事前学習済み重みを凍結し、その横に低ランク行列 (\(A\)と\(B\)) のペアを追加。ファインチューニング時には、この小さな低ランク行列だけを学習させ、元のモデルの重みは変更しない。<br>
+<strong><span style="color:magenta;">ファインチューニングに必要な学習可能なパラメータが劇的に少なくなる</span></strong>ため、効率的な学習を可能にした。<br>
 
 </li>
-
+<center><img src="data/images/LoRA.svg"></center>
 <br>
 
 <li id="LossLandscape">
 
 <strong>Loss Landscape (損失景観)</strong><br>
 ニューラルネットワークのパラメータ（重み）を軸とし、対応する損失関数の値を高さとした多次元の景観。モデルの学習は、この景観の低い場所（最適解）を探すことに相当する。<br>
+<br>
+<a href="data/Papers_LossLandscape.html">Papers</a><br>
+<br>
+『Visualizing the Loss Landscape of Neural Nets』(2018)<br>
+<br>
+<ul>
+<li><strong>可視化手法の提案</strong><br>
+<strong><span style="color:magenta;">高次元の損失関数を、2次元平面上にプロットする革新的な可視化手法を提案した</span></strong>。これにより、学習パラメータ空間の「地形」を視覚的に捉えることが可能になった。
+</li><br>
+<li><strong>平坦な最小値と汎化性能の関係</strong><br>
+可視化の結果、最適解（最小値）の形状が、モデルの汎化性能に大きく影響することを発見した。この論文は、<strong><span style="color:magenta;">「平坦な最小値（flat minima）」にたどり着いたモデルは、より優れた汎化性能を持つことを視覚的に示した</span></strong>。
+</li><br>
+<li><strong>スキップコネクションの効果</strong><br>
+ResNetなどのネットワークで使われる<strong><span style="color:magenta;">「スキップコネクション」が、損失ランドスケープをよりスムーズにする効果があることも明らかにした</span></strong>。
+</li></ul>
+<br>
 <center><img src="data/images/LossLandscape.svg"></center>
 
 <br>(関連項目)<br>
@@ -769,10 +942,10 @@ Continual Learning (継続学習) の別名。<br>
 <li id="LTH">
 <strong>LTH: Lottery Ticket Hyposis (宝くじ仮説)</strong><br>
 大規模なニューラルネットワークの中に、元のネットワークと同じかそれ以上の性能を発揮する、より小さな「サブネットワーク」が存在するという仮説。<br>
+<center><img src="data/images/LTH.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#Pruning">Pruning</a> (枝刈り)<br>
 </li>
-
 </ul></div><p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -840,8 +1013,11 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 <strong>Mode Connectivity (モード連結性)</strong><br>
 ニューラルネットワークのパラメータ空間において、学習によって得られた複数の局所的最適解（ミニマム）が、低い損失関数の値を保ったまま経路で接続されている現象。<br>
+<br>
+<center><img src="data/images/ModeConnectivity.png"></center>
 <br>(関連項目)<br>
-・<a href="#LossLandscape">Loss Landscape</a> (損失景観)
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
+・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
 </li>
 
 <br>
@@ -850,6 +1026,14 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 <strong>Model soups (モデルスープ)</strong><br>
 異なるハイパーパラメータ（学習率、エポック数など）でファインチューニングされた複数のモデルの重みパラメータを平均化し、単一の高性能モデルを作成する手法。<br>
+<br>
+『Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs (2018)』<br>
+<br>
+<ul><li>
+・<strong><span style="color:magenta;">異なる初期値から学習をスタートさせた複数のモデルがたどり着く局所最小値（「モード」）が、低損失の経路で繋がっている現象を発見した</span></strong>。
+</li><br><li>
+・この発見に基づき、<strong><span style="color:magenta;">学習済みの複数のモデルパラメータを線形補間するだけで、低損失を維持しながら、より優れた汎化性能を持つアンサンブルモデルを作成できることを示した</span></strong>。これは、モデルアンサンブルを効率的に行う新しい方法を提示した。
+</li></ul>
 </li>
 
 <br>
@@ -859,6 +1043,10 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 <strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
 複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。
+
+Mixture of Neuron Experts
+https://arxiv.org/abs/2510.05781
+
 </li>
 
 <center><img src="data/images/MoE.svg"></center>
@@ -988,9 +1176,9 @@ DeepMind社によって2014年に発表された。<br>
 <div class="styleBullet">
 <ul>
 <li>
-<strong>PAC Learning: Probably Approximately Correct Learning (高確率で近似的に正しい学習) </strong><br>
+<strong>PAC Learning: Probably Approximately Correct Learning (確率的で近似的に正しい学習) </strong><br>
 機械学習の計算論的学習理論における数学的な枠組みの一つ。<br>
-「高い確率で、近似的に正しい学習ができること」を数学的に保証するための理論。
+「確率的で、近似的に正しい学習ができること」を数学的に保証するための理論。
 </li>
 
 <br>
@@ -1001,7 +1189,11 @@ DeepMind社によって2014年に発表された。<br>
 画像や音声などの信号を、人間が感じる品質や類似性にどれだけ近い形で評価できるかを測る指標のこと。<br>
 LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Distance)などがある。
 </li>
-
+<center><img src="data/images/LPIPS1.svg"></center>
+<!--
+<center><img src="data/images/LPIPS2.svg"></center>
+<center><img src="data/images/LPIPS3.svg"></center>
+-->
 <br>
 
 <li><strong>PINNs: Physics-Informed Neural Networks</strong><br>
@@ -1195,7 +1387,11 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 
 <strong>Reversal Curse (反転の呪い)</strong><br>
-大規模言語モデル（LLM）が学習データで「AはBである」という形式の知識を学んでも、「BはAである」という逆の関係を自動的に推論できない、という現象。
+大規模言語モデル（LLM）が学習データで「AはBである」という形式の知識を学んでも、「BはAである」という逆の関係を自動的に推論できない、という現象。<br>
+<br>
+(例)「プラトンはアリストテレスを教えた」と学習した言語モデル<br>
+　　「アリストテレスの先生は誰でしたか？」という質問に答えられない。<br>
+　　「BはAの親である」から「AはBの息子である」を推論できない。<br>
 
 </li>
 
@@ -1233,7 +1429,7 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
-<li>
+<li id="ScientificDiscovery">
 
 <strong>Scientific Discovery (科学的発見),  Scientific Research (科学研究)</strong><br>
 AI技術を活用して科学のプロセスを加速・自動化し、新しい知識、法則、仮説、物質などを発見すること。
@@ -1244,15 +1440,22 @@ AI技術を活用して科学のプロセスを加速・自動化し、新しい
 <li>
 
 <strong>Scientific Surprise</strong><br>
+『Language Model Perplexity Predicts Scientific Surprise and Transformative Impact』(2025)<br>
 AIシステムがこれまでの知識や人間が期待する予測からは逸脱した、予期せぬ、そして根本的に新しい科学的知見を発見することを指す。
 </li>
 
 <br>
 
-<li>
+<li id="SelfConsistency">
 
-<strong>self-consistency (自己無撞着性, 自己整合性) </strong><br>
-大規模言語モデル（LLM）の推論能力を向上させるためのプロンプトエンジニアリング手法の一つ。
+<strong>Self-Consistency (自己無撞着性, 自己整合性) </strong><br>
+大規模言語モデル（LLM）の推論能力を向上させるためのプロンプトエンジニアリング手法の一つ。<br>
+<br>
+『Self-Consistency Improves Chain of Thought Reasoning in Language Models』(2022)<br>
+「思考連鎖プロンプティングで用いられる単純な貪欲なデコードに代わる、新たなデコード戦略である自己一貫性を提案。･･･多様な推論経路をサンプリングし、次にサンプリングした推論経路を周辺化する(多数決をとる)ことで、最も一貫性のある解を選択する･･･」<br>
+
+<br>(関連項目)<br>
+・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)
 </li>
 <br>
 
@@ -1419,10 +1622,12 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <br>
 
-<li>
+<li id="ToT">
 
 <strong>ToT: Tree of Thoughts (思考ツリー)</strong><br>
-大規模言語モデル（LLM）が複雑な問題を解決する際に、単一の思考プロセスを直線的に進めるのではなく、複数の可能性を同時に探索して最も有望な経路を選択する、より高度な推論フレームワーク。
+大規模言語モデル（LLM）が複雑な問題を解決する際に、単一の思考プロセスを直線的に進めるのではなく、複数の可能性を同時に探索して最も有望な経路を選択する、より高度な推論フレームワーク。<br>
+<br>(関連項目)<br>
+・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)
 </li>
 
 <br>
