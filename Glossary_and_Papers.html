@@ -176,7 +176,7 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <li><strong>AI for ･･･　(･･･のためのAI)</strong><br>
 <br>
 <ul>
-<li><strong>AI for Science (科学のためのAI)</strong><br>
+<li id="AI4S"><strong>AI4S: AI for Science (科学のためのAI)</strong><br>
 <br>
 ・飛躍的なスピードアップ<br>
 ・人間の認知限界やバイアスを超えた仮説生成と知識発見<br>
@@ -184,7 +184,13 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・代理モデル（サロゲートモデル）によるシミュレーションの高度化<br>
 
 <br>(関連項目)<br>
-・<a href="#ScientificDiscovery">Scientific Discovery (科学的発見), Scientific Research (科学研究)</a>
+・AutoML (機械学習ワークフローの自動化)<br>
+・Democratization of AI (AIの民主化)<br>
+・<a href="https://ja.wikipedia.org/wiki/ラボラトリーオートメーション">Laboratory Automation</a><br>
+・Robot Scientist<br>
+・<a href="#ScientificDiscovery">Scientific Discovery (科学的発見), Scientific Research (科学研究)</a><br>
+
+
 </li><br>
 
 <li><strong>AI for Healthcare (医療)</strong><br>
@@ -196,10 +202,31 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 </li><br>
 
 <li><strong>AI for Materials Science (材料科学)</strong><br>
-・新素材開発 / マテリアル・データ基盤
+・新素材開発 / マテリアル・データ基盤<br>
+・Material Imformatics
 </li>
 
 </ul>
+</li>
+
+<br>
+
+<li><strong>Anna Karenina Principle (アンナ・カレーニナの法則)</strong><br>
+ トルストイの長編小説『アンナ・カレーニナ』<br>
+ 「幸せな家族はどれも同じように見え、不幸な家族はそれぞれに不幸である」<br>
+<br>
+「成功には必要条件を全て満たさなければならないが、失敗は1つ欠けるだけで起こる」という原則。文学作品の一節に由来し、生態学や経営学など幅広い分野で引用されてきたが、近年では機械学習の分野においても言及されるようになった。<br>
+<center><img src="data/images/AnnaKareninaPrinciple.svg"></center>
+<br>
+『Applying Anna Karenina Principle in Deep Learning for Image Classification』(2023)<br>
+(ストレスと適応：画像分類のためのディープラーニングにおけるアンナ・カレーニナ原理の適用)<br>
+<br>
+・幸福な家庭 (汎化性の高いモデル)<br>
+　汎化性能が高いモデルは、その内部表現（特徴量）が互いに似通っている。<br>
+・不幸な家庭 (汎化性の低いモデル)<br>
+　汎化性能が低いモデルは、その内部表現に大きなばらつき（多様性）が見られる。<br>
+<br>(関連項目)<br>
+・<a href="#NeuralCollapse">Neural Collapse</a>　関係あるか不明だが･･･
 </li>
 
 <br>
@@ -232,9 +259,22 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 獲得形質が遺伝するというラマルク説とは異なり、ネオダーウィニズムの枠組みで説明される。<br>
 進化的アルゴリズム（遺伝的アルゴリズムなど）と機械学習（ニューラルネットワークなど）を組み合わせたAI研究において、重要な概念として応用されている。<br>
 <br>
-<a href="data/Papers_BaldwinEffect.html">Papers</a>
-</li>
+<a href="data/Papers_BaldwinEffect.html">Papers</a><br>
+<br>
 <center><img src="data/images/BaldwinEffect.svg"></center>
+<br>
+『Evolution imposes an inductive bias that alters and accelerates learning dynamics
+』(2025)<br>
+　(進化は学習のダイナミクスを変化させ加速させる誘導バイアスを課す)<br>
+オンライン学習が進化の速度と過程に与える影響は、ボールドウィン効果として知られている。<br>
+計算用語で言えば、これは相互最適化ループと考えることができる。<br>
+・Baldwinの経路: オンライン学習(世代内の適応)<br>
+・Darwinの経路: 世代間の適応<br>
+<center><img src="data/images/EvolutionalConditioning.svg"></center>
+・脳と人工ニューラルネットワークは、行動を生み出し、学習を導くための環境からのフィードバックを受け取ることで、オンライン学習を行う。<br>
+・生物学では、進化的最適化とオンライン学習は共存しており、進化的圧力が遺伝情報に作用して新しい脳が生成され、それがオンライン学習を行う。
+</li>
+
 <br>
 
 <li id="BeningOverfitting">
@@ -258,6 +298,22 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <li><strong>BIBO: Bias In, Bias Out</strong><br>
 「BIASの掛かったデータを入力すると, BIASの掛かった推論結果が出力される」。AI分野で使われる格言。<br>
 GIGO: Garbage in, garbage out（ゴミを入れれば、ゴミが出る）に由来し,GIGO は FIFO: First in, first out (最初に入力されたデータが最初に出力される) に由来するといわれている。
+
+</li>
+
+<br>
+
+<li><strong>Brevity Bias (簡潔さのバイアス)</strong><br>
+
+短くて一般的なプロンプトに最適化が偏る傾向。<br>
+<br>
+LLMエージェントに長期的なタスクを与えると、自己の経験を要約してメモリに書き込む、という動作を繰り返す。しかし、この「要約して上書き」というプロセスは非常に危険。<br>
+･･･ 例えば、API連携エージェントに対して「API仕様をよく読んで、正しく使いなさい」という指示を与えるようなもの。<br>
+これではドメイン固有のノウハウや、特定のツールを使う際の注意点、よくある失敗パターンといった「生きた知見」が失われてしまう。<br>
+<a href="https://note.com/makokon/n/na3f278747609">『なぜ私たちのプロンプトは「劣化」してしまうのか？』</a><br>
+<br>(関連項目)<br>
+・Context Collapse (コンテキストの崩壊)<br>
+　「最初は優秀だったエージェントが、使っているうちになぜかポンコツになってしまった」
 
 </li>
 
@@ -365,6 +421,8 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 人間や動物は、例がランダムに提示されるのではなく、意味のある順序で整理され、徐々に多くの概念、そして徐々に複雑な概念を示すように提示されると、はるかによく学習する。このような学習戦略を機械学習の文脈で定式化し、「カリキュラム学習」と呼ぶ。<br>
 <br>
+<center><img src="data/images/CurriculumLearning.svg"></center>
+<br>
 <a href="data/Papers_CurriculumLearning.html">Papers</a>
 </li>
 
@@ -412,7 +470,7 @@ Compositionality Gapの一例。<br>
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="DRL">
 <strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
 強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの<br>
 <br>
@@ -420,7 +478,6 @@ Compositionality Gapの一例。<br>
 </li>
 <br>
 <center><img src="data/images/DRL.svg"></center>
-
 
 <li id="DiffusionModel">
 <strong>Diffusion Model (拡散モデル)</strong><br>
@@ -605,6 +662,7 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 <strong>Generative Model (生成モデル)</strong><br>
 学習したデータの特徴やパターンを理解し、その知識に基づいて、訓練データに類似した新しいデータを自律的に生成できるAI（人工知能）モデル。<br>
 従来の AI モデル (Discriminative Model: 識別モデル) が、与えられたデータを「識別する（分類する）」ことに特化していたのに対し、生成モデルは「創造する（生成する）」ことに特化している点が大きな違い。<br>
+<br>
 ・Boltzmann Machine (BM) → Restricted Boltzmann Machine (RBM)<br>
 ・VAE: Variational Auto Encoder<br>
 ・GAN: Generative Adversarial Networks <br>
@@ -612,7 +670,11 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 ・DDPM: Denoising Diffusion Probabilistic Model<br>
 などがある。<br>
 <br>
-<a href="data/Papers_GenerativeModel.html">Papers</a>
+<a href="data/Papers_GenerativeModel.html">Papers</a><br>
+
+<center><img src="data/images/BM.svg"></center>
+<center><img src="data/images/GenerativeModel.svg"></center>
+
 </li>
 
 <br>
@@ -735,7 +797,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <li id="InductiveLearning"><strong>Inductive Learning (帰納学習)</strong><br>
 『Learning Model Successors』(2025) における Inductive Learning (帰納的学習) は、ある抽象度のレベルで得られたモデルから、さらに高レベルのモデル（「モデルの後継者」）を学習する、という新しいパラダイムを指す。<br>
 <br>(関連項目)<br>
-・<a href="#ContinualLearning">Continual Learning</a> (継続学習), <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)･･･概略図比較あり,　 <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習=継続学習の別名)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 </li>
@@ -860,9 +922,11 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 モデルが学習した、データの隠された本質的な特徴を捉えた、低次元で抽象的なベクトル空間のこと。<br>
 <center><img src="data/images/LatentSpace.svg"></center>
 <br>
+<a href="data/Papers_LatensSpace_LatentZone.html">Papers</a><br>
+<br>
 『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)<br>
 　(潜在ゾーニングネットワーク：生成モデリング、表現学習、および分類の統一的原理)<br>
-統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。
+統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。<br>
 </li>
 <center><img src="data/images/LatentZone.svg"></center>
 
@@ -991,7 +1055,18 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 <li>
 <strong>Mental Rotation (心的回転)</strong><br>
-心の中で二次元または三次元の物体を回転させる認知機能のこと。
+心の中で二次元または三次元の物体を回転させる認知機能のこと。<br>
+<br>
+『Mental Rotation of Three-Dimensional Objects』(1971)<br>
+　3次元回転した画像ペアが同じか否か判定するテストの平均応答時間は3次元回転角度に比例する。<br>
+<br>
+<center><img src="data/images/MentalRotation.svg"></center>
+<br>
+『Large Vision Models can solve mental rotation problems』(2025)<br>
+　(大規模視覚モデルは心的回転の問題を解決できる)<br>
+<br>
+『Spatial Mental Modeling from Limited Views』(2025)<br>
+　(限定された視点からの空間メンタルモデリング)<br>
 </li>
 
 <br>
@@ -1034,6 +1109,9 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 </li><br><li>
 ・この発見に基づき、<strong><span style="color:magenta;">学習済みの複数のモデルパラメータを線形補間するだけで、低損失を維持しながら、より優れた汎化性能を持つアンサンブルモデルを作成できることを示した</span></strong>。これは、モデルアンサンブルを効率的に行う新しい方法を提示した。
 </li></ul>
+<br>
+『Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time』(2022)<br>
+　(モデルスープ：複数のファインチューニング済みモデルの重み平均による、推論時間増加なしの精度向上)
 </li>
 
 <br>
@@ -1042,11 +1120,13 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 
 <strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
-複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。
-
-Mixture of Neuron Experts
-https://arxiv.org/abs/2510.05781
-
+複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。<br>
+<br>
+『Outrageously large neural networks: The sparsely-gated mixture-of-experts layer』(2017)<br>
+　(途方もなく巨大なニューラルネットワーク：まばらにゲートされたエキスパート混合層)<br>
+<br>
+『Mixture of Neuron Experts』(2025)<br>
+　(ニューロンエキスパートの混合)
 </li>
 
 <center><img src="data/images/MoE.svg"></center>
@@ -1066,7 +1146,7 @@ https://arxiv.org/abs/2510.05781
 
 <br>
 
-<li>
+<li id="NeuralCollapse">
 <strong>Neural Collapse </strong><br>
 十分に訓練されたニューラルネットワークの最終層の表現が高度に構造化された形状に収束する現象。<br>
 
@@ -1138,8 +1218,10 @@ DeepMind社によって2014年に発表された。<br>
 <li id="OOD">
 <strong>OOD: Out-of-Distribution Generalization (分布外汎化)</strong><br>
 機械学習モデルが、訓練データとは統計的な性質（分布）が異なる未知のデータに対しても、高い性能を発揮する能力を指す。<br>
+<br>
+<a href="data/Papers_OODLearning.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="#ContinualLearning">Continual Learning</a> (継続学習), <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)･･･概略図比較あり,　 <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習=継続学習の別名)<br>
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 </li>
@@ -1275,7 +1357,7 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 ・未来のデータ分布の変化を予測し、将来にわたって高い性能を維持することを目的とする。<br>
 ・時間の経過に伴うデータの「分布シフト」に対処する。<br>
 <br>(関連項目)<br>
-・<a href="#ContinualLearning">Continual Learning</a> (継続学習), <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)･･･概略図比較あり,　 <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習=継続学習の別名)<br>
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 </li>
@@ -1441,7 +1523,9 @@ AI技術を活用して科学のプロセスを加速・自動化し、新しい
 
 <strong>Scientific Surprise</strong><br>
 『Language Model Perplexity Predicts Scientific Surprise and Transformative Impact』(2025)<br>
-AIシステムがこれまでの知識や人間が期待する予測からは逸脱した、予期せぬ、そして根本的に新しい科学的知見を発見することを指す。
+AIシステムがこれまでの知識や人間が期待する予測からは逸脱した、予期せぬ、そして根本的に新しい科学的知見を発見することを指す。<br>
+<br>(関連項目)<br>
+・<a href="#AI4S">AI4S: AI for Science</a>
 </li>
 
 <br>
@@ -1455,7 +1539,7 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 「思考連鎖プロンプティングで用いられる単純な貪欲なデコードに代わる、新たなデコード戦略である自己一貫性を提案。･･･多様な推論経路をサンプリングし、次にサンプリングした推論経路を周辺化する(多数決をとる)ことで、最も一貫性のある解を選択する･･･」<br>
 
 <br>(関連項目)<br>
-・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)
+・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり
 </li>
 <br>
 
@@ -1499,6 +1583,8 @@ AIシステムが自らのコードや構造を複製、または改良して新
 
 <strong>Shortcut Learning (ショートカット学習)</strong><br>
 機械学習モデルが、意図された本質的な特徴ではなく、訓練データに存在する安易で表層的なパターンや無関係な相関関係を学習してしまう現象。Simplicity Biasが原因で起こる現象。<br>
+<br>
+<a href="data/Papers_SimplicityBias.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#SimplicityBias">Simplicity Bias</a>
 </li>
@@ -1518,14 +1604,30 @@ AIモデルが複雑なデータや特徴を無視して、単純で表面的な
 <li id="SkipConnection">
 
 <strong>Skip Connection (スキップ接続)</strong><br>
-ニューラルネットワークにおいて、層を飛び越して、より浅い層の出力をより深い層に直接接続する手法。
+ニューラルネットワークにおいて、層を飛び越して、より浅い層の出力をより深い層に直接接続する手法。<br>
+層が深くなりすぎると、学習時に勾配（損失関数を最小化するための方向）が消えてしまう「勾配消失問題」が起きやすくなる。スキップ接続は、この問題を解決するために考案された技術。<br>
+<br>
+<a href="data/Papers_SkipConnection.html">Papers</a>
+<br>
+<center><img src="data/images/SkipConnection.svg"></center>
+<br>(関連項目)<br>
+・<a href="#VanishingGradient">Vanishing gradient problems</a> (勾配消失問題)
 </li>
+
 
 <br>
 
 <li>
 <strong>Small Data Paradigm </strong><br>
-AIの学習に大量のデータ（ビッグデータ）を必要とするという従来の考え方から脱却し、少量の高品質なデータでも効率的かつ効果的な学習を可能にするアプローチ。
+AIの学習に大量のデータ（ビッグデータ）を必要とするという従来の考え方から脱却し、少量の高品質なデータでも効率的かつ効果的な学習を可能にするアプローチ。<br>
+<br>
+『Dark, Beyond Deep: A Paradigm Shift to Cognitive AI with Humanlike Common Sense』(2020)<br>
+　(深層のその先、そして深遠なる闇へ：人間のような常識を備えた認知的AIへのパラダイムシフト)<br>
+<br>
+
+現在の<strong><span style="color:magenta;">「小さなタスクのためのビッグデータ」アプローチから</span></strong>、人間のような常識推論を重視する<strong><span style="color:magenta;">「大きなタスクのための小さなデータ」フレームワークへ</span></strong>の移行を説得力のある議論で提案。<br>
+<br>
+<a href="data/Papers_SmallDataParadigm.html">Papers</a>
 </li>
 
 <br>
@@ -1533,7 +1635,12 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <li>
 
 <strong>Softmax Collapse</strong><br>
-ニューラルネットワークの学習プロセス中に、Softmax関数の数値的安定性が失われ、学習が阻害される現象。
+ニューラルネットワークの学習プロセス中に、Softmax関数の数値的安定性が失われ、学習が阻害される現象。<br>
+<br>
+『Grokking at the Edge of Numerical Stability』(2025)<br>
+　論文は<a href="https://arxiv.org/abs/2104.05704">こちら</a>, 要約は<a href="https://www.alphaxiv.org/ja/overview/2104.05704v4">こちら</a><br>
+<br>
+　grokkingとして知られる遅延汎化現象が、Softmax関数の数値的不安定性（「Softmax Collapse」(SC)と名付けられた）と「素朴な損失最小化」(NLM: Naive Loss Minimization)と呼ばれる特定の訓練ダイナミクスによって引き起こされることを明らかにしている。StableMaxでSCを防ぐこと、または⊥GradオプティマイザでNLMを軽減することが迅速な汎化を可能にし、grokkingにおける正則化とMSE損失の役割に対する統一的な説明を提供することを示している。
 </li>
 
 <br>
@@ -1627,7 +1734,7 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <strong>ToT: Tree of Thoughts (思考ツリー)</strong><br>
 大規模言語モデル（LLM）が複雑な問題を解決する際に、単一の思考プロセスを直線的に進めるのではなく、複数の可能性を同時に探索して最も有望な経路を選択する、より高度な推論フレームワーク。<br>
 <br>(関連項目)<br>
-・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)
+・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり
 </li>
 
 <br>
@@ -1675,7 +1782,7 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <br>
 
-<li>
+<li id="VanishingGradient">
 
 <strong>Vanishing gradient problems (勾配消失問題), gradient exploding  problems (勾配爆発問題)</strong><br>
 ニューラルネットワーク、特に層が深いネットワークを学習させる際に発生する問題。
@@ -1725,8 +1832,12 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 
 <li>
 <strong>Without human knowledge (人間知識なし)</strong><br>
-人間の専門的な知識や戦略、あるいは人間が事前に整理・ラベリングしたデータに頼ることなく、AIが自律的に学習し、課題を解決するアプローチ。
+人間の専門的な知識や戦略、あるいは人間が事前に整理・ラベリングしたデータに頼ることなく、AIが自律的に学習し、課題を解決するアプローチ。<br>
+<center><img src="data/images/AlphaSeries.svg"></center>
+<br>(関連項目)<br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a>
 </li>
+
 
 <br>
 
@@ -1744,7 +1855,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 ・文脈依存埋め込み: ELMo(2018), BERT(2018)<br>
 　文脈に応じて動的に単語ベクトルを生成する。<br>
 　これにより、<strong><span style="color:magenta;">多義語　（例：「apple」が「リンゴ」か「会社」か）の意味の違いを区別できるようになった。</span></strong><br>
-
+<center><img src="data/images/WordEmbeddings.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#DistributionalHypothesis">Distributional Hypothesis</a> (分布仮説)
 </li>
