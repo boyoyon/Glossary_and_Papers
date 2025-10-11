@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Simplicity Bias</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Simplicity Bias (単純性バイアス)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+
+<h3>The Pitfalls of Simplicity Bias in Neural Networks (2020)<br><span style="color:blue;"></span></h3>
+
+<p>
+ニューラルネットワークが、より堅牢で複雑な特徴を無視し、タスクを解決するために最も単純な（偽りの）特徴に過度に依存してしまう傾向があることを示した。この現象は、モデルの汎化性能、特に分布外（Out-of-Distribution, OOD）のデータに対する汎化性能を低下させる原因となる。
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+<h3>Overcoming Simplicity Bias in Deep Networks using a Feature Sieve (2023)<br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2301.13293">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2301.13293">要約はこちら</a><br>
+</p>
+
+<h3 id="latest"> Neural redshift: Random networks are not random functions (2024)<br><span style="color:blue;">ニューラルレッドシフト：ランダムネットワークはランダム関数ではない</span></h3>
+
+<p>
+ニューラルネットワーク（NN）の汎化能力に関する理解は未だ不完全です。従来の説明は勾配降下法（GD）の暗黙的なバイアスに基づいていますが、勾配フリー法のモデルの能力や、未学習ネットワークで最近観察された単純性バイアスを説明することはできません。本論文では、NNにおける一般化の他の要因を探ります。
+結果：GDとは独立して、アーキテクチャによってもたらされる帰納的バイアスを理解するために、未学習のランダム重みネットワークを検証します。単純なMLPでさえ強い帰納的バイアスを示します。重み空間における均一サンプリングは、複雑性の観点から非常に偏った関数分布をもたらします。しかし、一般的な認識とは異なり、NNには固有の「単純性バイアス」はありません。この特性は、ReLU、残差結合、層の正規化などの構成要素に依存します。代替アーキテクチャは、あらゆるレベルの複雑性に対してバイアスを持つように構築できます。Transformerもまた、これらの特性をすべて構成要素から継承します。
+示唆：勾配ベースの学習とは独立して、深層学習の成功について新たな説明を提供します。これは、トレーニングされたモデルによって実装されたソリューションを制御するための有望な方法を示しています。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2403.02241">論文はこちら</a><br>
+</p>
+
+
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+-->
+
+    </body>
+</html>
