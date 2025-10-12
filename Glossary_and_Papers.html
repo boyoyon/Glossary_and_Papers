@@ -265,7 +265,7 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <br>
 『Evolution imposes an inductive bias that alters and accelerates learning dynamics
 』(2025)<br>
-　(進化は学習のダイナミクスを変化させ加速させる誘導バイアスを課す)<br>
+　(進化は学習のダイナミクスを変化させ加速させる帰納バイアスを課す)<br>
 オンライン学習が進化の速度と過程に与える影響は、ボールドウィン効果として知られている。<br>
 計算用語で言えば、これは相互最適化ループと考えることができる。<br>
 ・Baldwinの経路: オンライン学習(世代内の適応)<br>
@@ -297,8 +297,16 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 
 <li><strong>BIBO: Bias In, Bias Out</strong><br>
 「BIASの掛かったデータを入力すると, BIASの掛かった推論結果が出力される」。AI分野で使われる格言。<br>
-GIGO: Garbage in, garbage out（ゴミを入れれば、ゴミが出る）に由来し,GIGO は FIFO: First in, first out (最初に入力されたデータが最初に出力される) に由来するといわれている。
-
+　　↑<br>
+　GIGO: Garbage in, garbage out（ゴミを入れれば、ゴミが出る）に由来。<br>
+　　↑<br>
+　FIFO: First in, first out (最初に入力されたデータが最初に出力される) に由来。<br>
+<br>
+(その他)<br>
+・Garbage in, AI-enhanced garbage out（ゴミを入れれば、AIが強化したゴミが出る）<br>
+・Garbage in, toxic data out（ゴミを入れれば、有害なデータが出る）<br>
+・RIRO: Rubbish in, rubbish out (がらくたを入れれば、がらくたが出る）<br>
+・You are what you eat（あなたはあなたが食べたものでできている）
 </li>
 
 <br>
@@ -486,6 +494,7 @@ Compositionality Gapの一例。<br>
 <br>
 <a href="data/Papers_DiffusionModel.html">Papers</a><br>
 <br>(関連項目)<br>
+・<a href="#GenerativeModel">Generative Model</a> (生成モデル)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) 
 </li>
 
@@ -586,6 +595,32 @@ AIモデルもこの効果を起こす。<br>
 <p>
 <div class="styleBullet">
 <ul>
+<li id="EarlyExperience">
+<strong>Early Experience (早期経験)</strong><br>
+<br>
+『Agent Learning via Early Experience』(2025)<br>
+　論文は<a href="https://arxiv.org/abs/2510.08558">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.08558v1">こちら</a><br>
+<br>
+　「早期経験」パラダイムを導入する。これにより、言語エージェントは、<strong><span style="color:magenta;">明示的な報酬シグナルを必要とせずに</span></strong>、環境との自身の相互作用から学習することができる。<br>
+<br>
+・言語エージェントの長期的な目標<br>
+　自身の経験を通じて学習し、向上し、最終的には複雑な現実世界のタスクで人間を上回ること。<br>
+・強化学習を用いて経験データからエージェントをトレーニングすることは、検証可能な報酬がない環境や非効率的な長期ロールアウトが必要な環境が多く、依然として困難。<br>
+・早期経験と呼ぶ中間的なパラダイムでこの制限に対処する。<br>
+・<strong><span style="color:magenta;">早期経験とはエージェント自身の行動によって生成されるインタラクションデータであり、結果として得られる将来の状態は報酬信号なしの教師として機能する</span></strong>。<br>
+・このパラダイムでは、2つの戦略を研究する。<br>
+　(1) Implicit world modeling (暗黙的世界モデリング) <br>
+　　収集された状態を使用して環境ダイナミクスにポリシーを根拠付ける。<br>
+　(2) Self-reflection (自己反省)<br>
+　　エージェントは最適ではない行動から学習し、推論と意思決定を改善する。<br>
+
+<center><img src="data/images/EarlyExperience.svg"></center>
+<br>(関連項目)<br>
+・<a href="#EraOfExperience">Era of Experience (経験の時代)</a>
+</li>
+
+<br>
+
 <li>
 <strong>Episodic Memory (エピソード記憶)</strong><br>
 個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。一般的な知識を記憶する「意味記憶」とは区別される。<br>
@@ -601,13 +636,16 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 
 <br>
 
-<li><strong>Era of Experience (経験の時代)</strong><br>
+<li id="EraOfExperience">
+<strong>Era of Experience (経験の時代)</strong><br>
 AI（人工知能）が人間から与えられたデータだけでなく、AI自身の「経験」を通して自律的に学習・進化していくという、AI研究における新たな方向性を示す概念。<br>
 Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者のひとり Richard S. Sutton が2025年4月に発表した論文『Welcome to the Era of Experience』で提唱された。<br>
 <br>
 『<strong><span style="color:magenta;">例えば、あるエージェントが5,000年前の人間の思考と専門家の回答を用いて推論するように訓練されていたとしたら、物理的な問題についてアニミズムの観点から推論していたかもしれません。</span></strong>』<br>
 → 人間を教師にしていることがネックになる･･･<br>
-<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2025_Welcome%20to%20the%20Era%20of%20Experience/2025_Welcome%20to%20the%20Era%20of%20Experience.html">機械翻訳はこちら</a>
+<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2025_Welcome%20to%20the%20Era%20of%20Experience/2025_Welcome%20to%20the%20Era%20of%20Experience.html">機械翻訳はこちら</a><br>
+<br>(関連項目)<br>
+・<a href="#EarlyExperience">Early Experience (早期経験)</a>
 </li>
 
 </ul></div></p>
@@ -658,16 +696,18 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 
 <br>
 
-<li>
+<li id="GenerativeModel">
 <strong>Generative Model (生成モデル)</strong><br>
 学習したデータの特徴やパターンを理解し、その知識に基づいて、訓練データに類似した新しいデータを自律的に生成できるAI（人工知能）モデル。<br>
 従来の AI モデル (Discriminative Model: 識別モデル) が、与えられたデータを「識別する（分類する）」ことに特化していたのに対し、生成モデルは「創造する（生成する）」ことに特化している点が大きな違い。<br>
 <br>
 ・Boltzmann Machine (BM) → Restricted Boltzmann Machine (RBM)<br>
-・VAE: Variational Auto Encoder<br>
+・<a href="#VAE">VAE: Variational Auto Encoder</a><br>
 ・GAN: Generative Adversarial Networks <br>
-・Normalizing Flow <br>
-・DDPM: Denoising Diffusion Probabilistic Model<br>
+・Flow-based model<br>
+　Normalizing Flow <br>
+・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a><br>
+　DDPM: Denoising Diffusion Probabilistic Model<br>
 などがある。<br>
 <br>
 <a href="data/Papers_GenerativeModel.html">Papers</a><br>
@@ -917,7 +957,7 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 
 <br>
 
-<li>
+<li id="LatentSpace">
 <strong>Latent Space (潜在空間) </strong><br>
 モデルが学習した、データの隠された本質的な特徴を捉えた、低次元で抽象的なベクトル空間のこと。<br>
 <center><img src="data/images/LatentSpace.svg"></center>
@@ -927,8 +967,11 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)<br>
 　(潜在ゾーニングネットワーク：生成モデリング、表現学習、および分類の統一的原理)<br>
 統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。<br>
-</li>
 <center><img src="data/images/LatentZone.svg"></center>
+<br>(関連項目)<br>
+・<a href="#VAE">VAE: Variational Auto Encoder</a>
+</li>
+
 
 <br>
 
@@ -1236,6 +1279,15 @@ DeepMind社によって2014年に発表された。<br>
 <li id="OverParameterized">
 <strong>Over-parameterized (過剰パラメータ化)</strong><br>
 機械学習モデルのパラメータ（学習可能な変数）の数が、学習データ数よりもはるかに多い状態。<br>
+<br>
+『Loss landscapes and optimization in over-parameterized non-linear systems and neural networks』(2003)<br>
+　論文は<a href="https://arxiv.org/abs/2003.00307">こちら</a>,　解説は<a href="https://www.alphaxiv.org/ja/overview/2003.00307v2">こちら</a><br>
+<br>
+従来の凸性仮定を超えた新しい数学的フレームワークを提案し、過剰パラメータ化された領域で最適化がなぜこれほど効果的に機能するのかを説明した。<br>
+重要な洞察は、パラメータ数が訓練例の数を上回る過剰パラメータ化システムが、パラメータが不足するシステムとは根本的に異なる最適化特性を示すこと。<br>
+
+
+
 <br>(関連項目)<br>
 ・<a href="#DoubleDescent">Double Descent</a> (二重降下)<br>
 </li>
@@ -1398,7 +1450,8 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 The Qualia Structure Paradigm: towards a construction of a Qualia Periodic Table for the dissolution of the Hard Problem of Consciousness (2024)<br>
 (クオリア構造パラダイム：意識の難問解決のためのクオリア周期表の構築に向けて)<br>
 <br>
-<a href="data/Papers_Qualia.html">Papers</a>
+<a href="data/Papers_Qualia.html">Papers</a><br>
+<a href="https://en.wikipedia.org/wiki/Qualia">wikipedia</a>
 </li>
 
 <br>
@@ -1766,9 +1819,12 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="VAE">
 <strong>VAE: Variational Auto Encoder</strong><br>
-深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。 
+深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。 <br>
+<br>(関連項目)<br>
+・<a href="#GenerativeModel">Generative Model (生成モデル)</a> 概略図比較あり<br>
+・<a href="#LatentSpace">Latent Space (潜在空間)</a>　概念図あり
 </li>
 
 <br>
@@ -1868,6 +1924,9 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 AIが外部の観測情報（画像や音声など）から、環境のダイナミクス（物理法則や因果関係）を学習して獲得する、内部的なシミュレーションモデルのこと。<br>
 <br>
 1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。<br>
+<br>
+『World models 』(2018)
+<center><img src="data/images/WorldModel.svg"></center>
 <br>
 <a href="data/Papers_WorldModel.html">Papers</a>
 </li>
