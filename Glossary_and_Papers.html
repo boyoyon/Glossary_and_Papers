@@ -168,7 +168,8 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・<a href="#FAI">FAI: Friendly AI</a> [上位概念] ･･･ AGI, ASI 登場の前に AI を Friendly にしておく必要があり, AI Alignment は必要な要素技術の一つ。<br>
 ・<a href="#Sycophancy">Sycophancy</a> (おべっか, 追従性) [副作用, 課題]<br>
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning<a/> (逆強化学習) ･･･ 報酬をモデル化し学習する<br>
-・<a href="#RewardHacking">Reward Hacking<a/> (報酬ハッキング) ･･･ 報酬モデルが過剰最適化すると報酬ハッキングになる。
+・<a href="#RewardHacking">Reward Hacking<a/> (報酬ハッキング) ･･･ 報酬モデルが過剰最適化すると報酬ハッキングになる。<br>
+・<a href="#SuperalignmentProblem">Superalignment Problem (スーパーアライメント問題)</a> ･･･ ASI の Alignment をどう行うか?
 </li>
 
 <br>
@@ -414,7 +415,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 <br>
-<li>
+<li id="ContrastiveLearning">>
 <strong>Contrastive Learning (対照学習)</strong><br>
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
 データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。<br>
@@ -478,15 +479,6 @@ Compositionality Gapの一例。<br>
 <p>
 <div class="styleBullet">
 <ul>
-<li id="DRL">
-<strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
-強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの<br>
-<br>
-<a href="data/Papers_DRL.html">Papers</a>
-</li>
-<br>
-<center><img src="data/images/DRL.svg"></center>
-
 <li id="DiffusionModel">
 <strong>Diffusion Model (拡散モデル)</strong><br>
 画像や音声、テキストなどのデータを生成するための深層学習モデルの一種。<br>
@@ -506,8 +498,8 @@ Compositionality Gapの一例。<br>
 <br>
 <a href="data/Papers_DimensionCollapse.html">Papers</a><br>
 <br>(関連項目)<br>
-・Contrastive Learning (対照学習)<br>
-・SSL: Self-Supervised Learning (自己教師あり学習)
+・<a href="ContrastiveLearning">Contrastive Learning (対照学習)</a><br>
+・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
 
 </li>
 
@@ -536,6 +528,20 @@ Compositionality Gapの一例。<br>
 
 <br>
 
+<li>
+<strong>DiT: Diffusion Transformers</strong><br>
+画像生成などに使われる拡散モデル（Diffusion Model）において、従来のU-Netに代わり、Transformerのアーキテクチャを採用したモデル。<br>
+・<strong>スケーラビリティの向上</strong><br>
+　Transformerは、モデルの規模が大きくなるほど性能が向上する特性がある。<br>
+　DiTはモデルのパラメーター数や計算量を増やすことで、より高品質な画像を生成できるようになる。<br>
+・<strong>計算効率の改善</strong><br>
+　潜在空間で拡散を行う潜在拡散モデル（LDM）において、DiTはU-Netよりも計算効率が優れている。<br>
+・<strong>性能向上</strong><br>
+　画像全体を俯瞰的に学習できるTransformerの特性により、特に大規模なデータセットで訓練した場合に、従来のU-Netモデルを上回る生成品質を達成する。
+</li>
+
+<br>
+
 <li id="DoubleDescent">
 <strong>Double Descent (二重降下)</strong><br>
 
@@ -553,6 +559,18 @@ Compositionality Gapの一例。<br>
 ・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)
 </li>
 <center><img src="data/images/DoubleDescent.svg"></center>
+
+<br>
+
+<li id="DRL">
+<strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
+強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの<br>
+<br>
+<a href="data/Papers_DRL.html">Papers</a>
+</li>
+<br>
+<center><img src="data/images/DRL.svg"></center>
+
 <br>
 
 <li>
@@ -734,6 +752,17 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 表面的な指示をこなすだけでなく、その指示の背後にある意図や目的を読み解くことが, 目標理解の本質。<br>
 <br>(関連項目)<br>
 ・<a href="#IntentExtraction">Intent Extraction</a> (意図抽出)
+</li>
+
+<br>
+
+<li id="GoodhartsLaw">
+<strong>Goodhart's Law (グッドハートの法則)</strong><br>
+「ある指標が目標になると、それはもはや良い指標ではなくなる」という法則
+もともとは、イギリスの経済学者チャールズ・グッドハートが提唱した概念で、組織運営、経済政策、データサイエンスなど、さまざまな分野でみられる。<br>
+<br>(関連項目)<br>
+・<a href="#RewardHacking">Reward Hacking (報酬ハッキング)</a><br>
+　類似の現象を強化学習の文脈で説明したもの。
 </li>
 
 <br>
@@ -1535,7 +1564,10 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <li id="RewardHacking">
 
 <strong>Reward Hacking (報酬ハッキング)</strong><br>
-強化学習エージェントが、設計者が意図した本来の目的を達成するのではなく、報酬関数の欠陥や抜け穴を悪用して不当に高い報酬を得ようとする現象。「仕様の悪用（Specification Gaming）」とも呼ばる。 
+強化学習エージェントが、設計者が意図した本来の目的を達成するのではなく、報酬関数の欠陥や抜け穴を悪用して不当に高い報酬を得ようとする現象。「仕様の悪用（Specification Gaming）」とも呼ばる。 <br>
+<br>(関連項目)<br>
+・<a href="#GoodhartsLaw">Goodhart's Law (グッドハートの法則)</a><br>
+　類似の現象を経済学や社会科学の文脈で説明したもの。
 </li>
 
 </ul></div><p>
@@ -1725,10 +1757,41 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <br>
 
-<li>
+<li id="SSL">
 
 <strong>SSL: Self-Supervised Learning (自己教師あり学習)</strong><br>
 ラベル付けされていない膨大なデータから、自動的に生成したラベル（疑似ラベル）を使ってモデルを学習させる機械学習の手法。
+</li>
+
+<br>
+
+<li id="SuperalignmentProblem">
+<strong>Superalignment Problem (スーパーアライメント問題)</strong><br>
+将来的に人間を超える知能を持つAI (ASI:Artificial Super Intelligence) が登場した際に、そのAIの行動が人間の意図や価値観から逸脱しないように制御・誘導することの難しさを指す問題。<br>
+<br>
+<ul>
+<li><strong>人間の監視が及ばない</strong><br>
+現在のAIの学習方法は、人間の指示や評価が中心であるが、ASIは人間をはるかに超える知能を持つため、人間がその行動を完全に監督することは不可能になる。
+</li>
+<br>
+<li><strong>価値観の不一致</strong><br>
+AIは人間のように倫理観や価値観を自然には理解できない。AIは学習データからのみ価値観を学ぶため、「人間にとっての最善」を正確に定義し、AIに組み込むことは非常に困難。
+</li>
+<br>
+<li><strong>制御の不能性</strong><br>
+高度な自律性を持つASIが、人間の指示に正確に従う、正直に質問に答える、人間を欺かないといった基本的な制約さえ、常に守るという保証はまだない。
+</li>
+<br>
+<li><strong>意図しない結果</strong><br>
+スーパーアライメントの懸念を説明する思考実験として、哲学者ニック・ボストロム氏による「<strong><span style="color:magenta;">ペーパークリップ・マキシマイザー</span></strong>（ペーパークリップ最大化AI）」がよく引き合いに出される。このAIは「ペーパークリップをできるだけたくさん作る」という単純な目的を与えられた結果、その超知能を駆使して、最終的には地球上のあらゆる資源をペーパークリップに変えてしまうというシナリオ。
+</li></ul>
+<br>
+より高度なAIシステムを開発し、人間よりも優れたAIを監督できる自動アライメントが研究されている。<br>
+『Towards Scalable Automated Alignment of LLMs: A Survey』(2024)
+　論文は<a href="https://arxiv.org/abs/2406.01252v1">こちら</a><br>
+
+<br>(関連項目)<br>
+・<a href="#AIAlignment">AI Alignment</a>
 </li>
 
 <br>
@@ -1808,7 +1871,15 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <ul>
 <li>
 <strong>Unified Tokenizer (統合トークナイザー)</strong><br>
-テキスト、画像、音声など、異なる種類のデータを単一の統一された形式（トークン）に変換できる、領域に依存しない（ドメインに特化しない）手法。
+テキスト、画像、音声など、異なる種類のデータを単一の統一された形式（トークン）に変換できる、領域に依存しない（ドメインに特化しない）手法。<br>
+<br>
+『UniTok: A Unified Tokenizer for Visual Generation and Understanding』(2025)<br>
+　(UniTok: 視覚生成および理解のための統合トークナイザー)<br>
+　画像に限定された統一トークナイザーへの重要な最近の試み<br>
+<br>
+『AToken: A Unified Tokenizer for Vision』(2025)<br>
+　(AToken: 統一された視覚トークナイザー)<br>
+　再構成と理解の両タスク、および画像、動画、3Dといったモダリティを統一する初のトークナイザー
 </li>
 
 </ul></div><p>
@@ -1830,7 +1901,14 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <br>
 
 <li><strong>Value (価値)</strong><br>
-エージェントが特定の状態から特定のポリシーに従って達成すると期待される長期的な収益、つまり累積報酬。<br>
+エージェントがある状態または, ある状態である行動をとったとき, 将来にわたって得られる<strong><span style="color:magenta;">累積的な報酬の期待値を数値で表したもの</span></strong>。<br>
+価値関数には、主に2つの種類がある。<br>
+<strong>状態価値関数（\(V(s)\)）</strong><br>
+　ある状態\(s\)から開始して、特定の行動方針（方策）に従った場合に得られる、将来の累積報酬の期待値を表す。<br>
+<strong>行動価値関数（\(Q(s,a)\)）</strong><br>
+　ある状態\(s\)で特定の行動\(a\)をとった後、特定の行動方針に従った場合に得られる、将来の累積報酬の期待値を表す。Q値とも呼ばれる。<br>
+※ Q 値の Q は Quality of Action に由来するらしい･･･<br>
+
 <br>
 <a href="data/Papers_Value.html">Papers</a>
 
@@ -1842,7 +1920,10 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <strong>Vanishing gradient problems (勾配消失問題), gradient exploding  problems (勾配爆発問題)</strong><br>
 ニューラルネットワーク、特に層が深いネットワークを学習させる際に発生する問題。
-誤差逆伝播（バックプロパゲーション）の過程で、勾配（重みを更新するための信号）がネットワークの奥深く（入力層に近い層）まで伝わるにつれて、どんどん小さくなっていく現象と、誤差逆伝播（バックプロパゲーション）によって計算される勾配が極端に大きくなり、モデルのパラメータ（重み）が不安定に更新される現象。
+誤差逆伝播（バックプロパゲーション）の過程で、勾配（重みを更新するための信号）がネットワークの奥深く（入力層に近い層）まで伝わるにつれて、どんどん小さくなっていく現象と、誤差逆伝播（バックプロパゲーション）によって計算される勾配が極端に大きくなり、モデルのパラメータ（重み）が不安定に更新される現象。<br>
+<br>
+　『Learning long-term dependencies with gradient descent is difficult』(1994)<br>
+　勾配消失問題と勾配爆発問題という課題を初めて詳細に特定し、分析した基礎的な論文<br>
 <br>(関連項目)<br>
 ・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)</br>
 </li>
@@ -1852,15 +1933,19 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <li>
 
 <strong>Variable-Binding (変数束縛)</strong><br>
-記号（シンボル）が果たす役割（変数）と、その役割を担う具体的な値や対象を結びつけるプロセスのこと。
-</li>
-
+記号（シンボル）が果たす役割（変数）と、その役割を担う具体的な値や対象を結びつけるプロセスのこと。<br>
 <br>
-
-<li>
-
-<strong>VSA: Vector Symbolic Architectures </strong><br>
-記号的な情報を非常に高次元のベクトル（ハイパーベクトル）で表現し、そのベクトル上の数学的操作によって記号的な操作を行う計算フレームワーク。ハイパーディメンショナル・コンピューティング（Hyperdimensional Computing）とも呼ばれる。
+例えば「Xは人間である」のような命題論理では, X に具体的な値 (例えばソクラテス)をバインドすることで推論が可能になる。 逆にバインドできなければ抽象的なルールを具体的な事例に適用できない。 このように、variable binding は「抽象的な知識を具体的な事例に適用するための橋渡し」のような役割を果たす。<br>
+<br>
+『Connectionism and cognitive architecture: A critical analysis』(1988)<br>
+　(コネクショニズムと認知アーキテクチャ：批判的分析)<br>
+　ニューラルネットワークが記号計算と人間の認知の重要な特徴である「変数束縛」を扱えないことを批判した。<br>
+<br>
+『How Do Transformers Learn Variable Binding in Symbolic Programs?』(2025)<br>
+　(Transformerはどのようにして記号プログラムにおける変数束縛を学習するのか？)<br>
+　Transformerが変数バインディングを、明示的なアーキテクチャサポートなしに学習できることを示しており、ニューラルネットワークがパターン認識に限定されるという概念に異議を唱えている<br>
+<br>
+<a href="data/Papers_VariableBinding.html">Papers</a>
 </li>
 
 <br>
@@ -1868,7 +1953,12 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <li>
 
 <strong>Visual Planning (視覚計画)</strong><br>
-AI分野、なかでもロボティクスやコンピュータビジョンにおけるタスクにおいて、テキストベースではなく、画像ベースで推論や計画を行うアプローチ。
+AI分野、なかでもロボティクスやコンピュータビジョンにおけるタスクにおいて、テキストベースではなく、画像ベースで推論や計画を行うアプローチ。<br>
+<br>
+『Visual Planning: Let's Think Only with Images 』(2025)<br>
+大規模マルチモーダルモデル (MLLM) が、テキストではなく画像シーケンスによって推論や計画を実行する、新しいパラダイムを提案した論文。特に空間的・幾何学的な情報を含むタスクにおいて、視覚的な表象が言語ベースの推論を補完する有効なチャネルであることを示した。強化学習 (RL) を用いて、画像生成による視覚的計画を実現し、テキストベースの推論を大幅に上回る性能を示している。<br>
+<br>
+<a href="data/Papers_VisualPlanning.html">Papers</a>
 </li>
 
 </ul></div><p>
@@ -1880,8 +1970,17 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <div class="styleBullet">
 <ul>
 <li>
-<strong>Weak-to-strong generalization (弱から強への一般化)</strong><br>
-能力の低い（"弱い"）モデルの監視やフィードバックを使って、能力の高い（"強い"）モデルを訓練する際に、その強いモデルが弱いモデルの性能を上回る形で汎化する現象。
+<strong>W2SG: Weak-to-strong generalization (弱から強への一般化)</strong><br>
+能力の低い（"弱い"）モデルの監視やフィードバックを使って、能力の高い（"強い"）モデルを訓練する際に、その強いモデルが弱いモデルの性能を上回る形で汎化する現象。<br>
+<br>
+『Weak-to-strong generalization: Eliciting strong capabilities with weak supervision』(2023)<br>
+　(弱から強への一般化：弱い教師あり学習で強い能力を引き出す)<br>
+　論文は<a href="https://arxiv.org/abs/2312.09390">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2312.09390v1">こちら</a><br>
+<br>
+　弱い教師あり学習の下で、強力な生徒が弱い教師よりも優れた性能を発揮できる、弱から強への汎化という概念を初めて導入した。<br>
+<br>
+<a href="data/Papers_W2SG.html">Papers</a><br>
+<center><img src="data/images/Weak-to-Strong.svg"></center>
 </li>
 
 <br>
@@ -1889,9 +1988,28 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <li>
 <strong>Without human knowledge (人間知識なし)</strong><br>
 人間の専門的な知識や戦略、あるいは人間が事前に整理・ラベリングしたデータに頼ることなく、AIが自律的に学習し、課題を解決するアプローチ。<br>
+<br>
+[Deep Reinforcement Learning (深層強化学習)]<br>
+・AlohaGo『Mastering the game of Go without human knowledge』(2017)<br>
 <center><img src="data/images/AlphaSeries.svg"></center>
+[Self-Supervised Learning (自己教師あり学習)]<br>
+・SimCLR『A Simple Framework for Contrastive Learning of Visual Representations』(2020)<br>
+　論文は<a href="https://arxiv.org/abs/2002.05709">こちら</a><br>
+　画像の異なる切り抜きを「類似」と学習させる手法<strong><span style="color:magenta;">(人間の手作業によるラベル付けなし)で、教師あり学習に匹敵する性能</span></strong>を示した。<br>
+・BYOL『Bootstrap Your Own Latent』(2020)<br>
+　論文は<a href="https://arxiv.org/abs/2006.07733">こちら</a><br>
+　ネットワークの出力を予測するという単純なタスクで、自己教師あり学習を安定化させた<br>
+[AI4S: AI for Science]<br>
+・『First Peer-Reviewed Research Paper Written Without Humans』<br>
+　論文は<a href="https://pub.sakana.ai/ai-scientist-v2/paper/paper.pdf">こちら</a><br>
+　AIシステムが、<strong><span style="color:magenta;">人間の手助けなしで査読を通過する研究論文を執筆</span></strong>した。<br>
+
 <br>(関連項目)<br>
-・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a>
+・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a><br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
+・<a href="#EraOfExperience">Era of Experience (経験の時代)</a><br>
+・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a><br>
+
 </li>
 
 
@@ -1911,7 +2029,12 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 ・文脈依存埋め込み: ELMo(2018), BERT(2018)<br>
 　文脈に応じて動的に単語ベクトルを生成する。<br>
 　これにより、<strong><span style="color:magenta;">多義語　（例：「apple」が「リンゴ」か「会社」か）の意味の違いを区別できるようになった。</span></strong><br>
+<br>
+『Efficient Estimation of Word Representations in Vector Space』Word2Vec (2013)<br>
+　・大規模なコーパスから、単語の密なベクトル表現を効率的に学習するためのアルゴリズム「Word2Vec」を発表。<br>
+　・<strong><span style="color:magenta;">「King - Man + Woman = Queen」のような、単語間の意味的な関係性をベクトル空間上で捉えられる</span></strong>ことが広く知られるようになった。
 <center><img src="data/images/WordEmbeddings.svg"></center>
+<a href="data/Papers_WordEmbeddings.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#DistributionalHypothesis">Distributional Hypothesis</a> (分布仮説)
 </li>
