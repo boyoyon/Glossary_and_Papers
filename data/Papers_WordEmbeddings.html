@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Word Embeddings</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Word Embeddings (単語埋め込み)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<!--●--><h3>A Neural Probabilistic Language Model (2003)<br><span style="color:blue;">ニューラル確率言語モデル</span></h3>
+
+<p>
+単語の分散表現とニューラル言語モデルを同時に学習する手法を提案した。後のWord Embeddingsのモデルの基盤となる画期的な研究。
+</p>
+<p>
+<a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">論文はこちら</a>
+</p>
+
+<!--●--><h3>Efficient Estimation of Word Representations in Vector Space (2013)<br><span style="color:blue;">ベクトル空間における単語表現の効率的な推定</span></h3>
+
+<p>
+・大規模なテキストコーパスから、単語の密なベクトル表現を効率的に学習するためのアルゴリズム「Word2Vec」を発表した。<br>
+・文脈から単語を予測するCBOW（Continuous Bag of Words）と、単語から文脈を予測するSkip-gramという、2つの単純なアーキテクチャを提案した。<br>
+・これにより、「King - Man + Woman = Queen」のような、単語間の意味的な関係性をベクトル空間上で捉えられることが広く知られるようになった。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1301.3781">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1301.3781v3">要約はこちら</a><br>
+</p>
+
+<!--●--><h3>GloVe: Global Vectors for Word Representation (2014)<br><span style="color:blue;">GloVe: 単語表現のためのグローバルベクトル</span></h3>
+
+<p>
+・Word2Vecが局所的な文脈（単語の近傍）を学習するのに対し、GloVeはコーパス全体の単語の共起確率（co-occurrence probability）を利用して学習する。<br>
+・これにより、統計的手法とニューラルネットワークの手法の良い点を組み合わせ、高品質なベクトル表現を生成することに成功した。
+</p>
+<p>
+<a href="https://nlp.stanford.edu/pubs/glove.pdf">論文はこちら</a>
+</p>
+
+<!--●--><h3>Deep contextualized word representations (2018)<br><span style="color:blue;">深い文脈に基づいた単語表現</span></h3>
+
+<p>
+・文脈に応じて単語の意味が変わる「文脈依存の単語埋め込み（Contextualized Word Embedding）」を可能にした画期的なモデル ELMo（Embeddings from Language Models）を提案した。<br>
+　(Word2Vecなどは、単語ごとに固定のベクトルを割り当てていた。例えば、「play」という単語は「ギターを弾く」と「サッカーをする」では意味が異なるが、Word2Vecでは同じベクトルが与える。ELMoは、この問題を解決した。)<br>
+・2層の双方向LSTM（Bidirectional LSTM）を使用。1つは文章を左から右へ、もう1つは右から左へと処理することで、単語の両側の文脈を考慮した埋め込みを生成する。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1802.05365">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1802.05365v2">要約はこちら</a><br>
+</p>
+
+<!--●--> <h3 id="latest">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)<br><span style="color:blue;">BERT: 言語理解のための深層双方向変換の事前学習</span></h3>
+
+<p>
+・ELMoの双方向性と、TransformerモデルのAttention機構を組み合わせ、自然言語処理の性能を飛躍的に向上させたモデル BERT（Bidirectional Encoder Representations from Transformers）を提案。<br>
+・文章中の一部の単語（通常15%）を隠し（マスクし）、そのマスクされた単語が何かを予測するように学習させる。これにより、文章の両側の文脈を考慮した単語の埋め込みが可能になる。<br>
+・2つの文が与えられたときに、その2つの文が文章中で連続しているか（連続していれば IsNext、そうでなければ NotNext）を予測させる。これにより、文間の関係性を学習する。 <br>
+・双方向の学習により、単語の曖昧性を解消し、より深い文脈理解が可能になった。<br>
+</p>
+<p>
+<a href="https://arxiv.org/abs/1810.04805">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1810.04805v2">要約はこちら</a><br>
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<!--●-- <h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+
+
+<div class="styleBullet">
+<ul><li>
+
+</li><br><li>
+
+</li></ul></div>
+
+-->
+
+    </body>
+</html>

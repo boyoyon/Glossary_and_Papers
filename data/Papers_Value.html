@@ -53,9 +53,28 @@
 
     </head>
     <body>
-        <h1><center>Value (価値)</center></h1>
+        <h1><center>Value (価値)ベースの強化学習</center></h1>
 <a href="#latest">最新項目へ</a><br>
 
+<!--●--><h3>Learning from Delayed Rewards (博士論文 1989)(1992)<br><span style="color:blue;">遅延報酬からの学習</span></h3>
+
+<p>
+Q-learningは、モデルフリー (環境の遷移確率や報酬関数が不明。モデル化しない) な強化学習における価値ベースの手法で、画期的なブレークスルー。Q-learningのアルゴリズムは、状態と行動のペアごとにQ値（行動価値）を学習し、このQ値の更新にベルマン方程式を導入した。これにより、報酬が遅れて与えられるような複雑な環境でも、エージェントが最適な行動を学習できるようになった。
+</p>
+<p>
+博士論文(241ページ)は<a href="https://www.cs.rhul.ac.uk/~chrisw/new_thesis.pdf">こちら</a>
+</p>
+
+
+<!--●--><h3>Playing Atari with Deep Reinforcement Learning (DQN) (2013) <br><span style="color:blue;">深層強化学習でAtariをプレイする</span></h3>
+
+<p>
+Q-learning の Q値を表現するために、深層ニューラルネットワークを導入した画期的な論文。これにより、膨大な状態空間を持つAtariゲームなどの複雑なタスクでも、価値関数を近似できるようになった。また、経験再生（Experience Replay）とターゲットネットワークの導入によって学習の安定化を実現した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/1312.5602">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1312.5602v1">要約はこちら</a><br>
+</p>
 
 <h3>Value prediction network (2017)<br><span style="color:blue;">価値予測ネットワーク</span></h3>
 
@@ -63,11 +82,24 @@
 モデルフリーおよびモデルベース強化学習手法を単一のニューラルネットワークに統合した、価値予測ネットワーク (VPN) と呼ばれる新しい深層強化学習アーキテクチャを提案。
 </p>
 <p>
-<a href="https://arxiv.org/abs/1707.03497">論文はこちら</a><br>
-<a href="">要約はこちら</a><br>
+<a href="https://arxiv.org/abs/1707.03497">論文はこちら</a>
 </p>
 
 
+<!--●--><h3 id="latest">Rainbow: Combining Improvements in Deep Reinforcement Learning (2017)<br><span style="color:blue;">Rainbow: 深層強化学習の改良を組み合わせる</span></h3>
+
+<p>DQNの改良版として、以下の6つの重要な拡張を組み合わせて性能を大幅に向上させた。<br>
+・Double DQN: Q値の過大評価を防ぐ<br>
+・Prioritized Experience Replay: 重要な経験を優先的に学習<br>
+・Dueling Networks: 状態価値とアドバンテージを分離<br>
+・Multi-step learning: 長期的な報酬を考慮<br>
+・Distributional RL: 報酬の分布を学習<br>
+・Noisy Nets: ノイズを導入して探索を促進<br>
+</p>
+<p>
+<a href="https://arxiv.org/abs/1710.02298">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/1710.02298v1">要約はこちら</a><br>
+</p>
 
 
 
@@ -76,7 +108,7 @@
 <!--
 <br>テンプレート<br>
 
-<h3><br><span style="color:blue;"></span></h3>
+<!--●--<h3><br><span style="color:blue;"></span></h3>
 
 <p>
 </p>

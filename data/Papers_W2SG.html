@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>W2SG: Weak-to-strong generalization</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>W2SG: Weak-to-strong generalization (弱から強への一般化)</center></h1>
+<a href="#latest">最新項目へ</a><br>
+
+<!--●--> <h3>Weak-to-strong generalization: Eliciting strong capabilities with weak supervision (2023)<br><span style="color:blue;">弱から強への一般化：弱い教師あり学習で強い能力を引き出す</span></h3>
+
+<p>
+弱い教師あり学習の下で、強力な生徒が弱い教師よりも優れた性能を発揮できる、<strong><span style="color:magenta;">弱から強への汎化という概念を初めて導入</span></strong>した。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2312.09390">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/2312.09390v1">要約はこちら</a><br>
+</p>
+
+
+<!--●--> <h3>A transfer learning framework for weak to strong generalization (2024)<br><span style="color:blue;">弱から強への汎化のための転移学習フレームワーク</span></h3>
+
+<p>
+・超人的な能力を持つ (より強力な) LLM を (より弱い) 人間のフィードバックとアライメントさせることが、その能力を低下させることなく可能かどうかは不明である。<br>
+・これは、弱い (能力の低い) モデルからのフィードバックを使用して、より強い (能力の高い) モデルをトレーニングするという、弱から強への汎化問題の一例である。<br>
+・事前トレーニング済みの LLM から潜在的な知識を引き出すことで、弱から強への汎化が可能であることを証明する。<br>
+・弱から強への汎化問題を、潜在的な概念事前情報を弱いモデルから強い事前トレーニング済みモデルに転送する転移学習問題として捉える。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2405.16236">論文はこちら</a>
+</p>
+
+
+<!--●--> <h3>The Capabilities and Limitations of Weak-to-Strong Generalization (2025)<br><span style="color:blue;">弱から強への一般化の可能性と限界</span></h3>
+
+<p>
+・まず分類設定において、強力モデルの汎化誤差の上限と下限を確立し、主な限界が弱モデルの汎化誤差と最適化目的関数自体に起因することを明らかにする。<br>
+・さらに、強力モデルの較正誤差の上限と下限を導出する。これらの理論的限界から、2つの重要な知見が明らかになる。<br>
+(1) 弱モデルは強力な汎化性能を示し、適切に較正された予測を維持する必要がある。<br>
+(2) 強モデルのトレーニングプロセスは、過度な最適化によって弱い教師信号に過度に依存することで汎化能力が損なわれる可能性があるため、慎重なバランスをとる必要がある。<br>
+
+・最後に、回帰設定において、Charikarらの研究を拡張する。 (2024) をカルバック・ライブラー（KL）ダイバージェンスに基づく損失関数に置き換えると、優秀な学習者が弱い学習者よりも少なくとも両者の不一致の大きさ分だけ優れた成績を収められることが保証される。十分な実験を実施し、理論を検証します。
+</p>
+<p>
+<a href="https://arxiv.org/abs/2502.01458">論文はこちら</a>
+</p>
+
+<!--●--> <h3>Representations Shape Weak-to-Strong Generalization: Theoretical Insights and Empirical Predictions (2025)<br><span style="color:blue;">表現が弱から強への一般化を形作る：理論的洞察と経験的予測</span></h3>
+
+<p>
+・弱モデルが強モデルを監督する弱-強汎化（W2SG）は、将来、人間が超人的な知能をどのように導くかを理解するための重要なアナロジーとなる。<br>
+・有望な実証的結果は、強モデルが弱教師を凌駕する可能性があることが明らかになった。<br>
+
+・理論的な視点からW2SGを調査し、弱モデルと強モデルの内部表現の主成分から導出されるカーネルを用いてW2SGを特徴づけることができることを示す。<br>
+
+・これらのカーネルは、弱モデルが学習できないが強モデルは学習できるものを高レベルで捉える空間を定義するために使用できる。<br>
+
+この空間へのラベルの投影は、強モデルが弱教師によってその潜在能力をどの程度発揮できていないかを定量化する。<br>
+
+・この特徴づけは、過学習の有無にかかわらず、弱教師における特定のエラーが強モデルによってどのように修正できるかについても知見を提供する。<br>
+</p>
+<p>
+<a href="https://arxiv.org/abs/2502.00620">論文はこちら</a>
+</p>
+
+<a href="#">トップに戻る</a>
+
+<!--
+<br>テンプレート<br>
+
+<!--●-- <h3><br><span style="color:blue;"></span></h3>
+
+<p>
+</p>
+<p>
+<a href="">論文はこちら</a><br>
+<a href="https://www.alphaxiv.org/ja/overview/">要約はこちら</a><br>
+</p>
+
+
+
+<div class="styleBullet">
+<ul><li>
+
+</li><br><li>
+
+</li></ul></div>
+
+-->
+
+    </body>
+</html>
