@@ -190,8 +190,8 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・<a href="https://ja.wikipedia.org/wiki/ラボラトリーオートメーション">Laboratory Automation</a><br>
 ・Robot Scientist<br>
 ・<a href="#ScientificDiscovery">Scientific Discovery (科学的発見), Scientific Research (科学研究)</a><br>
-
-
+・<a href="#SR">SR: Symbolic Regression (シンボリック回帰)</a>
+<center><img src="data/images/AI4S.svg"></center>
 </li><br>
 
 <li><strong>AI for Healthcare (医療)</strong><br>
@@ -297,7 +297,8 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <br>
 
 <li><strong>BIBO: Bias In, Bias Out</strong><br>
-「BIASの掛かったデータを入力すると, BIASの掛かった推論結果が出力される」。AI分野で使われる格言。<br>
+　BIBO: Bias In, Bias Out ･･･ AI分野で使われる格言。<br>
+　(BIASの掛かったデータを入力すると, BIASの掛かった推論結果が出力される)。<br>
 　　↑<br>
 　GIGO: Garbage in, garbage out（ゴミを入れれば、ゴミが出る）に由来。<br>
 　　↑<br>
@@ -415,12 +416,26 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 <br>
-<li id="ContrastiveLearning">>
+<li id="ContrastiveLearning">
 <strong>Contrastive Learning (対照学習)</strong><br>
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
 データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。<br>
 <br>
 <a href="data/Papers_ContrastiveLearning.html">Papers</a>
+</li>
+
+<br>
+
+<li id="CuriosityDriven">
+<strong>Curiosity-driven（好奇心駆動型）</strong><br>
+強化学習において、エージェントが未知の状態や予測が困難な環境を積極的に探索するように、内発的な動機づけを与える手法のこと。<br>
+<br>
+『Curiosity-driven Exploration by Self-supervised Prediction』(2017)<br>
+　(自己教師予測による好奇心主導の探究)<br>
+　論文は<a href="https://arxiv.org/abs/1705.05363">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1705.05363v1">こちら</a><br>
+<br>(関連項目)<br>
+・<a href="#IntrinsicMotivation">Intrinsic Motivation (内発的動機付け)</a><br>
+・<a href="#NoveltySearch">Novelty Search (新規性探索)</a>
 </li>
 
 <br>
@@ -881,11 +896,14 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li>
+<li id="IntrinsicMotivation">
 <strong>Intrinsic Motivation (内発的動機付け)</strong><br>
 報酬や評価といった外部の刺激に関係なく、個人の内面から自然と湧き上がる興味・関心、意欲によって行動すること。<br>
 <br>
-<a href="data/Papers_IntrinsicMotivation.html">Papers</a>
+<a href="data/Papers_IntrinsicMotivation.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#CuriosityDriven">Curiosity-driven（好奇心駆動型）</a><br>
+・<a href="#NoveltySearch">Novelty Search (新規性探索)</a><br>
 </li>
 
 <br>
@@ -1125,7 +1143,7 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 <br>
 
-<li>
+<li id="MentalRotation">
 <strong>Mental Rotation (心的回転)</strong><br>
 心の中で二次元または三次元の物体を回転させる認知機能のこと。<br>
 <br>
@@ -1147,6 +1165,34 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 「学習の仕方を学習する」ための機械学習技術。
 </li>
 
+<br>
+
+<li id="MMLM">
+<strong>MMLM: Multimodal Language Model (マルチモーダル言語モデル)</strong><br>
+テキスト情報だけでなく、画像、音声、動画、3Dデータなど、複数の種類の情報（マルチモーダル）を扱えるモデルの総称。<br>
+モード間の関連付けの手法<br>
+<br>
+<ul>
+<li><a href="#SharedEmbeddingSpace">Shared Embedding Space (共有埋め込み空間)</a><br>
+異なるモードのデータを同じベクトル空間にマッピングすることで、モード間の比較と関連付けを可能にする。OpenAI の CLIP (Contrastive Language–Image Pre-training) モデルが代表例。<br>
+</li>
+<br>
+<li><a href="#MMFusion">・Multi-modal Fusion (マルチモーダル融合)</a><br>
+モデルの途中の層で複数のモードの情報を直接統合する。<br>
+各モードの情報を個別のエンコーダーで処理した後、Transformerモデルのクロスアテンション層などを利用して、モード間の特徴を相互に参照させる。<br>
+Google DeepMind の Flamingo モデルなどがこのアプローチを利用している。
+</li>
+<br>
+<li><a href="#TokenLevelIntegration">Token-level Integration (トークンレベル統合)</a><br>
+画像を言語モデルが理解できる「トークン」として扱い、テキストトークンと並べて処理する。<br>
+VisualBERT や SimVLM といったモデルがこの手法を採用している。
+</li>
+</ul>
+
+<br>(関連項目)<br>
+・<a href="#VLM">VLM: Vision-Language Model (視覚・言語モデル)</a> ･･･ MMLMは、VLMを内包する、より広範な概念<br>
+・<a href="#UnifiedTokenizer">Unified Tokenizer (統合トークナイザー)</a>
+</li>
 <br>
 
 <li>
@@ -1200,8 +1246,21 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 『Mixture of Neuron Experts』(2025)<br>
 　(ニューロンエキスパートの混合)
 </li>
-
 <center><img src="data/images/MoE.svg"></center>
+
+<br>
+
+<li id="MMFusion">
+<strong>Multi-modal Fusion (マルチモーダル融合)</strong><br>
+複数の異なる種類のデータ（モダリティ）を組み合わせて統合し、より包括的な理解や高い精度を達成するための技術。<br>
+<br>
+『Everything at Once – Multi-Modal Fusion Transformer for Video Retrieval』(2022)<br>
+『Flamingo: a Visual Language Model for Few-Shot Learning』(2022)<br>
+　論文は<a href="https://arxiv.org/abs/2204.14198">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2204.14198v2">こちら</a>
+<center><img src="data/images/Flamingo.svg"></center>
+<br>(関連項目)<br>
+・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+</li>
 
 </ul></div><p>
 
@@ -1244,9 +1303,12 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 
 <br>
 
-<li>
+<li id="NoveltySearch">
 <strong>Novelty Search (新規性探索)</strong><br>
-進化計算や強化学習などの分野で用いられる探索アルゴリズムの一種。あらかじめ定義された目標や適応度関数を直接的に最適化するのではなく、過去に生成された解とは異なる「新奇性」を持つ行動や解を探索・評価することに焦点を当てる。
+進化計算や強化学習などの分野で用いられる探索アルゴリズムの一種。あらかじめ定義された目標や適応度関数を直接的に最適化するのではなく、過去に生成された解とは異なる「新奇性」を持つ行動や解を探索・評価することに焦点を当てる。<br>
+<br>(関連項目)<br>
+・<a href="#CuriosityDriven">Curiosity-driven（好奇心駆動型）</a><br>
+・<a href="#IntrinsicMotivation">Intrinsic Motivation (内発的動機付け)</a>
 </li>
 
 <br>
@@ -1328,6 +1390,25 @@ DeepMind社によって2014年に発表された。<br>
 グラフニューラルネットワーク（GNN）でメッセージ伝播を行う際に、遠く離れたノードからの情報がボトルネックによって圧縮され、情報が歪んだり失われたりする現象のこと。<br>
 これにより、GNNがグラフ上の長距離にあるノード間の関係性を効率的に学習できなくなるという問題が生じる。<br>
 ※ 直訳は「スカッシュ(押しつぶし)し過ぎ」
+</li>
+
+<br>
+
+<li>
+<strong>Overthinking (考えすぎ, 過剰思考)</strong><br>
+意思決定や問題解決に必要とされる範囲を超えて、物事を延々と、かつ非建設的に考え続けてしまう状態。<br>
+<br>
+『Overthinking the Truth: Understanding how Language Models Process False Information』(2023)<br>
+　(真実の過剰な深掘り：言語モデルにおける偽のデモンストレーションの処理メカニズムの解明)<br>
+　論文は<a href="https://arxiv.org/abs/2307.09476">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2307.09476v3">こちら</a><br>
+<br>
+『Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs』(2024)<br>
+　(「2+3=?」に考えすぎないで：o1型LLMの過剰思考について)<br>
+　論文は<a href="https://arxiv.org/abs/2412.21187">こちら</a>,　解説は<a href="https://www.alphaxiv.org/ja/overview/2412.21187v2">こちら</a><br>
+<br>
+『Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models』(2025)<br>
+　(考えすぎをやめよう：大規模言語モデルの効率的な推論に関する調査)<br>
+　論文は<a href="https://arxiv.org/abs/2503.16419">こちら</a>
 </li>
 
 </ul></div><p>
@@ -1610,7 +1691,7 @@ AI技術を活用して科学のプロセスを加速・自動化し、新しい
 『Language Model Perplexity Predicts Scientific Surprise and Transformative Impact』(2025)<br>
 AIシステムがこれまでの知識や人間が期待する予測からは逸脱した、予期せぬ、そして根本的に新しい科学的知見を発見することを指す。<br>
 <br>(関連項目)<br>
-・<a href="#AI4S">AI4S: AI for Science</a>
+・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a>
 </li>
 
 <br>
@@ -1628,12 +1709,12 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 </li>
 <br>
 
-
 <li>
 
-
 <strong>Self-Play(自己対局)</strong><br>
-AIが自分自身を対戦相手として繰り返しプレイすることで、外部からの人間の知識や教師データなしに、自律的に学習を進め、性能を向上させる手法。
+AIが自分自身を対戦相手として繰り返しプレイすることで、外部からの人間の知識や教師データなしに、自律的に学習を進め、性能を向上させる手法。<br>
+<br>(関連項目)<br>
+・<a href="#WithoutHumanKnowledge">Without human knowledge (人間知識なし)</a>
 </li>
 
 <br>
@@ -1664,6 +1745,20 @@ AIシステムが自らのコードや構造を複製、または改良して新
 
 <br>
 
+<li id="SharedEmbeddingSpace">
+<strong>Shared Embedding Space (共有埋め込み空間)</strong><br>
+異なるモードのデータを同じベクトル空間にマッピングすること。<br>
+<br>
+『Learning Transferable Visual Models From Natural Language Supervision』(2021)<br>
+　論文は<a href="https://arxiv.org/abs/2103.00020">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2103.00020v1">こちら</a><br>
+<br>
+<center><img src="data/images/CLIP.svg"></center>
+<br>(関連項目)<br>
+・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+</li>
+
+<br>
+
 <li id="ShortcutLearning">
 
 <strong>Shortcut Learning (ショートカット学習)</strong><br>
@@ -1672,6 +1767,12 @@ AIシステムが自らのコードや構造を複製、または改良して新
 <a href="data/Papers_SimplicityBias.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#SimplicityBias">Simplicity Bias</a>
+</li>
+
+<br>
+
+<li><strong>Siamese Network (シャムネットワーク)</strong><br>
+2つの入力データ間の類似性を比較するために設計された特殊なニューラルネットワークのアーキテクチャー。
 </li>
 
 <br>
@@ -1736,7 +1837,7 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 物体が空間内でどのように配置され、互いにどのような関係にあるかを理解し、推論する能力のこと。前, 後, 左, 右, 上,下 など, オブジェクト間の基本的な関係を推論すること。<br>
 
 <br>(関連項目)<br>
-・Mental Rotattion (心的回転)<br>
+・<a href="#MentalRotation">Mental Rotattion (心的回転)</a><br>
 　　物体が回転したときにどう見えるかを想像する能力。<br>
 ・Spatial Awareness (空間的認識)<br>
 　　自身や物体が空間内のどこにあるかを認識する能力。<br>
@@ -1753,6 +1854,21 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <strong>Spectral Bias (スペクトルバイアス) </strong><br>
 深層学習モデルが学習の初期段階で、対象となる関数やデータの低周波成分（滑らかで大まかな特徴）を優先的に学習し、高周波成分（複雑で細かい特徴）の学習を後回しにする傾向を指す。
+</li>
+
+<br>
+
+<li id="SR">
+<strong>SR: Symbolic Regression (シンボリック回帰)</strong><br>
+与えられたデータセットに最もよく適合する数学的な数式を自動的に探索・発見する機械学習の手法。<br>
+<br>
+『From Kepler to Newton: Explainable AI for Science』(2021)<br>
+　(ケプラーからニュートンへ：科学のための説明可能な AI)<br>
+　論文は<a href="https://arxiv.org/abs/2111.12210">こちら</a>, 機械翻訳は<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2023_From%20Kepler%20to%20Newton/From%20Kepler%20to%20Newton.html">こちら</a><br>
+<br>
+ティコ・ブラーエの天文観測データに基づいて AI によって、ケプラーの惑星運動の法則とニュートンの万有引力の法則がどのように再発見されるかを示した。<br>
+<br>(関連項目)<br>
+・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a>
 </li>
 
 <br>
@@ -1808,7 +1924,21 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 <li>
 <strong>Symbol Grounding (記号接地)</strong><br>
-人工知能（AI）研究における根源的な課題の一つで、AIが扱う記号（シンボル）を、実世界の具体的な対象、概念、経験と結びつけるプロセス、またはその問題自体を指す。
+人工知能（AI）研究における根源的な課題の一つで、AIが扱う記号（シンボル）を、実世界の具体的な対象、概念、経験と結びつけるプロセス、またはその問題自体を指す。<br>
+<br>
+<a href="https://en.wikipedia.org/wiki/Symbol_grounding_problem">wikipedia</a><br>
+<br>
+『The Symbol Grounding Problem』(1999)<br>
+　論文は<a href="https://arxiv.org/html/cs/9906002">こちら</a><br>
+　Symbol Grounding 問題を提唱した原典。記号操作のみでは意味が生まれないことを指摘している。解決策として、記号が非記号的な表象（画像的表象とカテゴリー的表象）によって物理世界に接地されるべきだと提案した。<br>
+<br>
+『A Praxical Solution of the Symbol Grounding Problem』(2021)<br>
+　論文は<a href="https://researchprofiles.herts.ac.uk/files/187237/901130.pdf">こちら</a><br>
+　行為者と環境の相互作用が果たす役割を強調する「Praxical Solution」を提唱した。エージェントの行動に基づく新しい意味論（Action-based Semantics）を導入し、エージェントが意味を接地させ、コミュニケーションを確立する仕組みを提案した。<br>
+<br>
+『Embodied AI: Symbol Grounding through Imagination』(2023)<br>
+　論文は<a href="https://aaai.org/papers/0010-fs01-01-010-embodied-ai-symbol-grounding-through-imagination/">こちら</a><br>
+　ロボットが物理世界で自律的に会話するために、言語記号を理解する必然性について論じている。人間の記号操作が身体的な動きに基づいていることに触れ、ロボットが仮想的な身体運動を通じて記号を接地させる embodied AI の概念を提唱した。<br>
 </li>
 
 <br>
@@ -1835,10 +1965,23 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 <br>
 
+<li id="TokenLevelIntegration">
+<strong>Token-level Integration (トークンレベル統合)</strong><br>
+テキスト以外のモーダルのデータを言語モデルが理解できる「トークン」として扱い、テキストトークンと並べて処理する。<br>
+<br>
+『VisualBERT: A Simple and Performant Baseline for Vision and Language』(2019)<br>
+論文は<a href="https://arxiv.org/abs/1908.03557">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1908.03557v1">こちら</a><br>
+<br>
+『SimVLM: Simple Visual Language Model Pretraining with Weak Supervision』(2021)<br>
+論文は<a href="https://arxiv.org/abs/2108.10904">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2108.10904v3">こちら</a><br>
+<center><img src="data/images/TokenLevelIntegration.svg"></center>
+<br>(関連項目)<br>
+・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+</li>
+
+<br>
+
 <li>
-
-
-
 <strong>ToM: Theory of Mind (心の理論)</strong><br>
 他者が自分とは異なる信念、意図、欲求、感情などの心の状態（精神状態）を持っていることを理解する能力のこと。
 </li>
@@ -1849,8 +1992,12 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 <strong>ToT: Tree of Thoughts (思考ツリー)</strong><br>
 大規模言語モデル（LLM）が複雑な問題を解決する際に、単一の思考プロセスを直線的に進めるのではなく、複数の可能性を同時に探索して最も有望な経路を選択する、より高度な推論フレームワーク。<br>
+<br>
+『Tree of Thoughts: Deliberate Problem Solving with Large Language Models』(2023)<br>
+　論文は<a href="https://arxiv.org/abs/2305.10601">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2305.10601v2">こちら</a><br>
 <br>(関連項目)<br>
-・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり
+・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり<br>
+・GoT: Graph of Thoughts
 </li>
 
 <br>
@@ -1869,7 +2016,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="UnifiedTokenizer">
 <strong>Unified Tokenizer (統合トークナイザー)</strong><br>
 テキスト、画像、音声など、異なる種類のデータを単一の統一された形式（トークン）に変換できる、領域に依存しない（ドメインに特化しない）手法。<br>
 <br>
@@ -1879,7 +2026,10 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <br>
 『AToken: A Unified Tokenizer for Vision』(2025)<br>
 　(AToken: 統一された視覚トークナイザー)<br>
-　再構成と理解の両タスク、および画像、動画、3Dといったモダリティを統一する初のトークナイザー
+　再構成と理解の両タスク、および画像、動画、3Dといったモダリティを統一する初のトークナイザー<br>
+<br>(関連項目)<br>
+・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+
 </li>
 
 </ul></div><p>
@@ -1961,6 +2111,16 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <a href="data/Papers_VisualPlanning.html">Papers</a>
 </li>
 
+<br>
+
+<li id="VLM">
+<strong>VLM: Vision-Language Model (視覚・言語モデル)</strong><br>
+視覚情報（画像・動画）とテキスト情報に特化したモデル。<br>
+画像を分析してキャプションを生成したり、画像に関する質問に答えたりするなど、視覚とテキストを結びつけるタスクに強みがある。<br>
+<br>(関連項目)<br>
+・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+</li>
+
 </ul></div><p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1985,7 +2145,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 
 <br>
 
-<li>
+<li id="WithoutHumanKnowledge">
 <strong>Without human knowledge (人間知識なし)</strong><br>
 人間の専門的な知識や戦略、あるいは人間が事前に整理・ラベリングしたデータに頼ることなく、AIが自律的に学習し、課題を解決するアプローチ。<br>
 <br>
