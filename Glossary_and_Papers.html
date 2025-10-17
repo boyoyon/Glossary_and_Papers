@@ -511,7 +511,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <br>
 
-<li>
+<li id="CurseOfDimensionality">
 <strong>Curse of Dimensionality (次元の呪い)</strong><br>
 
 データや問題の次元数（特徴量の数）が増えるにつれて、必要なデータ数や計算量が指数関数的に増加し、計算効率の低下やモデルの精度低下を招く現象。<br>
@@ -524,8 +524,9 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 『The curses and blessings of dimensionality』(2000)<br>
 ・高次元空間には特有の構造（例えば、低次元の多様体など）があり, 新たな手法が生まれる可能性がある。<br>
 <br>
-<a href="data/Papers_Curse_of_Dimensionality.html">Papers</a>
-
+<a href="data/Papers_Curse_of_Dimensionality.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#Hubness">Hubness (ハブ性)</a>
 </li>
 
 <br>
@@ -642,7 +643,8 @@ Compositionality Gapの一例。<br>
 <br>
 <a href="data/Papers_DRL.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり
+・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり<br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a>
 </li>
 <br>
 <center><img src="data/images/DRL.svg"></center>
@@ -877,7 +879,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li>
+<li id="Hubness">
 <strong>Hubness (ハブ性)</strong><br>
 
 機械学習、特に高次元データ空間で発生する現象。<br>
@@ -885,7 +887,9 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 ハブネスは、「Curse of Dimensionality (次元の呪い)」の一側面とされている。高次元空間では、データポイント間の距離のコントラストが低下し、ほとんどのデータポイント間の距離がほぼ等しくなってしまう。その結果、データ空間の特定の場所に位置するごく一部のデータポイントが、多くのデータポイントから「近い」と認識されやすくなる。<br>
 ハブネスは、kNN (k-近傍法) などの距離ベースのアルゴリズムに悪影響を及ぼす。<br>
 <br>
-<a href="data/Papers_Hubness.html">Papers</a>
+<a href="data/Papers_Hubness.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#CurseOfDimensionality">Curse of Dimensionality (次元の呪い)</a>
 </li>
 
 </ul></div><p>
@@ -898,17 +902,29 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <ul>
 <li id="IL">
 <strong>IL: Imitation Learning (模倣学習)</strong><br>
-専門家（人間や熟練したAIなど）が示したお手本の行動を観察し、それを真似ることでタスクの遂行方法を学習させる機械学習の手法。<br>
-・BC: Bihavioral Cloning (行動クローニング)<br>
+熟練者 (人間やAIなど) が示したお手本の行動を観察し、それを真似ることでタスクの遂行方法を学習させる機械学習の手法。<br>
+<br>
+・<strong>BC: Bihavioral Cloning (行動クローニング)</strong><br>
 　状態と行動の正解データセットを使ってポリシー(状態→行動)を学習する<br>
-・GAIL:Generative Adversarial Imitation Learning(敵対的生成模倣学習)<br>
+<br>
+・<strong>GAIL:Generative Adversarial Imitation Learning(敵対的生成模倣学習)</strong><br>
 　状態と行動の正解データセットを使ってGANのようにポリシーと識別器を同時学習する。<br>
-・Reinforcement Lerning(強化学習)<br>
-　正解の行動が判らない状態で報酬を使って試行錯誤によりポリシー(状態→行動)を学習する。<br>
-・Inverse Reinforment Learning(逆強化学習)<br>
+<br>
+・<strong>Reinforcement Lerning(強化学習)</strong><br>
+　正解の行動が判らない状態で, 人間が定義した報酬を使って試行錯誤によりポリシーを学習する。<br>
+　(人間が模倣学習を行って報酬関数を定義し. 強化学習によりポリシーの形にする)<br>
+<br>
+・<strong>Inverse Reinforment Learning(逆強化学習)</strong><br>
 　熟練者の行動から報酬の予測を学習する。<br>
 <center><img src="data/images/IL.svg"></center>
-
+<br>
+『Imitation Learning: Progress, Taxonomies and Challenges』(2021)<br>
+　論文は<a href="https://arxiv.org/abs/2106.12177">こちら</a><br>
+<br>
+<center><img src="data/images/IL2.png"></center>
+<br>(関連項目)<br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a><br>
 </li>
 
 <br>
@@ -988,10 +1004,18 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <li id="IRL">
 <strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
-熟練者や人間の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。<br>
+熟練者 (人間やAIなど) の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。<br>
+<br>
+<center><img src="data/images/IRL.svg"></center>
+<br>
+『Inverse Reinforcement Learning without Reinforcement Learning (2023)』<br>
+　(強化学習なしの逆強化学習)<br>
+　論文は<a href="https://arxiv.org/abs/2303.14623v4">こちら</a><br>
+　従来の IRL 手法は、難しい強化学習（RL）問題をサブルーチンとして繰り返し解く必要があった。 模倣学習というより容易な問題を、より困難なRL問題を繰り返し解く問題に縮約した。理論上は指数関数的な高速化を実現する。実際に、連続制御タスクにおいて従来技術を大幅に高速化できることが分かった。<br>
 <br>
 <a href="data/Papers_IRL.html">Papers</a><br>
 <br>(関連項目)<br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
 ・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり
 </li>
 </ul></div><p>
