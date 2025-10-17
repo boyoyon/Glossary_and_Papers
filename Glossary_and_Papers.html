@@ -57,8 +57,6 @@
 
 
 <h2>新着</h2>
-
-<p>
 ●<a href="#OneStepGenerator">One-Step Generator</a><br>
 『Who Said Neural Networks Aren't Linear?』(2025><br>
 　(ニューラルネットワークは線形ではないと誰が言った？)<br>
@@ -80,6 +78,10 @@
 　論文は<a href="https://arxiv.org/abs/2510.01297">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.01297v1">こちら</a><br>
 ・異種エージェント(家計/企業/政府/中央銀行)と豊富な相互作用を持つ解釈可能なマクロ経済システムをモデル化するマルチエージェントフレームワーク「SimCity」を開発<br>
 ・<strong><span style="color:magenta;">価格弾力性、エンゲルの法則、オークンの法則、フィリップス曲線、ベバリッジ曲線など</span></strong>の標準的なマクロ経済現象のチェックリストを作成し、SimCity がシミュレーション実行全体にわたって堅牢性を維持しながら<strong><span style="color:magenta;">これらの経験的パターンを自然に再現する</span></strong>ことを示した。<br>
+<br>
+●<a href="#IL">IL: Imitation Learning (模倣学習)</a><br>
+専門家（人間や熟練したAIなど）が示したお手本の行動を観察し、それを真似ることでタスクの遂行方法を学習させる機械学習の手法。
+<p>
 
 </p>
 
@@ -638,7 +640,9 @@ Compositionality Gapの一例。<br>
 <strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
 強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの<br>
 <br>
-<a href="data/Papers_DRL.html">Papers</a>
+<a href="data/Papers_DRL.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり
 </li>
 <br>
 <center><img src="data/images/DRL.svg"></center>
@@ -892,6 +896,23 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <p>
 <div class="styleBullet">
 <ul>
+<li id="IL">
+<strong>IL: Imitation Learning (模倣学習)</strong><br>
+専門家（人間や熟練したAIなど）が示したお手本の行動を観察し、それを真似ることでタスクの遂行方法を学習させる機械学習の手法。<br>
+・BC: Bihavioral Cloning (行動クローニング)<br>
+　状態と行動の正解データセットを使ってポリシー(状態→行動)を学習する<br>
+・GAIL:Generative Adversarial Imitation Learning(敵対的生成模倣学習)<br>
+　状態と行動の正解データセットを使ってGANのようにポリシーと識別器を同時学習する。<br>
+・Reinforcement Lerning(強化学習)<br>
+　正解の行動が判らない状態で報酬を使って試行錯誤によりポリシー(状態→行動)を学習する。<br>
+・Inverse Reinforment Learning(逆強化学習)<br>
+　熟練者の行動から報酬の予測を学習する。<br>
+<center><img src="data/images/IL.svg"></center>
+
+</li>
+
+<br>
+
 <li>
 <strong>Implicit Bias (暗黙のバイアス)</strong><br>
 無意識のうちに抱いている偏見、思い込み、先入観のこと。日本語では「潜在的バイアス」や「アンコンシャス・バイアス」とも呼ばれる。<br>
@@ -969,7 +990,9 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
 熟練者や人間の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。<br>
 <br>
-<a href="data/Papers_IRL.html">Papers</a>
+<a href="data/Papers_IRL.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり
 </li>
 </ul></div><p>
 
