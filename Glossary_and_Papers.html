@@ -58,17 +58,11 @@
 
 <h2>追加項目</h2>
 <p>
-<a href="#ICoT">●ICoT: Implicit Chain-of-Thoughts Training (暗黙の思考連鎖トレーニング)</a><br>
-　トレーニング中に明示的な思考連鎖トークンを最初に提示し、段階的にそれらを取り除いていく。このアプローチは、乗算のようなタスクに必要な推論手順をモデルが内面化するのに役立つ。<br>
-『Why Can’t Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls』(2025)<br>
-　(<strong><span style="color:magenta;">トランスフォーマーはなせ掛け算を学べないのか ?</span></strong>逆エンジニアリングが長距離依存性の落とし穴を明らかにする )<br>
-<br>
-
-<a href="#WorldModel">●World Model</a><br>
-『General agents contain world models』(2025)<br>
-　(汎用エージェントは世界モデルを含む)<br>
-　論文は<a href="https://arxiv.org/abs/2506.01622">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.01622v4">こちら</a><br>
-　<strong><span style="color:magenta;">多段階の目標指向タスクに一般化できるエージェントは、暗黙的に環境の予測モデルを含んでいることを正式に実証した。</span></strong>
+<a href="#AI4S">●AI4S: AI for Science (科学のためのAI)</a><br>
+『Barbarians at the Gate: How AI is Upending Systems Research』(2025)<br>
+　(黒船来航：AIはいかにシステム研究のあり方を一変させるか)<br>
+　論文は<a href="https://arxiv.org/abs/2510.06189v3">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.06189v3">こちら</a><br>
+　研究者たちは11の多様なシステム問題にわたってADRSを評価し、<strong><span style="color:magenta;">最先端の人間によるソリューションに匹敵するか、それを超える結果を一貫して達成</span></strong>した。<br>
 </p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -227,6 +221,12 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・人間の認知限界やバイアスを超えた仮説生成と知識発見<br>
 ・自律的な研究サイクル「AIサイエンティスト」<br>
 ・代理モデル（サロゲートモデル）によるシミュレーションの高度化<br>
+<br>
+『Barbarians at the Gate: How AI is Upending Systems Research』(2025)<br>
+　(黒船来航：AIはいかにシステム研究のあり方を一変させるか)<br>
+　論文は<a href="https://arxiv.org/abs/2510.06189v3">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.06189v3">こちら</a><br>
+　研究者たちは11の多様なシステム問題にわたってADRSを評価し、<strong><span style="color:magenta;">最先端の人間によるソリューションに匹敵するか、それを超える結果を一貫して達成</span></strong>した。<br>
+<center><img src="data/images/ADRS.svg"></center>
 
 <br>(関連項目)<br>
 ・AutoML (機械学習ワークフローの自動化)<br>
@@ -716,6 +716,49 @@ AIモデルもこの効果を起こす。<br>
 
 <br>
 
+<li id="EnsembleMethod">
+<strong>Ensemble Method (アンサンブル法)</strong><br>
+複数の機械学習モデルを組み合わせて、単一のモデルよりも高い予測精度や安定性を目指す手法。<br>「三人寄れば文殊の知恵」の機械学習版。<br>
+<br>
+<center><img src="data/images/EnsembleMethod.svg"></center>
+<ul>
+<li><strong>Boosting (ブースティング)</strong><br>
+複数のモデルを逐次的に学習させてモデルのアンサンブルを構成する方法。<br>
+乱択(ランダムな選択)と同程度の精度の低い識別器を出力する弱学習器を, 高精度な識別器を出力する強学習器へとブースト(昇格)させる。<br>
+<br>
+<center><img src="data/images/Boosting.svg"></center>
+</li>
+<br>
+<li><strong>Bagging (バギング)</strong><br>
+複数のモデルを並行して学習させる方法。<br>
+データセットから重複を認めて学習データをランダムに選択する <strong><u>B</u></strong>ootstrap法 と, それぞれの学習データで学習させた識別器の推定を集約する <strong><u>agg</u></strong>regat<strong><u>ing</u></strong> をつないで bagging。<br>
+<br>
+<center><img src="data/images/Bagging.svg"></center>
+</li>
+<br>
+<li><strong>Stacking</strong></br>
+複数の弱学習器の予測結果を、別の学習器（メタモデル）の入力として使用し、最終的な予測を行う手法。<br>
+・複数の異なるモデル (決定木、SVMなど) をベースモデル学習器として訓練する。<br>
+・複数のモデルの出力をどのように組み合わせるかをメタモデルで学習する。<br>
+<br>
+<center><img src="data/images/Stacking.svg"></center>
+</li>
+<br>
+<li><strong>DNN: Deep Neural Network</strong><br>
+ブースティングは, <strong><span style="color:magenta;">ニューラルネットワークに隠れユニットを徐々に追加することで, 個々のニューラルネットワークをアンサンブルとして解釈して適用されてきた</span></strong>(Bengio et al.,2006a)<br>
+　：<br>
+ドロップアウトは, 非常に多くの大規模なニューラルネットワークに対してバギングを実用的にする方法であると考えられる。バギングには複数のモデルの訓練と各テスト事例に対する複数のモデルの評価が必要である。これは, 各モデルが大規模なニューラルネットワークである場合に, そのようなモデルの訓練や評価は実行時間とメモリの点でコストがかかるため, 実用的ではないと考えられる。5個から10個のニューラルネットワークから構成されるアンサンブルを使うことは一般的であり, Szegedy et al.(2014a)では6個を使ってILSVRCで優勝しているが, それ以上多くなると急激に扱いづらくなってしまう。<strong><span style="color:magenta;">ドロップアウトによって, 指数関数的に多くのニューラルネットワークを集めたアンサンブルの訓練と評価のための, 安価な近似が得られる。</span></strong><br>
+[書籍]『Deep Learning』Ian Goodfellow 他<br>
+
+</li>
+</ul>
+<br>(関連項目)<br>
+・<a href="#PAC">PAC Learning: Probably Approximately Correct Learning (確率的で近似的に正しい学習)</a><br>
+・<a href="#ModelSoup">Model soups (モデルスープ)</a> ･･･ Ensemble Method は推論時に複数のモデルを動作させるが, モデルスープは複数のモデルの重みを加重平均した単一のモデルを動作させる。
+</li>
+
+<br>
+
 <li>
 <strong>Episodic Memory (エピソード記憶)</strong><br>
 個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。一般的な知識を記憶する「意味記憶」とは区別される。<br>
@@ -935,6 +978,30 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <br>(関連項目)<br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a><br>
+</li>
+
+<br>
+
+<li id="ill-posed">
+<strong>ill-posed problem (不良設定問題)</strong><br>
+・well-posed problem(良設定問題)ではない問題。<br>
+　= 以下の条件のいずれかを満たしていない問題。<br>
+・well-posed problem(良設定問題)<br>
+　1. 解が存在する<br>
+　2. 解が一意である<br>
+　3. 解が安定している<br>
+<br>
+(例)<br>
+　2+6=?  　　　　　　　良設定問題<br>
+　△+□=8, △=?, □=?  不良設定問題<br>
+<br>
+　損失関数 |△+□-8| だけでは解が定められれない。<br>
+<br>
+　△, □は自然数? 整数? 実数? 複素数?<br>
+　差が少ない方が良い? 大きい方が良い? <br>
+　などの解が備えるべき性質(拘束条件, 正則化条件)が必要。<br>
+<br>(関連項目)<br>
+・<a href="#Regularization">Regularization (正則化)</a>
 </li>
 
 <br>
@@ -1298,7 +1365,7 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 異なるモードのデータを同じベクトル空間にマッピングすることで、モード間の比較と関連付けを可能にする。OpenAI の CLIP (Contrastive Language–Image Pre-training) モデルが代表例。<br>
 </li>
 <br>
-<li><a href="#MMFusion">・Multi-modal Fusion (マルチモーダル融合)</a><br>
+<li><a href="#MMFusion">Multi-modal Fusion (マルチモーダル融合)</a><br>
 モデルの途中の層で複数のモードの情報を直接統合する。<br>
 各モードの情報を個別のエンコーダーで処理した後、Transformerモデルのクロスアテンション層などを利用して、モード間の特徴を相互に参照させる。<br>
 Google DeepMind の Flamingo モデルなどがこのアプローチを利用している。
@@ -1336,7 +1403,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 
 <br>
 
-<li>
+<li id="ModelSoup">
 
 <strong>Model soups (モデルスープ)</strong><br>
 異なるハイパーパラメータ（学習率、エポック数など）でファインチューニングされた複数のモデルの重みパラメータを平均化し、単一の高性能モデルを作成する手法。<br>
@@ -1564,7 +1631,7 @@ D</h
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="PAC">
 <strong>PAC Learning: Probably Approximately Correct Learning (確率的で近似的に正しい学習) </strong><br>
 機械学習の計算論的学習理論における数学的な枠組みの一つ。<br>
 「確率的で、近似的に正しい学習ができること」を数学的に保証するための理論。<br>
@@ -1583,17 +1650,17 @@ D</h
 　(弱い学習可能性の強み)　論文は<a href="https://link.springer.com/content/pdf/10.1007/BF00116037.pdf">こちら</a><br>
 　弱い学習器の存在と強い学習器の存在が数学的に等価であることを証明した。つまり、<strong><span style="color:magenta;">弱い学習器があれば、そこから強い学習器を作り出すことができる</span></strong>ことを証明し，後のブースティングアルゴリズムの基礎となる構成法を示した。<br>
 　　↓<br>
-『A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting』<br>
+・『Stacked Generalization』(1992)<br>
+・『A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting』<br>
 　AdaBoost (1995)<br>
-　　↓<br>
-『Greedy Function Approximation: A Gradient Boosting Machine』<br>
+・『Greedy Function Approximation: A Gradient Boosting Machine』<br>
 　GBDT(Gradient Boosting Decision Tree) (1999)<br>
-　　↓<br>
-『Random Forests』(2001)<br>
+・『Random Forests』(2001)<br>
 　　：
 <br>
 　DNN の中間層, 訓練中の Drop Out はネットワークのアンサンブルによるブースティングと見なすことができる。<br>
 <br>(関連項目)<br>
+・<a href="#EnsembleMethod">Ensemble Method (アンサンブル法)</a><br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization (分布外汎化)</a><br>
 </li>
 
@@ -1626,6 +1693,7 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 現代の物理情報ニューラルネットワーク (PINN) フレームワークを導入した。
 <br><br>
 <center><img src="data/images/PINNs.svg"></center>
+<center>自動微分～物理損失を教師モデルと見なすと「Knowledge Distillation (知識蒸留)」に似ている</center>
 </li>
 
 <br>
@@ -1792,10 +1860,14 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
-<li>
+<li id="Regularization">
 
 <strong>Regularization (正則化)</strong><br>
-機械学習モデルの「過学習」を防ぎ、未知のデータに対する「汎化能力」を向上させるための手法。<br>
+・不良設定問題に対して、解の滑らかさなどの定性的な拘束条件を加えて解が存在する様に問題を変換して解く手法。<br>
+・事前情報が不足しているため、通常の手法では唯一、安定な解を得ることができない時に、定性的なルールを適用して解を求めるもの。<br>
+・機械学習の文脈では, モデルの「過学習」を防ぎ、未知のデータに対する「汎化能力」を向上させるための手法。<br>
+<br>(関連項目)<br>
+・<a href="#ill-posed">ill-posed problem (不良設定問題)</a>
 </li>
 
 <br>
