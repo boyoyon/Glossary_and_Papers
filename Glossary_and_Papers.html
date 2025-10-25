@@ -1019,7 +1019,8 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li><strong>Inductive Bias (帰納バイアス)</strong><br>
+<li id="InductiveBias">
+<strong>Inductive Bias (帰納バイアス)</strong><br>
 学習時に遭遇したことのない入力に対する出力の予測を可能にするために用いる一連の仮定から生じるバイアスのこと。<br>
 『学習とは、過去の経験から一般化を行い、その経験に「関連する」新しい状況に対処する能力を伴う。新しい状況に対処するために必要な帰納的飛躍は、状況のある一般化を他の一般化よりも選択するための特定のバイアスがある場合にのみ可能となるように思われる･･･』<br>
 ～The need for biases in learning generalizations(1980)～<br>
@@ -1027,7 +1028,9 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 事前分布はベイズ推論における帰納バイアスの一種と見なすことができる。
 ここで「帰納的」という言葉は、帰納法の厳密な数学的意味を持つのではなく、以前の知識に基づいて何らかの推論を行うという事実を意味する。<br>
 <br>
-<a href="data/Papers_InductiveBias.html">Papers</a>
+<a href="data/Papers_InductiveBias.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#Regularization">Regularization (正則化)</a>
 </li>
 
 <br>
@@ -1866,8 +1869,11 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 ・不良設定問題に対して、解の滑らかさなどの定性的な拘束条件を加えて解が存在する様に問題を変換して解く手法。<br>
 ・事前情報が不足しているため、通常の手法では唯一、安定な解を得ることができない時に、定性的なルールを適用して解を求めるもの。<br>
 ・機械学習の文脈では, モデルの「過学習」を防ぎ、未知のデータに対する「汎化能力」を向上させるための手法。<br>
+・ベイズ推定の文脈では, 事前確率分布の対数尤度を損失関数に加えること<br>
+・帰納バイアスを表現する手段<br>
 <br>(関連項目)<br>
-・<a href="#ill-posed">ill-posed problem (不良設定問題)</a>
+・<a href="#ill-posed">ill-posed problem (不良設定問題)</a><br>
+・<a href="#InductiveBias">Inductive Bias (帰納バイアス)</a>
 </li>
 
 <br>
