@@ -58,11 +58,9 @@
 
 <h2>追加項目</h2>
 <p>
-<a href="#AI4S">●AI4S: AI for Science (科学のためのAI)</a><br>
-『Barbarians at the Gate: How AI is Upending Systems Research』(2025)<br>
-　(黒船来航：AIはいかにシステム研究のあり方を一変させるか)<br>
-　論文は<a href="https://arxiv.org/abs/2510.06189v3">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.06189v3">こちら</a><br>
-　研究者たちは11の多様なシステム問題にわたってADRSを評価し、<strong><span style="color:magenta;">最先端の人間によるソリューションに匹敵するか、それを超える結果を一貫して達成</span></strong>した。<br>
+<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a><br>
+<a href="#Plateau">Plateau (プラトー)<br>
+
 </p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -894,11 +892,13 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 この用語は、SF作家ロバート・ハインラインの小説『異星の客』に出てくる「完全に、深く理解する」という意味の造語「grok」に由来する。<br>
 <br>
 <center><img src="data/images/Grokking.svg"></center>
+<center><img src="data/images/TrendGrokking.svg"></center>
 <br>
 <a href="data/Papers_Grokking.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
-・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking できれば Primacy Bias を克服できる
+・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking できれば Primacy Bias を克服できる<br>
+・<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a>
 </li>
 
 </ul></div></p>
@@ -1493,6 +1493,34 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 </li>
 
 <br>
+
+<li id="NGD">
+<strong>NGD: Natural Gradient Descent (自然勾配降下法)</strong><br>
+通常の勾配降下法が持つ課題を解決するために、モデルのパラメーター空間の幾何学的構造を考慮して勾配の向きを補正する最適化アルゴリズム。<br>
+<br>
+『脳・心・人工知能』ブルーバックス(甘利俊一)<br>
+　学習を進めていくと、損失関数(誤差)は順調に減っていくが、そのうちにほとんど減らなくなる。これが Plateau (プラトー)だ。<br>
+<center><img src="data/images/Plateau.svg"></center>
+
+　ここで学習が終わりかというと、そんなことはない。さらに辛抱強く学習を進めていくと、再び急峻に減り始める。しかしまたプラトーにつかまって学習が停滞する。この原因は何なのか、それを避けるうまい方法はないものだろうか。<br>
+　：<br>
+パーセプトロンの学習は、シナプスの重みのなすパラメータの空間で進行する。ところがここに問題があった。<br>
+　：<br>
+<strong><span style="color:magenta;">損失関数の勾配をリーマン空間の中で考えればよい。式は少し面倒になるが、これを用いるとプラトーは消失し、素早い学習ができる。この方式を「自然勾配学習法」という</span></strong>が、これはいまブームの深層学習でも有効である。ただ、計算がややこしいので、いろいろな簡便法が世界で研究されている。<br>
+<br>
+『Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking』(2025)<br>
+　(平等勾配降下法：加速グロッキングへのシンプルなアプローチ)<br>
+　論文は<a href="https://arxiv.org/abs/2510.04930v1">こちら</a><br>
+　・（確率的）勾配降下法の速度が、勾配の異なる主方向（すなわち、特異方向）に沿って非対称になることで、グロッキングが誘発されることを、経験的かつ理論的に示す。<br>
+　・次に、勾配を正規化し、すべての主方向に沿ったダイナミクスが全く同じ速度で進化するようにする、単純な修正法を提案する。<br>
+　・この修正法 (我々は平等主義勾配降下法（EGD）と呼び、<strong><span style="color:magenta;">自然勾配降下法を慎重に修正した形式と見なすことができる</span></strong>) が、<strong><span style="color:magenta;">はるかに高速にグロッキングする</span></strong>ことを確立する。<br>
+<br>(関連項目)<br>
+・<a href="#Plateau">Plateau (プラトー)</a><br>
+・<a href="#Grokking">Grokking</a>
+</li>
+
+<br>
+
 <li id="NoisyTVProblem">
 <strong>Noisy TV problem (ノイジーテレビ問題)</strong><br>
 強化学習における好奇心ベースの探索手法が抱える問題の一つ。<br>
@@ -1697,6 +1725,18 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <br><br>
 <center><img src="data/images/PINNs.svg"></center>
 <center>自動微分～物理損失を教師モデルと見なすと「Knowledge Distillation (知識蒸留)」に似ている</center>
+</li>
+
+<br>
+
+<li id="Plateau">
+<strong>Plateau (プラトー)</strong><br>
+学習の過程で損失関数の値が一時的にほとんど変化しなくなり、学習の進捗が停滞しているように見える現象。<br>
+
+<center><img src="data/images/Plateau.svg"></center>
+
+<br>(関連項目)<br>
+・<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a>
 </li>
 
 <br>
