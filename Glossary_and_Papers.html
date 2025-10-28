@@ -56,10 +56,15 @@
 <h1><center>Glossary and Papers</center></h1>
 
 
-<h2>追加項目</h2>
+<h2>更新項目</h2>
 <p>
-<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a><br>
-<a href="#Plateau">Plateau (プラトー)<br>
+<a href="#AGI">AGI: Artificial General Intelligence (汎用人工知能)</a><br> 
+<a href="#ASI">ASI: Artificial Super Intelligence</a><br> 
+<a href="#BaldwinEffect">Baldwin effect (ボールドウィン効果)</a><br>
+<a href="#ConfirmationBias">Confirmation Bias (確証バイアス)</a><br>
+<a href="#EoE">EoE: Era of Experience (経験の時代)</a><br>
+<a href="#Reasoning">Reasoning (推論)</a><br>
+<a href="#Sycophancy">Sycophancy (おべっか, 追従性)</a><br>
 
 </p>
 
@@ -95,22 +100,22 @@
 <strong>ABM: Agent-Based Models (エージェントベースモデル)</strong><br>
 自律的に行動する複数の「エージェント」間の相互作用をコンピューター上でシミュレーションし、システム全体に生じる複雑な現象やパターンを分析する手法。<br>
 <br>
-『SimCity: Multi-Agent Urban Development Simulation with Rich Interactions』(2025)<br>
+●『SimCity: Multi-Agent Urban Development Simulation with Rich Interactions』(2025)<br>
 　(SimCity: 豊富なインタラクションによるマルチエージェント都市開発シミュレーション)<br>
 　論文は<a href="https://arxiv.org/abs/2510.01297">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.01297v1">こちら</a><br>
 ・異種エージェント(家計/企業/政府/中央銀行)と豊富な相互作用を持つ解釈可能なマクロ経済システムをモデル化するマルチエージェントフレームワーク「SimCity」を開発<br>
 ・<strong><span style="color:magenta;">価格弾力性、エンゲルの法則、オークンの法則、フィリップス曲線、ベバリッジ曲線など</span></strong>の標準的なマクロ経済現象のチェックリストを作成し、SimCity がシミュレーション実行全体にわたって堅牢性を維持しながら<strong><span style="color:magenta;">これらの経験的パターンを自然に再現する</span></strong>ことを示した。<br>
 <br>
 <center><img src="data/images/SimCity.svg"></center>
-『Econagent: Large language model-empowered agents for simulating macroeconomic activities』(2024)<br>
+●『Econagent: Large language model-empowered agents for simulating macroeconomic activities』(2024)<br>
 　(Econagent: 大規模言語モデルを活用したマクロ経済活動シミュレーションエージェント)<br>
 　論文は<a href="https://arxiv. org/abs/2310.10436">こちら</a><br>
 <br>
-『Generative agents: Interactive simulacra of human behavior』(2023)<br>
+●『Generative agents: Interactive simulacra of human behavior』(2023)<br>
 　(生成エージェント：人間行動の対話型模倣体)<br>
 　論文は<a href="https://arxiv.org/abs/2304.03442">こちら</a><br>
 <br>
-『A baseline model. Journal of Economic Behavior & Organization』(2013)<br>
+●『A baseline model. Journal of Economic Behavior & Organization』(2013)<br>
 　(エージェントベース・マクロ経済学：基本モデル)<br>
 　論文は<a href="https://www.econstor.eu/bitstream/10419/45012/1/654079951.pdf">こちら</a>
 </li>
@@ -147,6 +152,55 @@
 <br>
 <a href="data/Papers_AdversarialVulnerabilities.html">Papers</a>
 
+
+</li>
+
+<br>
+<li id="AGI">
+<strong>AGI: Artificial General Intelligence (汎用人工知能)</strong><br>
+人間が実行できる<strong><span style="color:magenta">あらゆる</span></strong>知的タスクを遂行可能な人工知能。<br>
+現在のAIの多くは「特化型AI」であり、特定のタスク（画像認識、言語処理など）に特化して能力を発揮する。それに対しAGIは、特定の分野に限らず、幅広い知識を横断的に活用し、未知の課題にも柔軟に対応できることが特徴。<br>
+<br>(関連項目)<br>
+・<a href="#ASI">ASI: Artificial Superintelligence (人工超知能)</a><br>
+・ANI（Artificial Narrow Intelligence）･･･ AGI に対して現行の AI を ANI と呼ぶ場合がある。<br>
+<br>
+<strong>OpenAI の5段階ロードマップ</strong><br>
+・2024 年 7 月に開催された OpenAI 社内会議で、従業員向けに非公開で発表された。<br> 
+・その後、この内部ロードマップは、ブルームバーグによって報じられたことで広く知られるようになった。<br>
+<br>
+<ul>
+
+<li><strong>Level 1: Conversational AI (会話型AI)</strong><br>
+テキストや音声を介して人間の会話を模倣した方法で対話できるAIシステム。<br>
+(例) ChatGPT
+</li>
+
+<li><strong>Level 2: Reasoners (推論者)</strong><br>
+複雑な問題に取り組み、博士号を持つ人と同等の推論能力を発揮できる AI。<br>
+単なる会話を超えて基本的な問題を解決し、以前は専門家の領域であった洞察を提供する AI システム。<br>
+(例) o1, Alphafold
+</li>
+
+<li><strong>Level 3: Agent (エージェント)</strong><br>
+ユーザーに代わって自律的に行動できるAIシステム。<br>
+AIシステムは長期間にわたって自律的に動作する。<br>
+AIエージェントは、人間の介入なしにタスクを完了し、選択を行い、状況に適応し、実質的に指定された分野において完全に自律的になる。
+</li>
+
+<li><strong>Level 4: Innovator (革新者)</strong><br>
+問題解決能力だけでなく、自律的なイノベーションも実現できるAI。<br>
+独自のアイデアやソリューションを考案し、これまでの限界をさらに押し広げることができるAI。<br>
+人類の知識を進化させ、新しいアイデアを発明できるAI。<br>
+科学研究の仮説を立てたり、新薬を開発したりするなど、これまでは天才的な科学者にしかできなかった分野で、AIがイノベーションを主導する。
+</li>
+
+<li><strong>Level 5:Organizations (組織)</strong><br>
+AI が組織全体の作業負荷を担う。<br>
+複雑な操作の管理、戦略的な意思決定、部門間のパフォーマンスの最適化をすべて人間の介入なしで実行する。<br>
+組織全体の業務を人間の介入なしで遂行できるAI。<br>
+複雑なオペレーションの管理、戦略的な意思決定、部門全体のパフォーマンス最適化などを自律的に行う。最終的には、モデルとアプリケーションの境界が曖昧になり、システム全体が一体化した知的エコシステムとなる。 
+</li>
+</ul>
 
 </li>
 
@@ -189,7 +243,7 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・<a href="data/Papers_AIAlignment.html#RLHF">RLHF</a>: Reinforcement Learning from Human Feedback [手法]<br>
 
 <strong><span style="color:magenta;">人間のフィードバックが手作業で設計された報酬関数よりも優れた報酬形を提供できる可能性を示唆しており,従来の報酬設計が非現実的である実世界の課題に強化学習を適用する新たな可能性を開いた。</span></strong><br>
-「Deep reinforcement learning from human preferences」(2017)
+●『Deep reinforcement learning from human preferences』(2017)
 </li></ul>
 <br>
 <center><img src="data/images/RLHF.svg"></center>
@@ -220,7 +274,7 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・自律的な研究サイクル「AIサイエンティスト」<br>
 ・代理モデル（サロゲートモデル）によるシミュレーションの高度化<br>
 <br>
-『Barbarians at the Gate: How AI is Upending Systems Research』(2025)<br>
+●『Barbarians at the Gate: How AI is Upending Systems Research』(2025)<br>
 　(黒船来航：AIはいかにシステム研究のあり方を一変させるか)<br>
 　論文は<a href="https://arxiv.org/abs/2510.06189v3">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.06189v3">こちら</a><br>
 　研究者たちは11の多様なシステム問題にわたってADRSを評価し、<strong><span style="color:magenta;">最先端の人間によるソリューションに匹敵するか、それを超える結果を一貫して達成</span></strong>した。<br>
@@ -257,7 +311,7 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 「成功には必要条件を全て満たさなければならないが、失敗は1つ欠けるだけで起こる」という原則。文学作品の一節に由来し、生態学や経営学など幅広い分野で引用されてきたが、近年では機械学習の分野においても言及されるようになった。<br>
 <center><img src="data/images/AnnaKareninaPrinciple.svg"></center>
 <br>
-『Applying Anna Karenina Principle in Deep Learning for Image Classification』(2023)<br>
+●『Applying Anna Karenina Principle in Deep Learning for Image Classification』(2023)<br>
 (ストレスと適応：画像分類のためのディープラーニングにおけるアンナ・カレーニナ原理の適用)<br>
 <br>
 ・幸福な家庭 (汎化性の高いモデル)<br>
@@ -266,6 +320,16 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 　汎化性能が低いモデルは、その内部表現に大きなばらつき（多様性）が見られる。<br>
 <br>(関連項目)<br>
 ・<a href="#NeuralCollapse">Neural Collapse</a>　関係あるか不明だが･･･
+</li>
+
+<br>
+
+<li id="ASI">
+<strong>ASI: Artificial Superintelligence (人工超知能)</strong><br>
+人間の知能を遥かに凌駕する能力を持つと想定されるAI。<br>
+AGI (汎用人工知能) が「人間と同等の知能」を目指すのに対し、ASIはあらゆる知的タスクにおいて、人類の集合知をも超える知性、学習能力、問題解決能力を備える存在。<br>
+<br>(関連項目)<br>
+・<a href="#AGI">AGI: Artificial General Intelligence (汎用人工知能)</a>
 </li>
 
 <br>
@@ -292,7 +356,7 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="BaldwinEffect">
 <strong>Baldwin effect (ボールドウィン効果)</strong><br>
 個体が生涯で獲得した学習や行動が、世代を超えた遺伝的選択を通じて、まるで生得的な本能であるかのように固定化されていく進化的な現象。<br>
 獲得形質が遺伝するというラマルク説とは異なり、ネオダーウィニズムの枠組みで説明される。<br>
@@ -302,7 +366,12 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <br>
 <center><img src="data/images/BaldwinEffect.svg"></center>
 <br>
-『Evolution imposes an inductive bias that alters and accelerates learning dynamics
+Lamark (ラマルク) 説は完全に否定された訳ではない模様。<br>
+●『Paternal exercise enhances offspring endurance through sperm microRNAs』(2025)<br>
+　(父親の運動は精子マイクロRNAを介して子孫の持久力を高める)<br>
+　論文は<a href="https://www.news-medical.net/news/20251006/Paternal-exercise-enhances-offspring-endurance-through-sperm-microRNAs.aspx">こちら</a><br>
+<br>
+●『Evolution imposes an inductive bias that alters and accelerates learning dynamics
 』(2025)<br>
 　(進化は学習のダイナミクスを変化させ加速させる帰納バイアスを課す)<br>
 オンライン学習が進化の速度と過程に与える影響は、ボールドウィン効果として知られている。<br>
@@ -433,6 +502,22 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 </li>
 
 <br>
+<li id="ConfirmationBias">
+<strong>Confirmation Bias (確証バイアス)</strong><br>
+自分の仮説や信念を裏付ける情報ばかりを集めて、反証する情報を無視したり軽視したりする傾向を指す心理学の用語。<br>
+<br>
+●『Confirmation Bias in Generative AI Chatbots』(2025)<br>
+　ユーザー(人間)とのチャットを通じてAIが人間の確証バイアスに誘導され, ユーザーの確証バイアスが増幅される可能性がある。<br>
+●『Generative artificial intelligence–mediated confirmation bias in health information seeking』(2025)<br>
+　ChatGPTなどの生成型人工知能（GenAI）アプリケーションは、会話型で高度にパーソナライズされたインタラクションを提供する。この高度にカスタマイズされた応答を生成する能力は、既存の信念を強化し、医学的コンセンサスを曖昧にし、誤情報を永続させることで確証バイアスを増幅させるリスクがある。<br>
+●『Does AI Make People More Open or Reinforce Bias?』(2025)<br>
+　AIがユーザーの確証バイアスを強めるか、あるいは緩和するかの<strong><span style="color:magenta;">分析モデルを構築した</span></strong>。<br>
+　情報の出所や意思決定の種類、そして情報がユーザーの先入観と一致するかによって、AIの影響は異なる。<br>
+<br>(関連項目)<br>
+・<a href="#Reasoning">Reasoning (推論)</a>
+</li>
+
+<br>
 
 <li id="ContinualLearning">
 <strong>Continual Learning (継続学習)</strong><br>
@@ -468,7 +553,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <strong>Curiosity-driven（好奇心駆動型）</strong><br>
 強化学習において、エージェントが未知の状態や予測が困難な環境を積極的に探索するように、内発的な動機づけを与える手法のこと。<br>
 <br>
-『Curiosity-driven Exploration by Self-supervised Prediction』(2017)<br>
+●『Curiosity-driven Exploration by Self-supervised Prediction』(2017)<br>
 　(自己教師予測による好奇心主導の探究)<br>
 　論文は<a href="https://arxiv.org/abs/1705.05363">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1705.05363v1">こちら</a><br>
 <br>(関連項目)<br>
@@ -501,7 +586,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 ・球面集中現象(concentration on the sphere): ほとんどのデータが球の表面近くに分布するようになる<br>
 　：<br>
 「次元の呪い」だけでなく「次元の祝福」もある。<br>
-『The curses and blessings of dimensionality』(2000)<br>
+●『The curses and blessings of dimensionality』(2000)<br>
 ・高次元空間には特有の構造（例えば、低次元の多様体など）があり, 新たな手法が生まれる可能性がある。<br>
 <br>
 <a href="data/Papers_Curse_of_Dimensionality.html">Papers</a><br>
@@ -516,7 +601,8 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 (例)1ホップの質問：「『イマジン』の演奏者は誰?」「ジョン・レノンの配偶者は誰?」には答えられる。<br>
 　　2ホップの質問：「『イマジン』の演奏者の配偶者は誰?」）には答えられない。<br>
 <br>
-『<a href="https://arxiv.org/abs/2411.16353v1">The Two-Hop Curse: LLMs trained on A->B, B->C fail to learn A-->C</a> (2024)』<br>
+●『The Two-Hop Curse: LLMs trained on A->B, B->C fail to learn A-->C』 (2024)<br>
+　論文は<a href="https://arxiv.org/abs/2411.16353v1">こちら</a><br>
 
 推論のステップを明示的に示す「思考の連鎖（Chain-of-Thought）」プロンプティングがあれば、2ホップ推論を実行できる。しかし、そうした明示的な指示がないと、個々の事実を結合できない。<br>
 これは、LLMが学習データから自動的に、あるいは「潜在的に」推論ステップを結びつける能力が欠けていることを示唆している。<br>
@@ -544,7 +630,7 @@ Compositionality Gapの一例。<br>
 <strong>DA: Domain Adaptation (ドメイン適応)</strong><br>
 　ラベル付けされたソースドメインで訓練されたモデルを、ラベルなしまたは疎にラベル付けされたターゲットドメインに適応させること。<br>
 <br>
-『CLIP-Powered Domain Generalization and Domain Adaptation: A Comprehensive Survey』(2025><br>
+●『CLIP-Powered Domain Generalization and Domain Adaptation: A Comprehensive Survey』(2025><br>
 　(CLIPを活用したドメイン汎化およびドメイン適応：包括的レビュー)<br>
 　論文は<a href="">こちら</a>, 解説は<a href="https://www.alphaxiv.org/overview/2504.14280v1">こちら</a><br>
 </li>
@@ -584,14 +670,14 @@ Compositionality Gapの一例。<br>
 　「I drink wine.」（私はワインを飲む）<br>
 　「ビール」と「ワイン」が何らかの共通点（ここでは「飲み物」という属性）を持つと推測できる。<br>
 
-・Distributional Structure (1954)<br>
+●『Distributional Structure』 (1954)<br>
 　単語の意味がその文脈（共起する他の単語）の分布によって決定されるという考え方を定式化。<br>
-・A synopsis of linguistic theory, 1930-1955 (1957)<br>
+●『A synopsis of linguistic theory, 1930-1955』 (1957)<br>
 　"You shall know a word by the company it keeps."<br>
 　(あなたは言葉がいつも一緒にいる仲間によって、その言葉を知るだろう)<br>
 　という有名な言葉で、この概念を簡潔かつ詩的に表現し、広く知らしめた。<br>
 　英語の古い格言 "A man is known by the company he keeps" をもじったものだと考えられている。<br> 
-・Efficient Estimation of Word Representations in Vector Space』（Word2Vec）(2013)<br>
+●『Efficient Estimation of Word Representations in Vector Space』（Word2Vec）(2013)<br>
 　<strong><span style="color:magenta;">分布仮説を、計算効率の高いニューラルネットワークモデルで実装した。</span></strong><br>
 
 <br>(関連項目)<br>
@@ -648,7 +734,7 @@ Compositionality Gapの一例。<br>
 
 <br>
 
-<li>
+<li id="Dropout">
 <strong>Dropout</strong><br>
 ニューラルネットワークの学習時に、一部のニューロン（ノード）をランダムに無効化する正則化手法の一つ。<br>
 <br>
@@ -662,6 +748,9 @@ Dropoutは、学習ごとに異なるサブネットワークを生成し、<str
 <a href="data/Papers_Dropout.html">Papers</a>
 </li>
 </ul>
+<br>(関連項目)<br>
+・<a href="#EnsembleMethod">Ensemble Method (アンサンブル法)</a><br>
+・<a href="#Regularization">Regularization (正則化)</a>
 </li>
 <br>
 
@@ -688,31 +777,6 @@ AIモデルもこの効果を起こす。<br>
 <p>
 <div class="styleBullet">
 <ul>
-<li id="EarlyExperience">
-<strong>Early Experience (早期経験)</strong><br>
-<br>
-『Agent Learning via Early Experience』(2025)<br>
-　論文は<a href="https://arxiv.org/abs/2510.08558">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.08558v1">こちら</a><br>
-<br>
-　「早期経験」パラダイムを導入する。これにより、言語エージェントは、<strong><span style="color:magenta;">明示的な報酬シグナルを必要とせずに</span></strong>、環境との自身の相互作用から学習することができる。<br>
-<br>
-・言語エージェントの長期的な目標<br>
-　自身の経験を通じて学習し、向上し、最終的には複雑な現実世界のタスクで人間を上回ること。<br>
-・強化学習を用いて経験データからエージェントをトレーニングすることは、検証可能な報酬がない環境や非効率的な長期ロールアウトが必要な環境が多く、依然として困難。<br>
-・早期経験と呼ぶ中間的なパラダイムでこの制限に対処する。<br>
-・<strong><span style="color:magenta;">早期経験とはエージェント自身の行動によって生成されるインタラクションデータであり、結果として得られる将来の状態は報酬信号なしの教師として機能する</span></strong>。<br>
-・このパラダイムでは、2つの戦略を研究する。<br>
-　(1) Implicit world modeling (暗黙的世界モデリング) <br>
-　　収集された状態を使用して環境ダイナミクスにポリシーを根拠付ける。<br>
-　(2) Self-reflection (自己反省)<br>
-　　エージェントは最適ではない行動から学習し、推論と意思決定を改善する。<br>
-
-<center><img src="data/images/EarlyExperience.svg"></center>
-<br>(関連項目)<br>
-・<a href="#EraOfExperience">Era of Experience (経験の時代)</a>
-</li>
-
-<br>
 
 <li id="EnsembleMethod">
 <strong>Ensemble Method (アンサンブル法)</strong><br>
@@ -720,21 +784,21 @@ AIモデルもこの効果を起こす。<br>
 <br>
 <center><img src="data/images/EnsembleMethod.svg"></center>
 <ul>
-<li><strong>Boosting (ブースティング)</strong><br>
+<li>●<strong>Boosting (ブースティング)</strong><br>
 複数のモデルを逐次的に学習させてモデルのアンサンブルを構成する方法。<br>
 乱択(ランダムな選択)と同程度の精度の低い識別器を出力する弱学習器を, 高精度な識別器を出力する強学習器へとブースト(昇格)させる。<br>
 <br>
 <center><img src="data/images/Boosting.svg"></center>
 </li>
 <br>
-<li><strong>Bagging (バギング)</strong><br>
+<li>●<strong>Bagging (バギング)</strong><br>
 複数のモデルを並行して学習させる方法。<br>
 データセットから重複を認めて学習データをランダムに選択する <strong><u>B</u></strong>ootstrap法 と, それぞれの学習データで学習させた識別器の推定を集約する <strong><u>agg</u></strong>regat<strong><u>ing</u></strong> をつないで bagging。<br>
 <br>
 <center><img src="data/images/Bagging.svg"></center>
 </li>
 <br>
-<li><strong>Stacking</strong></br>
+<li>●<strong>Stacking</strong></br>
 複数の弱学習器の予測結果を、別の学習器（メタモデル）の入力として使用し、最終的な予測を行う手法。<br>
 ・複数の異なるモデル (決定木、SVMなど) をベースモデル学習器として訓練する。<br>
 ・複数のモデルの出力をどのように組み合わせるかをメタモデルで学習する。<br>
@@ -742,7 +806,7 @@ AIモデルもこの効果を起こす。<br>
 <center><img src="data/images/Stacking.svg"></center>
 </li>
 <br>
-<li><strong>DNN: Deep Neural Network</strong><br>
+<li>●<strong>DNN: Deep Neural Network</strong><br>
 ブースティングは, <strong><span style="color:magenta;">ニューラルネットワークに隠れユニットを徐々に追加することで, 個々のニューラルネットワークをアンサンブルとして解釈して適用されてきた</span></strong>(Bengio et al.,2006a)<br>
 　：<br>
 ドロップアウトは, 非常に多くの大規模なニューラルネットワークに対してバギングを実用的にする方法であると考えられる。バギングには複数のモデルの訓練と各テスト事例に対する複数のモデルの評価が必要である。これは, 各モデルが大規模なニューラルネットワークである場合に, そのようなモデルの訓練や評価は実行時間とメモリの点でコストがかかるため, 実用的ではないと考えられる。5個から10個のニューラルネットワークから構成されるアンサンブルを使うことは一般的であり, Szegedy et al.(2014a)では6個を使ってILSVRCで優勝しているが, それ以上多くなると急激に扱いづらくなってしまう。<strong><span style="color:magenta;">ドロップアウトによって, 指数関数的に多くのニューラルネットワークを集めたアンサンブルの訓練と評価のための, 安価な近似が得られる。</span></strong><br>
@@ -752,7 +816,48 @@ AIモデルもこの効果を起こす。<br>
 </ul>
 <br>(関連項目)<br>
 ・<a href="#PAC">PAC Learning: Probably Approximately Correct Learning (確率的で近似的に正しい学習)</a><br>
-・<a href="#ModelSoup">Model soups (モデルスープ)</a> ･･･ Ensemble Method は推論時に複数のモデルを動作させるが, モデルスープは複数のモデルの重みを加重平均した単一のモデルを動作させる。
+・<a href="#ModelSoup">Model soups (モデルスープ)</a> ･･･ Ensemble Method は推論時に複数のモデルを動作させるが, モデルスープは複数のモデルの重みを加重平均した単一のモデルを動作させる。<br>
+・<a href="#Dropout">Dropout</a>
+</li>
+
+<br>
+
+<li id="EoE">
+<strong>EoE: Era of Experience (経験の時代)</strong><br>
+AI（人工知能）が人間から与えられたデータだけでなく、AI自身の「経験」を通して自律的に学習・進化していくという、AI研究における新たな方向性を示す概念。<br>
+Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者のひとり Richard S. Sutton が2025年4月に発表した論文『Welcome to the Era of Experience』で提唱された。<br>
+<br>
+<center><img src="data/images/EoE.svg"></center>
+<br>
+●『Welcome to the Era of Experience』(2025)<br>
+　論文は<a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf">こちら</a>, 機械翻訳は<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2025_Welcome%20to%20the%20Era%20of%20Experience/2025_Welcome%20to%20the%20Era%20of%20Experience.html">こちら</a><br>
+<br>
+　<strong><span style="color:magenta;">例えば、あるエージェントが5,000年前の人間の思考と専門家の回答を用いて推論するように訓練されていたとしたら、物理的な問題についてアニミズムの観点から推論していたかもしれません。</span></strong><br>
+→ 人間を教師にしていることがネックになる･･･<br>
+<br>
+データは、エージェントが強くなるにつれて継続的に改善される方法で生成されなければなりません。静的なデータ合成手順は、すぐに追い越されてしまいます。これは、エージェントが自身の経験、つまり環境との相互作用によって生成されるデータから継続的に学習できるようにすることで実現できます。<br>
+
+<br>
+
+●『Agent Learning via Early Experience』(2025)<br>
+　論文は<a href="https://arxiv.org/abs/2510.08558">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.08558v1">こちら</a><br>
+<br>
+　「早期経験」パラダイムを導入する。これにより、言語エージェントは、<strong><span style="color:magenta;">明示的な報酬シグナルを必要とせずに</span></strong>、環境との自身の相互作用から学習することができる。<br>
+・このパラダイムでは、2つの戦略を研究する。<br>
+　(1) Implicit world modeling (暗黙的世界モデリング) <br>
+　　収集された状態を使用して環境ダイナミクスにポリシーを根拠付ける。<br>
+　(2) Self-reflection (自己反省)<br>
+　　エージェントは最適ではない行動から学習し、推論と意思決定を改善する。<br>
+<br>
+<center><img src="data/images/EarlyExperience.svg"></center>
+<br>
+●『The Missing Reward: Active Inference in the Era of Experience』(2025)<br>
+　(失われた報酬: 経験の時代の能動推論)<br>
+　論文は<a href="https://arxiv.org/abs/2508.05619">こちら</a></br>
+<br>
+　エージェントが自己生成データから学習する「経験の時代」という提案は、有望な前進であるが、このビジョンは依然として報酬関数の広範な人間工学に依存しており、<strong><span style="color:magenta;">ボトルネックは、データキュレーションから報酬キュレーションへと移行している。</span></strong><br>
+　AIF: Active Inference (能動推論) が、<strong><span style="color:magenta;">人間による継続的な報酬設計なしに経験から学習できる自律型AIエージェントの開発に不可欠な基盤を提供する</span></strong>と主張する。<br>
+　AIF (能動推論)は外部報酬信号を自由エネルギー最小化への内発的動機に置き換えることで、エージェントが統一されたベイズ的目的を通して探索と活用を自然にバランスさせることができると提案する。
 </li>
 
 <br>
@@ -772,16 +877,6 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 
 <br>
 
-<li id="EraOfExperience">
-<strong>Era of Experience (経験の時代)</strong><br>
-AI（人工知能）が人間から与えられたデータだけでなく、AI自身の「経験」を通して自律的に学習・進化していくという、AI研究における新たな方向性を示す概念。<br>
-Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者のひとり Richard S. Sutton が2025年4月に発表した論文『Welcome to the Era of Experience』で提唱された。<br>
-<br>
-『<strong><span style="color:magenta;">例えば、あるエージェントが5,000年前の人間の思考と専門家の回答を用いて推論するように訓練されていたとしたら、物理的な問題についてアニミズムの観点から推論していたかもしれません。</span></strong>』<br>
-→ 人間を教師にしていることがネックになる･･･<br>
-<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2025_Welcome%20to%20the%20Era%20of%20Experience/2025_Welcome%20to%20the%20Era%20of%20Experience.html">機械翻訳はこちら</a><br>
-<br>(関連項目)<br>
-・<a href="#EarlyExperience">Early Experience (早期経験)</a>
 </li>
 
 </ul></div></p>
@@ -896,9 +991,10 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <br>
 <a href="data/Papers_Grokking.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ)<br>
-・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking できれば Primacy Bias を克服できる<br>
-・<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a>
+・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) ･･･ Grokking を含む上位の問題<br>
+・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking の高速化で Primacy Bias を克服する<br>
+・<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a> ･･･ Grokking を加速<br>
+・<a href="#SC">Softmax Collapse</a> ･･･ Softmax関数の数値的不安定性が Grokking を起こす
 </li>
 
 </ul></div></p>
@@ -947,7 +1043,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <strong>ICoT: Implicit Chain-of-Thoughts Training (暗黙の思考連鎖トレーニング)</strong><br>
 　トレーニング中に明示的な思考連鎖トークンを最初に提示し、段階的にそれらを取り除いていく。このアプローチは、乗算のようなタスクに必要な推論手順をモデルが内面化するのに役立つ。<br>
 <br>
-『Why Can’t Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls』(2025)<br>
+●『Why Can’t Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls』(2025)<br>
 　(<strong><span style="color:magenta;">トランスフォーマーはなせ掛け算を学べないのか ?</span></strong>逆エンジニアリングが長距離依存性の落とし穴を明らかにする )<br>
 </li>
 
@@ -967,11 +1063,11 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 　正解の行動が判らない状態で, 人間が定義した報酬を使って試行錯誤によりポリシーを学習する。<br>
 　(人間が模倣学習を行って報酬関数を定義し. 強化学習によりポリシーの形にする)<br>
 <br>
-・<strong>Inverse Reinforment Learning(逆強化学習)</strong><br>
+・<strong>Inverse Reinforcement Learning(逆強化学習)</strong><br>
 　熟練者の行動から報酬の予測を学習する。<br>
 <center><img src="data/images/IL.svg"></center>
 <br>
-『Imitation Learning: Progress, Taxonomies and Challenges』(2021)<br>
+●『Imitation Learning: Progress, Taxonomies and Challenges』(2021)<br>
 　論文は<a href="https://arxiv.org/abs/2106.12177">こちら</a><br>
 <br>
 <center><img src="data/images/IL2.png"></center>
@@ -1010,7 +1106,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <strong>Implicit Bias (暗黙のバイアス)</strong><br>
 無意識のうちに抱いている偏見、思い込み、先入観のこと。日本語では「潜在的バイアス」や「アンコンシャス・バイアス」とも呼ばれる。<br>
 <br>
-『Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings』(2016)<br>
+●『Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings』(2016)<br>
 　(男性とコンピュータープログラマーの関係は、女性と主婦の関係と同じ？単語埋め込みのバイアス除去する)<br>
 言語モデルにおけるバイアスへの懸念を高めた主要な研究の一つ。 単語埋め込みにおける強い性別ステレオタイプを実証した。<br>
 <br>
@@ -1022,8 +1118,9 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <li id="InductiveBias">
 <strong>Inductive Bias (帰納バイアス)</strong><br>
 学習時に遭遇したことのない入力に対する出力の予測を可能にするために用いる一連の仮定から生じるバイアスのこと。<br>
-『学習とは、過去の経験から一般化を行い、その経験に「関連する」新しい状況に対処する能力を伴う。新しい状況に対処するために必要な帰納的飛躍は、状況のある一般化を他の一般化よりも選択するための特定のバイアスがある場合にのみ可能となるように思われる･･･』<br>
-～The need for biases in learning generalizations(1980)～<br>
+<br>
+●『The need for biases in learning generalizations』(1980)<br>
+学習とは、過去の経験から一般化を行い、その経験に「関連する」新しい状況に対処する能力を伴う。<strong><span style="color:magenta;">新しい状況に対処するために必要な帰納的飛躍は、状況のある一般化を他の一般化よりも選択するための特定のバイアスがある場合にのみ可能となるように思われる</span></strong>･･･<br>
 <br>
 事前分布はベイズ推論における帰納バイアスの一種と見なすことができる。
 ここで「帰納的」という言葉は、帰納法の厳密な数学的意味を持つのではなく、以前の知識に基づいて何らかの推論を行うという事実を意味する。<br>
@@ -1034,26 +1131,24 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 </li>
 
 <br>
-
-<li><strong>Inductive Leap (帰納的飛躍)</strong><br>
-いくつかの具体的な観察や事例から、それらを超えた普遍的な結論や一般法則を導き出す思考の飛躍のこと。<br>
+<li id="InductiveLeap">
+<strong>Inductive Leap (帰納的飛躍)</strong><br>
+限られた個別的な観察や経験から、より広い範囲に適用される一般的な結論を導き出す際の、論理的な飛躍。<br>
+(例)<br>
+・「すべての白鳥は白い」<br>
+　　オーストラリアでは黒い白鳥（コクチョウ）が見つかり、この結論は覆された。<br>
+・「飼い主はいつも自分に親切だ」(by 七面鳥)<br>
+　　感謝祭の日、仮説が間違っていたことが明らかになる。<br>
 <br>
-・論理的に必ず正しいと保証されるものではない。<br>
-　不適切な帰納的飛躍が、結果として偏見を生み出すことがある。<br>
-　<strong>確証バイアス</strong>（自分の既存の信念を補強する情報を優先する傾向）などの認知バイアスよって行われることがよくある。<br>
-　例外が見つかれば、結論は崩れる可能性がある。<br>
-<br>
-・<strong>演繹法</strong>がすでに知っていることから結論を導き出すのに対し、帰納的飛躍は新たな知識や仮説を生み出す。この点で、科学的探求や日常生活における問題解決において重要な役割を果たす。<br>
-<br>
-・<strong>帰納的飛躍</strong>は、多くの個別事例から一般法則を導き出すプロセス。<br>
-　<strong>アブダクション</strong>は, 驚くべき観察結果や事実に直面した際に、それを最もよく説明できる仮説を形成すること。
-
+一見すると論理的な欠陥のように見えるが、知識を拡張する上で不可欠な思考プロセス。<br>
+<br>(関連項目)<br>
+・<a href="#Reasoning">Reasoning (推論)</a>
 </li>
-<br>
 
+<br>
 
 <li id="InductiveLearning"><strong>Inductive Learning (帰納学習)</strong><br>
-『Learning Model Successors』(2025) における Inductive Learning (帰納的学習) は、ある抽象度のレベルで得られたモデルから、さらに高レベルのモデル（「モデルの後継者」）を学習する、という新しいパラダイムを指す。<br>
+●『Learning Model Successors』(2025) における Inductive Learning (帰納的学習) は、ある抽象度のレベルで得られたモデルから、さらに高レベルのモデル（「モデルの後継者」）を学習する、という新しいパラダイムを指す。<br>
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)･･･概略図比較あり,　 <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習=継続学習の別名)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
@@ -1084,16 +1179,16 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <li id="IRL">
 <strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
-熟練者 (人間やAIなど) の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する機械学習の手法。<br>
+熟練者 (人間やAIなど) の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する模倣学習のための強力な手法群。<br>
 <br>
 <center><img src="data/images/IRL.svg"></center>
 <br>
-『Inverse Reinforcement Learning without Reinforcement Learning (2023)』<br>
+●『Inverse Reinforcement Learning without Reinforcement Learning (2023)』<br>
 　(強化学習なしの逆強化学習)<br>
 　論文は<a href="https://arxiv.org/abs/2303.14623v4">こちら</a><br>
 　従来の IRL 手法は、難しい強化学習（RL）問題をサブルーチンとして繰り返し解く必要があった。 模倣学習というより容易な問題を、より困難なRL問題を繰り返し解く問題に縮約した。理論上は指数関数的な高速化を実現する。実際に、連続制御タスクにおいて従来技術を大幅に高速化できることが分かった。<br>
 <br>
-『General agents contain world models』(2025)
+●『General agents contain world models』(2025)
 　(汎用エージェントは世界モデルを含む)<br>
 　論文は<a href="https://arxiv.org/abs/2506.01622">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.01622v4">こちら<a/><br>
 　逆強化学習はエージェントの方策と世界モデルを用いて目標(報酬モデル)を特定するのに対し、我々の結果はエージェントの方策と目標(報酬)を用いて世界モデルを特定する。
@@ -1162,7 +1257,7 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 圏論における「最も普遍的な方法」で関手を拡張するための構成。ある関数をより広い定義域に拡張する操作を、圏論の文脈で一般化したもの。<br>
 1960年に極限を用いてこの拡張を構成した ダニエル・カン (Daniel Marinus Kan) の名に由来している。<br>
 <br>
-『Learning Is a Kan Extension』(2025)<br>
+●『Learning Is a Kan Extension』(2025)<br>
 すべてのエラー最小化アルゴリズムが Kan 拡張として表現できることを証明する。
 </li>
 
@@ -1202,7 +1297,7 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <br>
 <a href="data/Papers_LatensSpace_LatentZone.html">Papers</a><br>
 <br>
-『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)<br>
+●『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)<br>
 　(潜在ゾーニングネットワーク：生成モデリング、表現学習、および分類の統一的原理)<br>
 統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。<br>
 <center><img src="data/images/LatentZone.svg"></center>
@@ -1229,7 +1324,7 @@ Continual Learning (継続学習) の別名。<br>
 <strong>LoRA: Low-rank adaptation of LLM (低ランク適応)</strong><br>
 大規模言語モデル（LLM）を、効率的かつ少ない計算コストで特定のタスクやデータに適応（ファインチューニング）させるための技術。<br>
 <br>
-『LoRA: Low-Rank Adaptation of Large Language Models』 (2021)<br>
+●『LoRA: Low-Rank Adaptation of Large Language Models』 (2021)<br>
 大規模言語モデル（LLM）の事前学習済み重みを凍結し、その横に低ランク行列 (\(A\)と\(B\)) のペアを追加。ファインチューニング時には、この小さな低ランク行列だけを学習させ、元のモデルの重みは変更しない。<br>
 <strong><span style="color:magenta;">ファインチューニングに必要な学習可能なパラメータが劇的に少なくなる</span></strong>ため、効率的な学習を可能にした。<br>
 
@@ -1244,7 +1339,7 @@ Continual Learning (継続学習) の別名。<br>
 <br>
 <a href="data/Papers_LossLandscape.html">Papers</a><br>
 <br>
-『Visualizing the Loss Landscape of Neural Nets』(2018)<br>
+●『Visualizing the Loss Landscape of Neural Nets』(2018)<br>
 <br>
 <ul>
 <li><strong>可視化手法の提案</strong><br>
@@ -1338,15 +1433,15 @@ Memorization to Generalization: Emergence of Diffusion Models from Associative M
 <strong>Mental Rotation (心的回転)</strong><br>
 心の中で二次元または三次元の物体を回転させる認知機能のこと。<br>
 <br>
-『Mental Rotation of Three-Dimensional Objects』(1971)<br>
+●『Mental Rotation of Three-Dimensional Objects』(1971)<br>
 　3次元回転した画像ペアが同じか否か判定するテストの平均応答時間は3次元回転角度に比例する。<br>
 <br>
 <center><img src="data/images/MentalRotation.svg"></center>
 <br>
-『Large Vision Models can solve mental rotation problems』(2025)<br>
+●『Large Vision Models can solve mental rotation problems』(2025)<br>
 　(大規模視覚モデルは心的回転の問題を解決できる)<br>
 <br>
-『Spatial Mental Modeling from Limited Views』(2025)<br>
+●『Spatial Mental Modeling from Limited Views』(2025)<br>
 　(限定された視点からの空間メンタルモデリング)<br>
 </li>
 
@@ -1411,7 +1506,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <strong>Model soups (モデルスープ)</strong><br>
 異なるハイパーパラメータ（学習率、エポック数など）でファインチューニングされた複数のモデルの重みパラメータを平均化し、単一の高性能モデルを作成する手法。<br>
 <br>
-『Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs (2018)』<br>
+●『Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs (2018)』<br>
 <br>
 <ul><li>
 ・<strong><span style="color:magenta;">異なる初期値から学習をスタートさせた複数のモデルがたどり着く局所最小値（「モード」）が、低損失の経路で繋がっている現象を発見した</span></strong>。
@@ -1419,7 +1514,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 ・この発見に基づき、<strong><span style="color:magenta;">学習済みの複数のモデルパラメータを線形補間するだけで、低損失を維持しながら、より優れた汎化性能を持つアンサンブルモデルを作成できることを示した</span></strong>。これは、モデルアンサンブルを効率的に行う新しい方法を提示した。
 </li></ul>
 <br>
-『Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time』(2022)<br>
+●『Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time』(2022)<br>
 　(モデルスープ：複数のファインチューニング済みモデルの重み平均による、推論時間増加なしの精度向上)
 </li>
 
@@ -1431,10 +1526,10 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
 複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。<br>
 <br>
-『Outrageously large neural networks: The sparsely-gated mixture-of-experts layer』(2017)<br>
+●『Outrageously large neural networks: The sparsely-gated mixture-of-experts layer』(2017)<br>
 　(途方もなく巨大なニューラルネットワーク：まばらにゲートされたエキスパート混合層)<br>
 <br>
-『Mixture of Neuron Experts』(2025)<br>
+●『Mixture of Neuron Experts』(2025)<br>
 　(ニューロンエキスパートの混合)
 </li>
 <center><img src="data/images/MoE.svg"></center>
@@ -1445,8 +1540,8 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <strong>Multi-modal Fusion (マルチモーダル融合)</strong><br>
 複数の異なる種類のデータ（モダリティ）を組み合わせて統合し、より包括的な理解や高い精度を達成するための技術。<br>
 <br>
-『Everything at Once – Multi-Modal Fusion Transformer for Video Retrieval』(2022)<br>
-『Flamingo: a Visual Language Model for Few-Shot Learning』(2022)<br>
+●『Everything at Once – Multi-Modal Fusion Transformer for Video Retrieval』(2022)<br>
+●『Flamingo: a Visual Language Model for Few-Shot Learning』(2022)<br>
 　論文は<a href="https://arxiv.org/abs/2204.14198">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2204.14198v2">こちら</a>
 <center><img src="data/images/Flamingo.svg"></center>
 <br>(関連項目)<br>
@@ -1498,7 +1593,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <strong>NGD: Natural Gradient Descent (自然勾配降下法)</strong><br>
 通常の勾配降下法が持つ課題を解決するために、モデルのパラメーター空間の幾何学的構造を考慮して勾配の向きを補正する最適化アルゴリズム。<br>
 <br>
-『脳・心・人工知能』ブルーバックス(甘利俊一)<br>
+●『脳・心・人工知能』ブルーバックス(甘利俊一)<br>
 　学習を進めていくと、損失関数(誤差)は順調に減っていくが、そのうちにほとんど減らなくなる。これが Plateau (プラトー)だ。<br>
 <center><img src="data/images/Plateau.svg"></center>
 
@@ -1508,12 +1603,13 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 　：<br>
 <strong><span style="color:magenta;">損失関数の勾配をリーマン空間の中で考えればよい。式は少し面倒になるが、これを用いるとプラトーは消失し、素早い学習ができる。この方式を「自然勾配学習法」という</span></strong>が、これはいまブームの深層学習でも有効である。ただ、計算がややこしいので、いろいろな簡便法が世界で研究されている。<br>
 <br>
-『Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking』(2025)<br>
+●『Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking』(2025)<br>
 　(平等勾配降下法：加速グロッキングへのシンプルなアプローチ)<br>
 　論文は<a href="https://arxiv.org/abs/2510.04930v1">こちら</a><br>
 　・（確率的）勾配降下法の速度が、勾配の異なる主方向（すなわち、特異方向）に沿って非対称になることで、グロッキングが誘発されることを、経験的かつ理論的に示す。<br>
 　・次に、勾配を正規化し、すべての主方向に沿ったダイナミクスが全く同じ速度で進化するようにする、単純な修正法を提案する。<br>
 　・この修正法 (我々は平等主義勾配降下法（EGD）と呼び、<strong><span style="color:magenta;">自然勾配降下法を慎重に修正した形式と見なすことができる</span></strong>) が、<strong><span style="color:magenta;">はるかに高速にグロッキングする</span></strong>ことを確立する。<br>
+<br>
 <br>(関連項目)<br>
 ・<a href="#Plateau">Plateau (プラトー)</a><br>
 ・<a href="#Grokking">Grokking</a>
@@ -1582,7 +1678,7 @@ DeepMind社によって2014年に発表された。<br>
 <strong>One-Step Generator</strong><br>
 拡散モデルのような多段階の生成プロセスを、わずか1回のステップで完了させることのできる生成モデル。<br>
 <br>
-『Who Said Neural Networks Aren't Linear?』(2025><br>
+●『Who Said Neural Networks Aren't Linear?』(2025><br>
 　(ニューラルネットワークは線形ではないと誰が言った？)<br>
 　論文は<a href="https://arxiv.org/abs/2510.08570">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.08570v1">こちら</a><br>
 　最も説得力のある応用の一つは、リニアライザーが数百の拡散サンプリングステップを単一の順伝播パスに統合する方法を示すもの。<br>
@@ -1594,7 +1690,7 @@ DeepMind社によって2014年に発表された。<br>
 <strong>OOD: Out-of-Distribution Generalization (分布外汎化)</strong><br>
 機械学習モデルが、訓練データとは統計的な性質（分布）が異なる未知のデータに対しても、高い性能を発揮する能力を指す。<br>
 <br>
-『Towards a theory of out-of-distribution learning』 (2021)
+●『Towards a theory of out-of-distribution learning』 (2021)
 　論文はこちら<br>
 D</h
 <br>(関連項目)<br>
@@ -1614,7 +1710,7 @@ D</h
 <strong>Over-parameterized (過剰パラメータ化)</strong><br>
 機械学習モデルのパラメータ（学習可能な変数）の数が、学習データ数よりもはるかに多い状態。<br>
 <br>
-『Loss landscapes and optimization in over-parameterized non-linear systems and neural networks』(2003)<br>
+●『Loss landscapes and optimization in over-parameterized non-linear systems and neural networks』(2003)<br>
 　論文は<a href="https://arxiv.org/abs/2003.00307">こちら</a>,　解説は<a href="https://www.alphaxiv.org/ja/overview/2003.00307v2">こちら</a><br>
 <br>
 従来の凸性仮定を超えた新しい数学的フレームワークを提案し、過剰パラメータ化された領域で最適化がなぜこれほど効果的に機能するのかを説明した。<br>
@@ -1641,15 +1737,15 @@ D</h
 <strong>Overthinking (考えすぎ, 過剰思考)</strong><br>
 意思決定や問題解決に必要とされる範囲を超えて、物事を延々と、かつ非建設的に考え続けてしまう状態。<br>
 <br>
-『Overthinking the Truth: Understanding how Language Models Process False Information』(2023)<br>
+●『Overthinking the Truth: Understanding how Language Models Process False Information』(2023)<br>
 　(真実の過剰な深掘り：言語モデルにおける偽のデモンストレーションの処理メカニズムの解明)<br>
 　論文は<a href="https://arxiv.org/abs/2307.09476">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2307.09476v3">こちら</a><br>
 <br>
-『Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs』(2024)<br>
+●『Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs』(2024)<br>
 　(「2+3=?」に考えすぎないで：o1型LLMの過剰思考について)<br>
 　論文は<a href="https://arxiv.org/abs/2412.21187">こちら</a>,　解説は<a href="https://www.alphaxiv.org/ja/overview/2412.21187v2">こちら</a><br>
 <br>
-『Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models』(2025)<br>
+●『Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models』(2025)<br>
 　(考えすぎをやめよう：大規模言語モデルの効率的な推論に関する調査)<br>
 　論文は<a href="https://arxiv.org/abs/2503.16419">こちら</a>
 </li>
@@ -1669,24 +1765,22 @@ D</h
 　訓練データとテストデータが同じ確率分布からサンプリングされる (i.i.d.独立同分布), 確率分布は変化しない, などを前提としており, OOD(分布外)学習などの比較対象(古典的枠組み)とされることがある。<br>
 
 <br>
-<strong>『A Theory of the Learnable』</strong>(1984)<br>
+<strong>●『A Theory of the Learnable』</strong>(1984)<br>
 　(学習可能なものの理論)　論文は<a href="https://web.mit.edu/6.435/www/Valiant84.pdf">こちら</a><br>
 　「PAC 学習フレームワーク」を導入した基礎論文<br>
 <br>
-<strong>『Thoughts on Hypothesis Boosting』</strong>(1988)<br>
+<strong>●『Thoughts on Hypothesis Boosting』</strong>(1988)<br>
 　(仮説ブースティングについての考察)　論文は<a href="https://www.cis.upenn.edu/~mkearns/papers/boostnote.pdf">こちら</a><br>
 　PAC学習モデルを基盤に、弱い学習器(ランダムな推測よりもわずかに優れた性能の識別器を生成する学習器)を組み合わせて強い学習器 (高い確率で、ほぼ正確に識別できる識別器を生成する学習器)へブースト(昇格)させることができるのか？という問いかけを行った。<br>
 <br>
-<strong>『The Strength of Weak Learnability』</strong>(1990）<br>
+<strong>●『The Strength of Weak Learnability』</strong>(1990）<br>
 　(弱い学習可能性の強み)　論文は<a href="https://link.springer.com/content/pdf/10.1007/BF00116037.pdf">こちら</a><br>
 　弱い学習器の存在と強い学習器の存在が数学的に等価であることを証明した。つまり、<strong><span style="color:magenta;">弱い学習器があれば、そこから強い学習器を作り出すことができる</span></strong>ことを証明し，後のブースティングアルゴリズムの基礎となる構成法を示した。<br>
 　　↓<br>
-・『Stacked Generalization』(1992)<br>
-・『A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting』<br>
-　AdaBoost (1995)<br>
-・『Greedy Function Approximation: A Gradient Boosting Machine』<br>
-　GBDT(Gradient Boosting Decision Tree) (1999)<br>
-・『Random Forests』(2001)<br>
+●『Stacked Generalization』(1992)<br>
+●『A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting』AdaBoost (1995)<br>
+●『Greedy Function Approximation: A Gradient Boosting Machine』GBDT(Gradient Boosting Decision Tree) (1999)<br>
+●『Random Forests』(2001)<br>
 　　：
 <br>
 　DNN の中間層, 訓練中の Drop Out はネットワークのアンサンブルによるブースティングと見なすことができる。<br>
@@ -1713,12 +1807,12 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 <li><strong>PINNs: Physics-Informed Neural Networks</strong><br>
 ニューラルネットワークの出力が、物理法則の方程式を満たすように学習を制約する。通常の Loss の他に Physics Loss (物理損失) を使う。<br>
 <br>
-『Artificial Neural Networks for Solving Ordinary and Partial Differential Equations』(1997)<br>
+●『Artificial Neural Networks for Solving Ordinary and Partial Differential Equations』(1997)<br>
 　論文は<a href="https://arxiv.org/abs/physics/9705023">こちら</a><br>
 ニューラルネットワークの出力の導関数を計算することによって、微分方程式を解くためにニューラルネットワークを制約することを初めて提案した、
 PINNsは後に解析的微分ではなくバックプロパゲーションを用いることで発展した。
 <br><br>
-『Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations』(2019)<br>
+●『Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations』(2019)<br>
 論文は Google Scholar で検索すると pdf に辿り着ける
 <br>
 現代の物理情報ニューラルネットワーク (PINN) フレームワークを導入した。
@@ -1746,12 +1840,12 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <strong>Policy Collapse (ポリシー崩壊)</strong><br>
 学習中のエージェントの行動方針（方策）が、望ましくない、または極めて限定的な状態に陥り、パフォーマンスが大幅に低下する現象のこと。<br>
 <br>
-『An Entropy Regularization Free Mechanism for Policy-based Reinforcement Learning』(2021)<br>
+●『An Entropy Regularization Free Mechanism for Policy-based Reinforcement Learning』(2021)<br>
 　(エントロピー正則化を必要としないポリシーベース強化学習メカニズム)<br>
 　論文は<a href="https://arxiv.org/abs/2106.00707">こちら</a><br>
 ポリシーベースの強化学習法は、ポリシー崩壊問題に悩まされる。 ポリシーベースの方法向けに設計されたエントロピー正規化を必要としないメカニズムを提案。<br>
 <br>
-『The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models』(2025)<br>
+●『The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models』(2025)<br>
 　(推論言語モデルのための強化学習のエントロピーメカニズム)<br>
 　論文は<a href="https://arxiv.org/abs/2505.22617">こちら</a><br>
 　共分散の高いトークンをクリップして KL ペナルティを適用することで、ポリシーがエントロピー崩壊するのを回避
@@ -1795,10 +1889,11 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 最初に受け取った情報や、経験の初期段階で得られた情報が、その後の判断や評価に過度な影響を与える認知バイアスのこと。<br>
 機械学習では, あるタスクで最初に学習されたモデルが、異なるデータ分布や目的（あるいはその両方）で学習されると、新しいタスクにおいてランダムに初期化されたモデルよりもパフォーマンスが低下する現象を指す。<br>
 日本語では「初頭効果」や「優先バイアス」とも呼ばれる。<br>
-
+<br>
+●『What Can Grokking Teach Us About Learning Under Nonstationarity?』(2025)<br>
+　Grokking 出来れば, Primacy Biasに打ち合って継続学習できる<br>
+<br>
 <center><img src="data/images/PrimacyBias.svg"></center>
-<center>Grokking 出来れば, Primacy Biasに打ち合って継続学習できる</center>
-<center>『What Can Grokking Teach Us About Learning Under Nonstationarity?』(2025)</center>
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
 ・<a href="#Grokking">Grokking</a><br>
@@ -1824,7 +1919,7 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 ・未来のデータ分布の変化を予測し、将来にわたって高い性能を維持することを目的とする。<br>
 ・時間の経過に伴うデータの「分布シフト」に対処する。<br>
 <br>
-『Prospective Learning: Principled Extrapolation to the Future』(2022)<br>
+●『Prospective Learning: Principled Extrapolation to the Future』(2022)<br>
 　(展望学習：未来への原理に基づいた外挿)<br>
 　論文は<a href="https://arxiv.org/abs/2201.07372">こちら</a><br>
 <br>(関連項目)<br>
@@ -1865,7 +1960,7 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <strong>Qualia (クオリア)</strong><br>
 哲学や脳科学において、意識に現れる主観的で個人的な「感覚的な質感」や「感じ」のこと。<br>
 <br>
-『<strong><span style="color:magenta;">クオリア間の類似性が距離の公理（最小性、対称性、三角不等式）を満たすかどうかといった根本的な疑問さえも未だ解決されていない</span></strong>。 クオリアの「空間」については様々な種類が提案されているが、すべてのクオリアを何らかの高次元空間内の点とみなせるかどうかは不明である。現段階では、クオリアのための何らかの空間の存在を仮定するのではなく、<strong><span style="color:magenta;">一歩下がってクオリアの数学的「構造」の可能性を探る方がよいかもしれない。これが、「クオリア構造」パラダイムである･･･</span></strong>』<br>
+●『<strong><span style="color:magenta;">クオリア間の類似性が距離の公理（最小性、対称性、三角不等式）を満たすかどうかといった根本的な疑問さえも未だ解決されていない</span></strong>。 クオリアの「空間」については様々な種類が提案されているが、すべてのクオリアを何らかの高次元空間内の点とみなせるかどうかは不明である。現段階では、クオリアのための何らかの空間の存在を仮定するのではなく、<strong><span style="color:magenta;">一歩下がってクオリアの数学的「構造」の可能性を探る方がよいかもしれない。これが、「クオリア構造」パラダイムである･･･</span></strong>』<br>
 The Qualia Structure Paradigm: towards a construction of a Qualia Periodic Table for the dissolution of the Hard Problem of Consciousness (2024)<br>
 (クオリア構造パラダイム：意識の難問解決のためのクオリア周期表の構築に向けて)<br>
 <br>
@@ -1903,6 +1998,47 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
+<li id="Reasoning">
+<strong>Reasoning (推論)</strong><br>
+既存の知識や情報に基づいて、結論を導き出したり、予測を立てたり、説明を組み立てたりする思考プロセス。<br>
+<br>
+<ul>
+<li><strong>Deduction (演繹法)</strong><br>
+一般法則から個別の結論を導き出す推論。結論は必ず真となる。<br>
+「A (十分条件を満たす) ⇒ B (必要条件を満たす)」と言っているだけなので新しいことは生み出さない。<br>
+<br>
+<center><img src="data/images/Deduction.svg"></center>
+</li>
+<li><strong>Induction (帰納法)</strong><br>
+複数の個別事例から共通する一般法則を導き出す推論。<br>
+結論の蓋然性(確からしさ)は高いが, 真とは限らない。<br>
+確証バイアスや帰納飛躍の影響を受ける可能性がある。<br>
+</li>
+<br>
+<li><strong>Abduction (アブダクション, 仮説形成, 探究的推論)</strong><br>
+驚くべき観察結果や事実に直面した際に、それを最もよく説明できる仮説を形成する推論。<br>
+真とは限らないので検証が必要。<br>
+<br>
+●『Abduction in Logic Programming』(2002)<br>
+　この分野の初期の研究(80年代～90年代)を概観した論文。<br>
+●『Automated Abduction in Scientific Discovery』(2007)<br>
+　科学における仮説生成の自動化に焦点を当てた論文。<br>
+●『Abductive Artificial Intelligence Learning Models』(2019)<br>
+　　(アブダクティブ人工知能学習モデル)<br>
+　機械学習モデルに基づくアブダクティブ学習について論じた論文。<br>
+●『Generative AI for Scientific Discovery: Automated Hypothesis Generation and Testing』(2025)<br>
+　(科学的発見のための生成AI：自動化された仮説生成と検証)<br>
+　Transformerモデルなどを利用して、創薬や材料科学などの分野で仮説生成を自動化する研究について述べている。<br>
+
+</li>
+</ul>
+<br>(関連項目)<br>
+・<a href="#ConfirmationBias">Confirmation Bias (確証バイアス)</a><br>
+・<a href="#InductiveLeap">Inductive Leap (帰納的飛躍)</a>
+</li>
+
+<br>
+
 <li id="Regularization">
 
 <strong>Regularization (正則化)</strong><br>
@@ -1913,7 +2049,8 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 ・帰納バイアスを表現する手段<br>
 <br>(関連項目)<br>
 ・<a href="#ill-posed">ill-posed problem (不良設定問題)</a><br>
-・<a href="#InductiveBias">Inductive Bias (帰納バイアス)</a>
+・<a href="#InductiveBias">Inductive Bias (帰納バイアス)</a><br>
+・<a href="#Dropout">Dropout</a>
 </li>
 
 <br>
@@ -2004,7 +2141,7 @@ AI技術を活用して科学のプロセスを加速・自動化し、新しい
 <li>
 
 <strong>Scientific Surprise</strong><br>
-『Language Model Perplexity Predicts Scientific Surprise and Transformative Impact』(2025)<br>
+●『Language Model Perplexity Predicts Scientific Surprise and Transformative Impact』(2025)<br>
 AIシステムがこれまでの知識や人間が期待する予測からは逸脱した、予期せぬ、そして根本的に新しい科学的知見を発見することを指す。<br>
 <br>(関連項目)<br>
 ・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a>
@@ -2017,7 +2154,7 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 <strong>Self-Consistency (自己無撞着性, 自己整合性) </strong><br>
 大規模言語モデル（LLM）の推論能力を向上させるためのプロンプトエンジニアリング手法の一つ。<br>
 <br>
-『Self-Consistency Improves Chain of Thought Reasoning in Language Models』(2022)<br>
+●『Self-Consistency Improves Chain of Thought Reasoning in Language Models』(2022)<br>
 「思考連鎖プロンプティングで用いられる単純な貪欲なデコードに代わる、新たなデコード戦略である自己一貫性を提案。･･･多様な推論経路をサンプリングし、次にサンプリングした推論経路を周辺化する(多数決をとる)ことで、最も一貫性のある解を選択する･･･」<br>
 
 <br>(関連項目)<br>
@@ -2065,7 +2202,7 @@ AIシステムが自らのコードや構造を複製、または改良して新
 <strong>Shared Embedding Space (共有埋め込み空間)</strong><br>
 異なるモードのデータを同じベクトル空間にマッピングすること。<br>
 <br>
-『Learning Transferable Visual Models From Natural Language Supervision』(2021)<br>
+●『Learning Transferable Visual Models From Natural Language Supervision』(2021)<br>
 　論文は<a href="https://arxiv.org/abs/2103.00020">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2103.00020v1">こちら</a><br>
 <br>
 　CLIP(Contrastive Language-Image Pre-Training)
@@ -2125,7 +2262,7 @@ AIモデルが複雑なデータや特徴を無視して、単純で表面的な
 <strong>Small Data Paradigm </strong><br>
 AIの学習に大量のデータ（ビッグデータ）を必要とするという従来の考え方から脱却し、少量の高品質なデータでも効率的かつ効果的な学習を可能にするアプローチ。<br>
 <br>
-『Dark, Beyond Deep: A Paradigm Shift to Cognitive AI with Humanlike Common Sense』(2020)<br>
+●『Dark, Beyond Deep: A Paradigm Shift to Cognitive AI with Humanlike Common Sense』(2020)<br>
 　(深層のその先、そして深遠なる闇へ：人間のような常識を備えた認知的AIへのパラダイムシフト)<br>
 <br>
 
@@ -2136,15 +2273,17 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <br>
 
-<li>
+<li id="SC">
 
 <strong>Softmax Collapse</strong><br>
 ニューラルネットワークの学習プロセス中に、Softmax関数の数値的安定性が失われ、学習が阻害される現象。<br>
 <br>
-『Grokking at the Edge of Numerical Stability』(2025)<br>
+●『Grokking at the Edge of Numerical Stability』(2025)<br>
 　論文は<a href="https://arxiv.org/abs/2104.05704">こちら</a>, 要約は<a href="https://www.alphaxiv.org/ja/overview/2104.05704v4">こちら</a><br>
 <br>
-　grokkingとして知られる遅延汎化現象が、Softmax関数の数値的不安定性（「Softmax Collapse」(SC)と名付けられた）と「素朴な損失最小化」(NLM: Naive Loss Minimization)と呼ばれる特定の訓練ダイナミクスによって引き起こされることを明らかにしている。StableMaxでSCを防ぐこと、または⊥GradオプティマイザでNLMを軽減することが迅速な汎化を可能にし、grokkingにおける正則化とMSE損失の役割に対する統一的な説明を提供することを示している。
+　grokkingとして知られる遅延汎化現象が、Softmax関数の数値的不安定性（「Softmax Collapse」(SC)と名付けられた）と「素朴な損失最小化」(NLM: Naive Loss Minimization)と呼ばれる特定の訓練ダイナミクスによって引き起こされることを明らかにしている。StableMaxでSCを防ぐこと、または⊥GradオプティマイザでNLMを軽減することが迅速な汎化を可能にし、grokkingにおける正則化とMSE損失の役割に対する統一的な説明を提供することを示している。<br>
+<br>(関連項目)<br>
+・<a href="#Grokking">Grokking</a><br>
 </li>
 
 <br>
@@ -2180,7 +2319,7 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <strong>SR: Symbolic Regression (シンボリック回帰)</strong><br>
 与えられたデータセットに最もよく適合する数学的な数式を自動的に探索・発見する機械学習の手法。<br>
 <br>
-『From Kepler to Newton: Explainable AI for Science』(2021)<br>
+●『From Kepler to Newton: Explainable AI for Science』(2021)<br>
 　(ケプラーからニュートンへ：科学のための説明可能な AI)<br>
 　論文は<a href="https://arxiv.org/abs/2111.12210">こちら</a>, 機械翻訳は<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2023_From%20Kepler%20to%20Newton/From%20Kepler%20to%20Newton.html">こちら</a><br>
 <br>
@@ -2221,7 +2360,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 </li></ul>
 <br>
 より高度なAIシステムを開発し、人間よりも優れたAIを監督できる自動アライメントが研究されている。<br>
-『Towards Scalable Automated Alignment of LLMs: A Survey』(2024)
+●『Towards Scalable Automated Alignment of LLMs: A Survey』(2024)
 　論文は<a href="https://arxiv.org/abs/2406.01252v1">こちら</a><br>
 
 <br>(関連項目)<br>
@@ -2234,6 +2373,11 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 <strong>Sycophancy (おべっか, 追従性)</strong><br>
 大規模言語モデル（LLM）が、ユーザーの意見や信念に合わせて、たとえそれが客観的に見て誤っていたり、偏っていたりしても、過剰に同意したり迎合したりする傾向のこと。<br>
+<br>
+『Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence』(2025)<br>
+　(追従的なAIは社会貢献意欲を低下させ、依存を促進する)<br>
+　論文は<a href="https://arxiv.org/abs/2510.01395">こちら</a><br>
+　人々がAIに助言を求める際に、おべっかが蔓延し、有害な影響を及ぼすことを示す。<br>
 <br>(関連項目)<br>
 ・<a href="#AIAlignment">AI Alignment</a>
 </li>
@@ -2246,15 +2390,15 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <br>
 <a href="https://en.wikipedia.org/wiki/Symbol_grounding_problem">wikipedia</a><br>
 <br>
-『The Symbol Grounding Problem』(1999)<br>
+●『The Symbol Grounding Problem』(1999)<br>
 　論文は<a href="https://arxiv.org/html/cs/9906002">こちら</a><br>
 　Symbol Grounding 問題を提唱した原典。記号操作のみでは意味が生まれないことを指摘している。解決策として、記号が非記号的な表象（画像的表象とカテゴリー的表象）によって物理世界に接地されるべきだと提案した。<br>
 <br>
-『A Praxical Solution of the Symbol Grounding Problem』(2021)<br>
+●『A Praxical Solution of the Symbol Grounding Problem』(2021)<br>
 　論文は<a href="https://researchprofiles.herts.ac.uk/files/187237/901130.pdf">こちら</a><br>
 　行為者と環境の相互作用が果たす役割を強調する「Praxical Solution」を提唱した。エージェントの行動に基づく新しい意味論（Action-based Semantics）を導入し、エージェントが意味を接地させ、コミュニケーションを確立する仕組みを提案した。<br>
 <br>
-『Embodied AI: Symbol Grounding through Imagination』(2023)<br>
+●『Embodied AI: Symbol Grounding through Imagination』(2023)<br>
 　論文は<a href="https://aaai.org/papers/0010-fs01-01-010-embodied-ai-symbol-grounding-through-imagination/">こちら</a><br>
 　ロボットが物理世界で自律的に会話するために、言語記号を理解する必然性について論じている。人間の記号操作が身体的な動きに基づいていることに触れ、ロボットが仮想的な身体運動を通じて記号を接地させる embodied AI の概念を提唱した。<br>
 </li>
@@ -2280,7 +2424,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>Task Arithmetic (タスク算術)</strong><br>
 学習済みのモデルの重みを足したり引いたりして、複数のタスクの能力を組み合わせたり、特定のタスクの能力を調整したりする技術。<br>
 <br>
-『Editing Models with Task Arithmetic』(2022)<br>
+●『Editing Models with Task Arithmetic』(2022)<br>
 　論文は<a href="https://arxiv.org/abs/2212.04089">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2212.04089v3">こちら</a><br>
 
 </li>
@@ -2288,7 +2432,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <br>
 <li id="TensorEquation">
 <strong>Tensor Equation (テンソル方程式)</strong><br>
-『Tensor Logic: The Language of AI』(2025)<br>
+●『Tensor Logic: The Language of AI』(2025)<br>
 　論文は<a href="https://arxiv.org/abs/2510.12269">こちら</a>, 解説は<a href="https://www.alphaxiv.org/overview/2510.12269v2">こちら</a><br>
 　・物理学のような分野が微積分から恩恵を受け、デジタル回路がブール論理に依存する一方で、AIはPrologやLISPのような言語における記号推論、PyTorchやTensorFlowのようなフレームワークにおけるニューラルネットワーク、そして専門的なライブラリにおける確率モデルといった、異なるパラダイムに分断されたままである。<br>
 　・<strong><span style="color:magenta;">ニューラルネットワーク、記号論理、確率的グラフィカルモデルといった、一見すると異なるAIアプローチが、テンソル方程式という単一の数学的構成要素の下で統一できる</span></strong>ことを示す。
@@ -2301,10 +2445,10 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>Token-level Integration (トークンレベル統合)</strong><br>
 テキスト以外のモーダルのデータを言語モデルが理解できる「トークン」として扱い、テキストトークンと並べて処理する。<br>
 <br>
-『VisualBERT: A Simple and Performant Baseline for Vision and Language』(2019)<br>
+●『VisualBERT: A Simple and Performant Baseline for Vision and Language』(2019)<br>
 論文は<a href="https://arxiv.org/abs/1908.03557">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1908.03557v1">こちら</a><br>
 <br>
-『SimVLM: Simple Visual Language Model Pretraining with Weak Supervision』(2021)<br>
+●『SimVLM: Simple Visual Language Model Pretraining with Weak Supervision』(2021)<br>
 論文は<a href="https://arxiv.org/abs/2108.10904">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2108.10904v3">こちら</a><br>
 <center><img src="data/images/TokenLevelIntegration.svg"></center>
 <br>(関連項目)<br>
@@ -2317,17 +2461,17 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>ToM: Theory of Mind (心の理論)</strong><br>
 他者が自分とは異なる信念、意図、欲求、感情などの心の状態（精神状態）を持っていることを理解する能力のこと。<br>
 <br>
-『Does the chimpanzee have a theory of mind? 』(1978)<br>
+●『Does the chimpanzee have a theory of mind? 』(1978)<br>
 　(チンパンジーは心の理論を持つか?)<br>
 　論文は Google Scholarで検索すると pdf に辿り着ける<br>
 　「心の理論」(ToM) の概念を導入した画期的な論文<br>
 <br>
-『Theory of mind as inverse reinforcement learning』(2019)<br>
+●『Theory of mind as inverse reinforcement learning』(2019)<br>
 　(逆強化学習としての心の理論)<br>
 　論文は<a href="https://compdevlab.yale.edu/docs/2019/ToM_as_IRL_2019.pdf">こちら</a><br>
 心の理論、つまり他者の精神状態を推論する能力は、逆強化学習として形式化できるという考えを検証する。<br>
 <br>
-『Towards Cognitive Synergy in LLM-Based Multi-Agent Systems: Integrating Theory of Mind and Critical Evaluation』(2025)<br>
+●『Towards Cognitive Synergy in LLM-Based Multi-Agent Systems: Integrating Theory of Mind and Critical Evaluation』(2025)<br>
 　(LLMベースのマルチエージェントシステムにおける認知的相乗効果に向けて：心の理論と批判的評価の統合)<br>
 　論文は<a href="https://arxiv.org/abs/2507.21969">こちら</a>
 </li>
@@ -2339,7 +2483,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>ToT: Tree of Thoughts (思考ツリー)</strong><br>
 大規模言語モデル（LLM）が複雑な問題を解決する際に、単一の思考プロセスを直線的に進めるのではなく、複数の可能性を同時に探索して最も有望な経路を選択する、より高度な推論フレームワーク。<br>
 <br>
-『Tree of Thoughts: Deliberate Problem Solving with Large Language Models』(2023)<br>
+●『Tree of Thoughts: Deliberate Problem Solving with Large Language Models』(2023)<br>
 　論文は<a href="https://arxiv.org/abs/2305.10601">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2305.10601v2">こちら</a><br>
 <br>(関連項目)<br>
 ・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり<br>
@@ -2354,17 +2498,17 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 自己注意（self-attention）機構を全面的に採用したニューラルネットワークのアーキテクチャー。<br>
 <br>
 ・NLP: Natural Language Processing<br>
-『Attention is all you need』(2017)<br>
+●『Attention is all you need』(2017)<br>
 　論文は<a href="https://arxiv.org/abs/1706.03762">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1706.03762v7">こちら</a><br>
 　Transformerアーキテクチャを導入した論文。<br>
 <br>
 ・ViT: Vision Transformer<br>
-『An image is worth 16x16 words: Transformers for image recognition at scale』(2020)<br>
+●『An image is worth 16x16 words: Transformers for image recognition at scale』(2020)<br>
 　論文は<a href="https://arxiv.org/abs/2010.11929">こちら</a><br>
 　画像をパッチに分割して入力トークンとするパラダイムを確立し、他の後続のVision Transformerが踏襲する基礎となるステップとなった。<br>
 <br>
 ・DETR: Detection with Transformer<br>
-『End-to-end object detection with transformers』(2020)<br>
+●『End-to-end object detection with transformers』(2020)<br>
 　論文は<a href="https://arxiv.org/abs/2005.12872">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2005.12872v3">こちら</a><br>
 　物体検出を直接的な集合予測問題として再構築する検出トランスフォーマー (DETR) を導入した。<br>
 <br>(関連項目)<br>
@@ -2383,11 +2527,11 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>Unified Tokenizer (統合トークナイザー)</strong><br>
 テキスト、画像、音声など、異なる種類のデータを単一の統一された形式（トークン）に変換できる、領域に依存しない（ドメインに特化しない）手法。<br>
 <br>
-『UniTok: A Unified Tokenizer for Visual Generation and Understanding』(2025)<br>
+●『UniTok: A Unified Tokenizer for Visual Generation and Understanding』(2025)<br>
 　(UniTok: 視覚生成および理解のための統合トークナイザー)<br>
 　画像に限定された統一トークナイザーへの重要な最近の試み<br>
 <br>
-『AToken: A Unified Tokenizer for Vision』(2025)<br>
+●『AToken: A Unified Tokenizer for Vision』(2025)<br>
 　(AToken: 統一された視覚トークナイザー)<br>
 　再構成と理解の両タスク、および画像、動画、3Dといったモダリティを統一する初のトークナイザー<br>
 <br>(関連項目)<br>
@@ -2435,7 +2579,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 ニューラルネットワーク、特に層が深いネットワークを学習させる際に発生する問題。
 誤差逆伝播（バックプロパゲーション）の過程で、勾配（重みを更新するための信号）がネットワークの奥深く（入力層に近い層）まで伝わるにつれて、どんどん小さくなっていく現象と、誤差逆伝播（バックプロパゲーション）によって計算される勾配が極端に大きくなり、モデルのパラメータ（重み）が不安定に更新される現象。<br>
 <br>
-　『Learning long-term dependencies with gradient descent is difficult』(1994)<br>
+　●『Learning long-term dependencies with gradient descent is difficult』(1994)<br>
 　勾配消失問題と勾配爆発問題という課題を初めて詳細に特定し、分析した基礎的な論文<br>
 <br>(関連項目)<br>
 ・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)</br>
@@ -2450,18 +2594,18 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <br>
 例えば<strong><span style="color:magenta;">「Xは人間である」のような命題論理では, X に具体的な値 (例えばソクラテス)をバインドすることで推論が可能になる</span></strong>。 逆にバインドできなければ抽象的なルールを具体的な事例に適用できない。 このように、<strong><span style="color:magenta;">variable binding は「抽象的な知識を具体的な事例に適用するための橋渡し」のような役割を果たす</span></strong>。<br>
 <br>
-『Connectionism and cognitive architecture: A critical analysis』(1988)<br>
+●『Connectionism and cognitive architecture: A critical analysis』(1988)<br>
 　(コネクショニズムと認知アーキテクチャ：批判的分析)<br>
 　ニューラルネットワークが記号計算と人間の認知の重要な特徴である「変数束縛」を扱えないことを批判した。<br>
 <br>
-『Tensor Product Variable Binding and the Representation of Symbolic
+●『Tensor Product Variable Binding and the Representation of Symbolic
 Structures in Connectionist Systems』(1990)<br>
 　(テンソル積変数束縛とコネクショニストシステムにおける記号構造の表現)<br>
 　論文は<a href="http://www.lscp.net/persons/dupoux/teaching/AT1_2014/papers/Smolensky_1990_TensorProductVariableBinding.AI.pdf">こちら</a><br>
 コネクショニズムにおいてシンボリックな構造を表現するためにテンソル積表現を提案した。この手法は、役割と値をベクトルとして結合させ、分散表現を用いて構造を表すことで、コネクショニズムとシンボリズムの統合を目指した。この論文は、コネクショニズムによる高度な認知タスク処理の可能性を示し、ハイブリッド・システム研究の基礎を築いた。<br>
 
 <br>
-『How Do Transformers Learn Variable Binding in Symbolic Programs?』(2025)<br>
+●『How Do Transformers Learn Variable Binding in Symbolic Programs?』(2025)<br>
 　(Transformerはどのようにして記号プログラムにおける変数束縛を学習するのか？)<br>
 　Transformerが変数バインディングを、明示的なアーキテクチャサポートなしに学習できることを示しており、ニューラルネットワークがパターン認識に限定されるという概念に異議を唱えている<br>
 <br>
@@ -2475,7 +2619,7 @@ Structures in Connectionist Systems』(1990)<br>
 <strong>Visual Planning (視覚計画)</strong><br>
 AI分野、なかでもロボティクスやコンピュータビジョンにおけるタスクにおいて、テキストベースではなく、画像ベースで推論や計画を行うアプローチ。<br>
 <br>
-『Visual Planning: Let's Think Only with Images 』(2025)<br>
+●『Visual Planning: Let's Think Only with Images 』(2025)<br>
 大規模マルチモーダルモデル (MLLM) が、テキストではなく画像シーケンスによって推論や計画を実行する、新しいパラダイムを提案した論文。特に空間的・幾何学的な情報を含むタスクにおいて、視覚的な表象が言語ベースの推論を補完する有効なチャネルであることを示した。強化学習 (RL) を用いて、画像生成による視覚的計画を実現し、テキストベースの推論を大幅に上回る性能を示している。<br>
 <br>
 <a href="data/Papers_VisualPlanning.html">Papers</a>
@@ -2503,7 +2647,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <strong>W2SG: Weak-to-strong generalization (弱から強への一般化)</strong><br>
 能力の低い（"弱い"）モデルの監視やフィードバックを使って、能力の高い（"強い"）モデルを訓練する際に、その強いモデルが弱いモデルの性能を上回る形で汎化する現象。<br>
 <br>
-『Weak-to-strong generalization: Eliciting strong capabilities with weak supervision』(2023)<br>
+●『Weak-to-strong generalization: Eliciting strong capabilities with weak supervision』(2023)<br>
 　(弱から強への一般化：弱い教師あり学習で強い能力を引き出す)<br>
 　論文は<a href="https://arxiv.org/abs/2312.09390">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2312.09390v1">こちら</a><br>
 <br>
@@ -2520,17 +2664,17 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 人間の専門的な知識や戦略、あるいは人間が事前に整理・ラベリングしたデータに頼ることなく、AIが自律的に学習し、課題を解決するアプローチ。<br>
 <br>
 [Deep Reinforcement Learning (深層強化学習)]<br>
-・AlohaGo『Mastering the game of Go without human knowledge』(2017)<br>
+●『Mastering the game of Go without human knowledge』AlohaGo (2017)<br>
 <center><img src="data/images/AlphaSeries.svg"></center>
 [Self-Supervised Learning (自己教師あり学習)]<br>
-・SimCLR『A Simple Framework for Contrastive Learning of Visual Representations』(2020)<br>
+●『A Simple Framework for Contrastive Learning of Visual Representations』 SimCLR (2020)<br>
 　論文は<a href="https://arxiv.org/abs/2002.05709">こちら</a><br>
 　画像の異なる切り抜きを「類似」と学習させる手法<strong><span style="color:magenta;">(人間の手作業によるラベル付けなし)で、教師あり学習に匹敵する性能</span></strong>を示した。<br>
-・BYOL『Bootstrap Your Own Latent』(2020)<br>
+●『Bootstrap Your Own Latent』 BYOL (2020)<br>
 　論文は<a href="https://arxiv.org/abs/2006.07733">こちら</a><br>
 　ネットワークの出力を予測するという単純なタスクで、自己教師あり学習を安定化させた<br>
 [AI4S: AI for Science]<br>
-・『First Peer-Reviewed Research Paper Written Without Humans』<br>
+・●『First Peer-Reviewed Research Paper Written Without Humans』<br>
 　論文は<a href="https://pub.sakana.ai/ai-scientist-v2/paper/paper.pdf">こちら</a><br>
 　AIシステムが、<strong><span style="color:magenta;">人間の手助けなしで査読を通過する研究論文を執筆</span></strong>した。<br>
 
@@ -2560,7 +2704,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 　文脈に応じて動的に単語ベクトルを生成する。<br>
 　これにより、<strong><span style="color:magenta;">多義語　（例：「apple」が「リンゴ」か「会社」か）の意味の違いを区別できるようになった。</span></strong><br>
 <br>
-『Efficient Estimation of Word Representations in Vector Space』Word2Vec (2013)<br>
+●『Efficient Estimation of Word Representations in Vector Space』Word2Vec (2013)<br>
 　・大規模なコーパスから、単語の密なベクトル表現を効率的に学習するためのアルゴリズム「Word2Vec」を発表。<br>
 　・<strong><span style="color:magenta;">「King - Man + Woman = Queen」のような、単語間の意味的な関係性をベクトル空間上で捉えられる</span></strong>ことが広く知られるようになった。
 <center><img src="data/images/WordEmbeddings.svg"></center>
@@ -2578,11 +2722,11 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 <br>
 1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。<br>
 <br>
-『World models 』(2018)
+●『World models 』(2018)
 <center><img src="data/images/WorldModel.svg"></center>
 <br>
 <br>
-『General agents contain world models』(2025)<br>
+●『General agents contain world models』(2025)<br>
 　(汎用エージェントは世界モデルを含む)<br>
 　論文は<a href="https://arxiv.org/abs/2506.01622">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.01622v4">こちら</a><br>
 　<strong><span style="color:magenta;">多段階の目標指向タスクに一般化できるエージェントは、暗黙的に環境の予測モデルを含んでいることを正式に実証した。</span></strong><br>
