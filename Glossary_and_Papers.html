@@ -58,14 +58,13 @@
 
 <h2>更新項目</h2>
 <p>
-<a href="#AGI">AGI: Artificial General Intelligence (汎用人工知能)</a><br> 
-<a href="#ASI">ASI: Artificial Super Intelligence</a><br> 
-<a href="#BaldwinEffect">Baldwin effect (ボールドウィン効果)</a><br>
-<a href="#ConfirmationBias">Confirmation Bias (確証バイアス)</a><br>
-<a href="#EoE">EoE: Era of Experience (経験の時代)</a><br>
-<a href="#Reasoning">Reasoning (推論)</a><br>
-<a href="#Sycophancy">Sycophancy (おべっか, 追従性)</a><br>
-
+<a href="#Exploration-ExploitationDilemma">Exploration-Exploitation Dilemma/Tradeoff (探索と利用のジレンマ/トレードオフ)</a><br>
+<a href="#Inversion">Inversion ((AI推論の)反転)</a><br>
+<a href="#NAS">NAS: Neural Architecture Search</a><br>
+<a href="#NFL">NFL: No Free Lunch Theorem (ノーフリーランチ定理)</a><br>
+<a href="#OverParameterized">Over-parameterized (過剰パラメータ化)</a><br>
+<a href="#SkipConnection">Skip Connection (スキップ接続)</a><br>
+<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
 </p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -544,7 +543,9 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
 データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。<br>
 <br>
-<a href="data/Papers_ContrastiveLearning.html">Papers</a>
+<a href="data/Papers_ContrastiveLearning.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
 </li>
 
 <br>
@@ -784,21 +785,21 @@ AIモデルもこの効果を起こす。<br>
 <br>
 <center><img src="data/images/EnsembleMethod.svg"></center>
 <ul>
-<li>●<strong>Boosting (ブースティング)</strong><br>
+<li>■<strong>Boosting (ブースティング)</strong><br>
 複数のモデルを逐次的に学習させてモデルのアンサンブルを構成する方法。<br>
 乱択(ランダムな選択)と同程度の精度の低い識別器を出力する弱学習器を, 高精度な識別器を出力する強学習器へとブースト(昇格)させる。<br>
 <br>
 <center><img src="data/images/Boosting.svg"></center>
 </li>
 <br>
-<li>●<strong>Bagging (バギング)</strong><br>
+<li>■<strong>Bagging (バギング)</strong><br>
 複数のモデルを並行して学習させる方法。<br>
 データセットから重複を認めて学習データをランダムに選択する <strong><u>B</u></strong>ootstrap法 と, それぞれの学習データで学習させた識別器の推定を集約する <strong><u>agg</u></strong>regat<strong><u>ing</u></strong> をつないで bagging。<br>
 <br>
 <center><img src="data/images/Bagging.svg"></center>
 </li>
 <br>
-<li>●<strong>Stacking</strong></br>
+<li>■<strong>Stacking</strong></br>
 複数の弱学習器の予測結果を、別の学習器（メタモデル）の入力として使用し、最終的な予測を行う手法。<br>
 ・複数の異なるモデル (決定木、SVMなど) をベースモデル学習器として訓練する。<br>
 ・複数のモデルの出力をどのように組み合わせるかをメタモデルで学習する。<br>
@@ -806,7 +807,7 @@ AIモデルもこの効果を起こす。<br>
 <center><img src="data/images/Stacking.svg"></center>
 </li>
 <br>
-<li>●<strong>DNN: Deep Neural Network</strong><br>
+<li>■<strong>DNN: Deep Neural Network</strong><br>
 ブースティングは, <strong><span style="color:magenta;">ニューラルネットワークに隠れユニットを徐々に追加することで, 個々のニューラルネットワークをアンサンブルとして解釈して適用されてきた</span></strong>(Bengio et al.,2006a)<br>
 　：<br>
 ドロップアウトは, 非常に多くの大規模なニューラルネットワークに対してバギングを実用的にする方法であると考えられる。バギングには複数のモデルの訓練と各テスト事例に対する複数のモデルの評価が必要である。これは, 各モデルが大規模なニューラルネットワークである場合に, そのようなモデルの訓練や評価は実行時間とメモリの点でコストがかかるため, 実用的ではないと考えられる。5個から10個のニューラルネットワークから構成されるアンサンブルを使うことは一般的であり, Szegedy et al.(2014a)では6個を使ってILSVRCで優勝しているが, それ以上多くなると急激に扱いづらくなってしまう。<strong><span style="color:magenta;">ドロップアウトによって, 指数関数的に多くのニューラルネットワークを集めたアンサンブルの訓練と評価のための, 安価な近似が得られる。</span></strong><br>
@@ -855,9 +856,34 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 　(失われた報酬: 経験の時代の能動推論)<br>
 　論文は<a href="https://arxiv.org/abs/2508.05619">こちら</a></br>
 <br>
-　エージェントが自己生成データから学習する「経験の時代」という提案は、有望な前進であるが、このビジョンは依然として報酬関数の広範な人間工学に依存しており、<strong><span style="color:magenta;">ボトルネックは、データキュレーションから報酬キュレーションへと移行している。</span></strong><br>
-　AIF: Active Inference (能動推論) が、<strong><span style="color:magenta;">人間による継続的な報酬設計なしに経験から学習できる自律型AIエージェントの開発に不可欠な基盤を提供する</span></strong>と主張する。<br>
-　AIF (能動推論)は外部報酬信号を自由エネルギー最小化への内発的動機に置き換えることで、エージェントが統一されたベイズ的目的を通して探索と活用を自然にバランスさせることができると提案する。
+
+　1900年、ケルビン卿は、地平線上の「二つの小さな雲」を除けば物理学はほぼ完成しているように見えると指摘しました。これらの雲（黒体放射とマイケルソン・モーリーの実験）は、最終的に量子力学と相対性理論を通じて私たちの理解に革命をもたらしました。今日のAIも、同様の雲に直面しており、それは私たちの現在のパラダイムにおける些細な調整ではなく、根本的な限界を示唆しています。<br>
+<br>
+
+<div class="styleBullet">
+<ul><li>
+
+<strong>第一の雲: リソースの飽和 - 規模の物理的限界</strong><br>
+・質の高い英語のテキストは10年以内に枯渇すると予測されている。<br>
+・スパムが増え、合成コンテンツが増え、真の人間の知識は減少する。<br>
+・モデルの能力：倍増 ⇒ エネルギーは指数的に増加, 性能は対数的増加。
+</li>
+<br>
+<li>
+<strong>第二の雲：外部化された認知 - 人間の隠れた依存関係</strong><br>
+・「自律型」AIシステムは、舞台裏で稼働する膨大な人間の認知ネットワークに依存している。<br>
+　(<strong><span style="color: magenta;">判断、適応、そしてエラー修正が人間の作業員にアウトソーシングされる</span></strong>)<br>
+・モデルがより洗練されるにつれて、アライメント(*)にはより繊細な人間の判断が必要となり、専門知識の必要性がますます高まる。<br>
+　* AIの出力を人間の倫理観や価値観, 嗜好に合わせること。<br>
+・人間の価値観は静的な目標ではなく、動的で文脈依存的なプロセスであり、どんなにラベル付けしても完全に捉えることはできない。<br>
+　⇒エンジニアは報酬関数に絶えずパッチを当て、アノテーターは嗜好データセットを果てしなく改良し、安全チームは新たな故障モードを絶えず追いかける。<br>
+　<strong><span style="color: magenta;">これは知能ではなく、アルゴリズムのカーテンの背後から人間が糸を操る精巧な人形劇なのだ。</span></strong><br>
+　フェイフェイ・リーが「人工知能には人工的なものは何もない」と言った通りだ。<br>
+</li>
+</ul>
+</div>
+<br>
+AIF: Active Inference (能動推論)は<strong><span style="color: magenta;">外部報酬信号を自由エネルギー最小化への内発的動機に置き換えることで、エージェントが統一されたベイズ的目的を通して探索と活用を自然にバランスさせることができる</span></strong>と提案する。
 </li>
 
 <br>
@@ -877,6 +903,15 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 
 <br>
 
+<li id="Exploration-ExploitationDilemma">
+<strong>Exploration-Exploitation Dilemma/Tradeoff (探索と利用のジレンマ/トレードオフ)</strong><br>
+不確実な状況下での意思決定において、新しい可能性を模索する「探索（Exploration）」と、すでに知っている最良の選択肢を活用して確実な利益を得る「利用（Exploitation）」という、相反する2つの行動間のバランスを取るのが難しい、という問題。<br>
+(お気に入りのいつもの店にするか, 新しい店を開拓するか･･･)<br>
+<br>
+■Mult-Armed Bandit Problem (多腕バンディット問題)<br>
+・複数台のスロットマシンがある状況で、限られた試行回数の中で、報酬(コイン)の総額を最大化するための最適な選択戦略を学習する問題。<br>
+・スロットマシンを米俗語でOne-Armed Bandit(片腕の盗賊)というので、複数のスロットマシンを Multi-Armed(多腕)と表現している。<br>
+・greedy, ε-greedy, UCB(Upper Confidence Bound), optimism in the face of uncertainty(不確かな時は楽観的に), などの戦略がある。
 </li>
 
 </ul></div></p>
@@ -945,7 +980,8 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 
 <center><img src="data/images/BM.svg"></center>
 <center><img src="data/images/GenerativeModel.svg"></center>
-
+<br>(関連項目)<br>
+・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
 </li>
 
 <br>
@@ -1177,6 +1213,36 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
+<li id="Inversion">
+<strong>Inversion ((AI推論の)反転)</strong><br>
+AIモデルの推論結果から. 入力データや学習データを推定すること。<br>
+<br>
+<center><img src="data/images/Inversion.svg"></center>
+<br>
+●『Language Models are Injective and Hence Invertible』(2025)<br>
+　(言語モデルは単射的であり 、したがって可逆である)<br>
+　「一見複雑に見えるにもかかわらず、標準的なデコーダーのみのTransformer言語モデル（プロンプトから隠れ状態へのマップとして捉えられる）は、実際にはほぼ確実に単射である。つまり、実質的にあらゆるパラメータ設定において、また訓練過程において、異なるプロンプトは異なる最終トークン表現を生成する」<br>
+<br>
+●『The non-linear representation dilemma: Is causal abstraction enough for mechanistic interpretability?』(2025)<br>
+　(非線形表現のジレンマ：メカニズム的解釈可能性にとって、因果的抽象化は十分か?)<br>
+　トランスフォーマーがランダムな初期化時にほぼ確実に単射であることを証明した。<br>
+<br>
+●『Language model inversion』(2023)<br>
+　(言語モデル反転)
+　言語モデルの次トークン確率分布のみを分析することで、言語モデルに与えられた入力プロンプトを再構築することが可能であることを実証した。<br>
+言語モデルAPIを通じて機密性の高いユーザーデータが漏洩する可能性のあるプライバシーの脆弱性を示した。<br>
+<br>
+●『Extracting training data from large language models』(2020)<br>
+　(大規模言語モデルからの学習データ抽出)<br>
+　大規模言語モデルからの学習データ抽出における具体的なリスクを実証し、プライバシーの脆弱性に対する重要な証拠を提供した。<br>
+<br>
+●『Inverting visual representations with convolutional networks』(2015)<br>
+　(畳み込みネットワークによる視覚表現の反転)<br>
+　画像分類器からの確率予測が重要な詳細を保持し得ることを示した。
+</li>
+
+<br>
+
 <li id="IRL">
 <strong>IRL: Inverse Reinforcement Learning (逆強化学習)</strong><br>
 熟練者 (人間やAIなど) の行動データ（デモンストレーション）から、その行動の背後にある「報酬関数」を推定する模倣学習のための強力な手法群。<br>
@@ -1191,14 +1257,28 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 ●『General agents contain world models』(2025)
 　(汎用エージェントは世界モデルを含む)<br>
 　論文は<a href="https://arxiv.org/abs/2506.01622">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.01622v4">こちら<a/><br>
+　「<strong><span style="color:magenta;">世界モデルは</span></strong>、柔軟な目標指向行動に<strong><span style="color:magenta;">必要な要素なのでしょうか、それともモデルフリー学習で十分なのでしょうか？</span></strong>この問いに対する正式な回答として、多段階の目標指向タスクに一般化できる<strong><span style="color:magenta;">エージェントは、環境の予測モデルを学習している必要があることを示す</span></strong>。」
 　逆強化学習はエージェントの方策と世界モデルを用いて目標(報酬モデル)を特定するのに対し、我々の結果はエージェントの方策と目標(報酬)を用いて世界モデルを特定する。
 <br>
 <center><img src="data/images/WorldModel2.svg"></center>
+\[
+\begin{array}{l|c| c}
+& 入力 & 出力 \\
+\hline
+強化学習 & 報酬(,世界モデル) & ポリシー \\
+\hline
+逆強化学習 & ポリシー(,世界モデル) & 報酬 \\
+\hline
+本論文 & 報酬, ポリシー & 世界モデル
+\end{array}
+\]
+
 <br>
 <a href="data/Papers_IRL.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
-・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり
+・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり<br>
+・<a href="#WorldModel">World Model (世界モデル)</a>
 </li>
 </ul></div><p>
 
@@ -1285,7 +1365,10 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 エドワード・トルーマンは、報酬のない状態で迷路を探検させたラットが、後で報酬が与えられるようになると、すぐに迷路を効率的に通り抜けられるようになることを示した。これは、報酬がなくても環境の認知地図（cognitive map）が形成されていたことを示している。<br>
 機械学習では、この概念はデータの「latent space (潜在空間)」と結びつけられることがある。<br>
 <br>
-<a href="data/Papers_LatentLearning.html">Papers</a>
+●『Latent learning: episodic memory complements parametric learning by enabling flexible reuse of experiences 』(2025)<br>
+　(潜在学習：経験の柔軟な再利用を可能にすることで、エピソード記憶がパラメトリック学習を補完する)<br>
+　機械学習システムの弱点の一つは、潜在学習、つまり現在のタスクとは無関係だが将来のタスクで役立つ可能性のある情報を学習できないことであると主張する。この視点が、言語モデリングにおける反転の呪いからエージェントベースナビゲーションに関する新たな知見に至るまで、様々な失敗にどのように関連しているかを示す。
+
 </li>
 
 <br>
@@ -1383,8 +1466,14 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <strong>LTH: Lottery Ticket Hyposis (宝くじ仮説)</strong><br>
 大規模なニューラルネットワークの中に、元のネットワークと同じかそれ以上の性能を発揮する、より小さな「サブネットワーク」が存在するという仮説。<br>
 <center><img src="data/images/LTH.svg"></center>
+<br>
 <br>(関連項目)<br>
 ・<a href="#Pruning">Pruning</a> (枝刈り)<br>
+・SLTH:The Strong Lottery Ticket Hypothesis (強い宝くじ仮説)<br>
+　高性能なサブネットワーク(当りくじ) が<strong>ランダムに初期化されたニューラルネットワークの中に</strong>隠れているという仮説。<br>
+　<br>
+　●『The Strong Lottery Ticket Hypothesis for Multi-Head Attention Mechanisms』(2025)<br>
+　トランスフォーマーのマルチヘッドアテンションメカニズム内における強い宝くじチケットの存在を示し、適切に枝刈りされ, ランダムに初期化されたネットワークが任意のアテンション関数を高精度で近似できることを証明した。
 </li>
 </ul></div><p>
 
@@ -1497,6 +1586,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <br>(関連項目)<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
+・<a href="#OverParameterized">Over-parameterized<a/> (過剰パラメータ化)
 </li>
 
 <br>
@@ -1515,7 +1605,10 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 </li></ul>
 <br>
 ●『Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time』(2022)<br>
-　(モデルスープ：複数のファインチューニング済みモデルの重み平均による、推論時間増加なしの精度向上)
+　(モデルスープ：複数のファインチューニング済みモデルの重み平均による、推論時間増加なしの精度向上)<br>
+<br>(関連項目)<br>
+・<a href="#EnsembleMethod">Ensemble Method (アンサンブル法)</a><br>
+・<a href="#LossLandscape">Loss Landscape (損失景観)</a>
 </li>
 
 <br>
@@ -1556,9 +1649,21 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="NAS">
 <strong>NAS: Neural Architecture Search</strong><br>
-特定のタスクにおいて、最も性能が良いニューラルネットワークの構造（アーキテクチャ）を自動的に見つけ出す技術。
+特定のタスクにおいて、最も性能が良いニューラルネットワークの構造（アーキテクチャ）を自動的に見つけ出す技術。<br>
+<br>
+●『Random search for hyper-parameter optimization』(2012)<br>
+　(ハイパーパラメータ最適化におけるランダム探索)<br>
+　ハイパーパラメータ最適化における強力なベースラインとしてランダムサーチを確立した。<br>
+<br>
+●『Neural architecture search with reinforcement learning.』(2016)<br>
+　(強化学習を用いたニューラルアーキテクチャ探索)<br>
+　強化学習を用いてニューラルアーキテクチャ探索（NAS）の概念を導入した記念碑的な論文。<br>
+<br>
+●『Efficient Global Neural Architecture Search』(2025)<br>
+　(効率的なグローバルニューラルアーキテクチャ探索)<br>
+　EMNISTやKMNISTなどのデータセットで最先端の結果を達成し、CIFARで競合する性能を発揮するとともに、探索時間を大幅に短縮し、実世界の顔認識タスクへの高い転用可能性を示している。
 </li>
 
 <br>
@@ -1582,9 +1687,17 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 
 <br>
 
-<li>
+<li id="NFL">
 <strong>NFL: No Free Lunch Theorem (ノーフリーランチ定理)</strong><br>
-あらゆる問題に普遍的に通用する万能なアルゴリズムは存在しない,という定理。
+あらゆる問題に普遍的に通用する万能なアルゴリズムは存在しない,という定理。<br>
+<br>
+●『The lack of a priori distinctions between learning algorithms』(1996)<br>
+　(学習アルゴリズム間の先験的な区別の欠如)<br>
+　教師あり学習における「ノーフリーランチ」 (NFL) 定理の基礎論文。<br>
+<br>
+●『The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning』(2023)<br>
+　(ノーフリーランチ定理、コルモゴロフ複雑性、そして機械学習における帰納バイアスの役割)<br>
+　「No Free Lunch」定理が実世界の低複雑度データには適用されないことを示し、現代のニューラルネットワークが固有の「単純性バイアス」を持っており、それによって多様なタスクやデータスケールにわたる広範な汎化が可能になることを示した。
 </li>
 
 <br>
@@ -1710,16 +1823,19 @@ D</h
 <strong>Over-parameterized (過剰パラメータ化)</strong><br>
 機械学習モデルのパラメータ（学習可能な変数）の数が、学習データ数よりもはるかに多い状態。<br>
 <br>
-●『Loss landscapes and optimization in over-parameterized non-linear systems and neural networks』(2003)<br>
+●『Loss landscapes and optimization in over-parameterized non-linear systems and neural networks』(2020)<br>
 　論文は<a href="https://arxiv.org/abs/2003.00307">こちら</a>,　解説は<a href="https://www.alphaxiv.org/ja/overview/2003.00307v2">こちら</a><br>
 <br>
 従来の凸性仮定を超えた新しい数学的フレームワークを提案し、過剰パラメータ化された領域で最適化がなぜこれほど効果的に機能するのかを説明した。<br>
 重要な洞察は、パラメータ数が訓練例の数を上回る過剰パラメータ化システムが、パラメータが不足するシステムとは根本的に異なる最適化特性を示すこと。<br>
-
+<br>
+<center><img src="data/images/Over-parameterized.svg"></center>
 
 
 <br>(関連項目)<br>
 ・<a href="#DoubleDescent">Double Descent</a> (二重降下)<br>
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)
 </li>
 
 <br>
@@ -1824,7 +1940,7 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <br>
 
 <li id="Plateau">
-<strong>Plateau (プラトー)</strong><br>
+<strong>Plateau (プラトー: 高原)</strong><br>
 学習の過程で損失関数の値が一時的にほとんど変化しなくなり、学習の進捗が停滞しているように見える現象。<br>
 
 <center><img src="data/images/Plateau.svg"></center>
@@ -1909,6 +2025,53 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 
 <br>
 
+<li id="Prisoner'sDilemma">
+<strong>Prisoner's Dilemma (囚人のジレンマ)</strong><br>
+個人が自分の利益だけを考えて合理的な選択をした結果、全員にとって望ましくない（非効率な）結果に陥ってしまうという、ゲーム理論における代表的なモデルケース。<br>
+<br>
+
+(例)
+
+<center><img src="data/images/Prisoner'sDilemma.svg"></center>
+
+・2人の囚人は連絡をとることができない(非協力ゲーム)<br>
+・相手の行動がどちらの場合でも、自白した方が刑期が短い<br>
+⇒ 2人とも「自白」を選択する。<br>
+<br>
+IPD: Iterated Prisoner’s Dilemma (反復囚人のジレンマ)<br>
+基本的な「囚人のジレンマ」ゲームを同じ参加者間で何度も繰り返し行うというゲーム理論のモデル。<br>
+<br>
+
+●『The Evolution of cooperation』(1984)<br>
+　(協力の進化 ･･･ 書籍の邦題：つきあい方の科学)<br>
+・ゲーム理論家から戦略を募り、トーナメントで競わせた。<br>
+・各戦略は、囚人のジレンマゲームを200回繰り返し、獲得ポイントの合計で競われた。<br>
+・<strong><span style="color:magenta;">優勝したのは、</span></strong>アナトール・ラポポートが提出した<strong><span style="color:magenta;">「しっぺ返し」（TFT:TIT FOR TAT）と呼ばれる非常に単純な戦略だった。これは、最初の動きで協力し、その後、相手が前の動きで行ったことを繰り返す（お返しする）というものだ。</span></strong>(相手が協力するなら協力し, 裏切ったら,こちらも裏切る)<br>
+
+<br>
+
+●『The evolution of stochastic strategies in the prisoner’s dilemma』(1990)<br>
+・現実世界のやりとりにおける「ノイズ」や不確実性を加味。<br>
+・誤りが生じやすい環境では、たった一つのミスが一連の相互非難を引き起こす可能性があること、ある程度の「寛大さ」を備えた確率論的な戦略は、この悪循環を打破することができることを示した。<br>
+
+<br>
+
+●『Learning with Opponent-Learning Awareness 』LOLA (2017)<br>
+　(敵対学習意識による学習)<br>
+・各エージェントが相手の学習プロセスを考慮して戦略を立てる「LOLA」という手法を提案。2つのLOLAエージェントが対戦すると、反復囚人のジレンマゲームで TFT のような協力行動が自然に起こることが示された。<br>
+
+<br>
+
+●『Foolproof Cooperative Learning』 (FCL)V(2019)<br>
+・強化学習で「Foolproof Cooperative Learning (FCL)」アルゴリズムを導入。このアルゴリズムは、協力的な戦略を取りつつ、利己的なプレイヤーに利用されないように設計されており、TIT FOR TAT的な行動に落ち着くことを証明した。<br>
+<br>
+●『Strategic Intelligence in Large Language Models Evidence from evolutionary Game Theory』 (2025)<br>
+　(大規模言語モデルにおける戦略的知能：進化ゲーム理論からの証拠)<br>
+・現代のLLM（例: GPT-4o mini, Gemini 1.5 Flash）を使用して反復囚人のジレンマゲームを分析している。
+</li>
+
+<br>
+
 <li id="ProspectiveLearning">
 
 
@@ -1960,9 +2123,11 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <strong>Qualia (クオリア)</strong><br>
 哲学や脳科学において、意識に現れる主観的で個人的な「感覚的な質感」や「感じ」のこと。<br>
 <br>
-●『<strong><span style="color:magenta;">クオリア間の類似性が距離の公理（最小性、対称性、三角不等式）を満たすかどうかといった根本的な疑問さえも未だ解決されていない</span></strong>。 クオリアの「空間」については様々な種類が提案されているが、すべてのクオリアを何らかの高次元空間内の点とみなせるかどうかは不明である。現段階では、クオリアのための何らかの空間の存在を仮定するのではなく、<strong><span style="color:magenta;">一歩下がってクオリアの数学的「構造」の可能性を探る方がよいかもしれない。これが、「クオリア構造」パラダイムである･･･</span></strong>』<br>
-The Qualia Structure Paradigm: towards a construction of a Qualia Periodic Table for the dissolution of the Hard Problem of Consciousness (2024)<br>
+●『The Qualia Structure Paradigm: towards a construction of a Qualia Periodic Table for the dissolution of the Hard Problem of Consciousness』 (2024)<br>
 (クオリア構造パラダイム：意識の難問解決のためのクオリア周期表の構築に向けて)<br>
+<br>
+<strong><span style="color:magenta;">クオリア間の類似性が距離の公理（最小性、対称性、三角不等式）を満たすかどうかといった根本的な疑問さえも未だ解決されていない</span></strong>。 クオリアの「空間」については様々な種類が提案されているが、すべてのクオリアを何らかの高次元空間内の点とみなせるかどうかは不明である。現段階では、クオリアのための何らかの空間の存在を仮定するのではなく、<strong><span style="color:magenta;">一歩下がってクオリアの数学的「構造」の可能性を探る方がよいかもしれない。これが、「クオリア構造」パラダイムである･･･</span></strong><br>
+
 <br>
 <a href="data/Papers_Qualia.html">Papers</a><br>
 <a href="https://en.wikipedia.org/wiki/Qualia">wikipedia</a>
@@ -2001,6 +2166,8 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <li id="Reasoning">
 <strong>Reasoning (推論)</strong><br>
 既存の知識や情報に基づいて、結論を導き出したり、予測を立てたり、説明を組み立てたりする思考プロセス。<br>
+<br>
+<center><img src="data/images/InferencePredictionReasoning.svg"></center>
 <br>
 <ul>
 <li><strong>Deduction (演繹法)</strong><br>
@@ -2064,16 +2231,6 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <br>
 
 <li>
-
-
-
-<strong>Representation Biases (表現バイアス)</strong><br>
-</li>
-
-<br>
-
-<li>
-
 
 <strong>Representation Learning (表現学習)</strong><br>
 画像、音声、テキストなどの生データから、機械学習モデルがタスクを解決するために必要な「特徴」や「本質的な情報」を自動的に抽出・学習する一連の技術。
@@ -2248,8 +2405,12 @@ AIモデルが複雑なデータや特徴を無視して、単純で表面的な
 ニューラルネットワークにおいて、層を飛び越して、より浅い層の出力をより深い層に直接接続する手法。<br>
 層が深くなりすぎると、学習時に勾配（損失関数を最小化するための方向）が消えてしまう「勾配消失問題」が起きやすくなる。スキップ接続は、この問題を解決するために考案された技術。<br>
 <br>
-<a href="data/Papers_SkipConnection.html">Papers</a>
+<a href="data/Papers_SkipConnection.html">Papers</a><br>
+●『Who invented deep residual learning ?』 (2025)<br>
+　(深層残差学習を発明したのは誰か?)<br>
+　誤差信号がニューラルネットワークの多くの層を通じて伝播される際に指数関数的に減衰するか、制御不能に増大するという数学的現象を特定した。さらに重要なことに、数学的な解決策、すなわち重みが正確に1.0の残差接続を導き出した。<br>
 <br>
+
 <center><img src="data/images/SkipConnection.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#VanishingGradient">Vanishing gradient problems</a> (勾配消失問題)
@@ -2333,7 +2494,32 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <li id="SSL">
 
 <strong>SSL: Self-Supervised Learning (自己教師あり学習)</strong><br>
-ラベル付けされていない膨大なデータから、自動的に生成したラベル（疑似ラベル）を使ってモデルを学習させる機械学習の手法。
+ラベル付けされていない膨大なデータから、自動的に生成したラベル（疑似ラベル）を使ってモデルを学習させる機械学習の手法。(学習データは必要だが, アノテーションは不要)<br>
+
+<br>
+<strong>[Contrastive Methods (対照的手法)]</strong><br>
+● SimCLR『A <strong>Simple</strong> Framework for <strong>C</strong>ontrastive <strong>L</strong>earning of Visual <strong>R</strong>epresentations』 (2020)<br>
+・学習データを回転したり, 一部切り抜いたりしたものを提示し同一性を学習させる。<br>
+● MoCo『<strong>Mo</strong>mentum <strong>Co</strong>ntrast for Unsupervised Visual Representation Learning』(2020)<br>
+● CLIP『Learning Transferable Visual Models From Natural Language Supervision』(2021)<br>
+・CLIP は <strong>C</strong>ontrastive <strong>L</strong>anguage-<strong>I</strong>mage <strong>P</strong>re-training の略。<br>
+<br>
+<strong>[Generative Methods (生成的手法)]</strong><br>
+● VAE『<strong>A</strong>uto-<strong>E</strong>ncoding <strong>V</strong>ariational Bayes』(2014)<br>
+● GAN『<strong>G</strong>enerative <strong>A</strong>dversarial <strong>N</strong>etworks』(2014)<br>
+● MAE『<strong>M</strong>asked <strong>A</strong>uto<strong>e</strong>ncoders Are Scalable Vision Learners』(2022)<br>
+<br>
+<strong>[Predictive Methods (予測的手法)]</strong><br>
+● BOYL『<strong>B</strong>ootstrap <strong>Y</strong>our <strong>O</strong>wn <strong>L</strong>atent: A New Approach to Self-Supervised Learning』(2020)<br>
+● DINO『Emerging Properties in Self-Supervised Vision Transformers』(2021)<br>
+　self-<strong>DI</strong>stillation with <strong>NO</strong> labels (ラベルなしの自己蒸留)の略<br>
+● I-JEPA『Emerging Properties in Self-Supervised Vision Transformers』(2023)<br>
+・「<strong>J</strong>oint-<strong>E</strong>mbedding <strong>P</strong>redictive <strong>A</strong>rchitecture（結合埋め込み予測アーキテクチャ）」の略。<br>
+・生成的手法は, 生の入力空間で予測しようとするが, JEPAは、<strong><span style="color:magenta;">生の入力ではなく、抽象化された表現（埋め込み空間)で予測</span></strong>を行う。<br>
+<br>(関連項目)<br>
+・<a href="#ContrastiveLearning">Contrastive Learning (対照学習)</a><br>
+・<a href="#GenerativeModel">Generative Model (生成モデル)</a><br>
+・<a href="#LatentSpace">Latent Space (潜在空間)</a><br>
 </li>
 
 <br>
@@ -2717,8 +2903,8 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 
 <li id="WorldModel">
 
-<strong>World Model</strong><br>
-AIが外部の観測情報（画像や音声など）から、環境のダイナミクス（物理法則や因果関係）を学習して獲得する、内部的なシミュレーションモデルのこと。<br>
+<strong>World Model (世界モデル)</strong><br>
+AIが外部の観測情報（画像や音声など）から、環境のダイナミクス（物理法則や因果関係）を学習して獲得する、内部的なシミュレーションモデルのこと。認知科学で「内部モデル」と言われているものに近い。<br>
 <br>
 1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。<br>
 <br>
@@ -2734,6 +2920,9 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 <center><img src="data/images/WorldModel3.svg"></center>
 <br>
 <a href="data/Papers_WorldModel.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a>
 </li>
 </ul></div><p>
 
