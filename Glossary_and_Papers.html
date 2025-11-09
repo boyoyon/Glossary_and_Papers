@@ -58,13 +58,10 @@
 
 <h2>更新項目</h2>
 <p>
-<a href="#Exploration-ExploitationDilemma">Exploration-Exploitation Dilemma/Tradeoff (探索と利用のジレンマ/トレードオフ)</a><br>
-<a href="#Inversion">Inversion ((AI推論の)反転)</a><br>
-<a href="#NAS">NAS: Neural Architecture Search</a><br>
-<a href="#NFL">NFL: No Free Lunch Theorem (ノーフリーランチ定理)</a><br>
-<a href="#OverParameterized">Over-parameterized (過剰パラメータ化)</a><br>
-<a href="#SkipConnection">Skip Connection (スキップ接続)</a><br>
-<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
+・<a href="#AdversarialVulnerabilities">Adversarial Vulnerabilities (敵対的脆弱性)</a><br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)</a><br>
+・<a href="#LMC">LMC: Linear Mode Connectivity (線形モード接続)</a><br>
+・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)
 </p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -140,18 +137,26 @@
 <center><img src="data/images/ActiveLearning.svg"></center>
 <br>
 
-<li>
+<li id="AdversarialVulnerabilities">
 <strong>Adversarial Vulnerabilities (敵対的脆弱性)</strong><br>
 機械学習モデルが、意図的に改ざんされた入力データ（敵対的サンプル）によって誤った予測や判断を下してしまう脆弱性
 。<br>
 (例)<br>
 ・画像分類 ･･･ 知覚できないノイズを加えて誤分類させる。<br>
+　●『Intriguing properties of neural networks』(2013)<br>
+　●『Explaining and Harnessing Adversarial Examples』(2014)<br>
 　<center><img src="data/images/panda.svg"></center><br>
+
+　●『Diffusion Models for Adversarial Purification』(2022)<br>
+　　(敵対的浄化のための拡散モデル)<br>
+　　敵対的浄化とは、生成モデルを用いて敵対的摂動を除去する防御手法の一種。<br>
+<center><img src="data/images/DiffPure.svg"></center>
+<br>
 ・生成モデル ･･･ プロンプトで学習データを引き出す。反社会的な出力を生成させる。フリーズさせる。<br>
 <br>
-<a href="data/Papers_AdversarialVulnerabilities.html">Papers</a>
-
-
+<a href="data/Papers_AdversarialVulnerabilities.html">Papers</a><br>
+<br>(関連項目)<br>
+・<a href="#Inversion">Inversion ((AI推論の)反転)</a>
 </li>
 
 <br>
@@ -450,10 +455,19 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 <br>
 <a href="data/Papers_CatastrophicForgetting.html">Papers</a><br>
 <br>
-<center><img src="data/images/RLRazor.svg"></center>
+タスクAの学習→タスクBの学習とシーケンシャルに学習を行うと, 前のタスク(タスクA)で学習したことを忘れてしまう場合がある。<br>
+<br>
+<center><img src="data/images/LMC1.svg"></center><br>
+<br>
+タスクA の Loss Landscape の谷底と, タスクB の Loss Landscape の谷底に重なりがあれば, 両立できる可能性がある。<br>
+<br>
+<center><img src="data/images/LMC2.svg"></center>
 
 <br>(関連項目)<br>
-・<a href="#ContinualLearning">Continual Learning</a> (継続学習) [対処法を含む研究テーマ]
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習) [対処法を含む研究テーマ]<br>
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
+・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)<br>
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)
 </li>
 
 <br>
@@ -1475,6 +1489,23 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 　●『The Strong Lottery Ticket Hypothesis for Multi-Head Attention Mechanisms』(2025)<br>
 　トランスフォーマーのマルチヘッドアテンションメカニズム内における強い宝くじチケットの存在を示し、適切に枝刈りされ, ランダムに初期化されたネットワークが任意のアテンション関数を高精度で近似できることを証明した。
 </li>
+
+<br>
+
+<li id="LMC">
+<strong>LMC: Linear Mode Connectivity (線形モード接続)</strong><br>
+同じモデル構造とデータセットを用いて独立に学習された2つの異なる最適解（重みパラメータのセット）の間を、パラメータ空間上で損失値（または精度）をほぼ一定に保ちながら線形補間によって繋ぐことができるという性質。(モード接続性＋線形性)<br>
+<br>
+●『Linear Mode Connectivity in Multitask and Continual Learning』(2020)<br>
+・同じタスクの異なる最小値が、通常、非常に単純な低誤差曲線で結ばれていることを示す最近の研究に着目し、マルチタスク解と継続的解も同様に結ばれているかどうかを検証する。<br>
+・私たちは経験的に、そのような連結は確かに確実に達成できること、そしてさらに興味深いことに、両方の初期値が同じであることを条件として、<strong><span style="color:magenta;">線形経路で実現できることを発見した</span></strong>。<br>
+・この観察結果を徹底的に分析し、継続学習プロセスにおけるその意義について議論する。<br>
+<br>(関連項目)<br>
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)
+</li>
+
 </ul></div><p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1586,7 +1617,8 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <br>(関連項目)<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
-・<a href="#OverParameterized">Over-parameterized<a/> (過剰パラメータ化)
+・<a href="#OverParameterized">Over-parameterized<a/> (過剰パラメータ化)<br>
+・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)
 </li>
 
 <br>
@@ -2813,6 +2845,20 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 
 <br>
 
+<li id="VLA">
+<strong>VLA: Vision-Language-Action (視覚・言語・動作)</strong><br>
+ロボットが視覚情報（カメラ映像など）と自然言語（人の指示など）を同時に理解し、それに基づいて自律的に具体的な動作を実行できるようにする人工知能モデル。<br>
+<br>
+●『RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control』(2023)<br>
+・インターネット上の膨大な画像・テキストデータで事前学習された汎用的なVLM (Vision-Language Model) の知識を、ロボット制御に直接転移させる手法を確立した。<br>
+・VLMを単なる「認識」や「推論」のツールとしてではなく、カメラ入力と人間の言語指示から直接「動作トークン（ロボットの動きを表現するデータ）」を出力するエンドツーエンドの行動生成モデルとして機能させた。<br>
+・これにより、トレーニングデータには含まれていないような新しい物体や状況、複雑な指示に対しても、ロボットが高い成功率で対応できるようになった。<br>
+<center><img src="data/images/VLA.svg"></center>
+<center><img src="data/images/OpenVLA.svg"></center>
+</li>
+
+<br>
+
 <li id="VLM">
 <strong>VLM: Vision-Language Model (視覚・言語モデル)</strong><br>
 視覚情報（画像・動画）とテキスト情報に特化したモデル。<br>
@@ -2925,6 +2971,8 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a>
 </li>
 </ul></div><p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
 <h2 id="X">X</h2>
 
