@@ -58,10 +58,8 @@
 
 <h2>更新項目</h2>
 <p>
-・<a href="#AdversarialVulnerabilities">Adversarial Vulnerabilities (敵対的脆弱性)</a><br>
-・<a href="#CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)</a><br>
-・<a href="#LMC">LMC: Linear Mode Connectivity (線形モード接続)</a><br>
-・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)
+・<a href="#RL">RL: Reinforcement Learning (強化学習)</a><br>
+
 </p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -151,7 +149,10 @@
 　　(敵対的浄化のための拡散モデル)<br>
 　　敵対的浄化とは、生成モデルを用いて敵対的摂動を除去する防御手法の一種。<br>
 <center><img src="data/images/DiffPure.svg"></center>
-<br>
+　●『Deep learning models are vulnerable, but adversarial examples are even more vulnerable』(2025)<br>
+　　　(ディープラーニングモデルは脆弱だが、敵対的サンプルはさらに脆弱である)<br>
+　　「敵対的サンプルの脆弱性 (vulnerable of adversarial examples )」と呼ばれるこの現象を調査。<br>
+<br> 
 ・生成モデル ･･･ プロンプトで学習データを引き出す。反社会的な出力を生成させる。フリーズさせる。<br>
 <br>
 <a href="data/Papers_AdversarialVulnerabilities.html">Papers</a><br>
@@ -742,7 +743,8 @@ Compositionality Gapの一例。<br>
 <a href="data/Papers_DRL.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり<br>
-・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
+・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)
 </li>
 <br>
 <center><img src="data/images/DRL.svg"></center>
@@ -2293,6 +2295,24 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 　類似の現象を経済学や社会科学の文脈で説明したもの。
 </li>
 
+<br>
+
+<li id="RL">
+<strong>RL: Reinforcement Learning (強化学習)</strong><br>
+心理学および動物行動学において「オペラント条件づけ（道具的条件づけ）」という概念に基づいて研究されていた, 
+動物や人間が、自発的な行動の結果として得られる報酬や罰を通じて、特定の行動を学習するプロセス。<br>
+制御工学では, 動的計画法 (Dynamic Programming) や最適制御理論といった手法が中心に研究された。<br>
+機械学習の文脈では、コンピューターエージェントが試行錯誤を通じて最適な行動ルールを学習するアプローチ。<br>
+<br>
+<center><img src="data/images/RL.svg"></center>
+DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確な機能モジュールに分かれている訳ではない。(例：DQNの構成)<br>
+<br>
+<center><img src="data/images/DQN.svg"></center>
+<br>(関連項目)<br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning</a> (深層強化学習)<br>
+・<a href="#WorldModel">World Model</a> (世界モデル)
+</li>
+
 </ul></div><p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -2967,8 +2987,9 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 <br>
 <a href="data/Papers_WorldModel.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
-・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a>
+・<a href="#DRL">DRL: Deep Reinforcement Learning</a> (深層強化学習)<br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
+・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)
 </li>
 </ul></div><p>
 
