@@ -58,8 +58,12 @@
 
 <h2>更新項目</h2>
 <p>
-・<a href="#RL">RL: Reinforcement Learning (強化学習)</a><br>
-
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)</a></br>
+・<a href="#CognitiveAgent">Cognitive Agent (認知エージェント)</a><br>
+・<a href="#ContinualLearning">Continual Learning (継続学習)</a><br>
+・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks (動的成長ネットワーク)</a><br>
+・<a href="#KD">Knowledge Distillation (知識蒸留)</a><br>
+・<a href="#RL">RL: Reinforcement Learning (強化学習)</a>
 </p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -454,21 +458,23 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 <strong>Catastrophic Forgetting (破局的忘却)</strong><br>
 機械学習モデルが新しいタスクを学習する際に、過去に学習したタスクの情報を急激かつ大幅に忘れてしまう現象。<br>
 <br>
+・「タスクAの学習」→「タスクBの学習」とシーケンシャルに学習を行うと, 前のタスク(タスクA)で学習したことを忘れてしまう場合がある。(下図 ①→②→③)<br>
+・「タスクA の Loss Landscape の谷底」と「タスクB の Loss Landscape の谷底」に重なりがあれば, 両立できる可能性がある。(下図 ①→②→④)<br>
+・両立できる Loss Landscape の谷底が無い場合の対応例<br>
+　<a href="#DEN">DEN: Dynamically Expandable/Growth Networks (動的成長ネットワーク)</a><br>
+<br>
+<center><img src="data/images/CatastrophicForgetting.svg"></center><br>
+
+<br>
 <a href="data/Papers_CatastrophicForgetting.html">Papers</a><br>
-<br>
-タスクAの学習→タスクBの学習とシーケンシャルに学習を行うと, 前のタスク(タスクA)で学習したことを忘れてしまう場合がある。<br>
-<br>
-<center><img src="data/images/LMC1.svg"></center><br>
-<br>
-タスクA の Loss Landscape の谷底と, タスクB の Loss Landscape の谷底に重なりがあれば, 両立できる可能性がある。<br>
-<br>
-<center><img src="data/images/LMC2.svg"></center>
 
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習) [対処法を含む研究テーマ]<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)<br>
-・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
+・<a href="#Grokking">Grokking</a><br>
+・<a href="#PrimacyBias">Primacy Bias</a> (プライマシーバイアス, 初頭バイアス)[心理学で使われていた用語が機械学習でも使われるようになった]
 </li>
 
 <br>
@@ -477,9 +483,22 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 <strong>Cognitive Agent (認知エージェント)</strong><br>
 人間の認知プロセス（知覚、学習、推論、意思決定など）を模倣するように設計された、AIエージェントのこと。<br>
 <br>
+●『ReAct: Synergizing Reasoning and Acting in Language Models』(2022)<br>
+・<strong><span style="color:magenta;">大規模言語モデルが内部の思考と外部のアクションを交互に実行する</span></strong>ことで、推論と行動を相乗的に組み合わせることを可能にするReActというパラダイムを発表した。<br>
+・<strong><span style="color:magenta;">エージェントのアクション空間をドメイン固有のアクション \(A\) から \(\hat{A}= A \cup L(言語ベースの推論)\) へと拡張</span></strong>することで、従来のエージェントと環境の相互作用を強化
+した。<br>
+・これにより、モデルは次に取るべきアクションについて推論し、目標に対する進捗を追跡し、例外を処理し、環境からの新しい情報を推論プロセスに組み込むことができる。<br>
+●『Reflexion: Language Agents with Automatic Reflection』(2023)<br>
+・エージェントが失敗した推論や行動の軌跡(trajectory)を分析し、それに基づいて将来の行動計画を改善するための<strong><span style="color:magenta;">「内省(reflection)」を行うことを可能にした</span></strong>。<br>
+これにより、<strong><span style="color:magenta;">外部からの追加の人間による介入なしに、エージェントが自律的にパフォーマンスを向上させることができる</span></strong>。<br> 
+●『Voyager: An Open-Ended Embodied Agent with Large Language Models』(2023)<br>
+・Minecraft における初の LLM を活用した<strong><span style="color:magenta;">生涯学習エージェント</span></strong>。<br>
+人間の介入なしに世界を継続的に探索し、多様なスキルを習得し、斬新な発見をする。<br>
+●『Mastering Diverse Domains through World Models』(2023)<br>
+・人間のデータやカリキュラムなしで Minecraft でダイヤモンドをゼロから収集する最初のアルゴリズム。<br>
+<br>
 <a href="data/Papers_CognitiveAgent.html">Papers</a><br>
 <br>
-
 <center><img src="data/images/CognitiveAgent.svg"></center>
 
 <br>(関連項目)<br>
@@ -543,16 +562,27 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <center><img src="data/images/OOD.svg"></center>
 <br>
 <a href="data/Papers_ContinualLearning.html">Papers</a><br>
+<br>
+●『PackNet: Adding Multiple Tasks to a Single Network by Iterative Pruning』(2017)<br>
+・壊滅的な忘却を回避しながら、単一のディープニューラルネットワークに複数のタスクを追加する手法を提示する。<br>
+・反復的な枝刈りとネットワークの再学習を行うことで、パフォーマンスの低下とストレージのオーバーヘッドを最小限に抑えながら、複数のタスクを単一のネットワークに順次「詰め込む」ことができる。<br>
+<br>
+<center><img src="data/images/PackNet.svg"></center>
+<br>
+
 <br>(関連項目)<br>
 ・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)[課題]<br>
 ・<a href="#LossOfPlasticity">Loss of Plasticity</a> (可塑性喪失)[課題]<br>
-</li>
 ・<a href="#PrimacyBias">Primacy Bias</a> (プライマシーバイアス, 初頭バイアス)[課題]<br>
 ・<a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)<br>
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
+・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks</a> (動的成長ネットワーク)
+</li>
+
 <br>
+
 <li id="ContrastiveLearning">
 <strong>Contrastive Learning (対照学習)</strong><br>
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
@@ -636,6 +666,25 @@ Compositionality Gapの一例。<br>
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="DEN">
+<strong>DEN: Dynamically Expandable/Growth Networks (動的成長ネットワーク)</strong><br>
+継続学習（Continual Learning、または Lifelong Learning）の分野で用いられる手法の一つ。学習の過程でニューラルネットワークの構造やサイズ（容量）を動的に変化（拡大）させることを特徴とする。<br>
+<br>
+●『Lifelong Learning with Dynamically Expandable Networks』(2017)<br>
+・生涯学習のための新たなディープネットワークアーキテクチャ「Dynamically Expandable Network (DEN)」を提案。<br>
+・このアーキテクチャは、一連のタスクを学習する際にネットワーク容量を動的に決定し、タスク間でコンパクトに重複する知識共有構造を学習することができる。<br>
+
+<center><img src="data/images/DEN.png"></center><br>
+
+・動的に拡張可能なネットワークの増分学習：左：選択的再学習。DENはまず、新しいタスクに関連するニューロンを識別し、それらに関連するネットワークパラメータを選択的に再学習します。中央：動的ネットワーク拡張。選択的再学習で設定された閾値を下回る所望の損失が得られなかった場合、グループスパース性正則化を用いて不要なニューロンを削除しながら、トップダウン方式でネットワーク容量を拡張します。右：ネットワークの分割／複製。DENは各ユニットのドリフト \(ρ_i^t\) を計算し、学習中に元の値から大きくドリフトしたユニットを識別して複製します。<br>
+
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)
+</li>
+
+<br>
 
 <li id="DGDA">
 <strong>DG: Domain Generalization / DA: Domain Adaptation (ドメイン汎化/ドメイン適応)</strong><br>
@@ -785,7 +834,7 @@ AIモデルもこの効果を起こす。<br>
 </li>
 <br>
 <center><img src="data/images/Dunning-Kruger_Effect_Curve.svg"></center>
-
+<br>
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1359,14 +1408,25 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 
 <br>
 
-<li>
+<li id="KD">
 <strong>Knowledge Distillation (知識蒸留)</strong><br>
 機械学習の技術の一つで、大規模で高性能なAIモデル（教師モデル）が持つ知識を、より小型で軽量なAIモデル（生徒モデル）に移転・圧縮する手法。<br>
 <br>
-<a href="data/Papers_KD.html">Papers</a>
-</li>
-<br>
 <center><img src="data/images/KnowledgeDistillation.svg"></center>
+<a href="data/Papers_KD.html">Papers</a><br>
+<br>
+●『Transferring Inductive Biases through Knowledge Distillation』(2020)<br>
+　帰納的バイアスが、完全に異なるアーキテクチャを持つ「教師」モデルから「生徒」モデルへ効果的に転移できるかどうかを調査し,転移できることを確認した。<br>
+　・LSTM (シーケンシャル処理に自然な好みを持つ) →Transformer<br>
+　・CNN (空間的局所性, 並進不変性) → MLP<br>
+<center><img src="data/images/IBtransfer.svg"></center>
+<center>学習中の内部表現の遷移を視覚化したもの</center>
+<br>
+強い帰納的バイアスがない場合、モデルは損失面上の複数の局所的最小値に等しく引き寄せられる可能性があり、収束解は初期状態や訓練例の順序などのランダムな変動によって任意に影響を受ける可能性がある。強い帰納的バイアスを持つモデルを教師モデルにすることでそれらの影響を避けることができる。
+</li>
+
+<br>
+
 </ul></div><p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1395,12 +1455,13 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <center><img src="data/images/LatentSpace.svg"></center>
 <br>
 <a href="data/Papers_LatensSpace_LatentZone.html">Papers</a><br>
+
+●『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)
+　(潜在ゾーニングネットワーク：生成モデリング、表現学習、および分類の統一的原理)
+統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。
 <br>
-●『Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification』(2025)<br>
-　(潜在ゾーニングネットワーク：生成モデリング、表現学習、および分類の統一的原理)<br>
-統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。<br>
 <center><img src="data/images/LatentZone.svg"></center>
-<br>(関連項目)<br>
+
 ・<a href="#VAE">VAE: Variational Auto Encoder</a>
 </li>
 
@@ -1410,11 +1471,13 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <li id="LifelongLearning">
 <strong>Lifelong Learning(生涯学習)</strong><br>
 Continual Learning (継続学習) の別名。<br>
+
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
+・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks</a> (動的成長ネットワーク)
 </li>
 
 <br>
@@ -1535,7 +1598,9 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <strong>Memorization to Generalization (暗記から汎化へ)</strong><br>
 機械学習モデル、特にニューラルネットワークが、訓練データを単に丸暗記する段階（Memorization）から、学習したパターンを組み合わせて未知のデータにも応用できる段階（Generalization）へと移行するプロセス。<br>
 <br>
-Memorization to Generalization: Emergence of Diffusion Models from Associative Memory (2025)<br>
+●『Diffusion Probabilistic Models Generalize when They Fail to Memorize』(2024)<br>
+●『On the Edge of Memorization in Diffusion Models』(2025)<br>
+●『Memorization to Generalization: Emergence of Diffusion Models from Associative Memory』 (2025)<br>
 ・訓練中に「偽の状態(スプリアスフェーズ)」が出現することが、モデルの記憶から汎化への移行を示すことを実証。<br>
 ・スプリアス状態は通常、記憶容量を超えたときに現れる望ましくないアーティファクトと見なされていたが、<strong><span style="color:magenta;">出現するパターンは、モデルの創造的合成、つまり基本的な記憶を組み合わせて新しい組み合わせを生み出すことを表していると提案している。</span></strong><br>
 <br>
@@ -1825,7 +1890,7 @@ DeepMind社によって2014年に発表された。<br>
 <strong>One-Step Generator</strong><br>
 拡散モデルのような多段階の生成プロセスを、わずか1回のステップで完了させることのできる生成モデル。<br>
 <br>
-●『Who Said Neural Networks Aren't Linear?』(2025><br>
+●『Who Said Neural Networks Aren't Linear?』(2025)<br>
 　(ニューラルネットワークは線形ではないと誰が言った？)<br>
 　論文は<a href="https://arxiv.org/abs/2510.08570">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.08570v1">こちら</a><br>
 　最も説得力のある応用の一つは、リニアライザーが数百の拡散サンプリングステップを単一の順伝播パスに統合する方法を示すもの。<br>
@@ -1839,7 +1904,7 @@ DeepMind社によって2014年に発表された。<br>
 <br>
 ●『Towards a theory of out-of-distribution learning』 (2021)
 　論文はこちら<br>
-D</h
+
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)･･･概略図比較あり,　 <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習=継続学習の別名)<br>
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
@@ -2024,12 +2089,12 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 
 <li><strong>Potemkin Understanding (ポチョムキン(的)理解)</strong><br>
 大規模言語モデルがベンチマークの成功に基づいて概念を理解しているように見えるが、真に一貫性のある理解を欠いているという失敗モード。<br>
+●『Potemkin Understanding in Large Language Models 』(2025)<br>
+　　(大規模言語モデルにおけるポチョムキン理解)<br>
 ・「ポチョムキン理解」   ･･･ 誤った概念的一貫性を捏造する。<br>
 ・「Hallucination(幻覚)」･･･ 誤った事実を捏造する。<br>
 <br>
-※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来しています。<br>
-<br>
-<a href="data/Papers_PotemkinUnderstanding.html">Papers</a>
+※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来している。
 </li>
 
 <br>
@@ -2046,6 +2111,7 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <center><img src="data/images/PrimacyBias.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
 ・<a href="#Grokking">Grokking</a><br>
 </li>
 
@@ -2304,6 +2370,11 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 制御工学では, 動的計画法 (Dynamic Programming) や最適制御理論といった手法が中心に研究された。<br>
 機械学習の文脈では、コンピューターエージェントが試行錯誤を通じて最適な行動ルールを学習するアプローチ。<br>
 <br>
+<a href="data/Papers_RL.html">Papers</a><br>
+<br>
+●『Reinforcement Learning: An Overview』(2024/2025)　<a href="https://arxiv.org/abs/2412.05265">こちら</a><br>
+　(強化学習の概要, 237ページ)<br>
+<br>
 <center><img src="data/images/RL.svg"></center>
 DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確な機能モジュールに分かれている訳ではない。(例：DQNの構成)<br>
 <br>
@@ -2436,7 +2507,12 @@ AIシステムが自らのコードや構造を複製、または改良して新
 <br>
 
 <li><strong>Siamese Network (シャムネットワーク)</strong><br>
-2つの入力データ間の類似性を比較するために設計された特殊なニューラルネットワークのアーキテクチャー。
+2つの入力データ間の類似性を比較するために設計された特殊なニューラルネットワークのアーキテクチャー。<br>
+<br>
+●『Siamese neural networks for fingerprint recognition』(1933)<br>
+　　Siamese Network を初めて導入した。[指紋認証]<br>
+●『Siamese Neural Networks for One-shot Image Recognition』(2015)<br>
+　　入力間の類似性を自然にランク付けする独自の構造を採用。Siamese Networkの現代的な応用の基礎を築いた。
 </li>
 
 <br>
@@ -2645,9 +2721,12 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 <li>
 
-
 <strong>Syntax Dependencies (統語的依存関係)</strong><br>
-自然言語処理（NLP）において、文を構成する単語間の文法的な依存関係を指す。
+自然言語処理（NLP）において、文を構成する単語間の文法的な依存関係を指す。<br>
+<br>
+●『Assessing the Ability of LSTMs to Learn Syntax-Sensitive Dependencies』(2016)<br>
+　　(LSTMの統語的に敏感な依存関係学習能力の評価)
+　LSTMsが文法的な依存関係を学習できるかを評価するために用いられる主語と動詞の一致タスクを導入した、記念碑的な論文
 </li>
 
 </ul></div><p>
