@@ -58,11 +58,10 @@
 
 <h2>更新項目</h2>
 <p>
-・<a href="#CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)</a></br>
-・<a href="#CognitiveAgent">Cognitive Agent (認知エージェント)</a><br>
-・<a href="#ContinualLearning">Continual Learning (継続学習)</a><br>
-・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks (動的成長ネットワーク)</a><br>
-・<a href="#KD">Knowledge Distillation (知識蒸留)</a><br>
+・<a href="#DataAugmentation">Data Augmentation (データ拡張)</a><br>
+・<a href="#ERM">ERM: Empirical Risk Minimization (経験的リスク最小化)</a><br>
+・<a href="#ReLU">ReLU: Rectified Linear Unit</a><br>
+・<a href="#RepresentationCollapse">Representation Collapse (表現の崩壊)</a><br>
 ・<a href="#RL">RL: Reinforcement Learning (強化学習)</a>
 </p>
 
@@ -666,6 +665,23 @@ Compositionality Gapの一例。<br>
 <p>
 <div class="styleBullet">
 <ul>
+<li id="DataAugmentation">
+<strong>Data Augmentation (データ拡張) </strong><br>
+機械学習において、既存の学習データを人為的に加工・変換することで、データセットの量と多様性を増やすための技術。<br>
+・目的：データ不足の解消 / 汎化性能の向上 / モデルのロバスト性向上<br>
+・手法例(画像の場合)：回転, 反転, 切り出し, 拡大縮小, 平行移動, 明るさコントラスト調整, ぼかしノイズ付加<br><br>
+●『A Flat Minima Perspective on Understanding Augmentations and Model Robustness』(2025)<br>
+　　データ拡張により, Loss Landscape が平坦になり, 汎化性能, 堅牢性やドメインシフト耐性が向上する。<br>
+<center><img src="data/images/DataAugmentation.svg"></center>
+<center>経験的リスク(Empirical Risk): 学習データによる損失(平均誤差)</center>
+<center>ターゲットリスク：目標とする真の損失</center>
+<br>(関連項目)<br>
+・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
+・<a href="#ERM">ERM: Empirical Risk Minimization</a> (経験的リスク最小化)
+</li>
+
+<br>
 
 <li id="DEN">
 <strong>DEN: Dynamically Expandable/Growth Networks (動的成長ネットワーク)</strong><br>
@@ -715,7 +731,7 @@ Compositionality Gapの一例。<br>
 
 <br>
 
-<li>
+<li id="DimensionalCollapse">
 <strong>Dimensional Collapse (次元崩壊)</strong><br>
 主に自己教師あり学習（特にコントラスティブ学習）において、モデルが学習した埋め込み（特徴）ベクトルが、利用可能な高次元空間を十分に活用せず、低次元の部分空間に集中してしまう現象。<br>
 <br>
@@ -968,6 +984,23 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 
 <br>
 
+<li id="ERM">
+<strong>ERM: Empirical Risk Minimization (経験的リスク最小化)</strong><br>
+モデルの学習時に「経験的リスク（手元の学習データセット上での平均誤差）」を最小化するようにパラメータを調整する、というアプローチ。<br>
+今となっては当たり前すぎて何とも言えないが, たまに出てくるので覚えておこう･･･<br>
+・経験的：理論や仮説から導かれた訳ではない･･･<br>
+・リスク：限られたデータからの推定量である, ということらしい<br>
+<br>
+ERMではない学習アプローチはあるのか?<br>
+・ベイズ学習：単一目標の最小化(勾配降下)ではない。<br>
+・GAN: 単一の目的関数ではなく、生成器と識別器のミニマックスゲームとして定式化される<br>
+・メタ学習: 単一のタスクに対する経験リスクを最小化ではない<br>
+・PAC学習:　ERMを包含する、より広範な学習理論。汎化性能も改善したい。
+
+</li>
+
+<br>
+
 <li id="Exploration-ExploitationDilemma">
 <strong>Exploration-Exploitation Dilemma/Tradeoff (探索と利用のジレンマ/トレードオフ)</strong><br>
 不確実な状況下での意思決定において、新しい可能性を模索する「探索（Exploration）」と、すでに知っている最良の選択肢を活用して確実な利益を得る「利用（Exploitation）」という、相反する2つの行動間のバランスを取るのが難しい、という問題。<br>
@@ -997,7 +1030,8 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 <a href="data/Papers_FlatMinimaHypothesis.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)</br>
-・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
+・<a href="#DataAugmentation">Data Augmentation</a> (データ拡張)
 </li>
 
 <br>
@@ -1498,6 +1532,7 @@ Continual Learning (継続学習) の別名。<br>
 
 <strong>Loss Landscape (損失景観)</strong><br>
 ニューラルネットワークのパラメータ（重み）を軸とし、対応する損失関数の値を高さとした多次元の景観。モデルの学習は、この景観の低い場所（最適解）を探すことに相当する。<br>
+ネットワークアーキテクチャー, 学習データ, 損失関数により景観が変わる。<br>
 <br>
 <a href="data/Papers_LossLandscape.html">Papers</a><br>
 <br>
@@ -1518,7 +1553,9 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 
 <br>(関連項目)<br>
 ・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
-・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)
+・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)<br>
+・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
+・<a href="#DataAugmentation">Data Augmentation</a> (データ拡張)
 </li>
 
 <br>
@@ -2322,12 +2359,65 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
-<li>
+<li id="ReLU">
 
 <strong>ReLU: Rectified Linear Unit </strong><br>
-深層学習（ディープラーニング）で最も広く使われる活性化関数のひとつ。
+深層学習（ディープラーニング）で最も広く使われる活性化関数のひとつ。<br>
+<br>
+●『Visual feature extraction by a multilayered network of analog threshold elements』(1969)<br>
+　　ReLUと命名されていないが, 最初の ReLU とされている。<br>
+　　<a href="https://people.idsia.ch/~juergen/who-invented-convolutional-neural-networks.html">Who invented convolutional neural networks ?</a><br>
+<br>
+●『Rectified linear units improve restricted boltzmann machines』(2010)<br>
+　　ReLU と命名した基礎的な論文。<br>
+<br>
+●『Imagenet classification with deep convolutional neural networks (AlexNet論文)』(2012)<br>
+　　深層畳み込みネットワークにおける ReLU の有効性を示すことにより ReLU を普及させた。<br>
+　　機械翻訳は<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/2012_AlexNet/2012_Imagenet-classification-with-deep-convolutional-neural-networks.html">こちら</a>。(図1.「tanhの6倍･･･」)<br>
+<br>
+●『Dying relu and initialization: Theory and numerical examples』(2019)<br>
+　「ReLUの死滅問題」に関する詳細な分析と特定の実験設定を提供。<br>
+　　死滅問題：入力が常に負 → 出力が 0 → 勾配 0 → 重みが更新されない <br>
+　　原因：学習率が高すぎる / バイアスが負の大きな値になっている / データの偏り, 等々
+
 </li>
 
+<br>
+
+<li id="RepresentationCollapse">
+<strong>Representation Collapse (表現の崩壊)</strong><br>
+モデルが入力データの多様な特徴を捉える能力を失い、限られた、または単一の表現に集約されてしまう現象。<br>
+<br>
+<div class="styleBullet">
+<ul>
+<li><strong>Total Collapse / Trivial Collapse (完全な崩壊)</strong><br>
+モデルがすべての入力データに対して常に同じ単一の表現（特徴ベクトル）を出力するようになる現象。稀な病気を検出するように訓練したら, 常に「陰性」を出力するようになってしまった･･･ような現象。</li><br>
+<li><strong>特徴量の多様性の喪失</strong><br>
+モデルの内部表現が、互いに似通ってしまう状態。異なるクラスのデータであっても、最終層に近い特徴表現が同じような値に収束してしまい、区別がつかなくなることがある。<br>
+</li><br>
+<li><strong>Dimensional Collapse (次元の崩壊)</strong><br>
+コントラスト学習や自己教師あり学習などの文脈で、特徴表現の次元が実質的に低下し、多様な情報を保持できなくなる現象。<br>
+</li><br>
+<li><strong>Modality Collapse (モード崩壊)</strong><br>
+マルチモーダル (画像とテキストなど複数の種類のデータ) を扱うモデルにおいて、特定のモダリティ(データ形式) が他のモダリティよりも支配的になり、他の情報が無視されてしまう現象。<br>
+GAN が新たな画像を生成せず, 一部の学習データのみを再現する現象もモード崩壊という。<br>
+</li><br>
+<li><strong>Expert Collapse (エキスパートの崩壊)</strong><br>
+Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使われるアーキテクチャにおいて、一部のエキスパート（専門的な処理を行う部分）しか選択されなくなり、他のエキスパートが使われなくなる現象。<br>
+</li><br>
+<li><strong>Neural Collapse (ニューラルコラプス)</strong><br>
+学習の終盤に自然に発生する幾何学的な現象で、クラス内の特徴がそのクラスの平均に収束し、クラス平均同士が対称的な構造 (正単体など) を形成する現象。これは必ずしも悪い現象ではなく、むしろ効率的な学習の帰結として理解されることもある。
+</li>
+</ul></div>
+<br>
+●『VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning』(2021)<br>
+　　各次元に沿った埋め込みの分散に個別の単純な正則化項を適用することで、崩壊問題を明示的に回避する手法であるVICReg（分散・不変・共分散正則化）を導入。<br>
+●『LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics』(2025)<br>
+　　等方性ガウス分布 (すべての次元が等しい分散を持ち、無相関である分布) に従う埋め込みを使って表現の崩壊を防ぐ 自己教師あり学習アーキテクチャー (Joint-Embedding Predictive) を提案している(らしい)<br>
+<br>(関連項目)<br>
+・<a href="#DimensionalCollapse">Dimensional Collapse</a> (次元崩壊)<br>
+・<a href="#NeuralCollapse">Neural Collapse</a><br>
+</li>
 <br>
 
 <li>
@@ -2372,7 +2462,7 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <br>
 <a href="data/Papers_RL.html">Papers</a><br>
 <br>
-●『Reinforcement Learning: An Overview』(2024/2025)　<a href="https://arxiv.org/abs/2412.05265">こちら</a><br>
+●『Reinforcement Learning: An Overview』(2024/2025)　<a href="https://arxiv.org/abs/2412.05265">こちら</a>　<a href="https://boyoyon.github.io/Introductions/data/RLoverview_01.html">1章の機械翻訳</a><br>
 　(強化学習の概要, 237ページ)<br>
 <br>
 <center><img src="data/images/RL.svg"></center>
@@ -2866,7 +2956,10 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <ul>
 <li id="VAE">
 <strong>VAE: Variational Auto Encoder</strong><br>
-深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。 <br>
+深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。<br>
+<br>
+●『An Introduction to Variational Autoencoders』(2019)　<a href="https://arxiv.org/pdf/1906.02691">こちら</a><br>
+　(開発者による解説。89ページ)<br>
 <br>(関連項目)<br>
 ・<a href="#GenerativeModel">Generative Model (生成モデル)</a> 概略図比較あり<br>
 ・<a href="#LatentSpace">Latent Space (潜在空間)</a>　概念図あり
