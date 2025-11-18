@@ -57,21 +57,49 @@
 
 
 <h2>更新項目</h2>
+・<a href="#AsteriskPrediction">*-prediction (*-予測:ε-予測, v-予測, x-予測)</a><br>
+・<a href="#DecisionBoundary">Decision Boundary (決定境界)</a><br>
+・<a href="#DunningKrugerEffect">Dunning-Kruger Effect (ダニング・クルーガー効果)</a><br>
+・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
+・<a href="#LatentSpace">Latent Space (潜在空間)</a><br>
+・<a href="#XAI">XAI: Explainable AI (説明可能なAI)</a><br>
+・<a href="#YerkesDodsonLaw">Yerkes-Dodson Law (ヤーキーズ・ドッドソンの法則)</a><br>
+・<a href="#ZeroShot">Zero Shot Learning</a><br>
 <p>
-・<a href="#DataAugmentation">Data Augmentation (データ拡張)</a><br>
-・<a href="#ERM">ERM: Empirical Risk Minimization (経験的リスク最小化)</a><br>
-・<a href="#ReLU">ReLU: Rectified Linear Unit</a><br>
-・<a href="#RepresentationCollapse">Representation Collapse (表現の崩壊)</a><br>
-・<a href="#RL">RL: Reinforcement Learning (強化学習)</a>
-</p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+
+</p>
 
 <h2 id="0-9">0～9</h2>
 
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="AsteriskPrediction">
+<strong>*-prediction (*-予測:ε-予測, v-予測, x-予測)</strong><br>
+Diffusion Model (拡散モデル) の学習および画像生成の過程における異なる予測手法 (パラメーター化) を指す用語。<br>
+<br>
+<strong>ε-prediction (ε-予測)/ noise prediction (ノイズ予測)</strong><br>
+　加えられた純粋なノイズ成分 (\(\epsilon \)) を予測するように学習する手法。<br>
+　●『Denoising diffusion probabilistic models』DDPM (2020)<br>
+　　で提唱された。<br>
+<br>
+<strong>v-prediction (v-予測) / velocity prediction</strong><br>
+　ノイズからクリーンな画像への変化の速度 (velocity)」を予測する手法。<br>
+　●『Progressive Distillation for Fast Sampling of Diffusion Models』(2022)<br>
+　　で提唱された。<br>
+<br>
+<strong>x-prediction (x-予測) / data prediction</strong><br>
+　直接ノイズのない元の画像 (\(\mathbf{x}_{0}\)) そのものを予測しようとする手法。<br>
+　●『Back to Basics: Let Denoising Generative Models Denoise』(2025)<br>
+　　原点回帰した x-予測の優位性を示した。<br>
+<br>
+<center><img src="data/images/AsteriskPrediction.svg"></center> 
+</li>
+
+<br>
 
 <li id="3DGS"><strong>3D Gaussian Splatting</strong><br>
 複数の画像から3D空間を高精細に再現し、リアルタイムにレンダリングする手法。<br>
@@ -602,6 +630,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 　(自己教師予測による好奇心主導の探究)<br>
 　論文は<a href="https://arxiv.org/abs/1705.05363">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1705.05363v1">こちら</a><br>
 <br>(関連項目)<br>
+・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
 ・<a href="#IntrinsicMotivation">Intrinsic Motivation (内発的動機付け)</a><br>
 ・<a href="#NoisyTVProblem">Noisy TV problem (ノイジーテレビ問題)</a><br>
 ・<a href="#NoveltySearch">Novelty Search (新規性探索)</a>
@@ -679,6 +708,23 @@ Compositionality Gapの一例。<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#ERM">ERM: Empirical Risk Minimization</a> (経験的リスク最小化)
+</li>
+
+<br>
+
+<li id="DecisionBoundary">
+<strong>Decision Boundary (決定境界)</strong><br>
+機械学習の分類問題において、異なるクラス（カテゴリ）のデータを区別するためにモデルが学習によって作り出す境界線や面のこと。
+\[
+\begin{array}{c|c}
+特徴量の数 & 境界 \\
+\hline
+2 & 境界線(直線または曲線) \\
+3 & 境界面(平面または曲面) \\
+\gt 3 & 境界面(超平面)
+\end{array}
+\]
+<center><img src="data/images/DecisionBoundary.svg"></center>
 </li>
 
 <br>
@@ -836,7 +882,7 @@ Dropoutは、学習ごとに異なるサブネットワークを生成し、<str
 </li>
 <br>
 
-<li>
+<li id="DunningKrugerEffect">
 <strong>Dunning-Kruger Effect (ダニング・クルーガー効果)</strong><br>
 能力の低い人が、自分の能力を過大評価してしまう認知バイアスの一種。<br>
 <br>
@@ -851,7 +897,17 @@ AIモデルもこの効果を起こす。<br>
 <br>
 <center><img src="data/images/Dunning-Kruger_Effect_Curve.svg"></center>
 <br>
+●『Science Abridged Beyond the Point -of- Usefulness』(2017)<br>
+　　(科学：有用性を超えた要約)<br>
+<br>
+　　自分がダメだと思うなら、おそらくダメだろう。<br>
+　　これは「自己成就予言（self-fulfilling prophecy）」と呼ばれるものだ。<br>
+　　自分がすごいと思うなら、おそらくダメだろう。<br>
+　　これは「ダニング＝クルーガー効果」と呼ばれるものだ。<br>
+　　ここから導き出される明白な結論があるのだが、あなたはおそらくそれを見逃している。<br>
+
 </ul></div></p>
+
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -1165,7 +1221,7 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 ・<a href="#CurseOfDimensionality">Curse of Dimensionality (次元の呪い)</a>
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -1180,6 +1236,24 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <br>
 ●『Why Can’t Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls』(2025)<br>
 　(<strong><span style="color:magenta;">トランスフォーマーはなせ掛け算を学べないのか ?</span></strong>逆エンジニアリングが長距離依存性の落とし穴を明らかにする )<br>
+</li>
+
+<br>
+
+<li id="IDTheory">
+<strong>ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</strong><br>
+好奇心を知的葛藤や情報不足によって生じる「剥奪タイプ」と、単に知ることを楽しむ「興味タイプ」の2つの側面から捉える理論。好奇心が一つの単純な感情ではなく、ポジティブな報酬追求的な側面と、ネガティブな状態を回避・解消しようとする側面という、2つの異なる心理的プロセスから成り立っていると説明する。 <br>
+<br>
+・Interest-type curiosity (興味タイプ)<br>
+　CFI: Curiosity as a Feeling of Interest (興味の感情としての好奇心)<br>
+　ポジティブな感情の誘導によって引き起こされる探索行動。特定のトピックについて深く掘り下げたり、新しい情報を得たりすること自体に喜びを感じることが動機となる。<br>
+<br>
+・Deprivation-type curiosity (剥奪タイプ, 欠乏タイプ)<br>
+　CFD: Curiosity as a Feeling of Deprivation (欠乏感としての好奇心)<br>
+　認知的葛藤、不確実さ、あるいは混乱といった不快な状態を解消したいという欲求によって引き起こされる情報探索行動。<br>
+　I/D理論の「剥奪タイプ」は、AIが現在の知識と新しい情報の間の「不確実性」や「violation of expectation (予期違反)」を知覚したときに、そのギャップを解消しようとする行動としてモデル化される。これは、AIが「何をまだ知らないか」を認識し、その不足を埋めるための探索を促すのに役立つ。<br>
+<br>(関連項目)<br>
+・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)
 </li>
 
 <br>
@@ -1379,7 +1453,7 @@ AIモデルの推論結果から. 入力データや学習データを推定す�
 ・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり<br>
 ・<a href="#WorldModel">World Model (世界モデル)</a>
 </li>
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -1398,10 +1472,21 @@ AIモデルの推論結果から. 入力データや学習データを推定す�
 </li>
 
 <br>
+<li><strong>Japanese Dancing Mouse (ハツカネズミ)</strong><br>
+Jの項目が少ないのでスペースホルダー①<br>
+<br>
+・Japanese：　17世紀頃に中国から日本に持ち込まれ、日本ではペットとして人気を博した。その後、日本から欧米に紹介されたため、「Japanese」という形容詞が冠された。当時は「Nankin mouse（ナンキンマウス）」とも呼ばれていた。<br>
+<br>
+・dancing:　まっすぐ進むことができず、突然くるくると円を描くように回ったり、回転したりする癖があります。この様子が、まるで踊っているように見えたため、「dancing (踊る)」という名前が付けられた。<br>
+<br>(関連項目)<br>
+・<a href="#YerkesDodsonLaw">Yerkes-Dodson Law</a> (ヤーキーズ・ドッドソンの法則)
+</li>
+
+<br>
 
 <li><strong>Japanese Missing Cat Method</strong><br>
 <br>
-AIとは(今のところ)関係ない。Jの項目が少ないのでスペースホルダーとして･･･<br>
+AIとは(今のところ)関係ない。Jの項目が少ないのでスペースホルダー②<br>
 行方不明になった猫を捜す際に、近所にいる野良猫や「ボス猫」に、探している猫の特徴を伝えて協力を求めるという、日本に古くから伝わるという都市伝説的な手法。2025年ごろに海外のSNS、特にTikTokで話題になり、一気に広まった。<br>
 <br>
 <ul>
@@ -1461,7 +1546,7 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 
 <br>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -1495,7 +1580,10 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。
 <br>
 <center><img src="data/images/LatentZone.svg"></center>
-
+●『One Small Step in Latent, One Giant Leap for Pixels:Fast Latent Upscale Adapter for Your Diffusion Models』(2025)<br>
+　　(潜在空間における小さな一歩はピクセルにとっての大きな飛躍:拡散モデルのための高速潜在空間アップスケールアダプター)<br>
+<center><img src="data/images/LUA.svg"></center>
+<br>
 ・<a href="#VAE">VAE: Variational Auto Encoder</a>
 </li>
 
@@ -1608,7 +1696,7 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 ・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -1777,7 +1865,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 ・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -1914,7 +2002,7 @@ DeepMind社によって2014年に発表された。<br>
 ・<a href="#NeRF">NeRF</a><br>
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -2002,7 +2090,7 @@ DeepMind社によって2014年に発表された。<br>
 　論文は<a href="https://arxiv.org/abs/2503.16419">こちら</a>
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -2247,7 +2335,7 @@ IPD: Iterated Prisoner’s Dilemma (反復囚人のジレンマ)<br>
 モデルが単に与えられたデータを模倣するのではなく、データにない独自の解決策を「押し出し（push）」、問題を「切り開いていく（cut）」ような振る舞いをすることから名付けられた。 
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -2474,7 +2562,7 @@ DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確�
 ・<a href="#WorldModel">World Model</a> (世界モデル)
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -2646,6 +2734,11 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <br>
 
 現在の<strong><span style="color:magenta;">「小さなタスクのためのビッグデータ」アプローチから</span></strong>、人間のような常識推論を重視する<strong><span style="color:magenta;">「大きなタスクのための小さなデータ」フレームワークへ</span></strong>の移行を説得力のある議論で提案。<br>
+<br>
+●『Accurate predictions on small data with a tabular foundation model』(2025)<br>
+　　(表形式の基礎モデルによる小規模データでの正確な予測)<br>
+<br>
+　「大幅に少ないトレーニング時間で、最大10,000サンプルのデータセットに対して従来のすべての手法を大幅に上回る表形式の基礎モデルであるTabular Prior-data Fitted Network（TabPFN）を紹介します･･･」<br>
 <br>
 <a href="data/Papers_SmallDataParadigm.html">Papers</a>
 </li>
@@ -2819,7 +2912,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 　LSTMsが文法的な依存関係を学習できるかを評価するために用いられる主語と動詞の一致タスクを導入した、記念碑的な論文
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -2922,7 +3015,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 ・<ahref="#DiT">DiT: Diffusion Transformers</a>
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -2946,7 +3039,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -3024,6 +3117,20 @@ Structures in Connectionist Systems』(1990)<br>
 
 <br>
 
+<li id="ViolationofExpectation">
+<strong>Violation of Expectation (期待の裏切り, 予測の違反, 期待背反, 期待違反), EVT: Expectancy Violations Theory (期待違反理論)</strong><br>
+<br>
+<strong>発達心理学・認知科学における「期待背反法」</strong><br>
+赤ちゃんは、予測可能な出来事よりも、予期せぬ驚くべき出来事（物理法則に反するような現象など）をより長く見つめる傾向がある。この「長く見つめる（注視時間が長くなる）」という反応を指標にすることで、赤ちゃんが生まれつき持っている世界に対する知識や、物理的・社会的な法則の理解度を推測する。<br>
+<br>
+<strong>コミュニケーション研究における「期待違反理論」</strong><br>
+人は社会的な状況で、他者がどのように行動すべきかについての期待（規範やルール）を持っている。その期待が破られた（違反された）とき、驚きや不快感、あるいはポジティブな反応などが引き起こされる。この反応が肯定的か否定的かは、違反した相手に対する好意度や状況によって変化する。
+
+
+</li>
+
+<br>
+
 <li>
 
 <strong>Visual Planning (視覚計画)</strong><br>
@@ -3059,7 +3166,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 ・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
 </li>
 
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
@@ -3163,15 +3270,83 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
 ・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)
 </li>
-</ul></div><p>
+</ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
 <h2 id="X">X</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li id="XAI">
+<strong>XAI: Explainable AI (説明可能なAI)</strong><br>
+機械学習アルゴリズムによって生成された結果や判断の根拠を、人間が理解し、信頼できるようにするためのプロセスや手法の総称。<br>
+・機械学習の隆盛以前、AI研究の初期 (1950年代〜1970年代) は記号推論システムやルールベースのアプローチが中心だった。これらのシステムは、人間の専門家が定義・定式化したルールに基づいて動作したため、その決定プロセスは本質的に透明性が高く、説明可能だった。<br>
+・アンサンブル法や深層学習の発展により、モデルの性能は飛躍的に向上したが、その内部構造は複雑化し、意思決定プロセスが人間には理解困難な「ブラックボックス」となった。<br>
+・この問題に対処するため、2010年代半ば以降、画期的なポストホック (事後説明) 手法が提案された。 <br>
+<br>
+●『Why Should I Trust You?”: Explaining the Predictions of Any Classifier』(2016)<br>
+　　(「なぜあなたを信頼すべきか？」：あらゆる分類器の予測を説明する)<br>
+　　<strong>LIME (Local Interpretable Model-agnostic Explanations)</strong> を提案。特定のモデルに依存しない (モデル非依存、model-agnostic) 説明手法の先駆け。AIモデルの特定の予測結果 (決定境界の局所的な領域) を、人間が理解しやすいシンプルなモデル（線形モデルなど）で近似することで説明を生成する。特定の入力がどのように結果に影響したかを直感的に理解できる。<br>
+<center><img src="data/images/xai1.png"></center>
+<br>
+ブラックボックスモデルの複雑な決定関数 \(f\) (LIMEには未知) は青/ピンクの背景で表され、線形モデルでは適切に近似できない。太字の赤い十字は説明対象のインスタンス。LIMEはインスタンスをサンプリングし、\(f\) を使用して予測を取得し、説明対象のインスタンスへの近さ (ここではサイズで表されています) に基づいて重み付けする。破線は学習された説明であり、局所的には忠実だが (グローバルには忠実ではない)。<br>
+<br>
+<center><img src="data/images/xai2.svg"></center>
+Google Inception ニューラルネットワークによる画像分類予測の説明。上位3クラス「Electric Guitar」(p = 0.32), 「Acoustic Guitar」(p = 0.24), 「Labrador」(p = 0.21)の説明画像。<br>
+<br>
+●『A Unified Approach to Interpreting Model Predictions』(2017)<br>
+　　<strong>SHAP (SHapley Additive exPlanations)</strong>を提案。ゲーム理論に基づいた<strong>シャープレイ値(Shapley value)</strong> という概念を応用し、モデルの各特徴量が予測結果にどれだけ貢献したかを計算する。<strong><span style="color:magenta;">LIMEと同様にモデル非依存だが、理論的な裏付けがあり、特徴量間の相互作用も考慮した一貫性のある説明を提供する</span></strong>。<br>
+</li>
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+</p>
 
 <h2 id="Y">Y</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li id="YerkesDodsonLaw">
+<strong>Yerkes-Dodson Law (ヤーキーズ・ドッドソンの法則)</strong><br>
+課題のパフォーマンスは、ストレスやモチベーションによる「覚醒（緊張・興奮）レベル」が「適度な」状態のときに最も高くなるという、心理学における法則。<br>
+<br>
+<center><img src="data/images/YerkesDodsonLaw.svg"></center>
+<br>
+●『The relation of strength of stimulus to rapidity of habit-formation』(1908)<br>
+　ハツカネズミ（Japanese dancing mouse）を使った実験に基づいて、覚醒水準（ストレスや刺激の強さ）とパフォーマンスの間には逆U字型の関係（適度な覚醒水準が最も高いパフォーマンスをもたらす）があることが示された。<br>
+　<br>
+●『Yerkes-Dodson Law in Agents' Training』(2003)<br>
+　AIエージェントのトレーニングにおいて、刺激（報酬や罰の強さなど）の強さと学習の成功率との間にヤーキーズ・ドッドソン法則に見られるような非線形な関係（逆U字型）が存在する可能性を論じている。特定の学習アルゴリズムにおいて、刺激が強すぎると学習効率が低下する現象を分析している。<br>
+<br>
+●『StressPrompt: Does Stress Impact Large Language Models and How Can We Mitigate It?』(2024)<br>
+・大規模言語モデル（LLM）が人間の認知的ストレスに類似した「ストレス」条件下でどのように機能するかを調査している。<br>
+・具体的には、プロンプトエンジニアリングを用いてモデルにストレスを与えた場合、そのパフォーマンスがヤーキーズ・ドッドソン法則に従って変化する可能性を示唆している。<br>
+・主な発見: モデルのパフォーマンスのピークは、タスクの複雑さに応じて異なるストレスレベルで発生し、より強力なモデルは低いストレスレベルでピークパフォーマンスを達成する傾向があることを発見した。
+これは、複雑なタスクでは低い覚醒レベル（ストレス）が、単純なタスクでは高い覚醒レベルが有利であるという、元のヤーキーズ・ドッドソン法則の知見と一致する。 
+
+</li>
+</ul></div></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+</p>
 
 <h2 id="Z">Z</h2>
+<p>
+<div class="styleBullet">
+<ul>
+<li id="ZeroShot">
+<strong>Zero Shot Learning</strong><br>
+訓練データに存在しない、未知のクラスやタスクに対しても、追加の学習（ファインチューニング）をすることなく、有用な予測や分類を行うための学習方法。<br>
 
+<br>(関連項目)<br>
+・One-Shot Learning: 訓練データ1つ<br>
+・Few-Shot learning: 訓練データ少々<br>
+</li>
+</ul></div>
+</li></p>
+
+<a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
+</p>
     </body>
 </html>
