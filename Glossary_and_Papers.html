@@ -57,14 +57,11 @@
 
 
 <h2>更新項目</h2>
-・<a href="#AsteriskPrediction">*-prediction (*-予測:ε-予測, v-予測, x-予測)</a><br>
-・<a href="#DecisionBoundary">Decision Boundary (決定境界)</a><br>
-・<a href="#DunningKrugerEffect">Dunning-Kruger Effect (ダニング・クルーガー効果)</a><br>
-・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
-・<a href="#LatentSpace">Latent Space (潜在空間)</a><br>
-・<a href="#XAI">XAI: Explainable AI (説明可能なAI)</a><br>
-・<a href="#YerkesDodsonLaw">Yerkes-Dodson Law (ヤーキーズ・ドッドソンの法則)</a><br>
-・<a href="#ZeroShot">Zero Shot Learning</a><br>
+・<a href="#ARC">ARC-AGI: Abstraction and Reasoning Corpus for AGI (AGIのための抽象化推論コーパス)</a><br>
+・<a href="#BackboneNeckHeadArchitecture">Backbone-(Neck-)Head Architecture</a><br>
+・<a href="#GenerativeModel">Generative Model (生成モデル)</a><br>
+・<a href="#SpatialReasoning">Spatial Reasoning (空間推論) </a><br>
+・<a href="#VAE">VAE: Variational Auto Encoder</a>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -360,12 +357,36 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 
 <br>
 
+<li id="ARC">
+<strong>ARC-AGI: Abstraction and Reasoning Corpus for AGI (AGIのための抽象化推論コーパス)</strong><br>
+・AIの抽象化能力と推論能力を評価するために設計されたベンチマークデータセットと課題。<br>
+・GoogleのAI研究者であり、深層学習ライブラリKerasの作者でもあるフランソワ・ショレ（François Chollet）によって2019年に version 1 が発表され, 2025年に version2 がリリースされた。<br>
+・視覚的なグリッドパズルを基調としたタスクで構成されている。<br>
+・人間の平均スコアは約85%だが、AIモデルは一般的に低スコア（例: 2025/11/19時点のSOTAモデルで31.1%）。確率的学習に依存する大規模言語モデル（LLM）が苦手とする領域。<br>
+・ARC-AGI-2 の Github は <a href="https://github.com/arcprize/ARC-AGI-2">こちら</a><br>
+・ARC-AGI-1/2 の Leaderboard(ランキング掲示板) は<a href="https://arcprize.org/leaderboard">こちら</a><br>
+<br>
+<center><img src="data/images/ARC.svg"></center>
+<br>
+●『ARC Is a Vision Problem!』(2025)<br>
+　　ARCタスクを言語化→推論せずに, 画像から画像への変換問題として処理し, ARC-1ベンチマークで60.4%の精度を達成。
+</li>
+
+<br>
+
 <li id="ASI">
 <strong>ASI: Artificial Superintelligence (人工超知能)</strong><br>
 人間の知能を遥かに凌駕する能力を持つと想定されるAI。<br>
 AGI (汎用人工知能) が「人間と同等の知能」を目指すのに対し、ASIはあらゆる知的タスクにおいて、人類の集合知をも超える知性、学習能力、問題解決能力を備える存在。<br>
 <br>(関連項目)<br>
 ・<a href="#AGI">AGI: Artificial General Intelligence (汎用人工知能)</a>
+</li>
+
+<br>
+
+<li id="AsymptoticBias">
+<strong>Asymptotic Bias (漸近バイアス)</strong><br>
+標本サイズが非常に大きくなったときに、そのバイアスがゼロに収束しない (つまり、ある一定の値に落ち着いてしまう) 場合、その推定量は「漸近バイアスを持つ」と言わる。
 </li>
 
 <br>
@@ -392,6 +413,21 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <p>
 <div class="styleBullet">
 <ul>
+<li id="BackboneNeckHeadArchitecture">
+<strong>Backbone-(Neck-)Head Architecture</strong><br>
+物体検出アルゴリズムの進化の過程で徐々に確立され、普及したアーキテクチャー。<br>
+・Backbone(背骨)：(VGG-16やResNet等の)学習済の画像分類モデルを使って特徴抽出を行う<br>
+・Neck(首)：特徴マップのアップスケール等, ステージ間の特徴マップの合わせこみを行う。<br>
+・Head(頭)：検出された物体の分類や外接矩形を予測する。<br>
+<center><img src="data/images/BackboneNeckHeadarchitecture.svg"></center>
+<center>※ 入力データが口からではなくお尻から入る座薬アーキテクチャー･･･</center>
+<br>
+●『Feature Pyramid Networks for Object Detection』FPN (2017)<br>
+　　バックボーンから抽出された異なるスケールの特徴マップを融合する「ネック」の役割を果たす構造を導入した。これにより、様々なサイズの物体を効率的に検出できるようになり、その後の多くの物体検出モデル (特にYOLOシリーズなど)で標準的な手法となった。
+</li>
+
+<br>
+
 <li id="BaldwinEffect">
 <strong>Baldwin effect (ボールドウィン効果)</strong><br>
 個体が生涯で獲得した学習や行動が、世代を超えた遺伝的選択を通じて、まるで生得的な本能であるかのように固定化されていく進化的な現象。<br>
@@ -919,6 +955,9 @@ AIモデルもこの効果を起こす。<br>
 <li id="EnsembleMethod">
 <strong>Ensemble Method (アンサンブル法)</strong><br>
 複数の機械学習モデルを組み合わせて、単一のモデルよりも高い予測精度や安定性を目指す手法。<br>「三人寄れば文殊の知恵」の機械学習版。<br>
+複数の学習器を組み合わせた方が単一の学習器より精度が高くなることは昔(1960年代かもっと前)から知られていたが、定式化されたのが 1980 年代で、証明され, アルゴリズムができたのは 1990 年代になってから。<br>
+⇒ <a href="#PAC">PAC Learning: Probably Approximately Correct Learning (確率的で近似的に正しい学習)</a><br>
+
 <br>
 <center><img src="data/images/EnsembleMethod.svg"></center>
 <ul>
@@ -1121,6 +1160,7 @@ ERMではない学習アプローチはあるのか?<br>
 <strong>Generative Model (生成モデル)</strong><br>
 学習したデータの特徴やパターンを理解し、その知識に基づいて、訓練データに類似した新しいデータを自律的に生成できるAI（人工知能）モデル。<br>
 従来の AI モデル (Discriminative Model: 識別モデル) が、与えられたデータを「識別する（分類する）」ことに特化していたのに対し、生成モデルは「創造する（生成する）」ことに特化している点が大きな違い。<br>
+<center><img src="data/images/GenerativeModel2.svg"></center>
 <br>
 ・Boltzmann Machine (BM) → Restricted Boltzmann Machine (RBM)<br>
 ・<a href="#VAE">VAE: Variational Auto Encoder</a><br>
@@ -1755,6 +1795,8 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <br>
 ●『Spatial Mental Modeling from Limited Views』(2025)<br>
 　(限定された視点からの空間メンタルモデリング)<br>
+<br>(関連項目)<br>
+・<a href="#SpatialReasoning">Spatial Reasoning</a> (空間推論)
 </li>
 
 <br>
@@ -2687,8 +2729,6 @@ AIシステムが自らのコードや構造を複製、または改良して新
 <li><strong>Siamese Network (シャムネットワーク)</strong><br>
 2つの入力データ間の類似性を比較するために設計された特殊なニューラルネットワークのアーキテクチャー。<br>
 <br>
-●『Siamese neural networks for fingerprint recognition』(1933)<br>
-　　Siamese Network を初めて導入した。[指紋認証]<br>
 ●『Siamese Neural Networks for One-shot Image Recognition』(2015)<br>
 　　入力間の類似性を自然にランク付けする独自の構造を採用。Siamese Networkの現代的な応用の基礎を築いた。
 </li>
@@ -2760,11 +2800,17 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 
 <br>
 
-<li>
+<li id="SpatialReasoning">
 
 <strong>Spatial Reasoning (空間推論) </strong><br>
 物体が空間内でどのように配置され、互いにどのような関係にあるかを理解し、推論する能力のこと。前, 後, 左, 右, 上,下 など, オブジェクト間の基本的な関係を推論すること。<br>
-
+<br>
+●『Imagine in Space: Exploring the Frontier of Spatial Intelligence and Reasoning Efficiency in Vision Language Models』(2025)<br>
+　・空間的推論の精度と効率を同時に測定するベンチマークであるSpatiaLiteを導入し実験を実施。<br>
+・VLMは主に推論と想像のために言語的表現に依存しており、メンタルローテーションや投影予測などの知覚的空間関係や3D幾何変換を必要とする視覚中心のタスクにおいて著しい欠陥を示す。<br>
+・VLMは現在の空間的推論メカニズムにおいて深刻な非効率性を示し、変換の複雑さが増すにつれてトークンの使用が急速に増加する。<br>
+・データ合成とトレーニングのためのイメージ駆動フレームワーク(IDF)を提案。VLMにおける空間的推論にとって重要な内部世界モデルを暗黙的に構築することができる。
+<br>
 <br>(関連項目)<br>
 ・<a href="#MentalRotation">Mental Rotattion (心的回転)</a><br>
 　　物体が回転したときにどう見えるかを想像する能力。<br>
@@ -2773,7 +2819,9 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 ・Spatial Language (空間言語)<br>
 　　「上」「下」「前」「後ろ」といった空間的な関係を表す言葉を理解し、使用する能力。<br>
 ・Visualization (視覚化)<br>
-　　3次元の物体を心の中で視覚的に操作する能力。
+　　3次元の物体を心の中で視覚的に操作する能力。<br>
+・投影予測<br>
+　　ある視点や角度から見たときに、物体や空間がどのように「見える」かを推測または予測する能力。
 
 </li>
 
@@ -3051,7 +3099,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>VAE: Variational Auto Encoder</strong><br>
 深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。<br>
 <br>
-●『An Introduction to Variational Autoencoders』(2019)　<a href="https://arxiv.org/pdf/1906.02691">こちら</a><br>
+●『An Introduction to Variational Autoencoders』(2019)　<a href="https://arxiv.org/pdf/1906.02691">こちら</a>　1章の機械翻訳は<a href="https://boyoyon.github.io/Introductions/data/An_Introduction_to_Variational_Autoencoders_01.html">こちら</a><br>
 　(開発者による解説。89ページ)<br>
 <br>(関連項目)<br>
 ・<a href="#GenerativeModel">Generative Model (生成モデル)</a> 概略図比較あり<br>
@@ -3212,7 +3260,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <br>(関連項目)<br>
 ・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a><br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
-・<a href="#EraOfExperience">Era of Experience (経験の時代)</a><br>
+・<a href="#EoE">Era of Experience (経験の時代)</a><br>
 ・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a><br>
 
 </li>
