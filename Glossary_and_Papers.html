@@ -57,11 +57,8 @@
 
 
 <h2>更新項目</h2>
-・<a href="#ARC">ARC-AGI: Abstraction and Reasoning Corpus for AGI (AGIのための抽象化推論コーパス)</a><br>
-・<a href="#BackboneNeckHeadArchitecture">Backbone-(Neck-)Head Architecture</a><br>
-・<a href="#GenerativeModel">Generative Model (生成モデル)</a><br>
-・<a href="#SpatialReasoning">Spatial Reasoning (空間推論) </a><br>
-・<a href="#VAE">VAE: Variational Auto Encoder</a>
+・<a href="#LossLandscape">Loss Landscape (損失景観)</a><br>
+・<a href="#RewardLandscape">Reward Landscape (報酬ランドスケープ)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -819,8 +816,10 @@ Compositionality Gapの一例。<br>
 <br>
 <a href="data/Papers_DimensionCollapse.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="ContrastiveLearning">Contrastive Learning (対照学習)</a><br>
-・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
+・<a href="#ContrastiveLearning">Contrastive Learning</a> (対照学習)<br>
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)</br>
+・<a href="#SSL">SSL: Self-Supervised Learning</a> (自己教師あり学習)<br>
+・<a href="#RepresentationCollapse">Representation Collapse</a> (表現の崩壊)
 
 </li>
 
@@ -1664,7 +1663,8 @@ Continual Learning (継続学習) の別名。<br>
 <br>
 <a href="data/Papers_LossLandscape.html">Papers</a><br>
 <br>
-●『Visualizing the Loss Landscape of Neural Nets』(2018)<br>
+■教師あり学習<br>
+　●『Visualizing the Loss Landscape of Neural Nets』(2018)<br>
 <br>
 <ul>
 <li><strong>可視化手法の提案</strong><br>
@@ -1678,12 +1678,28 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 </li></ul>
 <br>
 <center><img src="data/images/LossLandscape.svg"></center>
-
+<br>
+■教師無し(自己教師)学習<br>
+　●『WHAT SHAPES THE LOSS LANDSCAPE OF SELF SUPERVISED LEARNING ?』(2022/ICLR 2023)<br>
+<center><img src="data/images/SSLlandscape.svg"></center>
+<br>
+自己教師学習（SSL）におけるランドスケープ。SSL損失は一般に、ネットワーク出力ペア間の相対角度（例：\(f(x)^Tf(x^\prime)\)）のみに依存する。したがって、線形ネットワーク（\(f(x) =Wx\)）のランドスケープは、大域的に回転対称性を持ち、原点を中心に対称となる。我々の理論によれば、原点における局所的な安定性が崩壊を決定し、データの変動が大きい場合（緑）は崩壊を防ぐ一方、強いデータ拡張（赤）は崩壊を促進する可能性がある。対角重み行列diag(r1, r2)を持つトイ線形モデルの損失をプロットする。（a）パラメータの1つを固定した場合の1次元ランドスケープ。（b-d）2次元ランドスケープ。（b）崩壊なし：原点は不安定な局所的最大値であり、周囲の局所的最小値が崩壊を回避する。次元的に崩壊した解は鞍点である。 (c) 次元崩壊：すべての安定固定点におけるw1の値はゼロに崩壊する。(d) 完全崩壊：原点は孤立した局所最小値となる。<br>
+<br>
+・Flat Minima(良好な汎化性能) ⇔ 多様性：トレードオフ<br>
+　●『Sharpness-Aware Minimization for Efficiently Improving Generalization』(2024)<br>
+　　・Loss Landscapeの鋭さを最小化する。<br>
+　　　→ 分布内（ID）データと分布外（OOD）データの両方への堅牢な汎化において、重要な役割を果たす。<br>
+　　　→ アンサンブル内の個々のメンバーの多様性が低下する傾向がある。<br>
+<br>
+■強化学習<br>
+　⇒<a href="#RewardLandscape">Reward Landscape</a> (報酬ランドスケープ)<br>
 <br>(関連項目)<br>
 ・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
 ・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
-・<a href="#DataAugmentation">Data Augmentation</a> (データ拡張)
+・<a href="#DataAugmentation">Data Augmentation</a> (データ拡張)<br>
+・<a href="#RewardLandscape">Reward Landscape</a> (報酬ランドスケープ)<br>
+・<a href="#RepresentationCollapse">Representation Collapse</a> (表現の崩壊)
 </li>
 
 <br>
@@ -2547,6 +2563,7 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 <br>(関連項目)<br>
 ・<a href="#DimensionalCollapse">Dimensional Collapse</a> (次元崩壊)<br>
 ・<a href="#NeuralCollapse">Neural Collapse</a><br>
+・<a href="#LossLandscape">Loss Landscape</a> (損失景観)
 </li>
 <br>
 
@@ -2579,6 +2596,23 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 <br>(関連項目)<br>
 ・<a href="#GoodhartsLaw">Goodhart's Law (グッドハートの法則)</a><br>
 　類似の現象を経済学や社会科学の文脈で説明したもの。
+</li>
+
+<br>
+
+<li id="RewardLandscape">
+<strong>Reward Landscape (報酬ランドスケープ)</strong><br>
+強化学習において、方策（ポリシー）や価値関数といったモデルのパラメータ空間における、期待報酬（目的関数）の地形（曲面）を表す概念図、あるいはその抽象的なモデル。<br>
+・定義域：方策（ポリシー）や価値関数といったモデルのパラメータ空間<br>
+・値域：報酬<br>
+<br>
+　●『Fractal Landscapes in Policy Optimization』(2023)<br>
+　　　いくつかの方策最適化の失敗事例が、フラクタルな風景によって説明できることを実験で示す。<br>
+<br>
+　●『Flat Reward in Policy Parameter Space Implies Robust Reinforcement Learning』(2025)<br>
+　　　フラットな報酬風景と強化学習モデルのロバスト性との関連を正式に結びつけることを目指す。<br>
+<br>(関連項目)<br>
+・<a href="#LossLandscape">Loss Landscape (損失景観)</a>
 </li>
 
 <br>
@@ -3345,6 +3379,9 @@ Google Inception ニューラルネットワークによる画像分類予測の
 <br>
 ●『A Unified Approach to Interpreting Model Predictions』(2017)<br>
 　　<strong>SHAP (SHapley Additive exPlanations)</strong>を提案。ゲーム理論に基づいた<strong>シャープレイ値(Shapley value)</strong> という概念を応用し、モデルの各特徴量が予測結果にどれだけ貢献したかを計算する。<strong><span style="color:magenta;">LIMEと同様にモデル非依存だが、理論的な裏付けがあり、特徴量間の相互作用も考慮した一貫性のある説明を提供する</span></strong>。<br>
+<br>
+●『Weight-sparse transformers have interpretable circuits』(2025)<br>
+　重みスパースなトランスフォーマーを通じて、解釈可能な人工知能を実現するための系統的なアプローチを導入している。
 </li>
 </ul></div></p>
 
