@@ -57,8 +57,8 @@
 
 
 <h2>更新項目</h2>
-・<a href="#LossLandscape">Loss Landscape (損失景観)</a><br>
-・<a href="#RewardLandscape">Reward Landscape (報酬ランドスケープ)</a><br>
+・<a href="#ES">ES: Evolution Strategies (進化戦略)</a><br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis (心の言語仮説)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -591,6 +591,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <br>(関連項目)<br>
 ・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (心の言語仮説)
 
 </li>
 
@@ -1091,6 +1092,40 @@ ERMではない学習アプローチはあるのか?<br>
 ・メタ学習: 単一のタスクに対する経験リスクを最小化ではない<br>
 ・PAC学習:　ERMを包含する、より広範な学習理論。汎化性能も改善したい。
 
+</li>
+
+<br>
+
+<li id="ES">
+<strong>ES: Evolution Strategies (進化戦略)</strong><br>
+生物の進化プロセス（突然変異や自然淘汰など）を模倣することで最適化問題を解決する確率的アルゴリズムの一種。<br>
+<br>
+●『Optimierung technischer Systeme nach Prinzipien der biologischen Evolution』(1970)<br>
+　 (生物進化の原理に基づく技術システムの最適化)･･･博士論文<br>
+　『Evolutionsstrategie – Optimierung technischer Systeme nach Prinzipien der biologischen Evolution』(1973)<br>
+　　博士論文を書籍化したもの。pdf は <a href="https://gwern.net/doc/reinforcement-learning/exploration/1973-rechenberg.pdf">こちら</a><br>
+<br>
+●『Evolution Strategies as a Scalable Alternative to Reinforcement Learning』(2017)<br>
+・Q 学習や方策勾配法などの一般的な MDP ベースの RL 手法の代替としてブラックボックス最適化アルゴリズムの一種である進化戦略 (ES) を提案。<br>
+　OpenAI のこの論文の実装を OpenES と呼ぶことがある。<br>
+<br>
+●『Evolution Strategies at the Hyperscale』(2025)<br>
+・進化戦略(ES)は, バックプロパゲーションとは異なり<br>
+　〇 微分不可能な目的関数を処理できる<br>
+　〇 ノイズの多いフィードバックで動作する<br>
+　〇 高価な勾配集約不要<br>
+　× フルランクのパラメータ摂動を生成することに伴う法外なメモリと計算コスト<br>
+⇒ EGGROLL:Evolution Guided General Optimization via Low-rank Learning (ランク学習を介した進化誘導型一般最適化) を導入<br>
+　フルランク行列 \(E\in\mathbb{R}^{m×n}\) をサンプリングする代わりに小さな2つの行列 \(A\in\mathbb{R}^{m×r}\) と \(B\in\mathbb{R}^{n×r}\) をサンプリング。<br>
+　\(r \ll \min(m,n), \frac{1}{\sqrt{r}}AB^T\) を摂動とすることで, 計算コスト, メモリ要件を削減する。<br>
+<br>
+<center><img src="data/images/ES.svg"></center>
+<br>
+<center>強化学習(PPO), OpenESとの比較</center>
+<br>
+<center><img src="data/images/ES2.png"></center>
+<br>(関連項目)<br>
+・<a href="#LoRA">LoRA: Low-rank adaptation of LLM</a> (低ランク適応)  ･･･ 低ランク行列活用が似ている
 </li>
 
 <br>
@@ -1621,6 +1656,8 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <center><img src="data/images/LatentZone.svg"></center>
 ●『One Small Step in Latent, One Giant Leap for Pixels:Fast Latent Upscale Adapter for Your Diffusion Models』(2025)<br>
 　　(潜在空間における小さな一歩はピクセルにとっての大きな飛躍:拡散モデルのための高速潜在空間アップスケールアダプター)<br>
+　　このタイトルで思い出すのはやはり「"That's one small step for man, one giant leap for mankind."(一人の人間にとっては小さな一歩だが、人類にとっては大きな飛躍だ)」<br>
+　　アームストロング船長<br>
 <center><img src="data/images/LUA.svg"></center>
 <br>
 ・<a href="#VAE">VAE: Variational Auto Encoder</a>
@@ -1643,14 +1680,14 @@ Continual Learning (継続学習) の別名。<br>
 
 <br>
 
-<li>
+<li id="LoRA">
 <strong>LoRA: Low-rank adaptation of LLM (低ランク適応)</strong><br>
 大規模言語モデル（LLM）を、効率的かつ少ない計算コストで特定のタスクやデータに適応（ファインチューニング）させるための技術。<br>
 <br>
 ●『LoRA: Low-Rank Adaptation of Large Language Models』 (2021)<br>
 大規模言語モデル（LLM）の事前学習済み重みを凍結し、その横に低ランク行列 (\(A\)と\(B\)) のペアを追加。ファインチューニング時には、この小さな低ランク行列だけを学習させ、元のモデルの重みは変更しない。<br>
 <strong><span style="color:magenta;">ファインチューニングに必要な学習可能なパラメータが劇的に少なくなる</span></strong>ため、効率的な学習を可能にした。<br>
-
+<br>
 </li>
 <center><img src="data/images/LoRA.svg"></center>
 <br>
@@ -1718,6 +1755,42 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <li>
 <strong>Lost in the Middle (「真ん中が失われる」現象)</strong><br>
 モデルが長いコンテキスト（入力テキスト）を与えられた際、そのコンテキストの中間に存在する重要な情報を無視したり、見つけられなくなったりする現象。
+</li>
+
+<br>
+
+<li id="LoTH">
+<strong>LoTH: Language of Thought hypothesis (心の言語仮説)</strong><br>
+人間の思考は言語のような構造を持っており、その思考は「メンタリーズ (mentalese)」と呼ばれる生得的な（生まれつき備わっている）内的な言語によって行われるという認知科学・哲学の仮説。<br>
+・思考は、私たちが日常的に話す言語 (日本語や英語など) と同様に、単語のような要素 (概念) とそれらを組み合わせる文法のような規則を持っているとされる。<br>
+・「心の言語 (メンタリーズ) 」は学習によって獲得されるものではなく、人間が生まれつき持っている普遍的な認知メカニズムの一部であると主張される。<br>
+・私たちが実際に話したり書いたりする言語 (公的言語) とは異なり、思考はまずこの内的な言語で行われ、その後に公的言語に翻訳されて表現されると考えられる。<br>
+<br>
+●『The language of thought』(1975)<br>
+・LoTH仮説を提唱。<br>
+<br>
+●『A Complexity-Based Theory of Compositionality』(2024)<br>
+・既知の概念の新しい組み合わせに体系的に適応する構成的表現は分布外一般化の強力な形態を可能にする。<br>
+・しかし、構成性とは何かについて、測定可能かつ数学的な、満足のいく正式な定義を欠いている。<br>
+⇒直感的な概念と一致する、構成性の形式的かつ定量的な定義(表現的構成性と呼ぶ)を提案した。<br>
+　RC(R) = K(L) + K(Sentences|L) / (K(S) + K(R|S(Sentences)))<br>
+<br>
+●『Dreamweaver: Learning Compositional World Models from Pixels』(2025)<br>
+・人間は、世界に対する認識を、色、形、動きのパターンといったオブジェクトとその属性に分解する生来の能力を持っている。<br>
+・生の動画から階層的かつ構成的な表現を発見し、構成的な未来のシミュレーションを生成するニューラルアーキテクチャ、Dreamweaverを提案する。<br>
+<center><img src="data/images/Dreamweaver.svg"></center>
+・我々の目標は、構造化されていない連続的な感覚ストリームを抽象化されたモジュール型概念に結び付け、再利用可能な概念の記憶（概念ライブラリ）を構築することである。テキストは不要で、教師なし学習で構築される。これらの概念には、色や形といった静的な要素だけでなく、動きの方向や速度といった動的な要素も含まれる。最終的には、これらの概念を、例えば斬新な構成で再結合し、未知の世界を想像することを目指す。<br>
+<br>
+<center><img src="data/images/Dreamweaver2.svg"></center>
+(左) Recurrent Block Slot Unit (RBSU) は、形状、色、動きの方向などの構成的および意味的概念を表すブロックスロットを維持および更新する。<br>
+(右) Dreamweaverモデルは、将来のフレームを予測し、予測目的を最小化するようにトレーニングする。<br>
+<br>
+●『Cognitive Foundations for Reasoning and Their Manifestation in LLMs』(2025)<br>
+・LLMが認知的要素を展開する方法、特に構造化されていない問題において、人間の認知と体系的な違いがあることを発見。<br>
+・人間のような推論構造に基づくテスト時ガイダンスがLLMの性能を最大60%向上させる可能性があることを示した。<br>
+<br>(関連項目)<br>
+・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
+・サピア＝ウォーフの仮説: 話者が使用する特定の公的言語 (日本語、英語など) が、その人の思考や世界観を決定または強く影響する。
 </li>
 
 <br>
