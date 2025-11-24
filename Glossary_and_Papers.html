@@ -57,8 +57,9 @@
 
 
 <h2>更新項目</h2>
-・<a href="#ES">ES: Evolution Strategies (進化戦略)</a><br>
-・<a href="#LoTH">LoTH: Language of Thought hypothesis (心の言語仮説)</a><br>
+・<a href="#CompositionalGeneralization">Compositional Generalization (組み合わせ的一般化, 構成的一般化)</a><br>
+
+・<a href="#TabularData">Tabular Data (表形式データ)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -584,15 +585,46 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 
 <br>
 
+<li id="CompositionalGeneralization">
+<strong>Compositional Generalization (組み合わせ的一般化, 構成的一般化)</strong><br>
+人間が持つ「限られた手段で無限の新しい組み合わせを理解・生成できる能力」をAIに持たせることを目指すもの。源流は認知科学や言語学に深く根ざしている。 <br>
+<br>
+●『Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks』 (2017)<br>
+・人間は構成能力(compositional skills)のおかげで、新しい発話を難なく理解し、生み出すことができる。<br>
+　「dax」という新しい動詞の意味を一度覚えれば、「dax twice」や「sing and dax」の意味もすぐに理解できる。<br>
+・汎化に体系的な構成能力が必要な場合（上記の「dax」の例のように）、RNNは見事に失敗する。<br>
+・体系性の欠如がニューラル ネットワークの悪名高いトレーニング データの渇望の一因となっている可能性があることを示唆した。<br>
+<br>
+●『Compositional Generalization from First Principles』 (2023)<br>
+　　(第一原理からの構成的一般化)<br>
+・構成的一般化をより深く理解するために、ボトムアップアプローチを採用する。<br>
+・識別可能表現学習に着想を得て、データそのものではなく、データ生成プロセスの特性として構成性を検証する。<br>
+・この再定式化により、訓練分布のサポートとモデルアーキテクチャのみに基づいて、構成的一般化に十分な条件を導出できる。<br>
+<br>
+●『When does compositional structure yield compositional generalization? A kernel theory』(2024)<br>
+　　(構成構造はいつ構成一般化をもたらすのか？ カーネル理論)<br>
+
+<br>(関連項目)<br>
+・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (心の言語仮説)<br>
+・Systematic compositionality (体系的構成性, 系統的体構成性) ･･･ 哲学, 認知科学の用語<br>
+・Infinite use of finite means (有限手段の無限利用)<br>
+　ドイツの言語学者 Wilhelm von Humboldt (ヴィルヘルム・フォン・フンボルト)が提唱し, 後に Noam Chomsky (ノーム・チョムスキー)が「生成文法」理論の核心的な概念として引用して有目になった。
+</li>
+
+<br>
+
 <li id="CompositionalityGap"><strong>Compositionality Gap (構成性ギャップ)</strong><br>
 AIモデルが、個々の独立した事実は知っているにもかかわらず、それらを組み合わせて複雑な問題を解くことが苦手な現象。<br>
 <br>
-<a href="data/Papers_CompositionalityGap.html">Papers</a><br>
+●『Measuring and Narrowing the Compositionality Gap in Language Models 』(2022)<br>
+・「構成性ギャップ」という概念を導入した。<br>
+・大規模言語モデルにおける事実想起と構成的推論の間のギャップを定量化し、それがモデルのスケールに関わらず持続的であることを発見した。<br>
 
 <br>(関連項目)<br>
 ・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
-・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (心の言語仮説)
-
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (心の言語仮説)<br>
+・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的一般化)
 </li>
 
 <br>
@@ -1680,6 +1712,22 @@ Continual Learning (継続学習) の別名。<br>
 
 <br>
 
+<li id="LMC">
+<strong>LMC: Linear Mode Connectivity (線形モード接続)</strong><br>
+同じモデル構造とデータセットを用いて独立に学習された2つの異なる最適解（重みパラメータのセット）の間を、パラメータ空間上で損失値（または精度）をほぼ一定に保ちながら線形補間によって繋ぐことができるという性質。(モード接続性＋線形性)<br>
+<br>
+●『Linear Mode Connectivity in Multitask and Continual Learning』(2020)<br>
+・同じタスクの異なる最小値が、通常、非常に単純な低誤差曲線で結ばれていることを示す最近の研究に着目し、マルチタスク解と継続的解も同様に結ばれているかどうかを検証する。<br>
+・私たちは経験的に、そのような連結は確かに確実に達成できること、そしてさらに興味深いことに、両方の初期値が同じであることを条件として、<strong><span style="color:magenta;">線形経路で実現できることを発見した</span></strong>。<br>
+・この観察結果を徹底的に分析し、継続学習プロセスにおけるその意義について議論する。<br>
+<br>(関連項目)<br>
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)
+</li>
+
+<br>
+
 <li id="LoRA">
 <strong>LoRA: Low-rank adaptation of LLM (低ランク適応)</strong><br>
 大規模言語モデル（LLM）を、効率的かつ少ない計算コストで特定のタスクやデータに適応（ファインチューニング）させるための技術。<br>
@@ -1789,6 +1837,7 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 ・LLMが認知的要素を展開する方法、特に構造化されていない問題において、人間の認知と体系的な違いがあることを発見。<br>
 ・人間のような推論構造に基づくテスト時ガイダンスがLLMの性能を最大60%向上させる可能性があることを示した。<br>
 <br>(関連項目)<br>
+・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的一般化)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
 ・サピア＝ウォーフの仮説: 話者が使用する特定の公的言語 (日本語、英語など) が、その人の思考や世界観を決定または強く影響する。
 </li>
@@ -1807,22 +1856,6 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 　<br>
 　●『The Strong Lottery Ticket Hypothesis for Multi-Head Attention Mechanisms』(2025)<br>
 　トランスフォーマーのマルチヘッドアテンションメカニズム内における強い宝くじチケットの存在を示し、適切に枝刈りされ, ランダムに初期化されたネットワークが任意のアテンション関数を高精度で近似できることを証明した。
-</li>
-
-<br>
-
-<li id="LMC">
-<strong>LMC: Linear Mode Connectivity (線形モード接続)</strong><br>
-同じモデル構造とデータセットを用いて独立に学習された2つの異なる最適解（重みパラメータのセット）の間を、パラメータ空間上で損失値（または精度）をほぼ一定に保ちながら線形補間によって繋ぐことができるという性質。(モード接続性＋線形性)<br>
-<br>
-●『Linear Mode Connectivity in Multitask and Continual Learning』(2020)<br>
-・同じタスクの異なる最小値が、通常、非常に単純な低誤差曲線で結ばれていることを示す最近の研究に着目し、マルチタスク解と継続的解も同様に結ばれているかどうかを検証する。<br>
-・私たちは経験的に、そのような連結は確かに確実に達成できること、そしてさらに興味深いことに、両方の初期値が同じであることを条件として、<strong><span style="color:magenta;">線形経路で実現できることを発見した</span></strong>。<br>
-・この観察結果を徹底的に分析し、継続学習プロセスにおけるその意義について議論する。<br>
-<br>(関連項目)<br>
-・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
-・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
-・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)
 </li>
 
 </ul></div></p>
@@ -2886,6 +2919,8 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 　　(表形式の基礎モデルによる小規模データでの正確な予測)<br>
 <br>
 　「大幅に少ないトレーニング時間で、最大10,000サンプルのデータセットに対して従来のすべての手法を大幅に上回る表形式の基礎モデルであるTabular Prior-data Fitted Network（TabPFN）を紹介します･･･」<br>
+<center><img src="data/images/TabularData.svg"></center>
+<center><a href="https://github.com/LAMDA-Tabular/Tabular-Survey/tree/main">Representation Learning for Tabular Data: A Comprehensive Survey</a></center>
 <br>
 <a href="data/Papers_SmallDataParadigm.html">Papers</a>
 </li>
@@ -3075,6 +3110,17 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <p>
 <div class="styleBullet">
 <ul>
+<li id="TabularData">
+<strong>Tabular Data (表形式データ)</strong><br>
+行と列からなる二次元の表形式で構造化されたデータのこと。<br>
+Tabular Data は画像やテキストのように局所的なパターンや階層的な構造が明確でないことが多く、また特徴量間の相互関係が複雑であるため、Deep Learning の標準的なアーキテクチャ（CNNやLSTMなど）では性能が出にくい傾向があった。<br>
+<a href="https://github.com/LAMDA-Tabular/Tabular-Survey/tree/main">Representation Learning for Tabular Data: A Comprehensive Survey</a><br>
+<br>
+<center><img src="data/images/TabularData.svg"></center>
+</li>
+
+<br>
+
 <li>
 <strong>Task Arithmetic (タスク算術)</strong><br>
 学習済みのモデルの重みを足したり引いたりして、複数のタスクの能力を組み合わせたり、特定のタスクの能力を調整したりする技術。<br>
