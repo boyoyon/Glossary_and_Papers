@@ -57,9 +57,10 @@
 
 
 <h2>更新項目</h2>
-・<a href="#CompositionalGeneralization">Compositional Generalization (組み合わせ的一般化, 構成的一般化)</a><br>
-
-・<a href="#TabularData">Tabular Data (表形式データ)</a><br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)<a/><br>
+・<a href="#ContrastiveLearning">Contrastive Learning (対照学習)<a><br>
+・<a href="#CoVT">CoVT: Chain-of-Visual-Thought (視覚的思考連鎖)</a><br>
+・<a href="#RLVR">RLVR: Reinforcement Learning with Verifiable Rewards（検証可能な報酬を用いた強化学習）</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -309,7 +310,7 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 　(黒船来航：AIはいかにシステム研究のあり方を一変させるか)<br>
 　論文は<a href="https://arxiv.org/abs/2510.06189v3">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.06189v3">こちら</a><br>
 　研究者たちは11の多様なシステム問題にわたってADRSを評価し、<strong><span style="color:magenta;">最先端の人間によるソリューションに匹敵するか、それを超える結果を一貫して達成</span></strong>した。<br>
-<center><img src="data/images/ADRS.svg"></center>
+
 
 <br>(関連項目)<br>
 ・AutoML (機械学習ワークフローの自動化)<br>
@@ -341,16 +342,6 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <br>
 「成功には必要条件を全て満たさなければならないが、失敗は1つ欠けるだけで起こる」という原則。文学作品の一節に由来し、生態学や経営学など幅広い分野で引用されてきたが、近年では機械学習の分野においても言及されるようになった。<br>
 <center><img src="data/images/AnnaKareninaPrinciple.svg"></center>
-<br>
-●『Applying Anna Karenina Principle in Deep Learning for Image Classification』(2023)<br>
-(ストレスと適応：画像分類のためのディープラーニングにおけるアンナ・カレーニナ原理の適用)<br>
-<br>
-・幸福な家庭 (汎化性の高いモデル)<br>
-　汎化性能が高いモデルは、その内部表現（特徴量）が互いに似通っている。<br>
-・不幸な家庭 (汎化性の低いモデル)<br>
-　汎化性能が低いモデルは、その内部表現に大きなばらつき（多様性）が見られる。<br>
-<br>(関連項目)<br>
-・<a href="#NeuralCollapse">Neural Collapse</a>　関係あるか不明だが･･･
 </li>
 
 <br>
@@ -525,6 +516,12 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 　<a href="#DEN">DEN: Dynamically Expandable/Growth Networks (動的成長ネットワーク)</a><br>
 <br>
 <center><img src="data/images/CatastrophicForgetting.svg"></center><br>
+<br>
+●『Nested Learning: The Illusion of Deep Learning Architectures』(2025)<br>
+　Nested Learning という Continual Learning (継続学習) のための新しいパラダイムと, Nested Learningの理論に基づいて、HOPE: Hierarchical Optimizers for Perpetual Evolution という新しいアーキテクチャを提案。Transformerモデルよりも優れた性能を示し、忘却が少ないという利点があると報告されている。<br>
+<br>
+<center><img src="data/images/NestedLearning.png"></center>
+ハイブリッド モデル(RNN + Attention) のネストされた学習表現。ディープラーニング表現 (NL を平坦化したイメージ) ではモデルの内部勾配フローが隠され、トレーニング プロセスがアーキテクチャによって分離されるが、NL ではすべての内部プロセスが透明化され、数学的にホワイト ボックスになる。???<br>
 
 <br>
 <a href="data/Papers_CatastrophicForgetting.html">Papers</a><br>
@@ -565,22 +562,6 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 <br>(関連項目)<br>
 ・<a href="#AIAgent">AI Agent</a> (AI エージェント)<br>
 　定義されたルールやスクリプトに従って動作する。特定のタスクを効率的に実行できるが、予期せぬ状況への対応は苦手。
-</li>
-
-<br>
-
-<li id="CoT">
-<strong>CoT: Chain-of-Thought (思考連鎖)</strong><br>
-大規模言語モデル（LLM）の性能を向上させるためのプロンプト技術の一種。<br>
-複雑な問題を解く際に、最終的な答えだけでなく、その答えに至るまでの論理的な思考プロセスを段階的に示すようモデルに促すことで、推論能力を高める。<br>
-<br>
-<a href="data/Papers_CoT.html">Papers</a>
-<br>
-<center><img src="data/images/CoT.svg"></center>
-<br>(関連項目)<br>
-・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
-・<a href="#SelfConsistency">Self-Consistency</a> (自己無撞着性, 自己整合性)<br>
-・<a href="#ToT">ToT: Tree of Thoughts</a> (思考ツリー)
 </li>
 
 <br>
@@ -671,7 +652,9 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
-・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks</a> (動的成長ネットワーク)
+・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks</a> (動的成長ネットワーク)<br>
+・Cumulative Learning (累積学習)<br>
+　　新しい知識やスキルを既存の知識体系に統合し、積み上げていく学習プロセス。
 </li>
 
 <br>
@@ -680,10 +663,58 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <strong>Contrastive Learning (対照学習)</strong><br>
 機械学習における自己教師あり学習 (SSL: Self-Supervised Learning) の一種。<br>
 データを「似ているペア（正例）」と「似ていないペア（負例）」に分け、モデルがこの違いを認識できるように学習する。最終的に、潜在空間において、正例のベクトル表現は近づけ、負例のベクトル表現は遠ざけることを目指す。<br>
+(蛇足: 正常データを与えて異常検知する(One-Class Anomaly Detection)のと似ている気がする･･･)<br>
 <br>
-<a href="data/Papers_ContrastiveLearning.html">Papers</a><br>
+●『Representation Learning with Contrastive Predictive Coding』(2018)<br>
+　(対照予測符号化を用いた表現学習)<br>
+　様々なモダリティの高次元の生データから高レベルで有用な表現を抽出する汎用的な教師なし学習フレームワークであるContrastive Predictive Coding (CPC) を導入した。<br>
+<br>
+●『A simple framework for contrastive learning of visual representations』SimCLR(2020)<br>
+　(視覚表現の対照学習のためのシンプルなフレームワーク)<br>
+　画期的な対照学習手法である SimCLR を導入した。<br>
+<center><img src="data/images/SimCLR.svg"></center>
+<br>
+SimCLR: 視覚表現の対照学習のためのシンプルなフレームワーク<br>
+・拡張演算子がサンプリングされ、データに適用されて相関ビューが得られる。<br>
+・ベースエンコーダネットワークf(･)と投影ヘッドg(･)は、対照損失を用いて一致を最大化するように学習される。<br>
+・学習が完了したら、投影ヘッドg(･)を破棄し、エンコーダf(･)とエンコーダーの出力(表現 h)を下流のタスクに使用する。<br>
+　(蛇足: 一緒に学習してきた相方を捨てるところが GAN に似ている気がする･･･)<br>
 <br>(関連項目)<br>
 ・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
+</li>
+
+<br>
+
+<li id="CoT">
+<strong>CoT: Chain-of-Thought (思考連鎖)</strong><br>
+大規模言語モデル（LLM）の性能を向上させるためのプロンプト技術の一種。<br>
+複雑な問題を解く際に、最終的な答えだけでなく、その答えに至るまでの論理的な思考プロセスを段階的に示すようモデルに促すことで、推論能力を高める。<br>
+<br>
+<a href="data/Papers_CoT.html">Papers</a>
+<br>
+<center><img src="data/images/CoT.svg"></center>
+<br>(関連項目)<br>
+・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
+・<a href="#SelfConsistency">Self-Consistency</a> (自己無撞着性, 自己整合性)<br>
+・<a href="#ToT">ToT: Tree of Thoughts</a> (思考ツリー)
+</li>
+
+<br>
+
+<li id="CoVT">
+<strong>CoVT: Chain-of-Visual-Thought (視覚的思考連鎖)</strong><br>
+AI、特にVision-Language Models（VLM: 画像言語モデル）における推論手法の一つ。<br>
+大規模言語モデル（LLM）で広く用いられている「Chain-of-Thought (CoT: 思考連鎖)」プロンプティングの概念を視覚領域に応用・拡張したもの。<br>
+<br>
+●『Chain-of-Visual-Thought: Teaching VLMs to See and Think Better with Continuous Visual Tokens』(2025)<br>
+　約20トークンという小さな予算内で、COVTは軽量な視覚専門家から知識を抽出し、2Dの外観、3Dの幾何学、空間配置、エッジ構造などの補完的な特性を捉える。<br>
+<center><img src="data/images/CoVT.svg"></center>
+トークンに知覚的意味を与えるために、トレーニング中にそれぞれのタスクにおいて軽量ビジョンエキスパート(SAM、DepthAnything、PIDINet、DINOなど)と連携させる。<br>
+・SAM（Segmentation Anything Model) は視覚トークンをマスクプロンプトとして使用<br>
+・DepthAnything は視覚トークンを使用して深度を再構築<br>
+・PIDINet (Pixel Difference Network) は視覚トークンを使用してエッジを再構築<br>
+・DINO (Self-<strong>di</strong>stillation with <strong>no</strong> labels) は視覚トークンを使用してパッチレベルの特徴をマッチングを実施<br>
+
 </li>
 
 <br>
@@ -922,8 +953,8 @@ Compositionality Gapの一例。<br>
 <a href="data/Papers_DRL.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり<br>
-・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
-・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)
+・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習) ポリシー ⇒ 報酬<br>
+・<a href="#RL">RL: Reinforcement Learning</a> (強化学習) 報酬 ⇒ ポリシー
 </li>
 <br>
 <center><img src="data/images/DRL.svg"></center>
@@ -1096,7 +1127,7 @@ AIF: Active Inference (能動推論)は<strong><span style="color: magenta;">外
 
 <br>
 
-<li>
+<li id="EpisodicMemory">
 <strong>Episodic Memory (エピソード記憶)</strong><br>
 個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。一般的な知識を記憶する「意味記憶」とは区別される。<br>
 <br>
@@ -2322,7 +2353,7 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 現代の物理情報ニューラルネットワーク (PINN) フレームワークを導入した。
 <br><br>
 <center><img src="data/images/PINNs.svg"></center>
-<center>自動微分～物理損失を教師モデルと見なすと「Knowledge Distillation (知識蒸留)」に似ている</center>
+<center>(蛇足：自動微分～物理損失を教師モデルと見なすと「Knowledge Distillation (知識蒸留)」に似ている･･･)</center>
 </li>
 
 <br>
@@ -2744,6 +2775,19 @@ DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確�
 ・<a href="#WorldModel">World Model</a> (世界モデル)
 </li>
 
+<br>
+
+<li id="RLVR">
+<strong>RLVR: Reinforcement Learning with Verifiable Rewards（検証可能な報酬を用いた強化学習）</strong><br>
+大規模言語モデル（LLM）などのAIシステムをトレーニングする手法の一つで、人間の主観的な評価ではなく、客観的で自動的に検証可能な基準に基づいて報酬を与える。<br>
+・モデルの出力が事前に定義された正解基準（例：数学の問題の答えが正しいか、コードがテストケースを通過するか）に一致するかどうかに基づいて、明確な報酬（例：正解なら1、不正解なら0）が与えられる。<br>
+　報酬は2値に限定される訳ではなく, 回答の「部分的な正しさ」や、複数のテストケースに合格した数に応じて報酬値を変えるソフト報酬を使うこともできる。<br>
+・RLHF (人間のフィードバックからの強化学習) のように人間の好みや主観に依存しないため、報酬の設計が明確で「報酬ハッキング」（報酬システムの欠陥を悪用して高得点を獲得すること）のリスクが低減される。<br>
+・最終結果だけでなく、そこにたどり着くまでの推論過程 (Chain-of-Thought) の中間ステップに対しても報酬を与える「プロセス報酬」のアプローチも探求されている。<br>
+<br>(関連項目)<br>
+・<a href="#RewardHacking">Reward Hacking</a> (報酬ハッキング) 
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -2828,6 +2872,14 @@ AIシステムが自らのコードや構造を複製、または改良して新
 </li>
 
 <br>
+<li id="SelectiveUnderfitting">
+<strong>Selective Underfitting (選択的アンダーフィッティング)</strong></br>
+主に拡散モデルと呼ばれる生成AIの分野で提唱された概念。モデルは訓練データの近くでは詳細なパターンを学習しつつ、それ以外の領域では学習されていないがゆえの多様な振る舞いをすることで、新しいデータを生成する能力を獲得している、ということを説明する概念。<br>
+<br>
+●『SELECTIVE UNDERFITTING IN DIFFUSION MODELS』(2025)
+</li>
+
+<br>
 
 <li>
 
@@ -2858,6 +2910,10 @@ AIシステムが自らのコードや構造を複製、または改良して新
 
 <strong>Shortcut Learning (ショートカット学習)</strong><br>
 機械学習モデルが、意図された本質的な特徴ではなく、訓練データに存在する安易で表層的なパターンや無関係な相関関係を学習してしまう現象。Simplicity Biasが原因で起こる現象。<br>
+<br>
+●『Which Shortcut Cues Will DNNs Choose? A Study from the Parameter-Space Perspective』(2022)<br>
+　(DNNはどのショートカットキューを選択するのか？パラメータ空間の観点からの研究)<br>
+　複数shortcutsがある時はDNN構造によらず色情報、民族情報が優先して使われる。shortcutした学習はflat minimaに収束しやすい。<br>
 <br>
 <a href="data/Papers_SimplicityBias.html">Papers</a><br>
 <br>(関連項目)<br>
@@ -2919,8 +2975,6 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 　　(表形式の基礎モデルによる小規模データでの正確な予測)<br>
 <br>
 　「大幅に少ないトレーニング時間で、最大10,000サンプルのデータセットに対して従来のすべての手法を大幅に上回る表形式の基礎モデルであるTabular Prior-data Fitted Network（TabPFN）を紹介します･･･」<br>
-<center><img src="data/images/TabularData.svg"></center>
-<center><a href="https://github.com/LAMDA-Tabular/Tabular-Survey/tree/main">Representation Learning for Tabular Data: A Comprehensive Survey</a></center>
 <br>
 <a href="data/Papers_SmallDataParadigm.html">Papers</a>
 </li>
@@ -3325,9 +3379,9 @@ Structures in Connectionist Systems』(1990)<br>
 赤ちゃんは、予測可能な出来事よりも、予期せぬ驚くべき出来事（物理法則に反するような現象など）をより長く見つめる傾向がある。この「長く見つめる（注視時間が長くなる）」という反応を指標にすることで、赤ちゃんが生まれつき持っている世界に対する知識や、物理的・社会的な法則の理解度を推測する。<br>
 <br>
 <strong>コミュニケーション研究における「期待違反理論」</strong><br>
-人は社会的な状況で、他者がどのように行動すべきかについての期待（規範やルール）を持っている。その期待が破られた（違反された）とき、驚きや不快感、あるいはポジティブな反応などが引き起こされる。この反応が肯定的か否定的かは、違反した相手に対する好意度や状況によって変化する。
-
-
+人は社会的な状況で、他者がどのように行動すべきかについての期待（規範やルール）を持っている。その期待が破られた（違反された）とき、驚きや不快感、あるいはポジティブな反応などが引き起こされる。この反応が肯定的か否定的かは、違反した相手に対する好意度や状況によって変化する。<br>
+<br>(関連項目)<br>
+・<a href="#EpisodicMemory">Episodic Memory</a> (エピソード記憶)
 </li>
 
 <br>
@@ -3406,15 +3460,19 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 　論文は<a href="https://arxiv.org/abs/2006.07733">こちら</a><br>
 　ネットワークの出力を予測するという単純なタスクで、自己教師あり学習を安定化させた<br>
 [AI4S: AI for Science]<br>
-・●『First Peer-Reviewed Research Paper Written Without Humans』<br>
+●『First Peer-Reviewed Research Paper Written Without Humans』<br>
 　論文は<a href="https://pub.sakana.ai/ai-scientist-v2/paper/paper.pdf">こちら</a><br>
 　AIシステムが、<strong><span style="color:magenta;">人間の手助けなしで査読を通過する研究論文を執筆</span></strong>した。<br>
+[EoE: Era of Experience]<br>
+●『Wlecome to the Era of Experience』(2025)<br>
+　AI自身の「経験」を通して自律的に学習・進化していくという、AI研究における新たな方向性を示す概念を提唱した。<br>
 
 <br>(関連項目)<br>
 ・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a><br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
 ・<a href="#EoE">Era of Experience (経験の時代)</a><br>
 ・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a><br>
+・<a href="#EoE">EoE: Era of Experience (経験の時代)</a>
 
 </li>
 
