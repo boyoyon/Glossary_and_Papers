@@ -57,10 +57,8 @@
 
 
 <h2>更新項目</h2>
-・<a href="#CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)<a/><br>
-・<a href="#ContrastiveLearning">Contrastive Learning (対照学習)<a><br>
-・<a href="#CoVT">CoVT: Chain-of-Visual-Thought (視覚的思考連鎖)</a><br>
-・<a href="#RLVR">RLVR: Reinforcement Learning with Verifiable Rewards（検証可能な報酬を用いた強化学習）</a><br>
+・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a><br>
+・<a href="#LDM">LDM: Latent Diffusion Model (潜在拡散モデル)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -854,7 +852,7 @@ Compositionality Gapの一例。<br>
 <strong>DA: Domain Adaptation (ドメイン適応)</strong><br>
 　ラベル付けされたソースドメインで訓練されたモデルを、ラベルなしまたは疎にラベル付けされたターゲットドメインに適応させること。<br>
 <br>
-●『CLIP-Powered Domain Generalization and Domain Adaptation: A Comprehensive Survey』(2025><br>
+●『CLIP-Powered Domain Generalization and Domain Adaptation: A Comprehensive Survey』(2025)<br>
 　(CLIPを活用したドメイン汎化およびドメイン適応：包括的レビュー)<br>
 　論文は<a href="">こちら</a>, 解説は<a href="https://www.alphaxiv.org/overview/2504.14280v1">こちら</a><br>
 </li>
@@ -867,9 +865,36 @@ Compositionality Gapの一例。<br>
 拡散モデルと連想記憶との間の関連性が確立され, 拡散モデルにおける暗記から汎化への移行について、統計物理学における相転移として特徴づけられている。<br>
 <br>
 <a href="data/Papers_DiffusionModel.html">Papers</a><br>
+<br>
+●『DiP: Taming Diffusion Models in Pixel Space』(2025)<br>
+　　(DiP: ピクセル空間でディフュージョンモデルを制する(飼いならす))<br>
+　・パッチサイズを大きくする(2x2, 4x4→16x16): 情報圧縮のためのVAEを削除<br>
+　・Patch Detailer Head でパッチの高周波の詳細を予測<br>
+<br>
+<center><img src="data/images/DiP.svg"></center>
+※ project in ･･･ パッチを1次元化 → DiT (Diffusion Transformer) が受け取れるトークンに変換する。<br>
+　 project out ･･･ project in の逆(トークンをピクセルパッチに戻す)<br>
+<br>
+●『DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation』(2025)<br>
+・<strong>LDM(潜在拡散モデル)</strong><br>
+　　〇 圧縮された潜在空間で動作することで効率を達成<br>
+　　× VAEの再構成品質とアーティファクトによって本質的に制限される。<br>
+<br>
+・<strong>PDM(ピクセル空間拡散モデル)</strong><br>
+　　〇 ピクセル空間で直接動作することで LDM のVAEの制限を回避する<br>
+　　× 単一のモデルが粗い意味情報ときめ細かい詳細の両方を同時に学習しなければならない場合に計算上の非効率性に苦しむ。<br>
+<br>
+・<strong>DeCo</strong><br>
+　　2つの専門コンポーネントに分離する周波数分離アーキテクチャー<br>
+　　- 低周波数セマンティクスに特化したDiffusion Transformer<br>
+　　ｰ 高周波数詳細のための軽量ピクセルデコーダー<br>
+<br>
+<center><img src="data/images/DeCo.svg"></center>
+<center><img src="data/images/DeCo2.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#GenerativeModel">Generative Model</a> (生成モデル)<br>
-・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) 
+・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) <br>
+・<a href="#LDM">LDM: Latent Diffusion Model</a> (潜在拡散モデル)
 </li>
 
 <br>
@@ -1719,13 +1744,29 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <center><img src="data/images/LatentZone.svg"></center>
 ●『One Small Step in Latent, One Giant Leap for Pixels:Fast Latent Upscale Adapter for Your Diffusion Models』(2025)<br>
 　　(潜在空間における小さな一歩はピクセルにとっての大きな飛躍:拡散モデルのための高速潜在空間アップスケールアダプター)<br>
-　　このタイトルで思い出すのはやはり「"That's one small step for man, one giant leap for mankind."(一人の人間にとっては小さな一歩だが、人類にとっては大きな飛躍だ)」<br>
-　　アームストロング船長<br>
+　　(蛇足: このタイトルで思い出すのはやはり<br>
+　　「"That's one small step for man, one giant leap for mankind."<br>
+　　 (一人の人間にとっては小さな一歩だが、人類にとっては大きな飛躍だ)」by アームストロング船長)<br>
 <center><img src="data/images/LUA.svg"></center>
 <br>
 ・<a href="#VAE">VAE: Variational Auto Encoder</a>
 </li>
 
+<br>
+
+<li id="LDM">
+<strong>LDM: Latent Diffusion Model (潜在拡散モデル)</strong><br>
+画像生成AIの分野における深層学習モデルの一種。
+高次元のピクセルまたはデータ空間で直接処理するのではなく,学習した圧縮潜在空間で拡散およびノイズ除去プロセスを実行することで, 計算コストを大幅に削減しつつ、高品質な画像を効率的に生成できるように設計されている。画像生成AI「Stable Diffusion」などで使用されているコア技術。<br>
+<br>
+●『High-Resolution Image Synthesis with Latent Diffusion Models』(2021)<br>
+<br>
+<center><img src="data/images/LDM.svg"></center>
+<br>
+
+<br>(関連項目)<br>
+・<a href="#DiffusionModel">Diffusion Model</a> (拡散モデル)
+</li>
 
 <br>
 
@@ -2748,6 +2789,10 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 <br>
 　●『Flat Reward in Policy Parameter Space Implies Robust Reinforcement Learning』(2025)<br>
 　　　フラットな報酬風景と強化学習モデルのロバスト性との関連を正式に結びつけることを目指す。<br>
+<br>
+<center><img src="data/images/RewardLandscape.svg"></center>
+<br>
+エージェントの報酬面の可視化。x軸とy軸はパラメータ空間におけるランダムな方向に沿った摂動を表し、z軸は平均収益を表す。<br>
 <br>(関連項目)<br>
 ・<a href="#LossLandscape">Loss Landscape (損失景観)</a>
 </li>
@@ -2784,6 +2829,13 @@ DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確�
 　報酬は2値に限定される訳ではなく, 回答の「部分的な正しさ」や、複数のテストケースに合格した数に応じて報酬値を変えるソフト報酬を使うこともできる。<br>
 ・RLHF (人間のフィードバックからの強化学習) のように人間の好みや主観に依存しないため、報酬の設計が明確で「報酬ハッキング」（報酬システムの欠陥を悪用して高得点を獲得すること）のリスクが低減される。<br>
 ・最終結果だけでなく、そこにたどり着くまでの推論過程 (Chain-of-Thought) の中間ステップに対しても報酬を与える「プロセス報酬」のアプローチも探求されている。<br>
+<br>
+●『Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains』(2025)<br>
+　(報酬としてのルーブリック：検証可能な領域を超えた強化学習)<br>
+　※ ルーブリックとは学習目標の達成度を判断するため、【評価観点 】と、観点の尺度を数段階に分けて文章で示した【評価基準】から構成される評価ツールのこと。<br>
+●『Checklists are better than reward models for aligning language models』(2025)<br>
+　(言語モデルを整合させるには、チェックリストの方が報酬モデルよりも優れている)<br>
+
 <br>(関連項目)<br>
 ・<a href="#RewardHacking">Reward Hacking</a> (報酬ハッキング) 
 </li>
@@ -3418,7 +3470,10 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 視覚情報（画像・動画）とテキスト情報に特化したモデル。<br>
 画像を分析してキャプションを生成したり、画像に関する質問に答えたりするなど、視覚とテキストを結びつけるタスクに強みがある。<br>
 <br>(関連項目)<br>
-・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+・<a href="#MMLM">MMLM: Multimodal Language Model</a> (マルチモーダル言語モデル)<br>
+・<a href="#CoVT">CoVT: Chain-of-Visual-Thought</a> (視覚的思考連鎖)<br>
+・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)<br>
+・<a href="#SpatialReasoning">Spatial Reasoning</a> (空間推論) <br>
 </li>
 
 </ul></div></p>
