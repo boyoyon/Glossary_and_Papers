@@ -58,7 +58,7 @@
 
 <h2>更新項目</h2>
 ・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a><br>
-・<a href="#LDM">LDM: Latent Diffusion Model (潜在拡散モデル)</a><br>
+・<a href="#LatentSpace">Latent Space (潜在空間)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -891,10 +891,20 @@ Compositionality Gapの一例。<br>
 <br>
 <center><img src="data/images/DeCo.svg"></center>
 <center><img src="data/images/DeCo2.svg"></center>
+<br>
+●『PixelDiT: Pixel Diffusion Transformers for Image Generation』(2025)<Br>
+　VAEを必要とせずに、ピクセル空間で直接動作するTransformerベースの拡散モデル。<br>
+　グローバルな意味論的モデリングとローカルなピクセル精緻化を戦略的に分離するデュアルレベルTransformerアーキテクチャを採用。<br>
+<center><img src="data/images/PixelDiT.svg"></center>
+<center>PixelDiT全体構成</center>
+<br>
+<center><img src="data/images/PixelDiT2.svg"></center>
+<center>PiTブロックの詳細</center>
 <br>(関連項目)<br>
 ・<a href="#GenerativeModel">Generative Model</a> (生成モデル)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) <br>
-・<a href="#LDM">LDM: Latent Diffusion Model</a> (潜在拡散モデル)
+・<a href="#LDM">LDM: Latent Diffusion Model</a> (潜在拡散モデル)<br>
+・<a href="#DiT">DiT: Diffusion Transformers</a><br>
 </li>
 
 <br>
@@ -940,13 +950,11 @@ Compositionality Gapの一例。<br>
 <li id="DiT">
 <strong>DiT: Diffusion Transformers</strong><br>
 画像生成などに使われる拡散モデル（Diffusion Model）において、従来のU-Netに代わり、Transformerのアーキテクチャを採用したモデル。<br>
-・<strong>スケーラビリティの向上</strong><br>
-　Transformerは、モデルの規模が大きくなるほど性能が向上する特性がある。<br>
-　DiTはモデルのパラメーター数や計算量を増やすことで、より高品質な画像を生成できるようになる。<br>
-・<strong>計算効率の改善</strong><br>
-　潜在空間で拡散を行う潜在拡散モデル（LDM）において、DiTはU-Netよりも計算効率が優れている。<br>
-・<strong>性能向上</strong><br>
-　画像全体を俯瞰的に学習できるTransformerの特性により、特に大規模なデータセットで訓練した場合に、従来のU-Netモデルを上回る生成品質を達成する。
+<br>
+●『Scalable Diffusion Models with Transformers』(2022)<br>
+　　DiTアーキテクチャーを提案した。<br>
+<br>(関連項目)<br>
+・<a href="#LDM">LDM: Latent Diffusion Model</a> (潜在拡散モデル)
 </li>
 
 <br>
@@ -1742,6 +1750,13 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 統一された原理で, 生成モデリング、表現学習、分類の 3つのタスクすべてに対処できるかを問う。このような統一により、ML パイプラインが簡素化され、タスク間の相乗効果を高めることができる。 この目標に向けた一歩として、潜在ゾーニング ネットワーク (LZN) を紹介する。
 <br>
 <center><img src="data/images/LatentZone.svg"></center>
+●『Latent Collaboration in Multi-Agent Systems』(2025)<br>
+・<strong>マルチエージェントシステム</strong><br>
+　○ 個々のモデルが達成できる能力を超える複雑な推論と問題解決能力を実現できる。<br>
+　× エージェントが自然言語テキストのみを介して通信するため、<strong>情報ボトルネック、計算オーバーヘッド</strong>、および<strong>エラー伝播</strong>が生じる。<br>
+　→ エージェントが離散的なテキストトークンではなく、連続的な潜在表現内で完全に協調できるようにするフレームワークを導入した。<br>
+<center><img src="data/images/LatentCollaboration.svg"></center>
+<br>
 ●『One Small Step in Latent, One Giant Leap for Pixels:Fast Latent Upscale Adapter for Your Diffusion Models』(2025)<br>
 　　(潜在空間における小さな一歩はピクセルにとっての大きな飛躍:拡散モデルのための高速潜在空間アップスケールアダプター)<br>
 　　(蛇足: このタイトルで思い出すのはやはり<br>
