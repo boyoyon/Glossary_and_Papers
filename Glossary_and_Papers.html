@@ -57,8 +57,8 @@
 
 
 <h2>更新項目</h2>
-・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a><br>
-・<a href="#LatentSpace">Latent Space (潜在空間)</a><br>
+・<a href="#ThinkingWithImages">Thinking with Images (画像を使って考える)</a><br>
+・<a href="#TwoStreamHypothesis">Two-stream Hypothesis (二重視覚システム仮説)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1121,8 +1121,6 @@ Google DeepMind の著名な研究者 David Silver と, 強化学習の創始者
 　　収集された状態を使用して環境ダイナミクスにポリシーを根拠付ける。<br>
 　(2) Self-reflection (自己反省)<br>
 　　エージェントは最適ではない行動から学習し、推論と意思決定を改善する。<br>
-<br>
-<center><img src="data/images/EarlyExperience.svg"></center>
 <br>
 ●『The Missing Reward: Active Inference in the Era of Experience』(2025)<br>
 　(失われた報酬: 経験の時代の能動推論)<br>
@@ -3262,6 +3260,32 @@ Tabular Data は画像やテキストのように局所的なパターンや階�
 
 <br>
 
+<li id="ThinkingWithImages">
+<strong>Thinking with Images (画像を使って考える)</strong><br>
+AI（特にマルチモーダル大規模言語モデル）の分野における新しいパラダイムであり、モデルが推論プロセスの中間ステップで画像を動的に生成・操作して問題解決を行うアプローチ。<br>
+従来のAIは、画像を入力として受け取った後、それをテキスト情報に変換して推論を行っていた(Thinking about Images 画像について考える )。これに対し、「Thinking with Images」では、人間がスケッチブックを使うように、AI自身が推論の過程で必要に応じて視覚的な情報を生成したり、既存の画像の一部を拡大・回転させたりといった操作を行う。<br>
+<br>
+●『Visual sketchpad: Sketching as a visual chain of thought for multimodal language models』(2024)<br>
+　(Visual Sketchpad: マルチモーダル言語モデルのための視覚的思考の連鎖としてのスケッチ)<br>
+<br>
+●『Thinking with Images for Multimodal Reasoning: Foundations, Methods, and Future Frontiers』(2025)<br>
+<center><img src="data/images/ThinkingWithImages.svg"></center>
+<br>
+●『Deep-eyes: Incentivizing” thinking with images” via reinforcement learning』(2025)<br>
+　(Deep-Eyes:強化学習による「画像思考」の奨励)<br>
+<br>
+●『Machine mental imagery: Empower multi-modal reasoning with latent visual tokens』(2025)<br>
+　(機械心像：潜在視覚トークンによるマルチモーダル推論の強化)<br>
+<br>
+●『Latent Visual Reasoning』(2025)<br>
+　(潜在視覚推論)<br>
+<center><img src="data/images/LatentVisualReasoning.svg"></center>
+<br>
+●『Monet: Reasoning in Latent Visual Space Beyond Images and Language』(2025)<br>
+　(Monet:イメージと言語を超えた潜在的視覚空間における推論)
+</li>
+
+<br>
 
 <li id="TokenLevelIntegration">
 <strong>Token-level Integration (トークンレベル統合)</strong><br>
@@ -3335,6 +3359,29 @@ Tabular Data は画像やテキストのように局所的なパターンや階�
 　物体検出を直接的な集合予測問題として再構築する検出トランスフォーマー (DETR) を導入した。<br>
 <br>(関連項目)<br>
 ・<ahref="#DiT">DiT: Diffusion Transformers</a>
+</li>
+
+<br>
+
+<li id="TwoStreamHypothesis">
+<strong>Two-stream Hypothesis (二重視覚システム仮説)</strong><br>
+人間の脳内には解剖学的にも機能的にも異なる2つの主要な視覚情報処理経路（ストリーム）が存在するという仮説。<br>
+<br>
+1. <strong>Ventral Stream (腹側経路)</strong>：What pathway (「何を」の経路 ) <br>
+　・後頭葉から側頭葉へと向かう。<br>
+　・物体の認識と識別に関与する。形、色、顔などの詳細な特徴を処理し、「それが何であるか」を判断するために重要。<br>
+　・vision for perception (知覚のための視覚)とも呼ばれる。<br> 
+<br>
+2. <strong>Dorsal Stream (背側経路)</strong>：Where/How pathway (「どこ/どのように」の経路)<br>
+　・後頭葉から頭頂葉へと向かう。<br>
+　・物体の空間的位置や動きの処理、およびそれらに基づく行動の制御に関与する。物体が「どこにあるか」、あるいは「どのように掴むか」といった、運動に関連する情報を扱う。<br>
+　・vision for action (行動のための視覚) とも呼ばれる。<br> 
+<br>
+●『G<sup>2</sup>VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning』(2025)<br>
+・ビジョン言語モデル (VLM) は、画像キャプション生成から視覚的質問応答まで、多様なマルチモーダルタスクで目覚ましい能力を発揮してきたが, 空間理解と推論において一貫して苦戦している。<br>
+・人間の視覚認知における「2つの経路仮説」（「何」を認識する対象認識と「どこ」を認識する空間位置処理を分離する）に触発され、G<sup>2</sup>VLMは、共有された注意メカニズムを通じて連携する幾何学的知覚と意味的知覚のための二重の経路を実装している。<br>
+<center><img src="data/images/G2VLM.svg"></center>
+<center><img src="data/images/G2VLM2.svg"></center>
 </li>
 
 </ul></div></p>
