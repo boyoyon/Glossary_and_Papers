@@ -57,8 +57,8 @@
 
 
 <h2>更新項目</h2>
-・<a href="#ThinkingWithImages">Thinking with Images (画像を使って考える)</a><br>
-・<a href="#TwoStreamHypothesis">Two-stream Hypothesis (二重視覚システム仮説)</a><br>
+・<a href="#EvolutionaryProgramSynthesisSystems">Evolutionary program synthesis systems (進化的プログラム合成システム)</a><br>
+・<a href="#NLU">Natural Language Understnading (自然言語理解)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -446,10 +446,13 @@ Lamark (ラマルク) 説は完全に否定された訳ではない模様。<br>
 
 <li id="BeningOverfitting">
 <strong>Bening Overfitting (良性過学習)</strong><br>
-深層学習モデルが訓練データに含まれるノイズまで完全に学習（補間）しているにもかかわらず、未知のデータに対して高い汎化性能を発揮する現象。<br>
-従来の機械学習の教科書では、過学習（オーバーフィッティング）は汎化性能を低下させる「悪性」なものだとされてきた。<br>
+深層学習モデルが訓練データに含まれるノイズまで完全に学習（補間*）しているにもかかわらず、未知のデータに対して高い汎化性能を発揮する現象。<br>
+従来の機械学習の教科書では、Overfitting (過学習) は汎化性能を低下させる Malignant (悪性) なものだとされてきた。<br>
+* 補間：訓練データを点に例えた場合, すべての点を通過する(訓練データでの誤差が 0 になる)状態を指す。<br>
 <br>
-<a href="data/Papers_BeningOverfitting.html">Papers</a>
+●『Benign overfitting in linear regression』(2019)<br>
+　 (線形回帰における良性過学習)<br>
+　線形回帰の文脈における「良性過学習」の概念を正式に導入し、分析した基礎的な論文<br>
 <br>
 <center><img src="data/images/BeningOverfitting.svg"></center>
 
@@ -1233,6 +1236,29 @@ ERMではない学習アプローチはあるのか?<br>
 ・複数台のスロットマシンがある状況で、限られた試行回数の中で、報酬(コイン)の総額を最大化するための最適な選択戦略を学習する問題。<br>
 ・スロットマシンを米俗語でOne-Armed Bandit(片腕の盗賊)というので、複数のスロットマシンを Multi-Armed(多腕)と表現している。<br>
 ・greedy, ε-greedy, UCB(Upper Confidence Bound), optimism in the face of uncertainty(不確かな時は楽観的に), などの戦略がある。
+</li>
+
+<br>
+
+<li id="EvolutionaryProgramSynthesisSystems">
+<strong>Evolutionary program synthesis systems (進化的プログラム合成システム)</strong><br>
+生物の進化（自然淘汰、突然変異、組み換えなど）のプロセスから着想を得た進化的アルゴリズム（Evolutionary Algorithms）を応用し、指定された要件を満たすコンピュータープログラムを自動的に生成 (合成) しようとする人工知能（AI）およびソフトウェア工学の分野横断的なシステム。<br>
+<br>
+<strong>AlphaEvolve</strong><br>
+　●『AlphaEvolve: A coding agent for scientific and algorithmic discovery』(2025)<br>
+　・科学的・アルゴリズム的発見のためにLLMを使用してコードを反復的に進化させる手法を提示した。<br>
+<br>
+<strong>OpenEvolve</strong><br>
+　・DeepMind の AlphaEvolve の主要なコンセプトを再現したオープンソース実装のフレームワーク<br>
+　　<a href="https://github.com/algorithmicsuperintelligence/openevolve">Github</a><br>
+　●『Even with AI, Bijection Discovery is Still Hard: The Opportunities and Challenges of OpenEvolve for Novel Bijection Construction』(2025)<br>
+　　(AIを用いても、全単射発見は依然として難しい：新しい全単射構築のためのOpenEvolveの機会と課題)<br>
+
+<br>
+<strong>ShinkaEvolve</strong><br>
+　・Sakana AIによって開発されたフレームワークで、LLMと進化的アルゴリズムを組み合わせ、特に効率性（サンプル効率）とオープンエンドな探索に焦点を当てている。<br>
+　●『ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution』ShinkaEvolve(2025)
+
 </li>
 
 </ul></div></p>
@@ -2199,6 +2225,35 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <br>(関連項目)<br>
 ・<a href="#Plateau">Plateau (プラトー)</a><br>
 ・<a href="#Grokking">Grokking</a>
+</li>
+
+<br>
+
+<li id="NLU">
+<strong>NLU: Natural Language Understnading (自然言語理解)</strong><br>
+NLP: Natural Language Processing (自然言語処理) というAI分野のサブフィールド。人間が日常的に使用する自然言語の意図、意味、文脈をコンピュータが正確に解釈することを目指す。<br>
+<br>
+●『People thinking about thinking people: The role of the temporo-parietal junction in theory of mind』(2003)<br>
+　(考える人について考える人：心の理論における側頭頭頂接合部の役割)<br>
+・心的状態に関する言語を理解することが、機能的に特異的な非言語的脳領域（rTPJ）を動員することを示した。<br>
+<br>
+●『Dissociating language and thought in large language models』(2024)<br>
+　(大規模言語モデルにおける言語と思考の分離)<br>
+・形式言語能力（言語の規則とパターンに関する知識）と機能言語能力（世界における言語の理解と使用）を区別して LLM を評価する。<br>
+・LLM は形式能力に関しては驚くほど優れているが, 機能的能力タスクでのパフォーマンスは依然としてムラがあり、多くの場合、専門的な微調整や外部モジュールとの連携が必要である。<br>
+・この区別は、<strong>形式能力と機能的能力が異なる神経メカニズムに依存することを示した人間の神経科学に基づいている</strong>。<br>
+
+<br>
+●『What does it mean to understand language?』(2025)<br>
+　(言語を理解するとはどういうことか？)<br>
+・Exportation Hypothsis (輸出仮説) を通じて、脳が言語の「深い理解」の偉業をどのように達成するのか、体系的な説明を提供する。<br>
+・このフレームワークは、言語処理の根本的に異なる2つのレベルを区別する。<br>
+・主に左半球に位置する中核言語システムは、著者らが「浅い理解」と呼ぶもの、すなわち構文の抽出、単語の認識、抽象的な意味表現の形成を扱う。<br>
+・これを超えて、「深い理解」は、心の理論、空間ナビゲーション、物理学、知覚、記憶に特化した非言語選択的な脳領域に情報を輸出することを必要とする。<br>
+・真に根拠のあるAI理解のためには類似のモジュール型アーキテクチャが必要であることを示唆した。<br>
+<center><img src="data/images/NLU.svg"></center>
+<center>言語システムは、言語内容の深い理解を支える言語外システムに情報をエクスポートする</center>
+
 </li>
 
 <br>
@@ -3377,9 +3432,20 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 　・物体の空間的位置や動きの処理、およびそれらに基づく行動の制御に関与する。物体が「どこにあるか」、あるいは「どのように掴むか」といった、運動に関連する情報を扱う。<br>
 　・vision for action (行動のための視覚) とも呼ばれる。<br> 
 <br>
+●『Two-Stream Convolutional Networks for Action Recognition in Videos』(2014)<br>
+・Two-streamネットワークアーキテクチャをディープラーニングベースの行動認識に導入した。<br>
+・最終層のスコア融合<br>
+<br>
+●『A computational examination of the two-streams hypothesis』(2020)<br>
+・腹側ストリームと背側ストリームを計算論的に検証し、どちらの経路がより長い記憶スパンを必要とするかをモデルで分析した。<br>
+<br>
+●『A Dual-Stream Neural Network Explains the Functional Segregation of Dorsal and Ventral Visual Pathways in Human Brains』(2023)<br>
+・デュアルストリームビジョンモデルを開発した。<br>
+<br>
 ●『G<sup>2</sup>VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning』(2025)<br>
 ・ビジョン言語モデル (VLM) は、画像キャプション生成から視覚的質問応答まで、多様なマルチモーダルタスクで目覚ましい能力を発揮してきたが, 空間理解と推論において一貫して苦戦している。<br>
 ・人間の視覚認知における「2つの経路仮説」（「何」を認識する対象認識と「どこ」を認識する空間位置処理を分離する）に触発され、G<sup>2</sup>VLMは、共有された注意メカニズムを通じて連携する幾何学的知覚と意味的知覚のための二重の経路を実装している。<br>
+<br>
 <center><img src="data/images/G2VLM.svg"></center>
 <center><img src="data/images/G2VLM2.svg"></center>
 </li>
