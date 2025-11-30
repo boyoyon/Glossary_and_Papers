@@ -57,8 +57,14 @@
 
 
 <h2>更新項目</h2>
-・<a href="#EvolutionaryProgramSynthesisSystems">Evolutionary program synthesis systems (進化的プログラム合成システム)</a><br>
-・<a href="#NLU">Natural Language Understnading (自然言語理解)</a><br>
+・<a href="#NLoS">NLoS: Non-Line-of-Sight imaging (見通し外画像処理, 視線外画像処理)</a><br>
+・<a href="#VCU">VCU: Video Content Understanding (ビデオコンテンツ理解)</a><br>
+・<a href="#HP">Halpern-Pearl Definition of Actual Causality (ハルパーン-パールの因果関係の定義)</a><br>
+・<a href="#OccamsRazor">Occam's Razor (オッカムの剃刀(かみそり))</a><br>
+・<a href="#Backtracking">Backtracking (後戻り法)</a><br>
+・<a href="#TTC">TTC: Time-to-Collision Estimation (衝突時間推定)</a><br>
+・<a href="#UnavoidableAPriori">The unavoidable a priori (避けられないアプリオリ(先験的要素), 不可避な先験的仮定)</a><br>
+・<a href="#OneStepGenerator">One-Step Generator</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -411,6 +417,24 @@ Vision Transformer (ViT) でも同様の現象が確認されており、モダ�
 <br>
 ●『Feature Pyramid Networks for Object Detection』FPN (2017)<br>
 　　バックボーンから抽出された異なるスケールの特徴マップを融合する「ネック」の役割を果たす構造を導入した。これにより、様々なサイズの物体を効率的に検出できるようになり、その後の多くの物体検出モデル (特にYOLOシリーズなど)で標準的な手法となった。
+</li>
+
+<br>
+
+<li id="Backtracking">
+<strong>Backtracking (後戻り法)</strong><br>
+計算機科学や人工知能の分野で用いられる、特定の問題を解くための汎用的なアルゴリズム（探索技法）。<br>
+<br>
+<strong>状態空間の探索</strong>:　問題の解につながる可能性のある選択肢を一つずつ試していく。これは通常、木構造やグラフ構造として概念的に表現される。<br>
+<br>
+<strong>前進とチェック</strong>:　1つの選択肢を選び、次のステップに進む。その際、現在の選択肢が問題の制約条件に違反していないかを常にチェックする。<br>
+<br>
+<strong>後戻り（バックトラック）</strong>:<br>
+　・もし、現在の選択肢を選んだ結果、これ以上進んでも決して解にたどり着けないことが判明したり、制約条件に違反したりした場合、その時点での選択を「誤り」と判断する。<br>
+・直前の分岐点に戻り（後戻り）、まだ試していない別の選択肢を選び直す。<br>
+<br>
+<strong>解の発見</strong>:　このプロセスを繰り返し、最終的に問題のすべての条件を満たす解を発見するまで探索を続ける。 
+
 </li>
 
 <br>
@@ -1402,6 +1426,27 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
+<li id="HP">
+<strong>Halpern-Pearl Definition of Actual Causality (ハルパーン-パールの因果関係の定義)</strong><br>
+・SCM: Structural Causal Models (構造的因果モデル)と呼ばれる枠組みを用いて「特定の出来事 A が出来事 B の原因である」ということを形式的に表現したもの。<br>
+・事実(出来事 A と出来事 B が起こった)に対して, 反事実 (もし A が起こらなければ B は起こらなかっただろう) という概念を厳密な数学的モデルに落とし込んだもの。<br>
+<br>
+・<strong>Actual Occurrence (事実条件)</strong>:　実際に観察された世界 (現実世界)では、原因となる出来事 A と結果となる出来事 B の両方が発生している。<br>
+・<strong>Necessity/But-For Causation (必然性条件)</strong>:　他のすべての要因が現実世界と同じ値に固定された場合、もし A が起こらなければ B は起こらなかったであろう、という反事実的な状況が存在する。<br>
+・<strong>Non-redundancy/Contingency (非冗長性条件)</strong>:　必要に応じて特定の要因を操作(介入)して固定しても、A が B の原因であるという条件が成り立ち続ける必要がある。これは、因果関係を定義する上で発生する標準的な問題 (例：過剰決定) を解決するために導入された最も技術的で重要な条件である。<br>
+<br>
+●『Causality Without Causal Models』(2025)<br>
+・因果性のハルパーンとパールの定義は因果モデル(構造方程式モデルとも呼ばれる)を用いて定義されている。<br>
+・この定義を抽象化し、その主要な特徴を抽出することで、反事実が定義される他のモデルにも適用できるようにする。<br>
+・定義を抽象化することで<br>
+　- バックトラッキングを許すモデルを含むより広範なモデルに定義を適用できる。<br>
+　- A と B が選言(formulas involving disjunctions: 論理和を含む論理式)、否定(negations)、信念(beliefs)、入れ子の反事実(nested counterfactuals)を含む式であっても、A が B の原因であるかどうかを判断するために定義を適用することができる。<br>
+　- さらに、因果モデルを超えて適用できる説明の抽象的な定義を得るためにアイデアを拡張することができまる。<br>
+　- 最後に, 因果モデルにおける定義の特徴についてより深い理解を得ることができる。<br> 
+</li>
+
+<br>
+
 <li id="Hubness">
 <strong>Hubness (ハブ性)</strong><br>
 
@@ -2229,6 +2274,39 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 
 <br>
 
+<li id="NLoS">
+<strong>NLoS: Non-Line-of-Sight imaging (見通し外画像処理, 視線外画像処理)</strong><br>
+カメラやセンサーの直接的な視野の外にある隠れた物体やシーンを画像化したり認識する技術。<br>
+・<strong>信号の照射と反射</strong>:　レーザー光や音波などを壁などの「中継面」に照射する。<br>
+・<strong>散乱と隠れた物体への到達</strong>:　中継面で散乱した信号は、直接は見えない場所にある隠れた物体に到達し、そこから再び反射する。<br>
+・<strong>再度の反射と検出</strong>:　反射した信号は再び中継面に戻り、検出器（カメラやセンサー）によって捉えられる。<br>
+・<strong>データ解析</strong>:　検出された信号 (特に光子の飛行時間(Time-of-Flight, ToF) 情報など）の時間的・空間的なデータを高度なアルゴリズム (計算イメージング、深層学習など)で解析し、隠れた物体の位置、形状、動きなどを推定・再構成する。<br>
+※ ミリ波や Wi-Fi や超音波を使う手法もある。<br>
+<br>
+●『Accidental pinhole and pinspeck cameras: revealing the scene outside the picture
+』(2012)<br>
+　(偶然のピンホールカメラとピンスペックカメラ：写真の外側の光景を明らかにする)<br>
+<center><img src="data/images/NLoS.png"></center>
+・開いた窓から光が部屋に入る。<br>
+・窓の反対側の壁には、光と影の投影された模様が見える。暗い部分は影なのだろうか ?<br>
+<center><img src="data/images/NLoS2.png"></center>
+・外光に照らされた室内に陰影の模様が生まれる。<br>
+・影は実際にはぼやけた像であり、影ではない。この部屋は、偶然にカメラ・オブスキュラを作り出したのである。<br>
+<br>
+●『Neural network identification of people hidden from view with a single-pixel, single-photon detector』(2017)<br>
+　(単一ピクセル・単一光子検出器を用いた視界から隠れた人物のニューラルネットワーク識別)<br>
+●『Turning Corners into Cameras: Principles and Methods』(2017)<br>
+　(角をカメラに変える：原理と手法)<br>
+●『Computational periscopy with an ordinary digital camera』(2019)<br>
+　(一般的なデジタルカメラを用いた計算潜望鏡)<br>
+●『Non-line-of-sight imaging』(2019)<br>
+　(視線外イメージング)<br>
+●『Wave-based non-line-of-sight imaging using fast f-k migration』(2019)<br>
+　(高速f-kマイグレーションを用いた波動ベース視線外イメージング)
+</li>
+
+<br>
+
 <li id="NLU">
 <strong>NLU: Natural Language Understnading (自然言語理解)</strong><br>
 NLP: Natural Language Processing (自然言語処理) というAI分野のサブフィールド。人間が日常的に使用する自然言語の意図、意味、文脈をコンピュータが正確に解釈することを目指す。<br>
@@ -2241,7 +2319,7 @@ NLP: Natural Language Processing (自然言語処理) というAI分野のサブ
 　(大規模言語モデルにおける言語と思考の分離)<br>
 ・形式言語能力（言語の規則とパターンに関する知識）と機能言語能力（世界における言語の理解と使用）を区別して LLM を評価する。<br>
 ・LLM は形式能力に関しては驚くほど優れているが, 機能的能力タスクでのパフォーマンスは依然としてムラがあり、多くの場合、専門的な微調整や外部モジュールとの連携が必要である。<br>
-・この区別は、<strong>形式能力と機能的能力が異なる神経メカニズムに依存することを示した人間の神経科学に基づいている</strong>。<br>
+・この区別は、形式能力と機能的能力が異なる神経メカニズムに依存することを示した人間の神経科学に基づいている。<br>
 
 <br>
 ●『What does it mean to understand language?』(2025)<br>
@@ -2315,6 +2393,19 @@ DeepMind社によって2014年に発表された。<br>
 <div class="styleBullet">
 <ul>
 
+<li id="OccamsRazor">
+<strong>Occam's Razor (オッカムの剃刀(かみそり))</strong><br>
+ある事柄を説明するのに、必要以上に多くを仮定すべきでない, とする指針(思考節約の原理)。<br>
+<br>
+●『Deep Learning as a Convex Paradigm of Computation: Minimizing Circuit Size with ResNets』(2025)<br>
+　(計算の凸パラダイムとしてのディープラーニング：ResNetによる回路サイズの最小化)<br>
+・Computational Occam's Razor(計算論的オッカムの剃刀)という概念を中心に展開しており、効果的な学習アルゴリズムはデータに適合する最も単純な計算表現を見つけるべきであるとしている。<br>
+・理論的な理想はコルモゴロフ複雑性(データを生成する最短のプログラムを見つけること)を最小化することだが、このアプローチは本質的に計算不能。<br>
+・本論文では、代わりに、与えられた関数をある許容誤差内で近似できる最小のバイナリ回路を見つけようとする最小回路サイズ問題 (MCSP: Minimum Circuit Size Problem) に焦点を当てている。
+</li>
+
+<br>
+
 <li id="OneStepGenerator">
 <strong>One-Step Generator</strong><br>
 拡散モデルのような多段階の生成プロセスを、わずか1回のステップで完了させることのできる生成モデル。<br>
@@ -2323,6 +2414,9 @@ DeepMind社によって2014年に発表された。<br>
 　(ニューラルネットワークは線形ではないと誰が言った？)<br>
 　論文は<a href="https://arxiv.org/abs/2510.08570">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.08570v1">こちら</a><br>
 　最も説得力のある応用の一つは、リニアライザーが数百の拡散サンプリングステップを単一の順伝播パスに統合する方法を示すもの。<br>
+<br>
+●『Terminal Velocity Matching』(2025)<br>
+・フローマッチングの一般化であり、高精度な1ステップおよび数ステップ生成モデリングを可能にする終端速度マッチング（TVM）を提案する。
 </li>
 
 <br>
@@ -3418,6 +3512,19 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 
 <br>
 
+<li id="TTC">
+<strong>TTC: Time-to-Collision Estimation (衝突時間推定)</strong><br>
+現在の速度と進路がそのまま維持された場合、2つの物体(車両と先行車など)が衝突するまでに残された時間を推定するタスク。<br>
+<br>
+・<strong>Vision-based TTC estimation (視覚ベースTTC推定)</strong><br>
+　画像シーケンス(動画)だけから、オプティカルフローなどの物体の動きの推定を用いてTTCを直接推定する技術。<br>
+<br>
+・<strong>RL: Reinforcement Learning (強化学習) とTTC</strong><br>
+　自動運転車の運転ポリシー（行動規範）を学習する際に、TTCを報酬関数の一部として組み込むことがある。例えば、「TTCが短くなりすぎると大きな負の報酬（ペナルティ）を与える」ことで、AIが安全な車間距離を保つ運転行動を自律的に学習するように促す。
+</li>
+
+<br>
+
 <li id="TwoStreamHypothesis">
 <strong>Two-stream Hypothesis (二重視覚システム仮説)</strong><br>
 人間の脳内には解剖学的にも機能的にも異なる2つの主要な視覚情報処理経路（ストリーム）が存在するという仮説。<br>
@@ -3458,6 +3565,25 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="UnavoidableAPriori">
+<strong>The unavoidable a priori (避けられないアプリオリ(先験的要素), 不可避な先験的仮定)</strong><br>
+異なる研究分野やアプローチ(例えば、システムダイナミクスと構造方程式モデリング) の間で、根底にある前提や基本的な仮定が大きく異なり、その相違が避けられないことを指す。<br>
+<br>
+・<strong>a priori (アプリオリ)</strong><br>
+　経験に先立って、または経験とは独立して存在する知識や前提<br>
+・<strong>unavoidable (避けられない、不可避な)</strong><br>
+　その分野や研究手法を採用する上で、論理的・構造的に受け入れざるを得ない、前提となる仮定や視点<br>
+<br>
+特定の研究方法論を採用する際に、議論の出発点として必ず前提としなければならない基本的な(しかし他分野からは異なるかもしれない)仮定, という意味合いで使われる。<br>
+<br>
+●『Bridging the Unavoidable A Priori: A Framework for Comparative Causal Modeling』(2025)<br>
+　(避けられない先験的なものをつなぐ：比較因果モデルのためのフレームワーク)<br>
+・システムダイナミクスと構造方程式モデリングを共通の数学的枠組みの中に統合し、分布からシステムを生成し、手法を開発し、結果を比較することで、データサイエンスおよびAI/MLアプリケーションにおけるシステムダイナミクスの基礎となる認識論を明らかにすることを目指す。
+</li>
+
+<br>
+
 <li id="UnifiedTokenizer">
 <strong>Unified Tokenizer (統合トークナイザー)</strong><br>
 テキスト、画像、音声など、異なる種類のデータを単一の統一された形式（トークン）に変換できる、領域に依存しない（ドメインに特化しない）手法。<br>
@@ -3548,6 +3674,24 @@ Structures in Connectionist Systems』(1990)<br>
 　Transformerが変数バインディングを、明示的なアーキテクチャサポートなしに学習できることを示しており、ニューラルネットワークがパターン認識に限定されるという概念に異議を唱えている<br>
 <br>
 <a href="data/Papers_VariableBinding.html">Papers</a>
+</li>
+
+<br>
+
+<li id="VCU">
+<strong>VCU: Video Content Understanding（ビデオコンテンツ理解）</strong><br>
+人工知能（AI）とコンピュータビジョン（CV）の技術を用いて、機械が動画の内容を自動的に分析・解釈する高度な技術分野。<br>
+<br>
+●『Seeing without Pixels: Perception from Camera Trajectories』(2025)<br>
+・映像の内容を、ピクセルを見ることなく、カメラの軌跡、つまり空間を刻む軌跡のみから認識することは可能でしょうか？本論文は、この一見あり得そうにない問いを体系的に検証した初めての論文です。<br>
+・カメラの軌跡は一見単純ですが、映像の内容を明らかにする上で非常に有益なシグナルであることがわかりました。言い換えれば、「どのように動くか」は、実際に「何をしているか」または「何を観察しているか」を明らかにすることができるのです。<br>
+<center><img src="data/images/CamFormer.png"></center>
+<center>右折する / バスケットボールのレイアップ / 歩く</center>
+<br>
+・核心的な洞察は、ジェームズ・ギブソンの能動的知覚の理論に基づいています。「人は環境を眼で見るのではなく、地面に接している体ーそれに乗っている頭－そこにある眼で見るのである(one sees the environment not with the eyes but with the eyes-in-the-head-on-the-body-resting-on-the-ground)」。<br>
+<br>
+・<strong>創発的機能</strong>　CamFormerは、繰り返し行動のカウントという予期せぬ創発的機能を示します。時間的特徴の自己類似性分析により、繰り返し行動に対して明確な周期的な対角パターンが明らかになり、DINOv3のようなモデルの視覚特徴では検出できない時間的構造を捉えます。<br>
+<center><img src="data/images/CamFormer2.png"></center>
 </li>
 
 <br>
