@@ -57,14 +57,13 @@
 
 
 <h2>更新項目</h2>
-・<a href="#NLoS">NLoS: Non-Line-of-Sight imaging (見通し外画像処理, 視線外画像処理)</a><br>
-・<a href="#VCU">VCU: Video Content Understanding (ビデオコンテンツ理解)</a><br>
-・<a href="#HP">Halpern-Pearl Definition of Actual Causality (ハルパーン-パールの因果関係の定義)</a><br>
-・<a href="#OccamsRazor">Occam's Razor (オッカムの剃刀(かみそり))</a><br>
-・<a href="#Backtracking">Backtracking (後戻り法)</a><br>
-・<a href="#TTC">TTC: Time-to-Collision Estimation (衝突時間推定)</a><br>
-・<a href="#UnavoidableAPriori">The unavoidable a priori (避けられないアプリオリ(先験的要素), 不可避な先験的仮定)</a><br>
-・<a href="#OneStepGenerator">One-Step Generator</a><br>
+・<a href="#ActiveInference">Active Inference (能動推論)</a><br>
+・<a href="#FEP">FEP: Free Energy Principle (自由エネルギー原理) </a><br>
+・<a href="#IDEstimation">ID (Intrinsic Dimension) Estimation (固有次元推定, 内在次元推定)</a><br>
+・<a href="#KAN">KAN: Kolmogorov-Arnold Networks</a><br>
+・<a href="#KolmogorovComplexity">Kolmogorov Complexity (コルモゴロフ複雑性)</a><br>
+・<a href="#LLMAsAJudge">LLM-as-a-Judge</a><br>
+・<a href="#W2SG">W2SG: Weak-to-strong generalization (弱から強への一般化)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -153,6 +152,42 @@ Diffusion Model (拡散モデル) の学習および画像生成の過程にお�
 <br>
 <a href="data/Papers_AcquiescenceBias.html">Papers</a><br>
 <a href="https://en.wikipedia.org/wiki/Acquiescence_bias">wikipedia「Acquiescence Bias」</a>
+</li>
+
+<br>
+
+<li id="ActiveInference">
+<strong>Active Inference (能動推論)</strong><br>
+生物や人工知能などの知的なエージェントの行動原理を説明する理論的な枠組み。<br>
+FEP: Free Energy Principle (自由エネルギー原理) に基づいており、エージェントは環境に対する驚き(サプライズ)や不確実性を最小限に抑えるように知覚と行動を統合的に制御すると仮定する。<br>
+受動的に情報を処理するだけでなく、環境に積極的に働きかける(能動的)ことで世界を推論するという点が特徴。<br>
+<br>
+・<strong>Predictive Coding (予測符号化)</strong><br>
+　脳やエージェントは、環境がどのように生成されているかについての内部的な generative model(生成モデル)を持っており、感覚入力(目や耳から入ってくる情報)を常に予測している。<br>
+<br>
+・<strong>予測誤差の最小化</strong><br>
+　実際の感覚入力と予測との間の「予測誤差」を最小化することが目的となる。この誤差はvariational free energy (変分自由エネルギー)と呼ばれ、これを減らすことがエージェントの基本的な指令となる。<br>
+<br>
+・<strong>2つの誤差最小化方法</strong><br>
+　エージェントは、この誤差を減らすために2つの方法を用いる。<br>
+<br>
+　　- <strong>Perception (知覚)</strong><br>
+　　　内部モデル(信念)を更新して、感覚入力により適合させる(世界の見方を変える)<br>
+<br>
+　　- <strong>Action (行動)</strong><br>
+　　　世界に働きかけて感覚入力を変化させ、内部モデルの予測と一致させる(世界の方を変える)<br>
+<br>
+●『Embodied Inference - or “I think therefore I am, if I am what I think”』(2010)<br>
+●『Answering Schr&ouml;dinger’s question - A free-energy formulation』(2017)<br>
+●『The Predictive Coding Account of Psychosis』(2018)<Br>
+●『The promise of layer-specific neuroimaging for testing predictive coding theories of psychosis』(2022)<br>
+●『Active Inference in Discrete State Spaces from First Principles』(2025)<br>
+・能動的な推論を研究している物理学者にとって、生物学的エージェントがその世界を確率微分方程式によって支配されるランダムな動的システムとしてモデル化し、恒常性を維持しようとするエージェントの努力をプルバックアトラクターとして解釈すると仮定するのは自然なことです。<br>
+・しかし、生物学的エージェントの行動をシミュレートしたり、多段階の階層的計画が可能な自律型AIエージェントを設計したりする場合、エンジニアは代わりに、エージェントが隠れマルコフモデルまたは部分観測マルコフ決定過程を使用して離散時間ステップで進化する離散状態空間としてその世界をモデル化すると仮定します。<br>
+・エンジニアが展開する必要がある数学的装置は、物理学者が必要とするものよりもはるかに単純です。<br>
+・本稿では連続状態空間のコンテキストで開発されたメカニズムのいずれにも頼ることなく、離散状態空間における能動的な推論の自己完結的で数学的に厳密な説明を提供することを目指す。<br>
+<br>(関連項目)<br>
+・<a href="#FEP">FEP: Free Energy Principle</a> (自由エネルギー原理)
 </li>
 
 <br>
@@ -314,7 +349,11 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 　(黒船来航：AIはいかにシステム研究のあり方を一変させるか)<br>
 　論文は<a href="https://arxiv.org/abs/2510.06189v3">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.06189v3">こちら</a><br>
 　研究者たちは11の多様なシステム問題にわたってADRSを評価し、<strong><span style="color:magenta;">最先端の人間によるソリューションに匹敵するか、それを超える結果を一貫して達成</span></strong>した。<br>
-
+<br>
+●『What Does It Take to Be a Good AI Research Agent? Studying the Role of Ideation Diversity』(2025)<br>
+　(優れたAI研究エージェントになるには何が必要か？アイデアの多様性の役割を研究する)<br>
+・優れたAI研究エージェントには「アイデアの多様性」が必要<br>
+・シャノンエントロピーを用いてアイデア創出の多様性を測定することを提案<br>
 
 <br>(関連項目)<br>
 ・AutoML (機械学習ワークフローの自動化)<br>
@@ -1293,6 +1332,39 @@ ERMではない学習アプローチはあるのか?<br>
 <p>
 <div class="styleBullet">
 <ul>
+<li id="FAI">
+<strong>FAI: Friendly AI (友好的な人工知能)</strong><br>
+人間に対して悪影響を与えることなく、良い影響を与えるように設計された、倫理的な AGI(汎用人工知能) を指す仮説的な概念。<br>
+<a href="https://intelligence.org/files/CFAI.pdf">Creating Friendly AI 1.0</a> (2001)で概念が提唱された。<br>
+<br>(関連項目)<br>
+・<a href="#AIAlignment">AI Alignment</a> ･･･ Friendly AIを実現するための技術的課題を解決する研究分野
+</li>
+
+<br>
+
+<li id="FEP">
+<strong>FEP: Free Energy Principle (自由エネルギー原理)</strong><br> 
+知的なシステム（生物やAIなど）の行動や知覚、学習の根底にある基本的な原理を説明する神経科学および理論物理学の枠組み。<br>
+英国の計算神経科学者である Karl Friston によって提唱された。FEPは、「すべての自己組織化システムは、その Variational Free Energy (変分自由エネルギー)の長期的平均値を最小化するように振る舞う」と主張。<br>
+※ ヒントンの初期の研究（ヘルムホルツマシン, ボルツマンマシンにおけるエネルギー関数）から大きな影響を受けているとされる。<br>
+●『The wake-sleep algorithm for unsupervised neural networks』Helmholtz machine (1995)<br>
+　「奇妙な偶然ですが、知覚システムが生成モデルを使用するという考えはヘルムホルツによって提唱されたため、式5の自由エネルギーを最小化することによって生成モデルをデータに適合させる任意のニューラルネットワークを 「ヘルムホルツマシン」と呼びます。･･･」<br> 
+
+<br>
+・<strong>Surprisal (驚き) の最小化</strong><br>
+　システムが予測できないような稀な事象(サプライズ)の発生確率を最小限に抑えることが目的<br>
+<br>
+・<strong>変分自由エネルギー</strong><br>
+　「驚き」の上限値（代理指標）として機能する数学的な量。FEPは、驚きそのものを直接計算するのは難しいため、代わりにこの自由エネルギーを最小化することを目指す。<br>
+<br>
+・<strong>Generative Model (生成モデル)</strong><br>
+　システムは、感覚入力がどのように生成されているかについての内部的な「世界モデル」を持っている。<br>
+<br>(関連項目)<br>
+・<a href="#ActiveInference">Active Inference</a> (能動推論)
+</li>
+
+<br>
+
 <li id="FlatMinima">
 <strong>Flat minima hypothesis (平坦な最適解空間仮説)</strong><br>
 機械学習モデル、特に深層学習モデルの訓練において、損失関数の「平坦な」最小値に収束したモデルは、未知のデータに対する汎化性能が「鋭い」最小値に収束したモデルよりも優れている、という仮説。<br>
@@ -1305,16 +1377,6 @@ ERMではない学習アプローチはあるのか?<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)</br>
 ・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
 ・<a href="#DataAugmentation">Data Augmentation</a> (データ拡張)
-</li>
-
-<br>
-
-<li id="FAI">
-<strong>FAI: Fiendly AI (友好的な人工知能)</strong><br>
-人間に対して悪影響を与えることなく、良い影響を与えるように設計された、倫理的な AGI(汎用人工知能) を指す仮説的な概念。<br>
-<a href="https://intelligence.org/files/CFAI.pdf">Creating Friendly AI 1.0</a> (2001)で概念が提唱された。<br>
-<br>(関連項目)<br>
-・<a href="#AIAlignment">AI Alignment</a> ･･･ Friendly AIを実現するための技術的課題を解決する研究分野
 </li>
 
 </ul></div></p>
@@ -1474,7 +1536,31 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 　トレーニング中に明示的な思考連鎖トークンを最初に提示し、段階的にそれらを取り除いていく。このアプローチは、乗算のようなタスクに必要な推論手順をモデルが内面化するのに役立つ。<br>
 <br>
 ●『Why Can’t Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls』(2025)<br>
-　(<strong><span style="color:magenta;">トランスフォーマーはなせ掛け算を学べないのか ?</span></strong>逆エンジニアリングが長距離依存性の落とし穴を明らかにする )<br>
+　(<strong><span style="color:magenta;">トランスフォーマーはなせ掛け算を学べないのか ?</span></strong> 逆エンジニアリングが長距離依存性の落とし穴を明らかにする )<br>
+</li>
+
+<br>
+
+<li id="IDEstimation">
+<strong>ID (Intrinsic Dimension) Estimation (固有次元推定, 内在次元推定)</strong><br>
+データセットの「真の」または「本質的な」次元数を決定するための機械学習およびデータ分析における手法。<br>
+AIの生成した文章と人間の作成した文章の判別や, LLM出力品質改善の指標として使われる。<br>
+<br>
+<strong>近傍ベースの手法 (Nearest Neighbor Methods)</strong>:　データポイント間の距離や近傍点の数に基づいて推定するWorldWor<br>
+<strong>主成分分析 (PCA) ベースの手法</strong>:　PCAを適用し、どれだけの分散（データのばらつき）が保持されるかを分析して次元数を決定する。<br>
+<strong>多様体学習ベースの手法</strong>:　データが非線形の多様体上に存在することを前提とし、その幾何学的特性を利用して推定する。<br>
+
+<br>
+●『Intrinsic Dimension Estimation for Robust Detection of AI-Generated Texts』(2023)<br>
+　(AI生成テキストの堅牢な検出のための内在次元推定)<br>
+・人間が書いたテキストの不変量、すなわち、与えられたテキストサンプルに対する埋め込み集合の基礎となる多様体の固有次元を提案する。<br>
+・自然言語による流暢なテキストのは、アルファベットベースの言語の平均固有次元：9前後<br>
+・中国語の平均固有次元：7前後<br>
+・各言語のAI生成テキストの平均固有次元はそれより約1.5低い<br>
+<br>
+●『Unveiling Intrinsic Dimension of Texts: from Academic Abstract to Creative Story』(2025)<br>
+　(テキストの内在的次元の解明：学術抄録から創作物語まで)<br>
+・確立された4つのID推定器（持続的ホモロジー次元（PHDIM）、最尤推定（MLE）、最近傍2つ（TwoNN）、タイト局所推定（TLE））を利用し, 科学的な散文は低いIDを示し、創造的なコンテンツは高いIDを示すことを発見した。
 </li>
 
 <br>
@@ -1755,6 +1841,21 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <p>
 <div class="styleBullet">
 <ul>
+<li id="KAN">
+<strong>KAN: Kolmogorov-Arnold Networks</strong><br>
+・従来の多層パーセプトロン (MLP) がノード (ニューロン) に固定された活性化関数を持つのに対し、KAN はエッジ (結合部分) に学習可能な活性化関数 (通常はスプライン関数でパラメータ化される) を導入した。<br>
+・MLP よりも高い精度と解釈可能性を提供し、より少ないパラメータで複雑な関数をモデル化できる可能性がある。<br>
+<center><img src="data/images/KAN.png"></center>
+<br>
+●『KAN: Kolmogorov–Arnold Networks』(2024)<br>
+●『KAN 2.0: Kolmogorov-Arnold Networks Meet Science』(2024)<br>
+●『From PINNs to PIKANs: recent advances in physics-informed machine learning』(2024)<br>
+●『KAGNNs: Kolmogorov-Arnold Networks meet Graph Learning』(2024)<br>
+●『Kolmogorov-Arnold Transformer』(2024)<br>
+</li>
+
+<br>
+
 <li>
 <strong>Kan Extension (Kan拡張)</strong><br>
 圏論における「最も普遍的な方法」で関手を拡張するための構成。ある関数をより広い定義域に拡張する操作を、圏論の文脈で一般化したもの。<br>
@@ -1785,6 +1886,30 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 
 <br>
 
+<li id="KolmogorovComplexity">
+<strong>Kolmogorov Complexity (コルモゴロフ複雑性)</strong><br>
+あるデータ（文字列など）を記述するための最短のプログラムの長さとして、そのデータの情報量や複雑性を定量化する。<br>
+<br>
+<strong>モデル選択と正則化</strong>　機械学習において、訓練データを簡潔に（低いコルモゴロフ複雑性で）表現できるモデルは、優れた汎化性能を持つ (過学習しにくい) と考えられる。これは「オッカムの剃刀」の原則と一致する。<br>
+<br>
+<strong>データ圧縮</strong>　データの圧縮は、そのデータのコルモゴロフ複雑性の推定と見なすことができ、これは機械学習モデルがデータの本質的な特徴を捉える方法と密接に関連している。<br>
+<br>
+<strong>KoLMogorov-Test</strong>　コード生成モデルの知能テストとして「KoLMogorov-Test」というものが提案されている。
+</li>
+
+<br>
+
+<li id="KolmogorovSinaiEntropy">
+<strong>Kolmogorov-Sinai Entropy (コルモゴロフ・シナイ・エントロピー)</strong><br>
+動的システムの複雑性やカオスを定量化する尺度。
+</li>
+
+<br>
+
+<li id="KolmogorovStructureFunction">
+<strong>Kolmogorov Structure Function (コルモゴロフ構造関数)</strong><br>
+データセットの情報内容、圧縮可能性、および構造を理解するための理論的枠組みを提供し、AIの効率とエネルギー消費の最適化（エントロピー経済）の研究に応用されている。
+</li>
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1849,7 +1974,8 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <br>
 
 <br>(関連項目)<br>
-・<a href="#DiffusionModel">Diffusion Model</a> (拡散モデル)
+・<a href="#DiffusionModel">Diffusion Model</a> (拡散モデル)<br>
+・<a href="#DiT">DiT: Diffusion Transformers</a>
 </li>
 
 <br>
@@ -1864,6 +1990,15 @@ Continual Learning (継続学習) の別名。<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 ・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks</a> (動的成長ネットワーク)
+</li>
+
+<br>
+<li id="LLMAsAJudge">
+<strong>LLM-as-a-Judge</strong><br>
+人間や従来の評価基準ではなく、大規模言語モデル（LLM）自体を評価者（ジャッジ）として使用し、他のモデルの出力やパフォーマンスを評価する手法。<br>
+<br>
+●『How to Correctly Report LLM-as-a-Judge Evaluations』(2025)<br>
+　LLM-as-a-Judge 評価におけるバイアスを補正し、不確実性を定量化するための統計的フレームワークを開発した。
 </li>
 
 <br>
@@ -2917,14 +3052,15 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 
 <li>
 
-
 <strong>Reversal Curse (反転の呪い)</strong><br>
 大規模言語モデル（LLM）が学習データで「AはBである」という形式の知識を学んでも、「BはAである」という逆の関係を自動的に推論できない、という現象。<br>
 <br>
 (例)「プラトンはアリストテレスを教えた」と学習した言語モデル<br>
 　　「アリストテレスの先生は誰でしたか？」という質問に答えられない。<br>
 　　「BはAの親である」から「AはBの息子である」を推論できない。<br>
-
+<br>
+●『The reversal curse: Llms trained on "a is b" fail to learn "b is a"』(2023)<br>
+　モデルが「逆探索」タスク（値からキーを検索する）において低い性能を示すことを指摘し、この失敗を言語モデルで観察される「反転の呪い（reversal curse）」現象に明示的に結びつけており、より広範なLLM研究との強い関連性を示した。
 </li>
 
 <br>
@@ -3240,7 +3376,8 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <li>
 
 <strong>Spectral Bias (スペクトルバイアス) </strong><br>
-深層学習モデルが学習の初期段階で、対象となる関数やデータの低周波成分（滑らかで大まかな特徴）を優先的に学習し、高周波成分（複雑で細かい特徴）の学習を後回しにする傾向を指す。
+深層学習モデルが学習の初期段階で、対象となる関数やデータの低周波成分（滑らかで大まかな特徴）を優先的に学習し、高周波成分（複雑で細かい特徴）の学習を後回しにする傾向を指す。<br>
+F-Principle: Frequency Principle (周波数優先原則) とも呼ばれる。
 </li>
 
 <br>
@@ -3507,7 +3644,7 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 　論文は<a href="https://arxiv.org/abs/2005.12872">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2005.12872v3">こちら</a><br>
 　物体検出を直接的な集合予測問題として再構築する検出トランスフォーマー (DETR) を導入した。<br>
 <br>(関連項目)<br>
-・<ahref="#DiT">DiT: Diffusion Transformers</a>
+・<a href="#DiT">DiT: Diffusion Transformers</a>
 </li>
 
 <br>
@@ -3756,7 +3893,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <p>
 <div class="styleBullet">
 <ul>
-<li>
+<li id="W2SG">
 <strong>W2SG: Weak-to-strong generalization (弱から強への一般化)</strong><br>
 能力の低い（"弱い"）モデルの監視やフィードバックを使って、能力の高い（"強い"）モデルを訓練する際に、その強いモデルが弱いモデルの性能を上回る形で汎化する現象。<br>
 <br>
@@ -3765,9 +3902,15 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 　論文は<a href="https://arxiv.org/abs/2312.09390">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2312.09390v1">こちら</a><br>
 <br>
 　弱い教師あり学習の下で、強力な生徒が弱い教師よりも優れた性能を発揮できる、弱から強への汎化という概念を初めて導入した。<br>
+<center><img src="data/images/Weak-to-Strong.svg"></center>
+<br>
+●『Selective Weak-to-Strong Generalization』(2025)<br>
+・将来、超人モデルは人間の能力を超え、人間は超人モデルを弱く教師あり学習することしかできなくなります。<br>
+・既存の手法では弱い教師あり学習が常に使用されるため、ロバスト性に問題があり、弱いラベルの一部がモデルに悪影響を与えることが分かっています。<br>
+・本稿では、不要な場合に弱い教師あり学習を避けるための選択的W2SGフレームワークを提案します。<br>
+<center><img src="data/images/SelectiveW2S.svg"></center>
 <br>
 <a href="data/Papers_W2SG.html">Papers</a><br>
-<center><img src="data/images/Weak-to-Strong.svg"></center>
 </li>
 
 <br>
@@ -3842,6 +3985,11 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 ●『World models 』(2018)
 <center><img src="data/images/WorldModel.svg"></center>
 <br>
+●『A Path Towards Autonomous Machine Intelligence』(2022)<br>
+・機械はどうすれば人間や動物と同じくらい効率的に学習できるでしょうか?<br>
+・機械はどうすれば推論と計画を学習できるでしょうか?<br>
+・機械はどうすれば知覚の表現と行動計画を複数の抽象レベルで学習し、複数の時間軸で推論、予測、計画を行えるでしょうか?<br>
+このポジションペーパーは、自律型知的エージェントを構築するためのアーキテクチャとトレーニングパラダイムを提案します。これは、設定可能な予測世界モデル、内発的動機付けによる行動、自己教師学習によってトレーニングされた階層型共同埋め込みアーキテクチャなどの概念を組み合わせたものです。<br>
 <br>
 ●『General agents contain world models』(2025)<br>
 　(汎用エージェントは世界モデルを含む)<br>
@@ -3854,7 +4002,8 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 <br>(関連項目)<br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning</a> (深層強化学習)<br>
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
-・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)
+・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)<br>
+・<a href="https://github.com/knightnemo/Awesome-World-Models">[Github] Awesome World Models</a>
 </li>
 </ul></div></p>
 
