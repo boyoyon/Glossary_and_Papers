@@ -57,13 +57,9 @@
 
 
 <h2>更新項目</h2>
-・<a href="#ActiveInference">Active Inference (能動推論)</a><br>
-・<a href="#FEP">FEP: Free Energy Principle (自由エネルギー原理) </a><br>
-・<a href="#IDEstimation">ID (Intrinsic Dimension) Estimation (固有次元推定, 内在次元推定)</a><br>
-・<a href="#KAN">KAN: Kolmogorov-Arnold Networks</a><br>
-・<a href="#KolmogorovComplexity">Kolmogorov Complexity (コルモゴロフ複雑性)</a><br>
-・<a href="#LLMAsAJudge">LLM-as-a-Judge</a><br>
-・<a href="#W2SG">W2SG: Weak-to-strong generalization (弱から強への一般化)</a><br>
+・<a href="#NGU">NGU: Never Give Up</a><br>
+・<a href="#OneStepGenerator">One-Step Generator</a><br>
+・<a href="#TaskArithmetic">Task Arithmetic (タスク算術)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -2287,7 +2283,8 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 　(モデルスープ：複数のファインチューニング済みモデルの重み平均による、推論時間増加なしの精度向上)<br>
 <br>(関連項目)<br>
 ・<a href="#EnsembleMethod">Ensemble Method (アンサンブル法)</a><br>
-・<a href="#LossLandscape">Loss Landscape (損失景観)</a>
+・<a href="#LossLandscape">Loss Landscape (損失景観)</a><br>
+・<a href="#TaskArithmetic">Task Arithmetic</a> (タスク算術)
 </li>
 
 <br>
@@ -2405,6 +2402,32 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <br>(関連項目)<br>
 ・<a href="#Plateau">Plateau (プラトー)</a><br>
 ・<a href="#Grokking">Grokking</a>
+</li>
+
+<br>
+
+<li id="NGU">
+<strong>NGU: Never Give Up</strong><br>
+・報酬が得られにくい（疎な報酬）環境でエージェントがうまく機能することを目指して開発された強化学習の分野における重要な手法の一つ。<br>
+・エピソード的新規性と内発的動機付けを組み合わせる。<br>
+<br>
+●『Never Give Up: Learning Directed Exploration Strategies』(2020)<br>
+・Atariの57のゲームのうち、Montezuma’s Revenge や Pitfall などの一部のゲームがでは、複雑な行動を取らないと報酬を得ることができず, 人間を超えるAIは長らく現れなかった。<br>
+・NGU戦略は, 疎な報酬環境における強化学習の探索問題を解決するための重要なブレークスルーとなった。<br>
+　(デモや手作業で作成した特徴量を使用せずに、Pitfall!ゲームにおいてゼロ以外の報酬（平均スコア8,400）を達成した最初のアルゴリズムになった)<br>
+<br>
+～その後～<br>
+<br>
+●『Agent57: Outperforming the Atari Human Benchmark』(2020)<br>
+・Atari 2600の全57種類のゲーム全てにおいて、人間のパフォーマンスを上回った最初のAIシステム。<br>
+・探索（新しい行動を試す）と活用（学習済みの最適な行動をとる）のバランスを動的に調整する「メタコントローラー」を導入。<br>
+・NGUやR2D2など, 既存の強化学習アルゴリズムの進化版・組み合わせとして開発された。<br>
+<br>
+●『Human-level Atari 200x faster』(2023)<br>
+・Agent57と比較して200倍の速さでアタリの全ゲームにおいて人間レベルのパフォーマンスを達成した。<br>
+　-  Agent57：約800億フレームという膨大な量の環境との相互作用（プレイ経験）が必要<br>
+　- 200x(MEMEエージェント):3億9000万フレームの経験で人間レベルのパフォーマンスを達成した。 
+
 </li>
 
 <br>
@@ -2551,7 +2574,12 @@ DeepMind社によって2014年に発表された。<br>
 　最も説得力のある応用の一つは、リニアライザーが数百の拡散サンプリングステップを単一の順伝播パスに統合する方法を示すもの。<br>
 <br>
 ●『Terminal Velocity Matching』(2025)<br>
-・フローマッチングの一般化であり、高精度な1ステップおよび数ステップ生成モデリングを可能にする終端速度マッチング（TVM）を提案する。
+・フローマッチングの一般化であり、高精度な1ステップおよび数ステップ生成モデリングを可能にする終端速度マッチング（TVM）を提案する。<br>
+<br>
+●『Adversarial Flow Models』(2025)<br>
+・敵対的モデルとフローモデルを統合した生成モデルの一種である敵対的フローモデルを提案。<br>
+・従来のGANは、生成器がノイズとデータ分布間の任意の輸送計画を学習するが、本手法では、ノイズからデータへの決定論的なマッピングを学習する。これは、フローマッチングモデルと同じ最適な輸送である。これにより、敵対的トレーニングが大幅に安定化する。<br>
+<center><img src="data/images/AFM.svg"></center>
 </li>
 
 <br>
@@ -3526,13 +3554,24 @@ Tabular Data は画像やテキストのように局所的なパターンや階�
 
 <br>
 
-<li>
+<li id="TaskArithmetic">
 <strong>Task Arithmetic (タスク算術)</strong><br>
 学習済みのモデルの重みを足したり引いたりして、複数のタスクの能力を組み合わせたり、特定のタスクの能力を調整したりする技術。<br>
 <br>
 ●『Editing Models with Task Arithmetic』(2022)<br>
 　論文は<a href="https://arxiv.org/abs/2212.04089">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2212.04089v3">こちら</a><br>
-
+<br>
+●『A Systematic Study of Model Merging Techniques in Large Language Models』(2025)<br>
+・4つのオープンウェイトLLM、ベースモデルごとに12の微調整されたチェックポイント、および16の標準LLMベンチマークを対象に、6つの最先端のマージ手法の大規模で体系的な評価を実施。<br>
+・タスク演算が、LLMで確実にパフォーマンスの向上をもたらす唯一のアプローチであることを示している。<br>
+<br>
+●『Escaping Optimization Stagnation: Taking Steps Beyond Task Arithmetic via Difference Vectors』(2025)<br>
+・差分ベクトルを有向摂動として使用しタスク演算法の継続的な最適化プロセスを可能にする、差分ベクトルベースの異方性スケーリング反復アルゴリズム (DV-BASI) を提案。<br>
+<br>(関連項目)<br>
+・<a href="#ModelSoup">Model soups</a> (モデルスープ)<br>
+<br>
+　<strong>Model Soup</strong>：複数のモデルの重みの平均をとる。<br>
+　<strong>Task Arithmetic</strong>: ベースモデルからの「重みの差分（タスクベクトル）」にベクトル演算を施す。
 </li>
 
 <br>
