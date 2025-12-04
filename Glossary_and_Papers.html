@@ -57,9 +57,11 @@
 
 
 <h2>更新項目</h2>
-・<a href="#NGU">NGU: Never Give Up</a><br>
-・<a href="#OneStepGenerator">One-Step Generator</a><br>
-・<a href="#TaskArithmetic">Task Arithmetic (タスク算術)</a><br>
+・<a href="#CoP">CoP: The Collapse of Patches (パッチ崩壊)</a><br>
+・<a href="#EmbodiedCognition">Embodied cognition（身体化された認知）</a><br>
+・<a href="#MonocularGeometricDensePrediction">Monocular geometric dense prediction（単眼幾何学的密予測）</a><br>
+・<a href="#SelfImprove">Self-Improve（自己改善)</a><br>
+・<a href="#Sycophancy ">Sycophancy (おべっか, 追従性)</a></br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -647,7 +649,7 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 
 <br>(関連項目)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
-・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (心の言語仮説)<br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (思考の言語仮説)<br>
 ・Systematic compositionality (体系的構成性, 系統的体構成性) ･･･ 哲学, 認知科学の用語<br>
 ・Infinite use of finite means (有限手段の無限利用)<br>
 　ドイツの言語学者 Wilhelm von Humboldt (ヴィルヘルム・フォン・フンボルト)が提唱し, 後に Noam Chomsky (ノーム・チョムスキー)が「生成文法」理論の核心的な概念として引用して有名になった。
@@ -664,7 +666,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 
 <br>(関連項目)<br>
 ・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
-・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (心の言語仮説)<br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (思考の言語仮説)<br>
 ・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的一般化)
 </li>
 
@@ -741,6 +743,22 @@ SimCLR: 視覚表現の対照学習のためのシンプルなフレームワー
 　(蛇足: 一緒に学習してきた相方を捨てるところが GAN に似ている気がする･･･)<br>
 <br>(関連項目)<br>
 ・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a>
+</li>
+
+<br>
+<li id="CoP">
+<strong>CoP: The Collapse of Patches (パッチ崩壊)</strong><br>
+画像を小さな領域 (パッチ) に分割して処理するモデルにおいて、画像内のある特定のパッチを観察すると、他のパッチに関する不確実性が大幅に減少することがある。この効果は、量子力学における「波動関数の収縮(崩壊)」に類似していると直感的に表現され、「パッチ崩壊」と呼ばれている。<br>
+<br>
+●『The Collapse of Patches』(2025)<br>
+<center><img src="data/images/CoP.svg"></center>
+・パッチの崩壊概念の視覚化。オンドリの鶏冠、くちばし、羽毛のような高ランクのパッチを観察すると、画像全体の不確実性が段階的に減少することを示している。一方、背景の土や草のような相関の低い特徴は、画像理解への寄与が少ない。<br>
+・画像内の特定のパッチを観察すると、他のパッチの不確実性が減少する。それらの実現は、量子力学における粒子の波動関数の崩壊に類似しており、残りの各パッチ特徴の分布エントロピーを低下させる。この現象は直感的にパッチ崩壊と呼ぶことができる。<br>
+・ターゲット領域の崩壊中にどのパッチが最も信頼されているかを識別するために、パッチのサブセットをソフトに選択して各ターゲットパッチを再構築するオートエンコーダを学習する。各パッチの PageRank スコアについて学習したこれらの依存関係をグラフ化すると、画像を実現するための最適なパッチ順序が明らかになる。<br>
+<center><img src="data/images/CoP2.svg"></center>
+・画像が与えられると、CoMAEエンコーダーは各パッチを再構成するために必要な最も影響力のあるパッチを選択する。重要でないパッチは、より強いノイズ注入によってマスクされる。<br>
+・選択重みはパッチ依存グラフを形成し、これに基づいてPageRankスコアを計算してパッチの崩壊順序を決定する。<br>
+・ランキングを使用して、画像生成タスクと分類タスクが正しいパッチ処理順序に従うように教師学習される。
 </li>
 
 <br>
@@ -1110,6 +1128,23 @@ AIモデルもこの効果を起こす。<br>
 <div class="styleBullet">
 <ul>
 
+<li id="EmbodiedCognition">
+<strong>Embodied cognition（身体化された認知）</strong><br>
+心と認知能力が、脳だけでなく体全体の物理的な経験や感覚と深く結びついているとする認知科学の理論。「体があるからこそ、特定の方法で物事を考え、感じる」というアプローチ。<br>
+<br>
+<strong>身体の役割</strong>　思考や学習は、抽象的な脳内プロセスだけでなく、身体の構造（手足の動かしやすさ、姿勢、感覚器官など）に影響を受けたり、それによって形成されたりするという考え方。<br>
+<strong>物理的経験の重要性</strong>　例えば、重いものを「持つ」経験が「重要性」や「深刻さ」といった抽象的な概念の理解に影響を与えたり、温かい飲み物を持つことが他者への信頼感に繋がったりする、といった研究結果がある。<br>
+<strong>環境との相互作用</strong>　認知は、身体が周囲の環境とどのように相互作用するかというダイナミックなプロセスの中で生まれる。 <br>
+<br>
+●『ENACT: Evaluating Embodied Cognition with World Modeling of Egocentric Interaction』(2025)<br>
+・非身体的な方法で訓練された現代の視覚言語モデル(VLM)は、身体性認知の兆候を示すか?<br>
+・視覚的質問応答(VQA)形式における自己中心的相互作用から、身体性認知を世界モデリングとして評価するベンチマークであるENACTを紹介する。<br>
+・2つの補完的なシーケンス並べ替えタスク、<strong>順世界モデル</strong>（行動が与えられた場合にシャッフルされた観測結果を再構成する）と<strong>逆世界モデル</strong>（観測結果が与えられた場合にシャッフルされた行動を再構成する）から構成される。<br>
+・これらのタスクを解決するには、暗黙的に、部分的に観察可能な自己中心的な入力からの具体化された認知アフォーダンス認識、行動効果推論、具体化された意識、および対話型の長期的記憶に中心的な機能が要求される。<br>
+</li>
+
+<br>
+
 <li id="EnsembleMethod">
 <strong>Ensemble Method (アンサンブル法)</strong><br>
 複数の機械学習モデルを組み合わせて、単一のモデルよりも高い予測精度や安定性を目指す手法。<br>「三人寄れば文殊の知恵」の機械学習版。<br>
@@ -1316,7 +1351,12 @@ ERMではない学習アプローチはあるのか?<br>
 <br>
 <strong>ShinkaEvolve</strong><br>
 　・Sakana AIによって開発されたフレームワークで、LLMと進化的アルゴリズムを組み合わせ、特に効率性（サンプル効率）とオープンエンドな探索に焦点を当てている。<br>
-　●『ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution』ShinkaEvolve(2025)
+　●『ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution』ShinkaEvolve(2025)<br>
+<br>
+<strong>ThetaEvolve</strong><br>
+●『ThetaEvolve: Test-time Learning on Open Problems』(2025)<br>
+・AlphaEvolveは新たな境界を達成するために最先端のLLMのアンサンブルに依存しており、モデルが進化戦略を内部化することができない純粋な推論システムである。<br>
+・本稿では、AlphaEvolve を簡素化・拡張し、コンテキスト内学習と強化学習（RL）の両方をテスト時に効率的にスケーリングするオープンソースフレームワークである ThetaEvolveを紹介する。
 
 </li>
 
@@ -1480,6 +1520,21 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 <br>(関連項目)<br>
 ・<a href="#RAG">RAG: Retrieval-Augmented Generation</a> (検索拡張生成)<br>
 ・<a href="#RLHF">RLHF: Reinforcement Learning from Human Feedback</a> (人間のフィードバックによる学習)
+</li>
+
+<br>
+
+<li id="HHH">
+<strong>HHH: Helpful, Honest, and Harmless (有益、誠実、無害)</strong><br>
+AI（人工知能）システム、特に大規模言語モデル(LLM)の設計と運用における重要な行動指針(原則)。AIを人間の価値観に整合させる(アライメント)ためのフレームワークとして、Anthropic社などによって提唱された。<br>
+<br>
+<strong>Helpful (有益)</strong>　AIは、ユーザーの目標達成を支援するために、正確で関連性のある情報やサービスを提供する必要がある。単に情報を提示するだけでなく、実際に役立つ存在であることが求めらる。<br>
+<br>
+<strong>Honest (誠実)</strong>　AIは、透明性と真実性を確保し、事実に基づいた情報を提供する必要がある。不確実な情報や誤解を招く可能性がある場合(例：画像診断の不確実性)、それを率直に認め、明確に伝えることが求められる。<br>
+<br>
+<strong>Harmless (無害)</strong>　AIは、差別的、攻撃的、非倫理的、または危険なコンテンツを生成するなど、いかなる形でも害を及ぼすことを避ける必要がある。バイアスを軽減し、安全性を優先することが重要。<br>
+<br>(関連項目)<br>
+・<a href="#AIAlignment">AI Alignment</a> (AIアライメント) 
 </li>
 
 <br>
@@ -2095,7 +2150,7 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <br>
 
 <li id="LoTH">
-<strong>LoTH: Language of Thought hypothesis (心の言語仮説)</strong><br>
+<strong>LoTH: Language of Thought hypothesis (思考の言語仮説)</strong><br>
 人間の思考は言語のような構造を持っており、その思考は「メンタリーズ (mentalese)」と呼ばれる生得的な（生まれつき備わっている）内的な言語によって行われるという認知科学・哲学の仮説。<br>
 ・思考は、私たちが日常的に話す言語 (日本語や英語など) と同様に、単語のような要素 (概念) とそれらを組み合わせる文法のような規則を持っているとされる。<br>
 ・「心の言語 (メンタリーズ) 」は学習によって獲得されるものではなく、人間が生まれつき持っている普遍的な認知メカニズムの一部であると主張される。<br>
@@ -2123,10 +2178,15 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 ●『Cognitive Foundations for Reasoning and Their Manifestation in LLMs』(2025)<br>
 ・LLMが認知的要素を展開する方法、特に構造化されていない問題において、人間の認知と体系的な違いがあることを発見。<br>
 ・人間のような推論構造に基づくテスト時ガイダンスがLLMの性能を最大60%向上させる可能性があることを示した。<br>
+<br>
+●『ORION: Teaching Language Models to Reason Efficiently in the Language of Thought』(2025)<br>
+・冗長な「思考」トークンの長い連鎖に依存するため、レイテンシの増大、冗長性、そして矛盾した推論パスが生じる。人間の推論は Mentalese と呼ばれる記号的かつ構成的な精神言語に基づいているという思考言語仮説に着想を得て、我々はモデルが同様にコンパクトなスタイルで推論するように訓練するフレームワークを導入する。Mentalese は抽象的な推論を超圧縮された構造化トークンとしてエンコードすることで、モデルがはるかに少ないステップで複雑な問題を解くことを可能にする。<br>
+
 <br>(関連項目)<br>
 ・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的一般化)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
 ・サピア＝ウォーフの仮説: 話者が使用する特定の公的言語 (日本語、英語など) が、その人の思考や世界観を決定または強く影響する。
+
 </li>
 
 <br>
@@ -2302,6 +2362,21 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 　(ニューロンエキスパートの混合)
 </li>
 <center><img src="data/images/MoE.svg"></center>
+
+<br>
+
+<li id="MonocularGeometricDensePrediction">
+<strong>Monocular geometric dense prediction（単眼幾何学的密予測）</strong><br>
+単眼カメラからの入力画像のみを使用して、シーンの精密な3次元の幾何学的情報を推定する手法やタスク。<br>
+・<strong>Monocular (単眼)</strong>　1つのカメラからの画像データのみを使用する。<br>
+・<strong>Geometric (幾何学的)</strong>　推定される情報が、奥行き、表面の法線、3D空間内の位置といった、シーンの形状や構造に関連する物理的な量であることを指す。<br>
+・<strong>Dense Prediction (密予測)</strong>　入力画像内の全てのピクセルに対して、対応する幾何学的情報を推定することを意味する。例えば、画像内の各ピクセルがどれだけ離れているかを予測する場合、画像全体を覆う奥行きマップ（デプス画像の形で表現されることが多い）が結果となる。<br>
+<br>
+●『Lotus-2: Advancing Geometric Dense Prediction with Powerful Image Generative Model』(2025)<br> 
+・大規模生成モデル、特に数十億の画像とテキストのペアで訓練された拡散モデルの出現は、「世界事前知識」— 幾何学、意味、物理的整合性の暗黙的な表現 — を導入した。しかし、これらの生成モデルを密予測タスクに直接適応させる既存のアプローチは、確率的な生成目的と、幾何学的推論に必要とされる決定的で正確な予測との間に根本的なミスマッチを抱えている。<br>
+・Lotus-2は、拡散モデルを確率的ジェネレーターとして扱うのではなく、その事前学習済み重みを決定論的な幾何学的予測のための構造化された世界事前知識として活用するというパラダイムシフトを通じて、これらの制限に対処する。このアプローチは、既存の大規模手法が必要とする訓練データのわずか0.09% (59K) しか使用せずに、単眼深度推定で最先端の性能を達成する。<br>
+<center><img src="data/images/Lotus2.svg"></center>
+</li>
 
 <br>
 
@@ -2693,7 +2768,6 @@ DeepMind社によって2014年に発表された。<br>
 <br>
 
 <li>
-
 <strong>Perceptual Metric (知覚メトリック, 知覚的距離)</strong><br>
 画像や音声などの信号を、人間が感じる品質や類似性にどれだけ近い形で評価できるかを測る指標のこと。<br>
 LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Distance)などがある。
@@ -2761,6 +2835,14 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 ・Actor-Critic (アクター・クリティック法)<br>
 ・PPO: Proximal Policy Optimization (近傍方策最適化)<br>
 ・TRPO: Trust Region Policy Optimization (トラスト・リージョン方策最適化)<br> などがある。
+</li>
+
+<br>
+
+<li id="PolicyStaleness">
+<strong>policy staleness (ポリシーの陳腐化)</strong><br>
+<strong>非同期システム</strong>　大規模なシステムでは、複数の「アクター」（データを収集するための実行役）と「学習者」（ポリシーを更新する計算役）が非同期に動作することがある。アクターが古いバージョンのポリシー（方策）を使って環境からデータを収集し続けている間に、学習者側ではポリシーが最新のものに更新されてしまう、という時間的ギャップが生じる。<br>
+<strong>データの「古さ」</strong>　時間的ギャップにより、学習者が受け取るデータは、現在の最新のポリシーではなく、古い（陳腐化した）ポリシーによって生成されたものになる。 
 </li>
 
 <br>
@@ -3097,6 +3179,9 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 
 <strong>Reward Hacking (報酬ハッキング)</strong><br>
 強化学習エージェントが、設計者が意図した本来の目的を達成するのではなく、報酬関数の欠陥や抜け穴を悪用して不当に高い報酬を得ようとする現象。「仕様の悪用（Specification Gaming）」とも呼ばる。 <br>
+<br>
+●『Specification gaming: the flip side of ai ingenuity』(2020)<br>
+　(仕様ゲーミング：AIの創意工夫の裏側)<br>
 <br>(関連項目)<br>
 ・<a href="#GoodhartsLaw">Goodhart's Law (グッドハートの法則)</a><br>
 　類似の現象を経済学や社会科学の文脈で説明したもの。
@@ -3222,8 +3307,19 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 <br>(関連項目)<br>
 ・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり
 </li>
+
 <br>
 
+<li id="SelfImprove">
+<strong>Self-Improve（自己改善)</strong><br>
+人間からの直接的な介入なしに、AIシステムが自らの性能、能力、あるいはアルゴリズム自体を自律的に向上させる技術や概念。<br>
+<br>
+●『G&ouml;del machines: Fully self-referential optimal universal self-improvers.』(2007)<br>
+・証明可能な形で自己改善するAIへの理論的アプローチを導入した。厳格な「形式的証明」の要件のために、理論上は可能であるものの、現実世界での完全な実装は極めて困難だった。<br>
+●『Darwin G&ouml;del Machine: Open-Ended Evolution of Self-Improving Agents』(2025)<br>
+・G&ouml;del Machineの理論的な制約を緩和した実用的なアプローチ。形式的な証明ではなく、ダーウィン的な進化のアルゴリズム（試行錯誤と経験的な評価）に基づいて自己改善を行う。<br>
+●『Huxley-G&ouml;del Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine』(2025)<br>
+・<strong>系統群メタ生産性 (Clade Metaproductivity, CMP)</strong>　特定のエージェント（親）が生成したすべての子孫（系統群）のパフォーマンスを集計し、その親が持つ「将来的な自己改善の潜在能力」を推定する新しい評価指標を用いる。
 <li>
 
 <strong>Self-Play(自己対局)</strong><br>
@@ -3494,12 +3590,26 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 <strong>Sycophancy (おべっか, 追従性)</strong><br>
 大規模言語モデル（LLM）が、ユーザーの意見や信念に合わせて、たとえそれが客観的に見て誤っていたり、偏っていたりしても、過剰に同意したり迎合したりする傾向のこと。<br>
 <br>
-『Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence』(2025)<br>
+● <a href="https://www.cold-takes.com/why-ai-alignment-could-be-hard-with-modern-deep-learning/">現代のディープラーニングではAIの調整が難しい理由</a> (2021)<br>
+　「両親から1兆ドル規模の企業を託された8歳の子供を想像してみてください。世界を導いてくれる信頼できる大人はいません。あなたは賢い大人をCEOとして雇い、会社を経営し、親のように自分の人生を管理し（例えば、学校、住む場所、歯医者に行く時間など）、莫大な財産を管理しなければなりません（例えば、お金をどこに投資するかなど）。<br>
+　　　：<br>
+　あなたはとても裕福なので、さまざまな理由で大勢の人が応募してきます。<br>
+<br>
+　<strong>聖人</strong>　あなたの財産をうまく管理し、あなたの長期的な利益を守ることを心から支援したい人々です。<br>
+　<strong>追従者</strong>　長期的な結果に関係なく、あなたを短期的に満足させたり、あなたの指示を文字通り満たしたりするために、何でもしたい人々。<br>
+　<strong>陰謀家</strong>　独自の計画を持ち、あなたの会社とその富と権力にアクセスして、それを好きなように利用しようとする人々。<br>
+　　　：<br>
+　君はまだ 8 歳なので、適切な種類の作業テストを設計するのが苦手でしょう。そのため、簡単に「おべっか使い」や「陰謀家」になってしまう可能性があります。<br>
+　　　：<br>
+　8歳の子供は、強力なディープラーニングモデルを訓練しようとしている人間です。採用プロセスは、訓練プロセスに似ています。訓練プロセスは、暗黙的に、可能性のあるモデルの広大な空間を探索し、優れたパフォーマンスを発揮するモデルを選び出します。<br>
+<br>
+●『Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence』(2025)<br>
 　(追従的なAIは社会貢献意欲を低下させ、依存を促進する)<br>
 　論文は<a href="https://arxiv.org/abs/2510.01395">こちら</a><br>
 　人々がAIに助言を求める際に、おべっかが蔓延し、有害な影響を及ぼすことを示す。<br>
 <br>(関連項目)<br>
 ・<a href="#AIAlignment">AI Alignment</a>
+
 </li>
 
 <br>
@@ -3659,6 +3769,22 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 <br>(関連項目)<br>
 ・<a href="#CoT">CoT: Chain-of-Thought</a> (思考連鎖)･･･概略図比較あり<br>
 ・GoT: Graph of Thoughts
+</li>
+
+<br>
+
+<li id="TrainingInferenceDiscrepancy">
+<strong>training-inference discrepancy (訓練時と推論時の不一致, 学習・推論ミスマッチ)</strong><br>
+モデルの訓練（学習）段階と、訓練後の推論（実際の運用）段階で、環境や条件が異なることによって性能が低下する現象。<br>
+<br>
+<strong>分布シフト (Distribution Shift)</strong>　訓練に使用したデータと、実際の運用時に入力されるデータの統計的性質が異なる場合に発生する。<br>
+
+<strong>露出バイアス (Exposure Bias)</strong>　特に時系列データや自然言語処理の生成モデル（オートリグレッシブモデル）で発生しやすい問題。訓練時には正解の過去のデータ（ゴールドトークン）を入力として次の予測を行うが、推論時にはモデル自身の予測結果を次の入力とするため、予測が一度間違うと連鎖的に誤りが拡大することがある。<br>
+
+<strong>数値精度の違い</strong>　訓練時と推論時で異なる数値精度（例：訓練ではBF16、推論ではFP16など）を使用することで、丸め誤差が生じ、性能に影響が出ることがある。<br>
+
+<strong>訓練時特有の技術（例：Dropout、Batch Normalizationの動作モード）</strong>　 訓練時のみに使用される正則化手法などが、推論時には異なる振る舞いをすることによる差異。
+<br>
 </li>
 
 <br>
