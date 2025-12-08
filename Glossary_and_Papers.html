@@ -57,11 +57,10 @@
 
 
 <h2>更新項目</h2>
-・<a href="#CoP">CoP: The Collapse of Patches (パッチ崩壊)</a><br>
-・<a href="#EmbodiedCognition">Embodied cognition（身体化された認知）</a><br>
-・<a href="#MonocularGeometricDensePrediction">Monocular geometric dense prediction（単眼幾何学的密予測）</a><br>
-・<a href="#SelfImprove">Self-Improve（自己改善)</a><br>
-・<a href="#Sycophancy ">Sycophancy (おべっか, 追従性)</a></br>
+・<a href="#CodeAsTool">Code-as-tool</a><br>
+・<a href="#SelfRefine">Self-Refine (自己改善)</a><br>
+・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis (普遍重み部分空間仮説)</a><br>
+・<a href="#UVFA">UVFA: Universal Value Function Approximators</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -598,6 +597,24 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 </li>
 
 <br>
+
+<li id="CodeAsTool">
+<strong>Code-as-tool</strong><br>
+AIモデルがタスクを完了するために内部的にコード（通常はPython）を生成、実行、デバッグする機能やアプローチ。複雑な計算、データ分析、論理的推論など、従来のテキストベースの応答だけでは難しい問題を解決するために使用される。<br>
+<br>
+●『PAL: Program-aided Language Models』(2022)<br>
+・CoT の概念をさらに発展させ、思考連鎖を自然言語ではなく、実行可能なコード (Python) として表現するというアイデアを導入した。<br>
+<br>
+●『Toolformer: Language Models Can Teach Themselves to Use Tools』(2023)<br>
+　(ToolFormer: ツールフォーマー：言語モデルはツールの使い方を自ら学習できる)<br>
+・言語モデルがシンプルなAPIを介して外部ツールの利用を自ら学習し、両方の長所を活かすことができることを示す。<br>
+・どのAPIをいつ呼び出すか、どのような引数を渡すか、そしてその結果を将来のトークン予測にどのように組み込むのが最適かを決定するように学習される。<br>
+・これは自己教師あり学習で行われ、各APIについて数回のデモン​​ストレーションを行うだけで済む。<br>
+・Toolformerは、コアとなる言語モデリング能力を犠牲にすることなく、ゼロショット性能を大幅に向上させ、多くの場合、はるかに大規模なモデルに匹敵する性能を実現する。
+</li>
+
+<br>
+
 
 <li id="CognitiveAgent">
 <strong>Cognitive Agent (認知エージェント)</strong><br>
@@ -1141,6 +1158,10 @@ AIモデルもこの効果を起こす。<br>
 ・視覚的質問応答(VQA)形式における自己中心的相互作用から、身体性認知を世界モデリングとして評価するベンチマークであるENACTを紹介する。<br>
 ・2つの補完的なシーケンス並べ替えタスク、<strong>順世界モデル</strong>（行動が与えられた場合にシャッフルされた観測結果を再構成する）と<strong>逆世界モデル</strong>（観測結果が与えられた場合にシャッフルされた行動を再構成する）から構成される。<br>
 ・これらのタスクを解決するには、暗黙的に、部分的に観察可能な自己中心的な入力からの具体化された認知アフォーダンス認識、行動効果推論、具体化された意識、および対話型の長期的記憶に中心的な機能が要求される。<br>
+<br>(関連項目)<br>
+・disembodied intelligence (身体のない知性), disembodied AI（身体のないAI）<br>
+　物理的な身体を持たずに存在する、あるいは機能する知能, AI。<br>
+
 </li>
 
 <br>
@@ -1524,21 +1545,6 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 
 <br>
 
-<li id="HHH">
-<strong>HHH: Helpful, Honest, and Harmless (有益、誠実、無害)</strong><br>
-AI（人工知能）システム、特に大規模言語モデル(LLM)の設計と運用における重要な行動指針(原則)。AIを人間の価値観に整合させる(アライメント)ためのフレームワークとして、Anthropic社などによって提唱された。<br>
-<br>
-<strong>Helpful (有益)</strong>　AIは、ユーザーの目標達成を支援するために、正確で関連性のある情報やサービスを提供する必要がある。単に情報を提示するだけでなく、実際に役立つ存在であることが求めらる。<br>
-<br>
-<strong>Honest (誠実)</strong>　AIは、透明性と真実性を確保し、事実に基づいた情報を提供する必要がある。不確実な情報や誤解を招く可能性がある場合(例：画像診断の不確実性)、それを率直に認め、明確に伝えることが求められる。<br>
-<br>
-<strong>Harmless (無害)</strong>　AIは、差別的、攻撃的、非倫理的、または危険なコンテンツを生成するなど、いかなる形でも害を及ぼすことを避ける必要がある。バイアスを軽減し、安全性を優先することが重要。<br>
-<br>(関連項目)<br>
-・<a href="#AIAlignment">AI Alignment</a> (AIアライメント) 
-</li>
-
-<br>
-
 <li id="HP">
 <strong>Halpern-Pearl Definition of Actual Causality (ハルパーン-パールの因果関係の定義)</strong><br>
 ・SCM: Structural Causal Models (構造的因果モデル)と呼ばれる枠組みを用いて「特定の出来事 A が出来事 B の原因である」ということを形式的に表現したもの。<br>
@@ -1556,6 +1562,21 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 　- A と B が選言(formulas involving disjunctions: 論理和を含む論理式)、否定(negations)、信念(beliefs)、入れ子の反事実(nested counterfactuals)を含む式であっても、A が B の原因であるかどうかを判断するために定義を適用することができる。<br>
 　- さらに、因果モデルを超えて適用できる説明の抽象的な定義を得るためにアイデアを拡張することができまる。<br>
 　- 最後に, 因果モデルにおける定義の特徴についてより深い理解を得ることができる。<br> 
+</li>
+
+<br>
+
+<li id="HHH">
+<strong>HHH: Helpful, Honest, and Harmless (有益、誠実、無害)</strong><br>
+AI（人工知能）システム、特に大規模言語モデル(LLM)の設計と運用における重要な行動指針(原則)。AIを人間の価値観に整合させる(アライメント)ためのフレームワークとして、Anthropic社などによって提唱された。<br>
+<br>
+<strong>Helpful (有益)</strong>　AIは、ユーザーの目標達成を支援するために、正確で関連性のある情報やサービスを提供する必要がある。単に情報を提示するだけでなく、実際に役立つ存在であることが求めらる。<br>
+<br>
+<strong>Honest (誠実)</strong>　AIは、透明性と真実性を確保し、事実に基づいた情報を提供する必要がある。不確実な情報や誤解を招く可能性がある場合(例：画像診断の不確実性)、それを率直に認め、明確に伝えることが求められる。<br>
+<br>
+<strong>Harmless (無害)</strong>　AIは、差別的、攻撃的、非倫理的、または危険なコンテンツを生成するなど、いかなる形でも害を及ぼすことを避ける必要がある。バイアスを軽減し、安全性を優先することが重要。<br>
+<br>(関連項目)<br>
+・<a href="#AIAlignment">AI Alignment</a> (AIアライメント) 
 </li>
 
 <br>
@@ -2048,8 +2069,11 @@ Continual Learning (継続学習) の別名。<br>
 <strong>LLM-as-a-Judge</strong><br>
 人間や従来の評価基準ではなく、大規模言語モデル（LLM）自体を評価者（ジャッジ）として使用し、他のモデルの出力やパフォーマンスを評価する手法。<br>
 <br>
+●『From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge』(2024)<br>
+・LLM-as-ajudge (LLMを判断基準とする)パラダイムについて, 何を判断すべきか、どのように判断すべきか、どのようにベンチマークすべきか, 課題, 将来展望を考察。<br>
+<br>
 ●『How to Correctly Report LLM-as-a-Judge Evaluations』(2025)<br>
-　LLM-as-a-Judge 評価におけるバイアスを補正し、不確実性を定量化するための統計的フレームワークを開発した。
+・LLM-as-a-Judge 評価におけるバイアスを補正し、不確実性を定量化するための統計的フレームワークを開発した。
 </li>
 
 <br>
@@ -3319,7 +3343,9 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 ●『Darwin G&ouml;del Machine: Open-Ended Evolution of Self-Improving Agents』(2025)<br>
 ・G&ouml;del Machineの理論的な制約を緩和した実用的なアプローチ。形式的な証明ではなく、ダーウィン的な進化のアルゴリズム（試行錯誤と経験的な評価）に基づいて自己改善を行う。<br>
 ●『Huxley-G&ouml;del Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine』(2025)<br>
-・<strong>系統群メタ生産性 (Clade Metaproductivity, CMP)</strong>　特定のエージェント（親）が生成したすべての子孫（系統群）のパフォーマンスを集計し、その親が持つ「将来的な自己改善の潜在能力」を推定する新しい評価指標を用いる。
+・<strong>系統群メタ生産性 (Clade Metaproductivity, CMP)</strong>　特定のエージェント（親）が生成したすべての子孫（系統群）のパフォーマンスを集計し、その親が持つ「将来的な自己改善の潜在能力」を推定する新しい評価指標を用いる。<br>
+<br>(関連用語)<br>
+・<a href="#SelfRefine">Self-Refine</a> (自己改善)
 </li>
 
 <br>
@@ -3334,9 +3360,20 @@ AIが自分自身を対戦相手として繰り返しプレイすることで、
 
 <br>
 
+<li id="SelfRefine">
+<strong>Self-Refine (自己改善)</strong><br>
+主に大規模言語モデル（LLM）が、自身の生成した出力（回答やコードなど）を、自身のフィードバックに基づいて反復的に評価・修正し、品質を向上させるためのフレームワークや手法。<br>
+<br>
+●『Self-Refine: Iterative Refinement with Self-Feedback』(2023)<br>
+・人間が文章を洗練させる方法に着目し、反復的なフィードバックと洗練を通してLLMの初期出力を改善するアプローチであるSelf-Refineを紹介する。<br>
+・主なアイデアは、LLMを用いて初期出力を生成し、その後、同じLLMがその出力に対するフィードバックを提供し、それを用いて反復的に自己を洗練させる。<br>
+<br>(関連項目)<br>
+・<a href="#SelfImprove">Self-Improve</a> (自己改善)
+</li>
+
+<br>
+
 <li>
-
-
 <strong>Self-Replicating (自己複製)</strong><br>
 AIシステムが自らのコードや構造を複製、または改良して新しいAIを生み出す能力を持つこと。
 </li>
@@ -3825,6 +3862,9 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 ・<strong>Vision-based TTC estimation (視覚ベースTTC推定)</strong><br>
 　画像シーケンス(動画)だけから、オプティカルフローなどの物体の動きの推定を用いてTTCを直接推定する技術。<br>
 <br>
+　●『心を生み出す脳のシステム』(茂木健一郎)<br>
+　　実は、三角関数と微分法を使った簡単な計算により、<strong><span style="color:magenta;">視覚とその変化率だけから、物体の実際の大きさや距離に関係なく、「衝突までの時間」は常に計算できる</span></strong>のである。つまり、網膜に映る情報のみから、このままの速度で飛んでいったら何秒後に衝突するかという情報を、知ることができるのである。別の言い方をすれば、「衝突までの時間」だけが、唯一計算できる量なのである。<br>
+<br>
 ・<strong>RL: Reinforcement Learning (強化学習) とTTC</strong><br>
 　自動運転車の運転ポリシー（行動規範）を学習する際に、TTCを報酬関数の一部として組み込むことがある。例えば、「TTCが短くなりすぎると大きな負の報酬（ペナルティ）を与える」ことで、AIが安全な車間距離を保つ運転行動を自律的に学習するように促す。
 </li>
@@ -3906,6 +3946,34 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 
 </li>
 
+<br>
+
+<li id="UniversalWeightSubspaceHypothesis">
+<strong>The Universal Weight Subspace Hypothesis (普遍重み部分空間仮説)</strong><br>
+異なるタスクで訓練されたニューラルネットワークであっても、それらの重み（パラメータ）が非常に類似した低次元のパラメータ部分空間に集約される、ということを示唆する仮説。<br>
+<br>
+●『The Universal Weight Subspace Hypothesis』(2025)<br>
+・多様なタスクで訓練された深層ニューラルネットワークは、驚くほど類似した低次元パラメトリック部分空間を示すことを実証する。ニューラルネットワークが初期化、タスク、ドメインに関わらず、共通のスペクトル部分空間に体系的に収束することを実証する、初めての大規模な経験的証拠を提供する。<br>
+・この現象を駆動する正確なメカニズムは未だ解明されていませんが、これらの共通構造の出現にはいくつかの理論的要因が寄与していると考えられます。まず、ニューラルネットワークは低周波関数へのスペクトルバイアスを示すことが知られており、固有値の多項式減衰を引き起こし、学習ダイナミクスを少数の支配的な方向に集中させます。<br>
+・第二に、現代のアーキテクチャは、解空間を制約する強い帰納的バイアスを課す。畳み込み構造は本質的に、局所的なガボールのようなパターンを好む 、注意メカニズムは、反復的な関係回路を優先します。<br>
+・第三に、勾配ベースの最適化の普遍性 - 無限幅の極限においてタスクの詳細に対してほぼ不変であるカーネルによって制御される – 本質的に滑らかな解を好み、多様な学習軌跡を共有幾何学的多様体に向けている。<br>
+・これらの仮説が成り立つならば、普遍的な部分空間は特定のタスクを
+超越する基本的な計算パターンを捉えている可能性が高く、転移学習の有効性や、多様な問題が同様のアーキテクチャの変更から恩恵を受けることが多い理由を説明できる可能性がある。<br>
+・今後の研究の興味深い方向性として、データから直接導出可能な普遍的共有部分空間を学習するためのモデル非依存手法を探求することが考えられる。
+</li>
+
+<br>
+
+<li id="UVFA">
+<strong>UVFA: Universal Value Function Approximators</strong><br>
+強化学習において、状態 (\(s\)) だけでなく目標 (\(g\)) に対しても汎化する単一の価値関数近似器。従来の価値関数は特定の目標に対する状態の価値 \(V(s)\) を推定していたが、UVFAは目標を入力として追加し、\(V(s,g)\) を推定する。<br>
+<br>
+・<strong>汎化能力</strong>:　単一のモデルで複数の異なる目標に対応できるため、学習していない新しい目標に対しても価値を推定し、適切な行動を選択できる可能性がある。<br>
+・<strong>効率的な学習</strong>:　状態空間と目標空間の両方の構造を利用することで、大規模な問題においても効率的に学習を進めることができる。<br>
+・<strong>埋め込み表現の利用</strong>:　観測された価値を状態と目標の別々の埋め込みベクトルに分解し、それらの写像を学習する効率的な手法が開発されている。<br>
+<br>
+●『Universal Value Function Approximators』(2015)<br>
+</li>
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
