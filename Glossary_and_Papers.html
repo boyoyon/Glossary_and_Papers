@@ -57,10 +57,12 @@
 
 
 <h2>更新項目</h2>
-・<a href="#CodeAsTool">Code-as-tool</a><br>
-・<a href="#SelfRefine">Self-Refine (自己改善)</a><br>
-・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis (普遍重み部分空間仮説)</a><br>
-・<a href="#UVFA">UVFA: Universal Value Function Approximators</a><br>
+・<a href="#CSB">CSB: Choice Supportive Bias (選択支持バイアス)</a><br>
+・<a href="#ICL">ICL: In-Context Learning (文脈内学習)</a><br>
+・<a href="#ModelMerge">Model Merge (モデルマージ)</a><br>
+・<a href="#Oracle">Oracle (神託)</a><br>
+・<a href="#RelationalSimilarity">Relational Similarity (関係類似性)</a><br>
+・<a href="#SemanticAnchoring">Semantic Anchoring (セマンティックアンカリング)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -376,12 +378,32 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 
 <br>
 
+<li id="Akrasia">
+<strong>Akrasia (アクラシア)</strong><br>
+古代ギリシア語に由来する哲学・倫理学の用語で、平たく言えば「わかっちゃいるけど、やめられない」という、人間の「意志の弱さ」や「自制心の欠如」を表す概念。<br>
+<br>
+●『The Seeds of Scheming: Weakness of Will in the Building Blocks of Agentic Systems』(2025)<br>
+　(陰謀の種子：エージェントシステムの構成要素における意志の弱さ)<br>
+大規模言語モデルは、特異な形態の矛盾を示す。すなわち、正解を「知っている」にもかかわらず、それに基づいて行動しないという点である。人間の哲学では、この全体的判断と局所的衝動の間の緊張関係は、アクラシア、すなわち意志の弱さと呼ばれる。我々は、エージェントAIシステムにおける矛盾と目標の逸脱を分析するための基礎概念として、アクラシアを提案する。
+<br>
+</li>
+
+<br>
+
 <li><strong>Anna Karenina Principle (アンナ・カレーニナの法則)</strong><br>
  トルストイの長編小説『アンナ・カレーニナ』<br>
  「幸せな家族はどれも同じように見え、不幸な家族はそれぞれに不幸である」<br>
 <br>
 「成功には必要条件を全て満たさなければならないが、失敗は1つ欠けるだけで起こる」という原則。文学作品の一節に由来し、生態学や経営学など幅広い分野で引用されてきたが、近年では機械学習の分野においても言及されるようになった。<br>
 <center><img src="data/images/AnnaKareninaPrinciple.svg"></center>
+</li>
+
+<br>
+
+<li id="AntiExplorationPrinciple">
+<strong>anti-exploration principle (反探索原則)</strong><br>
+主にオフライン強化学習 (Offline Reinforcement Learning: Offline RL) の文脈で使われる概念。オンライン強化学習における「探索（Exploration）」とは正反対の目的、すなわち「データセットの範囲外の行動（未知の行動）を意図的に避ける」という原則。<br>
+オフライン強化学習では、あらかじめ収集された固定のデータセットのみを使って学習を行う。この際、学習中のエージェントがデータセットに存在しない行動（未知の行動）を選択しようとすると、その結果を正確に予測できず、学習が不安定になったり、性能が過大評価されたりする「分布外 (Out-Of-Distribution: OOD) 行動」の問題が発生する。反探索原則は、この問題を回避するために導入される。
 </li>
 
 <br>
@@ -814,6 +836,28 @@ AI、特にVision-Language Models（VLM: 画像言語モデル）における推
 
 <br>
 
+<li id="CSB">
+<strong>CSB: Choice Supportive Bias (選択支持バイアス)</strong><br>
+自分が下した選択を後から正当化し、選ばなかった選択肢を過小評価する認知バイアス。<br>
+<br>
+<strong>選択の美化</strong>: 人は、一度何かを選ぶと、その選択肢の良い点を実際よりも過大に評価する傾向がある。<br>
+
+<strong>非選択肢の軽視</strong>: 反対に、選ばなかった選択肢の欠点を強調したり、良い点を忘れてしまったりする。<br>
+
+<strong>後悔の軽減</strong>: このバイアスは、自分の決定に対する満足感を高め、意思決定後の後悔（バイヤーズリモース）を減らすための防衛機制として働く。<br>
+
+<strong>記憶の歪曲</strong>: 記憶が関与しており、選択を裏付けるように過去の記憶が歪められることがある。<br>
+<br>
+●『Alleviating Choice Supportive Bias in LLM with Reasoning Dependency Generation』(2025)<br>
+　(推論依存関係生成によるLLMにおける選択支持バイアスの軽減)<br>
+　「最近の研究では、一部の大規模言語モデルが評価を行う際に選択支持バイアス（CSB）を示し、選択されたオプションを体系的に支持し、AI支援による意思決定の客観性を損なう可能性があることが実証されている･･･」<br>
+<br>(関連項目)<br>
+・post-purchase rationalization (購入後合理化) ･･･ Choice Supportive Bias (選択支持バイアス)の別名。<br>
+　購入した楽曲, 映画館に観に行った映画･･･
+</li>
+
+<br>
+
 <li id="CuriosityDriven">
 <strong>Curiosity-driven（好奇心駆動型）</strong><br>
 強化学習において、エージェントが未知の状態や予測が困難な環境を積極的に探索するように、内発的な動機づけを与える手法のこと。<br>
@@ -1207,6 +1251,7 @@ AIモデルもこの効果を起こす。<br>
 </ul>
 <br>(関連項目)<br>
 ・<a href="#PAC">PAC Learning: Probably Approximately Correct Learning (確率的で近似的に正しい学習)</a><br>
+・<a href="#ModelMerge">Model Merge</a> (モデルマージ)<br>
 ・<a href="#ModelSoup">Model soups (モデルスープ)</a> ･･･ Ensemble Method は推論時に複数のモデルを動作させるが, モデルスープは複数のモデルの重みを加重平均した単一のモデルを動作させる。<br>
 ・<a href="#Dropout">Dropout</a>
 </li>
@@ -1602,6 +1647,19 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="ICL">
+<strong>ICL: In-Context Learning (文脈内学習)</strong><br>
+大規模言語モデル（LLM）において、モデルのパラメーター（重み）を更新することなく、プロンプト内で与えられた例（文脈）に基づいて新しいタスクを学習し、実行する能力やその手法。従来の機械学習とは一線を画す、LLM特有の非常に強力な機能。<br>
+<br>
+●『Language Models are Few-Shot Learners』(2020)<br>
+　(言語モデルはフューショット学習器である)<br>
+・GPT-3（Generative Pre-trained Transformer 3）という当時としては空前の1,750億パラメータを持つ巨大モデルを発表したもの。<br>
+・巨大化によって、モデルがトレーニング時には明示的に教え込まれていないタスクを、推論時にプロンプトの例示だけで実行できるようになることを実証した。<br>
+・ファインチューニング（再学習）を必要とせず、プロンプト内（コンテキスト内）で数個の例示を与えるだけでタスクをこなすこの能力を「In-context Learning」あるいは「Few-shot Learning」と名付け、言語モデル研究の方向性を決定づけた。
+</li>
+
+<br>
 
 <li id="ICoT">
 <strong>ICoT: Implicit Chain-of-Thoughts Training (暗黙の思考連鎖トレーニング)</strong><br>
@@ -2350,9 +2408,24 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 
 <br>
 
+<li id="ModelMerge">
+<strong>Model Merge (モデルマージ)</strong><br>
+複数の学習済みモデルのパラメータ（重み）を統合し、単一の新しいモデルを構築する手法。<br>
+・モデルスープは, モデルマージの一種。Model Soup ⊂ Model Merge<br>
+・アンサンブル法は推論時にアンサンブルを実施, モデルマージは推論前(モデル作成時)にマージを実施。<br>
+・RegMean、Task Arithmetic、TIES、DARE-TIES、KnOTS-TIES、KnOTS-DARE-TIES などの手法がある。<br>
+　普遍的サブスペースアプローチは、これらの手法を上回る性能を示すとのこと。<br>
+　→ <a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis</a> (普遍重み部分空間仮説)<br>
+<br>(関連項目)<br>
+・<a href="#ModelSoup">Model Merge</a> (モデルマージ)<br>
+・<a href="#EnsembleMethod">Ensemble Method</a> (アンサンブル法)
+</li>
+
+<br>
+
 <li id="ModelSoup">
 
-<strong>Model soups (モデルスープ)</strong><br>
+<strong>Model Soup (モデルスープ)</strong><br>
 異なるハイパーパラメータ（学習率、エポック数など）でファインチューニングされた複数のモデルの重みパラメータを平均化し、単一の高性能モデルを作成する手法。<br>
 <br>
 ●『Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs (2018)』<br>
@@ -2366,6 +2439,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 ●『Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time』(2022)<br>
 　(モデルスープ：複数のファインチューニング済みモデルの重み平均による、推論時間増加なしの精度向上)<br>
 <br>(関連項目)<br>
+・<a href="#ModelMerge">Model Merge</a> (モデルマージ)<br>
 ・<a href="#EnsembleMethod">Ensemble Method (アンサンブル法)</a><br>
 ・<a href="#LossLandscape">Loss Landscape (損失景観)</a><br>
 ・<a href="#TaskArithmetic">Task Arithmetic</a> (タスク算術)
@@ -2687,8 +2761,8 @@ DeepMind社によって2014年に発表された。<br>
 <strong>OOD: Out-of-Distribution Generalization (分布外汎化)</strong><br>
 機械学習モデルが、訓練データとは統計的な性質（分布）が異なる未知のデータに対しても、高い性能を発揮する能力を指す。<br>
 <br>
-●『Towards a theory of out-of-distribution learning』 (2021)
-　論文はこちら<br>
+●『Towards a theory of out-of-distribution learning』 (2021)<br>
+
 
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)･･･概略図比較あり,　 <a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習=継続学習の別名)<br>
@@ -2699,6 +2773,23 @@ DeepMind社によって2014年に発表された。<br>
 <li>
 <strong>Open-Ended Generation </strong><br>
 明確な答えや単一の目標を設定することなく、AIが創造的かつ多様なコンテンツを生成する能力のこと。
+</li>
+
+<br>
+
+<li id="Oracle">
+<strong>Oracle (神託)</strong><br>
+<br>
+・<strong>Oracle Machine (オラクルマシン)</strong><br>
+　理論計算機科学において、特定の決定問題や関数問題を瞬時に解決できる「神託（オラクル）」へのアクセス権を持つ抽象的な計算モデル。<br>
+<br>
+・<strong>Reasoning Oracle (推論オラクル)</strong><br>
+　機械学習では、特定のデータポイントに対する正解ラベルを提供できる「理想的な情報源」を比喩的に「オラクル」と呼ぶことがある。これは通常、人間によるアノテーション（ラベル付け）を指す。<br>
+<br>
+　大規模言語モデル(LLM)の分野では、「推論オラクル」や「推論メカニズム」といった言葉が、モデルの推論能力を評価したり、向上させたりするための技術を指して使われている。例えば、質問応答システムにおいて、モデルが最終的な答えを出す前に中間的な推論ステップ (思考連鎖、Chain-of-Thought) を生成する手法は、推論能力を高めるために「オラクル」として機能する中間テキストを生成していると見なせる。<br>
+<br> 
+・<strong>Test Oracle (テストオラクル)</strong><br>
+　AIシステムのテストにおいて、そのシステムの出力が正しいかどうかを判断するための基準やメカニズムを指す場合がある。
 </li>
 
 <br>
@@ -2879,14 +2970,16 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 
 <br>
 
-<li><strong>Potemkin Understanding (ポチョムキン(的)理解)</strong><br>
+<li id="PotemkinUnderstanding"><strong>Potemkin Understanding (ポチョムキン(的)理解)</strong><br>
 大規模言語モデルがベンチマークの成功に基づいて概念を理解しているように見えるが、真に一貫性のある理解を欠いているという失敗モード。<br>
 ●『Potemkin Understanding in Large Language Models 』(2025)<br>
 　　(大規模言語モデルにおけるポチョムキン理解)<br>
 ・「ポチョムキン理解」   ･･･ 誤った概念的一貫性を捏造する。<br>
 ・「Hallucination(幻覚)」･･･ 誤った事実を捏造する。<br>
 <br>
-※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来している。
+※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来している。<br>
+<br>(関連項目<br>
+・<a href="#StochasticParrot">Stochastic Parrot</a> (確率的オウム)
 </li>
 
 <br>
@@ -3110,6 +3203,35 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 ・<a href="#ill-posed">ill-posed problem (不良設定問題)</a><br>
 ・<a href="#InductiveBias">Inductive Bias (帰納バイアス)</a><br>
 ・<a href="#Dropout">Dropout</a>
+</li>
+
+<br>
+
+<li id="RelationalSimilarity">
+<strong>Relational Similarity (関係類似性) </strong><br>
+2つの異なる物事のペア(単語ペアや画像ペアなど)の間に存在する「関係」そのものの類似度を指す。個々の要素の属性(見た目や特徴)が似ていること(属性類似性)とは対照的な概念。<br>
+<br>
+<strong>Attributional similarity (属性類似性)</strong>: 物事自体の特徴がどれだけ似ているか。例えば、「犬」と「狼」は多くの特徴を共有しているため、属性類似性が高いと言える。<br>
+<strong>Relational similarity (関係類似性)</strong>:　物事間の関係がどれだけ似ているか。異なる要素間であっても、それらを結びつける論理や機能が共通している場合に類似性が高いと判断される。<br>
+<br>
+●『Relational Visual Similarity』(2025)<br>
+　人間は属性の類似性だけでなく、関係性の類似性も認識します。リンゴは桃と似ています。どちらも赤みがかった果物だからです。しかし、地球も桃に似ています。地球の殻、マントル、そして核は、桃の皮、果肉、そして種に対応しています。この関係性の類似性を知覚し認識する能力こそが、人間を他の種と区別するものだ、と認知科学者は主張しています。しかしながら、今日広く使用されている視覚的類似性指標（LPIPS、CLIP、DINOなど）はすべて、知覚的属性の類似性のみに焦点を当てており、人間が知覚する豊かで、しばしば驚くべき関係性の類似性を捉えることができていません。<br>
+<center><img src="data/images/RelationalSimilarity0.svg"></center>
+<center><img src="data/images/RelationalSimilarity1.svg"></center><br>
+(a) LAION-2B から高品質な関係画像を選択する画像フィルタリングモデルを学習する。<br>
+　※ LAION-2B ･･･ AI研究を目的とする非営利団体「LAION」によって作成された大規模な画像とテキストのペアのデータセット<br>
+(b) 匿名キャプションモデルは、同じ基本ロジックを共有する画像グループで学習され、各グループ内のすべての画像に同じ匿名キャプションが付けられる。<br>
+　※ 匿名キャプション ･･･ キャプションが生成された文脈や、特定の参照情報が意図的に伏せられているキャプション<br>
+<br>
+<center><img src="data/images/RelationalSimilarity2.svg"></center><br>
+(c) 関係視覚類似性 (relsim) モデルの学習では、画像特徴とそれに対応する匿名キャプション間のコントラスト損失が生じる。<br>
+<br>
+●『Structure Mapping in Analogy and Similarity』(1997)<br>
+<center><img src="data/images/RelationalSimilarity4.svg"></center><br>
+●『Matching Local Self-Similarities across Images and Videos』(2007)<br>
+<br>
+<center><img src="data/images/SelfSimilarity.png"></center><br>
+これらの画像は、共通の画像特性（色、テクスチャ、エッジ）を共有していませんが、局所的な内部自己相似性の類似した幾何学的レイアウト(ハート形)を共有しています。
 </li>
 
 <br>
@@ -3396,6 +3518,22 @@ AIシステムが自らのコードや構造を複製、または改良して新
 
 <br>
 
+<li id="SemanticAnchoring">
+<strong>Semantic Anchoring (セマンティックアンカリング)</strong><br>
+AIの出力をユーザーが提示する特定の単語、メタファー、またはメンタルモデルに結び付けること。AIがユーザーの概念空間内で動作するように導き、AIの応答がユーザーの意図する意味や文脈と一致するようにする。<br>
+<br>
+●『The Missing Layer of AGI: From Pattern Alchemy to Coordination Physics』(2025)<br>
+　(AGI の欠けている層: パターン錬金術から協調物理学へ)<br>
+<center><img src="data/images/SemanticAnchoring.png"></center><br>
+　<strong>左(エサをまかないつり)</strong>: Semantic Anchorがない場合、モデルは基質(一般的なトークン)の最大尤度事前分布を取得する。<br>
+　<strong>右(Semantic Anchorあり)</strong>：エサ(文脈／目標)を導入することで、有効なサポート(\(ρ_d\))を特定の概念に対して適用する。これにより事後分布が変化し、システムは、訓練の事前分布によって埋もれてしまうような、稀な目標指向的なターゲット(サメ)を捕捉できるようになる。<br>
+<br>(関連用語)<br>
+・Semantic Drift ･･･ 人間が意図しない方向へ意味や文脈が「流されてしまう（ドリフト）」現象。
+</li>
+
+<br>
+
+
 <li>
 
 
@@ -3591,6 +3729,19 @@ F-Principle: Frequency Principle (周波数優先原則) とも呼ばれる。
 ・<a href="#ContrastiveLearning">Contrastive Learning (対照学習)</a><br>
 ・<a href="#GenerativeModel">Generative Model (生成モデル)</a><br>
 ・<a href="#LatentSpace">Latent Space (潜在空間)</a><br>
+</li>
+
+<br>
+
+<li id="StochasticParrot">
+<strong>Stochastic Parrot (確率的オウム)</strong><br>
+現在の大規模言語モデル (LLM) の限界と危険性を指摘するために使われる批判的な比喩表現(メタファー)。<br>
+AI研究者のエミリー・ベンダー (Emily M. Bender)、ティムニット・ゲブル(Timnit Gebru) らによる2021年の影響力のある論文で導入された。<br>
+<br>
+●『On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?』(2021)<br>
+　(確率的オウムの危険性について：言語モデルは大きくなりすぎる可能性があるか?)<br>
+<br>(関連項目)<br>
+・<a href="#PotemkinUnderstanding">Potemkin Understanding</a> (ポチョムキン(的)理解)
 </li>
 
 <br>
