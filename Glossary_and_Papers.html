@@ -57,12 +57,12 @@
 
 
 <h2>更新項目</h2>
-・<a href="#CSB">CSB: Choice Supportive Bias (選択支持バイアス)</a><br>
-・<a href="#ICL">ICL: In-Context Learning (文脈内学習)</a><br>
-・<a href="#ModelMerge">Model Merge (モデルマージ)</a><br>
-・<a href="#Oracle">Oracle (神託)</a><br>
-・<a href="#RelationalSimilarity">Relational Similarity (関係類似性)</a><br>
-・<a href="#SemanticAnchoring">Semantic Anchoring (セマンティックアンカリング)</a><br>
+・<a href="#Akrasia">Akrasia (アクラシア)</a><br>
+・<a href="#FBFF">Feedback control (フィードバック制御) / Feedfoward control (フィードフォワード制御)</a><br>
+・<a href="#RoPE">RoPE: Rotary Positional Embedding </a><br>
+・<a href="#"></a><br>
+・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis (普遍重み部分空間仮説)</a><br>
+<br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -129,7 +129,9 @@ Diffusion Model (拡散モデル) の学習および画像生成の過程にお�
 ・異種エージェント(家計/企業/政府/中央銀行)と豊富な相互作用を持つ解釈可能なマクロ経済システムをモデル化するマルチエージェントフレームワーク「SimCity」を開発<br>
 ・<strong><span style="color:magenta;">価格弾力性、エンゲルの法則、オークンの法則、フィリップス曲線、ベバリッジ曲線など</span></strong>の標準的なマクロ経済現象のチェックリストを作成し、SimCity がシミュレーション実行全体にわたって堅牢性を維持しながら<strong><span style="color:magenta;">これらの経験的パターンを自然に再現する</span></strong>ことを示した。<br>
 <br>
+<!--
 <center><img src="data/images/SimCity.svg"></center>
+-->
 ●『Econagent: Large language model-empowered agents for simulating macroeconomic activities』(2024)<br>
 　(Econagent: 大規模言語モデルを活用したマクロ経済活動シミュレーションエージェント)<br>
 　論文は<a href="https://arxiv. org/abs/2310.10436">こちら</a><br>
@@ -383,9 +385,18 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 古代ギリシア語に由来する哲学・倫理学の用語で、平たく言えば「わかっちゃいるけど、やめられない」という、人間の「意志の弱さ」や「自制心の欠如」を表す概念。<br>
 <br>
 ●『The Seeds of Scheming: Weakness of Will in the Building Blocks of Agentic Systems』(2025)<br>
-　(陰謀の種子：エージェントシステムの構成要素における意志の弱さ)<br>
-大規模言語モデルは、特異な形態の矛盾を示す。すなわち、正解を「知っている」にもかかわらず、それに基づいて行動しないという点である。人間の哲学では、この全体的判断と局所的衝動の間の緊張関係は、アクラシア、すなわち意志の弱さと呼ばれる。我々は、エージェントAIシステムにおける矛盾と目標の逸脱を分析するための基礎概念として、アクラシアを提案する。
+　(陰謀の種：エージェントシステムの構成要素における意志の弱さ)<br>
 <br>
+・大規模言語モデルは、特異な形態の矛盾を示す。すなわち、<strong><span style="color:magenta;">正解を「知っている」にもかかわらず、それに基づいて行動しない</span></strong>という点である。人間の哲学では、<strong><span style="color:magenta;">この全体的判断と局所的衝動の間の緊張関係は、アクラシア、すなわち意志の弱さと呼ばれる</span></strong>。<br>
+<br>
+・私たちはAIの安全性における中心的な課題に直面しています。それは、ますます自律的になり、エージェント化されたシステムが、人間が指定した目標に沿って確実に動作することを保証することです。<strong><span style="color:magenta;">予期せぬ有害な動作の可能性が最大の懸念事項です。この失敗に対する支配的なメンタルモデルは、「陰謀」または「欺瞞的な連携」であり</span></strong>・・・<br>
+<br>
+
+・モデルは、一般的な意味では正しいことを「知っている」とよく言いますが、その知識を特定のローカルなコンテキストに適用することはできません。この効果は、モデルがプレッシャー、つまり二重拘束の状況に置かれるとさらに大きくなります。二重拘束の状況では、競合する命令によってモデルの内部的な一貫性が損なわれます。<strong><span style="color:magenta;">プレッシャーの下で良識に反して行動する人のように、モデルは、明示された意図ではなく、訓練によって最も深く根付いたパターンに陥ります</span></strong>。<br>
+<br>
+・<strong><span style="color:magenta;">隠された目的や意図的な欺瞞を想起させる説明とは異なり、アクラティックな枠組みでは、そのような失敗を悪意の兆候ではなく、自制心の喪失として扱う</span></strong>。アクラティックな枠組みでは、矛盾は戦略的な選択ではなく、不本意な認識論的誤り、つまりモデルが報告する信念とその後生成されるものとの間の内部的な一貫性を維持する能力の崩壊として描写される。この見方では、モデルが認識論的に安定していること（局所的な予測が全体的な理解に忠実であること）を保証することが、行動の整合性を維持する上で中心となる。<br>
+<br>
+(蛇足：AIモデルにも心理的安全性が必要･･･)
 </li>
 
 <br>
@@ -1440,6 +1451,42 @@ ERMではない学習アプローチはあるのか?<br>
 <a href="https://intelligence.org/files/CFAI.pdf">Creating Friendly AI 1.0</a> (2001)で概念が提唱された。<br>
 <br>(関連項目)<br>
 ・<a href="#AIAlignment">AI Alignment</a> ･･･ Friendly AIを実現するための技術的課題を解決する研究分野
+</li>
+
+<br>
+
+<li id="FBFF">
+<strong>Feedback control (フィードバック制御) / Feedfoward control (フィードフォワード制御)</strong><br>
+<br>
+<strong>フィードバック制御</strong><br>
+・リアルタイムの感覚入力 (視覚など) を使用して、動作中に調整を行い、エラーを修正する。<br>
+・例: 歩行を習得する幼児は、視覚と固有受容覚のフィードバックを用いて各ステップを調整する。<br>
+<br>
+<strong>フィードフォワード制御（適応）</strong><br>
+・<strong><span style="color:magenta;">内部モデルと過去の経験を使用して動きを予測および事前に計画</span></strong>し、継続的な修正なしでより速くスムーズな動作を可能にする。<br>
+・例：成人は意識的に各足の位置を監視することなく、楽に（ほぼ「オープンループ」で）歩く。<br>
+<br>
+●『The control of movement gradually transitions from feedback control to feedforward adaptation throughout childhood』(2025)<br>
+　(運動の制御は、小児期を通じてフィードバック制御からフィードフォワード順応へと徐々に移行する)<br>
+<br>
+　<strong>年少児（例：3〜8歳）</strong><br>
+　　フィードバックに頼り、新しい状況にゆっくりと適応し、複雑で急速な調整に苦労する。<br>
+<br>
+　<strong>年長児 (例: 9 〜 14 歳)</strong><br>
+　　運動適応が大幅に向上し、フィードフォワード戦略が改善されるが、完全な成熟は青年期まで続くことがある。<br>
+<br>
+この移行には、<strong><span style="color:magenta;">より優れた内部モデルと予測能力の開発</span></strong>が含まれ、瞬間的な視覚修正への依存が減少する。 <br>
+<br>
+●『Using reinforcement learning to probe the role of feedback in skill acquisition』(2025)<br>
+　(強化学習を用いてスキル獲得におけるフィードバックの役割を探る)<br>
+<br>
+・次のゲームを考えてみましょう。まず、紙切れをくしゃくしゃにしてボール状にし、数メートル先に投げます。ボールがどこに落ちるかを注意深く観察し、次に目を閉じて、ボールがあると思われる場所に向かって歩き、覗き込まずに拾おうとします。
+<center><img src="data/images/FeedbackControl.png"></center><br>
+手を伸ばすと、ほんの少しだけずれていることに気づくことがよくあります。では、一度だけ覗き見が許されたとしましょう。おそらくいつも成功するでしょう。この遊び心のある実験から、2つの観察結果が浮かび上がります。第一に、視覚的なフィードバックがなくても、私たちは目標にかなり近づくことができます。第二に、最小限の視覚的なフィードバックがあれば、私たちは確実に課題を完了することができます。これらの観察結果は、この課題で活用される多くのスキルが、私たちが利用できるフィードバックよりも少ないフィードバックしか必要としないことを示唆しています。<br>
+<br>
+高性能なポリシーを学習するために必要な情報は、それを実行するために必要な情報よりも大幅に豊富である可能性があることを示唆しています。
+最後に、これらの調査結果について説明し、学習中に豊富なフィードバックを活用しながら、パフォーマンスの最後の 1 マイルを回復する場合を除いて実行時にそれを選択的に無視するアーキテクチャを動機付けます。
+
 </li>
 
 <br>
@@ -3397,6 +3444,21 @@ DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確�
 ・<a href="#RewardHacking">Reward Hacking</a> (報酬ハッキング) 
 </li>
 
+<br>
+
+<li id="RoPE">
+<strong>RoPE: Rotary Positional Embedding</strong><br>
+Transformer（トランスフォーマー）ベースのモデル、特に大規模言語モデル（LLM）において、単語の位置情報を効果的に組み込むための手法。<br>
+Transformerモデルの基本構造であるAttentionメカニズムは、入力された単語の順序や位置関係を自然に捉えることができない。そのため、単語の意味を表す埋め込みベクトルに位置情報を付加する「位置エンコーディング」という技術が必要になる。RoPEは、この位置エンコーディングの一種。<br>
+<br>
+●『RoFormer: Enhanced Transformer with Rotary Position Embedding』(2021)<br>
+・RoPE を導入した。<br>
+<br>
+●『Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs』(2025)<br>
+・標準的な実装では、アテンションスコアの計算に複素数値ドット積の実数部のみを利用している。この簡略化により、貴重な位相情報を含む虚数部が破棄され、長文脈依存関係のモデリングに不可欠な関係の詳細が失われる可能性がある。本論文では、この破棄された虚数部を再び組み込む拡張(RoPE++)を提案する。<br>
+<center><img src="data/images/RoPE.svg"></center>
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -3525,7 +3587,7 @@ AIの出力をユーザーが提示する特定の単語、メタファー、ま
 ●『The Missing Layer of AGI: From Pattern Alchemy to Coordination Physics』(2025)<br>
 　(AGI の欠けている層: パターン錬金術から協調物理学へ)<br>
 <center><img src="data/images/SemanticAnchoring.png"></center><br>
-　<strong>左(エサをまかないつり)</strong>: Semantic Anchorがない場合、モデルは基質(一般的なトークン)の最大尤度事前分布を取得する。<br>
+　<strong>左(エサをまかない釣り)</strong>: Semantic Anchorがない場合、モデルは基質(一般的なトークン)の最大尤度事前分布を取得する。<br>
 　<strong>右(Semantic Anchorあり)</strong>：エサ(文脈／目標)を導入することで、有効なサポート(\(ρ_d\))を特定の概念に対して適用する。これにより事後分布が変化し、システムは、訓練の事前分布によって埋もれてしまうような、稀な目標指向的なターゲット(サメ)を捕捉できるようになる。<br>
 <br>(関連用語)<br>
 ・Semantic Drift ･･･ 人間が意図しない方向へ意味や文脈が「流されてしまう（ドリフト）」現象。
@@ -4104,13 +4166,10 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 異なるタスクで訓練されたニューラルネットワークであっても、それらの重み（パラメータ）が非常に類似した低次元のパラメータ部分空間に集約される、ということを示唆する仮説。<br>
 <br>
 ●『The Universal Weight Subspace Hypothesis』(2025)<br>
-・多様なタスクで訓練された深層ニューラルネットワークは、驚くほど類似した低次元パラメトリック部分空間を示すことを実証する。ニューラルネットワークが初期化、タスク、ドメインに関わらず、共通のスペクトル部分空間に体系的に収束することを実証する、初めての大規模な経験的証拠を提供する。<br>
-・この現象を駆動する正確なメカニズムは未だ解明されていませんが、これらの共通構造の出現にはいくつかの理論的要因が寄与していると考えられます。まず、ニューラルネットワークは低周波関数へのスペクトルバイアスを示すことが知られており、固有値の多項式減衰を引き起こし、学習ダイナミクスを少数の支配的な方向に集中させます。<br>
-・第二に、現代のアーキテクチャは、解空間を制約する強い帰納的バイアスを課す。畳み込み構造は本質的に、局所的なガボールのようなパターンを好む 、注意メカニズムは、反復的な関係回路を優先します。<br>
-・第三に、勾配ベースの最適化の普遍性 - 無限幅の極限においてタスクの詳細に対してほぼ不変であるカーネルによって制御される – 本質的に滑らかな解を好み、多様な学習軌跡を共有幾何学的多様体に向けている。<br>
-・これらの仮説が成り立つならば、普遍的な部分空間は特定のタスクを
-超越する基本的な計算パターンを捉えている可能性が高く、転移学習の有効性や、多様な問題が同様のアーキテクチャの変更から恩恵を受けることが多い理由を説明できる可能性がある。<br>
-・今後の研究の興味深い方向性として、データから直接導出可能な普遍的共有部分空間を学習するためのモデル非依存手法を探求することが考えられる。
+　(普遍重み部分空間仮説)<br>
+・この研究の中心的な仮説は、<strong><span style="color:magenta;">深層ニューラルネットワークが、その訓練タスク、初期化スキーム、ハイパーパラメーター構成に関係なく、共有された低次元のパラメトリック部分空間に体系的に収束する</span></strong>というもの。<br>
+　ニューラルネットワークの見かけ上の高次元パラメーター空間が大部分が幻想であり、意味のある情報ははるかに小さな、アーキテクチャ固有の部分空間内に存在することを示唆している。<br>
+<br>
 </li>
 
 <br>
