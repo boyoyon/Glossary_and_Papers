@@ -57,11 +57,8 @@
 
 
 <h2>更新項目</h2>
-・<a href="#ArtificialHivemind">Artificial Hivemind (人工集合意識)</a><br>
-・<a href="#CuriosityDriven">Curiosity-driven（好奇心駆動型）</a><br>
-・<a href="#InertialThinking">Inertial Thinkibg (慣性思考)</a><br>
-・<a href="#OOD">OOD: Out-of-Distribution Generalization (分布外汎化)</a><br>
-・<a href="#ReverseThinking">Reverse thinking </a><br>
+・<a href="#CompositionalGeneralization">Compositional Generalization (組み合わせ的一般化, 構成的汎化)</a><br>
+・<a href="#CurriculumLearning">Curriculum learning (カリキュラム学習)</a><br>
 <br>
 <p>
 
@@ -228,6 +225,7 @@ FEP: Free Energy Principle (自由エネルギー原理) に基づいており�
 </li>
 
 <br>
+
 <li id="AGI">
 <strong>AGI: Artificial General Intelligence (汎用人工知能)</strong><br>
 人間が実行できる<strong><span style="color:magenta">あらゆる</span></strong>知的タスクを遂行可能な人工知能。<br>
@@ -696,7 +694,7 @@ AIモデルがタスクを完了するために内部的にコード（通常は
 <br>
 
 <li id="CompositionalGeneralization">
-<strong>Compositional Generalization (組み合わせ的一般化, 構成的一般化)</strong><br>
+<strong>Compositional Generalization (組み合わせ的一般化, 構成的汎化)</strong><br>
 人間が持つ「限られた手段で無限の新しい組み合わせを理解・生成できる能力」をAIに持たせることを目指すもの。源流は認知科学や言語学に深く根ざしている。 <br>
 <br>
 ●『Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks』 (2017)<br>
@@ -706,13 +704,20 @@ AIモデルがタスクを完了するために内部的にコード（通常は
 ・体系性の欠如がニューラル ネットワークの悪名高いトレーニング データの渇望の一因となっている可能性があることを示唆した。<br>
 <br>
 ●『Compositional Generalization from First Principles』 (2023)<br>
-　　(第一原理からの構成的一般化)<br>
-・構成的一般化をより深く理解するために、ボトムアップアプローチを採用する。<br>
+　　(第一原理からの構成的汎化)<br>
+・構成的汎化をより深く理解するために、ボトムアップアプローチを採用する。<br>
 ・識別可能表現学習に着想を得て、データそのものではなく、データ生成プロセスの特性として構成性を検証する。<br>
-・この再定式化により、訓練分布のサポートとモデルアーキテクチャのみに基づいて、構成的一般化に十分な条件を導出できる。<br>
+・この再定式化により、訓練分布のサポートとモデルアーキテクチャのみに基づいて、構成的汎化に十分な条件を導出できる。<br>
 <br>
 ●『When does compositional structure yield compositional generalization? A kernel theory』(2024)<br>
-　　(構成構造はいつ構成一般化をもたらすのか？ カーネル理論)<br>
+　　(構成構造はいつ構成的汎化をもたらすのか？ カーネル理論)<br>
+<br>
+●『Learning by Analogy: A Causal Framework for Composition Generalization』(2025)<br>
+　(アナロジーによる学習：構成的汎化のための因果的フレームワーク)<br>
+　高レベルの概念(ニワトリ, 米, クジャク)が共有する低レベルの構成要素(くちばし、羽、足)に分解され、「米を食べるクジャク」のような新しい構成を生成するために再結合される様子を示している。<br>
+
+<center><img src="data/images/LearningByAnalogy.svg"></center>
+
 
 <br>(関連項目)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
@@ -734,7 +739,7 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 <br>(関連項目)<br>
 ・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）<br>
 ・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (思考の言語仮説)<br>
-・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的一般化)
+・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的汎化)
 </li>
 
 <br>
@@ -915,14 +920,34 @@ AI、特にVision-Language Models（VLM: 画像言語モデル）における推
 
 <br>
 
-<li>
+<li id="CurriculumLearning">
 <strong>Curriculum learning (カリキュラム学習)</strong><br>
 
 人間や動物は、例がランダムに提示されるのではなく、意味のある順序で整理され、徐々に多くの概念、そして徐々に複雑な概念を示すように提示されると、はるかによく学習する。このような学習戦略を機械学習の文脈で定式化し、「カリキュラム学習」と呼ぶ。<br>
 <br>
 <center><img src="data/images/CurriculumLearning.svg"></center>
 <br>
+●『Curriculum learning』(2009)<br>
+　カリキュラム学習の概念を導入した先駆的な論文<br>
+<br>
+●『From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks』(2025)<br>
+　(模倣から識別へ：汎用カリキュラム優位メカニズムによるドメイン横断推論タスクの強化に向けて)<br>
+・人間の認知発達にヒントを得た2段階のトレーニングフレームワークである CAPO: Curriculum Advantage Policy Optimization を提案。<br>
+　2段階カリキュラム：模倣フェーズ(正のサンプルのみ)と識別フェーズ(正と負の混合サンプル)<br>
+・アドバンテージ信号を単なる勾配の重みとしてではなく、学習プロセスを動的に導く内在的なカリキュラム指標として扱う。<br>
+　※ アドバンテージ信号：特定のアクションが他のアクションと比較してどれだけ優れているかを示す評価信号(スコア)<br>
+<br>
+<center><img src="data/images/FromImitationToDiscrimination.svg"></center>
+<center><img src="data/images/FromImitationToDiscrimination2.svg"></center>
+<center><img src="data/images/FromImitationToDiscrimitation3.svg"></center>
+
+模倣フェーズと識別フェーズの切り替え後、ネガティブサンプルはエントロピーと報酬の着実な増加をもたらし、汎化の向上を示している。<br>
+・Training Entropy：エージェントの行動の多様性, ランダム性<br>
+・Training Rewards：エージェントがトレーニング中に環境と相互作用することによって獲得する報酬の総和または平均値
+
+<!--
 <a href="data/Papers_CurriculumLearning.html">Papers</a>
+-->
 </li>
 
 <br>
@@ -1138,6 +1163,26 @@ Compositionality Gapの一例。<br>
 <br>(関連項目)<br>
 ・<a href="#LDM">LDM: Latent Diffusion Model</a> (潜在拡散モデル)
 </li>
+
+<!--
+<br>
+<li id="DivergentThinking">
+<strong>Divergent Thinking (発散思考)</strong><br>
+自由な発想で多様なアイデアや解決策を可能な限り多く生み出すための思考プロセス。<br>
+⇔ Convergent Thinking (収束思考)<br>
+\[
+\begin{array}{l|l|l}
+\text{思考法} & \text{特徴} & \text{目的}\\
+\hline
+
+\text{Divergent (発散的)}& \text{自由・多様・斬新}& \text{アイデアを広げる}\\
+\hline
+
+\text{Convergent (収束的)}&\text{論理的・体系的・効率的・実現可能}& \text{選択肢を絞り込む, アイデアを評価し計画立案へ}\\
+\end{array}
+\]
+</li>
+-->
 
 <br>
 
@@ -2356,7 +2401,7 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 ・冗長な「思考」トークンの長い連鎖に依存するため、レイテンシの増大、冗長性、そして矛盾した推論パスが生じる。人間の推論は Mentalese と呼ばれる記号的かつ構成的な精神言語に基づいているという思考言語仮説に着想を得て、我々はモデルが同様にコンパクトなスタイルで推論するように訓練するフレームワークを導入する。Mentalese は抽象的な推論を超圧縮された構造化トークンとしてエンコードすることで、モデルがはるかに少ないステップで複雑な問題を解くことを可能にする。<br>
 
 <br>(関連項目)<br>
-・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的一般化)<br>
+・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的汎化)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
 ・サピア＝ウォーフの仮説: 話者が使用する特定の公的言語 (日本語、英語など) が、その人の思考や世界観を決定または強く影響する。
 
@@ -3761,6 +3806,18 @@ AIモデルが複雑なデータや特徴を無視して、単純で表面的な
 
 <br>(関連項目)<br>
 ・<a href="#ShortcutLearning">Shortcut Learning</a>
+</li>
+
+<br>
+
+<li id="SiT">
+<strong>SiT: Scalable Interpolant Transformers (スケーラブル内挿変換器)</strong><br>
+DiTのバックボーン（基盤技術）を活用して開発された新しい生成モデルのファミリー。<br>
+従来の拡散モデルは、完全にノイズな状態から徐々にノイズを取り除いて画像にするという特定のプロセスに従う。一方、SiTは「補間」という手法を用いる。これは、完全にノイズの分布と実際の画像データの分布の間を、より柔軟な「パス（経路）」で繋ぐことを学習するアプローチ。<br>
+<br>
+●『SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers』(2024)<br>
+<center><img src="data/images/SiT_DiT.png"></center>
+<center>すべてのモデルサイズでSiTの方がDiTよりも生成画像の品質が良い(FIDは低いほど高画質)</center>
 </li>
 
 <br>
