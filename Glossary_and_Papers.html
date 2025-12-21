@@ -57,8 +57,7 @@
 
 
 <h2>更新項目</h2>
-・<a href="#CompositionalGeneralization">Compositional Generalization (組み合わせ的一般化, 構成的汎化)</a><br>
-・<a href="#CurriculumLearning">Curriculum learning (カリキュラム学習)</a><br>
+・<a href="#NEPA">NEPA: Next-Embedding Predictive Autoregression </a><br>
 <br>
 <p>
 
@@ -355,13 +354,15 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 ・シャノンエントロピーを用いてアイデア創出の多様性を測定することを提案<br>
 
 <br>(関連項目)<br>
+・ADRS: AI-Driven Research for Systems AI主導型システム研究<br>
 ・AutoML (機械学習ワークフローの自動化)<br>
 ・Democratization of AI (AIの民主化)<br>
-・<a href="https://ja.wikipedia.org/wiki/ラボラトリーオートメーション">Laboratory Automation</a><br>
+・Laboratory Automation <a href="https://ja.wikipedia.org/wiki/ラボラトリーオートメーション">ウィキペディア：ラボラトリーオートメーション</a><br>
 ・Robot Scientist<br>
 ・<a href="#ScientificDiscovery">Scientific Discovery (科学的発見), Scientific Research (科学研究)</a><br>
 ・<a href="#SR">SR: Symbolic Regression (シンボリック回帰)</a>
-<center><img src="data/images/AI4S.svg"></center>
+<center><img src="data/images/AI4S.svg"></center><br>
+<center>『From Kepler to Newton: Explainable AI for Science』(2021)</center>
 </li><br>
 
 <li>AI for Agriculture (農業)</li>
@@ -2652,6 +2653,40 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 </li>
 
 <br>
+
+<li id="NEPA">
+<strong>NEPA: Next-Embedding Predictive Autoregression </strong></br>
+生のデータ（ピクセルや単語）を直接予測するのではなく、データの抽象的な表現である「潜在的な埋め込み（Embedding）」を自己回帰的に予測するフレームワーク。<br>
+・Masked Autoencoderは埋め込みベクトルを使って, マスクされたピクセルを予測する。<br>
+・NEPA は埋め込みベクトル自体を予測する。<br>
+
+\[
+\begin{array}{l|l|l}
+\text{手法} & \text{予測対象} & \text{特徴} \\
+\hline
+\text{Next-Token Prediction} & \text{離散トークン(単語など)} & \text{LLMの主流} \\
+\hline
+\text{Masked Reconstruction} & \text{マスクされたピクセル} & \text{画像の一部を復元。計算コストが高い} \\
+\hline
+\text{NEPA} & \text{埋め込みベクトル} & \text{情報が圧縮された状態で予測するので効率的} 
+\end{array}
+\]
+
+
+<br>
+●『Next-Embedding Prediction Makes Strong Vision Learners』(2025)<br>
+　NEPA: Next-Embedding Predictive Autoregression を提唱した。<br>
+
+<center><img src="data/images/NEPA.svg"></center>
+
+　この手法は、画像をパッチに分割し、それらを連続ベクトル空間に埋め込み、先行する埋め込みに基づいて後続の埋め込みを予測するようにトランスフォーマーを訓練することで機能します。このアプローチは、大規模言語モデルの成功を牽引した次トークン予測を模倣していますが、離散トークンではなく埋め込み空間で直接動作します。その結果、著しくシンプルでありながら効果的な自己教師あり学習フレームワークが実現し、大幅なアーキテクチャの複雑さを必要とせずに、最先端の手法と競争力のある性能を達成します。
+
+<center><img src="data/images/NEPA2.svg"></center>
+JEPAのような手法が異なるモダリティに対して別々のエンコーダと予測器を使用するのに対し、NEPAは自己回帰型言語モデルと同様の単一のバックボーンアーキテクチャを使用します。
+</li>
+
+<br>
+
 
 <li id="NeuralCollapse">
 <strong>Neural Collapse </strong><br>
