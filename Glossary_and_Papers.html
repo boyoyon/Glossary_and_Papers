@@ -57,6 +57,7 @@
 
 
 <h2>更新項目</h2>
+・<a href="#JEPA">JEPA: Joint-Embedding Predictive Architecture</a><br>
 ・<a href="#NEPA">NEPA: Next-Embedding Predictive Autoregression </a><br>
 <br>
 <p>
@@ -2053,17 +2054,7 @@ AIモデルの推論結果から. 入力データや学習データを推定す�
 <p>
 <div class="styleBullet">
 <ul>
-<li><strong>Jensen's inequality (イェンセンの不等式)</strong><br>
-<br>
-凸関数 \(f\) と確率変数 \(X\) について、\(E[f(X)]\ge f(E[X])\) という関係が成り立つことを示している。<br>
-直感的には, 凸関数に平均値を代入した値は、関数に代入してから平均をとった値よりも小さくなる、というもの。<br>
-<br>
-・変分ベイズやEMアルゴリズムでは、イェンセンの不等式を使って尤度の下限 (ELBO: Evidence Lower Bound) を導出する。<br>
-<br>
-・2つの確率分布間の違いを測る指標である KL (カルバック・ライブラー)ダイバージェンスが非負 (0以上) であることの証明に使われる。
-</li>
 
-<br>
 <li><strong>Japanese Dancing Mouse (ハツカネズミ)</strong><br>
 Jの項目が少ないのでスペースホルダー①<br>
 <br>
@@ -2097,6 +2088,34 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 <strong>5. お礼の品を渡す</strong><br>
 報酬として、その場でキャットフードなどを与える。
 </li></ul>
+</li>
+
+<br>
+
+<li><strong>Jensen's inequality (イェンセンの不等式)</strong><br>
+<br>
+凸関数 \(f\) と確率変数 \(X\) について、\(E[f(X)]\ge f(E[X])\) という関係が成り立つことを示している。<br>
+直感的には, 凸関数に平均値を代入した値は、関数に代入してから平均をとった値よりも小さくなる、というもの。<br>
+<br>
+・変分ベイズやEMアルゴリズムでは、イェンセンの不等式を使って尤度の下限 (ELBO: Evidence Lower Bound) を導出する。<br>
+<br>
+・2つの確率分布間の違いを測る指標である KL (カルバック・ライブラー)ダイバージェンスが非負 (0以上) であることの証明に使われる。
+</li>
+
+<br>
+
+<li id="JEPA">
+<strong>JEPA: Joint-Embedding Predictive Architecture</strong><br>
+Meta社が提唱した「より人間に近い学習能力」を持つAIを目指すための新しい自己教師あり学習アーキテクチャー。<br>
+・<a href="https://ai.meta.com/blog/yann-lecun-ai-model-i-jepa/">I-JEPA: ヤン・ルカン氏のより人間らしいAIのビジョンに基づいた初のAIモデル</a><br>
+<br>
+<center><img src="data/images/JEPA.svg"></center><br>
+・ジョイント埋め込みアーキテクチャは、互換性のある入力 x、y に対して類似の埋め込みを、互換性のない入力に対しては異なる埋め込みを出力することを学習します。<br>
+・生成アーキテクチャは、再構成を容易にするために追加の（潜在的である可能性のある）変数 z を条件とするデコーダーネットワークを使用して、互換性のある信号 x から信号 y を直接再構成することを学習します。<br>
+・ジョイント埋め込み予測アーキテクチャは、予測を容易にするために追加の（潜在的である可能性のある）変数 z を条件とする予測子ネットワークを使用して、互換性のある信号 x から信号 y の埋め込みを予測することを学習します。<br>
+<br>(関連項目)<br>
+・<a href="#NEPA">NEPA: Next-Embedding Predictive Autoregression</a><br>
+・<a href="#SSL">SSL: Self-Supervised Learning</a> (自己教師あり学習)<br>
 </li>
 
 </ul></div>
@@ -2682,7 +2701,9 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 　この手法は、画像をパッチに分割し、それらを連続ベクトル空間に埋め込み、先行する埋め込みに基づいて後続の埋め込みを予測するようにトランスフォーマーを訓練することで機能します。このアプローチは、大規模言語モデルの成功を牽引した次トークン予測を模倣していますが、離散トークンではなく埋め込み空間で直接動作します。その結果、著しくシンプルでありながら効果的な自己教師あり学習フレームワークが実現し、大幅なアーキテクチャの複雑さを必要とせずに、最先端の手法と競争力のある性能を達成します。
 
 <center><img src="data/images/NEPA2.svg"></center>
-JEPAのような手法が異なるモダリティに対して別々のエンコーダと予測器を使用するのに対し、NEPAは自己回帰型言語モデルと同様の単一のバックボーンアーキテクチャを使用します。
+JEPAのような手法が異なるモダリティに対して別々のエンコーダと予測器を使用するのに対し、NEPAは自己回帰型言語モデルと同様の単一のバックボーンアーキテクチャを使用します。<br>
+<br>(関連項目)<br>
+・<a href="#JEPA">JEPA: Joint-Embedding Predictive Architecture</a>
 </li>
 
 <br>
