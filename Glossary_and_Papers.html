@@ -57,8 +57,12 @@
 
 
 <h2>更新項目</h2>
-・<a href="#JEPA">JEPA: Joint-Embedding Predictive Architecture</a><br>
-・<a href="#NEPA">NEPA: Next-Embedding Predictive Autoregression </a><br>
+・<a href="#AIXI">AIXI </a><br>
+・<a href="#EPE">EPE: Expected Prediction Error (期待予測誤差)</a><br>
+・<a href="#GAE">GAE: Generalized Advantage Estimation (汎用アドバンテージ推定)</a></br> 
+・<a href="#HedonicAdaptation">Hedonic adaptation (幸福順応)</a><br>
+・<a href="#RPE">RPE: Reward Prediction Error (報酬予測誤差)</a><br>
+・<a href="#TD">TD（Tempral Differences) Learning (TD学習)</a><br>
 <br>
 <p>
 
@@ -376,6 +380,21 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <li>AI for Urban Development Planning (都市計画)</li>
 </ul>
 　：
+</li>
+
+<br>
+
+<li id="AIXI">
+<strong>AIXI</strong><br>
+Marcus Hutterによって提案された、数学的に定義された理論上の「完全な」汎用人工知能（AGI）モデル。<br>
+●[書籍]『Universal Artificial Intelligence.』(2005)<br>
+・ソロモノフ帰納法(Solomonoff induction)と逐次決定理論(sequential decision theory)を組み合わせたもの。<br>
+・AIXIは、未知の環境下で報酬を最大化するために、あらゆる「計算可能な」シナリオ（アルゴリズム）を考慮して行動を選択する、究極の強化学習エージェントとして定義されている。<br>
+・理論的には最適（完璧な知能）であることが証明されているが、無限の計算資源を必要とするため、現在のコンピュータで直接実行することはできない（非計算可能）。そのため、現実のAI開発における「理想的なゴール」や、知能の限界を測るための「数学的な基準（ゴールドスタンダード）」として扱われる。<br>
+<br>(関連項目)<br>
+・<a href="https://en.wikipedia.org/wiki/AIXI">wikipedia: AIXI</a><br>
+・sequential decision theory (逐次決定理論)　期待される将来の報酬を最大化するための最適な行動を選択する理論。<br>
+・Solomonoff induction (ソロモノフ帰納法)　過去のデータから、あらゆる計算可能なプログラムを用いて未来を予測する理論。<br>
 </li>
 
 <br>
@@ -900,6 +919,7 @@ AI、特にVision-Language Models（VLM: 画像言語モデル）における推
 ●『Curiosity-driven Exploration by Self-supervised Prediction』(2017)<br>
 　(自己教師予測による好奇心主導の探究)<br>
 　論文は<a href="https://arxiv.org/abs/1705.05363">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1705.05363v1">こちら</a><br>
+　予測誤差を単なる「修正用信号」ではなく、エージェントを動かす「報酬そのもの」として定義し、探索効率を劇的に向上させた。<br>
 <br>
 ・<a href="https://davidbau.com/archives/2025/12/09/in_defense_of_curiosity.html">In Defense of Curiosity</a> (好奇心を擁護する)</br>
 　5000年もの間、人々は「考えるとはどういうことか」と問い続け、その答えは常に人間の心を中心に置いてきました。人間は唯一、合理的思考の好例であり、クジラやタコといった動物はその周辺に位置していました。<br>
@@ -917,7 +937,8 @@ AI、特にVision-Language Models（VLM: 画像言語モデル）における推
 ・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
 ・<a href="#IntrinsicMotivation">Intrinsic Motivation (内発的動機付け)</a><br>
 ・<a href="#NoisyTVProblem">Noisy TV problem (ノイジーテレビ問題)</a><br>
-・<a href="#NoveltySearch">Novelty Search (新規性探索)</a>
+・<a href="#NoveltySearch">Novelty Search (新規性探索)</a><br>
+・<a href="#TD">TD（Tempral Differences) Learning (TD学習)</a><br>
 </li>
 
 <br>
@@ -1409,6 +1430,24 @@ AIF: Active Inference (能動推論)は<strong><span style="color: magenta;">外
 
 <br>
 
+<li id="EPE">
+<strong>EPE: Expected Prediction Error (期待予測誤差)</strong><br>
+エージェントが予測した価値（将来得られる報酬の期待値）と、実際に得られた結果（報酬および次の状態の価値）との間のズレ（誤差）の期待値を指す。<br>
+・TD誤差 (Temporal Difference Error) の期待値<br>
+　TD学習において、予測の修正量を決定する中核的な指標<br>
+・内在的報酬としての活用<br>
+　未知の環境を探索するために、この予測誤差 (またはその期待値) を「好奇心(内在的報酬)」として利用する手法がある。<br>
+<br>
+●『The Elements of Statistical Learning』(2001)<br>
+・統計的機械学習の「聖書」とも呼ばれる著書。<br>
+・二乗誤差損失や分類誤差などの条件下で、未知のテストデータに対してモデルがどの程度の誤差を出すか（期待値）を「Expected Prediction Error」として定義した。<br>
+
+<br>(関連項目)<br>
+・<a href="#GAE">GAE: Generalized Advantage Estimation</a> (汎用アドバンテージ推定)</br> 
+</li>
+
+<br>
+
 <li id="EpisodicMemory">
 <strong>Episodic Memory (エピソード記憶)</strong><br>
 個人の過去の経験や出来事を、その時の状況（いつ、どこで、誰が、何を）や感情とともに記憶する能力。一般的な知識を記憶する「意味記憶」とは区別される。<br>
@@ -1613,6 +1652,24 @@ ERMではない学習アプローチはあるのか?<br>
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="GAE">
+<strong>GAE: Generalized Advantage Estimation (汎用アドバンテージ推定)</strong></br>
+強化学習の方策勾配法において「アドバンテージ関数（Advantage function）」を効率的に推定するための手法。<br>
+・TD法 (低分散・高バイアス) とモンテカルロ法 (不偏・高分散) の間のバランスを、ハイパーパラメータ \(\lambda \) (ラムダ) を用いて柔軟に調整できる。<br>
+・\(\lambda=0\): 1ステップのTD誤差のみを使用し、バイアスは高くなりますが分散は最小限になりる。<br>
+・\(\lambda=1\): 全ステップの報酬を考慮するモンテカルロ法に相当し、バイアスはなくなりますが分散が非常に大きくなる。<br>
+・実用的な値: 一般的に \(\lambda =0.95\) 前後の値が用いられ、バランスの取れた推定が行われる。<br>
+・PPO (Proximal Policy Optimization) や TRPO (Trust Region Policy Optimization) といった、現代の主要な Actor-Critic アルゴリズムの基盤技術として広く採用されている。<br> 
+<br>
+●『High-dimensional continuous control using generalized advantage estimation』(2015)<br>
+・GAE: Generalized Advantage Estimation を導入した論文<br>
+<br>(関連項目)<br>
+・<a href="#EPE">EPE: Expected Prediction Error (期待予測誤差)</a>
+</li>
+
+<br>
+
 <li>
 <strong>GAN:Generative Adversarial Network (敵対的生成ネットワーク)</strong><br>
 生成ネットワークと識別ネットワークの2つのニューラルネットワークを競合させながら学習させることで、現実世界に存在するデータと区別がつかないほどの新しいデータを生成するAI技術。<br>
@@ -1731,6 +1788,21 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 　- A と B が選言(formulas involving disjunctions: 論理和を含む論理式)、否定(negations)、信念(beliefs)、入れ子の反事実(nested counterfactuals)を含む式であっても、A が B の原因であるかどうかを判断するために定義を適用することができる。<br>
 　- さらに、因果モデルを超えて適用できる説明の抽象的な定義を得るためにアイデアを拡張することができまる。<br>
 　- 最後に, 因果モデルにおける定義の特徴についてより深い理解を得ることができる。<br> 
+</li>
+
+<br>
+
+<li id="HedonicAdaptation">
+<strong>Hedonic Adaptation (幸福順応, 快楽順応)</strong><br>
+人々が報酬刺激に急速に慣れて鈍感になるという心理現象<br>
+・宝くじに当たった人は、一般的に他の人よりも幸せではなく、実際には日常的な出来事にあまり喜びを感じない。<br>
+・最初に好んだ食品を繰り返し摂取すると、その食品の美味しさとその後の摂取量が低下する。<br>
+・特定の快楽活動（薬物摂取など）に対する脱感作（感度の低下）が、一種の代償作用として依存行動の形成を促す可能性がある。<br>
+<br>
+●『Hedonic adaptatio』(1999)<br>
+●『A computational and neural model of momentary subjective well-being』(2014)<br>
+・瞬間的な幸福度が最近の予測誤差の履歴によって強く予測されることを発見した。<br>
+　(予測誤差自体が主観的に価値があり、目的関数として機能しうる)　
 </li>
 
 <br>
@@ -1970,6 +2042,10 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 <li id="IntrinsicMotivation">
 <strong>Intrinsic Motivation (内発的動機付け)</strong><br>
 報酬や評価といった外部の刺激に関係なく、個人の内面から自然と湧き上がる興味・関心、意欲によって行動すること。<br>
+<br>
+●『Intrinsic motivation systems for autonomous mental development』(2007)<br>
+　(自律的な精神発達のための内発的動機付けシステム)<br>
+・「学習の進捗を最大化するために中程度の難易度のタスクを選択する」<br>
 <br>
 <a href="data/Papers_IntrinsicMotivation.html">Papers</a><br>
 <br>(関連項目)<br>
@@ -3669,6 +3745,21 @@ Transformerモデルの基本構造であるAttentionメカニズムは、入力
 <center><img src="data/images/RoPE.svg"></center>
 </li>
 
+<br>
+
+<li id="RPE">
+<strong>RPE: Reward Prediction Error (報酬予測誤差)</strong><br>
+「実際に得られた報酬」と「事前に予測していた報酬」の差を指す。<br>
+この誤差を用いて将来の予測（価値関数）を更新する。<br>
+<br>
+●『A Neural Substrate of Prediction and Reward』(1997)<br>
+・数学的なTD誤差が、生物（霊長類）の脳内にあるドーパミン細胞の活動と一致することを示した。<br>
+・ドーパミンが「報酬そのもの」ではなく、「予測していた報酬と実際の報酬のズレ（RPE）」に反応することを発見した。<br>
+<br>(関連項目)<br>
+・<a href="#TD">TD (Temporal Differences) 学習</a><br>
+・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -4161,6 +4252,25 @@ Tabular Data は画像やテキストのように局所的なパターンや階�
 </li>
 
 <br>
+
+<li id="TD">
+<strong>TD（Tempral Differences) Learning (TD学習)</strong><br>
+「一歩先の予測と現在の予測のズレ」を利用して、価値関数を逐次的に更新していく手法。<br>
+EPE(期待予測誤差) そのものを直接的な報酬にするのではなく、1ステップ先の予測と現在の予測の差（RPE）を最小化することが、将来の予測誤差の期待値を最小化することに繋がるという理論的枠組みを示した。<br>
+<br>
+●『Learning to Predict by the Methods of Temporal Differences』(1988)<br>
+・予測誤差を用いた学習の数学的基礎を確立した記念碑的論文。<br>
+・「最終結果が出るまで待ってから修正する」手法（モンテカルロ法など）に対し、「現在の予測と、次の一歩後の予測との間の差（TD誤差）」を使って逐次的に予測を修正する方法を提唱した。<br>
+・現代のRL(強化学習)における予測誤差の数学的源流。<br>
+<br>(関連項目)<br>
+・<a href="#RPE">RPE: Reward Prediction Error</a> (報酬予測誤差)<br>
+　ドーパミンが「報酬そのもの」ではなく、「予測していた報酬と実際の報酬のズレ(RPE)」に反応することが発見され, RLの理論と生物学的な学習メカニズムが結びついた。<br>
+・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型）<br>
+　予測誤差を単なる「修正用信号」ではなく、エージェントを動かす「報酬そのもの」として定義し、探索効率を劇的に向上させた。
+</li>
+
+<br>
+
 <li id="TensorEquation">
 <strong>Tensor Equation (テンソル方程式)</strong><br>
 ●『Tensor Logic: The Language of AI』(2025)<br>
