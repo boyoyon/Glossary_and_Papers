@@ -57,12 +57,9 @@
 
 
 <h2>更新項目</h2>
-・<a href="#AIXI">AIXI </a><br>
-・<a href="#EPE">EPE: Expected Prediction Error (期待予測誤差)</a><br>
-・<a href="#GAE">GAE: Generalized Advantage Estimation (汎用アドバンテージ推定)</a></br> 
-・<a href="#HedonicAdaptation">Hedonic adaptation (幸福順応)</a><br>
-・<a href="#RPE">RPE: Reward Prediction Error (報酬予測誤差)</a><br>
-・<a href="#TD">TD（Tempral Differences) Learning (TD学習)</a><br>
+・<a href="#BigWorldHypothesis">Big World Hypothsis (ビッグワールド仮説)</a><br>
+・<a href="#Empowerment">Empowerment (エンパワーメント)</a><br>
+・<a href="#OODShock">OOD Shock: Out-of-Distribution Shock (OODショック)</a><br>
 <br>
 <p>
 
@@ -607,6 +604,32 @@ Lamark (ラマルク) 説は完全に否定された訳ではない模様。<br>
 ・Garbage in, toxic data out（ゴミを入れれば、有害なデータが出る）<br>
 ・RIRO: Rubbish in, rubbish out (がらくたを入れれば、がらくたが出る）<br>
 ・You are what you eat（あなたはあなたが食べたものでできている）
+</li>
+
+<br>
+<li id="BigWorldHypothesis">
+<strong>Big World Hypothsis (ビッグワールド仮説)</strong><br>
+人工知能（AI）や強化学習の分野において、「エージェント（AI）が活動する世界は、そのエージェントの処理能力やメモリ容量よりも圧倒的に巨大である」とする前提、またはその視点に立った考え方。<br>
+概念自体は、Richard S. Sutton 氏が2020年頃から自身の講義や議論の中で触れていたものだが、2024年の論文によって初めて、AI設計における明確な「仮説」として定義・明文化された。<br>
+<br>
+<strong>世界の複雑さ</strong>　現実世界（ビッグワールド）のデータ量や複雑さは、AIがいかに高性能になっても、その内部に完全にモデル化したり記憶したりすることは不可能。<br>
+
+<br>
+
+
+<strong>継続学習の必要性</strong>　世界が巨大で常に変化しているため、事前に全ての知識を教え込む（事前学習）ことは困難。そのため、AIは常に環境と対話し、リアルタイムで適応し続ける「継続的なオンライン学習（Lifelong Learning）」が不可欠である。<br>
+
+<br>
+
+<strong>近似の重要性</strong>　AIは世界を完璧に把握できないため、環境のルールを近似的に捉え、最適とは言えないまでも十分な解（サブオプティマルな結果）を効率的に導き出すアルゴリズムが重要。<br>
+
+<br>
+
+●『The Big World Hypothesis and its Ramifications for Artificial Intelligence』(2024)<br>
+●『The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis』(2025)<br>
+<br>(関連項目)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
+・<a href="#OODShock">OOD Shock: Out-of-Distribution Shock</a> (OODショック)
 </li>
 
 <br>
@@ -1315,6 +1338,22 @@ AIモデルもこの効果を起こす。<br>
 ・disembodied intelligence (身体のない知性), disembodied AI（身体のないAI）<br>
 　物理的な身体を持たずに存在する、あるいは機能する知能, AI。<br>
 
+
+</li>
+
+<br>
+
+<li id="Empowerment">
+<strong>Empowerment (エンパワーメント)</strong><br>
+エージェントが環境に対して及ぼしうる「潜在的な影響力」の大きさを示す。エージェントの「行動（Actuation）」と、その結果として得られる「感覚入力（Perception）」の間の相互情報量（Mutual Information）の最大値（チャネル容量）として定義される。<br>
+外部からの報酬が与えられない環境でも、エージェントが自律的に学習・探索を行うための「内発的動機づけ（Intrinsic Motivation）」のメカニズムとして利用される。<br>
+<br>
+●『Empowerment: A Universal Agent-Centric Measure of Control"』(2005)<br>
+　動物の行動やゲームなどの例に着想を得て、特定のタスクに依存しない普遍的な効用関数として「エンパワーメント」を提案した。<br>
+●『Plasticity as the Mirror of Empowerment』(2025)<br>
+　(可塑性：エンパワーメントの鏡)<br>
+　人工知能においては、エンパワーメントはエージェントが観測可能な未来にどれだけ影響を与えられるかを定量化し、可塑性はエージェントがその経験によってどれだけ形成され得るかを測定する。可塑性が「エンパワーメントの鏡」として機能すると提唱し、エージェントが影響を与える能力と影響を受ける能力との間に深い対称性があることを示唆している。<br>
+<center><img src="data/images/Empowerment.svg"></center>
 </li>
 
 <br>
@@ -3082,7 +3121,20 @@ DeepMind社によって2014年に発表された。<br>
 ・<a href="#InductiveLearning">Inductive Learning</a> (帰納学習)<br>
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 </li>
+
 <br>
+
+<li id="OODShock">
+<strong>OOD Shock: Out-of-Distribution Shock (OODショック)</strong><br>
+AIモデルが学習時 (In-Distribution) には遭遇しなかった、未知の統計的性質を持つデータ (Out-Of-Distribution: OOD) に直面した際に、パフォーマンスが劇的に低下したり予期せぬ挙動を示したりする現象。<br>
+<br>
+AIの学習環境を「小さな世界（Small World）」と見なすと、現実の「大きな世界（Big World）」には学習データに含まれない未知の状況（OOD）が無数に存在することになる。この「世界の広大さ」ゆえに、AIが現実世界にデプロイされた際に必ずOOD Shockが発生するというビッグワールド仮説に基づく重要な視点。<br>
+<br>(関連項目)<br>
+<a href="#BigWorldHypothesis">Big World Hypothsis</a> (ビッグワールド仮説)
+</li>
+
+<br>
+
 <li>
 <strong>Open-Ended Generation </strong><br>
 明確な答えや単一の目標を設定することなく、AIが創造的かつ多様なコンテンツを生成する能力のこと。
