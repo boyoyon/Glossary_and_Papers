@@ -57,6 +57,12 @@
 
 
 <h2>更新項目</h2>
+・<a href="#CDS">Causal Discovery Methods（統計的因果探索）</a><br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
+・<a href="#FMP">Flat Manifold Problem (平坦多様体問題)</a><br>
+・<a href="#Interestingness">Interestingness (面白さ, 興味深さ)</a><br>
+・<a href="#ShortcutLearning">Shortcut Learning (ショートカット学習)</a><br>
+---<br>
 ・<a href="#BigWorldHypothesis">Big World Hypothsis (ビッグワールド仮説)</a><br>
 ・<a href="#Empowerment">Empowerment (エンパワーメント)</a><br>
 ・<a href="#OODShock">OOD Shock: Out-of-Distribution Shock (OODショック)</a><br>
@@ -690,6 +696,27 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 
 <br>
 
+<li id="CDS">
+<strong>Causal Discovery Methods（統計的因果探索）</strong><br>
+観察データのみから変数間の因果構造（どの変数が原因で、どれが結果か）を推定する手法の総称。<br>
+通常、因果関係を調べるには因果グラフ（構造）が事前に分かっている必要があるが、因果探索はデータからそのグラフ自体を構築することを目的としている。<br>
+<br> 
+<strong>制約ベース手法 (Constraint-based methods)</strong>　変数間の独立・非独立の関係を統計的検定によって調べ、因果の向きを特定する。<br>
+・代表例：PCアルゴリズム、FCI（潜在的な共通原因がある場合に対応）<br>
+<br>
+<strong>スコアベース手法 (Score-based methods)</strong>　データへの適合度を示す「スコア関数」を定義し、最もスコアの高い因果グラフを探索する。<br>
+・代表例：GES (Greedy Equivalence Search)<br>
+<br>
+<strong>関数型因果モデル (Functional Causal Models)</strong>　データの発生過程（誤差項の分布など）に特定の仮定を置き、因果の方向を一意に定めます。<br>
+・代表例：LiNGAM（線形非ガウス非巡回モデル）。データが非ガウス分布（正規分布ではない）に従う場合に、因果の向きを特定できる強力な手法。<br> 
+<br>
+<strong>因果推論（Causal Inference）との違い</strong><br>
+・因果探索： 「原因は何か？」という構造（矢印の向き）を見つける。<br>
+・因果推論： 「原因を変えると結果がどれだけ変わるか？」という効果の大きさ（数値）を算出する。 
+<li>
+
+<br>
+
 <li id="CodeAsTool">
 <strong>Code-as-tool</strong><br>
 AIモデルがタスクを完了するために内部的にコード（通常はPython）を生成、実行、デバッグする機能やアプローチ。複雑な計算、データ分析、論理的推論など、従来のテキストベースの応答だけでは難しい問題を解決するために使用される。<br>
@@ -1256,14 +1283,19 @@ Compositionality Gapの一例。<br>
 <strong>DRL: Deep Reinforcement Learning (深層強化学習)</strong><br>
 強化学習と深層学習（ディープラーニング）という2つの機械学習手法を組み合わせたもの<br>
 <br>
+<center><img src="data/images/DRL.svg"></center>
+<br>
 <a href="data/Papers_DRL.html">Papers</a><br>
+<br>
+●『1000 Layer Networks for Self-Supervised RL: Scaling Depth Can Enable New Goal-Reaching Capabilities』(2025)<br>
+　コンピュータビジョンや自然言語処理といった他のドメインが何千もの層にスケールアップすることで目覚ましい成功を収めているのに、<strong>なぜ RL モデルは浅いままなのか?</strong><br>
+　著者らは、他の分野でスケーリングの成功の要となってきた<strong>自己教師あり学習が、RLで同様のブレイクスルーを達成するために欠けている要素である</strong>と提案している。<br>
+　<strong>自己教師ありRLアルゴリズムと非常に深いネットワーク (最大1024層) を組み合わせることで</strong>、彼らは多様な移動、ナビゲーション、操作タスクにおいて<strong>2倍から50倍以上のパフォーマンス向上を実証</strong>している。<br>
 <br>(関連項目)<br>
 ・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 概略図比較あり<br>
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習) ポリシー ⇒ 報酬<br>
 ・<a href="#RL">RL: Reinforcement Learning</a> (強化学習) 報酬 ⇒ ポリシー
 </li>
-<br>
-<center><img src="data/images/DRL.svg"></center>
 
 <br>
 
@@ -1665,6 +1697,20 @@ ERMではない学習アプローチはあるのか?<br>
 　システムは、感覚入力がどのように生成されているかについての内部的な「世界モデル」を持っている。<br>
 <br>(関連項目)<br>
 ・<a href="#ActiveInference">Active Inference</a> (能動推論)
+</li>
+
+<br>
+
+<li id="FMP">
+<strong>Flat Manifold Problem (平坦多様体問題)</strong><br>
+継続学習において、古いタスクで構築されたデータ多様体が、新しいタスクを学習する過程で「平坦化」または破壊され、その結果として以前の知識が失われる（壊滅的忘却）現象。<br>
+<br>
+●『The Geometry of Abstraction: Continual Learning via Recursive Quotienting』(2025)<br>
+　(抽象化の幾何学：再帰的商算による継続的学習)<br>
+　ニューラルアーキテクチャ内のトークンが、時間多様体内の離れた点を橋渡しする極端に正の曲率を持つ領域であるワームホールとして物理的に実現可能であることを明らかにした。我々の枠組みは、システムが経験多様体を能動的に折り畳み、過去の出来事の線形探索を再帰的商位相による測地線的近道に置き換える場合にのみ、<strong><span style="color:magenta;">固定次元で無制限の推論が達成可能であることを実証する</span></strong>。<br>
+<br>(関連項目)<br>
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
+・<a href="#ContinualLearning">Continual Learning</a> (継続学習)
 </li>
 
 <br>
@@ -2074,6 +2120,18 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 <strong>盲点の発生</strong>:　決まりきった思考回路に頼るため、新しい可能性や斬新な解決策を見落としやすくなる。<br>
 <br>(関連項目)<br>
 ・<a href="#ReverseThinking">Reverse thinking</a>
+</li>
+
+<br>
+
+<li id="Interestingness">
+<strong>Interestingness (面白さ, 興味深さ)</strong><br>
+AIが生成するアウトプットが爆発的に増える中で、「<strong>正しいけれど退屈な情報</strong>」を排除し、「<strong>未知で価値のある洞察</strong>」を優先的に人間に提示することが必要不可欠になる。そのための指標。<br>
+<br>
+●『A Matter of Interest: Understanding Interestingness of Math Problems in Humans and Language Models』(2025)<br>
+　数学の進化は、面白さによって部分的に導かれてきた。<br>
+　人々の選択は、問題がどれだけ面白くて難しいかという判断によって導かれることがよくある。<br> 
+　LLMなどのAIシステムが、高度な研究であれ教育であれ、人々と共に数学に関与することが増えるにつれて、その判断が人間の判断とどの程度一致しているかを理解することが重要になる。
 </li>
 
 <br>
@@ -3982,6 +4040,9 @@ AIの出力をユーザーが提示する特定の単語、メタファー、ま
 ●『Which Shortcut Cues Will DNNs Choose? A Study from the Parameter-Space Perspective』(2022)<br>
 　(DNNはどのショートカットキューを選択するのか？パラメータ空間の観点からの研究)<br>
 　複数shortcutsがある時はDNN構造によらず色情報、民族情報が優先して使われる。shortcutした学習はflat minimaに収束しやすい。<br>
+●『Generative Classifiers Avoid Shortcut Solutions』(2025)<br>
+　識別的分類アプローチは、わずかな分布シフトでも失敗してショートカット学習することがよくある。<br>
+　<strong>生成分類器は</strong>、コア特徴と疑似特徴の両方を含むすべての特徴をモデル化することで、<strong>この問題を回避できることを示す</strong>。<br>
 <br>
 <a href="data/Papers_SimplicityBias.html">Papers</a><br>
 <br>(関連項目)<br>
