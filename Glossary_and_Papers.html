@@ -57,6 +57,14 @@
 
 
 <h2>更新項目</h2>
+・<a href="#HyperConnection">Hyper Connection </a><br>
+・<a href="#GAIA">GAIA（General AI Assistants）ベンチマーク</a><br>
+・<a href="#InfluenceCampaignsDetection">Influence Campaigns / Operation Detection (印象操作検出,影響工作活動検知)</a><br>
+・<a href="#MathVista">MathVista ベンチマーク</a><br>
+・<a href="#MCP">MCP: Model Context Protocol </a><br>
+・<a href="#PathVQA">PathVQA ベンチマーク</a><br>
+・<a href="#ToolAugmentation">Tool Augmentation (ツール拡張)</a><br>
+---<br>
 ・<a href="#CDS">Causal Discovery Methods（統計的因果探索）</a><br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
 ・<a href="#FMP">Flat Manifold Problem (平坦多様体問題)</a><br>
@@ -1755,6 +1763,20 @@ ERMではない学習アプローチはあるのか?<br>
 
 <br>
 
+<li id="GAIA">
+<strong>GAIA（General AI Assistants）ベンチマーク</strong><br>
+AIアシスタントやAIエージェントの「汎用的な知能と実用性」を測定するための評価指標。<br>
+2024年に発表されて以来、LLM（大規模言語モデル）単体の性能ではなく、AIが自律的にツールを使い、複雑なタスクを完結できるかを測る基準として重要視されている。<br>
+・学術的な知識（暗記など）ではなく、ブラウジング、画像・音声の処理、コーディング、外部ツールの活用など、現実世界の多段階的な推論を必要とする問題で構成されている。466の現実世界シナリオ問題。<br>
+・3段階の難易度: タスクは難易度順にLevel 1（5ステップ未満）からLevel 3（高度な計画性とツール統合が必要）まで分かれている。<br>
+<br>
+●『GAIA: a benchmark for General AI Assistants』(2023)<br>
+<br>
+<a href="https://huggingface.co/spaces/gaia-benchmark/leaderboard">GAIA Leaderboard(ランキング)</a>
+<li>
+
+<br>
+
 <li>
 <strong>GAN:Generative Adversarial Network (敵対的生成ネットワーク)</strong><br>
 生成ネットワークと識別ネットワークの2つのニューラルネットワークを競合させながら学習させることで、現実世界に存在するデータと区別がつかないほどの新しいデータを生成するAI技術。<br>
@@ -1918,6 +1940,20 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 <a href="data/Papers_Hubness.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#CurseOfDimensionality">Curse of Dimensionality (次元の呪い)</a>
+</li>
+
+<br>
+
+<li id="HyperConnection">
+<strong>Hyper Connection </strong><br>
+従来の「残差接続（Residual Connections / Skip Connections）」に代わる、あるいはそれを補完する新しい接続手法。<br>
+・ネットワークの異なる深さの層から得られる情報を直接、あるいは密に結合（ハイパー接続）させる。<br>
+・深いネットワークで発生しやすい「勾配消失」や「表現の崩壊（コラプス）」といった問題を抑え、より複雑なパターンの学習を可能にする。<br>
+<br>
+●『mHC: Manifold-Constrained Hyper-Connections』(2025)<br>
+　ハイパーコネクションに代表される研究は、残差接続パラダイムを、残差ストリーム幅の拡張と接続パターンの多様化によって拡張してきた。この多様化は大幅な性能向上をもたらす一方で、残差接続に固有の恒等写像性を根本的に損なうため、深刻な訓練不安定性とスケーラビリティの制限を引き起こし、さらに顕著なメモリアクセスオーバーヘッドも生じる。これらの課題に対処するため、我々は多様体制約ハイパーコネクションを提案する。<br>
+<br>(関連項目)<br>
+・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)<br>
 </li>
 
 </ul></div></p>
@@ -2099,6 +2135,19 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 ・<a href="#ProspectiveLearning">Prospective Learning</a> (展望学習)<br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization</a> (分布外汎化)<br>
 </li>
+
+<br>
+
+<li id="InfluenceCampaignsDetection">
+<strong>Influence Campaigns / Operation Detection (印象操作検出,影響工作活動検知)</strong><br>
+SNSやネットメディアを通じて人々の意見や行動、意思決定を操作しようとする「インフルエンス・オペレーション（影響工作）」を、AIやデータ分析技術を用いて特定・防御する取り組み。<br>
+<br>
+●『The spread of true and false news online』(2018)<br>
+・12万件以上のニュース拡散を分析し、<strong><span style="color:magenta;">「偽ニュースは真実よりも速く、深く、広く拡散する」ことを定量的に証明した</span></strong>。<br>
+●『The ABC Framework: A-ctors, B-ehavior, C-ontent』(2019)<br>
+・それまで「嘘の内容（Content）」ばかりに注目していた検知の視点を、「誰が（Actors）」、「どのような不自然な振る舞い（Behavior）」で行っているか、という3軸で整理した。これにより、Meta(Facebook)などのプラットフォームが「協調的不自然挙動(CIB:Coordinated Inauthentic Behavior)」を定義し、排除する法的・技術的根拠となった。
+</li>
+
 <br>
 
 <li id="IntentExtraction">
@@ -2628,6 +2677,29 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <strong>Mamba</strong><br>
 トランスフォーマーモデルに代わる、効率的な次世代ネットワークアーキテクチャとして2023年に発表された、新しい機械学習モデル。<br>
 トランスフォーマーが抱える「長いシーケンス（入力テキスト）を扱う際の計算コストの増大」という課題を解決するために開発された。
+</li>
+
+<br>
+
+<li id="MathVista">
+<strong>MathVista ベンチマーク</strong><br>
+AI（マルチモーダル・モデル）の「視覚情報を伴う数学的推論能力」を測定するためのベンチマーク。<br>
+従来の数学ベンチマークが主にテキストベースであったのに対し、MathVistaは図表、グラフ、幾何図形といった「画像」に含まれる数学的情報の理解と、それに基づく論理的な思考力を厳密に評価する。<br>
+ 数学パズル、幾何学、関数のグラフ、学術論文の図解など、28の既存データセットと3つの新規データセット（IQテスト、関数QA、論文QA）を統合した約6,141の問題で構成されている。<br>
+<br>
+●『MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts』(2023)<br>
+<br>
+<a href="https://llm-stats.com/benchmarks/mathvista">MathVista ベンチマーク</a>
+</li>
+
+<br>
+
+<li id="MCP">
+<strong>MCP: Model Context Protocol</strong><br>
+AI (LLM, 大規模言語モデル) と外部のデータソースやツールを連携させるためのオープンな標準規格。<br>
+2024年11月にAnthropic社が発表した。<br>
+<br>(関連項目)<br>
+・<a href="#ToolAugmentation">Tool Augmentation</a> (ツール拡張) ･･･ MCPはツール拡張のためお標準規格<br>
 </li>
 
 <br>
@@ -3301,6 +3373,18 @@ AIの学習環境を「小さな世界（Small World）」と見なすと、現�
 <br>(関連項目)<br>
 ・<a href="#EnsembleMethod">Ensemble Method (アンサンブル法)</a><br>
 ・<a href="#OOD">OOD: Out-of-Distribution Generalization (分布外汎化)</a><br>
+</li>
+
+<br>
+
+<li id="PathVQA">
+<strong>PathVQA ベンチマーク</strong><br>
+AIによる「病理画像の視覚的質問応答（Visual Question Answering）」を評価するための世界初の大規模データセットおよびベンチマーク。<br>
+病理学（Pathology）の専門的な画像に対し、AIがどれだけ正確に質問に答えられるかを測る。<br>
+約5,000枚の病理画像（スライド画像や疾患の自然画像）に対し、32,000件以上の質問応答ペア（QA）が含まれている。<br>
+2020年の発表当初、AIの自由記述形式の正答率はわずか数％（3%未満）と極めて低いものだったが、Qwen3 VLベースの医療モデルなどは、人間の専門家に迫る高い精度（90%超）を記録し始めている。 <br>
+<br>
+●『PathVQA: 30000+ Questions for Medical Visual Question Answering』(2020)
 </li>
 
 <br>
@@ -4096,7 +4180,8 @@ DiTのバックボーン（基盤技術）を活用して開発された新し�
 
 <center><img src="data/images/SkipConnection.svg"></center>
 <br>(関連項目)<br>
-・<a href="#VanishingGradient">Vanishing gradient problems</a> (勾配消失問題)
+・<a href="#VanishingGradient">Vanishing gradient problems</a> (勾配消失問題)<br>
+・<a href="#HyperConnection">Hyper Connection</a>
 </li>
 
 
@@ -4457,6 +4542,30 @@ AI（特にマルチモーダル大規模言語モデル）の分野における
 </li>
 
 <br>
+
+<li id="ToolAugmentation">
+<strong>Tool Augmentation (ツール拡張)</strong><br>
+AI（特に大規模言語モデル：LLM）が、自身だけでは解決できないタスクを遂行するために、外部のツールやAPIを自律的に呼び出して利用する手法やその仕組み。<br>
+・「知能 (AI) 」に「手 (ツール)」を与えることで、AIにできることを飛躍的に広げる技術。<br>
+・AI が単なる「チャットボット」から、実際の業務プロセスを完結させる「AIエージェント」へと進化するための中核技術。<br>
+<br>
+●『WebGPT: Browser-assisted question-answering with human feedback 』(2021)<br>
+・AIがブラウザを使って検索・閲覧を行う仕組みを構築し、情報の正確性を高める試みの先駆けとなった。<br>
+●『TALM: Tool Augmented Language Models 』(2022)<br>
+・ツール拡張型言語モデルの初期の重要論文。<br>
+●『 LaMDA: Language Models for Dialog Applications 』(2022)<br>
+・対話システムにおいて、外部の「ツールセット（電卓や検索）」を活用する機能を統合した大規模な事例として注目された。<br>
+●『Toolformer: Language Models Can Teach Themselves to Use Tools』(2023)<br>
+・AI（LLM）に、計算機、カレンダー、検索エンジン、翻訳システム、QAシステムといった外部APIの使い方を、自己教師あり学習（Self-supervised learning）で教え込む手法を提案した。<br>
+・「テキストの中にAPI呼び出しを埋め込む」という形式をとることで、モデルが文章を生成しながら自然にツールを呼び出せるようにした。<br>
+●『OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning』(2025)<br>
+・LLMが複雑な推論タスクのために外部ツールを使用する能力を劇的に向上させるトレーニング不要なフレームワーク、OctoToolsを提案。<br>
+<br>(関連項目)<br>
+・<a href="#MCP">MCP: Model Context Protocol</a>･･･ ツール拡張を「どのAIでも同じツールを使いやすくする」ための標準規格<br>
+</li>
+
+<br>
+
 
 <li id="ToT">
 
@@ -4842,8 +4951,6 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 ・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
 ・<a href="#EoE">Era of Experience (経験の時代)</a><br>
 ・<a href="#SSL">SSL: Self-Supervised Learning (自己教師あり学習)</a><br>
-・<a href="#EoE">EoE: Era of Experience (経験の時代)</a>
-
 </li>
 
 
