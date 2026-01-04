@@ -57,12 +57,14 @@
 
 
 <h2>更新項目</h2>
+・<a href="#CuriosityDriven">Curiosity-driven（好奇心駆動型）</a><br>
+・<a href="#FluencyIllusion">Fluency Illusion（流暢性の錯覚）</a><br>
+・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
+・<a href="#InformationGapTheory">Information Gap Theory (情報ギャップ理論)</a><br>
+----<br>
 ・<a href="#HyperConnection">Hyper Connection </a><br>
-・<a href="#GAIA">GAIA（General AI Assistants）ベンチマーク</a><br>
 ・<a href="#InfluenceCampaignsDetection">Influence Campaigns / Operation Detection (印象操作検出,影響工作活動検知)</a><br>
-・<a href="#MathVista">MathVista ベンチマーク</a><br>
 ・<a href="#MCP">MCP: Model Context Protocol </a><br>
-・<a href="#PathVQA">PathVQA ベンチマーク</a><br>
 ・<a href="#ToolAugmentation">Tool Augmentation (ツール拡張)</a><br>
 ---<br>
 ・<a href="#CDS">Causal Discovery Methods（統計的因果探索）</a><br>
@@ -209,9 +211,14 @@ FEP: Free Energy Principle (自由エネルギー原理) に基づいており�
 <strong>Active Learning (能動学習)</strong><br>
 学習アルゴリズムが自身の訓練データに影響を与えたり選択したりする能力、あるいはその必要性を持つ問題。<br>
 <br>
-<a href="data/Papers_ActiveLearning.html">Papers</a>
-</li>
+<a href="data/Papers_ActiveLearning.html">Papers</a><br>
 <center><img src="data/images/ActiveLearning.svg"></center>
+<br>
+※ 機械学習では, 教育学における Active Learning (以下)とは別の意味で使われる。<br>
+　学習者が受動的に講義を聞くのではなく、能動的に（主体的に）学習プロセスに参加する教授法のこと。<br>
+　グループディスカッション, ディベート, 問題解決学習(PBL), 体験学習などを通じて、自ら考え、他者と対話する。
+</li>
+
 <br>
 
 <li id="AdversarialVulnerabilities">
@@ -974,29 +981,39 @@ AI、特にVision-Language Models（VLM: 画像言語モデル）における推
 <strong>Curiosity-driven（好奇心駆動型）</strong><br>
 強化学習において、エージェントが未知の状態や予測が困難な環境を積極的に探索するように、内発的な動機づけを与える手法のこと。<br>
 <br>
+●『States of curiosity modulate hippocampus-dependent learning via the dopaminergic circuit』(2014)<br>
+　(好奇心の状態はドーパミン回路を介して海馬依存性学習を調節する)<br>
+　人は興味のあるトピックを学ぶ方が簡単だと感じるが、内発的動機づけ状態が学習にどのようなメカニズムで影響するかについてはほとんどわかっていない。我々は機能的磁気共鳴画像法を用いて、好奇心（学習への内発的動機づけ）が記憶にどのように影響するかを調べた。即時記憶テストと1日遅延記憶テストの両方で、参加者は<strong><span style="color:magenta;">好奇心の強い情報と、好奇心が強い状態で学習した付随的な内容に対する記憶力が向上した</span></strong>。<br>
+　・・・<br>
+　これらの知見は、外発的報酬動機づけと内発的好奇心を支えるメカニズムの間に関連があることを示唆しており、より効果的な学習体験を生み出すために好奇心を刺激することの重要性を強調する。<br>
+<br>
 ●『Curiosity-driven Exploration by Self-supervised Prediction』(2017)<br>
 　(自己教師予測による好奇心主導の探究)<br>
 　論文は<a href="https://arxiv.org/abs/1705.05363">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/1705.05363v1">こちら</a><br>
 　予測誤差を単なる「修正用信号」ではなく、エージェントを動かす「報酬そのもの」として定義し、探索効率を劇的に向上させた。<br>
+
+
 <br>
 ・<a href="https://davidbau.com/archives/2025/12/09/in_defense_of_curiosity.html">In Defense of Curiosity</a> (好奇心を擁護する)</br>
 　5000年もの間、人々は「考えるとはどういうことか」と問い続け、その答えは常に人間の心を中心に置いてきました。人間は唯一、合理的思考の好例であり、クジラやタコといった動物はその周辺に位置していました。<br>
 <br>
 <center><img src="data/images/CopernicanMoment.png"></center><br>
 　しかし、AIの登場により、この見方は変化し、人間の心は中心という特権的な地位を失いつつあります。<br>
+<!--
 　：<br>
 　<strong>好奇心に従ってください</strong>。それが私のメッセージです。私たちは好奇心を持たなければなりません。なぜなら、私たちはコペルニクス的転回を生きているからです。<br>
 　5000年ぶりに、合理的思考に対する私たちの理解は変化しつつあります。アリストテレスは人間が唯一理性的な生き物であると提唱し、聖トマス・アクィナスは人間の理性こそが人間を唯一精神的な存在にしたと考えました。そしてデカルトは「我思う、故に我あり」という有名な言葉を残しており、理性と人格を同一視しています。<br>
 　しかし今、私たちが生み出した思考装置は、これらの古き哲学者たちの考えを覆すものです。人間の心はもはや宇宙の中心ではなくなりました。AIが初めて、知性のもう一つの例を与えてくれたからです。それは遠くから観察できるだけでなく、細かく分解して、あらゆる計算、あらゆるニューロン、あらゆる学習の瞬間を分析できるものでもあります。<br>
 　革命は私たちに多くの根本的な問いを突きつけます。思考とは何か？信念とは何か？意味とは何か？主体性とは？意識とは何か？<br>
 　これらの疑問に答える実際的な理由がなくても、私たちは好奇心に従うべきです。コペルニクス的転回は、かつては科学的ではなかった多くの古代の疑問を解き明かし、今やそれらを科学的な疑問へと昇華させるのです。実用的なガラス作りに取り組む中で、少し時間を取ってレンズを星々に向けてみましょう。そして、考えるとはどういうことか、という問いを忘れずに問いかけるべきでしょう。<br>
+-->
 
 <br>(関連項目)<br>
 ・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
-・<a href="#IntrinsicMotivation">Intrinsic Motivation (内発的動機付け)</a><br>
-・<a href="#NoisyTVProblem">Noisy TV problem (ノイジーテレビ問題)</a><br>
-・<a href="#NoveltySearch">Novelty Search (新規性探索)</a><br>
-・<a href="#TD">TD（Tempral Differences) Learning (TD学習)</a><br>
+・<a href="#IntrinsicMotivation">Intrinsic Motivation</a> (内発的動機付け)<br>
+・<a href="#NoisyTVProblem">Noisy TV problem</a> (ノイジーテレビ問題)<br>
+・<a href="#NoveltySearch">Novelty Search</a> (新規性探索)</a><br>
+・<a href="#TD">TD（Tempral Differences) Learning</a> (TD学習)<br>
 </li>
 
 <br>
@@ -1737,6 +1754,27 @@ ERMではない学習アプローチはあるのか?<br>
 ・<a href="#DataAugmentation">Data Augmentation</a> (データ拡張)
 </li>
 
+<br>
+
+<li id="FluencyIllusion">
+<strong>Fluency Illusion（流暢性の錯覚）</strong><br>
+学習した内容が「スムーズに頭に入る」という感覚を、そのまま「その内容を完全に習得した」と誤解してしまう心理現象。<br>
+<br>
+<strong>なぜ起こるのか</strong>　脳は、処理が簡単な（流暢な）情報を「正しい」「価値がある」「覚えている」と判断しやすい性質を持っている。受動的な学習（読むだけ、聞くだけ）は脳への負荷が低いため、この「流暢性の錯覚」が非常に起きやすくなる。<br>
+<br>
+<strong>対策</strong>　この錯覚を打破するには、あえて脳に負荷をかける「アクティブ・ラーニング（能動的学習）」が有効と言われている。<br> 
+※ このActive Lerning は 機械学習におけるActive Learningではなく, 教育学におけるもの <br>
+・想起（テスト）: 本を閉じて、学んだ内容を何も見ずに書き出す。<br>
+・自己説明: 学んだ内容を、他人に教えるように自分の言葉で説明してみる。<br>
+・インターリービング: 同じ内容を繰り返すのではなく、異なるトピックを混ぜて学習し、脳が安易に「慣れる」のを防ぐ。<br>
+<br>
+<strong>AIが起こす「流暢性の錯覚」(ハルシネーション)</strong>　AI（特に大規模言語モデル）は、確率的に「もっともらしい続きの言葉」をつなげる仕組みであるため、「内容は間違っているが、文章としては完璧で流暢」な回答を生成することがある。<br> 
+・AIには人間のような「真実かどうかの内省」や「実体験に基づいた理解」がない。<br>
+・統計的に「賢そうな回答パターン」を再現することに長けているため、論理が破綻していても表面上は整った説明(ハルシネーション)を出力してしまう。<br>
+<br>
+<strong>人間がAIに対して抱く「流暢性の錯覚」</strong>　AIの回答があまりにもスムーズで自信に満ちているため、それを受け取る人間側が「このAIは深い知能を持っている」「この情報は正しい」と誤認してしまう現象。 
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -2024,8 +2062,14 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 　CFD: Curiosity as a Feeling of Deprivation (欠乏感としての好奇心)<br>
 　認知的葛藤、不確実さ、あるいは混乱といった不快な状態を解消したいという欲求によって引き起こされる情報探索行動。<br>
 　I/D理論の「剥奪タイプ」は、AIが現在の知識と新しい情報の間の「不確実性」や「violation of expectation (予期違反)」を知覚したときに、そのギャップを解消しようとする行動としてモデル化される。これは、AIが「何をまだ知らないか」を認識し、その不足を埋めるための探索を促すのに役立つ。<br>
+<br>
+●『The Measurement of Curiosity As a Feeling of Deprivation』(2004)<br>
+　Loewenstein の情報ギャップ理論を拡張し、好奇心を「興味（Interest）」と「剥奪（Deprivation）」の2因子で測定する尺度を初めて開発した。<br>
+●『Curiosity and the pleasures of learning: Wanting and liking new information』(2005)<br>
+　I/Dモデルをさらに発展させ、神経科学的な「Wanting（欲求）」と「Liking（嗜好）」の概念と結びつけた。これにより、D型（剥奪型）は情報に対する強い「Wanting」を伴う一方、I型（興味型）は発見の「Liking」が中心であることを理論化した。<br>
 <br>(関連項目)<br>
-・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)
+・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)<br>
+・<a href="#InformationGapTheory">Information Gap Theory</a> (情報ギャップ理論)
 </li>
 
 <br>
@@ -2169,6 +2213,19 @@ SNSやネットメディアを通じて人々の意見や行動、意思決定�
 <strong>盲点の発生</strong>:　決まりきった思考回路に頼るため、新しい可能性や斬新な解決策を見落としやすくなる。<br>
 <br>(関連項目)<br>
 ・<a href="#ReverseThinking">Reverse thinking</a>
+</li>
+
+<br>
+
+<li id="InformationGapTheory">
+<strong>Information Gap Theory (情報ギャップ理論)</strong><br>
+1994年に心理学者のジョージ・ローウェンスタイン（George Loewenstein）が提唱した、「好奇心」の発生メカニズムを説明する理論。<br>
+<br>
+●『The Psychology of Curiosity: A Review and Reinterpretation』(1994)<br>
+（好奇心の心理学：展望と再解釈）<br>
+　好奇心とは、「自分が今知っていること」と「知る必要があること（あるいは知りたいこと）」との間のギャップ（乖離）に気づいたときに生じる心理的な反応であると定義した。<br>
+<br>(関連項目)<br>
+・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity</a> (興味・剥奪モデル, 興味・欠乏モデル) ･･･ 情報ギャップ理論を拡張したモデル<br>
 </li>
 
 <br>
@@ -3202,6 +3259,8 @@ DeepMind社によって2014年に発表された。<br>
 　(創造性と人工知能)<br>
 「AI技術は、3つの方法で新しいアイデアを生み出すために使用できる。それは、馴染みのあるアイデアの新しい組み合わせを生み出すこと、概念空間の可能性を探求すること、および以前は不可能だったアイデアの生成を可能にする変革を行うことである。」<br>
 　→ OMEGA(2025)の構成的汎化,　探索的汎化, 変革的汎化につながる<br>
+
+<!--
 <br>
 　本題(OOD)とは関係ないが, ユーモアの生成例として Jape が紹介されている。<br>
 　(Q) どんな殺人犯が食物繊維を持っている？<br>
@@ -3220,6 +3279,7 @@ DeepMind社によって2014年に発表された。<br>
 　(Q) 葉っぱと車の違いは？<br>
 　(A) 落ち葉はブラシで掃き集め、車は急ブレーキをかける。<br>
 　　　brush and rake（掃き集める、熊手）と rush and brake（急ブレーキ）<br>
+-->
 <br>
 ●『Towards a theory of out-of-distribution learning』 (2021)<br>
 ・現在の文献では、分布内学習パラダイムと分布外学習パラダイムの多くについて正式な定義が欠如していることは注目に値する。これらの学習設定について適切かつ普遍的に合意された定義を確立することは、異なる学習シナリオにおけるアイデアの進化を徹底的に探求し、これらの学習者に対する一般化された数学的境界を導き出すために不可欠である。<br>
