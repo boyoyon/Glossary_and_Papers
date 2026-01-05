@@ -57,25 +57,15 @@
 
 
 <h2>更新項目</h2>
+・<a href="#AoT">AoT: Atom of Thoughts </a><br> 
+・<a href="#LCM">LCM: Large Concept Model (大規模概念モデル)</a><br>
+・<a href="#SHY">SHT: Synaptic Homeostasis Hypothesis (シナプス恒常性仮説)</a><br>
+---<br>
 ・<a href="#CuriosityDriven">Curiosity-driven（好奇心駆動型）</a><br>
 ・<a href="#FluencyIllusion">Fluency Illusion（流暢性の錯覚）</a><br>
 ・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
 ・<a href="#InformationGapTheory">Information Gap Theory (情報ギャップ理論)</a><br>
-----<br>
-・<a href="#HyperConnection">Hyper Connection </a><br>
-・<a href="#InfluenceCampaignsDetection">Influence Campaigns / Operation Detection (印象操作検出,影響工作活動検知)</a><br>
-・<a href="#MCP">MCP: Model Context Protocol </a><br>
-・<a href="#ToolAugmentation">Tool Augmentation (ツール拡張)</a><br>
----<br>
-・<a href="#CDS">Causal Discovery Methods（統計的因果探索）</a><br>
-・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
-・<a href="#FMP">Flat Manifold Problem (平坦多様体問題)</a><br>
-・<a href="#Interestingness">Interestingness (面白さ, 興味深さ)</a><br>
-・<a href="#ShortcutLearning">Shortcut Learning (ショートカット学習)</a><br>
----<br>
-・<a href="#BigWorldHypothesis">Big World Hypothsis (ビッグワールド仮説)</a><br>
-・<a href="#Empowerment">Empowerment (エンパワーメント)</a><br>
-・<a href="#OODShock">OOD Shock: Out-of-Distribution Shock (OODショック)</a><br>
+
 <br>
 <p>
 
@@ -455,6 +445,24 @@ Marcus Hutterによって提案された、数学的に定義された理論上�
 </li>
 
 <br>
+<li id="AoT">
+<strong>AoT: Atom of Thoughts </strong><br>
+大規模言語モデル (LLM) の推論効率と精度を向上させるためのフレームワーク。<br>
+「思考の連鎖（Chain of Thought: CoT）」が過去の推論過程（履歴）をすべて保持しながら進むのに対し、AoTはマルコフ性（現在の状態のみに依存し、過去の履歴を必要としない性質）を取り入れている。<br>
+<br>
+<ul><li>
+<strong>問題の分解（Decomposition）</strong><br>
+複雑な問題を、依存関係に基づいた有向非巡回グラフ（DAG）として、独立した小さな「原子的な（Atomic）」サブ問題に分解する。
+</li><br><li>
+<strong>収縮（Contraction）</strong><br>
+サブ問題を解き、その結果を元の問題に統合して問題を簡略化する。これを繰り返すことで、最終的な回答を導き出す。
+</li></ul>
+<br>
+●『Atom of Thoughts for Markov LLM Test-Time Scaling』(2025)<br>
+　AoTを導入することで、GPT-4o-miniのような比較的小規模なモデルでも、特定のベンチマーク（HotpotQAなど）において o3-mini や DeepSeek-R1 といった強力な推論モデルを上回る精度を達成できることが示されている。
+</li>
+
+<br> 
 
 <li id="ARC">
 <strong>ARC-AGI: Abstraction and Reasoning Corpus for AGI (AGIのための抽象化推論コーパス)</strong><br>
@@ -1772,7 +1780,10 @@ ERMではない学習アプローチはあるのか?<br>
 ・AIには人間のような「真実かどうかの内省」や「実体験に基づいた理解」がない。<br>
 ・統計的に「賢そうな回答パターン」を再現することに長けているため、論理が破綻していても表面上は整った説明(ハルシネーション)を出力してしまう。<br>
 <br>
-<strong>人間がAIに対して抱く「流暢性の錯覚」</strong>　AIの回答があまりにもスムーズで自信に満ちているため、それを受け取る人間側が「このAIは深い知能を持っている」「この情報は正しい」と誤認してしまう現象。 
+<strong>人間がAIに対して抱く「流暢性の錯覚」</strong>　AIの回答があまりにもスムーズで自信に満ちているため、それを受け取る人間側が「このAIは深い知能を持っている」「この情報は正しい」と誤認してしまう現象。 <br>
+<br>
+●『The critical importance of retrieval for learning』(2008)<br>
+　学習において情報を記憶から「思い出す」行為がいかに重要かを科学的に示し、その後の教育・心理学分野に大きな影響を与えた。この研究は、単純な再読（再学習）よりも、テスト形式で記憶から情報を引き出す「想起練習」の方が、長期的な学習定着に劇的な効果があることを実証した。
 </li>
 
 </ul></div></p>
@@ -2524,6 +2535,34 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 <center><img src="data/images/LUA.svg"></center>
 <br>
 ・<a href="#VAE">VAE: Variational Auto Encoder</a>
+</li>
+
+<br>
+
+<li id="LCM">
+<strong>LCM: Large Concept Model (大規模概念モデル)</strong><br>
+Meta社が2024年12月に発表した、「トークン（単語の断片）」単位ではなく、「概念（文レベルのまとまり）」単位で推論を行う新しいAIアーキテクチャー。
+\[
+\begin{array}{l|l|l}
+& \text{LLM(Large Language Model)} & \text{LCM(Large Concept Model)} \\
+\hline
+\text{最小単位} & \text{トークン(単語の断片)} & \text{概念(文, 高次のアイディア)}\\
+\hline
+\text{予測対象} & \text{次に来るトークン} & \text{次に来る概念(埋め込みベクトル)} \\
+\hline
+\text{言語依存} & \text{学習した言語に依存しやすい} & \text{言語を超えた共通の意味空間で動作}
+\end{array}
+\]
+
+この技術には、Metaが開発した200以上の言語や音声をサポートする埋め込み空間「SONAR」が活用されており、多言語間でのスムーズな情報転送や生成が可能になっている。<br>
+<br>
+●『Large Concept Models: Language Modeling in a Sentence Representation Space』(2024)<br>
+　従来のトークン単位の予測ではなく、文単位の意味ベクトル（SONAR埋め込み空間）を用いて、高次の「概念」を自己回帰的に予測するアーキテクチャが提案されている。<br>
+●『Dynamic Large Concept Models: Latent Reasoning in an Adaptive Semantic Space』(2025)<br>
+　Dynamic Large Concept Models (DLCM)は, 現在のLLM（大規模言語モデル）における根本的な非効率性、すなわち、<strong><span style="color:magenta;">意味的重要性にかかわらず、すべてのトークンに一律に計算を適用するという問題に対処する</span></strong>。<br>
+<br>
+<center><img src="data/images/DLCM.png"></center>
+<center>境界検出とプーリング</center>
 </li>
 
 <br>
@@ -4191,6 +4230,43 @@ AIの出力をユーザーが提示する特定の単語、メタファー、ま
 <a href="data/Papers_SimplicityBias.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#SimplicityBias">Simplicity Bias</a>
+</li>
+
+<br>
+
+<li id="SHY">
+<strong>SHT: Synaptic Homeostasis Hypothesis (シナプス恒常性仮説)</strong><br>
+イタリアの神経科学者ジュリオ・トノーニ（Giulio Tononi）とキアラ・チレッリ（Chiara Cirelli）が2003年に提唱した、「睡眠の主要な目的は、覚醒中に肥大化したシナプス強度を再調整（スケーリング）することにある」とする説。<br>
+<br>
+<strong><span style="color:magenta;">この仮説に基づくと、睡眠は「脳が可塑性(学習能力)を維持するために支払わなければならない代償」であると考えられる</span></strong>。近年では、睡眠中にマウスのシナプスが実際に小さくなることが顕微鏡観察で確認されるなど、多くの実証研究が進められている。<br>
+<br>
+※ 神経細胞の情報の受け手側である「樹状突起スパイン」は、その体積や表面積が大きいほど、より多くの受容体を保持できる。<br> 
+・サイズが大きい: 受容体の数が多く、神経伝達物質に対する反応が強くなるため、「シナプス結合が強い」状態になる。<br>
+・サイズが小さい: 受容体の数が少なく、反応が弱いため、「シナプス結合が弱い」状態になる。<br> 
+<br>
+●『Sleep and synaptic homeostasis: a hypothesis』(2003)<br>
+<br>
+<ul><li>
+<strong>覚醒と学習 (シナプスの強化)</strong><br>
+人は起きている間、新しい経験や学習によって脳内のシナプス結合（神経細胞同士のつながり）が継続的に強化される。これにより、脳全体のシナプス強度は増大し続ける。
+</li><br><li>
+<strong>睡眠とコスト (飽和の回避)</strong><br>
+シナプスが強化され続けると、エネルギー消費の増大やスペースの不足、さらには学習能力の飽和(これ以上新しいことを学べない状態)を招く。<br>
+</li><br><li>
+<strong>ダウンスケーリング(再調整)</strong><br>
+睡眠中(特に徐波睡眠)に、脳はシナプス強度を全体的に弱める(ダウンスケーリング)ことで、情報の「ノイズ」を削ぎ落とし、重要な記憶を定着させつつ、翌日の学習に必要なスペースを確保する。<br> 
+</li></ul><br>
+
+●『Ultrastructural evidence for synaptic scaling across the sleep-wake cycle』(2017)<br>
+　「睡眠中にマウスのシナプスが小さくなる」ことを顕微鏡観察（電子顕微鏡）で直接的に証明した代表的な論文。この発見は、提唱から10年以上経過していた「シナプス恒常性仮説（SHY）」に対して、視覚的な直接証拠を与える画期的なもの。<br>
+<br>
+●『Prefrontal synaptic regulation of homeostatic sleep pressure revealed via synaptic chemogenetics』(2024)<br>
+　(シナプス化学遺伝学で解明された前頭前野シナプスによる恒常性睡眠圧の制御)<br>
+　<a href="https://www.m.u-tokyo.ac.jp/news/PR/2024/release_20240927.pdf">シナプスの結びつきの強さが睡眠の量と質を一定に保つ仕組みに関与する</a><br>
+　前頭葉のシナプス結合を人工的に大きくすると睡眠が誘導され(シナプスの増大そのものが睡眠圧(眠気)の正体)、その後の睡眠によって大きくなったシナプスが元のサイズ（強度）に戻ることが確認されている。 <br>
+<br>
+(蛇足：AIモデルの継続学習でも必要になりそう･･･ もう適用されているか???)<br>
+(蛇足：睡眠中に個々のシナプスがバラバラに小さくなったら大小関係が崩れるのではないか気になるが, グローバルスケーリングや, 重要なシナプスは特定の脳波(シャープウェーブ・リプルなど)によって保護されたり, といった仕組みがあるらしい･･･)
 </li>
 
 <br>
