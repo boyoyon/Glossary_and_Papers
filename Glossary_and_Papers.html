@@ -57,16 +57,13 @@
 
 
 <h2>更新項目</h2>
+・<a href="#DDL">DDL: Deep Delta Learning (ディープデルタ学習)</a><br>
+・<a href="#DPA">DPA: Distributional Principal Autoencoders (分布主成分オートエンコーダ)</a><br>
+
+---<br>
 ・<a href="#AoT">AoT: Atom of Thoughts </a><br> 
 ・<a href="#LCM">LCM: Large Concept Model (大規模概念モデル)</a><br>
 ・<a href="#SHY">SHT: Synaptic Homeostasis Hypothesis (シナプス恒常性仮説)</a><br>
----<br>
-・<a href="#CuriosityDriven">Curiosity-driven（好奇心駆動型）</a><br>
-・<a href="#FluencyIllusion">Fluency Illusion（流暢性の錯覚）</a><br>
-・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
-・<a href="#InformationGapTheory">Information Gap Theory (情報ギャップ理論)</a><br>
-
-<br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1105,6 +1102,7 @@ Compositionality Gapの一例。<br>
 <li id="DataAugmentation">
 <strong>Data Augmentation (データ拡張) </strong><br>
 機械学習において、既存の学習データを人為的に加工・変換することで、データセットの量と多様性を増やすための技術。<br>
+
 ・目的：データ不足の解消 / 汎化性能の向上 / モデルのロバスト性向上<br>
 ・手法例(画像の場合)：回転, 反転, 切り出し, 拡大縮小, 平行移動, 明るさコントラスト調整, ぼかしノイズ付加<br><br>
 ●『A Flat Minima Perspective on Understanding Augmentations and Model Robustness』(2025)<br>
@@ -1116,6 +1114,27 @@ Compositionality Gapの一例。<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#ERM">ERM: Empirical Risk Minimization</a> (経験的リスク最小化)
+</li>
+
+<br>
+
+<li id="DDL">
+<strong>DDL: Deep Delta Learning (ディープデルタ学習)</strong><br>
+「残差接続（Residual Connection）」の仕組みを進化させた新しいアーキテクチャー。<br>
+ディープ残差ネットワーク (ResNet) は、恒等ショートカット接続を通じて非常に深いネットワークのトレーニングを可能にすることで、ディープラーニングに革命をもたらしたが、残差接続は厳密に加算的であり、ネットワークが学習できる変換の種類を制約する硬直した帰納バイアスを生むという制約があった。Deep Delta Learning（DDL）と呼ばれる新しいアーキテクチャフレームワークは、標準的な残差接続を一般化するデータ依存の幾何学的変換を導入することで、この制限に対処する。<br>
+<br>
+入力データ \(X\) に基づいて計算される「ゲート・スカラー \(\beta (X)\)」により、層ごとの情報の扱いを3つのモードでスムーズに切り替える。<br>
+<br>
+<ul><li>
+<strong>Skip:スキップ (\(\beta =0\)）</strong>：前の情報をそのまま維持する
+</li><li>
+<strong>Clean/Forget:クリーン（\(\beta =1\)）</strong>：特徴空間を書き換え、不要な干渉を取り除く
+</li><li>
+<strong>Reflection:反転（\(\beta =2\)）</strong>：情報を幾何学的に反転させ、複雑な対立関係や動的な変化を捉える
+</li></ul>
+<br>
+<center><img src="data/images/deltaresidualblock.svg"></center>
+<center>Delta Residual Block</cebter>
 </li>
 
 <br>
@@ -1309,6 +1328,31 @@ Compositionality Gapの一例。<br>
 ・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)
 </li>
 <center><img src="data/images/DoubleDescent.svg"></center>
+
+<br>
+
+<li id="DPA">
+<strong>DPA: Distributional Principal Autoencoders (分布主成分オートエンコーダ)</strong><br>
+データの分布を正しく保ったまま再構成を行うことと、主成分分析（PCA）のような高い解釈性を持つエンコーディングを提供することを両立させた、新しいクラスのオートエンコーダー。<br>
+<br><ul><li>
+<strong>分布的に正しい再構成 (Distributionally Correct Reconstruction)</strong><br> 
+従来のオートエンコーダーや PCA は、再構成時に平均二乗誤差（MSE）を最小化しようとするため、元のデータが持つ分散や裾の挙動といった分布特性が失われる傾向にあった。DPAは、潜在変数が与えられたときの条件付き分布を直接学習に組み込むことで、次元削減後も元のデータセットと同じ統計的分布を持つデータを再構成することを保証する。
+</li><br><li>
+<strong>主成分のような順序性 (Principal-Component-like Property)</strong><br>
+PCA のように、潜在変数の各次元に「重要度の順序」を持たせることができる。<br> 
+・次元の選択: 複数の潜在次元を同時に最適化することで、最初の数成分だけでデータの主要な変動を説明するような構造を学習する。<br>
+・本質的次元の推定: データが特定の多様体上に存在する場合、その次元を超えた余分な潜在成分は「ノイズ」として扱われ、情報を持たなくなる。これにより、データの本質的な次元を自動的に特定できる可能性がある。
+</li><br><li>
+<strong>解釈性と物理的意味</strong><br>
+・スコアとの関連性: DPAのエンコーダーのレベルセット（等値面）は、データ分布の「スコア」（対数密度の勾配）と密接に関係していることが理論的に証明されている。<br>
+・物理応用: データがボルツマン分布に従う場合、この特性を利用して「最小自由エネルギー経路（MFEP）」などの科学的に重要な指標を単一のモデル学習から抽出できることが示されている。
+</li></ul> 
+<br>
+●『Distributional Principal Autoencoders』(2024)<br> 
+　分布主成分オートエンコーダ (DPA) を導入した。<br>
+●『Distributional Autoencoders Know the Score』(2025)<br>
+　Distributional Principal Autoencoder (DPA) がデータ分布のスタインスコアを学習し、データ多様体の内在次元を特定する能力を実証し、その理論的保証を提供する。
+</li>
 
 <br>
 
