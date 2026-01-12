@@ -57,13 +57,15 @@
 
 
 <h2>更新項目</h2>
+・<a href="#ActivePerception">Active Perception (能動的知覚)</a><br>
+・<a href="#CoV">CoV: Chain-of-View</a><br>
+・<a href="#EmbodiedAI">Embodied AI(身体化AI)</a><br>
+・<a href="#Epiplexity">Epiplexity (エピプレキシティ)</a><br>
+・<a href="#EQA">EQA: Embodied Question Answering</a><br>
+・<a href="#mHC">mHC: Manifold-Constrained Hyper Connection (多様体制約付きハイパーコネクション)</a> ･･･ 見出しを変更<br>
+----<br>
 ・<a href="#DDL">DDL: Deep Delta Learning (ディープデルタ学習)</a><br>
 ・<a href="#DPA">DPA: Distributional Principal Autoencoders (分布主成分オートエンコーダ)</a><br>
-
----<br>
-・<a href="#AoT">AoT: Atom of Thoughts </a><br> 
-・<a href="#LCM">LCM: Large Concept Model (大規模概念モデル)</a><br>
-・<a href="#SHY">SHT: Synaptic Homeostasis Hypothesis (シナプス恒常性仮説)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -204,6 +206,21 @@ FEP: Free Energy Principle (自由エネルギー原理) に基づいており�
 ※ 機械学習では, 教育学における Active Learning (以下)とは別の意味で使われる。<br>
 　学習者が受動的に講義を聞くのではなく、能動的に（主体的に）学習プロセスに参加する教授法のこと。<br>
 　グループディスカッション, ディベート, 問題解決学習(PBL), 体験学習などを通じて、自ら考え、他者と対話する。
+</li>
+
+<br>
+
+<li id="ActivePerception">
+<strong>Active Perception (能動的知覚)</strong><br>
+AIやロボットなどのエージェントが、特定の目的 (認識の向上や不明な情報の補完) を達成するために、自分自身から「動き」を起こして情報を取得しにいく知覚の仕組み。<br>
+<br>
+<strong>探索的行動</strong>:　「死角にあるものを見たい」ときに回り込んだり、物体を特定するために「触って動かしてみる」といった行動をとる。<br>
+<br>
+<strong>不確実性の解消</strong>:　センサー情報だけでは不十分な場合、エージェントは「次にどこを見れば最も情報が得られるか」を戦略的に判断して動く。<br>
+<br>
+<strong>知覚と行動のループ</strong>:　Embodied AI(身体化AI)においては、「見るために動く、動くために見る」という密接なループが、高度な自律性を支える基盤技術となっている。<br>
+<br>(関連項目)<br>
+・<a href="#EmbodiedAI">Embodied AI</a> (身体化AI)
 </li>
 
 <br>
@@ -942,6 +959,21 @@ SimCLR: 視覚表現の対照学習のためのシンプルなフレームワー
 
 <br>
 
+<li id="CoV">
+<strong>CoV: Chain-of-View</strong><br>
+VLM（視覚言語モデル）に空間推論を行わせるための新しいプロンプティング手法、または推論フレームワーク。<br>
+<br>
+●『CoV: Chain-of-View Prompting for Spatial Reasoning』(2026)<br>
+　解説は<ahref="https://www.alphaxiv.org/ja/overview/2601.05172">こちら</a><br>
+　Embodied Question Answering (EQA) は、人工知能における極めて重要な進歩を表しており、システムが3D環境を理解し、推論しながら自然言語の質問に答えることを課題としています。この分野では、エージェントが視覚的知覚と空間的推論を結びつけ、人間が周囲を自然に探索し理解する方法を模倣することが求められます。現在のVision-Language Models (VLM) は、EQAタスクに適用される際に重大な制約に直面します。これらは通常、固定された有限の入力ビューセットで動作するため、質問に関連する十分なコンテキストを収集する能力が著しく制限されます。<br>
+<br>(関連項目)<br>
+・<a href="#EQA">EQA: Embodied Question Answering</a><br>
+・<a href="#SpatialReasoning">Spatial Reasoning</a> (空間推論)<br>
+・<a href="#ActiveInference">Active Inference</a> (能動推論)<br>
+</li>
+
+<br>
+
 <li id="CoVT">
 <strong>CoVT: Chain-of-Visual-Thought (視覚的思考連鎖)</strong><br>
 AI、特にVision-Language Models（VLM: 画像言語モデル）における推論手法の一つ。<br>
@@ -1136,7 +1168,9 @@ Compositionality Gapの一例。<br>
 </li></ul>
 <br>
 <center><img src="data/images/DeltaResidualBlock.svg"></center>
-<center>Delta Residual Block</cebter>
+<center>Delta Residual Block</center><br>
+<br>(関連項目)<br>
+・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)<br>
 </li>
 
 <br>
@@ -1432,6 +1466,17 @@ AIモデルもこの効果を起こす。<br>
 <div class="styleBullet">
 <ul>
 
+<li id="EmbodiedAI">
+<strong>Embodied AI(身体化AI)</strong><br>
+物理的な身体 (ロボットやデバイス) を持ち、実世界 (フィジカル空間) と相互作用しながら自律的に学習・行動する人工知能のこと。<br>
+<br>
+Physical AI (フィジカルAI) とほぼ同義だが, 「研究・学習のアプローチ(※)」を指すのが Embodied AI であり、「産業・ビジネスとしての実装形態」を指すのが Physical AI。<br>
+<br>
+※ <strong>身体性(Embodiment)</strong>　知能は身体と環境との相互作用から生まれるという哲学・理論がベース。AIが自分の「体」を通じて経験し、学習して賢くなるプロセスを指すことが多い。 
+</li>
+
+<br>
+
 <li id="EmbodiedCognition">
 <strong>Embodied cognition（身体化された認知）</strong><br>
 心と認知能力が、脳だけでなく体全体の物理的な経験や感覚と深く結びついているとする認知科学の理論。「体があるからこそ、特定の方法で物事を考え、感じる」というアプローチ。<br>
@@ -1448,7 +1493,6 @@ AIモデルもこの効果を起こす。<br>
 <br>(関連項目)<br>
 ・disembodied intelligence (身体のない知性), disembodied AI（身体のないAI）<br>
 　物理的な身体を持たずに存在する、あるいは機能する知能, AI。<br>
-
 
 </li>
 
@@ -1594,6 +1638,15 @@ AIF: Active Inference (能動推論)は<strong><span style="color: magenta;">外
 
 <br>(関連項目)<br>
 ・<a href="#GAE">GAE: Generalized Advantage Estimation</a> (汎用アドバンテージ推定)</br> 
+<br>
+
+<li id="Epiplexity">
+<strong>Epiplexity (エピプレキシティ)</strong><br>
+計算能力に制限のある観測者がデータからどれだけの情報を学習できるかを定式化した概念。<br>
+<br>
+●『From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence』(2026)<br>
+　(エントロピーからエピプレキシティへ：計算量制約のある知能のための情報の再考)<br>
+　解説は<a href="https://www.alphaxiv.org/ja/overview/2601.03220">こちら</a>
 </li>
 
 <br>
@@ -1609,6 +1662,16 @@ Prediction errors disrupt hippocampal representations and update episodic memori
 『入力トークンを「ベイジアン・サプライズ」（予測外の情報）に基づいてイベント単位に分割する。<strong><span style="color:magenta;">人間が予期せぬ出来事によって新しいエピソードを記憶するように、LLMも予測誤差が大きい箇所でイベント境界を認識し、記憶を形成する。</span></strong>』Human-like Episodic Memory for Infinite Context LLMs (EM-LLM)(2024)<br>
 <br>
 <a href="data/Papers_EpisodicMemory.html">Papers</a>
+</li>
+
+<br>
+
+<li id="EQA"><strong>EQA: Embodied Question Answering</strong><br>
+物理的な身体（またはシミュレーション上の身体）を持つAIエージェントが、自律的に環境を探索し、ユーザーの質問に回答するタスクや研究分野。<br>
+<br>
+<strong>能動的な探索</strong>　エージェントは「冷蔵庫の中に何がある？」といった質問に対し、まず冷蔵庫のある場所まで移動し、扉を開けて中を確認するという一連の行動（ナビゲーション）を行う。<br>
+<br>
+<strong>マルチモーダルな理解</strong>　視覚情報（カメラ画像）、言語情報（質問）、および自身の位置や動作（運動系）を統合して処理する。
 </li>
 
 <br>
@@ -2035,20 +2098,6 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 <a href="data/Papers_Hubness.html">Papers</a><br>
 <br>(関連項目)<br>
 ・<a href="#CurseOfDimensionality">Curse of Dimensionality (次元の呪い)</a>
-</li>
-
-<br>
-
-<li id="HyperConnection">
-<strong>Hyper Connection </strong><br>
-従来の「残差接続（Residual Connections / Skip Connections）」に代わる、あるいはそれを補完する新しい接続手法。<br>
-・ネットワークの異なる深さの層から得られる情報を直接、あるいは密に結合（ハイパー接続）させる。<br>
-・深いネットワークで発生しやすい「勾配消失」や「表現の崩壊（コラプス）」といった問題を抑え、より複雑なパターンの学習を可能にする。<br>
-<br>
-●『mHC: Manifold-Constrained Hyper-Connections』(2025)<br>
-　ハイパーコネクションに代表される研究は、残差接続パラダイムを、残差ストリーム幅の拡張と接続パターンの多様化によって拡張してきた。この多様化は大幅な性能向上をもたらす一方で、残差接続に固有の恒等写像性を根本的に損なうため、深刻な訓練不安定性とスケーラビリティの制限を引き起こし、さらに顕著なメモリアクセスオーバーヘッドも生じる。これらの課題に対処するため、我々は多様体制約ハイパーコネクションを提案する。<br>
-<br>(関連項目)<br>
-・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)<br>
 </li>
 
 </ul></div></p>
@@ -2897,6 +2946,20 @@ AI (LLM, 大規模言語モデル) と外部のデータソースやツールを
 
 <li><strong>Meta Learning (メタ学習)</strong><br>
 「学習の仕方を学習する」ための機械学習技術。
+</li>
+
+<br>
+
+<li id="mHC">
+<strong>mHC: Manifold-Constrained Hyper Connection </strong><br>
+従来の「残差接続（Residual Connections / Skip Connections）」に代わる、あるいはそれを補完する新しい接続手法。<br>
+・ネットワークの異なる深さの層から得られる情報を直接、あるいは密に結合（ハイパー接続）させる。<br>
+・深いネットワークで発生しやすい「勾配消失」や「表現の崩壊（コラプス）」といった問題を抑え、より複雑なパターンの学習を可能にする。<br>
+<br>
+●『mHC: Manifold-Constrained Hyper-Connections』(2025)<br>
+　ハイパーコネクションに代表される研究は、残差接続パラダイムを、残差ストリーム幅の拡張と接続パターンの多様化によって拡張してきた。この多様化は大幅な性能向上をもたらす一方で、残差接続に固有の恒等写像性を根本的に損なうため、深刻な訓練不安定性とスケーラビリティの制限を引き起こし、さらに顕著なメモリアクセスオーバーヘッドも生じる。これらの課題に対処するため、我々は多様体制約ハイパーコネクションを提案する。<br>
+<br>(関連項目)<br>
+・<a href="#SkipConnection">Skip Connection</a> (スキップ接続)<br>
 </li>
 
 <br>
