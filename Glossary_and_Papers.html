@@ -57,15 +57,14 @@
 
 
 <h2>更新項目</h2>
+・<a href="#LatentAction">Latent Action (潜在アクション)</a><br>
+---<br>
 ・<a href="#ActivePerception">Active Perception (能動的知覚)</a><br>
 ・<a href="#CoV">CoV: Chain-of-View</a><br>
 ・<a href="#EmbodiedAI">Embodied AI(身体化AI)</a><br>
 ・<a href="#Epiplexity">Epiplexity (エピプレキシティ)</a><br>
 ・<a href="#EQA">EQA: Embodied Question Answering</a><br>
 ・<a href="#mHC">mHC: Manifold-Constrained Hyper Connection (多様体制約付きハイパーコネクション)</a> ･･･ 見出しを変更<br>
-----<br>
-・<a href="#DDL">DDL: Deep Delta Learning (ディープデルタ学習)</a><br>
-・<a href="#DPA">DPA: Distributional Principal Autoencoders (分布主成分オートエンコーダ)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -2589,6 +2588,21 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="LatentAction">
+<strong>Latent Action (潜在アクション)</strong><br>
+明示的なラベルがない動画などから、AIが自ら見つけ出した『行動』の抽象的な表現のこと。<br>
+・インターネット上の膨大な動画には、「右に動かす」「掴む」といった操作ログ（アクションラベル）が付いていない。潜在アクションモデルは、動画のフレーム間（例えば時刻 \(t\) と \(t+1\)）の視覚的な変化（Visual Delta）を解析し、その変化を引き起こした「何らかの働きかけ」を数値のベクトル（潜在変数）として抽出する。これが「潜在アクション」。<br>
+・潜在アクションは、具体的な機械の制御値（電圧や座標など）ではなく、「世界をどう変えるか」という本質的な変化を表現する。<br>
+<br>
+●『Learning Latent Action World Models In The Wild』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.05230">こちら</a><br> 
+・「ワールドモデル」を構築するための従来のアプローチは、明示的にラベル付けされた行動、つまり各ステップでどのような行動が取られたかを正確に知ることに大きく依存していた。しかし、この依存性は、そのような詳細な行動の注釈がめったに利用できない実世界のシナリオにスケールアップしようとする際に、重大なボトルネックを生み出す。<br>
+・潜在行動ワールドモデルの開発における重要なギャップに対処し、ラベル付けされていない膨大な量の実世界の(in-the-wild)ビデオデータから学習する方法を示す。<br>
+<center><img src="data/images/LatentActionWorldModel.svg"></center>
+</li>
+
+<br>
+
 <li>
 <strong>Latent learning (潜在学習)</strong><br>
 学習した内容が行動にすぐには現れず、適切な動機づけやきっかけが与えられたときに初めて表面化する学習の形態。<br>
