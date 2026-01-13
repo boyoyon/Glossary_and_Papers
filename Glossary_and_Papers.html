@@ -57,6 +57,11 @@
 
 
 <h2>更新項目</h2>
+・<a href="#EMA">EMA: Exponential Moving Average (指数平滑移動平均)</a><br> 
+・<a href="#GDPO">GDPO: Group reward-Decoupled Normalization Policy Optimization (グループ報酬分離正規化ポリシー最適化)</a><br>
+・<a href="#RewardSignalCollapse">Reward Signal Collapse (報酬信号崩壊)</a><br>
+・<a href="#V-JEPA-2">V-JEPA-2: Video Joint Embedding Predictive Architecture 2</a><br>
+----<br>
 ・<a href="#LatentAction">Latent Action (潜在アクション)</a><br>
 ---<br>
 ・<a href="#ActivePerception">Active Perception (能動的知覚)</a><br>
@@ -1465,6 +1470,17 @@ AIモデルもこの効果を起こす。<br>
 <div class="styleBullet">
 <ul>
 
+<li id="EMA">
+<strong>EMA: Exponential Moving Average (指数平滑移動平均)</strong><br> 
+直近のデータに重みを置いて算出する移動平均の手法。金融取引のテクニカル分析のほか、ディープラーニングなどのデータ分析でも活用される。<br>
+<br>
+●『Exponential Moving Average of Weights in Deep Learning: Dynamics and Benefits』(2024)<br>
+<center><img src="data/images/EMA.svg"></center><br>
+ResNet-18上のCIFAR-100。EMA vs SGDベースライン、および学習率(η)。EMAはモメンタムSGDを凌駕し、初期から良好なパフォーマンスを示していることがわかる。EMAはエポック150でピークに達した後、低下する。　
+</li>
+
+<br>
+
 <li id="EmbodiedAI">
 <strong>Embodied AI(身体化AI)</strong><br>
 物理的な身体 (ロボットやデバイス) を持ち、実世界 (フィジカル空間) と相互作用しながら自律的に学習・行動する人工知能のこと。<br>
@@ -1939,6 +1955,20 @@ AIアシスタントやAIエージェントの「汎用的な知能と実用性�
 生成ネットワークと識別ネットワークの2つのニューラルネットワークを競合させながら学習させることで、現実世界に存在するデータと区別がつかないほどの新しいデータを生成するAI技術。<br>
 <br>
 <a href="data/Papers_GAN.html">Papers</a>
+</li>
+
+<br>
+
+<li id="GDPO">
+<strong>GDPO: Group reward-Decoupled Normalization Policy Optimization (グループ報酬分離正規化ポリシー最適化)</strong><br>
+複数の報酬信号を「分離（Decouple）」して正規化することで、特定の信号が他をかき消すのを防ぎ、精度と制約遵守の両立を図るポリシー最適化手法。<br>
+<br>
+●『GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization』(2026)<br>
+　(GDPO: 複数報酬強化学習最適化におけるグループ報酬分離正規化ポリシー最適化)<br>
+<br>
+<center><img src="data/images/GDPO.svg"></center>
+<br>(関連項目)<br>
+・<a href="#RewardSignalCollapse">Reward Signal Collapse (報酬信号崩壊)</a>
 </li>
 
 <br>
@@ -2599,6 +2629,8 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 ・「ワールドモデル」を構築するための従来のアプローチは、明示的にラベル付けされた行動、つまり各ステップでどのような行動が取られたかを正確に知ることに大きく依存していた。しかし、この依存性は、そのような詳細な行動の注釈がめったに利用できない実世界のシナリオにスケールアップしようとする際に、重大なボトルネックを生み出す。<br>
 ・潜在行動ワールドモデルの開発における重要なギャップに対処し、ラベル付けされていない膨大な量の実世界の(in-the-wild)ビデオデータから学習する方法を示す。<br>
 <center><img src="data/images/LatentActionWorldModel.svg"></center>
+<br>(関連項目)<br>
+・<a href="#V-JEPA-2">V-JEPA-2: Video Joint Embedding Predictive Architecture 2</a><br>
 </li>
 
 <br>
@@ -4105,6 +4137,16 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 
 <br>
 
+<li id="RewardSignalCollapse">
+<strong>Reward Signal Collapse (報酬信号崩壊)</strong><br>
+主に大規模言語モデル (LLM) の強化学習 (RLHF等) において、複数の報酬指標を組み合わせて最適化を行う際に、特定の報酬信号が他の信号にかき消されたり、学習が特定のパターンに固執して多様性が失われたりする現象。<br>
+AIが報酬を追いすぎるあまり、バランスを欠いたり、単調な回答しかできなくなったりする学習の失敗状態。<br>
+<br>(関連項目)<br>
+・<a href="#GDPO">GDPO: Group reward-Decoupled Normalization Policy Optimization</a> (グループ報酬分離正規化ポリシー最適化)
+</li>
+
+<br>
+
 <li id="RL">
 <strong>RL: Reinforcement Learning (強化学習)</strong><br>
 心理学および動物行動学において「オペラント条件づけ（道具的条件づけ）」という概念に基づいて研究されていた, 
@@ -5116,6 +5158,22 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 大規模マルチモーダルモデル (MLLM) が、テキストではなく画像シーケンスによって推論や計画を実行する、新しいパラダイムを提案した論文。特に空間的・幾何学的な情報を含むタスクにおいて、視覚的な表象が言語ベースの推論を補完する有効なチャネルであることを示した。強化学習 (RL) を用いて、画像生成による視覚的計画を実現し、テキストベースの推論を大幅に上回る性能を示している。<br>
 <br>
 <a href="data/Papers_VisualPlanning.html">Papers</a>
+</li>
+
+<br>
+
+<li id="V-JEPA-2">
+<strong>V-JEPA-2: Video Joint Embedding Predictive Architecture 2</strong><br>
+Meta（旧Facebook）が2025年6月に発表した「世界モデル（World Model）」と呼ばれる次世代のAIモデル。<br>
+動画から物理世界の仕組みを「抽象的な表現」として学習し、「行動する前に考える（推論・計画する）」ことを可能にする。<br>
+<br>
+●『V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning』(2025)<br>
+<center><img src="data/images/V_JEPA_2.svg"></center><br>
+<strong>多段階学習</strong><br>
+(左)まず、視覚マスクノイズ除去目標を用いて、インターネット規模の画像および動画データでV-JEPA 2動画エンコーダを事前学習する。動画クリップはトークンのシーケンスにパッチ分割され、トークンのサブセットを削除することでマスクが適用される。次に、エンコーダはマスクされた動画シーケンスを処理し、各入力トークンの埋め込みベクトルを出力する。次に、エンコーダの出力は、マスクされたパッチの位置を指定する学習可能なマスクトークンのセットと連結され、その後、予測器によって処理される。予測器の出力は、L1損失を用いて予測ターゲットに回帰される。予測ターゲットは、重みがエンコーダの重みの指数移動平均として定義されるemaエンコーダによって計算される。 <br>
+(右) 事前学習後、ビデオエンコーダをフリーズし、学習済みの表現に基づいて、新しい動作条件付き予測器（V-JEPA 2-AC）を学習する。過去のビデオフレーム、動作、エンドエフェクタの状態に基づいて、将来のビデオフレームの表現を予測する自己回帰特徴予測目標を活用する。この動作条件付き予測器は、ブロック因果的注意パターンを用いて、特定の時間ステップにおける各パッチ特徴が、現在および過去の時間ステップにおけるパッチ特徴、動作、エンドエフェクタの状態に注意を向けることができるようにする。<br>
+<br>(関連項目)<br>
+・<a href="#JEPA">JEPA: Joint-Embedding Predictive Architecture</a>
 </li>
 
 <br>
