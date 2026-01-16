@@ -57,19 +57,18 @@
 
 
 <h2>更新項目</h2>
+・<a href="#CLS">CLS: Complementary Learning Systems (相補的学習システム)</a><br>
+・<a href="#SpuriousReward">Spurious Reward (偽りの報酬)</a><br>
+・<a href="#RashomonSet">Rashomon Set (羅生門集合)</a><br>
+・<a href="#RewardEngineering">Reward Engineering (報酬エンジニアリング, 報酬工学)</a><br>
+・<a href="#SGFM">SGFM: Spectral Generative Flow Models</a><br>
+----<br>
 ・<a href="#EMA">EMA: Exponential Moving Average (指数平滑移動平均)</a><br> 
 ・<a href="#GDPO">GDPO: Group reward-Decoupled Normalization Policy Optimization (グループ報酬分離正規化ポリシー最適化)</a><br>
 ・<a href="#RewardSignalCollapse">Reward Signal Collapse (報酬信号崩壊)</a><br>
 ・<a href="#V-JEPA-2">V-JEPA-2: Video Joint Embedding Predictive Architecture 2</a><br>
 ----<br>
 ・<a href="#LatentAction">Latent Action (潜在アクション)</a><br>
----<br>
-・<a href="#ActivePerception">Active Perception (能動的知覚)</a><br>
-・<a href="#CoV">CoV: Chain-of-View</a><br>
-・<a href="#EmbodiedAI">Embodied AI(身体化AI)</a><br>
-・<a href="#Epiplexity">Epiplexity (エピプレキシティ)</a><br>
-・<a href="#EQA">EQA: Embodied Question Answering</a><br>
-・<a href="#mHC">mHC: Manifold-Constrained Hyper Connection (多様体制約付きハイパーコネクション)</a> ･･･ 見出しを変更<br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -88,7 +87,7 @@ Diffusion Model (拡散モデル) の学習および画像生成の過程にお�
 <br>
 <strong>ε-prediction (ε-予測)/ noise prediction (ノイズ予測)</strong><br>
 　加えられた純粋なノイズ成分 (\(\epsilon \)) を予測するように学習する手法。<br>
-　●『Denoising diffusion probabilistic models』DDPM (2020)<br>
+　●『Denoising diffusion probabilistic models』DDPM (2020) <br>
 　　で提唱された。<br>
 <br>
 <strong>v-prediction (v-予測) / velocity prediction</strong><br>
@@ -755,6 +754,22 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 ・因果探索： 「原因は何か？」という構造（矢印の向き）を見つける。<br>
 ・因果推論： 「原因を変えると結果がどれだけ変わるか？」という効果の大きさ（数値）を算出する。 
 <li>
+
+<br>
+
+<li id="CLS">
+<strong>CLS: Complementary Learning Systems (相補的学習システム)</strong><br>
+脳における記憶と学習に関する認知神経科学の主要な理論モデルの一つ。<br>
+<br>
+エピソード記憶など、新しい情報や具体的な出来事を急速に学習・記憶する<strong>海馬 (Hippocampus)</strong> と, 長期的な記憶の統合、一般的な知識、スキルなど保持する <strong>新皮質 (Neocortex)</strong> の2つのシステムが相補的に機能する, とするモデル。海馬で一時的に保持された情報が、睡眠中などに海馬と新皮質の間で繰り返しやり取りされる（再活性化）ことで、最終的に新皮質へと移行し、長期的な安定した記憶として定着すると考えられている。<br>
+<br>
+●『Why there are complementary learning systems in the hippocampus and neocortex: Insights from the successes and failures of connectionist models of learning and memory.』(1995)<br>
+　(海馬と大脳新皮質に補完的な学習システムが存在する理由：学習と記憶のコネクショニストモデルの成功と失敗からの洞察)<br>
+　海馬系が損傷すると、最近の記憶は破壊されるが、遠い記憶はそのまま残る。ここで提示された説明は、記憶がまず海馬系のシナプス変化を介して保存され、これらの変化が大脳新皮質における最近の記憶の復元をサポートし、大脳新皮質のシナプスは復元ごとに少しずつ変化し、遠い記憶は蓄積された大脳新皮質の変化に基づくことを示唆している。接続の変化を介して学習するモデルは、この構成を説明するのに役立つ。これらのモデルは、各項目の学習が段階的であり、他の項目の学習と交互に行われる場合、項目のアンサンブル内の構造を発見する。これは、大脳新皮質が経験のアンサンブル内の構造を発見することをゆっくりと学習することを示唆している。海馬系は、この構造を破壊せずに新しい項目を迅速に学習することを可能にし、新しい記憶の復元はそれらを他の記憶と交互に配置して、構造化された大脳新皮質記憶システムに統合する。<br>
+<br>
+●『The AI Hippocampus: How Far are We From Human Memory?』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.09113">こちら</a><br>
+　大規模言語モデル（LLM）およびマルチモーダル大規模言語モデル（MLLM）における記憶メカニズムについて、人間の脳システム（新皮質、海馬、前頭前野）との類推を通じて構造化された包括的なレビューを発表した。
+</li>
 
 <br>
 
@@ -3909,6 +3924,27 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 
 <br>
 
+<li id="RashomonSet">
+<strong>Rashomon Set (羅生門集合)</strong><br>
+最適な予測精度とほとんど同じ精度を持ちながら、異なる判断基準や構造を持つ多様なモデルの集合。<br>
+由来はやはり･･･黒澤明監督の映画『羅生門』や芥川龍之介の小説『羅生門』。<br>
+一つの出来事に対して関係者がそれぞれ異なる(しばしば矛盾する)証言や解釈を提示する「羅生門効果（現象）」が描かれている。<br>
+<br>
+●『Resolving Predictive Multiplicity for the Rashomon Set』(2026)<br>
+　(羅生門集合の予測的多重性の解決)<br>
+　特定の予測タスクに対して、同等の精度を持つ複数のモデルが存在する場合、予測の多重性が生じる。つまり、「羅生門セット」と呼ばれるモデル群は、同様の精度を達成しますが、個々の予測値はばらつく。この不一致は、一貫性のある予測が求められるハイステークスなアプリケーションにおける信頼性を損なう。羅生門セットのメンバー間の予測値の不一致を低減するための3つのアプローチを提案する。<br>
+<br>
+1つ目のアプローチは「外れ値補正」である。外れ値とは、どの優れたモデルも正しく予測できないラベルである。外れ値があると、羅生門セットの予測値が局所的に高い分散を示す可能性があるため、外れ値を修正することで分散を低減できる。<br>
+<br>
+2つ目のアプローチは、局所パッチングである。テストポイント周辺の局所領域では、モデルの一部に偏りがあるため、モデル間の予測値が一致しない場合がある。検証セットを用いることで、このような偏りを検出し修正することができ、多重性も低減される。<br>
+<br>
+3つ目のアプローチは、ペアワイズ調整である。これは、テストポイント周辺の領域で一致しないモデルのペアを見つけるものである。不一致な予測を修正することで、バイアスを低減する。<br>
+<br>
+これら3つのアプローチは併用することも個別に使用することもできる。
+</li>
+
+<br>
+
 <li id="Reasoning">
 <strong>Reasoning (推論)</strong><br>
 既存の知識や情報に基づいて、結論を導き出したり、予測を立てたり、説明を組み立てたりする思考プロセス。<br>
@@ -4102,6 +4138,17 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 
 <br>
 
+<li id="RewardEngineering">
+<strong>Reward Engineering (報酬エンジニアリング, 報酬工学)</strong><br>
+適切な「報酬（Reward）関数」を設計・調整するプロセス。<br>
+<br>
+●『The End of Reward Engineering: How LLMs Are Redefining Multi-Agent Coordination』(2026)<br>
+　(報酬エンジニアリングの終焉：LLMはいかにマルチエージェント協調を再定義するか)<br>
+　マルチエージェント強化学習（MARL）は、長らく報酬関数の手動設計という根本的なボトルネックに制約されてきた。報酬設計として知られるこのプロセスは、複雑な人間の意図を、エージェントの行動を導く数学的関数に変換することを必要とするが、エージェントの数が増えるにつれて、このタスクは指数関数的に困難になる。大規模言語モデル（LLM）の最近の進歩は、このパラダイムを根本的に変革する位置にあり、従来の報酬設計の必要性を完全に排除する可能性のある自然言語目標への道筋を提供する。<br>
+<center><img src="data/images/EndOfRewardEngineering.svg"></center>
+</li>
+
+<br>
 <li id="RewardHacking">
 
 <strong>Reward Hacking (報酬ハッキング)</strong><br>
@@ -4356,10 +4403,22 @@ AIの出力をユーザーが提示する特定の単語、メタファー、ま
 
 
 <li>
-
-
 <strong>Semantic hub hypothesis (意味ハブ仮説)</strong><br>
 人間やAIが意味的知識をどのように整理・統合するかを説明する理論。
+</li>
+
+<br>
+
+<li id="SGFM">
+<strong>SGFM: Spectral Generative Flow Models</strong><br>
+物理学に着想を得た、新しいタイプの生成AIモデル。<br>
+<br>
+●『Spectral Generative Flow Models: A Physics-Inspired Replacement for Vectorized Large Language Models』(2026)<br>
+・トランスフォーマーベースの大規模言語モデル（LLM）は、離散的な記号オントロジーと、注意を中心とした計算パラダイムに依存している。<br>
+・このパラダイムは、より長いコンテキスト、より豊富なモダリティ、そして一貫性のある時空間生成へと進むにつれて、ますます歪んだ構造的仮定を課す。<br>
+・トークン化は連続性を放棄し、注意は瞬時のグローバル結合を強制し、自己回帰はあらゆるステップで不確実性を崩壊させる。<br>
+・これらの特性は、一貫性、安定性、そして長距離構造が局所的なダイナミクスの下での連続場の進化から生じる物理的な生成システムの組織化原理とは著しく対照的である。<br>
+・生成を記号的なシーケンス予測としてではなく、確率偏微分方程式（SPDE）によって支配される連続場の進化として扱う。流体力学、スペクトル解析、そしてマルチスケール表現に着想を得て、我々はスペクトル生成フローモデル（SGFM）を導入する。これは、離散トークンをウェーブレット係数に置き換え、注意を局所演算子、スペクトル射影、そしてナビエ・ストークス的な輸送に置き換えるものである。この観点から見ると、テキストとビデオは、関数空間で進化する制約付き確率的力学系の軌跡として統合される。
 </li>
 
 <br>
@@ -4555,6 +4614,19 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 <strong>Spectral Bias (スペクトルバイアス) </strong><br>
 深層学習モデルが学習の初期段階で、対象となる関数やデータの低周波成分（滑らかで大まかな特徴）を優先的に学習し、高周波成分（複雑で細かい特徴）の学習を後回しにする傾向を指す。<br>
 F-Principle: Frequency Principle (周波数優先原則) とも呼ばれる。
+</li>
+
+<br>
+
+<li id="SpuriousReward">
+<strong>Spurious Reward (偽りの報酬)</strong><br>
+意図した目標とは無関係であったり、本来の目的達成にほとんど寄与しない「偽りの」あるいは「見せかけの」報酬信号。<br>
+<br>
+例：ロボットに「物を掴む」タスクを与えた際、実際には物を掴んでいないのに、たまたま報酬が得られるような特定の動き（例えば、カメラアングルが変わる、光の当たり方が変わるなど）を見つけ出して、その動きだけを繰り返すようになる、など。<br>
+<br>
+●『Spurious Rewards: Rethinking Training Signals in RLVR』(2025) 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.10947">こちら</a><br>
+　検証可能な報酬を用いた強化学習（RLVR）が、Qwenモデルにおいて「偽の」報酬シグナルを使用した場合でも数学的推論を大幅に改善できることを示し、高品質でタスク固有の報酬の必要性に疑問を投げかけた。<br>
+　「最も驚くべき発見は、スプリアス報酬の有効性が極端にモデルに依存することである･･･」
 </li>
 
 <br>
