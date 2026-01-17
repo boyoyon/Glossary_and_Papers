@@ -57,6 +57,8 @@
 
 
 <h2>更新項目</h2>
+・<a href="#ConditionalComputationParadigm">conditional computation paradigm (条件付き計算パラダイム)</a><br>
+---<br>
 ・<a href="#CLS">CLS: Complementary Learning Systems (相補的学習システム)</a><br>
 ・<a href="#SpuriousReward">Spurious Reward (偽りの報酬)</a><br>
 ・<a href="#RashomonSet">Rashomon Set (羅生門集合)</a><br>
@@ -67,8 +69,6 @@
 ・<a href="#GDPO">GDPO: Group reward-Decoupled Normalization Policy Optimization (グループ報酬分離正規化ポリシー最適化)</a><br>
 ・<a href="#RewardSignalCollapse">Reward Signal Collapse (報酬信号崩壊)</a><br>
 ・<a href="#V-JEPA-2">V-JEPA-2: Video Joint Embedding Predictive Architecture 2</a><br>
-----<br>
-・<a href="#LatentAction">Latent Action (潜在アクション)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -870,6 +870,21 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 </li>
 
 <br>
+
+<li id="ConditionalComputationParadigm">
+<strong>conditional computation paradigm (条件付き計算パラダイム)</strong><br>
+入力データに基づいてニューラルネットワークやモデルの異なる部分（エキスパートやモジュールと呼ばれる）を選択的に活性化させ、実行するパラダイム。すべての計算リソースをすべての入力に対して常に使用するのではなく、特定のデータに適した部分だけを「条件付き」で使うため、その名前が付けられた。<br>
+<br>
+●『Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models』(2026)<br>
+・スパース性は、生物学的神経回路から現代の大規模言語モデル（LLM）へと発展した。計算量の増加に比例することなくモデルサイズを大幅に拡大できるため、MoEはフロンティアモデルの事実上の標準となっている。<br>
+・<strong><span style="color:magenta;">標準的なトランスフォーマーにはネイティブな知識検索プリミティブ(基本機能)がないため、現在のLLMは計算を通じて検索をシミュレートせざるを得ない</span></strong>。<br>
+・条件付き計算は、動的ロジックを処理するためにパラメータをスパースにアクティブ化するのに対し、<strong><span style="color:magenta;">条件付き記憶は、固定された知識の静的埋め込みを取得するためにスパースなルックアップ操作に依存する</span></strong>。<br>
+<br>(関連項目)<br>
+・<a href="#MoE">MoE: Mixture-of-Experts (専門家混合)</a>
+</li>
+
+<br>
+
 <li id="ConfirmationBias">
 <strong>Confirmation Bias (確証バイアス)</strong><br>
 自分の仮説や信念を裏付ける情報ばかりを集めて、反証する情報を無視したり軽視したりする傾向を指す心理学の用語。<br>
@@ -2951,7 +2966,7 @@ AI（マルチモーダル・モデル）の「視覚情報を伴う数学的推
 AI (LLM, 大規模言語モデル) と外部のデータソースやツールを連携させるためのオープンな標準規格。<br>
 2024年11月にAnthropic社が発表した。<br>
 <br>(関連項目)<br>
-・<a href="#ToolAugmentation">Tool Augmentation</a> (ツール拡張) ･･･ MCPはツール拡張のためお標準規格<br>
+・<a href="#ToolAugmentation">Tool Augmentation</a> (ツール拡張) ･･･ MCPはツール拡張のための標準規格<br>
 </li>
 
 <br>
@@ -2970,7 +2985,7 @@ AI (LLM, 大規模言語モデル) と外部のデータソースやツールを
 ●『Diffusion Probabilistic Models Generalize when They Fail to Memorize』(2024)<br>
 ●『On the Edge of Memorization in Diffusion Models』(2025)<br>
 ●『Memorization to Generalization: Emergence of Diffusion Models from Associative Memory』 (2025)<br>
-・訓練中に「偽の状態(スプリアスフェーズ)」が出現することが、モデルの記憶から汎化への移行を示すことを実証。<br>
+・訓練中に「偽の状態(Spurious Phase)」が出現することが、モデルの記憶から汎化への移行を示すことを実証。<br>
 ・スプリアス状態は通常、記憶容量を超えたときに現れる望ましくないアーティファクトと見なされていたが、<strong><span style="color:magenta;">出現するパターンは、モデルの創造的合成、つまり基本的な記憶を組み合わせて新しい組み合わせを生み出すことを表していると提案している。</span></strong><br>
 <br>
 <center><img src="data/images/Memorization_to_Generalization.svg">
@@ -3114,7 +3129,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 
 <br>
 
-<li>
+<li id="MoE">
 
 
 <strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
@@ -4541,7 +4556,7 @@ DiTのバックボーン（基盤技術）を活用して開発された新し�
 <center><img src="data/images/SkipConnection.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#VanishingGradient">Vanishing gradient problems</a> (勾配消失問題)<br>
-・<a href="#HyperConnection">Hyper Connection</a>
+・<a href="#mHC">mHC: Manifold-Constrained Hyper Connection </a> 
 </li>
 
 
