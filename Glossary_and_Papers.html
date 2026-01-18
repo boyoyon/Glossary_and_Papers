@@ -57,6 +57,8 @@
 
 
 <h2>更新項目</h2>
+・<a href="#PlatonicRepresentationHypothesis">Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
+---<br>
 ・<a href="#CFC">CFC: Cross-frequency coupling (周波数間カップリング) </a><br>
 ・<a href="#GHA">GHA: Generalized Hebbian Algorithm </a><br>
 ・<a href="#HTM">HTM: Hierarchical Temporal Memory (階層的時間的記憶)</a><br>
@@ -65,12 +67,6 @@
 ・<a href="#Sparsity">Sparsity (スパース性)</a><br>
 ---<br>
 ・<a href="#ConditionalComputationParadigm">conditional computation paradigm (条件付き計算パラダイム)</a><br>
----<br>
-・<a href="#CLS">CLS: Complementary Learning Systems (相補的学習システム)</a><br>
-・<a href="#SpuriousReward">Spurious Reward (偽りの報酬)</a><br>
-・<a href="#RashomonSet">Rashomon Set (羅生門集合)</a><br>
-・<a href="#RewardEngineering">Reward Engineering (報酬エンジニアリング, 報酬工学)</a><br>
-・<a href="#SGFM">SGFM: Spectral Generative Flow Models</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -3789,6 +3785,32 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 
 <br>
 
+<li id="PlatonicRepresentationHypothesis">
+<strong>Platonic Representation Hypothesis（プラトン的表現仮説）</strong><br>
+異なるアーキテクチャや学習データで訓練されたAIモデル（特に深層学習モデル）が、現実世界の共通の統計的モデル、つまり「理想的な表現（プラトン的表現）」に収束していくという仮説。<br>
+・この仮説は、視覚モデルや言語モデルなどが規模と能力を増すにつれて、データポイント間の距離や類似性を測定する方法がますます類似してくる、という観察に基づいている。<br>
+・名称は哲学者プラトンの「イデア論」に由来しており、物理的な実体は不完全なコピーであり、完全で抽象的な「形（イデア）」が理想的な世界に存在するという考え方に例えられている。AIの文脈では、この「イデア」が現実世界の根本的な構造を表す理想的な数学的表現に相当する。<br>
+<br>
+●『The Platonic Representation Hypothesis』(2024)<br>
+<center><img src="data/images/PlatonicRepresentationHypothesis.svg"></center><br>
+画像(X)とテキスト(Y)は、共通の根底にある現実(Z)の投影である。
+表現学習アルゴリズムは Z の共通表現に収束すると我々は推測しており、モデルサイズのスケーリング、そしてデータとタスクの多様性がこの収束を促進する。<br>
+<br>(関連項目)<br>
+・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis</a> (普遍重み部分空間仮説)<br>
+<br>
+どちらも一見異なるように見える多様なAIシステムが、基礎となる数学的構造や物理法則によって、効率的な「解」の空間に引き寄せられている可能性を示唆している。
+
+\[
+\begin{array}{c|c|c}
+& \text{プラトン的表現仮説} & \text{普遍重み部分空間仮説}\\
+\hline
+\text{注目する点} & \text{表現} & \text{重み}
+\end{array}
+\]
+</li>
+
+<br>
+
 <li>
 
 <strong>Policy Collapse (ポリシー崩壊)</strong><br>
@@ -5229,7 +5251,8 @@ AI（特に大規模言語モデル：LLM）が、自身だけでは解決でき
 　(普遍重み部分空間仮説)<br>
 ・この研究の中心的な仮説は、<strong><span style="color:magenta;">深層ニューラルネットワークが、その訓練タスク、初期化スキーム、ハイパーパラメーター構成に関係なく、共有された低次元のパラメトリック部分空間に体系的に収束する</span></strong>というもの。<br>
 　ニューラルネットワークの見かけ上の高次元パラメーター空間が大部分が幻想であり、意味のある情報ははるかに小さな、アーキテクチャ固有の部分空間内に存在することを示唆している。<br>
-<br>
+<br>(関連項目)<br>
+・<a href="#PlatonicRepresentationHypothesis">Platonic Representation Hypothesis</a>（プラトン的表現仮説）
 </li>
 
 <br>
