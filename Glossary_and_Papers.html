@@ -57,6 +57,13 @@
 
 
 <h2>更新項目</h2>
+・<a href="#CFC">CFC: Cross-frequency coupling (周波数間カップリング) </a><br>
+・<a href="#GHA">GHA: Generalized Hebbian Algorithm </a><br>
+・<a href="#HTM">HTM: Hierarchical Temporal Memory (階層的時間的記憶)</a><br>
+・<a href="#IPS">IPS: Interacting Particle System (相互作用粒子系)</a><br>
+・<a href="#SangersRule">Sanger's rule（サンガーの法則）</a><br>
+・<a href="#Sparsity">Sparsity (スパース性)</a><br>
+---<br>
 ・<a href="#ConditionalComputationParadigm">conditional computation paradigm (条件付き計算パラダイム)</a><br>
 ---<br>
 ・<a href="#CLS">CLS: Complementary Learning Systems (相補的学習システム)</a><br>
@@ -64,11 +71,6 @@
 ・<a href="#RashomonSet">Rashomon Set (羅生門集合)</a><br>
 ・<a href="#RewardEngineering">Reward Engineering (報酬エンジニアリング, 報酬工学)</a><br>
 ・<a href="#SGFM">SGFM: Spectral Generative Flow Models</a><br>
-----<br>
-・<a href="#EMA">EMA: Exponential Moving Average (指数平滑移動平均)</a><br> 
-・<a href="#GDPO">GDPO: Group reward-Decoupled Normalization Policy Optimization (グループ報酬分離正規化ポリシー最適化)</a><br>
-・<a href="#RewardSignalCollapse">Reward Signal Collapse (報酬信号崩壊)</a><br>
-・<a href="#V-JEPA-2">V-JEPA-2: Video Joint Embedding Predictive Architecture 2</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -754,6 +756,22 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 ・因果探索： 「原因は何か？」という構造（矢印の向き）を見つける。<br>
 ・因果推論： 「原因を変えると結果がどれだけ変わるか？」という効果の大きさ（数値）を算出する。 
 <li>
+
+<br>
+
+<li id="CFC">
+<strong>CFC: Cross-frequency coupling (周波数間カップリング) </strong><br>
+異なる周波数帯域の脳波（神経振動）の間における相互作用、または統計的な関係性の総称。<br>
+脳は多様な周波数(例：シータ波、ガンマ波)で活動しており、これらの異なるリズムが相互に影響し合うことで、認知機能、記憶、学習などの複雑な情報処理を協調させていると考えられている。<br>
+CFCにはいくつかの形態がある。<br>
+・位相-振幅カップリング(PAC): 低周波の位相が高周波の振幅を調節する。<br>
+・振幅-振幅カップリング(AAC): 2つの異なる周波数帯域の振幅が互いに影響し合う。<br>
+・位相-位相カップリング(PPC): 2つの異なる周波数帯域の位相が同期する。 <br>
+CFCは、脳内の異なる領域間や、局所的な神経回路内での情報伝達を調整する役割を担っている。例えば、記憶形成に関わる脳の領域（海馬など）でシータ波とガンマ波のPACが学習成績と相関することが示されており、異なる種類の情報処理を結びつけるメカニズムである可能性が示唆されている。<br>
+<br>
+●『Theta–gamma coupling increases during the learning of item–context associations』(2009)<br>
+　ラットが特定の環境でどの刺激が報酬と関連しているかを学習する課題において、学習が進むにつれて海馬 CA3 領域のシータ波とガンマ波の PAC が強まることを示した。<br>
+</li>
 
 <br>
 
@@ -2028,6 +2046,21 @@ AIアシスタントやAIエージェントの「汎用的な知能と実用性�
 
 <br>
 
+<li id="GHA">
+<strong>GHA: Generalized Hebbian Algorithm </strong><br>
+ニューラルネットワークにおける教師なし学習アルゴリズムの一種。主に主成分分析(PCA)を実行するために使用される。<br>
+・神経科学の基本的な仮説である「ヘッブの法則」を一般化したもの。<br>
+　※ ヘッブの法則：「同時に発火するニューロン間の結合効率が強化される」というもの。<br>
+・入力データのみから学習を行い、正解データ（教師信号）を必要としない。<br>
+・データが持つ情報(バリアンス)を最大限に保持しつつ、データの次元を削減(圧縮)することを目指す。<br>
+・フィンランドの計算機科学者 Erkki Oja (エルッキ・オヤ) によって開発された Oja の法則(単一ニューロンでの主成分抽出)を、複数のニューロンに対応できるように一般化したアルゴリズム。<br>
+・Sanger's rule（サンガーの法則）とも呼ばれる。<br>
+<br>(関連項目)<br>
+・<a href="#SangersRule">Sanger's rule</a>（サンガーの法則）
+</li>
+
+<br>
+
 <li>
 <strong>GNN: Graph Neural Networks</strong><br>
 グラフ構造のデータ（ノードとエッジで構成されるデータ）を直接扱えるように設計された、特別なタイプのニューラルネットワーク。<br>
@@ -2142,6 +2175,35 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 <strong>Harmless (無害)</strong>　AIは、差別的、攻撃的、非倫理的、または危険なコンテンツを生成するなど、いかなる形でも害を及ぼすことを避ける必要がある。バイアスを軽減し、安全性を優先することが重要。<br>
 <br>(関連項目)<br>
 ・<a href="#AIAlignment">AI Alignment</a> (AIアライメント) 
+</li>
+
+<br>
+
+<li id="HTM">
+<strong>HTM: Hierarchical Temporal Memory (階層的時間的記憶)</strong><br>
+人間の大脳新皮質の構造と機能に触発された、バイオインスパイアな（生物学的に制約された）機械学習理論および技術。<br>
+Jeff Hawkins らによって提唱され、彼が共同設立した Numenta 社によって開発が進められている。<br>
+・HTMは、従来の人工ニューラルネットワークとは異なり、大脳新皮質が持つ共通のアルゴリズム(すべての皮質領域で同様の学習プロセスが行われているという理論)を再現することを目指している。<br>
+・感覚器官から常時流れ込む時間ベースのデータストリームから、教師なしでパターンを学習し、将来の状態を予測することに焦点を当てている。<br>
+・情報が階層的に処理される構造を持ち、各ノード(皮質領域に相当)が時系列パターンを学習・記憶する。<br>
+・データは、少数のビットのみがアクティブな高次元のバイナリベクトルとして表現される。これにより、ノイズに対する堅牢性と高い記憶容量を実現している。<br>
+<br>
+●『How do neurons operate on sparse distributed representations? A mathematical theory of sparsity, neurons and active dendrites』(2016)<br>
+●『Why Neurons Have Thousands of Synapses, a Theory of Sequence Memory in Neocortex』(2016)<br>
+<center><img src="data/images/HTM.png"></center><br>
+A) ほとんどの人工ニ​​ューラルネットワークで用いられるニューロンモデルは、シナプスが少なく、樹状突起は存在しない。<br>
+B) 大脳新皮質錐体ニューロンは、樹状突起上に数千の興奮性シナプスを有する。<br>
+・細胞体近位のシナプスを形成するフィードフォワード入力(緑色)は、直接活動電位につながる。<br>
+・より遠位の基底樹状突起および頂端樹状突起で生成されるNMDAスパイクは細胞体を脱分極させるが、通常は細胞体活動電位を生成するには不十分である。<br>
+C) HTMモデルニューロンは、樹状突起とNMDAスパイクを、それぞれ一連のシナプス(それぞれ数個のみ表示)を備えた同時検出器の配列でモデル化する。<br>
+<br>
+・近接シナプスからの入力(現実の刺激)が来る前に、遠位シナプスが context から「次に何が起こるか」を予測すると、その細胞は「準備状態（脱分極）」になる。<br>
+・実際に刺激が来た際、<strong><span style="color:magenta;">予測されていた細胞だけが他よりも早く発火し、周囲を抑制（側方抑制）する</span></strong>。<br>
+・結果として、予測が的中している時は、予測がない時よりも<strong><span style="color:magenta;">さらに少数のニューロンだけが活動する（よりスパースになる）</span></strong>という現象が起こる。<br>
+・予測が外れた場合は, スパースにならず, 驚きとして異常(予測外れ)が検知される。<br>
+<br>(関連項目)<br>
+・<a href="#Sparsity">Sparsity</a> (スパース性)<br>
+・<a href="https://en.wikipedia.org/wiki/Hierarchical_temporal_memory">wikipedia: Hierarchical temporal memory</a><br>
 </li>
 
 <br>
@@ -2449,6 +2511,17 @@ AIモデルの推論結果から. 入力データや学習データを推定す�
 ●『Inverting visual representations with convolutional networks』(2015)<br>
 　(畳み込みネットワークによる視覚表現の反転)<br>
 　画像分類器からの確率予測が重要な詳細を保持し得ることを示した。
+</li>
+
+<br>
+
+<li id="IPS">
+<strong>IPS: Interacting Particle System (相互作用粒子系)</strong><br>
+相互作用する粒子系をニューラルネットワークの訓練の理論解析に使用する。<br>
+<br>
+●『Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach』(2018)<br>
+　(ニューラルネットワークの訓練可能性と精度：相互作用粒子系アプローチ)<br>
+　重要な洞察は、<strong><span style="color:magenta;">個々のパラメーターに対する損失関数は通常非凸であるのに対し、分布 \(\mu\) に対する損失汎関数は凸になる</span></strong>ということである。この「分布レベルでの凸化」は、ワイドニューラルネットワークが、一見手に負えない最適化ランドスケープを持っているにもかかわらず、訓練可能である理由を根本的に説明する。
 </li>
 
 <br>
@@ -4295,6 +4368,21 @@ Transformerモデルの基本構造であるAttentionメカニズムは、入力
 
 <br>
 
+<li id="SangersRule">
+<strong>Sanger's rule（サンガーの法則）</strong><br>
+・GHA: Generalized Hebbian Algorithm の別名。<br>
+・主成分分析(PCA)に応用される線形フィードフォワードネットワークのための教師なし学習アルゴリズム。<br> 
+・ドナルド・ヘッブが提唱した「ヘッブの法則」に基づき、シナプスの結合強度を調整することで、入力データセットの主要な特徴(主成分)を抽出する。<br>
+・複数の出力ユニットを持つネットワークに適用でき、各ユニットが順次異なる主成分を学習するという特徴がある。これにより、データの次元削減などが可能になる。<br>
+・Terence Sanger によって1989年に発表された。<br>
+<br>
+●『 Optimal unsupervised learning in a single-layer linear feedforward neural network』(1989) <br>
+<br>(関連項目)<br>
+・<a href="#GHA">GHA: Generalized Hebbian Algorithm </a>
+</li>
+
+<br>
+
 <li>
 <strong>Scaling Law (スケーリング則)</strong><br>
 深層学習モデルにおいて、モデルの性能が、モデルのサイズ（パラメータ数）、学習データの量、計算資源（計算量）といった要素を増加させるにつれて、予測可能な形で向上するという経験的な法則。<br>
@@ -4593,6 +4681,36 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 　grokkingとして知られる遅延汎化現象が、Softmax関数の数値的不安定性（「Softmax Collapse」(SC)と名付けられた）と「素朴な損失最小化」(NLM: Naive Loss Minimization)と呼ばれる特定の訓練ダイナミクスによって引き起こされることを明らかにしている。StableMaxでSCを防ぐこと、または⊥GradオプティマイザでNLMを軽減することが迅速な汎化を可能にし、grokkingにおける正則化とMSE損失の役割に対する統一的な説明を提供することを示している。<br>
 <br>(関連項目)<br>
 ・<a href="#Grokking">Grokking</a><br>
+</li>
+
+<br>
+<li id="Sparsity">
+<strong>Sparsity (スパース性)</strong><br>
+データや行列の大部分がゼロまたは非常に小さい値で構成されている性質。<br>
+<br>
+●『Possible principles underlying the transformations of sensory messages』(1961)<br>
+　脳が感覚入力を処理する際の基本原則として「冗長性の削減（Redundancy reduction）」を提唱した。これが後のOlshausenらのスパースコーディング理論の理論的支柱となった。<br>
+<br>
+●『Emergence of simple-cell receptive field properties by learning a sparse code for natural images』(1996) Olshausenら<br>
+　脳が自然界の視覚情報を効率的に表現するためにスパース（少数の細胞だけが活動する状態）な符号化を用いていることを、計算モデルで証明した。<br>
+　自然画像を再構成する際に、できるだけ少数の要素（スパース性）で表現する学習アルゴリズム（Sparsenet）を構築した。その結果、一次視覚野（V1）の単純細胞が持つ「局所的・方位選択的・バンドパス型」の受容野特性が自然に創発することを示し、脳の情報の効率化原理としてスパースコーディングを定着させた。<br>
+<center><img src="data/images/sparsity.png"></center>
+<br>
+サンガー則を用いて自然風景から抽出された8×8の画像パッチに基づいて計算された主成分。64個の成分すべてが、分散の順序（列、行）で示されている。<br>
+　・<a href="#SangersRule">Sanger's rule（サンガーの法則）</a><br>
+<br>
+●『Olfactory network dynamics and the coding of multidimensional signals』(2002)<br>
+　バッタの嗅覚系（キノコ体）において、感覚入力がスパースな表現に変換されるプロセスを詳述し、スパース性が情報の峻別（パターン分離）に重要であることを示した。<br>
+<br>
+●『Invariant visual representation by single neurons in the human brain』(2005)<br>
+　特定の有名人（オプラ・ウィンフリー, ジェニファー・アニストンなど）にのみ反応する「概念細胞」を発見した。これは内側(ないそく)側頭葉における極めて高いスパース性を象徴する発見となった。<br>
+<br>
+●『Sparse Representation in the Human Medial Temporal Lobe』(2006)<br>
+　ヒトの内側側頭葉におけるスパースな表現を定量的に評価し、約0.2〜1%という極めて低い割合のニューロンが特定の刺激に反応することを示した。<br>
+<br>
+・Jeff Hawkins の HTM(Hierarchical Temporal Memory)関連の論文 (2016)<br>
+<br>(関連項目)<br>
+・<a href="#HTM">HTM: Hierarchical Temporal Memory</a> (階層的時間的記憶)
 </li>
 
 <br>
