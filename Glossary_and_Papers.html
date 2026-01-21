@@ -57,6 +57,11 @@
 
 
 <h2>更新項目</h2>
+・<a href="#LPT">Logical Phase Transitions (論理的相転移)</a><br>
+・<a href="#LRM">LRM: Large Reasoning Model (大規模推論モデル)</a><br>
+・<a href="#NeuralODE">Neural ODE</a> ･･･ 図を追加<br>
+・<a href="#NF">NF: Normalizing Flow (正規化フロー)</a><br>
+---<br>
 ・<a href="#PlatonicRepresentationHypothesis">Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
 ---<br>
 ・<a href="#CFC">CFC: Cross-frequency coupling (周波数間カップリング) </a><br>
@@ -65,8 +70,6 @@
 ・<a href="#IPS">IPS: Interacting Particle System (相互作用粒子系)</a><br>
 ・<a href="#SangersRule">Sanger's rule（サンガーの法則）</a><br>
 ・<a href="#Sparsity">Sparsity (スパース性)</a><br>
----<br>
-・<a href="#ConditionalComputationParadigm">conditional computation paradigm (条件付き計算パラダイム)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -777,9 +780,17 @@ CFCは、脳内の異なる領域間や、局所的な神経回路内での情�
 <br>
 エピソード記憶など、新しい情報や具体的な出来事を急速に学習・記憶する<strong>海馬 (Hippocampus)</strong> と, 長期的な記憶の統合、一般的な知識、スキルなど保持する <strong>新皮質 (Neocortex)</strong> の2つのシステムが相補的に機能する, とするモデル。海馬で一時的に保持された情報が、睡眠中などに海馬と新皮質の間で繰り返しやり取りされる（再活性化）ことで、最終的に新皮質へと移行し、長期的な安定した記憶として定着すると考えられている。<br>
 <br>
+●『Reactivation of hippocampal ensemble memories during sleep』(1994)<br>
+　ラットが特定の空間を探索している間に発火する海馬の「場所細胞(place cells)」の活動パターンを記録し、その後の睡眠中に、探索時と同じ細胞ペアが同じ順序で共発火する(リプレイされる)ことを初めて実験的に証明した。これは「睡眠中の記憶固定化」のメカニズムを裏付ける決定的な実験的証拠となった。<br>
+<br>
 ●『Why there are complementary learning systems in the hippocampus and neocortex: Insights from the successes and failures of connectionist models of learning and memory.』(1995)<br>
 　(海馬と大脳新皮質に補完的な学習システムが存在する理由：学習と記憶のコネクショニストモデルの成功と失敗からの洞察)<br>
-　海馬系が損傷すると、最近の記憶は破壊されるが、遠い記憶はそのまま残る。ここで提示された説明は、記憶がまず海馬系のシナプス変化を介して保存され、これらの変化が大脳新皮質における最近の記憶の復元をサポートし、大脳新皮質のシナプスは復元ごとに少しずつ変化し、遠い記憶は蓄積された大脳新皮質の変化に基づくことを示唆している。接続の変化を介して学習するモデルは、この構成を説明するのに役立つ。これらのモデルは、各項目の学習が段階的であり、他の項目の学習と交互に行われる場合、項目のアンサンブル内の構造を発見する。これは、大脳新皮質が経験のアンサンブル内の構造を発見することをゆっくりと学習することを示唆している。海馬系は、この構造を破壊せずに新しい項目を迅速に学習することを可能にし、新しい記憶の復元はそれらを他の記憶と交互に配置して、構造化された大脳新皮質記憶システムに統合する。<br>
+　海馬系が損傷すると、最近の記憶は破壊されるが、遠い記憶はそのまま残る。ここで提示された説明は、記憶がまず海馬系のシナプス変化を介して保存され、これらの変化が大脳新皮質における最近の記憶の復元をサポートし、大脳新皮質のシナプスは復元ごとに少しずつ変化し、遠い記憶は蓄積された大脳新皮質の変化に基づくことを示唆している。<br>
+<br>
+●『Hippocampal and neocortical contributions to memory: Advances in the complementary learning systems framework』(2001)<br>
+・海馬がどのようにして「単一試行学習(one-shot learning)」能力によって特定の経験の具体的な詳細を迅速に捉えるか<br>
+・新皮質がどのようにして複数回の経験を通じて抽象的な表現や一般化された知識(共通の構造)を徐々に学習するか<br>
+を、計算モデルを用いて詳細に論じた。<br>
 <br>
 ●『The AI Hippocampus: How Far are We From Human Memory?』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.09113">こちら</a><br>
 　大規模言語モデル（LLM）およびマルチモーダル大規模言語モデル（MLLM）における記憶メカニズムについて、人間の脳システム（新皮質、海馬、前頭前野）との類推を通じて構造化された包括的なレビューを発表した。
@@ -2027,7 +2038,7 @@ AIアシスタントやAIエージェントの「汎用的な知能と実用性�
 ・<a href="#VAE">VAE: Variational Auto Encoder</a><br>
 ・GAN: Generative Adversarial Networks <br>
 ・Flow-based model<br>
-　Normalizing Flow <br>
+・<a href="#NF">NF: Normalizing Flow (正規化フロー)</a><br>
 ・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a><br>
 　DDPM: Denoising Diffusion Probabilistic Model<br>
 などがある。<br>
@@ -2987,6 +2998,28 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 
 <br>
 
+<li id="LPT">
+<strong>LPT: Logical Phase Transitions (論理的相転移)</strong><br>
+大規模言語モデル (LLM) の論理的推論能力が、タスクの複雑さの増加に伴って、滑らかに低下するのではなく、ある臨界点を超えると突然崩壊する（性能が急激に落ちる）現象。物理学における相転移(例えば、水が特定の温度で突然氷や水蒸気に変化する現象)に類似していることから、このように名付けられた。<br>
+<br>
+●『Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning』(2026) 解説は<a href="https://www.alphaxiv.org/overview/2601.02902">こちら</a><br>
+　華中科技大学の研究者たちは、大規模言語モデル（LLM）において「論理的相転移」（LPTs）を発見した。これは、論理的推論の性能が臨界的な複雑さの閾値を超えると突然崩壊する現象である。彼らは、新しい論理的複雑性指標（LoCM）と新しいデータセットを活用した「ニューロ・シンボリック・カリキュラム・チューニング」というフレームワークを導入し、これらの崩壊を緩和することで、様々な論理的推論ベンチマークで最大+3.95の精度向上を達成した。
+</li>
+
+<br>
+
+<li id="LRM">
+<strong>LRM: Large Reasoning Model (大規模推論モデル)</strong><br>
+複雑な推論タスクを解決するために設計された、非常に大規模で高性能な人工知能モデル。<br>
+<br>
+<center><img src="data/images/LRM.svg"></center>
+<br>
+●『Reasoning Language Models: A Blueprint』(2025)<br>
+スイス連邦工科大学チューリッヒ校の並列計算研究室の研究者らは、複雑なアーキテクチャを解明し、既存の明示的および暗黙的な推論言語モデル(RLM)スキームを統合するために、オープンソースのx1フレームワークを伴うRLMの包括的でモジュール式の青写真を提案している。本研究は、RLMの構築に関する実践的な洞察を提供し、スケーラブルな展開戦略を概説することで、高度な推論能力へのアクセスを民主化することを目指している。
+</li>
+
+<br>
+
 <li id="LTH">
 <strong>LTH: Lottery Ticket Hyposis (宝くじ仮説)</strong><br>
 大規模なニューラルネットワークの中に、元のネットワークと同じかそれ以上の性能を発揮する、より小さな「サブネットワーク」が存在するという仮説。<br>
@@ -3314,11 +3347,46 @@ JEPAのような手法が異なるモダリティに対して別々のエンコ�
 
 <br>
 
-<li>
+<li id="NeuralODE">
 
 <strong>Neural ODE</strong><br>
 ニューラルネットワークの層の連なりを、連続的な常微分方程式として表現する革新的なモデル。<br>
 従来のニューラルネットワークが、層ごとに離散的な変換を適用するのに対し、Neural ODEは隠れ状態の連続的な時間発展を学習する。<br>
+<br>
+●『Neural Ordinary Differential Equations』(2018)<br>
+<center><img src="data/images/NeuralODE.svg"></center>
+<center><img src="data/images/NeuralODE_2.svg"></center><br>
+
+\[
+\begin{align}
+& Δh:Δt \approx f:1 \\
+\\
+& \frac{Δh}{Δt} \approx  f \\
+\\
+& \frac{h(t+Δt)-h(t)}{Δt} \approx f \\
+\\
+& \lim\limits_{Δt→0}\frac{h(t+Δt)-h(t)}{Δt} = \dot{h}(t)= f 
+\end{align}
+\]
+</li>
+
+<br>
+
+<li id="NF">
+<strong>NF: Normalizing Flow (正規化フロー)</strong><br>
+単純な分布（標準ガウス分布など）を一連の可逆かつ微分可能な写像を介して変換することで、複雑な確率分布を学習する強力な生成モデルの一種。<br>
+<br>
+●『Analytic Bijections for Smooth and Interpretable Normalizing Flows』(2026)　解説は<a href="https://www.alphaxiv.org/ja/overview/2601.10774">こちら</a><br>
+　(滑らかで解釈可能な正規化フローのための解析的全単射)<br>
+アムステルダム大学の研究者たちは、正規化フローのための3つの新しい解析的全単射ファミリーを導入した。これらは、大域的な滑らかさを維持し、解析的な可逆性を提供し、表現力豊かなパラメータ化をもたらすことで、従来のメソッドの限界を克服している。この研究では、さらにRadial Flowsと呼ばれる新しいアーキテクチャも提案している。
+カップリングフローに匹敵する品質を実現でき, パラメータが1000倍少ない。<br>
+<center><img src="data/images/bijection.svg"></center><br>
+3種類の全単射挙動。<br>
+・上段：全単射関数 h(x)（実線）と恒等変換（破線<br>
+・下段：標準正規事前分布（破線）を変換した場合の密度（実線）<br>
+・左段(三次有理関数)：大きな|x|に対してh(x) → x にすると、局所的な変形によって二峰性構造が形成される。<br>
+・中段(正弦関数)：局所的な「伸長」は、遠方の点を一定のオフセットで変位させる。<br>
+・右段(アフィン関数)：均一なスケーリングは、分布全体の形状を維持しながら、分布を圧縮または伸長させる。
 </li>
 
 <br>
@@ -3718,6 +3786,8 @@ AIの学習環境を「小さな世界（Small World）」と見なすと、現�
 　　↓<br>
 ●『Stacked Generalization』(1992)<br>
 ●『A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting』AdaBoost (1995)<br>
+●『Bagging predictors』(1996)<br>
+　　複数の予測器のバージョンを生成し、それらを集約（平均または多数決）することで、特に不安定な予測手法の精度を大幅に向上させる手法を提案した。<br>
 ●『Greedy Function Approximation: A Gradient Boosting Machine』GBDT(Gradient Boosting Decision Tree) (1999)<br>
 ●『Random Forests』(2001)<br>
 　　：
