@@ -57,19 +57,17 @@
 
 
 <h2>更新項目</h2>
+・<a href="#BIAI">BIAI: Brain-inspired Artificial Intelligence</a><br>
+・<a href="#ContinuousActionRL">Continuous-Action Reinforcement Learning (連続行動空間の強化学習) </a><br>
+・<a href="#NTP">NTP: Next-Token Prediction（ネクストトークン予測）</a><br>
+・<a href="#ThinkingWith">Thinking with ～ (～で考える)</a><br>
+---<br>
 ・<a href="#LPT">Logical Phase Transitions (論理的相転移)</a><br>
 ・<a href="#LRM">LRM: Large Reasoning Model (大規模推論モデル)</a><br>
 ・<a href="#NeuralODE">Neural ODE</a> ･･･ 図を追加<br>
 ・<a href="#NF">NF: Normalizing Flow (正規化フロー)</a><br>
 ---<br>
 ・<a href="#PlatonicRepresentationHypothesis">Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
----<br>
-・<a href="#CFC">CFC: Cross-frequency coupling (周波数間カップリング) </a><br>
-・<a href="#GHA">GHA: Generalized Hebbian Algorithm </a><br>
-・<a href="#HTM">HTM: Hierarchical Temporal Memory (階層的時間的記憶)</a><br>
-・<a href="#IPS">IPS: Interacting Particle System (相互作用粒子系)</a><br>
-・<a href="#SangersRule">Sanger's rule（サンガーの法則）</a><br>
-・<a href="#Sparsity">Sparsity (スパース性)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -638,6 +636,24 @@ Lamark (ラマルク) 説は完全に否定された訳ではない模様。<br>
 
 <br>
 
+<li id="BIAI">
+<strong>BIAI: Brain-inspired Artificial Intelligence</strong><br>
+人間の脳の構造、機能、および動作原理からインスピレーションを得た人工知能システムやアルゴリズム。<br>
+<br>
+Neuron-inspired: 生物学的なニューロン（神経細胞）の基本的な構造と機能、およびそれらの間のシナプス結合を模倣することに焦点を当てるもの。Brain-inspied ～ に含まれる。<br>
+<br>
+●『Brain-inspired Artificial Intelligence: A Comprehensive Review』(2024)　解説は<a href="https://www.alphaxiv.org/ja/overview/2408.14811">こちら</a><br>
+RMIT大学によるこの包括的なレビューは、脳型人工知能（BIAI）を物理構造に触発されたモデルと人間行動に触発されたモデルに分類している。本レビューは、BIAIが従来のAIの限界にどのように対処できるかを検証し、現在の応用、課題、そしてより堅牢で適応性の高いシステムに向けた将来の研究方向性を概説している。<br>
+・物理的構造着想型モデル：生物学的神経系の解剖学的および機能的組織を直接模倣する。低消費電量, 高効率,･･･<br>
+　(CNN, CapsNets, RNN, LSTM, DBN, SNN(Spiking NN))<br>
+・人間行動着想型モデル：物理的な神経構造ではなく、人間の行動で観察される認知プロセスと学習メカニズムの再現に焦点を当てる。<br>
+　(機械アンラーニング, アテンション, 模倣学習, 転移学習, 強化学習, 自己教師あり学習, 少数ショット学習)<br>
+
+
+</li>
+
+<br>
+
 <li><strong>BIBO: Bias In, Bias Out</strong><br>
 　BIBO: Bias In, Bias Out ･･･ AI分野で使われる格言。<br>
 　(BIASの掛かったデータを入力すると, BIASの掛かった推論結果が出力される)。<br>
@@ -956,6 +972,19 @@ AIモデルが、個々の独立した事実は知っているにもかかわら
 ・<a href="#DEN">DEN: Dynamically Expandable/Growth Networks</a> (動的成長ネットワーク)<br>
 ・Cumulative Learning (累積学習)<br>
 　　新しい知識やスキルを既存の知識体系に統合し、積み上げていく学習プロセス。
+</li>
+
+<br>
+
+<li id="ContinuousActionRL">
+<strong>Continuous-Action Reinforcement Learning (連続行動空間の強化学習) </strong><br>
+エージェントが連続的な値の行動を選択する強化学習の分野。<br>
+一般的な(離散行動空間の)強化学習では、エージェントが選択できる行動は「右に進む」「左に進む」「ジャンプする」といった限られた選択肢の中から1つを選ぶ形式だが、連続行動空間では、行動が実数や実数ベクトルの範囲で定義される。<br>
+例：ロボットアームの関節を「-90度から90度の間の任意の角度」に動かす。<br>
+(蛇足：分類と回帰のような関係?)<br>
+<br>
+●『Q-LEARNING WITH ADJOINT MATCHING』(2026)<br>
+我々は、連続行動強化学習（RL）における長年の課題である、パラメータ化された Q関数を用いた表現力豊かな拡散またはフローマッチング方策の効率的な最適化という課題に取り組む、TDベースの新しい強化学習アルゴリズムであるQ学習と随伴マッチング（QAM）を提案する。
 </li>
 
 <br>
@@ -3561,6 +3590,18 @@ DeepMind社によって2014年に発表された。<br>
 
 <br>
 
+<li id="NTP">
+<strong>NTP: Next-Token Prediction（ネクストトークン予測）</strong><br>
+与えられた一連の単語(トークン)の次に来る可能性が最も高い単語を予測することを目的とするタスク。言語モデル(LLM)において、人間のように流暢で一貫性のあるテキストを生成するための学習で用いられる。<br>
+<br>
+●『Beyond Tokens: Concept-Level Training Objectives for LLMs』(2026)<br>
+　次トークン予測（NTP）目標は、現代の大規模言語モデル（LLM）の開発において基礎的なものであり、流暢性と一般化の進歩を推進してきた。しかし、NTPはトークンレベルで動作し、単一の参照継続からの逸脱を、代替継続が同様に妥当であるか意味的に同等である場合でも（例：「mom」と「mother」）、エラーとして扱う。その結果、トークンレベルの損失は、有効な抽象化、言い換え、または概念的に正しい推論パスにペナルティを与え、モデルを根本的な意味ではなく表層形式に偏らせる可能性がある。<br>
+<br>(関連項目)<br>
+・<a href="#LCM">LCM: Large Concept Model</a> (大規模概念モデル)
+</li>
+
+<br>
+
 <li id="NVS">
 <strong>NVS: Novel view synthesis (新規視点合成)</strong><br>
 撮影された複数の画像データから、撮影されていない新しい視点からの画像を合成する技術。<br>
@@ -4380,6 +4421,31 @@ AIが報酬を追いすぎるあまり、バランスを欠いたり、単調な
 動物や人間が、自発的な行動の結果として得られる報酬や罰を通じて、特定の行動を学習するプロセス。<br>
 制御工学では, 動的計画法 (Dynamic Programming) や最適制御理論といった手法が中心に研究された。<br>
 機械学習の文脈では、コンピューターエージェントが試行錯誤を通じて最適な行動ルールを学習するアプローチ。<br>
+
+\[
+\begin{array}{l|c|c}
+& \text{オンライン強化学習} & \text{オフライン強化学習}\\
+\hline
+\text{学習時のエージェントと環境の相互作用} & \text{あり} & \text{なし} 
+\end{array}
+\]
+
+オフライン強化学習
+・事前に収集・蓄積されたデータセットのみを用いて学習する。<br>
+・実環境での試行錯誤が困難な応用(自動運転, 医療等々)で重要。<br>
+・データセット外の行動評価が難しい → <a href="#OODShock">OODショック</a><br>
+
+\[
+\begin{array}{l|c|c}
+& \text{オンポリシー学習} & \text{オフポリシー学習} \\
+\hline
+\text{Behavior Policy と Target Policy} & \text{同じ} & \text{異なる}
+\end{array}
+\]
+
+Behavior Policy(行動ポリシー)：行動の選択に使用するポリシー<br>
+Target Policy(ターゲットポリシー)：学習によって改善・評価されるポリシー<br>
+オフポリシー学習は, 利用時と異なるポリシーで得たデータも活用できる。<br>
 <br>
 <a href="data/Papers_RL.html">Papers</a><br>
 <br>
@@ -5077,29 +5143,53 @@ EPE(期待予測誤差) そのものを直接的な報酬にするのではな�
 
 <br>
 
-<li id="ThinkingWithImages">
-<strong>Thinking with Images (画像を使って考える)</strong><br>
-AI（特にマルチモーダル大規模言語モデル）の分野における新しいパラダイムであり、モデルが推論プロセスの中間ステップで画像を動的に生成・操作して問題解決を行うアプローチ。<br>
-従来のAIは、画像を入力として受け取った後、それをテキスト情報に変換して推論を行っていた(Thinking about Images 画像について考える )。これに対し、「Thinking with Images」では、人間がスケッチブックを使うように、AI自身が推論の過程で必要に応じて視覚的な情報を生成したり、既存の画像の一部を拡大・回転させたりといった操作を行う。<br>
+<li id="ThinkingWith">
+<strong>Thinking with ～ (～で考える)</strong><br>
+マルチモーダル大規模言語モデル分野におけるパラダイム。<br>
+<br>
+<center><img src="data/images/ThinkingWithImages.svg"></center>
+
+<ul><li>
+<strong>Thinking about Images </strong><br>
+
+画像を入力として受け取った後、それをテキスト情報に変換して推論を行っていた。<br>
+</li><br><li>
+
+<strong>Thinking with Images</strong><br>
+
+人間がスケッチブックを使うように、AI自身が推論の過程で必要に応じて視覚的な情報を生成したり、既存の画像の一部を拡大・回転させたりといった操作を行う。<br>
 <br>
 ●『Visual sketchpad: Sketching as a visual chain of thought for multimodal language models』(2024)<br>
 　(Visual Sketchpad: マルチモーダル言語モデルのための視覚的思考の連鎖としてのスケッチ)<br>
 <br>
 ●『Thinking with Images for Multimodal Reasoning: Foundations, Methods, and Future Frontiers』(2025)<br>
-<center><img src="data/images/ThinkingWithImages.svg"></center>
 <br>
 ●『Deep-eyes: Incentivizing” thinking with images” via reinforcement learning』(2025)<br>
 　(Deep-Eyes:強化学習による「画像思考」の奨励)<br>
+</li><br><li>
+
+<strong>Thinking with Latent Visual Tokens</strong><br>
 <br>
 ●『Machine mental imagery: Empower multi-modal reasoning with latent visual tokens』(2025)<br>
 　(機械心像：潜在視覚トークンによるマルチモーダル推論の強化)<br>
 <br>
 ●『Latent Visual Reasoning』(2025)<br>
 　(潜在視覚推論)<br>
-<center><img src="data/images/LatentVisualReasoning.svg"></center>
 <br>
 ●『Monet: Reasoning in Latent Visual Space Beyond Images and Language』(2025)<br>
 　(Monet:イメージと言語を超えた潜在的視覚空間における推論)
+</li><br><li>
+
+<strong>Thinking with Space</strong><br>
+<br>
+●『Think3D: Thinking with Space for Spatial Reasoning』(2026)　解説は<a href="https://www.alphaxiv.org/ja/overview/2601.13029">こちら</a><br>
+ビジョン言語モデル(VLM)は,画像とテキストの解釈には優れているものの、奥行き、形状、空間的関係の理解は浅いままであり、真の3D理解ではなく、主に2D視覚的手がかりに依存している。Think3Dは、<strong><span style="color:magenta;">「画像で考える」から「空間で考える」へとパラダイムシフトを導入する</span></strong>ことで、この重要なギャップに対処する。
+</li><br><li>
+
+</li></ul>
+
+
+
 </li>
 
 <br>
