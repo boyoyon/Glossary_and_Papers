@@ -57,6 +57,14 @@
 
 
 <h2>更新項目</h2>
+・<a href="#IDM">IDM: Inverse Dynamics Models (逆動力学モデル) </a><br>
+・<a href="#Information Collapse">Information Collapse (情報崩壊)</a><br>
+・<a href="#InstantaneousAffectiveReversal">Instantaneous Affective Reversal (瞬間的な感情反転)</a><br>
+・<a href="#KG">KG: Knowledge Graph (知識グラフ)</a><br>
+・<a href="#RAE">RAE: Representation Autoencoders (表現オートエンコーダー)</a><br>
+・<a href="#ToM">ToM: Theory of Mind (心の理論)</a> ･･･図を追加<br>
+・<a href="#VisionShortcut">Vision Shortcut (視覚ショートカット)</a><br>
+---<br>
 ・<a href="#BIAI">BIAI: Brain-inspired Artificial Intelligence</a><br>
 ・<a href="#ContinuousActionRL">Continuous-Action Reinforcement Learning (連続行動空間の強化学習) </a><br>
 ・<a href="#NTP">NTP: Next-Token Prediction（ネクストトークン予測）</a><br>
@@ -66,8 +74,6 @@
 ・<a href="#LRM">LRM: Large Reasoning Model (大規模推論モデル)</a><br>
 ・<a href="#NeuralODE">Neural ODE</a> ･･･ 図を追加<br>
 ・<a href="#NF">NF: Normalizing Flow (正規化フロー)</a><br>
----<br>
-・<a href="#PlatonicRepresentationHypothesis">Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -2337,6 +2343,20 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 
 <br>
 
+<li id="IDM">
+<strong>IDM: Inverse Dynamics Models (逆動力学モデル) </strong><br>
+システムの運動（位置、速度、加速度）が既知である場合に、その運動を引き起こすために必要な力を計算する。<br>
+⇔ FDM: Forward Dynamics Models (順動力学モデル)の逆の問題を扱う。<br>
+<br>
+●『Rethinking Video Generation Model for the Embodied World』(2026)　解説は<a href="">こちら</a><br>
+　(動画生成モデルの再考：身体化された世界に向けて)<br>
+　生成されたビデオから実行可能なアクションを回復するために逆動力学モデル(IDM)を採用。<br>
+<br>(関連項目)<br>
+・<a href="#EmbodiedAI">Embodied AI</a> (身体化AI)
+</li>
+
+<br>
+
 <li id="IL">
 <strong>IL: Imitation Learning (模倣学習)</strong><br>
 熟練者 (人間やAIなど) が示したお手本の行動を観察し、それを真似ることでタスクの遂行方法を学習させる機械学習の手法。<br>
@@ -2457,6 +2477,19 @@ SNSやネットメディアを通じて人々の意見や行動、意思決定�
 
 <br>
 
+<li id="InstantaneousAffectiveReversal">
+<strong>Instantaneous Affective Reversal (瞬間的な感情反転)</strong><br>
+チャットボットとの会話中に、直前まで友好的だったモデルのトーンやペルソナが、特定の入力に対して突然、瞬間的に攻撃的、否定的、あるいは非協力的になる現象。これは、モデルが特定のトリガーワードによって予期しない振る舞いをする「プロンプトリーク」や「脱獄（ジェイルブレイク）」に関連して起こり得る。<br>
+<br>
+●『Controlling Long-Horizon Behavior in Language Model Agents with Explicit State Dynamics』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.16087">こちら</a><br>
+現在の大規模言語モデル（LLM）エージェントは、根本的な限界に苦しんでいます。それは、長時間の会話中に感情的なトーンや個性が突然かつ予測不能に変化することです。この現象は「瞬間的な感情反転」と呼ばれ、ユーザーの信頼を損ない、持続的なエンゲージメントを必要とするアプリケーションにおいてエージェントを信頼できないものにしています。<br>
+・・・<br>
+核となる洞察は、エージェントの感情状態を、Valence-Arousal-Dominance (VAD) 次元を表す連続的な3次元ベクトル 
+ としてモデル化することです。各会話ターンにおいて、瞬間的な感情信号 ât が感情分析器を使用して対話コンテキストから抽出されますが、このノイズの多い推定値を直接使用する代わりに、それは持続的な感情状態をスムーズに更新する動的システムへの入力として機能します。
+</li>
+
+<br>
+
 <li id="IntentExtraction">
 <strong>Intent Extraction (意図抽出)</strong><br>
 ユーザーが発した言葉や文章の背後にある「意図」や「目的」を特定する技術。<br>
@@ -2476,6 +2509,16 @@ SNSやネットメディアを通じて人々の意見や行動、意思決定�
 <strong>盲点の発生</strong>:　決まりきった思考回路に頼るため、新しい可能性や斬新な解決策を見落としやすくなる。<br>
 <br>(関連項目)<br>
 ・<a href="#ReverseThinking">Reverse thinking</a>
+</li>
+
+<br>
+
+<li id="Information Collapse">
+<strong>Information Collapse (情報崩壊)</strong><br>
+視覚情報から言語指示がほぼ決定論的に予測できてしまうようなデータセット（goal-driven datasets）において、指示と行動の間の条件付き相互情報量（conditional mutual information）が消失すること。<br>
+例：ロボット制御などのタスク指向型データセットでは, 「キャビネットを見る」という状況は、ほぼ常に「キャビネットを開ける」という指示とセットになっている。その結果, モデルは言語指示を無視し、視覚情報のみに基づいて行動を予測する「視覚ショートカット (vision shortcut)」を学習してしまう。これにより、言語指示と行動の間の条件付き相互情報量が実質的にゼロになり、モデルが言語制約に従わなくなり、訓練データセットの範囲外（OOD: out-of-distribution）のシナリオで汎化性能が著しく低下する。<br>
+<br>(関連情報)<br>
+・<a href="#VisionShortcut">Vision Shortcut</a> (視覚ショートカット)
 </li>
 
 <br>
@@ -2721,6 +2764,23 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 <center>学習中の内部表現の遷移を視覚化したもの</center>
 <br>
 強い帰納的バイアスがない場合、モデルは損失面上の複数の局所的最小値に等しく引き寄せられる可能性があり、収束解は初期状態や訓練例の順序などのランダムな変動によって任意に影響を受ける可能性がある。強い帰納的バイアスを持つモデルを教師モデルにすることでそれらの影響を避けることができる。
+</li>
+
+<br>
+
+<li id="KG">
+<strong>KG: Knowledge Graph (知識グラフ)</strong><br>
+実世界の情報（人、場所、物事など）とそれらの関係性を「ノード（点）とエッジ（線）」で結びつけ、グラフ構造で表現した知識のネットワーク。<br>
+<br>
+<center><img src="data/images/KG.svg"></center>
+<br>
+●『Knowledge Graphs are Implicit Reward Models: Path-Derived Signals Enable Compositional Reasoning』(2026)　解説は<a href="https://www.alphaxiv.org/ja/overview/2601.15160">こちら</a><br>
+　(知識グラフは暗黙の報酬モデル: パスから得られるシグナルが構成的推論を可能にする)<br>
+<center><img src="data/images/KG2.svg"></center>
+<br>(関連項目)<br>
+・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的汎化)<br>
+・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
+・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）
 </li>
 
 <br>
@@ -4132,6 +4192,23 @@ IPD: Iterated Prisoner’s Dilemma (反復囚人のジレンマ)<br>
 <p>
 <div class="styleBullet">
 <ul>
+<li id="RAE">
+<strong>RAE: Representation Autoencoders (表現オートエンコーダー)</strong><br>
+ニューラルネットワークを用いてデータの本質的な特徴や表現（潜在表現）を学習するための手法。
+Transformerアーキテクチャと組み合わせた「Diffusion Transformers with Representation Autoencoders (RAEs)」といった新しいパラダイムが提案されており、画像生成などの分野で高性能を発揮している。<br> 
+<br>
+●『Diffusion Transformers with Representation Autoencoders』(2025) 解説は<a href="https://www.alphaxiv.org/ja/overview/2510.11690">こちら</a><br>
+　(表現オートエンコーダーを用いた拡散トランスフォーマー)<br>
+Representation Autoencoders (RAE)は、<strong><span style="color:magenta;">凍結された事前学習済み視覚エンコーダーと軽量デコーダーを利用することで、Diffusion Transformers (DiT)の潜在空間を再定義します</span></strong>。このフレームワークは、ImageNet 512x512においてFID 1.13を達成する最先端の画像生成を実現し、以前のDiTモデルと比較して<strong><span style="color:magenta;">最大47倍速い収束率</span></strong>を示します。<br>
+<center><img src="data/images/RAE.svg"></center>
+<br>
+●『Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.16208">こちら</a><br>
+　(表現オートエンコーダによるテキスト画像拡散トランスフォーマーのスケーリング)<br>
+ニューヨーク大学の研究者たちは、大規模なテキストから画像生成のために表現オートエンコーダ（RAE）をスケールアップし、<strong><span style="color:magenta;">収束速度、生成品質、過学習への耐性において変分オートエンコーダ（VAE）よりも優れた性能を示しました</span></strong>。このフレームワークは、視覚的理解と生成を共通のセマンティック空間内で統合し、高度なマルチモーダル推論を可能にします。
+</li>
+
+<br>
+
 <li id="RAG">
 <strong>RAG: Retrieval-Augmented Generation (検索拡張生成, 取得拡張生成)</strong><br>
 質問に関連する文書を検索(Retrieval)し, 取得した文書をもとに(Augmented) LLM で回答を生成(Generation)することで、より正確で信頼性の高い回答を生成する技術。<br>
@@ -5210,7 +5287,7 @@ EPE(期待予測誤差) そのものを直接的な報酬にするのではな�
 
 <br>
 
-<li>
+<li id="ToM">
 <strong>ToM: Theory of Mind (心の理論)</strong><br>
 他者が自分とは異なる信念、意図、欲求、感情などの心の状態（精神状態）を持っていることを理解する能力のこと。<br>
 <br>
@@ -5221,8 +5298,17 @@ EPE(期待予測誤差) そのものを直接的な報酬にするのではな�
 <br>
 ●『Theory of mind as inverse reinforcement learning』(2019)<br>
 　(逆強化学習としての心の理論)<br>
-　論文は<a href="https://compdevlab.yale.edu/docs/2019/ToM_as_IRL_2019.pdf">こちら</a><br>
+　論文は<a href="https://compdevlab.yale.edu/docs/2019/ToM_as_IRL_2019.pdf">こちら</a>　機械翻訳は<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/papers/2019_ToM_as_IRL/ToM_as_IRL.html">こちら</a><br>
 心の理論、つまり他者の精神状態を推論する能力は、逆強化学習として形式化できるという考えを検証する。<br>
+<center><img src="data/images/ToM_as_IRL.svg"></center>
+(a)心の理論の中核構成要素<br>
+人々の世界についての信念は、彼らの欲求と組み合わさって、彼らが何を意図するかを決定する。人々の意図は彼らの行動を導き、それが世界についての信念を変える結果をもたらす。えんじ色の矢印は精神状態の推論(心の理論)を表している。<br>
+<br>
+(b)モデルベースの強化学習の中核構成要素。<br>
+報酬関数と組み合わされた世界モデルは、効用最大化を介してポリシーを生成する。ポリシーを実行すると状態が変化し、エージェントは世界モデルを修正する。えんじ色の矢印は逆強化学習を表している。<br>
+<br>
+ディープラーニングによる最先端の IRL [47] では、生後 6 か月の乳児の能力で目標推論を実行するために 3,200 万のトレーニングサンプルが必要です [48]。もし人間が同じような方法で心の理論を習得するならば、乳児は毎日、1日あたり約175,000回のラベル付き目標訓練エピソードを受ける必要があるだろう。<br>
+(蛇足：もっと効率化できるはず)<br>
 <br>
 ●『Towards Cognitive Synergy in LLM-Based Multi-Agent Systems: Integrating Theory of Mind and Critical Evaluation』(2025)<br>
 　(LLMベースのマルチエージェントシステムにおける認知的相乗効果に向けて：心の理論と批判的評価の統合)<br>
@@ -5546,6 +5632,20 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 大規模マルチモーダルモデル (MLLM) が、テキストではなく画像シーケンスによって推論や計画を実行する、新しいパラダイムを提案した論文。特に空間的・幾何学的な情報を含むタスクにおいて、視覚的な表象が言語ベースの推論を補完する有効なチャネルであることを示した。強化学習 (RL) を用いて、画像生成による視覚的計画を実現し、テキストベースの推論を大幅に上回る性能を示している。<br>
 <br>
 <a href="data/Papers_VisualPlanning.html">Papers</a>
+</li>
+
+<br>
+<li id="VisionShortcut">
+<strong>Vision Shortcut (視覚ショートカット)</strong><br>
+VLAモデルが、言語の指示を真に理解して実行する代わりに、訓練データに存在する視覚的な相関関係やバイアスを利用してタスクを達成してしまう現象。<br>
+<br>
+●『BayesianVLA: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.15197">こちら<a/><br>
+　ビジョン・言語・行動（VLA）モデルは、ロボティクスにおける目覚ましい進歩を代表するものであり、視覚認識と自然言語理解を組み合わせることで、ロボットが複雑な操作タスクを実行できるようになります。しかし、制御された環境下での優れたパフォーマンスにもかかわらず、これらのモデルは新しいシナリオや分布外（OOD）設定への汎化に苦戦しています。BayesianVLAは、「情報崩壊」または「ビジョンショートカット」と呼ばれる現在のVLAトレーニングにおける致命的な病理を特定し、修正することで、この根本的な限界に対処します。<br>
+・・・<br>
+核心的な洞察は、<strong><span style="color:magenta;">現在のロボットデータセットが、目標駆動型パラダイムで収集されているため、視覚的観測と言語指示との間に決定論的な結合を生み出している</span></strong>という点です。ロボットがキャビネットを見ると、指示はほとんど常に「キャビネットを開けなさい」となります。この予測可能な関係により、モデルは言語制約を実質的に無視する視覚のみのポリシーを学習し、視覚的コンテキストが変化したり、曖昧な指示が言語による曖昧性解消を必要とする場合に、壊滅的な失敗につながります。<br>
+<br>(関連項目)<br>
+・<a href="#ShortcutLearning">Shortcut Learning</a> (ショートカット学習)<br>
+・<a href="#Information Collapse">Information Collapse</a> (情報崩壊) ･･･ Vision Shortcutが発生する理由を理論的に説明する現象<br>
 </li>
 
 <br>
