@@ -57,6 +57,11 @@
 
 
 <h2>更新項目</h2>
+・<a href="#ES">ES: Evolution Strategies (進化戦略)</a> ･･･論文追加<br>
+・<a href="#FeaturesNotBugsHypothesis">Features, not bugs hypothesis (バグではなく機能仮説)</a><br>
+・<a href="#JITWorldModeling">Just-in-Time World Modeling</a><br>
+・<a href="#LMC">LMC: Linear Mode Connectivity (線形モード接続)</a> ･･･論文追加<br>
+---<br>
 ・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</a><br>
 ・<a href="#SDFT">SDFT: Self-Distillation Fine Tuning (自己蒸留ファインチューニング)</a><br>
 ・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a><br>
@@ -68,11 +73,6 @@
 ・<a href="#RAE">RAE: Representation Autoencoders (表現オートエンコーダー)</a><br>
 ・<a href="#ToM">ToM: Theory of Mind (心の理論)</a> ･･･図を追加<br>
 ・<a href="#VisionShortcut">Vision Shortcut (視覚ショートカット)</a><br>
----<br>
-・<a href="#BIAI">BIAI: Brain-inspired Artificial Intelligence</a><br>
-・<a href="#ContinuousActionRL">Continuous-Action Reinforcement Learning (連続行動空間の強化学習) </a><br>
-・<a href="#NTP">NTP: Next-Token Prediction（ネクストトークン予測）</a><br>
-・<a href="#ThinkingWith">Thinking with ～ (～で考える)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -254,7 +254,8 @@ AIやロボットなどのエージェントが、特定の目的 (認識の向�
 <br>
 <a href="data/Papers_AdversarialVulnerabilities.html">Papers</a><br>
 <br>(関連項目)<br>
-・<a href="#Inversion">Inversion ((AI推論の)反転)</a>
+・<a href="#FeaturesNotBugsHypothesis">Features, not bugs hypothesis</a> (バグではなく機能仮説)<br>
+・<a href="#Inversion">Inversion</a> ((AI推論の)反転)
 </li>
 
 <br>
@@ -1825,8 +1826,15 @@ ERMではない学習アプローチはあるのか?<br>
 <center>強化学習(PPO), OpenESとの比較</center>
 <br>
 <center><img src="data/images/ES2.png"></center>
+<br>
+<br>
+●『Evolutionary Strategies lead to Catastrophic Forgetting in LLMs』(2026)<br>
+・<strong><span style="color:magenta;">ESは同等の計算予算で、数学および推論タスクにおいてGRPOに近い性能値を達成できる</span></strong>ことが分かりました。<br>
+・しかし、継続学習において最も重要な点として、<strong><span style="color:magenta;">ESにおける性能向上は事前能力の大幅な忘却を伴い</span></strong>、オンラインモデル学習への適用性が制限されます。また、この動作の背後にある理由を探り、<strong><span style="color:magenta;">ESを用いた更新はスパース性が大幅に低下</span></strong>し、桁違いに大きくなることを示します。<br>
 <br>(関連項目)<br>
-・<a href="#LoRA">LoRA: Low-rank adaptation of LLM</a> (低ランク適応)  ･･･ 低ランク行列活用が似ている
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
+・<a href="#LoRA">LoRA: Low-rank adaptation of LLM</a> (低ランク適応)  ･･･ 低ランク行列活用が似ている<br>
+・<a href="#Sparsity">Sparsity</a> (スパース性)<br>
 </li>
 
 <br>
@@ -1867,7 +1875,6 @@ ERMではない学習アプローチはあるのか?<br>
 ●『ThetaEvolve: Test-time Learning on Open Problems』(2025)<br>
 ・AlphaEvolveは新たな境界を達成するために最先端のLLMのアンサンブルに依存しており、モデルが進化戦略を内部化することができない純粋な推論システムである。<br>
 ・本稿では、AlphaEvolve を簡素化・拡張し、コンテキスト内学習と強化学習（RL）の両方をテスト時に効率的にスケーリングするオープンソースフレームワークである ThetaEvolveを紹介する。
-
 </li>
 
 </ul></div></p>
@@ -1920,6 +1927,19 @@ ERMではない学習アプローチはあるのか?<br>
 高性能なポリシーを学習するために必要な情報は、それを実行するために必要な情報よりも大幅に豊富である可能性があることを示唆しています。
 最後に、これらの調査結果について説明し、学習中に豊富なフィードバックを活用しながら、パフォーマンスの最後の 1 マイルを回復する場合を除いて実行時にそれを選択的に無視するアーキテクチャを動機付けます。
 
+</li>
+
+<br>
+
+<li id="FeaturesNotBugsHypothesis">
+<strong>Features, not bugs hypothesis (バグではなく機能仮説)</strong><br>
+一見するとシステムの欠陥やエラー(バグ)に見える現象が、実は特定の目的や生存戦略のために意図的に、あるいは必然的に備わっている「特性(機能)」であるとする考え方。<br>
+AIにおけるこの仮説は、敵対的サンプル(Adversarial Examples)の正体を説明するために提唱された。<br>
+<br>
+●『Adversarial examples are not bugs, they are features』(2019)<br> 
+　AIが画像認識などでわずかなノイズによって誤判定を起こす現象は、モデルの「バグ」ではなく、人間には感知できないがデータに含まれる「非堅牢な特徴(Non-robust features)」をAIが忠実に学習した結果(機能)であるという主張。<br>
+<br>(関連項目)<br>
+・<a href="#AdversarialVulnerabilities">Adversarial Vulnerabilities</a> (敵対的脆弱性)
 </li>
 
 <br>
@@ -2699,6 +2719,29 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 
 <br>
 
+<li id="JITWorldModeling">
+<strong>Just-in-Time World Modeling</strong><br>
+人間が複雑な環境でシミュレーションや計画、推論を行う際、「必要な情報を、必要なときに、必要な分だけ」動的に構築・更新する認知の仕組み、あるいはそれを模したAIのフレームワーク。<br>
+<br>
+●『“Just in Time” World Modeling Supports Human Planning and Reasoning』(2026)<br>
+・人間の計画や推論は、世界の状態を心の中でシミュレートする能力に依存している。しかし、<strong><span style="color:magenta;">現実世界の光景には驚くほど多くの詳細が含まれており、複雑な環境のシミュレーションには必然的に、作業記憶に保持できる範囲をはるかに超える詳細が含まれる</span></strong>。では、人々はどのようにして目標をスムーズに計画し、予測し、追求することができるのか。<br>
+
+・近年の研究は、人々が環境について、無関係な詳細を抽象化し、関連する特徴のみを含む、簡略化された表現や解釈を構築するという考え方に焦点を合わせている。･･･ これらの理論は、人間の認知能力には限界があるため、ある物体を表現することによる計画や意思決定の改善への効用と、その表現に伴う認知コストとの間で合理的なトレードオフを行わなければならないという考え方に焦点を合わせている。<br>
+
+・しかし、人々が何を表象すべきかについては広範な研究が行われてきたものの、<strong><span style="color:magenta;">これらの解釈がどのように形成されるかについてはほとんど焦点が当てられていない</span></strong>。<br>
+
+・シミュレーションに基づく推論に関する多くの一般的な説明は、<strong><span style="color:magenta;">表象形成はシミュレーションや計画に先立って行われるプロセスであると暗黙的に想定しており</span></strong>、解釈の有用性は、その解釈に基づくシミュレーションが、すべてのオブジェクトを考慮した場合に生成されるシミュレーションとどの程度一致するかとして定義される。<br>
+
+・しかし、<strong><span style="color:magenta;">この定式化は逆説的な結論を導く</span></strong>。つまり、解釈の有用性を正確に評価するには、完全な環境を用いたシミュレーションを考慮する必要があり、<strong><span style="color:magenta;">最適な解釈の探索は、最初からすべてのオブジェクトを単純に含めるよりも計算負荷が高くなる</span></strong>のである。<br>
+
+・<strong><span style="color:magenta;">ジャストインタイム(JIT)モデルは</span></strong>、局所的な視覚スキャンを用いて、<strong><span style="color:magenta;">将来のシミュレーションステップに関連する、期待効用の高いオブジェクトを迅速にフラグ付けする</span></strong>。<br>
+(蛇足：人はビッグワールドにどう対処しているか？ クオリアと関連してきたら面白そう･･･)<br>
+<br>(関連項目)<br>
+・<a href="#BigWorldHypothesis">Big World Hypothsis</a> (ビッグワールド仮説)
+</li>
+
+<br>
+
 <li id="JEPA">
 <strong>JEPA: Joint-Embedding Predictive Architecture</strong><br>
 Meta社が提唱した「より人間に近い学習能力」を持つAIを目指すための新しい自己教師あり学習アーキテクチャー。<br>
@@ -2957,6 +3000,12 @@ Continual Learning (継続学習) の別名。<br>
 ・同じタスクの異なる最小値が、通常、非常に単純な低誤差曲線で結ばれていることを示す最近の研究に着目し、マルチタスク解と継続的解も同様に結ばれているかどうかを検証する。<br>
 ・私たちは経験的に、そのような連結は確かに確実に達成できること、そしてさらに興味深いことに、両方の初期値が同じであることを条件として、<strong><span style="color:magenta;">線形経路で実現できることを発見した</span></strong>。<br>
 ・この観察結果を徹底的に分析し、継続学習プロセスにおけるその意義について議論する。<br>
+<br>
+●『Generalized Linear Mode Connectivity for Transformers』(2025)<br>
+・LMCに関するこれまでの研究は、主に離散的なニューロンの順列対称性に焦点を当てており、多層パーセプトロンや畳み込みネットワークのような単純なアーキテクチャで成功を収めてきた。<br>
+・しかし、これらの順列ベースのアプローチは、最新のTransformerアーキテクチャでは真のゼロ障壁接続性を達成することに一貫して失敗しており、これらの複雑なモデルが、いまだ利用されていないより豊かな対称性を持っていることを示唆している。<br>
+・本稿では、単純な順列を超えて、より広範な特徴保存変換を包含する汎用フレームワークを導入し、<strong><span style="color:magenta;">独立して訓練されたVision TransformerおよびGPT-2モデル間における低およびゼロ障壁の線形モード接続性の最初の実証を可能にする</span></strong>。<br>
+
 <br>(関連項目)<br>
 ・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
@@ -4686,8 +4735,12 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 ・継続学習 → タスクが変わる → 訓練データが変わる → Loss Landscapeが変わる<br>
 　(Loss Landscape は Networkアーキテクチャ, 訓練データ, Loss関数によって変わる)<br>
 ・新しい Landscape の底を探して移動すると, 前のタスクのLandscapeの底から出てしまう → 破局的忘却<br>
-・前のタスクのモデル(過去の自分)を教師モデルとして蒸留を行えば, 両方のタスクの Landscape の低いところにたどり着ける。<br>
+・前のタスクを習得したモデル(過去の自分)＋プロンプトで新しいタスクを文脈学習したものを教師モデルとして蒸留を行えば, 生徒モデルは前のタスクの底から外れずに新しいタスクの Landscape の低いところを探すことができる･･･ということの模様<br>
+<a href="https://x.com/IdanShenfeld/status/2016818112004305302">論文著者のコメント</a><br>
+なぜこれが機能するのか？専門家のデモを条件とすると、モデルの強力な文脈学習により、独自の推論と事前確率に基づいてほぼ最適な出力が生成され、基本ポリシーに近いまま正しい答えを生成する教師が作成されます。<br>
+<center><img src="data/images/SDFT2.png"></center>
 <br>(関連項目)<br>
+・<a href="#ICL">ICL: In-Context Learning</a> (文脈内学習)<br>
 ・<a href="#KD">Knowledge Distillation</a> (知識蒸留)
 </li>
 
