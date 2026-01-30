@@ -57,6 +57,10 @@
 
 
 <h2>更新項目</h2>
+・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</a><br>
+・<a href="#SDFT">SDFT: Self-Distillation Fine Tuning (自己蒸留ファインチューニング)</a><br>
+・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a><br>
+---<br>
 ・<a href="#IDM">IDM: Inverse Dynamics Models (逆動力学モデル) </a><br>
 ・<a href="#Information Collapse">Information Collapse (情報崩壊)</a><br>
 ・<a href="#InstantaneousAffectiveReversal">Instantaneous Affective Reversal (瞬間的な感情反転)</a><br>
@@ -69,11 +73,6 @@
 ・<a href="#ContinuousActionRL">Continuous-Action Reinforcement Learning (連続行動空間の強化学習) </a><br>
 ・<a href="#NTP">NTP: Next-Token Prediction（ネクストトークン予測）</a><br>
 ・<a href="#ThinkingWith">Thinking with ～ (～で考える)</a><br>
----<br>
-・<a href="#LPT">Logical Phase Transitions (論理的相転移)</a><br>
-・<a href="#LRM">LRM: Large Reasoning Model (大規模推論モデル)</a><br>
-・<a href="#NeuralODE">Neural ODE</a> ･･･ 図を追加<br>
-・<a href="#NF">NF: Normalizing Flow (正規化フロー)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -3471,7 +3470,7 @@ JEPAのような手法が異なるモダリティに対して別々のエンコ�
 カップリングフローに匹敵する品質を実現でき, パラメータが1000倍少ない。<br>
 <center><img src="data/images/bijection.svg"></center><br>
 3種類の全単射挙動。<br>
-・上段：全単射関数 h(x)（実線）と恒等変換（破線<br>
+・上段：全単射関数 h(x)（実線）と恒等変換（破線)<br>
 ・下段：標準正規事前分布（破線）を変換した場合の密度（実線）<br>
 ・左段(三次有理関数)：大きな|x|に対してh(x) → x にすると、局所的な変形によって二峰性構造が形成される。<br>
 ・中段(正弦関数)：局所的な「伸長」は、遠方の点を一定のオフセットで変位させる。<br>
@@ -4540,6 +4539,22 @@ DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確�
 
 <br>
 
+<li id="RLRF">
+<strong>RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</strong><br>
+従来の強化学習におけるスカラー報酬(単一の数値評価)の代わりに、より詳細で構造化されたフィードバックを用いる手法, パラダイム。<br>
+<br>
+●『Reinforcement Learning via Self-Distillation』(2026)<br>
+・本研究では、<strong><span style="color:magenta;">主な制限は強化学習そのものではなく、スカラー結果報酬によって課される情報のボトルネックである</span></strong>と主張する。<br>
+・<strong><span style="color:magenta;">多くの検証可能な環境は実際には失敗を説明する豊富なテキストフィードバックを提供している</span></strong>。ランタイムエラー、特定のテストケースの失敗、コンパイラ警告、または詳細な判定評価など。<strong><span style="color:magenta;">しかし、この貴重な情報は、現在のRLアルゴリズムでは通常無視されている</span></strong>。これは、より効果的な学習の機会を大きく逸していることを示している。<br>
+・我々はこのより一般的な設定をリッチなフィードバックを伴う強化学習 (RLRF)として形式化した</span></strong>。<br>
+<br>
+<center><img src="data/images/RLRF.svg"></center>
+<br>(関連項目)<br>
+・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a><br>
+</li>
+
+<br>
+
 <li id="RLVR">
 <strong>RLVR: Reinforcement Learning with Verifiable Rewards（検証可能な報酬を用いた強化学習）</strong><br>
 大規模言語モデル（LLM）などのAIシステムをトレーニングする手法の一つで、人間の主観的な評価ではなく、客観的で自動的に検証可能な基準に基づいて報酬を与える。<br>
@@ -4644,6 +4659,46 @@ AI技術を活用して科学のプロセスを加速・自動化し、新しい
 AIシステムがこれまでの知識や人間が期待する予測からは逸脱した、予期せぬ、そして根本的に新しい科学的知見を発見することを指す。<br>
 <br>(関連項目)<br>
 ・<a href="#AI4S">AI4S: AI for Science (科学のためのAI)</a>
+</li>
+
+<br>
+
+<li id="SDFT">
+<strong>SDFT: Self-Distillation Fine Tuning (自己蒸留ファインチューニング)</strong><br>
+モデル自身を「教師」として、自分自身の知識や挙動を「生徒」である自分に継承させながら微調整（ファインチューニング）を行う手法。<br>
+<br>
+●『Self-Distillation Enables Continual Learning』(2026)<br>
+・次世代の基盤モデルを実現するには、<strong><span style="color:magenta;">継続学習の問題を解決する必要がある</span></strong>。<br>
+　↓<br>
+・近年の研究は、継続的な学習におけるオンポリシー学習の重要性を強調している。<strong><span style="color:magenta;">モデルが現在のポリシーによって学習する場合、オフポリシー学習と比較して破局的な忘却が大幅に減少する</span></strong>。<br>
+* オンポリシー学習：行動を選択する際のポリシー(Behavior Policy)と学習時のポリシー(Target Policy)が同じ学習手法<br>
+* オフポリシー学習：行動を選択する際のポリシー(Behavior Policy)と学習時のポリシー(Target Policy)が異なる学習手法<br>
+　↓<br>
+・これまで、<strong><span style="color:magenta;">最も成功したオンポリシーアプローチは</span></strong>、明示的な報酬関数を通じてフィードバックが提供される<strong><span style="color:magenta;">強化学習（RL）</span></strong>の文脈で開発されてきた。<strong><span style="color:magenta;">しかし、多くの現実世界の環境では、そのような報酬は利用できないか、指定することが困難</span></strong>である。<br>
+　↓<br>
+・<strong><span style="color:magenta;">その代わりに、この領域における支配的なパラダイムは</span></strong>、固定されたオフラインデータ分布の下で専門家の行動を模倣するようにモデルを訓練する<strong><span style="color:magenta;">教師あり微調整（SFT）</span></strong>である。<strong><span style="color:magenta;">SFTは</span></strong>シンプルでスケーラブルだが、<strong><span style="color:magenta;">本質的にオフポリシー</span></strong>であり、先行研究では、モデルが新しいタスクやドメインに適応されたときに、逐次SFTは不十分な一般化と<strong><span style="color:magenta;">深刻な壊滅的忘却につながる可能性がある</span></strong>ことが示されている。<br>
+　↓<br>
+・明示的な報酬関数を推論するのではなく、デモンストレーションから直接学習するための<strong><span style="color:magenta;">ポリシー蒸留フレームワークである Self-Distillation Fine-Tuning (SDFT) を提案しする</span></strong>。<br>
+<br>
+<center><img src="data/images/SDFT.svg"></center>
+<br>
+(蛇足)<br>
+・継続学習 → タスクが変わる → 訓練データが変わる → Loss Landscapeが変わる<br>
+　(Loss Landscape は Networkアーキテクチャ, 訓練データ, Loss関数によって変わる)<br>
+・新しい Landscape の底を探して移動すると, 前のタスクのLandscapeの底から出てしまう → 破局的忘却<br>
+・前のタスクのモデル(過去の自分)を教師モデルとして蒸留を行えば, 両方のタスクの Landscape の低いところにたどり着ける。<br>
+<br>(関連項目)<br>
+・<a href="#KD">Knowledge Distillation</a> (知識蒸留)
+</li>
+
+<br>
+
+<li id="SDPO">
+<strong>SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</strong><br>
+・外部の教師モデルや報酬モデルに頼らず、モデル自身を教師として強化学習の最適化を行う手法。<br>
+・RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)の学習アルゴリズムとして SDPO を提案された。<br>
+<br>(関連項目)<br>
+・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback</a> (リッチなフィードバックによる強化学習)
 </li>
 
 <br>
