@@ -57,6 +57,8 @@
 
 
 <h2>更新項目</h2>
+・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a> ･･･ 図, 著者コメント追記<br>
+---<br>
 ・<a href="#ES">ES: Evolution Strategies (進化戦略)</a> ･･･論文追加<br>
 ・<a href="#FeaturesNotBugsHypothesis">Features, not bugs hypothesis (バグではなく機能仮説)</a><br>
 ・<a href="#JITWorldModeling">Just-in-Time World Modeling</a><br>
@@ -65,14 +67,6 @@
 ・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</a><br>
 ・<a href="#SDFT">SDFT: Self-Distillation Fine Tuning (自己蒸留ファインチューニング)</a><br>
 ・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a><br>
----<br>
-・<a href="#IDM">IDM: Inverse Dynamics Models (逆動力学モデル) </a><br>
-・<a href="#Information Collapse">Information Collapse (情報崩壊)</a><br>
-・<a href="#InstantaneousAffectiveReversal">Instantaneous Affective Reversal (瞬間的な感情反転)</a><br>
-・<a href="#KG">KG: Knowledge Graph (知識グラフ)</a><br>
-・<a href="#RAE">RAE: Representation Autoencoders (表現オートエンコーダー)</a><br>
-・<a href="#ToM">ToM: Theory of Mind (心の理論)</a> ･･･図を追加<br>
-・<a href="#VisionShortcut">Vision Shortcut (視覚ショートカット)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -4736,8 +4730,10 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 　(Loss Landscape は Networkアーキテクチャ, 訓練データ, Loss関数によって変わる)<br>
 ・新しい Landscape の底を探して移動すると, 前のタスクのLandscapeの底から出てしまう → 破局的忘却<br>
 ・前のタスクを習得したモデル(過去の自分)＋プロンプトで新しいタスクを文脈学習したものを教師モデルとして蒸留を行えば, 生徒モデルは前のタスクの底から外れずに新しいタスクの Landscape の低いところを探すことができる･･･ということの模様<br>
+<br>
 <a href="https://x.com/IdanShenfeld/status/2016818112004305302">論文著者のコメント</a><br>
 なぜこれが機能するのか？専門家のデモを条件とすると、モデルの強力な文脈学習により、独自の推論と事前確率に基づいてほぼ最適な出力が生成され、基本ポリシーに近いまま正しい答えを生成する教師が作成されます。<br>
+<br>
 <center><img src="data/images/SDFT2.png"></center>
 <br>(関連項目)<br>
 ・<a href="#ICL">ICL: In-Context Learning</a> (文脈内学習)<br>
@@ -4750,6 +4746,21 @@ AIシステムがこれまでの知識や人間が期待する予測からは逸
 <strong>SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</strong><br>
 ・外部の教師モデルや報酬モデルに頼らず、モデル自身を教師として強化学習の最適化を行う手法。<br>
 ・RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)の学習アルゴリズムとして SDPO が提案された。<br>
+<br>
+<a href="https://x.com/jonashuebotter/status/2016950268462608665">著者コメント</a><br>
+重要な知見：環境からのフィードバック（実行時エラーなど）と成功試行をコンテキストに組み込むことで、モデルを教師として機能させることができます。おまけ：GRPOと実質的に同じ実行時間！<br>
+<center><img src="data/images/SDPO1.svg"></center>
+<br>
+なぜこれが機能するのでしょうか？豊富なフィードバックを条件として、モデルは最初の試みを遡及的に評価します。後から見て間違っていると思われるものはすべて抑制され、良いものはすべて奨励されます。これにより、興味深いアドバンテージのパターンが生まれます。<br>
+<center><img src="data/images/SDPO2.svg"></center>
+<br>
+SDPOでの密なクレジット(信用)割り当て。青色で示されているのは、自己教師の下でより可能性が高くなるトークンです。自己教師は、返された範囲に n を含まないようにどのように修正する必要があるかを特定します
+<br>
+<br>
+成果の一つとして、Olmo3-7B-Instruct を新しいタスクで学習させました。SDPO は 30 分間の実時間で GRPO の 5 時間精度を達成し、SDPO は 20% ポイント高い精度に収束しました。また、SDPO はより簡潔な推論を学習しました<br>
+<center><img src="data/images/SDPO3.svg"></center>
+<br>
+論文の中で私が特に気に入った実験の一つは、SDPOが困難な二値報酬問題に対して新たな解を発見できる点です。<strong><span style="color:magenta;">SDPO は報酬を得る前でも学習を可能にします！モデルが「エラー」に遭遇するたびに、それを順次修正するだけで学習できるのです</span></strong>。<br>
 <br>(関連項目)<br>
 ・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback</a> (リッチなフィードバックによる強化学習)
 </li>
