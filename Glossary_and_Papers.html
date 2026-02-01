@@ -55,15 +55,16 @@
     <body>
 <h1><center>Glossary and Papers</center></h1>
 
+<h2>更新項目・ピン留め</h2>
+・<a href="#AsteriskPrediction">
+*-prediction (*-予測:ε-予測, v-予測, x-予測)</a> ･･･表追加<br>
+・<a href="#FERHypothesis">
+FER: Fractured Entangled Representation Hypothesis (FER仮説)</a><br>
+・<a href="#OpenEndedSerach">Open-ended Search（オープンエンドな探索）</a><br>
+・<a href="#QuadraticScalingProblem">the Quadratic Scaling Problem of Transformers (トランスフォーマーの二次スケーリング問題)</a><br>
+---<br>
 
-<h2>更新項目</h2>
-・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a> ･･･ 図, 著者コメント追記<br>
----<br>
-・<a href="#ES">ES: Evolution Strategies (進化戦略)</a> ･･･論文追加<br>
-・<a href="#FeaturesNotBugsHypothesis">Features, not bugs hypothesis (バグではなく機能仮説)</a><br>
 ・<a href="#JITWorldModeling">Just-in-Time World Modeling</a><br>
-・<a href="#LMC">LMC: Linear Mode Connectivity (線形モード接続)</a> ･･･論文追加<br>
----<br>
 ・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</a><br>
 ・<a href="#SDFT">SDFT: Self-Distillation Fine Tuning (自己蒸留ファインチューニング)</a><br>
 ・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a><br>
@@ -98,7 +99,44 @@ Diffusion Model (拡散モデル) の学習および画像生成の過程にお�
 　●『Back to Basics: Let Denoising Generative Models Denoise』(2025)<br>
 　　原点回帰した x-予測の優位性を示した。<br>
 <br>
-<center><img src="data/images/AsteriskPrediction.svg"></center> 
+<center><img src="data/images/AsteriskPrediction.svg">
+</center> 
+　トイ・モデルを再現させるコードは<a href="https://github.com/tongzhoumu/mean_flow_2d">こちら</a> ･･･ CPUでも数分で10,000エポック学習して結果を確認できる<br>
+<br>
+●『One-step Latent-free Image Generation with Pixel Mean Flows』(2026)<br>
+<center>表1</center>
+
+\[
+\begin{array}{l|c c c}
+\hline
+& \text{予測空間} & \text{変換}　& \text{損失空間}\\
+\hline
+\text{DiT} & \boldsymbol{ε} & - &  \boldsymbol{ε}\\
+\text{SiT} & \mathbf{v} & - & \mathbf{v} \\
+\text{MF} & \mathbf{u} & - & \mathbf{u} \\
+\text{iMF} & \mathbf{u} & \mathbf{u}→\mathbf{v} & \mathbf{v} \\
+\text{JiT} & \mathbf{x} & \mathbf{x}→\mathbf{v} & \mathbf{v} \\
+\hline
+\textbf{pMF} & \mathbf{x} & \mathbf{x}→\mathbf{u}→\mathbf{v} & \mathbf{v} \\
+\hline
+\end{array}
+\]
+
+\[
+\begin{array}{l l}
+\boldsymbol{ε} & \text{ノイズ}\\
+\mathbf{v} & \text{瞬間的な速度}\\
+\mathbf{u} & \text{平均速度}\\
+\mathbf{x} & \text{データ}
+\end{array}
+\]
+
+・DiT:『Scalable diffusion models with transformers』(2023)<br>
+・SiT:『Sit: Exploring flow and diffusionbased generative models with scalable interpolant transformers』(2024)<br>
+・MF：『Mean flows for one-step generative modeling』(2025)<br>
+・iMF:『Improved mean flows: On the challenges of fastforward generative models』(2025)<br>
+・JiT：『Back to Basics: Let denoising generative models denoise』(2025)<br>
+・pMF：『One-step Latent-free Image Generation with Pixel Mean Flows』(2026)<br>
 </li>
 
 <br>
@@ -355,8 +393,8 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <br>(関連項目)<br>
 ・<a href="#FAI">FAI: Friendly AI</a> [上位概念] ･･･ AGI, ASI 登場の前に AI を Friendly にしておく必要があり, AI Alignment は必要な要素技術の一つ。<br>
 ・<a href="#Sycophancy">Sycophancy</a> (おべっか, 追従性) [副作用, 課題]<br>
-・<a href="#IRL">IRL: Inverse Reinforcement Learning<a/> (逆強化学習) ･･･ 報酬をモデル化し学習する<br>
-・<a href="#RewardHacking">Reward Hacking<a/> (報酬ハッキング) ･･･ 報酬モデルが過剰最適化すると報酬ハッキングになる。<br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習) ･･･ 報酬をモデル化し学習する<br>
+・<a href="#RewardHacking">Reward Hacking</a> (報酬ハッキング) ･･･ 報酬モデルが過剰最適化すると報酬ハッキングになる。<br>
 ・<a href="#SuperalignmentProblem">Superalignment Problem (スーパーアライメント問題)</a> ･･･ ASI の Alignment をどう行うか?
 </li>
 
@@ -1961,6 +1999,20 @@ AIにおけるこの仮説は、敵対的サンプル(Adversarial Examples)の�
 
 <br>
 
+<li id="FERHypothesis">
+<strong>FER: Fractured Entangled Representation Hypothesis (FER仮説)</strong><br>
+ディープラーニング（深層学習）モデルの性能が向上しても、その内部表現は必ずしも洗練されず、むしろ「断片化（Fractured）」し「もつれた（Entangled）」非効率な状態に留まっているとする仮説。<br>
+「モデルを大きくすれば(スケーリング)知性が宿る」という楽観主義に対し、この仮説は「現在の学習手法(SGD)を続ける限り、いくら規模を大きくしても中身はスパゲッティ状態のままである」と警告している。<br> 
+<br>
+●『Questioning Representational Optimism in Deep Learning: The Fractured Entangled Representation Hypothesis』(2025)<br>
+　(深層学習における表現楽観論への疑問：断片化し絡み合った表現の仮説)<br>
+　FER仮説を提唱した。<br>
+<br>(関連項目)<br>
+・<a href="#OpenEndedSerach">Open-ended Search</a>（オープンエンドな探索）
+</li>
+
+<br>
+
 <li id="FMP">
 <strong>Flat Manifold Problem (平坦多様体問題)</strong><br>
 継続学習において、古いタスクで構築されたデータ多様体が、新しいタスクを学習する過程で「平坦化」または破壊され、その結果として以前の知識が失われる（壊滅的忘却）現象。<br>
@@ -2494,11 +2546,11 @@ SNSやネットメディアを通じて人々の意見や行動、意思決定�
 <strong>Instantaneous Affective Reversal (瞬間的な感情反転)</strong><br>
 チャットボットとの会話中に、直前まで友好的だったモデルのトーンやペルソナが、特定の入力に対して突然、瞬間的に攻撃的、否定的、あるいは非協力的になる現象。これは、モデルが特定のトリガーワードによって予期しない振る舞いをする「プロンプトリーク」や「脱獄（ジェイルブレイク）」に関連して起こり得る。<br>
 <br>
-●『Controlling Long-Horizon Behavior in Language Model Agents with Explicit State Dynamics』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.16087">こちら</a><br>
-現在の大規模言語モデル（LLM）エージェントは、根本的な限界に苦しんでいます。それは、長時間の会話中に感情的なトーンや個性が突然かつ予測不能に変化することです。この現象は「瞬間的な感情反転」と呼ばれ、ユーザーの信頼を損ない、持続的なエンゲージメントを必要とするアプリケーションにおいてエージェントを信頼できないものにしています。<br>
-・・・<br>
-核となる洞察は、エージェントの感情状態を、Valence-Arousal-Dominance (VAD) 次元を表す連続的な3次元ベクトル 
- としてモデル化することです。各会話ターンにおいて、瞬間的な感情信号 ât が感情分析器を使用して対話コンテキストから抽出されますが、このノイズの多い推定値を直接使用する代わりに、それは持続的な感情状態をスムーズに更新する動的システムへの入力として機能します。
+●『Controlling Long-Horizon Behavior in Language Model Agents with Explicit State Dynamics』(2026)<br>
+・現在の大規模言語モデル（LLM）エージェントは、根本的な限界に苦しんでいます。それは、<strong><span style="color:magenta;">長時間の会話中に感情的なトーンや個性が突然かつ予測不能に変化すること</span></strong>です。<strong><span style="color:magenta;">この現象は「瞬間的な感情反転 (instantaneous affective reversal)」と呼ばれ</span></strong>、ユーザーの信頼を損ない、持続的なエンゲージメントを必要とするアプリケーションにおいてエージェントを信頼できないものにしています。<br>
+・<strong><span style="color:magenta;">核となる洞察は、エージェントの感情状態を、Valence-Arousal-Dominance (VAD) 次元を表す連続的な3次元ベクトルとしてモデル化すること</span></strong>です。各会話ターンにおいて、瞬間的な感情信号 ât が感情分析器を使用して対話コンテキストから抽出されますが、このノイズの多い推定値を直接使用する代わりに、それは持続的な感情状態をスムーズに更新する動的システムへの入力として機能します。<br>
+<br>(関連項目)<br>
+・<a href="#VAD">VAD: Valence-Arousal-Dominance Dimension</a> (VAD次元)
 </li>
 
 <br>
@@ -2631,7 +2683,7 @@ AIモデルの推論結果から. 入力データや学習データを推定す�
 <br>
 ●『General agents contain world models』(2025)
 　(汎用エージェントは世界モデルを含む)<br>
-　論文は<a href="https://arxiv.org/abs/2506.01622">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.01622v4">こちら<a/><br>
+　論文は<a href="https://arxiv.org/abs/2506.01622">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2506.01622v4">こちら</a><br>
 　「<strong><span style="color:magenta;">世界モデルは</span></strong>、柔軟な目標指向行動に<strong><span style="color:magenta;">必要な要素なのでしょうか、それともモデルフリー学習で十分なのでしょうか？</span></strong>この問いに対する正式な回答として、多段階の目標指向タスクに一般化できる<strong><span style="color:magenta;">エージェントは、環境の予測モデルを学習している必要があることを示す</span></strong>。」
 　逆強化学習はエージェントの方策と世界モデルを用いて目標(報酬モデル)を特定するのに対し、我々の結果はエージェントの方策と目標(報酬)を用いて世界モデルを特定する。
 <br>
@@ -3317,7 +3369,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 <br>(関連項目)<br>
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
-・<a href="#OverParameterized">Over-parameterized<a/> (過剰パラメータ化)<br>
+・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)<br>
 ・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)
 </li>
 
@@ -3836,6 +3888,25 @@ AIの学習環境を「小さな世界（Small World）」と見なすと、現�
 
 <br>
 
+<li id="OpenEndedSerach">
+<strong>Open-ended Search</a>（オープンエンドな探索）</strong><br>
+あらかじめ特定の「ゴール（目標）」を定めず、新しい発見や「面白さ」を次々と連鎖させていくことで、無限に複雑なものを生み出し続ける探索アルゴリズムや考え方。<br>
+Kenneth Stanley氏が提唱した「目標という幻想（Why Greatness Cannot Be Planned）」という概念がベースとなっており、FER仮説が指摘する「現在のAIの行き詰まり」を打破する鍵として注目されている。<br>
+<center><img src="data/images/FER.svg"></center>
+・従来のSGD<br>
+　→ FER(Fractured Entangled Representation: 断片化して絡み合った表現)<br>
+・Open-ended Search：解に到達する前に、より多様な関数を探索する<br>
+　→ UFR(Unified Factorized Representation: 統一された因数分解表現)<br>
+<br>(関連項目)<br>
+・<a href="#FERHypothesis">
+FER: Fractured Entangled Representation Hypothesis</a> (FER仮説)<br>
+・<a href="#Quality-DiversityOptimization">Quality-Diversity Optimization</a> (品質多様性最適化)<br>
+・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)<br>
+・<a href="#IntrinsicMotivation">Intrinsic Motivation</a> (内発的動機付け)
+</li>
+
+<br>
+
 <li id="Oracle">
 <strong>Oracle (神託)</strong><br>
 <br>
@@ -4202,6 +4273,30 @@ IPD: Iterated Prisoner’s Dilemma (反復囚人のジレンマ)<br>
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="QuadraticScalingProblem">
+<strong>the Quadratic Scaling Problem of Transformers (トランスフォーマーの二次スケーリング問題)</strong><br>
+入力する文章（シーケンス）が長くなればなるほど、計算量とメモリ消費量がその長さの2乗 (\(N^{2}\)) に比例して急増するという課題。<br>
+Self-Attention は、文章中のすべての単語(トークン)が、自分自身を含む他のすべての単語との関連性を計算するために起こる。<br>
+<center><img src="data/images/SelfAttention.svg"></center>
+<br>
+(対処法)
+<ul><li>
+・<strong>Sparse Attention</strong>　すべての単語を見るのではなく、一部の重要な単語だけを見る手法（例：DeepSeek Sparse Attention）。
+
+</li><li>
+
+・<strong>線形スケーリングモデル</strong>: 計算量を2乗ではなく、長さに対して線形（\(N\)に比例）に抑えるモデル（例：Mamba、Linformer）。
+
+</li><li>
+
+・<strong>KVキャッシュ</strong>: 推論時に過去の計算結果を再利用することで、無駄な再計算を減らす工夫。 
+</li></ul>
+
+</li>
+
+<br>
+
 <li>
 
 <strong>Qualia (クオリア)</strong><br>
@@ -4219,12 +4314,13 @@ IPD: Iterated Prisoner’s Dilemma (反復囚人のジレンマ)<br>
 
 <br>
 
-<li>
+<li id="Quality-DiversityOptimization">
 
 <strong>Quality-Diversity Optimization (品質多様性最適化)</strong><br>
 単一の最適な解を見つけるのではなく、高品質で多様な解の集合を生成することを目指す最適化手法の一種。<br>
-進化計算(生物の進化（突然変異、淘汰、交叉など）を模倣し、複雑な問題の最適解を探索する一連のアルゴリズムを指す枠組み)の新しいサブカテゴリー。
-
+進化計算(生物の進化（突然変異、淘汰、交叉など）を模倣し、複雑な問題の最適解を探索する一連のアルゴリズムを指す枠組み)の新しいサブカテゴリー。<br>
+<br>(関連項目)<br>
+・<a href="#OpenEndedSerach">Open-ended Search</a>（オープンエンドな探索)
 </li>
 </ul></div></p>
 
@@ -5640,6 +5736,30 @@ AI（特に大規模言語モデル：LLM）が、自身だけでは解決でき
 <p>
 <div class="styleBullet">
 <ul>
+<li id="VAD">
+<strong>VAD: Valence-Arousal-Dominance Dimension (VAD次元)</strong><br>
+人間の感情を「快・不快」「興奮・沈静」「支配・従順」という3つの独立した数値軸で表現する心理学的なフレームワーク。<br>
+従来の「喜び」「悲しみ」といったカテゴリー分類とは異なり、感情を3次元空間上の連続的な値として扱うため、AIによる感情認識や心理学研究で広く活用されている。
+
+\[
+\begin{array}{|l|l|l|l|}
+\hline
+\textbf{次元} & \textbf{説明} & \textbf{+の場合} & \textbf{-の場合}\\
+\hline
+\text{Valence (感情価)} & \text{その感情がどれくらい「心地よい」か} & \text{幸せ, 満足} & \text{悲しみ, 嫌悪} \\
+\hline
+\text{Arousal (覚醒度)} & \text{その感情に伴う「興奮やエネルギーの強さ」} & \text{怒り, 興奮} & \text{リラックス, 退屈} \\
+\hline
+\text{Dominance (支配性)} & \text{その状況をどれだけ「自分でコントロールできるか} & \text{自信, 誇り} & \text{恐怖, 無力感} \\
+\hline
+\end{array}
+\]
+<br>(関連項目)<br>
+・<a href="#InstantaneousAffectiveReversal">Instantaneous Affective Reversal</a> (瞬間的な感情反転)
+</li>
+
+<br>
+
 <li id="VAE">
 <strong>VAE: Variational Auto Encoder</strong><br>
 深層学習を用いた生成モデルの一種。オートエンコーダの仕組みをベースに、潜在空間に確率的な制約を設けることで、多様な新しいデータを生成できるようにしたモデル。<br>
@@ -5758,7 +5878,7 @@ AI分野、なかでもロボティクスやコンピュータビジョンにお
 <strong>Vision Shortcut (視覚ショートカット)</strong><br>
 VLAモデルが、言語の指示を真に理解して実行する代わりに、訓練データに存在する視覚的な相関関係やバイアスを利用してタスクを達成してしまう現象。<br>
 <br>
-●『BayesianVLA: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.15197">こちら<a/><br>
+●『BayesianVLA: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.15197">こちら</a><br>
 　ビジョン・言語・行動（VLA）モデルは、ロボティクスにおける目覚ましい進歩を代表するものであり、視覚認識と自然言語理解を組み合わせることで、ロボットが複雑な操作タスクを実行できるようになります。しかし、制御された環境下での優れたパフォーマンスにもかかわらず、これらのモデルは新しいシナリオや分布外（OOD）設定への汎化に苦戦しています。BayesianVLAは、「情報崩壊」または「ビジョンショートカット」と呼ばれる現在のVLAトレーニングにおける致命的な病理を特定し、修正することで、この根本的な限界に対処します。<br>
 ・・・<br>
 核心的な洞察は、<strong><span style="color:magenta;">現在のロボットデータセットが、目標駆動型パラダイムで収集されているため、視覚的観測と言語指示との間に決定論的な結合を生み出している</span></strong>という点です。ロボットがキャビネットを見ると、指示はほとんど常に「キャビネットを開けなさい」となります。この予測可能な関係により、モデルは言語制約を実質的に無視する視覚のみのポリシーを学習し、視覚的コンテキストが変化したり、曖昧な指示が言語による曖昧性解消を必要とする場合に、壊滅的な失敗につながります。<br>
