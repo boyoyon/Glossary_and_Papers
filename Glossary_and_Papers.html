@@ -56,18 +56,21 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#2-StageParadigm">2-Stage Paradigm (二段階パラダイム)</a><br>
+・<a href="#ICL">ICL: In-Context Learning (文脈内学習)</a> ･･･論文追加<br>
+・<a href="#PerceptualStraighteningHypothesis">Perceptual Straightening Hypothesis (知覚の直線化仮説)</a><br>
+・<a href="#TrajectoryStraighteningHypothesis">Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a><br>
+---<br>
 ・<a href="#AsteriskPrediction">
 *-prediction (*-予測:ε-予測, v-予測, x-予測)</a> ･･･表追加<br>
 ・<a href="#FERHypothesis">
 FER: Fractured Entangled Representation Hypothesis (FER仮説)</a><br>
 ・<a href="#OpenEndedSerach">Open-ended Search（オープンエンドな探索）</a><br>
-・<a href="#QuadraticScalingProblem">the Quadratic Scaling Problem of Transformers (トランスフォーマーの二次スケーリング問題)</a><br>
----<br>
-
 ・<a href="#JITWorldModeling">Just-in-Time World Modeling</a><br>
 ・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</a><br>
 ・<a href="#SDFT">SDFT: Self-Distillation Fine Tuning (自己蒸留ファインチューニング)</a><br>
 ・<a href="#SDPO">SDPO: Self-Distillation Policy Optimization (自己蒸留ポリシー最適化)</a><br>
+
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -137,6 +140,26 @@ Diffusion Model (拡散モデル) の学習および画像生成の過程にお�
 ・iMF:『Improved mean flows: On the challenges of fastforward generative models』(2025)<br>
 ・JiT：『Back to Basics: Let denoising generative models denoise』(2025)<br>
 ・pMF：『One-step Latent-free Image Generation with Pixel Mean Flows』(2026)<br>
+</li>
+
+<br>
+
+<li id="2-StageParadigm">
+<strong>2-Stage Paradigm (二段階パラダイム)</strong><br>
+データの生成プロセスを性質の異なる2つのフェーズに分割して学習・推論を行う手法のこと。<br>
+・第1段階：表現学習（低次元化・特徴抽出）<br>
+　高次元なデータ（画像や動画など）を、本質的な特徴を保持したまま「潜在空間（Latent Space）」と呼ばれる扱いやすい低次元ベクトルへと圧縮・符号化する。(VAEのエンコーダーなど)<br>
+・第2段階：生成学習（サンプリング・高解像度化）<br>
+　第1段階で作られた潜在空間上で、データの分布を学習し、新しいデータをサンプリング・デコードする。<br>
+例：<a href="#LDM">LDM: Latent Diffusion Model</a> (潜在拡散モデル)<br>
+　↑↓<br>
+・End-to-End Paradigm（エンドツーエンド・パラダイム）･･･ 1つのネットワークであることに重点を置く呼び方<br>
+・Single-Stage Unified Model（統合型シングルステージ）･･･ 一段階, 単一モデルであることに重点を置く呼び方<br>
+・Native Multimodal / Omni-Model（ネイティブ・マルチモーダル）･･･ すべてのモーダルを一括処理することに重点を置く呼び方<br>
+<br>
+　「特徴抽出」と「生成」を分離せず、一つのアーキテクチャ内で同時に最適化する手法<br>
+　二段階モデルは、第1段階を固定（Freeze）して第2段階を学習することが多いため、全体の最適化（グローバルな最適解）に至らないことがある
+
 </li>
 
 <br>
@@ -709,7 +732,7 @@ RMIT大学によるこの包括的なレビューは、脳型人工知能（BIAI
 
 <br>
 <li id="BigWorldHypothesis">
-<strong>Big World Hypothsis (ビッグワールド仮説)</strong><br>
+<strong>Big World Hypothesis (ビッグワールド仮説)</strong><br>
 人工知能（AI）や強化学習の分野において、「エージェント（AI）が活動する世界は、そのエージェントの処理能力やメモリ容量よりも圧倒的に巨大である」とする前提、またはその視点に立った考え方。<br>
 概念自体は、Richard S. Sutton 氏が2020年頃から自身の講義や議論の中で触れていたものだが、2024年の論文によって初めて、AI設計における明確な「仮説」として定義・明文化された。<br>
 <br>
@@ -1175,8 +1198,10 @@ AI、特にVision-Language Models（VLM: 画像言語モデル）における推
 ・<a href="#IDTheory">ID: Interest-Deprivation theory of curiosity (興味・剥奪モデル, 興味・欠乏モデル)</a><br>
 ・<a href="#IntrinsicMotivation">Intrinsic Motivation</a> (内発的動機付け)<br>
 ・<a href="#NoisyTVProblem">Noisy TV problem</a> (ノイジーテレビ問題)<br>
-・<a href="#NoveltySearch">Novelty Search</a> (新規性探索)</a><br>
+・<a href="#NoveltySearch">Novelty Search</a> (新規性探索)<br>
 ・<a href="#TD">TD（Tempral Differences) Learning</a> (TD学習)<br>
+・<a href="#Quality-DiversityOptimization">Quality-Diversity Optimization</a> (品質多様性最適化)<br>
+・<a href="#Interestingness">Interestingness</a> (面白さ, 興味深さ)
 </li>
 
 <br>
@@ -2345,7 +2370,22 @@ C) HTMモデルニューロンは、樹状突起とNMDAスパイクを、それ�
 　(言語モデルはフューショット学習器である)<br>
 ・GPT-3（Generative Pre-trained Transformer 3）という当時としては空前の1,750億パラメータを持つ巨大モデルを発表したもの。<br>
 ・巨大化によって、モデルがトレーニング時には明示的に教え込まれていないタスクを、推論時にプロンプトの例示だけで実行できるようになることを実証した。<br>
-・ファインチューニング（再学習）を必要とせず、プロンプト内（コンテキスト内）で数個の例示を与えるだけでタスクをこなすこの能力を「In-context Learning」あるいは「Few-shot Learning」と名付け、言語モデル研究の方向性を決定づけた。
+・<strong><span style="color:magenta;">ファインチューニング（再学習）を必要とせず、プロンプト内（コンテキスト内）で数個の例示を与えるだけでタスクをこなすこの能力を「In-context Learning」あるいは「Few-shot Learning」と名付け</span></strong>、言語モデル研究の方向性を決定づけた。<br>
+<br>
+●『Linear transformers are secretly fast weight programmers』(2021)<br>
+　(リニアトランスフォーマーは実は高速重みプログラマ)<br>
+・線形トランスフォーマーと、1990年代初頭にシュミットフーバーによって開発されたニューラルネットワークパラダイムであるFast Weight Programmers（FWP）との間に正式な関連性を確立した。<br>
+・『Learning to control fast-weight memories: An alternative to dynamic recurrent network』(1992)<br>
+<br>
+　- Slow Weights（遅い重み）: 学習によって固定されたTransformerのパラメータ。<br>
+　- Fast Weights（速い重み）: 文脈（コンテキスト）によって動的に生成される一時的な重み。<br>
+<br>
+<strong><span style="color:magenta;">Transformerは、プロンプトの内容（コンテキスト）を一種の「一時的な重み」として扱い、自分自身をその場でプログラムし直す（＝Fast Weight Programming）ことで、In-context Learningを実現している</span></strong>。<br>
+<br>
+●『Transformers learn in-context by gradient descent』(2023)<br>
+　(トランスフォーマーは勾配降下法によって文脈内学習する)<br>
+　<strong><span style="color:magenta;">著者らは、単一の線形自己注意層が、線形回帰タスクに対する平均二乗誤差損失に関して、勾配降下の1ステップを正確に実行するように構築できることを証明している</span></strong>。
+
 </li>
 
 <br>
@@ -2783,7 +2823,7 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 ・<strong><span style="color:magenta;">ジャストインタイム(JIT)モデルは</span></strong>、局所的な視覚スキャンを用いて、<strong><span style="color:magenta;">将来のシミュレーションステップに関連する、期待効用の高いオブジェクトを迅速にフラグ付けする</span></strong>。<br>
 (蛇足：人はビッグワールドにどう対処しているか？ クオリアと関連してきたら面白そう･･･)<br>
 <br>(関連項目)<br>
-・<a href="#BigWorldHypothesis">Big World Hypothsis</a> (ビッグワールド仮説)
+・<a href="#BigWorldHypothesis">Big World Hypothesis</a> (ビッグワールド仮説)
 </li>
 
 <br>
@@ -3007,7 +3047,8 @@ Meta社が2024年12月に発表した、「トークン（単語の断片）」�
 
 <br>(関連項目)<br>
 ・<a href="#DiffusionModel">Diffusion Model</a> (拡散モデル)<br>
-・<a href="#DiT">DiT: Diffusion Transformers</a>
+・<a href="#DiT">DiT: Diffusion Transformers</a><br>
+・<a href="#2-StageParadigm">2-Stage Paradigm</a> (二段階パラダイム)
 </li>
 
 <br>
@@ -3693,7 +3734,7 @@ NLP: Natural Language Processing (自然言語処理) というAI分野のサブ
 <br>
 ●『What does it mean to understand language?』(2025)<br>
 　(言語を理解するとはどういうことか？)<br>
-・Exportation Hypothsis (輸出仮説) を通じて、脳が言語の「深い理解」の偉業をどのように達成するのか、体系的な説明を提供する。<br>
+・Exportation Hypothesis (輸出仮説) を通じて、脳が言語の「深い理解」の偉業をどのように達成するのか、体系的な説明を提供する。<br>
 ・このフレームワークは、言語処理の根本的に異なる2つのレベルを区別する。<br>
 ・主に左半球に位置する中核言語システムは、著者らが「浅い理解」と呼ぶもの、すなわち構文の抽出、単語の認識、抽象的な意味表現の形成を扱う。<br>
 ・これを超えて、「深い理解」は、心の理論、空間ナビゲーション、物理学、知覚、記憶に特化した非言語選択的な脳領域に情報を輸出することを必要とする。<br>
@@ -3876,7 +3917,7 @@ AIモデルが学習時 (In-Distribution) には遭遇しなかった、未知�
 <br>
 AIの学習環境を「小さな世界（Small World）」と見なすと、現実の「大きな世界（Big World）」には学習データに含まれない未知の状況（OOD）が無数に存在することになる。この「世界の広大さ」ゆえに、AIが現実世界にデプロイされた際に必ずOOD Shockが発生するというビッグワールド仮説に基づく重要な視点。<br>
 <br>(関連項目)<br>
-<a href="#BigWorldHypothesis">Big World Hypothsis</a> (ビッグワールド仮説)
+<a href="#BigWorldHypothesis">Big World Hypothesis</a> (ビッグワールド仮説)
 </li>
 
 <br>
@@ -3902,7 +3943,9 @@ Kenneth Stanley氏が提唱した「目標という幻想（Why Greatness Cannot
 FER: Fractured Entangled Representation Hypothesis</a> (FER仮説)<br>
 ・<a href="#Quality-DiversityOptimization">Quality-Diversity Optimization</a> (品質多様性最適化)<br>
 ・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)<br>
-・<a href="#IntrinsicMotivation">Intrinsic Motivation</a> (内発的動機付け)
+・<a href="#IntrinsicMotivation">Intrinsic Motivation</a> (内発的動機付け)<br>
+・<a href="#Interestingness">Interestingness</a> (面白さ, 興味深さ)<br>
+・<a href="#NoveltySearch">Novelty Search</a> (新規性探索)
 </li>
 
 <br>
@@ -4036,6 +4079,27 @@ LPIPS (Learned Perceptual Image Patch Similarity), FID (Fréchet Inception Dista
 <center><img src="data/images/LPIPS2.svg"></center>
 <center><img src="data/images/LPIPS3.svg"></center>
 -->
+<br>
+
+<li id="PerceptualStraighteningHypothesis">
+<strong>Perceptual Straightening Hypothesis (知覚の直線化仮説)</strong><br>
+人間や動物の視覚システムは、自然界で起こる予測可能な動的な変化(例：物体が移動する、回転する)を、脳内の表現空間においてより直線的な軌道として表現するように進化・学習しているという説<br>
+<br>
+●『Perceptual straightening of natural videos』(2019)<br>
+・多くの行動は、最近の視覚入力から得られる予測に依存していますが、それらの入力の時間的変化は一般的に複雑で、外挿が困難です。<br>
+・我々は、視覚システムがこれらの入力をより直線的な時間的軌跡に従うように変換することを提案します。<br>
+・この「時間的直線化」仮説を検証するために、人間の知覚判断から内部軌跡の曲率を推定する方法論を開発します。<br>
+<br>
+●『Primary visual cortex straightens natural video
+trajectories』(2021)<br>
+　(一次視覚野は自然なビデオの軌跡をまっすぐにする (2021)<br>
+・麻酔をかけたマカクザルに短いビデオクリップから取得した静止フレームを提示しながら、V1(一次視覚野)集団活動を記録し、関連する神経表現軌跡の曲率を測定する手順を開発しました。<br>
+・V1集団は自然に発生する画像シーケンスを直線化しますが、不自然な時間的変換を含む人工シーケンスを絡ませることを発見しました。<br>
+・これらの効果は、V1細胞の刺激選択性の根底にある計算メカニズムから部分的に生じることを示しています。これらの研究結果を合わせると、初期視覚系は、自然環境における予測をサポートできる表現を構築するために、一連の特殊な計算を使用していることがわかります。<br>
+<br>(関連項目)<br>
+・<a href="#TrajectoryStraighteningHypothesis">Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a><br>
+</li>
+
 <br>
 
 <li><strong>PINNs: Physics-Informed Neural Networks</strong><br>
@@ -5582,6 +5646,32 @@ AI（特に大規模言語モデル：LLM）が、自身だけでは解決でき
 
 <strong>訓練時特有の技術（例：Dropout、Batch Normalizationの動作モード）</strong>　 訓練時のみに使用される正則化手法などが、推論時には異なる振る舞いをすることによる差異。
 <br>
+</li>
+
+<br>
+
+<li id="TrajectoryStraighteningHypothesis">
+<strong>Trajectory Straightening Hypothesis(軌跡の直線化仮説)</strong><br>
+ニューラルネットワークは、層を深めるごとに、複雑に絡み合ったデータの流れ(軌道)を、扱いやすい『直線』に近い形へと引き伸ばしている」という仮説。<br>
+視覚神経科学の「Perceptual Straightening Hypothesis(知覚の直線化仮説)」にインスパイアされている。<br>
+<br>
+●『Large language models implicitly learn to straighten neural sentence trajectories to construct a predictive representation of natural language』(2023)<br>
+　(大規模言語モデルにおけるニューラル軌道の直線化)<br>
+・今後のイベントを予測することは、私たちが環境と対話する能力にとって重要です。<br>
+・次の単語の予測についてトレーニングされたトランスフォーマーモデルは、さまざまな下流タスクをサポートできる言語入力の表現を構築するようです。<br>
+・しかし、予測目的はどのようにそのような表現を形成するのでしょうか? <br>
+・<strong><span style="color:magenta;">視覚に関する最近の研究に触発され、自己回帰トランスフォーマーの予測表現に関する仮説を検証します</span></strong>。<br>
+<br>
+●『Context Structure Reshapes the Representational Geometry of Language Models』(2026)<br>
+　(文脈構造は言語モデルの表現幾何学を再形成する)<br>
+・<strong><span style="color:magenta;">大規模言語モデル(LLM)は、入力シーケンスの表現を深層でより直線的な神経軌跡に整理することが示されており、線形外挿による次のトークン予測を促進すると仮説が立てられています</span></strong>。<br>
+・言語モデルは多様なタスクに適応し、文脈内で新しい構造を学習することもでき、最近の研究では、この文脈内学習（ICL）が表現の変化に反映されることが示されています。<br>
+・本稿では、<strong><span style="color:magenta;">これら2つの研究分野を統合し、 ICL中に文脈内で表現の直線化が起こるかどうかを探ります</span></strong>。<br>
+・自然テキストの幾何学的プロファイルは、直線化が初期の層から始まり、中間層（層15～25）でピークに達する、漸進的な増加を示しています。これは、モデルがニューラルシーケンスの軌跡を積極的に線形化し、自然言語の入力マニフォールドをより平坦な幾何学へと解きほぐしていることを示唆しています。<br>
+・重要なのは、ランダムテキスト制御条件では直線化が減少することです。これは、表象の直線化がアーキテクチャのアーティファクトではなく、予測可能なトークンシーケンスの構築を反映していることを示しています。<br>
+<br>(関連項目)<br>
+・<a href="#PerceptualStraighteningHypothesis">Perceptual Straightening Hypothesis</a> (知覚の直線化仮説)<br>
+・<a href="#ICL">ICL: In-Context Learning</a> (文脈内学習)
 </li>
 
 <br>
