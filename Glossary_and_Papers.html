@@ -56,15 +56,12 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-・<a href="#2-StageParadigm">2-Stage Paradigm (二段階パラダイム)</a><br>
+・<a href="#DLM">DLM: Diffusion Language Models (拡散言語モデル)</a><br>
+・<a href="#VMC">VMC Architecture (VMCアーキテクチャ)</a><br>
+---<br>
 ・<a href="#ICL">ICL: In-Context Learning (文脈内学習)</a> ･･･論文追加<br>
 ・<a href="#PerceptualStraighteningHypothesis">Perceptual Straightening Hypothesis (知覚の直線化仮説)</a><br>
 ・<a href="#TrajectoryStraighteningHypothesis">Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a><br>
----<br>
-・<a href="#AsteriskPrediction">
-*-prediction (*-予測:ε-予測, v-予測, x-予測)</a> ･･･表追加<br>
-・<a href="#FERHypothesis">
-FER: Fractured Entangled Representation Hypothesis (FER仮説)</a><br>
 ・<a href="#OpenEndedSerach">Open-ended Search（オープンエンドな探索）</a><br>
 ・<a href="#JITWorldModeling">Just-in-Time World Modeling</a><br>
 ・<a href="#RLRF">RLRF: Reinforcement Learning with Rich Feedback (リッチなフィードバックによる強化学習)</a><br>
@@ -1495,6 +1492,56 @@ Compositionality Gapの一例。<br>
 \]
 </li>
 -->
+
+<br>
+
+<li id="DLM">
+<strong>DLM: Diffusion Language Models (拡散言語モデル)</strong><br>
+・Diffusion Model(拡散モデル)の仕組みをテキスト生成に応用した次世代の言語モデル。<br>
+・従来のGPT(自己回帰型モデル)が「1単語ずつ順番に」文章を作るのに対し、拡散言語モデルは「全体を同時に、少しずつ修正しながら」作り上げるという、全く異なるアプローチをとる。<br>
+・最初はランダムな単語やマスク（隠された部分）から始まり、何度も「ノイズを取り除く（デノイジング）」ステップを繰り返すことで、徐々に意味の通る文章へと洗練させる。<br>
+・同じ学習データを何度も異なるパターンで学習できるため、データが限られた環境でも高い性能を発揮しやすいという研究結果がある。
+
+\[
+\begin{array}{|l|l|l|}
+\hline
+\textbf{特徴} & \textbf{自己回帰型(GPTなど)} & \textbf{拡散言語モデル(DLM)} \\
+\hline
+\text{生成順序} & \text{左から右へ、1単語ずつ} & \text{全トークンを並列に同時生成} \\
+\hline
+\text{強み} & \text{流暢な文章、長い文脈の維持} & \text{高い多様性、部分的な修正・編集} \\
+\hline
+\text{弱み} & \text{途中の修正が困難} & \text{生成に複数ステップ（反復）が必要} \\
+\hline
+\end{array}
+\]
+
+(例)<br>
+・<strong>LLaDA</strong>:　大規模な拡散言語モデルの一つ。<br>
+・<strong>Gemini Diffusion</strong>:　Googleが発表した拡散ベースのテキスト生成モデル。<br>
+・<strong>ELYZA-LLM-Diffusion</strong>:　日本のELYZA社が開発した、高速生成が可能な日本語モデル。<br>
+<br>
+●『Diffusion-LM Improves Controllable Text Generation』(2022)<br>
+・テキスト生成に本格的に拡散モデルを導入した先駆け<br>
+・単語をベクトル空間にマッピングし（連続空間への埋め込み）、そのベクトルにノイズを加えて戻す手法を提案した<br>
+<br>
+●『Structured Denoising Diffusion Models in Discrete State-Spaces』D3PM (2021)<br>
+・テキストは本来「単語」という不連続な記号（離散データ）。ベクトル空間に無理やり落とし込むのではなく、離散的なデータ(単語そのもの)を直接扱う拡散プロセスの基礎理論を構築した。<br>
+<br>
+●『Vector Quantized Diffusion Model for Text-to-Image Synthesis』VQ-Diffusion(2021)<br>
+・従来の「左から右へ」という制限を完全に取り払い、どこからでも生成・修正できる柔軟性を示した。<br>
+<br>
+●『Simple and Effective Masked Diffusion Language Models』MDLM (2024)<br>
+・従来の拡散モデルが苦手だった「流暢な長い文章の生成」において、自己回帰型（GPT）に匹敵するスケーリング性能を持つことを証明した。<br>
+<br>
+●『Large Language Diffusion Models』LLaDA(2025)<br>
+・LLaDAは、ゼロから学習された新しい80億パラメータ拡散モデルを発表した。これにより、拡散モデルが大規模言語モデリングにおいて、最先端の自己回帰モデルに匹敵する性能を達成できることが示された。本研究は、LLMの能力が本質的に自己回帰アーキテクチャに依存するという仮定に異議を唱え、<strong><span style="color:magenta;">「反転転の呪い」に対する解決策を提供する</span></strong>。<br>
+<br>
+●『Reasoning with Latent Tokens in Diffusion Language Models』(2026)<br>
+・カーネギーメロン大学の研究者たちは、「潜在トークン」を拡散言語モデルの強力な推論能力を支える主要な計算メカニズムとして特定した。この研究は、同時予測中に生成されるこれらのトークンが、拡散モデルにおける推論速度と品質を制御するために変調できること、また、複雑な推論タスクにおいて自己回帰モデルのパフォーマンスを大幅に向上させるために統合できることを示している。<br>
+<br>(関連項目)<br>
+・<a href="#ReversalCurse">Reversal Curse</a> (反転の呪い)
+</li>
 
 <br>
 
@@ -3096,7 +3143,10 @@ Continual Learning (継続学習) の別名。<br>
 <br>(関連項目)<br>
 ・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
-・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)
+・<a href="#CatastrophicForgetting">Catastrophic Forgetting</a> (破局的忘却)<br>
+・<a href="#TrajectoryStraighteningHypothesis">
+Trajectory Straightening Hypothesis</a> (軌跡の直線化仮説)<br>
+・<a href="#ModelMerge">Model Merge</a> (モデルマージ)
 </li>
 
 <br>
@@ -3425,8 +3475,11 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 　普遍的サブスペースアプローチは、これらの手法を上回る性能を示すとのこと。<br>
 　→ <a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis</a> (普遍重み部分空間仮説)<br>
 <br>(関連項目)<br>
-・<a href="#ModelSoup">Model Merge</a> (モデルマージ)<br>
-・<a href="#EnsembleMethod">Ensemble Method</a> (アンサンブル法)
+・<a href="#ModelSoup">Model Soup</a> (モデルスープ)<br>
+・<a href="#EnsembleMethod">Ensemble Method</a> (アンサンブル法)<br>
+・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)<br>
+・<a href="#TrajectoryStraighteningHypothesis">
+Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a>
 </li>
 
 <br>
@@ -4565,7 +4618,10 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <div class="styleBullet">
 <ul>
 <li><strong>Total Collapse / Trivial Collapse (完全な崩壊)</strong><br>
-モデルがすべての入力データに対して常に同じ単一の表現（特徴ベクトル）を出力するようになる現象。稀な病気を検出するように訓練したら, 常に「陰性」を出力するようになってしまった･･･ような現象。</li><br>
+モデルがすべての入力データに対して常に同じ単一の表現（特徴ベクトル）を出力するようになる現象。稀な病気を検出するように訓練したら, 常に「陰性」を出力するようになってしまった･･･ような現象。<br>
+(蛇足：玉子ケースの横方向, 縦方向の仕切りが全部無くなったような状況。<br>
+　　→ <a href="#LossLandscape">Loss Landscape (損失景観)</a> の"■教師無し(自己教師)学習" の図参照
+</li><br>
 <li><strong>特徴量の多様性の喪失</strong><br>
 モデルの内部表現が、互いに似通ってしまう状態。異なるクラスのデータであっても、最終層に近い特徴表現が同じような値に収束してしまい、区別がつかなくなることがある。<br>
 </li><br>
@@ -4603,7 +4659,7 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 
 <br>
 
-<li>
+<li id="ReversalCurse">
 
 <strong>Reversal Curse (反転の呪い)</strong><br>
 大規模言語モデル（LLM）が学習データで「AはBである」という形式の知識を学んでも、「BはAである」という逆の関係を自動的に推論できない、という現象。<br>
@@ -4613,7 +4669,9 @@ Sparse Mixture of Experts (SMoE) という大規模言語モデルなどで使�
 　　「BはAの親である」から「AはBの息子である」を推論できない。<br>
 <br>
 ●『The reversal curse: Llms trained on "a is b" fail to learn "b is a"』(2023)<br>
-　モデルが「逆探索」タスク（値からキーを検索する）において低い性能を示すことを指摘し、この失敗を言語モデルで観察される「反転の呪い（reversal curse）」現象に明示的に結びつけており、より広範なLLM研究との強い関連性を示した。
+　モデルが「逆探索」タスク（値からキーを検索する）において低い性能を示すことを指摘し、この失敗を言語モデルで観察される「反転の呪い（reversal curse）」現象に明示的に結びつけており、より広範なLLM研究との強い関連性を示した。<br>
+<br>(関連項目)<br>
+・<a href="#DLM">DLM: Diffusion Language Models</a> (拡散言語モデル)･･･<strong><span style="color:magenta;">「反転の呪い」に対する解決策を提供する</span></strong><br>
 </li>
 
 <br>
@@ -4838,11 +4896,28 @@ Transformerモデルの基本構造であるAttentionメカニズムは、入力
 
 <li>
 <strong>Scaling Law (スケーリング則)</strong><br>
-深層学習モデルにおいて、モデルの性能が、モデルのサイズ（パラメータ数）、学習データの量、計算資源（計算量）といった要素を増加させるにつれて、予測可能な形で向上するという経験的な法則。<br>
+深層学習モデルにおいて、モデルの性能(精度や損失関数の値)が、モデルのサイズ（パラメータ数）、学習データの量、計算資源（計算量）といった要素を増加させるにつれて、予測可能な形で向上するという経験的な法則。<br>
+<br>
 モデルの性能に影響を与える3要素<br>
-・モデルサイズ(パラメータ数)<br>
-・データサイズ(学習データ量)<br>
-・計算資源(計算量)
+・モデルサイズ(パラメータ数)：N → 深さ, 幅<br>
+・データサイズ(学習データ量)：D<br>
+・計算資源(計算量)：C<br>
+　(蛇足：\(C\propto N\)とは限らない。例：MoE ･･･ サイズが増えても計算量は増えない)<br>
+<br>
+→ Power Law(べき乗則)
+\[
+\text{モデルの性能} \propto \left(\frac{1}{\text{モデルのサイズ}}\right)^a\quad \text{モデルのサイズ}=f(N,D,C)
+\]
+
+●『Scaling Laws for Neural Language Models』(2020)<br>
+・OpenAIの研究は、ニューラル言語モデルの性能がモデルサイズ、データセットサイズ、計算量と予測可能なべき乗則の関係に従うことを経験的に確立し、継続的なスケーリングが一貫した改善をもたらすことを示している。<br>
+<center><img src="data/images/ScalingLaw.png"></center>
+<br>
+●『Inverse Depth Scaling From Most Layers Being Similar』(2026)<br>
+・LLMの深さスケーリング挙動はアンサンブル平均化によって支配されていると結論付けた。<br>
+<center><img src="data/images/InverseDepthScaling.svg"></center>
+<br>(関連項目)<br>
+・<a href="#Chinchlla">Chinchilla</a> (チンチラ則) ･･･ N(パラメータ数) と D(データ数) の関係則
 </li>
 
 <br>
@@ -4951,6 +5026,10 @@ SDPOでの密なクレジット(信用)割り当て。青色で示されてい�
 ・G&ouml;del Machineの理論的な制約を緩和した実用的なアプローチ。形式的な証明ではなく、ダーウィン的な進化のアルゴリズム（試行錯誤と経験的な評価）に基づいて自己改善を行う。<br>
 ●『Huxley-G&ouml;del Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine』(2025)<br>
 ・<strong>系統群メタ生産性 (Clade Metaproductivity, CMP)</strong>　特定のエージェント（親）が生成したすべての子孫（系統群）のパフォーマンスを集計し、その親が持つ「将来的な自己改善の潜在能力」を推定する新しい評価指標を用いる。<br>
+●『Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing』(2026)<br>
+　(グループ進化エージェント：経験共有による終わりなき自己改善)<br>
+・系統ベースのツリー構造の進化的戦略は、局所最適解を回避するための分岐探索を可能にするが、これらのシステムは致命的な非効率性に悩まされる。<br>
+・<strong><span style="color:magenta;">Group-Evolving Agents (GEA) フレームワークは、個別中心からグループ中心の進化へのパラダイムシフトを提案する</span></strong>ことで、この根本的な限界に対処する。重要な洞察は、AIエージェントは生物学的有機体とは異なり、生殖や系統の制約を受けず、<strong><span style="color:magenta;">経験、ツール、学習された成果物を集団全体で直接共有できる</span></strong>という点である。
 <br>(関連用語)<br>
 ・<a href="#SelfRefine">Self-Refine</a> (自己改善)
 </li>
@@ -5654,6 +5733,7 @@ AI（特に大規模言語モデル：LLM）が、自身だけでは解決でき
 <strong>Trajectory Straightening Hypothesis(軌跡の直線化仮説)</strong><br>
 ニューラルネットワークは、層を深めるごとに、複雑に絡み合ったデータの流れ(軌道)を、扱いやすい『直線』に近い形へと引き伸ばしている」という仮説。<br>
 視覚神経科学の「Perceptual Straightening Hypothesis(知覚の直線化仮説)」にインスパイアされている。<br>
+軌跡の直線化 → モード接続の線形化(LMC) → モデルマージ可能<br>
 <br>
 ●『Large language models implicitly learn to straighten neural sentence trajectories to construct a predictive representation of natural language』(2023)<br>
 　(大規模言語モデルにおけるニューラル軌道の直線化)<br>
@@ -5671,7 +5751,10 @@ AI（特に大規模言語モデル：LLM）が、自身だけでは解決でき
 ・重要なのは、ランダムテキスト制御条件では直線化が減少することです。これは、表象の直線化がアーキテクチャのアーティファクトではなく、予測可能なトークンシーケンスの構築を反映していることを示しています。<br>
 <br>(関連項目)<br>
 ・<a href="#PerceptualStraighteningHypothesis">Perceptual Straightening Hypothesis</a> (知覚の直線化仮説)<br>
-・<a href="#ICL">ICL: In-Context Learning</a> (文脈内学習)
+・<a href="#ICL">ICL: In-Context Learning</a> (文脈内学習)<br>
+・<a href="#LMC">LMC: Linear Mode Connectivity (線形モード接続)
+</a><br>
+・<a href="#ModelMerge">Model Merge (モデルマージ)</a>
 </li>
 
 <br>
@@ -6028,6 +6111,26 @@ Meta（旧Facebook）が2025年6月に発表した「世界モデル（World Mod
 ・<a href="#SpatialReasoning">Spatial Reasoning</a> (空間推論) <br>
 </li>
 
+<br>
+
+<li id="VMC">
+<strong>VMC Architecture (VMCアーキテクチャ)</strong><br>
+以下の3要素で世界モデルを構成するアーキテクチャー。<br>
+<br>
+<ul><li>
+<strong>Vision (V)</strong><br>
+空間の圧縮: カメラ映像などの複雑なデータを、本質的な特徴だけを抽出した「低次元のベクトル」に変換する(例：VAEエンコーダー)。
+</li><li>
+<strong>Memory (M)</strong><br>
+時間の予測: 過去の経験から「次の状態」を予測する。これがAIにとっての「想像力」や「シミュレータ」になる(例：RNNやTransformerを使用）。
+</li><li>
+<strong>Controller (C)</strong><br>
+意思決定: V と M が作り出した「頭の中の世界」を使い、最も高い報酬を得られる行動を選択する。 
+</li></ul>
+<br>(関連項目)<br>
+・<a href="#WorldModel">World Model</a> (世界モデル)
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -6077,7 +6180,7 @@ Meta（旧Facebook）が2025年6月に発表した「世界モデル（World Mod
 　論文は<a href="https://pub.sakana.ai/ai-scientist-v2/paper/paper.pdf">こちら</a><br>
 　AIシステムが、<strong><span style="color:magenta;">人間の手助けなしで査読を通過する研究論文を執筆</span></strong>した。<br>
 [EoE: Era of Experience]<br>
-●『Wlecome to the Era of Experience』(2025)<br>
+●『Welcome to the Era of Experience』(2025)<br>
 　AI自身の「経験」を通して自律的に学習・進化していくという、AI研究における新たな方向性を示す概念を提唱した。<br>
 
 <br>(関連項目)<br>
@@ -6144,7 +6247,8 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 ・<a href="#DRL">DRL: Deep Reinforcement Learning</a> (深層強化学習)<br>
 ・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
 ・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)<br>
-・<a href="https://github.com/knightnemo/Awesome-World-Models">[Github] Awesome World Models</a>
+・<a href="https://github.com/knightnemo/Awesome-World-Models">[Github] Awesome World Models</a><br>
+・<a href="#VMC">VMC Architecture</a> (VMCアーキテクチャ)
 </li>
 </ul></div></p>
 
