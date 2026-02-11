@@ -56,10 +56,11 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-・<a href="#DLM">DLM: Diffusion Language Models (拡散言語モデル)</a><br>
-・<a href="#VMC">VMC Architecture (VMCアーキテクチャ)</a><br>
+・<a href="#InductiveBias">Inductive Bias (帰納バイアス)</a> ･･･論文追加<br>
+・<a href="#LatentReasoning">Latent Reasoning（潜在的推論）</a><br>
 ---<br>
-・<a href="#ICL">ICL: In-Context Learning (文脈内学習)</a> ･･･論文追加<br>
+・<a href="#DLM">DLM: Diffusion Language Models (拡散言語モデル)</a><br>
+・<a href="#ICL">ICL: In-Context Learning (文脈内学習)</a><br>
 ・<a href="#PerceptualStraighteningHypothesis">Perceptual Straightening Hypothesis (知覚の直線化仮説)</a><br>
 ・<a href="#TrajectoryStraighteningHypothesis">Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a><br>
 ・<a href="#OpenEndedSerach">Open-ended Search（オープンエンドな探索）</a><br>
@@ -2585,7 +2586,15 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 事前分布はベイズ推論における帰納バイアスの一種と見なすことができる。
 ここで「帰納的」という言葉は、帰納法の厳密な数学的意味を持つのではなく、以前の知識に基づいて何らかの推論を行うという事実を意味する。<br>
 <br>
-<a href="data/Papers_InductiveBias.html">Papers</a><br>
+●『From Kepler to Newton:
+Inductive Biases Guide Learned World Models in Transformers』(2026)　機械翻訳は<a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/papers/2026_From_Kepler_to_Newton/From_Kepler_to_Newton.html">こちら</a><br>
+・「AI物理学者」アプローチは、法則の復元に成功してきたが、通常は、物理法則を効果的に「組み込む」強力なドメイン固有の事前確率に依存している。<br>
+・一方、汎用トランスフォーマーは世界モデルを獲得できず、根底にある物理法則を捉えることなく高い予測精度を達成できることを示した。(Vafaら, 2025)<br>
+・3つの最小限の帰納バイアスを体系的に導入することで、このギャップを埋める。
+<center><img src="data/images/FromKeplerToNewton_1.svg"></center>
+・驚くべきことに、時間的局所性はトランスフォーマーをニュートン力学の世界モデルへと導く一方で、この知識の欠如はケプラー力学の世界モデルへと導く。<br>
+<center><img src="data/images/FromKeplerToNewton_2.svg"></center>
+
 <br>(関連項目)<br>
 ・<a href="#Regularization">Regularization (正則化)</a>
 </li>
@@ -3023,6 +3032,29 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 
 <br>
 
+<li id="LatentReasoning">
+<strong>Latent Reasoning（潜在的推論）</strong><br>
+AI（特に大規模言語モデル）がテキストとして出力されない内部の計算空間（潜在空間）において、多段階の論理的な思考プロセスを実行する能力のこと。<br>
+CoT: Chain-of-Thought が推論過程を逐一テキストで出力するのに対し、Latent Reasoningはモデル内部の連続的な隠れ状態(Hidden States)で推論を完結させる。<br>
+かつて哲学や認知科学で議論された「Mentalese」という抽象概念を、高次元ベクトルという数学的な実体としてAIの中に再現しようとする試みであると位置づけられる。<br>
+
+<br>
+●『STaR: Bootstrapping Reasoning With Reasoning』(2022)<br>
+　・モデルが自分で推論過程を生成し、正解に辿り着いたプロセスを自ら学習（Fine-tuning）するループを提案した。<br>
+●『Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking』(2024)<br>
+　(Quiet-STaR: 言語モデルは話す前に考えることを自ら学ぶことができる)<br>
+　・モデルが次の単語を出力する前に、内部で「思考（Rationale）」を生成し、その結果を用いて予測精度を高める手法を提案した。<br>
+●『Training Large Language Models to Reason in a Continuous Latent Space』COCONUT (2024)<br>
+　・推論を「言葉（トークン）」ではなく、モデル内部の「連続的なベクトル（潜在空間）」で行う手法を提示した。<br>
+●『Latent Reasoning with Supervised Thinking States』(2026)<br>
+　・<strong><span style="color:magenta;">標準的なLLMを特殊なモジュールで拡張し、推論ステップを生成・圧縮して固定サイズの「思考状態」にする</span></strong>チャンク再帰処理アプローチ。これらの状態はモデルの処理パイプラインに再び注入され、その後の計算が文脈長を延長することなく以前の推論に条件付けされることを可能にする。<br>
+<br>(関連項目)<br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (思考の言語仮説)<br>
+　「<strong><span style="color:magenta;">思考の本質は、表面上の言語（日本語や英語）とは独立した、別の論理体系にある</span></strong>」という共通の哲学に基づいている。
+</li>
+
+<br>
+
 <li id="LatentSpace">
 <strong>Latent Space (潜在空間) </strong><br>
 モデルが学習した、データの隠された本質的な特徴を捉えた、低次元で抽象的なベクトル空間のこと。<br>
@@ -3266,8 +3298,8 @@ ResNetなどのネットワークで使われる<strong><span style="color:magen
 <br>(関連項目)<br>
 ・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的汎化)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
-・サピア＝ウォーフの仮説: 話者が使用する特定の公的言語 (日本語、英語など) が、その人の思考や世界観を決定または強く影響する。
-
+・サピア＝ウォーフの仮説: 話者が使用する特定の公的言語 (日本語、英語など) が、その人の思考や世界観を決定または強く影響する。<br>
+・<a href="#LatentReasoning">Latent Reasoning</a>（潜在的推論）
 </li>
 
 <br>
