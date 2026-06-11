@@ -56,20 +56,19 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#CHARM">CHARM: Complex Harmonics Decomposition</a></br>
+・<a href="#DCM">Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</a><br>
+・<a href="#DGN">DGN: Dendritic Gated Network (樹状突起ゲート付きネットワーク)</a><br>
+・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
+・<a href="#LE">Latent Equilibrium（潜在平衡）</a><br>
+・<a href="#MoT">MoT: Mixture of Transformer</a><br>
+---<br>
 ・<a href="#BrainSpirals">Brain Spirals（脳の螺旋状信号)</a><br>
 ・<a href="#CSH">Compositional Sparsity Hypothesis (構成的スパース性仮説)</a><br>
 ・<a href="#WAM">WAM: World Action Model</a><br>
 ・<a href="#HNN">HNN: Homological Neural Networks (ホモロジーニューラルネットワーク)</a><br>
 ・<a href="#IFN">IFN: Information Filtering Networks (情報フィルタリングネットワーク)</a><br>
 ・<a href="#CF">Clique Forests</a><br>
----<br>
-・<a href="#2/3PowerLaw">2/3 Power Low (3分の2べき乗則)</a><br>
-・<a href="#Fitts'sLaw">Fitts's Law(フィッツの法則)</a><br>
-・<a href="#LessIsMore">less is more</a><br>
-・<a href="#MIP">Minimum Intervention Principle (最小介入の原則)</a><br>
-・<a href="#MinimumVariance">Minimum Variance (最小分散理論)</a><br>
-・<a href="#OFC">OFC: Optimal Feedback Control (最適フィードバック制御理論)</a><br>
-・<a href="#SDN">Signal-Dependent Noise (信号依存ノイズ)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -697,9 +696,21 @@ Lessons on autonomous learning from cognitive science
 人間の子どもが言語を習得する環境をシミュレートし、「限られたデータ量でいかに効率的に言語モデルを学習させるか」を追求する研究枠組み、およびそのコンペティション（BabyLM Challenge）の総称。<br>
 <br>
 <a href="https://babylm.github.io/archive_2023.html">BabyLM Challenge</a><br>
-パラメータ数の増加が最も注目を集めることが多い一方で、<strong><span style="color:magenta;">データセットも桁違いに増加しています</span></strong>。例えば、Chinchillaは学習中に1兆4000億語を学習します。これは、13歳の子どもが生涯で耳にする単語1つに対して、1万語以上もの単語を学習していることになります。
-</li>
+パラメータ数の増加が最も注目を集めることが多い一方で、<strong><span style="color:magenta;">データセットも桁違いに増加しています</span></strong>。例えば、Chinchillaは学習中に1兆4000億語を学習します。これは、13歳の子どもが生涯で耳にする単語1つに対して、1万語以上もの単語を学習していることになります。<br>
+<br>
+●『Saycam: A large, longitudinal audio-visual dataset recorded from the infant’s perspective』(2021)<br>
+　子どもの視点からの継続学習のための自己中心的なデータセット Saycam を導入した。<br>
+●『What Artificial Neural Networks Can Tell Us About
+Human Language Acquisition』(2022)<br>
+　現在最も効果的なニューラル言語モデルは、一般的な子供が利用できる言語データの約1000倍ものデータを用いて学習されています･･･<br>
 <center><img src="data/images/BabyLM.svg"></center>
+●『The successes and failures of artificial neural networks (anns) highlight the importance of innate linguistic priors for human language acquisition』(2025)<br>
+　(人工ニューラルネットワーク（ANN）の成功と失敗が、人間の言語獲得における生得的言語事前知識の重要性を浮き彫りにする)<br>
+●『Continual Visual and Verbal Learning Through a Child’s Egocentric Input』(2026)<br>
+　もしモデルが、子どもが1回の経験で学ぶことを学ぶためにデータセットを400回通過する必要があるなら、それは人間の言語獲得の真の計算メカニズムを捉えていない可能性があります。
+本研究で紹介するBabyCLは、このギャップに対処するために設計されたフレームワークです。
+</li>
+
 <br>
 
 <li id="BackboneNeckHeadArchitecture">
@@ -1065,6 +1076,20 @@ CFCは、脳内の異なる領域間や、局所的な神経回路内での情�
 
 <br>
 
+<li id="CHARM">
+<strong>CHARM: Complex Harmonics Decomposition</strong></br>
+脳などの複雑な動的システムにおける大規模なネットワーク活動を、より単純な低次元のパターン（多様体）へ分解して解析するための最新の脳計算科学・数学的フレームワーク。<br>
+2024 年から 2025 年にかけて、ポンペウ・ファブラ大学（UPF）やオックスフォード大学などの研究チームによって発表された。最大の特徴は、量子力学の根幹である「シュレーディンガーの波動方程式」の数学的構造を応用している点。<br>
+・従来のモデルでは捉えきれなかった、脳の離れた領域間（長距離ニューロン間）の複雑な相互作用を正確に捉えることができる。<br>
+・何千もの脳領域から得られる高次元で複雑な神経画像データ（fMRIなど）を、本質的な低次元の「調和波（ハモ二クス）」の組み合わせへと落とし込む。<br>
+・波動方程式の応用：脳の時空間的なダイナミクスを波の伝播としてモデル化することで、脳全体がどのように情報を統合・分離しているかを可視化する。<br>
+<br>
+●『Complex harmonics reveal low-dimensional manifolds of critical brain dynamics』(2024)<br>
+　脳は生存を確保するために、時間制約のある計算を実行する必要があります。潜在的な<strong><span style="color:magenta;">解決策は</span></strong>、臨界性によって可能になり、<strong><span style="color:magenta;">脳の独特な解剖学的構造に見られる稀な長距離接続によって増幅される、脳全体レベルでの非局所的分散計算にある。この非局所性は、シュレーディンガーの波動方程式の数学的構造によって捉えることができ</span></strong>、これは、臨界時空脳ダイナミクスにおける非局所性を抽出できる必要な次元多様体縮小を実行する新しいCHARM（Complex Harmonics decomposition）フレームワークの中核を成している。1,000人を超える大規模な神経画像データセットを使用して、CHARMは脳ダイナミクスの臨界的、非局所的/長距離的な性質を捉え、正確な全脳モデルを使用してその根底にあるメカニズムを確立した。同様に、CHARMは覚醒時と睡眠時の臨界ダイナミクスが大きく異なることを明らかにした。総じて、CHARMは神経科学で観察される複雑なネットワークダイナミクスの低次元性を捉えるための有望な理論的枠組みであり、個々の脳領域ではなく脳領域のネットワークが重要な脳ダイナミクスの主要な計算エンジンであることを示す証拠を提供する。 
+</li>
+
+<br>
+
 <li id="Chinchlla">
 <strong>Chinchilla (チンチラ則) </strong><br>
 Google DeepMindが2022年に発表した700億パラメータのLLM（大規模言語モデル）の名称、およびその研究から導き出された「Chinchillaの法則（Chinchilla Scaling Laws）」を指す。<br>
@@ -1323,11 +1348,8 @@ DNN が次元の呪いを回避して複雑なターゲット関数を表現で�
 ・<a href="#CurseOfDimensionality">Curse of Dimensionality</a> (次元の呪い)<br>
 ・<a href="#HNN">HNN: Homological Neural Networks</a> (ホモロジーニューラルネットワーク)<br>
 ・<a href="#IFN">IFN: Information Filtering Networks</a> (情報フィルタリングネットワーク) <br>
-・MFCF: Maximally Filtered Clique Forest(最大限にフィルタリングされたクリークフォレスト)<br>
-・<a href="#DependencyTree">Dependence Trees</a><br>
-・<a href="#CCG">Composable Chordal Graphs</a><br>
-・<a href="#CliqueForest">Clique Forests</a><br>
-・<a href="#StructuralRegukarisation">Structural Regularisation</a>
+・<a href="#MFCF">MFCF: Maximally Filtered Clique Forest</a> (最大限にフィルタリングされたクリークフォレスト)<br>
+・<a href="#CF">Clique Forests</a><br>
 </li>
 
 <br>
@@ -1773,6 +1795,56 @@ Compositionality Gapの一例。<br>
 <br>(関連項目)<br>
 ・<a href="#ContinualLearning">Continual Learning</a> (継続学習)<br>
 ・<a href="#LifelongLearning"">Lifelong Learning</a> (生涯学習)
+</li>
+
+<br>
+
+<li id="DCM">
+<strong>Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</strong><br>
+脳の大脳皮質における、神経細胞の「樹状突起（Dendrite）」の複雑な構造や機能を考慮した最小単位の神経回路ネットワークのこと。<br>
+・従来の人工知能モデル（パーセプトロンなど）では、神経細胞（ニューロン）は「複数の入力を足し算して1つの出力を出す、単純な素子」とみなされていた。<br>
+・実際の脳、特に大脳皮質にある錐体細胞（Pyramidal neuron）の「樹状突起」は非常に複雑。<br>
+　- 樹状突起は、根元側（基底樹状突起）と遠くの先端側（頂大脳樹状突起）で分かれており、それぞれ異なる場所からの情報を受け取る。<br>
+　- 樹状突起そのものが独自の「スパイク（活動電位）」を発生させることができ、1つのニューロンの内部でまるで多層ニューラルネットワークのような複雑な計算（XORなど）を単体で処理できることが分かっている。<br>
+⇒脳の大脳皮質マイクロ回路は、この<strong><span style="color:magenta;">樹状突起の構造をうまく利用することで、AIのバックプロパゲーションとほぼ同等の高度な学習を、生物学的に自然な形でシミュレートしている（近似している）と考えられている</span></strong>。<br>
+<br>
+●『Dendritic cortical microcircuits approximate the backpropagation algorithm』(2018)<br>
+　(樹状突起皮質マイクロ回路はバックプロパゲーションアルゴリズムを近似する)<br>
+<br>(関連項目)<br>
+[<strong>生物学的な脳の構造</strong>]<br>
+・<a href="#DCM">Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</a>
+<br>
+　↓<br>
+[<strong>時間遅れを解決する理論</strong>]<br>
+・<a href="#LE">Latent Equilibrium</a>（潜在平衡）</a><br>
+　↓<br>
+[<strong>工学的応用</strong>]<br>
+・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
+　　エラーを戻す際に、固定のランダム行列を使う<br>
+・<a href="#DGN">DGN: Dendritic Gated Network</a> (樹状突起ゲート付きネットワーク)<br>
+　　樹状突起大脳皮質マイクロ回路の仕組みを人工ニューラルネットワークに取り込む
+</li>
+
+<br>
+
+<li id="DGN">
+<strong>DGN: Dendritic Gated Network (樹状突起ゲート付きネットワーク)</strong>
+樹状突起大脳皮質マイクロ回路にヒントを得て、人工ニューラルネットを提案した。<br>
+<br>
+　●『A rapid and efficient learning rule for biological neural circuits』(2022)<br>
+<br>(関連項目)<br>
+[<strong>生物学的な脳の構造</strong>]<br>
+・<a href="#DCM">Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</a>
+<br>
+　↓<br>
+[<strong>時間遅れを解決する理論</strong>]<br>
+・<a href="#LE">Latent Equilibrium</a>（潜在平衡）</a><br>
+　↓<br>
+[<strong>工学的応用</strong>]<br>
+・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
+　　エラーを戻す際に、固定のランダム行列を使う<br>
+・<a href="#DGN">DGN: Dendritic Gated Network</a> (樹状突起ゲート付きネットワーク)<br>
+　　樹状突起大脳皮質マイクロ回路の仕組みを人工ニューラルネットワークに取り込む
 </li>
 
 <br>
@@ -2498,6 +2570,35 @@ eml(x,y)=\exp(x)-\ln(y)
 
 <br>
 
+<li id="FeedbackAlignment">
+<strong>Feedback Alignment</strong><br>
+ディープラーニング（深層学習）において主流となっている「誤差逆伝播法（Backpropagation）」の生物学的な不自然さを解決しつつ、脳の神経回路に近い形で学習を行うことを目指した機械学習のアルゴリズム。<br>
+・誤差を逆方向に伝える際に、順伝播で使った重みではなく「あらかじめ設定された固定のランダムな行列」を使う。<br>
+・最初は正しい勾配（最適化の方向）からズレているが、<strong><span style="color:magenta;">不思議なことにネットワーク全体が学習を進めるにつれて、真の勾配とランダム行列の方向が自然と一致（アラインメント）していき、高い精度で学習できるようになる。</span></strong><br>
+<br>
+●『Random feedback weights support learning in deep neural networks』(2014)　解説は<a href="https://www.alphaxiv.org/ja/overview/1411.0247">こちら</a><br>
+●『Random synaptic feedback weights support error backpropagation for deep learning』(2016)　論文は<a href="https://www.nature.com/articles/ncomms13276.pdf">こちら</a><br>
+●『Direct Feedback Alignment Provides Learning in Deep Neural Networks』(2016)　
+　解説は<a href="https://www.alphaxiv.org/ja/overview/1609.01596">こちら</a><br>
+●『Overcoming Rank Collapse in Feedback Alignment』(2026)<br>
+　フィードバックアライメントと呼ばれるこのプロセスは、<strong><span style="color:magenta;">MLP や非常に浅い CNN で発生するが、より深いアーキテクチャにはうまく拡張できない</span></strong>。･･･　特に信号の実効ランクに焦点を当てた。<strong><span style="color:magenta;">FA 誤差はバックプロパゲーションに比べてランクがかなり低く、したがって低次元部分空間に制約されるため、パラメータ空間の探索が制限されることがわかった</span></strong>。この観察結果に基づいて、FA の実効次元を増やすための 2 つのメカニズムを評価した。<br>
+<br>(関連項目)<br>
+[<strong>生物学的な脳の構造</strong>]<br>
+・<a href="#DCM">Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</a>
+<br>
+　↓<br>
+[<strong>時間遅れを解決する理論</strong>]<br>
+・<a href="#LE">Latent Equilibrium</a>（潜在平衡）</a><br>
+　↓<br>
+[<strong>工学的応用</strong>]<br>
+・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
+　　エラーを戻す際に、固定のランダム行列を使う<br>
+・<a href="#DGN">DGN: Dendritic Gated Network</a> (樹状突起ゲート付きネットワーク)<br>
+　　樹状突起大脳皮質マイクロ回路の仕組みを人工ニューラルネットワークに取り込む
+</li>
+
+<br>
+
 <li id="FBFF">
 <strong>Feedback control (フィードバック制御) / Feedfoward control (フィードフォワード制御)</strong><br>
 <br>
@@ -2548,7 +2649,15 @@ eml(x,y)=\exp(x)-\ln(y)
 ・Generative Grammer(生成文法)<br>
 　ノーム・チョムスキー（Noam Chomsky）が提唱した、「人間は生まれつき言語の基礎となる共通の仕組み（普遍文法）を持っている」という考えに基づく言語学の理論　<br>
 ・Structuralism (構造主義)　･･･　構造(文法)が先で、実体(意味)は後, という考え方。<br>
-
+<br>
+理想的なデータで学習 ⇒ 人間のバイアスの影響を受けないAIモデルができた<br>
+逆に、実データで学習 ⇒ プラトン的な表現、普遍重みができた、系の話としては<br>
+・<a href="#PlatonicRepresentationHypothesis">Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
+・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis</a> (普遍重み部分空間仮説)<br>
+<br>
+合成データで事前学習 ⇒ 実データで推論する、系の話としては<br>
+・<a href="#Sim2Real">Sim-to-Real<a/><br>
+・<a href="#ZeroShotTransfer">Zero-Shot Transfer</a>
 </li>
 
 <br>
@@ -3032,11 +3141,18 @@ C) HTMモデルニューロンは、樹状突起とNMDAスパイクを、それ�
 <br>
 
 <li id="ICoT">
-<strong>ICoT: Implicit Chain-of-Thoughts Training (暗黙の思考連鎖トレーニング)</strong><br>
-　トレーニング中に明示的な思考連鎖トークンを最初に提示し、段階的にそれらを取り除いていく。このアプローチは、乗算のようなタスクに必要な推論手順をモデルが内面化するのに役立つ。<br>
+<strong>
+ICoT: Implicit Chain-of-Thoughts (暗黙の思考連鎖)</strong><br>
+推論プロセスをテキストではなく、モデル内部の連続的なベクトル空間（潜在空間）に閉じ込めて実行する」というアプローチ。<br>
+<br>
+●『Implicit Chain of Thought Reasoning via Knowledge Distillation』(2023)<br>
+　CoTを生成する「教師モデル」の隠れ状態（潜在表現）を、知識蒸留（Knowledge Distillation）を通じて「生徒モデル」に学習させることで、テキストを出力せずに潜在空間内で推論を行う手法を提案した。<br>
 <br>
 ●『Why Can’t Transformers Learn Multiplication? Reverse-Engineering Reveals Long-Range Dependency Pitfalls』(2025)<br>
 　(<strong><span style="color:magenta;">トランスフォーマーはなせ掛け算を学べないのか ?</span></strong> 逆エンジニアリングが長距離依存性の落とし穴を明らかにする )<br>
+　トレーニング中に明示的な思考連鎖トークンを最初に提示し、段階的にそれらを取り除いていく。このアプローチは、乗算のようなタスクに必要な推論手順をモデルが内面化するのに役立つ。<br>
+<br>(関連項目)<br>
+・<a href="#LoTH">LoTH: Language of Thought hypothesis</a> (思考の言語仮説) 
 </li>
 
 <br>
@@ -3703,6 +3819,34 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 
 <br>
 
+<li id="LE">
+<strong>Latent Equilibrium（潜在平衡）</strong><br>
+実際の脳のニューロンは、物理的な細胞膜（膜電位）のチャージに時間がかかるため、「反応が非常に遅い（Slow components）」という物理的弱点がある。<br>
+ディープラーニング（AI）のように何層もニューロンを重ねると、情報が奥の層へ伝わり、エラーが戻ってくるまでに致命的なタイムラグ（遅延）が発生してしまう。<br>
+<strong><span style="color:magenta;">Latent Equilibriumは、この遅れを「ニューロンに未来の予測（位相前進・予見符号化）をさせる」ことで解決</san></strong>した。<br>
+ニューロンが現在の変化率（微分値）から「少し未来に自分が到達するはずの安定した状態（＝Latent Equilibrium）」を先回りして予測して発火することで、ネットワーク全体としては「<strong><span style="color:magenta;">遅い細胞を使っているのに、クアジ・インスタンタニアス（ほぼ一瞬）で超高速に推論とエラー計算が終わる」という仕組みを実現した</span></strong>。<br>
+<br>
+●『Latent Equilibrium: A unified learning theory for arbitrarily fast computation with arbitrarily slow neurons』(2021)<br>
+　物理的な計算要素の応答時間は有限であり、ニューロンも例外ではありません。したがって、皮質ネットワークの階層モデルでは、各層で応答遅延が発生します。この物理的動的システムの固有の特性により、刺激の処理が遅延し、ネットワーク出力と指示信号の間にタイミングのずれが生じ、推論だけでなく学習にも悪影響を及ぼします。本稿では、<strong><span style="color:magenta;">生物学的ニューロンが膜電位に対して出力を位相前進させる能力を利用することでこれらの問題を回避し、低速コンポーネントのネットワークにおける推論と学習のための新しいフレームワークである潜在平衡を提案します</span></strong>。･･･ 。また、我々の原理が皮質マイクロ回路の詳細なモデルにどのように適用できるかを示しました。<br>
+●『Backpropagation through space, time and the brain』(2024)<br>
+●『A Variational Latent Equilibrium for Learning in Neuronal Circuits』(2026)<br>
+<br>(関連項目)<br>
+[<strong>生物学的な脳の構造</strong>]<br>
+・<a href="#DCM">Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</a>
+<br>
+　↓<br>
+[<strong>時間遅れを解決する理論</strong>]<br>
+・<a href="#LE">Latent Equilibrium</a>（潜在平衡）</a><br>
+　↓<br>
+[<strong>工学的応用</strong>]<br>
+・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
+　　エラーを戻す際に、固定のランダム行列を使う<br>
+・<a href="#DGN">DGN: Dendritic Gated Network</a> (樹状突起ゲート付きネットワーク)<br>
+　　樹状突起大脳皮質マイクロ回路の仕組みを人工ニューラルネットワークに取り込む
+</li>
+
+<br>
+
 <li>
 <strong>Latent learning (潜在学習)</strong><br>
 学習した内容が行動にすぐには現れず、適切な動機づけやきっかけが与えられたときに初めて表面化する学習の形態。<br>
@@ -4357,6 +4501,21 @@ AI (LLM, 大規模言語モデル) と外部のデータソースやツールを
 
 <br>
 
+<li id="MMFusion">
+<strong>Multi-modal Fusion (マルチモーダル融合)</strong><br>
+複数の異なる種類のデータ（モダリティ）を組み合わせて統合し、より包括的な理解や高い精度を達成するための技術。<br>
+<br>
+●『Everything at Once – Multi-Modal Fusion Transformer for Video Retrieval』(2022)<br>
+●『Flamingo: a Visual Language Model for Few-Shot Learning』(2022)<br>
+　論文は<a href="https://arxiv.org/abs/2204.14198">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2204.14198v2">こちら</a>
+<center><img src="data/images/Flamingo.svg"></center>
+<br>(関連項目)<br>
+・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
+</li>
+
+<br>
+
+
 <li id="MMLM">
 <strong>MMLM: Multimodal Language Model (マルチモーダル言語モデル)</strong><br>
 テキスト情報だけでなく、画像、音声、動画、3Dデータなど、複数の種類の情報（マルチモーダル）を扱えるモデルの総称。<br>
@@ -4383,6 +4542,7 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 ・<a href="#VLM">VLM: Vision-Language Model (視覚・言語モデル)</a> ･･･ MMLMは、VLMを内包する、より広範な概念<br>
 ・<a href="#UnifiedTokenizer">Unified Tokenizer (統合トークナイザー)</a>
 </li>
+
 <br>
 
 <li>
@@ -4451,7 +4611,6 @@ Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a>
 
 <li id="MoE">
 
-
 <strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
 複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。<br>
 モデルの規模(パラメータ数)は大きくなるが、推論は一部のエキスパートしか実行しないので計算量はあまり増えない。<br>
@@ -4482,20 +4641,6 @@ Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a>
 
 <br>
 
-<li id="MMFusion">
-<strong>Multi-modal Fusion (マルチモーダル融合)</strong><br>
-複数の異なる種類のデータ（モダリティ）を組み合わせて統合し、より包括的な理解や高い精度を達成するための技術。<br>
-<br>
-●『Everything at Once – Multi-Modal Fusion Transformer for Video Retrieval』(2022)<br>
-●『Flamingo: a Visual Language Model for Few-Shot Learning』(2022)<br>
-　論文は<a href="https://arxiv.org/abs/2204.14198">こちら</a>, 解説は<a href="https://www.alphaxiv.org/ja/overview/2204.14198v2">こちら</a>
-<center><img src="data/images/Flamingo.svg"></center>
-<br>(関連項目)<br>
-・<a href="#MMLM">MMLM: Multimodal Language Model (マルチモーダル言語モデル)</a>
-</li>
-
-<br>
-
 <li id="MonitorabilityTax">
 <strong>Monitorability Tax (監視可能性の代償)</strong><br>
 AI（特に大規模言語モデル）の安全性を確保するために、その思考プロセスを外部から監視可能にする際、モデルの性能や正確性が低下してしまうトレードオフ現象。<br>
@@ -4505,6 +4650,16 @@ AI（特に大規模言語モデル）の安全性を確保するために、そ
 <br>
 ●『Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation』(2025)<br>
 　　(推論モデルの不正行為の監視と難読化を促進するリスク)
+</li>
+
+<br>
+
+<li id="MoT"><strong>MoT: Mixture of Transformer</strong><br>
+従来のLLM（大規模言語モデル）でよく使われる「Mixture of Experts (MoE)」は、主にFFN（フィードフォワードネットワーク）層のみを複数の専門家（エキスパート）に分割して処理を切り替えている。<br>
+これに対し、この論文が提唱した Mixture-of-Transformers (MoT) は、マルチモーダル（テキスト、画像、音声など）の基盤モデルに特化した疎な（Sparse）アーキテクチャ。<br>
+モダリティ（テキスト用、画像用、音声用）ごとにパラメータを完全に切り離して専門化させる。<br>
+<br>
+●『Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models』(2024)<br>
 </li>
 
 </ul></div></p>
@@ -5248,7 +5403,14 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 \]
 
 ・<a href="#URH">URH: The Umwelt Representation Hypothesis</a> (環境表象仮説)<br>
-　「賢くなればみんな同じ見方（表現）になる」のではなく、「似たような世界（環境）で苦労しているから、似たような見方になっているだけ」と捉え直す。
+　「賢くなればみんな同じ見方（表現）になる」のではなく、「似たような世界（環境）で苦労しているから、似たような見方になっているだけ」と捉え直す。<br>
+<br>
+・実データで学習 ⇒ プラトン的表現や普遍重み部分空間ができた。<br>
+逆に<br>
+・理想的なデータで事前学習 ⇒ 実データで推論する、系の話としては<br>
+・<a href="#FDSL">FDSL: Formula-Driven Supervised Learning</a> (数理公式主導学習)<br>
+・<a href="#Sim2Real">Sim-to-Real</a><br>
+・<a href="#ZeroShotTransfer">Zero-Shot Transfer</a>
 </li>
 
 <br>
@@ -5536,10 +5698,11 @@ Representation Autoencoders (RAE)は、<strong><span style="color:magenta;">凍�
 質問に関連する文書を検索(Retrieval)し, 取得した文書をもとに(Augmented) LLM で回答を生成(Generation)することで、より正確で信頼性の高い回答を生成する技術。<br>
 <br>
 RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
-例)『Reading Wikipedia to answer open-domain questions』(2017)<br>
+例)●『Reading Wikipedia to answer open-domain questions』(2017)<br>
+　 ●『Retrieval-augmented generation for knowledge-intensive NLP tasks』(2020)<br>
 <br>
 ⇔ "closed-book" QAパラダイム：知識をモデルのパラメータ内に完全に格納する<br>
-例)『How much knowledge can you pack into the parameters of a language model?』(2020)
+例)●『How much knowledge can you pack into the parameters of a language model?』(2020)
 </li>
 
 <br>
@@ -6317,6 +6480,26 @@ AIの出力をユーザーが提示する特定の単語、メタファー、ま
 ・<a href="#OFC">OFC: Optimal Feedback Control (最適フィードバック制御理論)</a>
 <br>
 
+</li>
+
+<br>
+
+<li id="Sim2Real">
+<strong>Sim-to-Real</strong><br>
+コンピューター上のシミュレーション（仮想）環境で学習や検証を行ったAIモデルを、現実世界のロボットや自動運転車などの「実機」に適応させる技術やプロセスを指す用語。<br>
+<br>
+●『Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World』(2017)<br>
+　シミュレーター内の「物体の色、照明、カメラ位置、背景」などをわざとメチャクチャにランダム化してAI（深層ニューラルネットワーク）を訓練した。すると、現実に近いきれいな3Dグラフィックを作らなくても、現実のカメラ映像に映る物体の位置を正確に認識できることを証明した。「完璧なシミュレーターを作る必要はない」という逆転の発想を提示した、歴史的な論文。<br>
+●『Preparing for the Unknown: Learning a Universal Policy with Domain Randomization』(2017)<br>
+　「見た目」ではなく「物理法則（摩擦、ロボットの質量、モーターの応答速度など）」をランダム化して強化学習を実施。これにより、シミュレーターで学んだロボットの制御方法（ポリシー）を、現実のロボット（プッシャーと呼ばれるアームなど）にそのまま持ってきても正常に動作させることに成功した。<br>
+●『Learning Agile Robotic Locomotion Skills by Imitation』(2018)<br>
+　バク転や障害物飛び越えを、シミュレーター内だけで学習させた。現実のロボットにそのAIを移植したところ、追加の訓練なし（ゼロショット）で現実世界で見事なバク転や俊敏な走行に成功した。<br>
+●『Solving Rubik's Cube with a Robot Hand』(2019)<br>
+　人間の手の形をした24関節の非常に複雑なロボットハンド（Shadow Hand）を使い、ADR(自動ドメインランダム化)という技術を新たに提案し、AIの成長に合わせてシミュレーターの難易度（物理的な摩擦やノイズのブレ幅）を自動で上げていく手法を採用した。<br>
+<br>(関連項目)<br>
+合成データでAIモデルを学習する、系の話としては<br>
+・<a href="#FDSL">FDSL: Formula-Driven Supervised Learning</a> (数理公式主導学習)<br>
+・<a href="#ZeroShotTransfer">Zero-Shot Transfer</a>
 </li>
 
 <br>
@@ -7461,7 +7644,11 @@ AIが外部の観測情報（画像や音声など）から、環境のダイナ
 <br>
 1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。<br>
 <br>
-●『World models 』(2018)
+●[書籍]『The Nature of Explanation』(1943)　<a href="https://markhuckvale.com/research/hp/Craik_NOE_Chapter_5.pdf">5章はこちら</a><br>
+　1943年、29歳のスコットランド人心理学者ケネス・クレイクは「生物が頭の中に外部現実の『小規模モデル』を持っているとすれば、様々な選択肢を試し、どれが最善かを結論付けることができる。そしてあらゆる面で、より完全で、より安全で、より有能な方法で反応することができる」と考えた。クレイクのメンタルモデルまたはシミュレーションの概念は、「認知革命」の先駆けとなった。<br>
+●『<a href="https://people.idsia.ch/~juergen/FKI-126-90_(revised)bw_ocr.pdf">Making the world differentiable</a>』 (1990)<br>
+　RNN を予測的な世界モデルとして訓練する「コントローラー–モデル(C–M)アーキテクチャ」を最初に提案した論文のひとつ。<br>
+●『World models</a>』(2018) 解説は<a href="https://www.alphaxiv.org/ja/overview/1803.10122v4">こちら</a><br>
 <center><img src="data/images/WorldModel.svg"></center>
 <br>
 ●『General agents contain world models』(2025)<br>
@@ -7566,6 +7753,18 @@ Google Inception ニューラルネットワークによる画像分類予測の
 ・One-Shot Learning: 訓練データ1つ<br>
 ・Few-Shot learning: 訓練データ少々<br>
 </li>
+
+<br>
+
+<li id="ZeroShotTransfer">
+<strong>Zero-Shot Transfer (ゼロショット転移)</strong><br>
+　・普遍的な概念空間（言語と画像の共通埋め込み空間など）を事前に構築<br>
+　・一度も学習（ファインチューニング）していない実データを正しく認知する手法<br>
+<br>(関連項目)<br>
+・<a href="#FDSL">FDSL: Formula-Driven Supervised Learning</a> (数理公式主導学習)<br>
+・<a href="#Sim2Real">Sim-to-Real</a><br>
+</li>
+
 </ul></div>
 </li></p>
 
