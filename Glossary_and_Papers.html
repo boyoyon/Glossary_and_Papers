@@ -56,19 +56,8 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-・<a href="#CHARM">CHARM: Complex Harmonics Decomposition</a></br>
-・<a href="#DCM">Dendritic Cortical Microcircuits（樹状突起大脳皮質マイクロ回路）</a><br>
-・<a href="#DGN">DGN: Dendritic Gated Network (樹状突起ゲート付きネットワーク)</a><br>
-・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
-・<a href="#LE">Latent Equilibrium（潜在平衡）</a><br>
-・<a href="#MoT">MoT: Mixture of Transformer</a><br>
----<br>
-・<a href="#BrainSpirals">Brain Spirals（脳の螺旋状信号)</a><br>
-・<a href="#CSH">Compositional Sparsity Hypothesis (構成的スパース性仮説)</a><br>
-・<a href="#WAM">WAM: World Action Model</a><br>
-・<a href="#HNN">HNN: Homological Neural Networks (ホモロジーニューラルネットワーク)</a><br>
-・<a href="#IFN">IFN: Information Filtering Networks (情報フィルタリングネットワーク)</a><br>
-・<a href="#CF">Clique Forests</a><br>
+・<a href="#DistilationDetection">Distillation Detection (蒸留検出)</a><br>
+・<a href="#MoE">MoE: Mixture-of-Experts (専門家混合)</a>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -802,7 +791,7 @@ S(D,M)=D_{KL}(P(M|D)||P(M))=\int P(M|D)\log\frac{P(M|D)}{P(M)}dM
 \]
 ・P(M): データを得る前のモデルの事前分布<br>
 ・P(M|D)：データDを得た後の事後分布<br>
-・D<sub>KL</sub>：狩るバック・ライブラー情報量<br>
+・D<sub>KL</sub>：カルバック・ライブラー情報量<br>
 <br>
 ●『Bayesian surprise attracts human attention』(2005)<br>
 　感覚情報の主観的な側面を捉えるため、<strong><span style="color:magenta;">驚きの形式的なベイズ定義を提案する</span></strong>。驚きは、世界に関する事後信念と事前信念の差という観点から、データが観察者にどのような影響を与えるかを測定する。観察者の信念に実質的な影響を与えるデータ観測のみが驚きを生み出す。<strong><span style="color:magenta;">これらの観測がシャノンの意味でどれほど稀であるか、あるいはどれほど有益であるかは関係ない</span></strong>。我々は、人間がテレビ視聴中に驚きの出来事や対象物にどれだけ注意を向け、視線を向けるかを定量化することで、この枠組みを検証する。この目的のために、単純な初期視覚ニューロンのシミュレーションによって低レベルの感覚的な驚きを計算する単純な計算モデルを実装する。<strong><span style="color:magenta;">ベイズ的な驚きは人間の注意を強く引きつけるものであり</span></strong>、視線移動の72%が平均よりも驚きのある場所に向けられ、すべての観察者が同時に選択した領域に分析を集中させると、この数値は84%に上昇する。提案された驚きの理論は、さまざまな時空間スケール、モダリティ、および抽象化レベルに適用可能である。<br>
@@ -1930,6 +1919,32 @@ Compositionality Gapの一例。<br>
 
 <br>
 
+<li id="DistilationDetection">
+<strong>Distillation Detection (蒸留検出)</strong><br>
+あるAI（生徒モデル）が別の強力なAI（教師モデル）の出力データを利用して「知識蒸留（Knowledge Distillation）」を行い、無断で複製またはトレーニングされたものであるかを検知・特定する技術。<br>
+<br>
+<ul></li>
+・メンバーシップ推論ベース：<br>
+　●『Reference-Based Distillation Detection in LLMs』(2026)<br>
+　生徒モデルの出力が、特定の候補となる教師モデルの出力（あるいは特定のプロンプトに対する回答パターン）とどれだけ強く整列（アライン）しているかを比較し、最も可能性の高い教師モデルを特定する。<br>
+
+</li><br><li>
+
+・データフリー入力合成と統計スコア計算：<br>
+　●『Knowledge Distillation Detection for Open-weights Models』(2025)<br>
+　生徒モデルの重み（パラメータ）と教師モデルのAPIアクセスのみが利用可能な状況下で、特殊な入力を合成して両者の出力の統計的スコアを算出し、蒸留の有無を判定する。画像分類やテキストから画像への生成モデル（Text-to-Image）など、幅広いアーキテクチャに適用できる。<br>
+
+</li><br><li>
+
+・Token Probability Deviation (トークン確率の偏り)<br>
+　●『Detecting Distillation Data from Reasoning Models』(2025)<br>
+　モデルが生成するトークンの確率パターンの偏りを分析し、蒸留データが含まれているかを検出する手法
+
+</li></ul>
+</li>
+
+<br>
+
 <li id="DistributionalHypothesis">
 <strong>Distributional Hypothesis (分布仮説)</strong><br>
 ・同じ文脈(Context: 前後関係)で使われる単語は、似た意味を持つ」という考え方。<br>
@@ -2971,6 +2986,16 @@ AI (人工知能) の分野において、人間や他のエージェントが�
 ・<a href="#PrimacyBias">Primacy Bias</a> ･･･ Grokking の高速化で Primacy Bias を克服する<br>
 ・<a href="#NGD">NGD: Natural Gradient Descent (自然勾配降下法)</a> ･･･ Grokking を加速<br>
 ・<a href="#SC">Softmax Collapse</a> ･･･ Softmax関数の数値的不安定性が Grokking を起こす
+</li>
+
+<br>
+
+<li>
+<strong>Grounding (グラウンディング, 接地)</strong><br>
+AIの出力や理解を「現実世界のデータ」や「信頼できる特定の情報源」に紐付けること。<br>
+<br>関連項目<br>
+・<a href="#RAG">RAG: Retrieval-Augmented Generation (検索拡張生成)</a><br>
+・<a href="#SymbolGrounding">Symbol Grounding (記号接地)</a><br>
 </li>
 
 </ul></div></p>
@@ -4614,15 +4639,24 @@ Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a>
 <strong>MoE: Mixture-of-Experts (専門家混合)</strong><br>
 複数の小さな専門家モデル（エキスパート）と、どの専門家を使うかを選択するルーティングシステム（ルーター/ゲーティングネットワーク）を組み合わせたAIアーキテクチャ。<br>
 モデルの規模(パラメータ数)は大きくなるが、推論は一部のエキスパートしか実行しないので計算量はあまり増えない。<br>
-(蛇足：グループで挑戦するクイズ番組みたいなもの。自信満々で間違える人に回答させるとうまみが出せない)<br>
+(蛇足：グループで挑戦するクイズ番組みたいなもの。<br>
+　各問題で回答を考えるのは一人だけで済む。<br>
+　自信満々で間違える人に回答させる － ルーティングに失敗する － とうまみが出ない。)
 <br>
-●『Outrageously large neural networks: The sparsely-gated mixture-of-experts layer』(2017)<br>
-　(途方もなく巨大なニューラルネットワーク：まばらにゲートされたエキスパート混合層)<br>
-<br>
-●『Mixture of Neuron Experts』(2025)<br>
-　(ニューロンエキスパートの混合)
-</li>
 <center><img src="data/images/MoE.svg"></center>
+●『Adaptive Mixtures of Local Experts』(1991)<br>
+　ゲートネットワーク（ルーター）は、入力データがどの特徴的な領域に属しているかを判断するクラスタリングであるとした。<br>
+●『Top-K Routing: Expert Selection in Mixture of Experts Models』(2021)<br>
+　LLM に MoE を使い k-means でルーターを作成した。<br>
+●『Revenge of Monosemanticity: Specialized Neurons Improve Data Efficiency in MLPs』(2026)<br>
+　(単義性の逆襲：MLPにおけるデータ効率を向上させる特化型ニューロン)　機械翻訳は <a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/papers/2026_revenge_of_monosemanticity/2026_revenge_of_monosemanticity.html">こちら</a><br>
+　「単一の広域的な低次元予測部分空間の復元とは根本的に結びついていない、多層パーセプトロン（MLP）における<strong><span style="color:magenta;">質的に異なる特徴学習メカニズムを特定する</span></strong>。」<br>
+　→ MLP が特徴学習に成功するのは、グローバルな低次元多様体を構築できる場合だけでなく、意図せず MoE を構成する場合があることを示した。<br>
+　　・① クラスタリング→ルーター<br>
+　　・② MLPニューロンの特化 → 専門家
+<center><img src="data/images/revenge_of_monosemanticity.svg"></center>
+</li>
+
 
 <br>
 
@@ -5470,6 +5504,21 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 ※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来している。<br>
 <br>(関連項目<br>
 ・<a href="#StochasticParrot">Stochastic Parrot</a> (確率的オウム)
+</li>
+
+<br>
+
+<li id="PredictiveFlips">
+<strong>Prediction Flips (予測の反転)</strong><br>
+機械学習モデルを新しいデータで再学習したり、アルゴリズムを改良したりしてバージョンアップ(旧モデル → 新モデル)した際に発生する
+モデルの出力(予測結果)が特定の要因によって正反対、あるいは別のクラスへ変化(反転)する現象。<br>
+<br>
+・<strong>Positive Flip</strong>（ポジティブ・フリップ）: 旧モデルで不正解だったデータが、新モデルで正解に反転する（望ましい変化）。<br>
+・<strong>Negative Flip</strong>（ネガティブ・フリップ）: 旧モデルで正解していたデータが、新モデルで不正解に反転する（ユーザーの信頼を損なうため問題視される）。<br>
+<br>
+予測の安定性と柔軟性のトレードオフに関する研究が盛んに進められている。<br>
+<br>
+●『Mitigating Negative Flips via Margin Preserving Training』(2026)
 </li>
 
 <br>
@@ -6812,7 +6861,7 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 
 <br>
 
-<li>
+<li id="SymbolGrounding">
 <strong>Symbol Grounding (記号接地)</strong><br>
 人工知能（AI）研究における根源的な課題の一つで、AIが扱う記号（シンボル）を、実世界の具体的な対象、概念、経験と結びつけるプロセス、またはその問題自体を指す。<br>
 <br>
