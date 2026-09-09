@@ -56,6 +56,12 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#AAP">Amortized Algorithmic Predictor (償却アルゴリズム的予測器)</a><br>
+
+・<a href="#HOPE">HOPE: Hilbert Operator for Progressive Encoding</a><br>
+
+・<a href="#EST">Event Segmentation Theory</a><br>
+---<br>
 ・<a href="#DistilationDetection">Distillation Detection (蒸留検出)</a><br>
 ・<a href="#MoE">MoE: Mixture-of-Experts (専門家混合)</a>
 <p>
@@ -529,6 +535,18 @@ Marcus Hutterによって提案された、数学的に定義された理論上�
 ・<strong><span style="color:magenta;">隠された目的や意図的な欺瞞を想起させる説明とは異なり、アクラティックな枠組みでは、そのような失敗を悪意の兆候ではなく、自制心の喪失として扱う</span></strong>。アクラティックな枠組みでは、矛盾は戦略的な選択ではなく、不本意な認識論的誤り、つまりモデルが報告する信念とその後生成されるものとの間の内部的な一貫性を維持する能力の崩壊として描写される。この見方では、モデルが認識論的に安定していること（局所的な予測が全体的な理解に忠実であること）を保証することが、行動の整合性を維持する上で中心となる。<br>
 <br>
 (蛇足：AIモデルにも心理的安全性が必要･･･)
+</li>
+
+<br>
+
+<li id="AAP">
+<strong>Amortized Algorithmic Predictor (償却アルゴリズム的予測器)</strong><br>
+推論や最適化にかかる膨大な計算負荷（コスト）を、モデルの『事前学習（トレーニング）フェーズ』に肩代わり（償却）させることで、実際の予測（推論）を瞬時に行えるようにした予測システム」のこと。<br>
+<br>
+会計用語の「減価償却（初期の巨額の投資を、耐用年数に応じて分割して費用化すること）」になぞらえて、計算機科学やAIの分野でこのように呼ばれている。<br>
+<br>
+●『Algorithmic Compression via Pretrained Neural Networks』(2026)<br>
+　"多様なタスクにわたって次トークンを予測するように系列モデルを学習させることは、暗黙のうちにアルゴリズム的圧縮を行うためのメタ学習をモデルに施していることになり、それによってコンテキスト内のタスクに対する（償却された）ベイズ推論を実行している"
 </li>
 
 <br>
@@ -2067,7 +2085,8 @@ Location Updating Effect (場所更新効果) とも呼ばれる。<br>
 　これらの研究を通じて、ドアウェイ効果は単なる偶然のド忘れではなく、脳がエピソード記憶を効率よく管理しようとして起こる「情報の整理プロセス」であることが実証されている。<br>
 <br>(関連項目)<br>
 ・<a href="#CDM">Context-Dependent Memory (文脈依存効果)</a><br>
-　元いた場所に戻ると思い出すこともある。
+　元いた場所に戻ると思い出すこともある。<br>
+・<a href="#EST">Event Segmentation Theory</a>
 </li>
 
 <br>
@@ -2521,6 +2540,22 @@ ERMではない学習アプローチはあるのか?<br>
 ・複数台のスロットマシンがある状況で、限られた試行回数の中で、報酬(コイン)の総額を最大化するための最適な選択戦略を学習する問題。<br>
 ・スロットマシンを米俗語でOne-Armed Bandit(片腕の盗賊)というので、複数のスロットマシンを Multi-Armed(多腕)と表現している。<br>
 ・greedy, ε-greedy, UCB(Upper Confidence Bound), optimism in the face of uncertainty(不確かな時は楽観的に), などの戦略がある。
+</li>
+
+<br>
+
+<li id="EST">
+<strong>Event Segmentation Theory</strong><br>
+経験（日常の活動や連続的な視覚情報）を脳が区切り（セグメンテーション）として捉え、それが記憶の形成や想起に深く関わっているという理論。<br>
+<br>
+●『Human brain activity time-locked to perceptual event boundaries』(2001)<br>
+　記憶想起とのイベント協会の関連を最初に体系的に示した最も重要なパイオニア論文。<br>
+　「脳がリアルタイムで連続的な経験をセグメント（区切り）に分割しており、その境界（イベント境界）の処理が記憶の定着や想起のアンカーになる」という認知・神経科学的メカニズムを世界で初めて明確に実証した。<br>
+<br>
+●『Event boundaries in perception affect memory encoding and updating』(2009)<br>
+　連続した映像を見ている最中、イベントの「境界（区切り）」に直面したまさにその瞬間に、脳内のワーキングメモリ（作業記憶）の更新（アップデート）が強制的に引き起こされることを実験的に証明した。<br>
+<br>(関連項目)<br>
+・<a href="#DoorwayEffect">Doorway Effect (ドアウェイ効果)</a>
 </li>
 
 <br>
@@ -3083,6 +3118,18 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 ・<a href="#IFN">IFN: Information Filtering Networks</a> (情報フィルタリングネットワーク)<br>
 ・<a href="#TabularData">Tabular Data</a> (表形式データ)
 </li>
+
+<br>
+
+<li id="HOPE">
+<strong>HOPE: Hilbert Operator for Progressive Encoding</strong><br>
+DNN (ディープニューラルネットワーク) の内部表現を分析・圧縮するための数学的フレームワーク。<br>
+従来のモデル圧縮（「プルーニング」など）は、ネットワークの生の「重み（ウェイト）」の数値を直接見て判断していたが、HOPE では、個々のニューロンを、数学的な「ランク1のヒルベルト・シュミット演算子」として扱う。これにより、モデル圧縮（プルーニングやニューロンの統合）を「低ランク部分空間への射影」という統一された共通の計算式で表現できるようになる。(???らしい･･･)<br><br>
+●『Hilbert Operator for Progressive Encoding (HOPE)』(2026)<br>
+<br>
+※ 同形略号の HOPE: Hierarchical Optimizers for Perpetual Evolution  については<br>
+　<a href="CatastrophicForgetting">Catastrophic Forgetting (破局的忘却)</a> 参照。
+<li>
 
 <br>
 
