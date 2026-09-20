@@ -56,14 +56,16 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#optogenetics">Optogenetics (光遺伝学)</a><br>
+・<a href="#overthinking">Overthinking (考えすぎ, 過剰思考)</a> ・・・ 論文追加</br>
+・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a> ・・・ 論文追加<br>
+・<a href="#Qualia">Qualia (クオリア)</a> ・・・ 論文追加<br>
+---<br>
 ・<a href="#AAP">Amortized Algorithmic Predictor (償却アルゴリズム的予測器)</a><br>
 
 ・<a href="#HOPE">HOPE: Hilbert Operator for Progressive Encoding</a><br>
 
 ・<a href="#EST">Event Segmentation Theory</a><br>
----<br>
-・<a href="#DistilationDetection">Distillation Detection (蒸留検出)</a><br>
-・<a href="#MoE">MoE: Mixture-of-Experts (専門家混合)</a>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1877,42 +1879,25 @@ Compositionality Gapの一例。<br>
 画像や音声、テキストなどのデータを生成するための深層学習モデルの一種。<br>
 拡散モデルと連想記憶との間の関連性が確立され, 拡散モデルにおける暗記から汎化への移行について、統計物理学における相転移として特徴づけられている。<br>
 <br>
-<a href="data/Papers_DiffusionModel.html">Papers</a><br>
+
+●『<a href="https://arxiv.org/abs/1503.03585">Deep Unsupervised Learning using Nonequilibrium Thermodynamics</a>』 (2015)<br>
+　　(非平衡熱力学を用いた深層教師なし学習)　解説は <a href="https://www.alphaxiv.org/ja/overview/1503.03585v8">こちら</a><br>
+　　熱力学の非平衡統計力学を応用し、データに段階的にノイズを加えていく「前方拡散過程」と、ノイズからデータを復元する「逆拡散過程」を学習するという、ディフュージョンモデルの基本的な枠組みを初めて提案した。当時はまだ生成される画像の品質は低かったものの、その後の研究の基盤となった。<br>
 <br>
-●『DiP: Taming Diffusion Models in Pixel Space』(2025)<br>
-　　(DiP: ピクセル空間でディフュージョンモデルを制する(飼いならす))<br>
-　・パッチサイズを大きくする(2x2, 4x4→16x16): 情報圧縮のためのVAEを削除<br>
-　・Patch Detailer Head でパッチの高周波の詳細を予測<br>
+●『<a href="https://arxiv.org/abs/2011.13456">Score-Based Generative Modeling through Stochastic Differential Equations</a>』 SDE (2020)<br>
+　　(確率微分方程式によるスコアベース生成モデリング)　解説は <a href="https://www.alphaxiv.org/ja/overview/2011.13456v2">こちら</a><br>
 <br>
-<center><img src="data/images/DiP.svg"></center>
-※ project in ･･･ パッチを1次元化 → DiT (Diffusion Transformer) が受け取れるトークンに変換する。<br>
-　 project out ･･･ project in の逆(トークンをピクセルパッチに戻す)<br>
+●『<a href="https://arxiv.org/abs/2505.21777">Emergence of Diffusion Models from Associative Memory</a>』 (2025)<br>
+　　(記憶から汎化へ：連想記憶からの拡散モデルの創発)　解説は <a href="https://www.alphaxiv.org/ja/overview/2505.21777">こちら</a><br>
+　学習データの記憶から汎化への移行過程を、連想記憶、特にホップフィールド・ネットワークの観点から分析した。
+<strong><span style="color:magenta;">学習データが少ない「記憶フェーズ」では、ホップフィールド・ネットワークと同様に各サンプルを安定したアトラクターとして記憶する一方、学習データが増えると新しいアトラクターが形成され、汎化フェーズに移行する様子を明らかにした。</span></strong>
+記憶と汎化の境界領域で、ホップフィールド・ネットワークの「偽のアトラクター」に相当する、意図しない安定状態が発生することを予測した。<br>
 <br>
-●『DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation』(2025)<br>
-・<strong>LDM(潜在拡散モデル)</strong><br>
-　　〇 圧縮された潜在空間で動作することで効率を達成<br>
-　　× VAEの再構成品質とアーティファクトによって本質的に制限される。<br>
-<br>
-・<strong>PDM(ピクセル空間拡散モデル)</strong><br>
-　　〇 ピクセル空間で直接動作することで LDM のVAEの制限を回避する<br>
-　　× 単一のモデルが粗い意味情報ときめ細かい詳細の両方を同時に学習しなければならない場合に計算上の非効率性に苦しむ。<br>
-<br>
-・<strong>DeCo</strong><br>
-　　2つの専門コンポーネントに分離する周波数分離アーキテクチャー<br>
-　　- 低周波数セマンティクスに特化したDiffusion Transformer<br>
-　　ｰ 高周波数詳細のための軽量ピクセルデコーダー<br>
-<br>
-<center><img src="data/images/DeCo.svg"></center>
-<center><img src="data/images/DeCo2.svg"></center>
-<br>
-●『PixelDiT: Pixel Diffusion Transformers for Image Generation』(2025)<Br>
-　VAEを必要とせずに、ピクセル空間で直接動作するTransformerベースの拡散モデル。<br>
-　グローバルな意味論的モデリングとローカルなピクセル精緻化を戦略的に分離するデュアルレベルTransformerアーキテクチャを採用。<br>
-<center><img src="data/images/PixelDiT.svg"></center>
-<center>PixelDiT全体構成</center>
-<br>
-<center><img src="data/images/PixelDiT2.svg"></center>
-<center>PiTブロックの詳細</center>
+●『<a href="https://arxiv.org/html/2609.13047v1">Diffusion Models and Concept Formation</a>』 (2026)<br>
+　拡散モデルを、単に「きれいな画像を生成する機械」としてではなく、「人間が物事を抽象化して理解する仕組み（概念階層）」に似た性質を持っているという新しい視点を提示。<br>
+　また、概念が最小限の認知的労力で認識される中間的なノイズレベルが存在することを実証した。<br>
+　(マンチカン ⇔ 猫 ⇔ 動物 ならば、「猫」レベル)<br>
+<center><img src="data/images/noise_blur_concept.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#GenerativeModel">Generative Model</a> (生成モデル)<br>
 ・<a href="#Memorization">Memorization to Generalization</a> (暗記から汎化へ) <br>
@@ -5264,6 +5249,22 @@ FER: Fractured Entangled Representation Hypothesis</a> (FER仮説)<br>
 
 <br>
 
+<li id="optogenetics">
+<strong>Optogenetics (光遺伝学)</strong><br>
+光学（Optics）と遺伝学（Genetics）を融合させ、光を使って生体内の細胞活動をミリ秒単位の超高精度でコントロールする画期的な技術。<br>
+<br>
+<ul><li>
+・微生物や藻類（ミドリムシなど）が持つ、光を受けるとイオンを通す性質のあるタンパク質（代表例：チャネルロドプシンなど）の遺伝子を使う<br>
+</li><br><li>
+・安全なウイルスベクター（遺伝子の運び屋）などを用いて、狙った特定の神経細胞にだけこの光感受性タンパク質を強制的に発現させる<br>
+</li><br><li>
+・その細胞に特定の波長の光（レーザーやLEDなど）を照射すると、タンパク質が反応して細胞内にイオンが流れ込み、神経の電気信号をミリ秒単位でON（またはOFF）させることができる
+</li></ul>
+
+</li>
+
+<br>
+
 <li id="Oracle">
 <strong>Oracle (神託)</strong><br>
 <br>
@@ -5311,7 +5312,7 @@ FER: Fractured Entangled Representation Hypothesis</a> (FER仮説)<br>
 
 <br>
 
-<li>
+<li id="overthinking">
 <strong>Overthinking (考えすぎ, 過剰思考)</strong><br>
 意思決定や問題解決に必要とされる範囲を超えて、物事を延々と、かつ非建設的に考え続けてしまう状態。<br>
 <br>
@@ -5323,9 +5324,18 @@ FER: Fractured Entangled Representation Hypothesis</a> (FER仮説)<br>
 　(「2+3=?」に考えすぎないで：o1型LLMの過剰思考について)<br>
 　論文は<a href="https://arxiv.org/abs/2412.21187">こちら</a>,　解説は<a href="https://www.alphaxiv.org/ja/overview/2412.21187v2">こちら</a><br>
 <br>
-●『Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models』(2025)<br>
-　(考えすぎをやめよう：大規模言語モデルの効率的な推論に関する調査)<br>
-　論文は<a href="https://arxiv.org/abs/2503.16419">こちら</a>
+●『<a href="https://arxiv.org/html/2609.04963v1">Fractal basins trap latent reasoning</a>』 (2026)<br>
+　　(フラクタル盆地は潜在的な推論を閉じ込める)<br>
+　　オーバーシンキングの原因は、AI の内部の思考空間に『フラクタルな盆地』が広がっており、そこに AI の潜在的な思考プロセスが捕まって抜け出せなくなっているからだ、という主張。<br>
+<br>
+<ul><li>
+　(通常の盆地)<br>
+山の右側に落ちた雨水は「Aの町（盆地A）」へ流れ、左側に落ちた雨水は「Bの町（盆地B）」へ流れる。境界線（山の尾根）はすっきりした1本の線なので、どちらに落ちるか予測は簡単。
+</li><br><li>
+　(フラクタル盆地)<br>
+境界線（尾根）が恐ろしく複雑に入り組んでおり、拡大しても拡大しても「Aへ行く領域」と「Bへ行く領域」がシマ模様やモザイク状に無限に入り混じっている。
+</li></ul>
+<center><img src="data/images/overthinking.png"><center>
 </li>
 
 </ul></div></p>
@@ -5713,7 +5723,7 @@ Self-Attention は、文章中のすべての単語(トークン)が、自分自
 
 <br>
 
-<li>
+<li id="Qualia">
 
 <strong>Qualia (クオリア)</strong><br>
 哲学や脳科学において、意識に現れる主観的で個人的な「感覚的な質感」や「感じ」のこと。<br>
@@ -5722,7 +5732,14 @@ Self-Attention は、文章中のすべての単語(トークン)が、自分自
 (クオリア構造パラダイム：意識の難問解決のためのクオリア周期表の構築に向けて)<br>
 <br>
 <strong><span style="color:magenta;">クオリア間の類似性が距離の公理（最小性、対称性、三角不等式）を満たすかどうかといった根本的な疑問さえも未だ解決されていない</span></strong>。 クオリアの「空間」については様々な種類が提案されているが、すべてのクオリアを何らかの高次元空間内の点とみなせるかどうかは不明である。現段階では、クオリアのための何らかの空間の存在を仮定するのではなく、<strong><span style="color:magenta;">一歩下がってクオリアの数学的「構造」の可能性を探る方がよいかもしれない。これが、「クオリア構造」パラダイムである･･･</span></strong><br>
-
+<br>
+〇 <a href="https://loc.closertotruth.com/theory/tsuchiya-s-relational-approach-to-consciousness">土屋のクオリアに対する関係論的アプローチ</a><br>
+驚くべき発見<br>
+<strong><span style="color:magenta;">クオリア類似性判断は非対称であることが多い</span></strong>ということである。たとえば、赤を見てからピンクを見たときに知覚される類似性は、ピンクを見てから赤を見たときに知覚される類似性とは異なる可能性がある<br>
+<br>
+●『<a href="https://arxiv.org/html/2608.27877v1">Relational Knowledge Distillation Brings DNN Representations Close Enough to Humans to Be Aligned Without Supervision</a>』 (2026)<br>
+　(関係知識蒸留により、 DNN表現が人間の表現に十分近づき、 教師なしで整合が可能になる)<br>
+　「人間からの関係性転移によって事前学習済み DNN の大域的構造が人間の構造に十分に近づき、<strong><span style="color:magenta;">教師なしで人間と DNN の詳細な対応付けが可能になる</span></strong>ことを示唆しています」<br>
 <br>
 <a href="data/Papers_Qualia.html">Papers</a><br>
 <a href="https://en.wikipedia.org/wiki/Qualia">wikipedia</a>
