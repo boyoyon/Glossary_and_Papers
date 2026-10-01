@@ -56,16 +56,13 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#RAP">RAP:  Reasoning via Planning （計画による推論）</a><br>
+---<br>
 ・<a href="#optogenetics">Optogenetics (光遺伝学)</a><br>
 ・<a href="#overthinking">Overthinking (考えすぎ, 過剰思考)</a> ・・・ 論文追加</br>
 ・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a> ・・・ 論文追加<br>
-・<a href="#Qualia">Qualia (クオリア)</a> ・・・ 論文追加<br>
----<br>
-・<a href="#AAP">Amortized Algorithmic Predictor (償却アルゴリズム的予測器)</a><br>
+・<a href="#Qualia">Qualia (クオリア)</a> ・・・ 論文追加
 
-・<a href="#HOPE">HOPE: Hilbert Operator for Progressive Encoding</a><br>
-
-・<a href="#EST">Event Segmentation Theory</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -5816,6 +5813,39 @@ RAG は "open-book"QAパラダイムの実装手法の一つ。<br>
 <br>
 ⇔ "closed-book" QAパラダイム：知識をモデルのパラメータ内に完全に格納する<br>
 例)●『How much knowledge can you pack into the parameters of a language model?』(2020)
+</li>
+
+<br>
+
+<li id="RAP">
+<strong>RAP:  Reasoning via Planning （計画による推論）</strong><br>
+大規模言語モデル（LLM）に複雑な問題を解かせる際、単に次の単語を順番に予測して文章を出力していく（直感的なシステム1的アプローチ）のではなく、「世界モデル（環境予測）」と「計画アルゴリズム」を組み合わせて未来の結果をシミュレーションし、最適な推論ステップを探索・選択するアプローチのこと。
+<br><br>
+
+従来の Chain-of-Thought (CoT) のような推論手法は、1ステップずつ順を追って考えを深めるのには有効だが、「途中で推論を間違えるとリカバリー（修正）できない」、「長期的な計画が必要な問題では破綻しやすい」 という弱点があった。<br>
+Reasoning via Planning では、LLMの役割を以下の要素に分解・拡張することで、この課題を解決する。
+<br><br>
+<strong>世界モデル（World Model）としてのLLM</strong><br>
+ ある「行動（推論ステップ）」をとったとき、次にどのような状態に移行するか、その未来予測や結果の評価をLLMにシミュレートさせる。
+<br><br>
+<strong>計画・探索アルゴリズム（Planning Algorithm）</strong><br>
+モンテカルロ木探索（MCTS） や A*探索 などのアルゴリズムを導入する。これにより、最も有望な推論経路を「探索（未知の経路を試す）」と「活用（過去の良さそうな経路を深掘りする）」のバランスをとりながら木構造・グラフ構造でマッピングする。
+<br><br>
+●『Reasoning with Language Model is Planning with World Model』 (2023)<br>
+<strong><span style="color:magenta;">LLM自体を「世界モデル（World Model）」兼「推論エージェント（Reasoning Agent）」として再定義した</span></strong>マイルストーン的な論文。<br>
+従来のCoTが直感的な文脈の生成（System 1思考）に留まりがちだったのに対し、本研究ではLLMに「行動の予測（エージェント）」と「それによって変化する世界の次状態の予測（世界モデル）」を交互に行わせる。そこにモンテカルロ木探索（MCTS）を組み合わせることで、人間の高度なプランニング（System 2思考）のような推論木を構築できることを示した。
+<br><br>
+●『Latent Chain-of-Thought World Modeling for End-to-End Driving』 (2025)<br>
+自動運転において、<strong><span style="color:magenta;">自然言語のCoTに代わり、潜在言語（Latent Language）でCoTを表現する手法</span></strong>を提案した論文。<br>
+モデルの推論ステップ（CoT）を、世界モデルが予測する「将来の起こり得る不確実な状況（トークン）」と直接結びつけている。CoTの1ステップが、世界モデルのシミュレーションの1ステップとして完全に同調・融合しており、言語表現の非効率さを排除した新しいアプローチ。
+<br><br>
+●『Chain of World: World Model Thinking in Latent Motion』 (2026)<br>
+視覚・言語・行動（VLA）モデルにおいて、<strong><span style="color:magenta;">世界モデルの持つ「時間的推論（時系列の因果関係）」の利点と、CoTの「段階的思考」をマージした“Chain of World（世界の連鎖）”という新たなパラダイムを提唱した。</span></strong><br>
+静的な推論ではなく、潜在空間の運動（Latent Motion）の連続的なチェーンを予測させることで、世界モデルとしての環境予測能力をそのままCoT的な思考プロセスとして昇華させている。
+<br><br>
+●『Reasoning aligns language models to human cognition』 (2026)<br>
+LLMが思考のステップを進めるプロセスが、人間の認知における世界モデルのアップデート（証拠の蓄積と意思決定）とどう類似しているかを検証する研究。<br>
+長いCoT（Extended Reasoning）を行う際、<strong><span style="color:magenta;">LLMの内部で生成される「信念の軌跡（Belief Trajectories）」が、人間が頭の中の世界モデルを使って証拠を蓄積し、推論をアップデートしていく認知プロセスと驚くほど類似（アライメント）している</span></strong>ことを、確率的推論タスクを通じて実証している。
 </li>
 
 <br>
