@@ -56,13 +56,14 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-・<a href="#RAP">RAP:  Reasoning via Planning （計画による推論）</a><br>
----<br>
-・<a href="#optogenetics">Optogenetics (光遺伝学)</a><br>
-・<a href="#overthinking">Overthinking (考えすぎ, 過剰思考)</a> ・・・ 論文追加</br>
-・<a href="#DiffusionModel">Diffusion Model (拡散モデル)</a> ・・・ 論文追加<br>
-・<a href="#Qualia">Qualia (クオリア)</a> ・・・ 論文追加
 
+・<a href="#Jev">Jev</a><br>
+・<a href="#AC">Action Chunking</a><br>
+・<a href="#CaP">CaP: Code-as-Policy</a><br>
+・<a href="#AGP">AGP: Agent-as-Policy</a></br>
+・<a href="#Harness">Harness (ハーネス)</a><br>
+---<br>
+・<a href="#RAP">RAP:  Reasoning via Planning （計画による推論）</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -251,6 +252,22 @@ Jerk (加速度の変化率)を最小にするモデル (Minimum-Jerkモデル)�
 
 <br>
 
+<li id="AC">
+<strong>Action Chunking</strong><br>
+「1回の推論（観測）に対して、未来の複数ステップの行動（アクション）をまとめて一連のシーケンスとして予測・実行する技術」のこと。
+<br><br>
+従来のロボット制御では、「現在の状態（画像など）を見て、次の1ステップの動きを決める」という処理を高速で繰り返すアプローチ（単一ステップ予測）が一般的でした。これに対し、アクションチャンキングは「1回状況を確認したら、次の10〜100ステップの動きの束（チャンク）をまとめて出力」する。<br>
+・数ステップ先まで「一貫した軌道」をまとめて計画することで、この誤差の蓄積を大幅に抑えられる。<br>
+・数ステップ先を見据えた一連の関節角度や移動経路を出力するため、ステップごとのカクつきが減り、人間のように滑らかで一貫性のある動作が可能になる。<br>
+・1回の推論でまとめて行動を出力するチャンキングにより、制御のリアルタイム性を維持できる。<br>
+<br>
+●『 Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware』 (2023)<br>
+<br>(関連項目)<br>
+・<a href="#AGP">AGP: Agent-as-Policy</a>
+</li>
+
+<br>
+
 <li id="ActiveInference">
 <strong>Active Inference (能動推論)</strong><br>
 生物や人工知能などの知的なエージェントの行動原理を説明する理論的な枠組み。<br>
@@ -394,6 +411,38 @@ AI が組織全体の作業負荷を担う。<br>
 </li>
 </ul>
 
+</li>
+
+<br>
+
+<li id="AGP">
+<strong>AGP: Agent-as-Policy</strong></br>
+●『Agent as Policy for Robotic Manipulation』 (2026)<br>
+で提唱された概念。<br>
+Code-as-Policy（CaP）の「正統な進化系・拡張版」
+<br><br>
+<strong>Code-as-Policy</strong><br>
+Code-as-Policy (CaP)は、「LLMが最初に一発でロボット制御コード（プログラム）を書き下し、ロボットがそれを実行する」というアプローチ。これには「<strong><span style="color:magenta;">途中で予期せぬ失敗（物を落とした、位置がズレたなど）が起きると、コードが途中で止まってしまいリカバリーできない</span></strong>」という弱点があった。<br>
+<br>
+<strong>Agent-as-Policy</strong><br>
+ロボットの行動を単なる固定された「プログラム（コード）」として扱うのではなく、<strong><span style="color:magenta;">AIエージェントそのものをロボットのリアルタイムな「ポリシー（制御方針）」として機能させる</span></strong>というアプローチをとる。<br>
+<br>
+<strong>Action Chunking, RAP (Reasoning and Planning) との組み合わせ</strong><br>
+GoogleのRT-2のように、VLMをそのまま方策として扱う「Agent-as-Policy」が主流になっているが、LLM/VLMは推論速度が遅く（数Hz〜数十Hz）、1ステップずつ文字や数値を生成していては、高速なロボット制御（通常100Hz以上が必要）に間に合わない。<br>
+そこで、Agent-as-Policy（基盤モデルを方策にする）の出力層に「Action Chunking」を組み込む。モデルを1回推論するだけで未来の行動シーケンスをまとめて出力できるようにすることで、推論の遅さをカバーし、滑らかで一貫性のあるロボット操作を実現している<br>
+(例)<br>
+・<strong>最上位レイヤー：RAP (Reasoning and Planning)</strong><br>
+　高レベルの行動計画（ステップ）を頭の中で推論・分解する役割<br>
+・<strong>中間レイヤー：Agent-as-Policy</strong><br>
+　ロボットの具体的な動きへと翻訳する「方策（Policy）」として機能<br>
+・<strong>最下位レイヤー：Action Chunking</strong><br>
+　未来の数ステップ分の関節角度（軌道シーケンス）をまとめてガバッと出力する具現化の手法<br>
+<br>
+<center><img src="data\images\Agent-as-Policy.svg"></center>
+<br>(関連項目)<br>
+・<a href="#CaP">CaP: Code-as-Policy</a><br>
+・<a href="#AC">Action Chunking</a><br>
+・<a href="#RAP">RAP: Reasoning via Planning</a> （計画による推論）
 </li>
 
 <br>
@@ -1222,6 +1271,30 @@ Google DeepMindが2022年に発表した700億パラメータのLLM（大規模�
 <br>
 ●『The AI Hippocampus: How Far are We From Human Memory?』(2026) 解説は<a href="https://www.alphaxiv.org/ja/overview/2601.09113">こちら</a><br>
 　大規模言語モデル（LLM）およびマルチモーダル大規模言語モデル（MLLM）における記憶メカニズムについて、人間の脳システム（新皮質、海馬、前頭前野）との類推を通じて構造化された包括的なレビューを発表した。
+</li>
+
+<br>
+
+<li id="CaP">
+<strong>CaP: Code-as-Policy</strong><br>
+大型言語モデル（LLM）を活用して、人間の自然言語による指示からロボットを制御するためのプログラムコードを自動生成し、そのまま実行させる技術・アプローチのこと。
+<br><br>
+●『Code as Policies: Language Model Programs for Embodied Control』 (2022)<br>
+で提唱され、AI・ロボティクス分野で注目を集めている。
+<br><br>
+<strong>従来のロボット学習</strong><br>
+大量の行動データや教師データ（エンドツーエンド学習）を用いて、「こういう時はこう動く」という動作モデルを事前に学習させる必要があり、コストが非常に高く柔軟性に欠けていた。
+<br><br>
+<strong>LLMの計画</strong><br>
+「右のリンゴを掴んで、左の箱に入れて」と指示すると、LLMは「1. リンゴに手を伸ばす、2. 掴む…」といった自然言語のテキストで計画を出力する。しかし、これだけではロボットは物理的にどう動けばいいか判断できない。
+<br><br>
+<strong>Code-as-Policy</strong><br>
+LLMに指示を出すと、テキストではなくロボットのAPI（認識用や制御用の関数）を組み込んだ「実行可能なPythonコード」を直接生成し、ロボットはそのコードをそのまま実行して物理的に動く。
+<br><br>
+※ Code-as-tool を「ロボットの行動計画と制御」に応用したもの<br>
+※ Policy as Code: まったく異なるロボット工学の技術<br>
+<br>(関連項目)<br>
+・<a href="#AGP">AGP: Agent-as-Policy</a>
 </li>
 
 <br>
@@ -3056,6 +3129,31 @@ AIの出力や理解を「現実世界のデータ」や「信頼できる特定
 
 <br>
 
+<li id="Harness">
+<strong>Harness (ハーネス)</strong><br>
+(Agent) Harness (ハーネス）とは、ステートレスでテキストを出力するだけのLLM（脳）の外側に構築された、ツール利用・メモリ管理・実行ループ・安全対策などを制御するソフトウェアインフラ（装備一式）のこと。
+<br><br>
+「エージェント ＝ モデル（LLM） ＋ ハーネス」と表現されることが多く、強力だが予測不可能な LLM の力を制御し、自律的な「AIエージェント」として実務で機能させるためのレールのような役割を果たす。
+<br><br>
+LLM単体では、以下のことができない。<br>
+• 過去の会話をずっと記憶しておくこと（ステートレス）<br>
+• 自らPCのファイルを書き換える、コマンドを実行する、Web検索をするといった行動<br>
+• 自分の出力したコードが正しく動いたか検証し、エラーを修正すること<br>
+<br>
+LLMという「強力な野生の馬」にハーネス（馬具）を装着することで、初めて人間が望む方向（業務の自動化など）へ安全にコントロールできるようになる。
+<br><br>
+<strong>英国 AI 安全性研究所（UK AISI）</strong>　2023<br>
+LLMの外部を囲むインフラや装備一式を指して「Model + Scaffolding（足場）」、あるいは「Model + Harness」という構造でAIエージェントを捉える見方を最初期に公式文書で示した。
+<br><br>
+● 『Agent Harness for Large Language Model Agents: A Survey』 (2026)<br>
+　ハーネスの概念や歴史を初めて系統的にまとめた学術論文
+<br><br>
+●『Agent Harness Engineering: A Survey』 (2026)<br>
+　ハーネスの構造をさらに深く体系化した
+</li>
+
+<br>
+
 <li id="HedonicAdaptation">
 <strong>Hedonic Adaptation (幸福順応, 快楽順応)</strong><br>
 人々が報酬刺激に急速に慣れて鈍感になるという心理現象<br>
@@ -3705,6 +3803,21 @@ AIとは(今のところ)関係ない。Jの項目が少ないのでスペース
 ・変分ベイズやEMアルゴリズムでは、イェンセンの不等式を使って尤度の下限 (ELBO: Evidence Lower Bound) を導出する。<br>
 <br>
 ・2つの確率分布間の違いを測る指標である KL (カルバック・ライブラー)ダイバージェンスが非負 (0以上) であることの証明に使われる。
+</li>
+
+<br>
+
+<li id="Jev">
+<strong>Jev</strong><br>
+元 OpenAI の研究者であるディオゴ・アルメイダ氏が設立した米 TypeSafe AI 社が、2026年9月15日に発表した意思決定（判断）に特化した新型AIモデル。
+<br><br>
+ChatGPT や Claude のような従来の「文章を生成する AI（LLM）」とは根本的に異なり、「文章を一切書かない」という尖った特徴を持っている。その代わり、与えられた情報に対して「分類する」「点数をつける」「真偽（はい・いいえ）を判定する」といった選択・判断の処理だけを非常に高速かつ低コストで行う。<br>
+・「文章」ではなく「型付きのデータ」を返す<br>
+　Jevは文章を作らず、あらかじめ定義した選択肢の確率やスコアを構造化データ（型付きの値）として一発で出力するため、プログラムの条件分岐にそのまま直結させることができる。<br>
+・「システム1（直感・速い思考）」モデル<br>
+　複雑に熟考して文章を作るのではなく、パターンを瞬時に見抜いてルーティングする処理に特化している。<br>
+・圧倒的な低コスト・低遅延<br>
+　「判断」だけに機能を絞り込んで学習・設計されているため、処理が極めて高速でコストも破格です。公表されている料金は入力100万トークンあたり0.042ドル（約7円）で、出力料金は無料となっている。
 </li>
 
 <br>
@@ -5845,7 +5958,10 @@ Reasoning via Planning では、LLMの役割を以下の要素に分解・拡張
 <br><br>
 ●『Reasoning aligns language models to human cognition』 (2026)<br>
 LLMが思考のステップを進めるプロセスが、人間の認知における世界モデルのアップデート（証拠の蓄積と意思決定）とどう類似しているかを検証する研究。<br>
-長いCoT（Extended Reasoning）を行う際、<strong><span style="color:magenta;">LLMの内部で生成される「信念の軌跡（Belief Trajectories）」が、人間が頭の中の世界モデルを使って証拠を蓄積し、推論をアップデートしていく認知プロセスと驚くほど類似（アライメント）している</span></strong>ことを、確率的推論タスクを通じて実証している。
+長いCoT（Extended Reasoning）を行う際、<strong><span style="color:magenta;">LLMの内部で生成される「信念の軌跡（Belief Trajectories）」が、人間が頭の中の世界モデルを使って証拠を蓄積し、推論をアップデートしていく認知プロセスと驚くほど類似（アライメント）している</span></strong>ことを、確率的推論タスクを通じて実証している。<br>
+<br>(関連項目)<br>
+・<a href="#AC">Action Chunking</a><br>
+・<a href="#AGP">AGP: Agent-as-Policy</a>
 </li>
 
 <br>
