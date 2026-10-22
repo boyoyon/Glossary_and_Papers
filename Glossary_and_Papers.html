@@ -56,14 +56,17 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-
+・<a href="#MEO">MEO: Merging Experts into One / Expert Merging</a><br>
+・<a href="#SpaceTessellatingHexagonalPattern">Space-Tessellating Hexagonal firing Patterns (空間を敷き詰める六角形の発火パターン)</a><br>
+・<a href="#CBM"">CBM: Concept Bottleneck Models (概念ボトルネックモデル)</a>
+</br>
+・<a href="#IBM">Inverse Bandit Methods (逆バンディット法)</a><br>
+---<br>
 ・<a href="#Jev">Jev</a><br>
 ・<a href="#AC">Action Chunking</a><br>
 ・<a href="#CaP">CaP: Code-as-Policy</a><br>
 ・<a href="#AGP">AGP: Agent-as-Policy</a></br>
 ・<a href="#Harness">Harness (ハーネス)</a><br>
----<br>
-・<a href="#RAP">RAP:  Reasoning via Planning （計画による推論）</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -587,6 +590,32 @@ Marcus Hutterによって提案された、数学的に定義された理論上�
 
 <br>
 
+<li id="AlleeEffect">
+<strong>Allee effect (アリー効果)</strong><br>
+生態学において「個体群密度（集団の密度）がある程度高くなることで、個体の繁殖率や生存率（適応度）が向上する現象」のこと。
+<br><br>
+生物は数が増えすぎると食物の奪い合い（環境抵抗）が起きて増殖率が下がるが（密度効果）、逆に「少なすぎても生きていきにくくなる」という特性を表したのがアリー効果。
+
+\[
+\begin{array}{l | l |  l}
+\textbf{項目} & \textbf{強いアリー効果} & \textbf{弱いアリー効果} \\
+\hline
+\textbf{臨界密度} & \text{存在する} & \text{存在しない} \\
+&\text{ (これ以下になると危険)}\\
+\hline
+\textbf{超低密度} & \text{マイナスになる} & \text{プラスのまま} \\
+\textbf{での増殖率} &\text{(個体数が減る)} &\text{(ただし増え方鈍い)}\\
+\hline
+\textbf{絶滅のリスク} & \text{臨界密度を下回ると} & \text{減速はするが、勝手に} \\
+& \text{確実に絶滅に向かう}  & \text{絶滅へは向かわない}
+\end{array}
+\]
+
+● 『Studies in animal aggregations: mass protection against colloidal silver among goldfishes.』 (1932)
+</li>
+
+<br>
+
 <li id="AAP">
 <strong>Amortized Algorithmic Predictor (償却アルゴリズム的予測器)</strong><br>
 推論や最適化にかかる膨大な計算負荷（コスト）を、モデルの『事前学習（トレーニング）フェーズ』に肩代わり（償却）させることで、実際の予測（推論）を瞬時に行えるようにした予測システム」のこと。<br>
@@ -670,6 +699,19 @@ Marcus Hutterによって提案された、数学的に定義された理論上�
 </li>
 
 <br>
+
+<li id="AA">
+<strong>Archetypal Analysis (アーキタイプ分析)</strong><br>
+多変量データの外周にある特徴的な極端値（エッジケース）を見つけ出し、すべてのデータをそれら極端なパターンの組み合わせ（混合）として表現する非監修学習（機械学習）の手法。
+<br><br>
+一般的なクラスター分析（K-meansなど）がデータ群の「中心（平均的な像）」を探すのに対し、アーキタイプ分析はデータの分布を囲む凸包（もっとも外側の境界）の角にあたる「純粋で極端なプロファイル（原型＝アーキタイプ）」を見つけ出す点が大きく異なる。
+<br><br>
+● 『Archetypal Analysis』 (1994)<br>
+データを「純粋な型（アーキタイプ）」の混合（凸結合）として表現する理論的な枠組みが提示され、交互最小二乗法を用いた非線形最適化アルゴリズムが導入された。手法の有用性を証明するために「スイス兵の体型データ」「大気汚染データ」「トカマク型核融合のデータ」の3つの具体的な事例（ケーススタディ）が紹介されている。
+</li>
+
+<br>
+
 
 <li id="ArtificialHivemind">
 <strong>Artificial Hivemind (人工集合意識)</strong><br>
@@ -1112,6 +1154,31 @@ LLMエージェントに長期的なタスクを与えると、自己の経験�
 ・因果探索： 「原因は何か？」という構造（矢印の向き）を見つける。<br>
 ・因果推論： 「原因を変えると結果がどれだけ変わるか？」という効果の大きさ（数値）を算出する。 
 <li>
+
+<br>
+
+<li id="CBM"">
+<strong>CBM: Concept Bottleneck Models (概念ボトルネックモデル)</strong></br>
+AIの予測プロセスを人間に理解可能な「概念（コンセプト）」を介して透明化する説明可能なAI（XAI）の手法。
+<br><br>
+(例)<br>
+・従来のモデル<br>
+　画像（入力） ➔ [ブラックボックスの複雑な計算] ➔ 「コシアカツバメ」（予測結果）<br><br>
+・Concept Bottleneck Model<br>
+　画像（入力） ➔ 「黄色い足」「青い翼」「短いクチバシ」などの確率（中間概念）<br>
+　それらの概念の組み合わせ ➔ 「コシアカツバメ」（予測結果）
+<br><br>
+●『Concept Bottleneck Models』 (ICML2020)<br>
+　それまでも「中間ステップに概念を挟む」というアイデア自体は断片的に存在していたが、それを「Concept Bottleneck Model」と明確に命名し、体系化した。<br>
+　さらに、CBMを構築するための3つの主要な学習パターン（Sequential, Joint, Independent）を数学的に定義し、テスト時に人間が中間概念の誤りを修正できる「介入可能性（Intervenability）」の有効性を実証した。
+<br><br>
+●『Post-hoc Concept Bottleneck Models』 (ICLR2023)<br>
+　事前に膨大な概念ラベルを手動付与するコストという課題を解決した。<br>
+　既存のブラックボックスモデルに後付けで概念ボトルネック層をドッキングさせ、CLIPなどのマルチモーダルモデルを活用することで実用性を大幅に向上させた。
+<br><br>
+●『Label-Free Concept Bottleneck Models』 (ICLR2023)<br>
+　設定すべき概念（言葉）を大規模言語モデル（LLM）により完全自動化した。
+</li>
 
 <br>
 
@@ -2916,6 +2983,17 @@ Mihaly Csikszentmihalyi(ミハイ・チクセントミハイ)が提唱した理�
 　学習において情報を記憶から「思い出す」行為がいかに重要かを科学的に示し、その後の教育・心理学分野に大きな影響を与えた。この研究は、単純な再読（再学習）よりも、テスト形式で記憶から情報を引き出す「想起練習」の方が、長期的な学習定着に劇的な効果があることを実証した。
 </li>
 
+<br>
+
+<li id="FrobeniusNorm">
+<strong>Frobenius norm (フロベニウスノルム)</strong><br>
+行列のすべての成分の二乗和の平方根（ルート）として定義される行列の「大きさ」を表す指標。
+
+\[
+||A||_F=\sqrt{\sum_{i=1}^m\sum_{j=1}^n |a_{ij}|^2}
+\]
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -3666,6 +3744,22 @@ AIが生成するアウトプットが爆発的に増える中で、「<strong>�
 <br>
 ●『Introspective Diffusion Language Models』(2026)<br>
 　重要な洞察：内省的一貫性は、従来の拡散言語モデル（DLM）に欠けていた原理である。拡散言語モデルはARモデルの内省的一貫性 を受け継いでいないことを示す。つまり、拡散言語モデルは自身の世代と一致するように訓練されていない。この特性の欠如は、基盤となるモデルの能力を最大限に引き出すことを根本的に制限する。
+</li>
+
+<br>
+
+<li id="IBM">
+<strong>Inverse Bandit Methods (逆バンディット法)</strong><br>
+意思決定者の行動履歴（選択データ）のみを観察し、その背後にある「期待報酬」や「価値基準（意思決定ポリシー）」を逆算して推定する機械学習の手法。<br>
+<br>
+通常のバンディットアルゴリズムが「報酬を最大化するためにどの行動を選ぶべきか」を解くのに対し、逆バンディット法は「この行動をとっているということは、どういう報酬（インセンティブ）に基づいて動いているのか」という逆問題を解く。強化学習の分野における「逆強化学習（Inverse Reinforcement Learning: IRL）」のバンディット版（状態遷移がない、または単一ステップのケース）にあたる。<br>
+<br>
+観察者は「どの行動に対してどれだけの報酬（売上やクリックなど）があったか」という直接的なデータにアクセスできなくても、意思決定のログさえあればその基準を推定できる。
+<br><br>
+「Inverse Contextual Bandits (ICB)」などの発展形では、時間の経過とともに変化する専門家の判断基準（非定常なポリシー）を追跡・モデル化することが可能。<br>
+● 『Inverse Contextual Bandits without Rewards: Learning from a Non-Stationary Learner via Suffix Imitation』 (2026)<br>
+<br>(関連項目)<br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a>
 </li>
 
 <br>
@@ -4538,6 +4632,29 @@ AI (LLM, 大規模言語モデル) と外部のデータソースやツールを
 
 <br>
 
+<li id="MEO">
+<strong>MEO: Merging Experts into One / Expert Merging</strong><br>
+MoEは「総パラメータ数は膨大だが、動かすのは一部なので計算が軽い」というメリットがあるが、実運用（デプロイ）時において以下の深刻なボトルネックを抱えている。<br>
+1. メモリ（VRAM）の圧迫: 推論時に動くのが一部でも、数千億に及ぶ全パラメータをGPUのメモリ上に載せておく必要がある。
+<br><br>
+2. ルーティングの遅延: トークンをどのエキスパートに送るか選別（ディスパッチ）し、計算後に集約（ギャザー）する処理が、ハードウェアの通信遅延（ボトルネック）を生む。
+<br><br>
+これらを解決するために、「学習時はMoEとして役割を分担させて賢く育て、デプロイする直前にエキスパート同士を合体させてモデルを小さくする」という研究が盛んに行われている。
+<br><br>
+● 『<a href="https://arxiv.org/html/2608.08627v1">UniMoMo: Expert Merging-Based MoE Acceleration for Large Recommendation Models</a>』 (2026)<br>
+エキスパートのパラメータの距離ではなく、未ラベルのデータ（キャリブレーションデータ）を入力した際の「機能的な類似性（反応の似てなさ・似てなさ）」を基準にグラフ理論を用いてグループ化し、トラフィックの高い重要なエキスパートのマージを制限しながら圧縮する。
+<br><br>
+●『Sub-MoE: Efficient Mixture-of-Expert LLMs Compression via Subspace Expert
+Merging』 (2026)<br>
+特徴的な出力が似ているエキスパートをK-meansでクラスタリングした後、SVD（特異値分解）を用いてエキスパート間で共通する空間（サブスペース）を抽出し、パラメータの衝突を抑えながら融合する。
+<br><br>
+「別々に学習された複数のLLM（数学特化、コード特化、一般など）をマージして、後から1つのMoEモデルを作り出す」という研究（MergeMEなど）も非常に盛んに行われている。<br>
+<br>(関連項目)<br>
+・<a href="#MoE">MoE: Mixture-of-Experts (専門家混合)</a>
+</li>
+
+<br>
+
 <li id="MetaCognition">
 <strong>Meta Cognition (メタ認知)</strong><br>
 自分の思考や行動を、一段高い視点から客観的に把握し、制御すること」を指す。「考えることについて考える」あるいは「認知を認知する」能力のこと。<br>
@@ -4581,6 +4698,15 @@ AI (LLM, 大規模言語モデル) と外部のデータソースやツールを
 光の波長よりも小さなナノ構造（メタサーフェス）を平面上に配置することで、光を自在に操る超薄型の平面レンズのこと。<br>
 <br>(関連項目)<br>
 ・Lens-less Imaging ･･･ 物理的な光学レンズを一切使わずに画像を撮影する技術のこと。
+</li>
+
+<br>
+
+<li id="METR">
+<strong>METR: Model Evaluation and Transparency Research、またはModel Evaluation and Threat Research</strong><br>
+カリフォルニア州バークレーに拠点を置く非営利の独立系AI研究・評価機関。<br>
+2022年に設立され、最先端AI（フロンティアAI）モデルの自律能力や社会的リスク、セキュリティ上の脅威を第三者の立場で検証・監査することを主な目的としている。<br>
+特定のAI企業（OpenAIやAnthropic、Google DeepMind、Meta、Amazonなど）から独立した地位を保つため、これらの企業やその従業員からの資金提供は受けず、多様な寄付者からの資金のみで運営されているのが特徴。
 </li>
 
 <br>
@@ -4797,6 +4923,8 @@ Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a>
 　　・① クラスタリング→ルーター<br>
 　　・② MLPニューロンの特化 → 専門家
 <center><img src="data/images/revenge_of_monosemanticity.svg"></center>
+<br>(関連項目)<br>
+・<a href="#MEO">MEO: Merging Experts into One / Expert Merging</a>
 </li>
 
 
@@ -6763,6 +6891,22 @@ AIの出力をユーザーが提示する特定の単語、メタファー、ま
 
 <br>
 
+<li id="SimplexConstraint">
+<strong>Simplex Constraints (シンプレックス制約)</strong><br>
+「いくつかの変数の合計が必ず 1（または特定の正の定数）になり、かつ全ての変数が 0 以上である」というルールのこと。
+<br><br>
+<strong>非負制約</strong>
+\[
+x_i \geq 0\quad (\text{for all }i)
+\]
+<strong>和が 1 になる制約</strong>
+\[
+\sum_{i=1}^k x_i = 1
+\]
+</li>
+
+<br>
+
 <li id="SimplicityBias">
 <strong>Simplicity Bias (単純性バイアス)</strong><br>
 AIモデルが複雑なデータや特徴を無視して、単純で表面的なパターンに基づいて判断や予測を行ってしまう傾向のこと。結果として Sortcut Learning を行ってしまう。<br>
@@ -6837,6 +6981,20 @@ AIの学習に大量のデータ（ビッグデータ）を必要とするとい
 　grokkingとして知られる遅延汎化現象が、Softmax関数の数値的不安定性（「Softmax Collapse」(SC)と名付けられた）と「素朴な損失最小化」(NLM: Naive Loss Minimization)と呼ばれる特定の訓練ダイナミクスによって引き起こされることを明らかにしている。StableMaxでSCを防ぐこと、または⊥GradオプティマイザでNLMを軽減することが迅速な汎化を可能にし、grokkingにおける正則化とMSE損失の役割に対する統一的な説明を提供することを示している。<br>
 <br>(関連項目)<br>
 ・<a href="#Grokking">Grokking</a><br>
+</li>
+
+<br>
+
+<li id="SpaceTessellatingHexagonalPattern">
+<strong>Space-Tessellating Hexagonal firing Patterns (空間を敷き詰める六角形の発火パターン)</strong><br>
+脳の「内嗅皮質（ないきゅうひしつ）」に存在するグリッド細胞（格子細胞、Grid cells）が持つ、独特な活動特性のこと。
+<br><br>
+動物が空間を移動するとき、この細胞は特定の場所を通るたびに電気信号（発火）を放つが、その活動拠点を2次元マップ上にプロットすると、空間を隙間なく埋め尽くす（テセレーションする）美しい正六角形の格子状（ハニカム構造）を描くことからこのように呼ばれる。
+<br><br>
+● 『Microstructure of a spatial map in the entorhinal cortex』 (2005)<br>
+　モーセル夫妻らの研究チームは、前年の2004年にも内嗅皮質（MEC）に空間と連動して活動する細胞（のちのグリッド細胞）があることを報告していました。しかし、その際の実験環境（小さなケージ）では、細胞が複数の場所で発火していること（マルチプレイス・フィールド）までは分かったものの、部屋が狭すぎてその全体像が見えていませんでした。<br>
+　そこで2005年のこの論文では、直径2メートル近くある大きな円形や四角形の環境の中でラットを自由に走らせて計測を行いました。その結果、記録された発火データをマッピングすると、単にランダムに何度も動くだけではなく、「正三角形が敷き詰められたような美しい正六角形の格子（グリッド）を描いて規則正しく発火している」 という衝撃的な事実が初めて明らかになりました。<br>
+　この論文の中で、彼らはこれらの細胞を「grid cells（格子細胞／グリッド細胞）」と命名し、脳が外部の目印に頼らずに自律的に空間の距離や位置を測る「一般化された地図（メトリック）」を持っていると結論付けました。これが、2014年のノーベル賞受賞へ繋がる決定打となった論文です。
 </li>
 
 <br>
@@ -7834,6 +7992,20 @@ VLA（Vision-Language-Action）モデルは、カメラ画像と言語指示を�
 <br>(関連項目)<br>
 ・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)<br>
 ・<a href="#WorldModel">World Model (世界モデル)</a><br>
+</li>
+
+<br>
+
+<li id="WinnersCurse">
+<strong>Winner's Curse of launched A/B tests (A/Bテストにおける勝者の呪い)</strong><br>
+テストで有意な差が出て採用（ローンチ）された施策の実際の効果が、テスト時に計測された効果（リフト幅）よりも小さくなってしまう（過大評価されてしまう）統計的な現象のこと。
+<br><br>
+データには常に偶然の「ブレ（サンプリングエラー）」が含まれている。数あるテストの中から「たまたま上振れのブレが大きく出て、有意差の基準をクリアした施策」ばかりが選ばれてローンチされる。(選択バイアス)
+<br><br>
+テスト期間中に「たまたま大きな効果（リフト）」が観測されてローンチされた施策も、本番環境で長期的に運用していくと、時間の経過とともに本来の実力値（平均値）へと落ち着いていく。(平均への回帰)
+<br><br>
+その結果、「テストの時はあんなに成果が出たのに、本番に入れたら大したことなかった」という現象が起きる。
+
 </li>
 
 <br>
