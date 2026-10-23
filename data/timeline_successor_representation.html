@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="utf-8" />
+        <title>Successor Representation</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 20px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0 25%; /* 幅を25%に設定して4列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1><center>Successor Representation<br><span style="color:blue;">後継表現</span></center></h1>
+
+(AIモードの受け売り)
+
+<h3>なにものか?</h3>
+<p>
+Successor Representation（後継表現、SR）とは、強化学習（RL）や認知神経科学において用いられる、「現在の状態からスタートして、将来的にどの状態にどれくらいの頻度で滞在するか」の期待値を予測してコード化（表現）する手法です。
+</p>
+
+<p>
+1993年にピーター・デヤン（Peter Dayan）氏によって提案され、近年ではディープラーニングと組み合わせた深層強化学習（Deep RL）や、脳の海馬における「認知地図（Predictive Map）」のメカニズムを説明する理論として再び大きな注目を集めています。
+</p>
+
+<h4 style="padding-left:1em;">2つのアプローチの「いいとこ取り」</h4>
+
+<p>
+強化学習には大きく分けて2つの手法がありますが、SRはその中間に位置するハイブリッドなアプローチ（いいとこ取り）と言われています。
+
+<div class="styleBullet">
+<ul><li>
+<strong>モデルフリー（Model-free）</strong><br>
+環境の仕組みを覚えず、過去の経験から直接「行動の価値」だけを学習する。計算は早いが、報酬の場所が変わると最初から学習し直しになり柔軟性がない。
+
+<li><br><li>
+<strong>モデルベース（Model-based）</strong><br>
+「状態Aから右に行くと状態Bに遷移する」という1ステップごとの環境マップ（遷移確率）をすべて覚える。柔軟に計画を立て直せるが、毎回未来のシミュレーション（計画）を行うため計算コストが非常に高い。
+
+</li><br><li>
+<strong>Successor Representation（SR）</strong><br>
+1ステップずつではなく、「今の状態から動いたとき、将来的に行き着く先々の分布」をまとめて記憶（キャッシュ）しておく。そのため、モデルフリーのような手軽さで、モデルベースのような柔軟な対応ができる。
+</li></ul></div>
+</p>
+
+<h3>タイムライン</h3>
+
+<h4 style="padding-left:1em;">1. 黎明期：SRの本質的な提案（源流）</h4>
+<p>
+● 『<a href="https://www.gatsby.ucl.ac.uk/~dayan/papers/sr93.pdf">Improving Generalization for Temporal Difference Learning: The Successor Representation</a>』 (1993)
+</p>
+
+<p style="padding-left:4em;">
+<strong><span style="color:magenta;">SRの概念を世界で初めて提唱した</span></strong>、すべての源流となる金字塔的論文です。 従来の強化学習（TD学習など）が状態の「即時的な価値」を更新していたのに対し、「ある状態に立ったら、将来どの状態にどれくらい滞在するか」という未来の訪問確率（予測マップ）を状態の表現（特徴量）としてキャッシュする手法を提案しました。これにより、報酬の配置が変わっても、環境の遷移関係（マップ）を再計算せず瞬時に適応できる基礎が築かれました。
+</p>
+
+<h4 style="padding-left:1em;">2. 暗黒期からの復活：ディープラーニングとの融合</h4>
+<p>
+Dayanの提案後、SRは計算資源や表現力の限界から一時的に表舞台から遠ざかりましたが、深層強化学習（Deep RL）の登場によって劇的な復活を遂げました。
+</p>
+
+<p>
+● 『<a href="https://arxiv.org/abs/1606.02396">Deep Successor Reinforcement Learning</a>』  DSR (2016)
+</p>
+
+<p style="padding-left:4em;">
+<strong><span style="color:magenta;">SRの概念を深層学習（ニューラルネットワーク）へと初めて拡張した</span></strong>画期的な論文です。ピクセルなどの高次元な生の観測データから、特徴量空間におけるSR（Successor Map）と報酬予測器をエンドツーエンドで同時に学習するフレームワーク（DSR）を提案し、ゲーム環境（Atari）などでその有効性を証明しました。
+</p>
+
+<p>
+● 『<a href="https://arxiv.org/abs/1606.05312">Successor Features for Transfer in Reinforcement Learning</a>』 (2016)
+</p>
+
+<p style="padding-left:4em;">
+テーブル形式のSRを、連続値空間や関数近似（特徴量）へ適用可能にした「Successor Features (SF)」を確立した論文です。さらに「Generalized Policy Improvement (GPI)」という概念と組み合わせることで、「<strong><span style="color:magenta;">タスク（報酬関数）が次々と変わる環境で、過去の知識を高速に転移（Transfer Learning）させる</span></strong>」という、現代SR研究の主要な応用先を決定づけました。
+</p>
+
+<h4 style="padding-left:1em;">3. 脳科学・認知科学への波及（コグニティブ・マップの正体）</h4>
+<p>
+強化学習の文脈を超え、「人間の脳（特に関脳の海馬）は環境をどう表現しているのか」という神経科学の謎を解き明かす鍵として、SRが最大の脚光を浴びることになります。
+</p>
+
+<h4 style="padding-left:1em;"></h4>
+<p>
+● 『<a href="https://web.archive.org/web/20120127143056id_/http://www.princeton.edu/~sjgershm/sr.pdf">The Successor Representation and Temporal Context</a>』 (2012)
+</p>
+
+<p style="padding-left:4em;">
+<strong><span style="color:magenta;">人間のエピソード記憶の有力なモデルである「時間文脈モデル（TCM）」が、数学的にはTD学習を用いてSRを推定しているプロセスと等価であることを証明しました。</span></strong>SRがAIだけでなく生物の認知モデルとしても妥当であることを示した重要な架け橋です。
+</p>
+
+<p>
+● 『<a href="https://www.biorxiv.org/content/biorxiv/early/2017/07/27/097170.full.pdf">The hippocampus as a predictive map</a>』 (2017)
+</p>
+
+<p style="padding-left:4em;">
+脳科学界に衝撃を与えた極めて重要な論文です。動物が空間を把握する際に活動する海馬の「<strong><span style="color:magenta;">場所細胞（Place Cells）」の性質が、実は「未来の予測マップ＝SR」を計算していると仮定するときれいに説明がつくことを示しました。</span></strong>心理学者トールマンが提唱した「認知地図（Cognitive Map）」の計算論的な正体がSRであるという有力な証拠を提示しました。
+</p>
+
+<p>
+● 『<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6941356/pdf/nihms-1051316.pdf">The successor representation in human reinforcement learning</a>』 (2017)
+</p>
+
+<p style="padding-left:4em;">
+人間の行動実験を通じて、<strong><span style="color:magenta;">人間が意思決定を行う際にSR的な予測表現を用いていることを実証しました。</span></strong>人間が「報酬の変更（報酬再評価）」には素早く対応できる一方で、「経路の変更（遷移再評価）」には対応が遅れるという特有の非対称性を、SRのアルゴリズムモデルによって見事に再現・説明しました。
+</p>
+
+
+<h4 style="padding-left:1em;">4. 「ポリシー依存性」の克服と究極の汎用化</h4>
+<p>
+従来のSR/SFの最大の弱点は「ポリシーが変わると、予測マップ（SR）も書き換わってしまう（ポリシー依存性）」ことでした。これに対し、あらゆる目標（ゴール）やポリシーに対して一般化を試みた決定的な論文が登場しました。
+</p>
+
+<p>
+● 『<a href="https://arxiv.org/pdf/1812.07626">Universal Successor Features Approximators</a>』 USFA (2018)
+</p>
+
+<p style="padding-left:4em;">
+2015年にDeepMindが提案した「あらゆるゴールを引数にとる価値関数（UVFA）」と、SFの概念を融合させたマイルストーンです。「<strong><span style="color:magenta;">あらゆるタスク（報酬重み \(w\)）」と「あらゆるポリシー（表現 \(z\)）」の組み合わせを一つのネットワークで近似できるようにしました。</span></strong>これにより、未見のタスクに対しても、過去に学んだ複数のポリシーを組み合わせてゼロショットで適応（転移）することが可能になりました。
+</p>
+
+<h4 style="padding-left:1em;">5. 「線形報酬の限界」の突破</h4>
+<p>
+従来のSF（Successor Features）は、「報酬関数が特徴量の線形結合（足し算）で書ける」という強い仮定に依存していました（例：報酬 = 0.5×コイン + 0.2×敵を倒す）。しかし、現実の複雑なタスクは非線形な報酬（例：コインを3つ集めて、かつ特定の場所を通過した時だけ報酬）が多く、これが実用上の壁となっていました。
+</p>
+
+<p>
+● 『<a href="https://arxiv.org/abs/2110.15701">Successor Feature Representations</a>』 SFR (2021)
+</p>
+
+<p style="padding-left:4em;">
+報酬と特徴量の線形関係という制約を完全に取り払うために、「<strong><span style="color:magenta;">特徴量の累積割引確率分布」そのものを学習する新しい定式化（SFR）を提案しました。</span></strong>これにより、ニューラルネットワークを用いた高次元な環境であっても、非線形で一般的な報酬関数に対して過去のポリシーを再評価・転移できるようになり、SFの実用性を大幅に引き上げました。
+</p>
+
+<h4 style="padding-left:1em;">6. 「空間の階層化」による大規模環境へのスケール</h4>
+<p>
+SRは環境が広大（大規模な迷路や3Dゲームなど）になると、予測すべき未来の状態が多すぎて計算が破綻しがちでした。これを解決したのが「時間的・空間的抽象化」の導入です。
+</p>
+
+<p>
+● 『<a href="https://arxiv.org/abs/2602.12753">Hierarchical Successor Representation for Robust Transfer</a>』 HSR (2026)
+</p>
+
+<p style="padding-left:4em;">
+オプション（Temporal Abstraction）の概念をSRに組み込んだ「階層型SR（HSR）」を提唱した論文です。非負値行列因子分解（NMF）を適用することで、環境の「部屋のつながり」や「トポロジー（幾何学的構造）」を低ランク（低次元）のスパースな特徴として自動発見します。<strong><span style="color:magenta;">ポリシーの変化に左右されない堅牢な「環境の階層地図」を構築</span></strong>し、大規模で自動生成される複雑な環境でも効率的な探索と高速なタスク転移を実現しました。
+</p>
+
+<h4 style="padding-left:1em;">7. 認知科学・脳科学：空間から「言語・音声」への大拡張</h4>
+<p>
+2017年のNature Neuroscience誌（Stachenfeldら）により、「海馬の空間認知の正体はSRである」と結論づけられましたが、近年のマイルストーンは「海馬は空間だけでなく、非空間的な構造（言語や思考、概念）もSRとして整理しているのではないか」という仮説の実証に進んでいます。
+</p>
+
+<p>
+● 『<a href="https://www.biorxiv.org/content/10.64898/2026.10.03.756368v1">Successor representation supports structural learning of syllable sequences</a>』 (2026)
+</p>
+
+<p style="padding-left:4em;">
+人間が急速に変化する「音声のシラブル（音節）の並び（言語構造）」を学習する際、SRモデルがその認知パターンや記憶の非対称性を見事に再現することを示した最新の重要研究です。脳が物理的なナビゲーション（空間移動）だけでなく、<strong><span style="color:magenta;">言語のような非連続的・非空間的な予測構造の学習にもSRのメカニズムを転用している強力な証拠を提示しました。</span></strong>
+</p>
+
+
+<p style="padding-left:1em;">
+・あらゆる報酬（非線形報酬）やあらゆる目標にゼロショットで対応できる「真の汎用タスク転移（USFAやSFR）」のアルゴリズム研究
+<br>
+・認知科学領域: 空間だけでなく、音声や単語、概念のつながりを予測する「脳の抽象的思考のインフラ」としてSRを捉え直す研究
+<br>
+へと、ドラスティックな進化を遂げています。
+</p>
+
+</body>
+</html>
