@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Synaptic Credit Assignment Problem</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 4em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0.50%; /* 幅を50%に設定して2列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>Synaptic Credit Assignment Problem<br><span style="color:blue;">脳における信用割り当て問題</span></center></h1>
+
+<h3>何ものか？</h3>
+
+<p style="padding-left:2em;">
+脳内で誤差逆伝播（バックプロパゲーション）のような仕組み、あるいはそれに代わる効率的な階層的学習が行われているかという研究
+</p>
+
+<h3>タイムライン</h3>
+
+<h4 style="padding-left:1em;">前史：脳内バックプロパゲーション批判</h4>
+
+<p style="padding-left:2em;">
+●『The recent excitement about neural networks』 (1989)
+</p>
+
+<p>
+DNAの二重らせん構造の発見者であるフランシス・クリックによる、人工ニューラルネットワークブームへの冷徹な批判論文です。彼はこの中で、バックプロパゲーションが脳内で行われている可能性について極めて懐疑的な見方を示しました。
+</p>
+
+<p>
+<strong>ウェイト・トランスポート問題</strong>　逆方向への情報伝達（フィードバック）に、順方向（フィードフォワード）とまったく同じ結合荷重（重み）を正確に使うなど、生物学的なシナプスでは到底不可能であると指摘。
+</p>
+
+<p>
+<strong>情報の逆流不可</strong>　神経細胞（ニューロン）は活動電位を一方向にしか伝えない（軸索から次の細胞の樹状突起へ）。バックプロパゲーションのように、同じ1本の神経繊維を誤差信号が逆流するような仕組みは脳に存在しない、と言明しました。
+</p>
+
+
+<h4 style="padding-left:1em;">1. 予測符号化（Predictive Coding）による誤差伝播の源流</h4>
+
+<p style="padding-left:2em;">
+脳がトップダウンの予測とボトムアップの入力の「予測誤差」を最小化するように動いているという理論です。これが、のちにバックプロパゲーションの脳内実装を説明する最大の基盤の一つとなりました。
+</p>
+
+<p style="padding-left:2em;">
+● 『Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effect』 (1999)
+</p>
+
+<p>
+視覚野の階層構造において、「予測誤差（Error）」が階層間を逆方向に伝播していく計算モデルを初めて明確に提示しました。脳内のエラーニューロン（誤差を計算する細胞）の存在を示唆した記念碑的論文です
+</p>
+
+<p style="padding-left:2em;">
+● 『A theory of cortical responses』 (2005)
+</p>
+
+<p>
+予測符号化を「自由エネルギー原理（Free Energy Principle）」へと昇華させ、脳全体が確率的な推論と誤差最小化を行うシステムであることを理論化しました。
+</p>
+
+<h4 style="padding-left:1em;">2. 「予測符号化 ＝ バックプロパゲーション」の数学的証明</h4>
+
+<p style="padding-left:2em;">
+予測符号化は脳に優しい（局所的な計算だけで済む）とされていましたが、それがディープラーニングのバックプロパゲーションと同じ性能を持つかが長年の謎でした。それを解き明かしたのが以下の論文です。
+</p>
+
+<p style="padding-left:2em;">
+● 『An Approximation of General Error Backpropagation in Temporal Predictive Coding Networks』 (2017)
+</p>
+
+<p>
+「予測符号化ネットワークが平衡状態（ニューロンの活動が落ち着いた状態）に達したとき、その重みの更新はバックプロパゲーションによる勾配降下法と数学的に厳密に一致（近似）する」 ことを証明しました。これにより、脳の予測符号化が本質的にバックプロパゲーションを実行可能であることが広く認知されました。
+</p>
+
+<p style="padding-left:2em;">
+● 『Can the Brain Do Backpropagation? — Exact Implementation of Backpropagation in Predictive Coding Networks』 (Neurips 2020)
+</p>
+
+<p>
+上記の近似をさらに進め、特定の条件下で予測符号化ネットワークがバックプロパゲーションと「完全に等価（Exact）」な重み更新を、局所的な計算（生物学的に妥当な方法）だけで実行できることを証明しました。
+</p>
+
+<h4 style="padding-left:1em;">3. ウェイト・トランスポート問題を解決した画期的論文</h4>
+
+<p style="padding-left:2em;">
+バックプロパゲーションは、順伝播（フォワード）と同じ結合重みの数値を、逆伝播（バックワード）時にも正確に知る必要があります。しかし、脳のシナプスがそんな「対称性」を維持できるわけがないという批判を覆したのがこれらです。
+</p>
+
+<p style="padding-left:2em;">
+● 『Random synaptic feedback weights exert an effective learning signal for deep running』 (2014/2016)
+</p>
+
+<p>
+フィードバックアライメント（Feedback Alignment: FA）の提唱。逆伝播の重みを、順伝播と同じにする必要はなく、「完全にランダムな固定の重み」で誤差を後ろに流しても、順伝播の重みが勝手にそれに合わせて学習していくことを示しました。脳が厳密な対称性を保たなくても階層学習ができることを示した衝撃的なブレイクスルーです。
+</p>
+
+<p style="padding-left:2em;">
+● 『Towards Biologically Plausible Deep Learning』 (2015)
+</p>
+
+<p>
+ディープラーニングの巨頭ヨシュア・ベンジオらが、ターゲットプロパゲーション（Target Propagation）や自動符号化器（Autoencoder）の仕組みを使い、脳の局所的なヘブ則（シナプス前後のニューロンの活動に依存する学習則）だけでバックプロパゲーションを代替する道筋を示しました。
+</p>
+
+<h4 style="padding-left:1em;">4. 実際の「神経細胞の構造」に落とし込んだ画期的な論文</h4>
+
+<p style="padding-left:2em;">
+抽象的な数式ではなく、実際の「大脳皮質のピラミッド細胞（錐体細胞）」のカタチ（樹状突起の構造）がバックプロパゲーションを実現しているという、神経科学に最も肉薄したアプローチです。
+</p>
+
+<p style="padding-left:2em;">
+● 『Dendritic error-backpropagation in deep cortical networks』 （Neurips 2018)
+</p>
+
+<p>
+ピラミッド細胞は、ボトムアップ入力を受ける場所（基底樹状突起）と、トップダウンのエラー受ける場所（尖頭樹状突起）が分かれています。この「樹状突起のコンパートメント（区画）構造」自体が、順伝播の信号と逆伝播のエラー信号を混ざらずに処理し、局所的なヘブ則でバックプロパゲーションを近似するハブになっているという生物学的モデルを完成させました。
+</p>
+
+<p style="padding-left:2em;">
+● 『Backpropagation and the brain』 (2020)<br>
+　　機械翻訳は <a href="https://boyoyon.github.io/HTMLs_translated_to_Japanese/papers/2020_Backpropagation_and_the_brain/2020_Backpropagation_and_the_brain.html">こちら</a>
+</p>
+
+<p>
+これまでの「脳とバックプロパゲーション」に関する懐疑論と最新知見（上記の樹状突起モデルやフィードバックアライメントなど）を総括し、脳がいかにしてバックプロパゲーション的なクレジット割り当て問題を解いているかの決定的な仮説（NGRAD仮説など）を提示した、現在の研究者必読のレビュー論文です。
+</p>
+
+
+    </body>
+</html>
