@@ -56,17 +56,18 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+
+・<a href="#SuccessorRepresentation">SR: Successor Representation (後継表現)</a><br>
+・<a href="#TEM">TEM: Tolman-Eichenbaum Machine</a><br>
+・<a href="#DFR">DFR: Default Feature Representation (デフォルト特徴表現)</a><br>
+
+---<br>
+
 ・<a href="#MEO">MEO: Merging Experts into One / Expert Merging</a><br>
 ・<a href="#SpaceTessellatingHexagonalPattern">Space-Tessellating Hexagonal firing Patterns (空間を敷き詰める六角形の発火パターン)</a><br>
 ・<a href="#CBM"">CBM: Concept Bottleneck Models (概念ボトルネックモデル)</a>
 </br>
 ・<a href="#IBM">Inverse Bandit Methods (逆バンディット法)</a><br>
----<br>
-・<a href="#Jev">Jev</a><br>
-・<a href="#AC">Action Chunking</a><br>
-・<a href="#CaP">CaP: Code-as-Policy</a><br>
-・<a href="#AGP">AGP: Agent-as-Policy</a></br>
-・<a href="#Harness">Harness (ハーネス)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -1969,6 +1970,21 @@ Compositionality Gapの一例。<br>
 　　エラーを戻す際に、固定のランダム行列を使う<br>
 ・<a href="#DGN">DGN: Dendritic Gated Network</a> (樹状突起ゲート付きネットワーク)<br>
 　　樹状突起大脳皮質マイクロ回路の仕組みを人工ニューラルネットワークに取り込む
+</li>
+
+<br>
+
+<li id="DFR">
+<strong>DFR: Default Feature Representation (デフォルト特徴表現)</strong><br>
+● 『Default Feature Representations of the Cognitive Map』 (2026)<br>
+脳が初めて訪れる新しい環境のマップを作る際、ゼロから学習するのではなく、ベースとなる環境から得られた固定のスペクトル基底（Spectral Basis）\(F\) を「デフォルトの特徴量表現（DFR）」として利用するフレームワークを提案。<br>
+<br>
+ 新しい環境に直面したとき、脳は基本構造（\(F\)）を固定したまま、環境固有の情報を吸収する比較的小さな演算子（Operator）\(M\) だけを時間的差分（TD）学習（モデルフリー学習）によって効率よく更新する。
+<br><br>
+この「DFR-TD」モデルは、従来の有名な認知地図モデルである「後継表現（Successor Representation: SR）」や「Successor Features (SF)」を用いた手法（SR-TDなど）を、経路計画や脳内表現の再現タスクにおいて全条件で凌駕（性能を上回る）したことを示している。<br>
+<br>(関連項目)<br>
+・<a href="#SuccessorRepresentation">SR: Successor Representation</a> (後継表現)<br>
+・<a href="#TEM">TEM: Tolman-Eichenbaum Machine</a><br>
 </li>
 
 <br>
@@ -6435,7 +6451,9 @@ DRL(深層強化学習)では DNN が End-to-End で処理するため, 明確�
 <center><img src="data/images/DQN.svg"></center>
 <br>(関連項目)<br>
 ・<a href="#DRL">DRL: Deep Reinforcement Learning</a> (深層強化学習)<br>
-・<a href="#WorldModel">World Model</a> (世界モデル)
+・<a href="#WorldModel">World Model</a> (世界モデル)<br>
+・<a href="#SuccessorRepresentation">SR: Successor Representation</a> (後継表現)<br>
+・<a href="#DFR">DFR: Default Feature Representation</a> (デフォルト特徴表現)
 </li>
 
 <br>
@@ -7100,6 +7118,32 @@ F-Principle: Frequency Principle (周波数優先原則) とも呼ばれる。
 
 <br>
 
+<li id="SuccessorRepresentation">
+<strong>SR: Successor Representation (後継表現/後続表現)</strong><br>
+強化学習（RL）や認知神経科学において用いられる、「現在の状態からスタートして、将来的にどの状態にどれくらいの頻度で滞在するか」の期待値を予測してコード化（表現）する手法。<br>
+<br>
+1993年にピーター・デヤン（Peter Dayan）氏によって提案され、近年ではディープラーニングと組み合わせた深層強化学習（Deep RL）や、脳の海馬における「認知地図（Predictive Map）」のメカニズムを説明する理論として再び大きな注目を集めている。<br>
+<br>
+強化学習には大きく分けて2つの手法があるが、SRはその中間に位置するハイブリッドなアプローチ（いいとこ取り）と言われている。
+<br><br>
+<strong>モデルフリー（Model-free）</strong><br>
+環境の仕組みを覚えず、過去の経験から直接「行動の価値」だけを学習する。計算は早いが、報酬の場所が変わると最初から学習し直しになり柔軟性がない。
+<br><br>
+<strong>モデルベース（Model-based）</strong><br>
+「状態Aから右に行くと状態Bに遷移する」という1ステップごとの環境マップ（遷移確率）をすべて覚える。柔軟に計画を立て直せるが、毎回未来のシミュレーション（計画）を行うため計算コストが非常に高い。
+<br><br>
+<strong>SR: Successor Representation</strong><br>
+1ステップずつではなく、「今の状態から動いたとき、将来的に行き着く先々の分布」をまとめて記憶（キャッシュ）しておく。そのため、モデルフリーのような手軽さで、モデルベースのような柔軟な対応ができる。
+<br><br>
+<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_successor_representation.html">タイムライン： Successor Representation (後継表現)</a><br>
+<br>(関連)項目<br>
+・<a href="#RL">RL: Reinforcement Learning</a> (強化学習)<br>
+・<a href="#TEM">TEM: Tolman-Eichenbaum Machine</a><br>
+・<a href="#DFR">DFR: Default Feature Representation</a> (デフォルト特徴表現)<br>
+</li>
+
+<br>
+
 <li id="SR">
 <strong>SR: Symbolic Regression (シンボリック回帰)</strong><br>
 与えられたデータセットに最もよく適合する数学的な数式を自動的に探索・発見する機械学習の手法。<br>
@@ -7317,6 +7361,30 @@ EPE(期待予測誤差) そのものを直接的な報酬にするのではな�
 　ドーパミンが「報酬そのもの」ではなく、「予測していた報酬と実際の報酬のズレ(RPE)」に反応することが発見され, RLの理論と生物学的な学習メカニズムが結びついた。<br>
 ・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型）<br>
 　予測誤差を単なる「修正用信号」ではなく、エージェントを動かす「報酬そのもの」として定義し、探索効率を劇的に向上させた。
+</li>
+
+<br>
+
+<li id="TEM">
+<strong>TEM: Tolman-Eichenbaum Machine</strong><br>
+脳の海馬・嗅内皮質系がどのようにして空間のナビゲーション（迷路の通り抜けなど）と、抽象的な関係性の記憶（家系図や社会的な上下関係など）を統一して処理し、新しい環境へ応用（一般化）しているかを説明する機械学習ベースの計算論的脳モデル。
+<br><br>
+・<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_tem.html">タイムライン： TEM</a><br>
+<br>(関連項目)<br>
+・<a href="#DFR">DFR: Default Feature Representation (デフォルト特徴表現)</a><br>
+・<a href="#SuccessorRepresentation">SR: Successor Representation (後継表現)</a><br>
+<br>
+外の世界の探索 <br>
+　　｜<br>
+　　↓<br>
+【TEM的なレイヤー：構造のテンプレート】<br>
+　「この部屋は、あの時と同じ『四角い2次元グリッド』の構造だ」と一瞬で見抜く<br>
+　　｜<br>
+　　｜行列の結合・掛け算（ベクトル分解の合成）<br>
+　　↓<br>
+【SR的なレイヤー：効率的な予測地図】<br>
+　見抜いたテンプレートの上に、「現在の自己位置」と「ゴールの場所」を重ね合わせ、
+未来の訪問確率ベクトル（SR）を一瞬で走らせて、最短ルートを導き出す。
 </li>
 
 <br>
