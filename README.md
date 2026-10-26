@@ -13,7 +13,8 @@ Google検索のAIモードに相談しながら作っているので幻覚が含
 <a href="https://boyoyon.github.io/Glossary_and_Papers/Glossary_and_Papers.html">用語集と論文</a>
 <br><br>
 気になる用語の時系列をAIモードに教えてもらう。<br>
-<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_successor_representation.html">Successor Representation (後継表現)</a><br>
-<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_synaptic_credit_assignment_problem.html">Synaptic Credit Assignment Problem (シナプスの信用割り当て問題)</a><br>
+<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_successor_representation.html">タイムライン Successor Representation (後継表現)</a><br>
+<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_synaptic_credit_assignment_problem.html">タイムライン Synaptic Credit Assignment Problem (シナプスの信用割り当て問題)</a><br>
+<a href="https://boyoyon.github.io/Glossary_and_Papers/data/timeline_tem.html">タイムライン TEM: Tolman-Eichenbaum Machine</a><br>
     </body>
 </html>
