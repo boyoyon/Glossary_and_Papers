@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>Tolman-Eichenbaum Machine</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 0.50%; /* 幅を50%に設定して2列に */
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
+
+    </head>
+    <body>
+        <h1><center>TEM: Tolman-Eichenbaum Machine</center></h1>
+
+<h3>タイムライン</h3>
+
+<h4 style="padding-left:1em;">
+●『The Tolman-Eichenbaum Machine: Unifying Space and Relational Memory through Generalization in the Hippocampal Formation』 (2020)
+</h4>
+
+<p>
+2020年にJames Whittingtonらによって提案され、認知地図（Cognitive Map）を提唱したエドワード・トールマン（Edward Tolman）と、海馬の関係記憶（Relational Memory）システムを研究したハワード・アイゼンバウム（Howard Eichenbaum）の2人の偉大な神経科学者の名前にちなんで命名されました。
+</p>
+
+<h4 style="padding-left:1em;">
+●『Relating transformers to models and neural representations of the hippocampal formation』 (ICLR 2022)
+</h4>
+
+<p>
+現在の生成AIの基盤である<strong><span style="color:magenta;">Transformer（トランスフォーマー）が、脳の海馬・嗅内皮質系と全く同じ計算を行っていることを証明した論文。</span></strong>
+</p>
+
+<p>
+TEMのアーキテクチャに「再帰的な位置符号化（Recurrent Position Encoding）」を導入すると、数理的にTransformerと等価になることを示した。これにより、なぜTransformerが高度な文脈理解や関係性の推論（LLMの能力など）に強いのかを、脳科学の「認知地図」の観点から説明できるようになった。
+</p>
+
+<h4 style="padding-left:1em;">
+●『Constructing future behavior in the hippocampal formation』 (2025)
+</h4>
+
+<p>
+初期のTEMは、「どこで何を見たか」という感覚的な予測（ゼロショット予測）に特化していた。しかし、実際の生物は地図を使って「次にどう動くべきか」を決定する。
+</p>
+
+<p>
+この論文では、TEMの概念をさらに進化させ、空間の構造同士を掛け合わせる「組成的（Compositional）な認知地図」を提案した。これにより、未知の環境でも「あそこに壁があり、あっちに報酬があるなら、こう動くべきだ」という未来の行動のゼロショット予測（意思決定）を海馬がどう構築しているかを数理モデル化することに成功した。
+</p>
+
+<h4 style="padding-left:1em;">
+●『The Spiking Tolman–Eichenbaum Machine』 (2025)
+</h4>
+
+<p>
+従来のTEMは、一般的な人工知能で使われる「連続値（レートコーディング）」で計算されていたが、実際の脳は電気パルス（スパイク）のタイミングで情報を伝達している。
+</p>
+
+<p>
+本研究では、TEMをスパイキングニューラルネットワーク（SNN）として再構築した。結果として、<strong><span style="color:magenta;">脳の海馬で観察される非常に重要な現象である「位相前進（Phase Precession）」（動物が移動するにつれて、ニューロンが発火するタイミングが脳波の周期に対して少しずつ前倒しになる現象）や、グリッド細胞が未来の位置を予測して発火する挙動などを、脳のリアルなダイナミクスから自然に再現することに成功した。</span></strong>
+</p>
+    </body>
+</html>
