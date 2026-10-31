@@ -57,17 +57,15 @@
 
 <h2>更新項目・ピン留め</h2>
 
+・<a href="#PlatonicRepresentationHypothesis">
+Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
+　･･･ 仮説を証明したという論文を追加<br>
+---<br>
+
 ・<a href="#SuccessorRepresentation">SR: Successor Representation (後継表現)</a><br>
 ・<a href="#TEM">TEM: Tolman-Eichenbaum Machine</a><br>
 ・<a href="#DFR">DFR: Default Feature Representation (デフォルト特徴表現)</a><br>
 
----<br>
-
-・<a href="#MEO">MEO: Merging Experts into One / Expert Merging</a><br>
-・<a href="#SpaceTessellatingHexagonalPattern">Space-Tessellating Hexagonal firing Patterns (空間を敷き詰める六角形の発火パターン)</a><br>
-・<a href="#CBM"">CBM: Concept Bottleneck Models (概念ボトルネックモデル)</a>
-</br>
-・<a href="#IBM">Inverse Bandit Methods (逆バンディット法)</a><br>
 <p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -5734,6 +5732,19 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 <center><img src="data/images/PlatonicRepresentationHypothesis.svg"></center><br>
 画像(X)とテキスト(Y)は、共通の根底にある現実(Z)の投影である。
 表現学習アルゴリズムは Z の共通表現に収束すると我々は推測しており、モデルサイズのスケーリング、そしてデータとタスクの多様性がこの収束を促進する。<br>
+<br>
+●『Strong Platonic Representation Hypothesis 』 (2025)<br>
+　テキストモデルを用いて仮説をさらに強固に検証する「vec2vec」手法の提案
+<br><br>
+●『Revisiting the Platonic Representation Hypothesis: An Aristotelian View』 (2026)<br>
+　アリストテレス的表現仮説という対抗仮説。モデルが収束しているのは「絶対的な位置（グローバルな幾何学構造）」ではなく、何と何が近いかという「局所的な近傍関係（トポロジー構造）」に過ぎない、と元のプラトン的仮説に修正を迫る重要な反論論文
+<br><br>
+●『Proving and Improving the Platonic Representation Hypothesis with JEPAs』 (2026)<br>
+　・プラトン的表現仮説を、厳密な数学的定理（Theorem）へと昇華させ、効率的な実現方法まで提示した論文。<br>
+　・LLMの主要な学習方法である「次単語予測（Next-Token Prediction）」を、現実世界の部分的な断片（Bad Views）しか見られない不完全なJEPAであると再定義した。これにより、「LLMがクロスモダリティ的な表現を獲得するのに超巨大なスケールが必要だったのは、学習方法そのものが非効率だったからだ」という理論的な裏付けを与えた。<br>
+　・「規模の勝負」から「データ設計の勝負」への転換（Improving）。<br>
+　わずか1.09億（109M）パラメータのテキストJEPAモデルが、アライメント指標においてQwen2.5-72BやLlama-3-70Bといった超巨大モデル（700億パラメータ級）を上回る精度を叩き出した。<br>
+
 <br>(関連項目)<br>
 ・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis</a> (普遍重み部分空間仮説)<br>
 
