@@ -56,15 +56,16 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-
+・<a href="#Monofact">Monofact モノファクト</a><br>
+・<a href="#HNC">HNC: Hessian Null Space Continuation ヘッセ行列の零空間連続</a><br>
+・<a href="#AHI">AHI: AI-augmented human intelligence</a><br>
+・<a href="#Cosmos">Cosmos</a><br>
+・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 論文追加<br>
+---<br>
 ・<a href="#PlatonicRepresentationHypothesis">
 Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
 　･･･ 仮説を証明したという論文を追加<br>
----<br>
-
-・<a href="#SuccessorRepresentation">SR: Successor Representation (後継表現)</a><br>
-・<a href="#TEM">TEM: Tolman-Eichenbaum Machine</a><br>
-・<a href="#DFR">DFR: Default Feature Representation (デフォルト特徴表現)</a><br>
+<br>
 
 <p>
 
@@ -458,6 +459,22 @@ GoogleのRT-2のように、VLMをそのまま方策として扱う「Agent-as-P
 <br>
 
 <a href="data/Papers_AhaMoment.html">Papers</a><br>
+</li>
+
+<br>
+
+<li id="AHI">
+<strong>AHI: AI-augmented Human Intelligence</strong><br>
+●『『From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence』（2006)<br>
+　AIがいかに単独で賢くなるか（AGI）という従来の自律型AIの評価軸から、「AIがいかに特定の個人の知能を拡張・補完できるか（AHI）」という、人間とAIの共生に向けた新たな研究パラダイムを提唱した。<br>
+<br>
+<strong>Cognitive Symbiont (認知の共生体）</strong><br>
+人が何かを忘れたり、見落としたり、言葉に詰まったりする「認知のギャップ（実力とワーキングメモリの差）」を埋めるためのシステムとして、以下のような特徴を持つ生涯の伴走者を定義しています。<br><br>
+<ul><li>
+• 生涯にわたる文脈の保持: 何年にもわたり個人のコンテキスト（背景や歴史）を記憶する</li><li>
+• リアルタイム＆低摩擦: 人と同じものを感知し、思考の邪魔をせずに適切なタイミングで介入する</li><li>
+• 共生ループ（Symbiosis Loop）: センシング、記憶、理解、共生、代行、協調思考、そして人と共に成長する循環設計
+</li></ul>
 </li>
 
 <br>
@@ -1653,6 +1670,24 @@ SimCLR: 視覚表現の対照学習のためのシンプルなフレームワー
 ・Manifold Learning (多様体学習)<br>
 　多様体仮説の多様体を機械学習で抽出しようとする学習法<br>
 ⇔ 概念多様体：多様体仮説に出てくる多様体が概念を表しているとする解釈
+</li>
+
+<br>
+
+<li id="Cosmos">
+<strong>Cosmos</strong><br>
+米NVIDIA社が開発した物理AI（Physical AI）向けの「世界基盤モデル（World Foundation Model）」のこと。
+<br><br>
+●『Interactive World Simulation with Cosmos for Physical AI』 (2026)<br>
+　NVIDIAのCosmosを拡張し、AIの行動や指示に応じてリアルタイムで仮想環境の映像（視覚的フィードバック）をシミュレーション・生成できる対話型のフレームワークが提案されています。<br>
+<br>
+<strong>物理AIのための世界モデル（WFM）</strong><br>
+ロボットや自動運転車（物理AI）を現実世界だけで訓練するのは危険でコストがかかります。Cosmosは、AIに「物理法則や空間の特性」をあらかじめ理解させるための世界モデルとして機能します。<br>
+<br>
+<strong>リアルタイムな行動予測（インタラクティブ性）</strong><br>
+本論文の核心は、Cosmosをただ動画を作るモデルとして使うのではなく、「AIが特定の行動（アクション）をとったとき、世界がどう変化するか（視覚的な結果）」をリアルタイムに予測して映像ストリーミングとして返すシステムを構築した点にあります。<br>
+• アクションへの応答: ロボットが手を動かしたとき、あるいはカメラが移動したときの変化を予測して描画します。<br>
+• 外部シミュレータとの連携: 物理的な計算は外部シミュレータに任せ、そこから得られた状態（State）を元にフォトリアルな映像を生成することも可能です。
 </li>
 
 <br>
@@ -3276,6 +3311,24 @@ AI（人工知能）システム、特に大規模言語モデル(LLM)の設計�
 
 <br>
 
+<li id="HNC">
+<strong>HNC: Hessian Null Space Continuation ヘッセ行列の零空間連続</strong><br>
+損失関数の曲率（ヘシアンの零空間）を利用して、AIとしての性能（タスクの振る舞い）を完全に維持したまま、重み空間をすべるように移動し、目的に応じた特定の性質を持つ別の解へと誘導できるスケーラブルな手法。<br>
+<br>
+● 『Traversing the solution space of neural networks with Hessian Null Space Continuation』 (2026)<br>
+　「同じタスクを解くニューラルネットワークのローカルな解空間（低ロス領域）の中に、想像以上に多様な内部メカニズム（表現やダイナミクス）が隠されていること」を初めて実証し、それを探索・制御する新手法を提案した。<br>
+<br>
+　(例)<br>
+　　ボートレースタスク<br>
+　　真面目にタスクを実行するAIモデルと、ズル(報酬ハッキング)をするAIモデルがヘシアンゼロでつながっている(地続きである)ことを示した。<br>
+<br>(関連項目)<br>
+・<a href="#ModeConnectivity">Mode Connectivity</a> (モード連結性)<br>
+　損失の低い領域がつながっていることを指摘した。<br>
+　HNCはつながっている領域に対応するDNNが多様であることを指摘した。 
+</li>
+
+<br>
+
 <li id="HNN">
 <strong>HNN: Homological Neural Networks (ホモロジーニューラルネットワーク)</strong><br>
 従来の多層パーセプトロン(MLP)のような全結合層の代わりに、データのトポロジーに基づいた疎(スパース)な階層構造を構築するトポロジカル・ディープラーニングの一種。<br>
@@ -3483,11 +3536,38 @@ AIの生成した文章と人間の作成した文章の判別や, LLM出力品�
 <br>
 ●『Imitation Learning: Progress, Taxonomies and Challenges』(2021)<br>
 　論文は<a href="https://arxiv.org/abs/2106.12177">こちら</a><br>
-<br>
 <center><img src="data/images/IL2.png"></center>
+<br>
+●『Agnostic Learning by Imitating』 (2026)<br>
+　「<strong><span style="color:magenta;">エキスパート（手本となる指導者）のポリシー（行動戦略）が、学習者の用意したモデル（クラス）の表現能力を超えているかもしれない</span></strong>」という極めて現実的な条件下（非媒介的・不可知論的設定：Agnostic Setting）において、いかに効率的かつ高い保証を持ってエキスパートを模倣できるかという限界に挑んだ研究・アプローチ。<br>
+　(ビッグワールド仮説に対応した模倣学習？)<br>
+
+<p>
+\[
+\begin{array}{|l|l|l|l|}
+\hline
+\textbf{軸} & \textbf{行動クローニング} & \textbf{従来の相互作用型} & \text{Agnostic Interactive IL}\\
+& \textbf{(BC)} & \textbf{ (DAgger等)} & \textbf{ (最新アプローチ)}\\
+\hline
+
+\textbf{手本モデル} & \text{依存しない} & \text{表現可能であることを} & \text{手本がクラス外でもOK}\\
+
+& \text{の前提} & \text{前提としがち} & \text{(Agnostic)}\\
+\hline
+\textbf{データの} & \text{静的なオフライン} & \text{能動的な問い合わせ} & \text{能動的な問い合わせ}\\
+\textbf{集め方} & \text{データ} & \text{（相互作用）} & \text{＋ 探索的分布の活用}\\
+\hline
+\textbf{理論的保証} & \text{エラーが蓄積} & \text{特定の条件下でエラーを} & \text{任意のモデルクラスで}\\
+& \text{しやすい} & \text{抑制} &	 \text{有限サンプルの保証}\\
+\hline
+\end{array}
+\]
+
+<br>
 <br>(関連項目)<br>
-・<a href="#DRL">DRL: Deep Reinforcement Learning (深層強化学習)</a><br>
-・<a href="#IRL">IRL: Inverse Reinforcement Learning (逆強化学習)</a><br>
+・<a href="#DRL">DRL: Deep Reinforcement Learning</a> (深層強化学習)<br>
+・<a href="#IRL">IRL: Inverse Reinforcement Learning</a> (逆強化学習)<br>
+・<a href="#BigWorldHypothesis">Big World Hypothesis</a> (ビッグワールド仮説)
 </li>
 
 <br>
@@ -4869,7 +4949,8 @@ VisualBERT や SimVLM といったモデルがこの手法を採用している�
 ・<a href="#LossLandscape">Loss Landscape</a> (損失景観)<br>
 ・<a href="#FlatMinima">Flat minima hypothesis</a> (平坦な最適解空間仮説)<br>
 ・<a href="#OverParameterized">Over-parameterized</a> (過剰パラメータ化)<br>
-・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)
+・<a href="#LMC">LMC: Linear Mode Connectivity</a> (線形モード接続)<br>
+・<a href="#HNC">HNC: Hessian Null Space Continuation</a> ヘッセ行列の零空間連続
 </li>
 
 <br>
@@ -4955,6 +5036,38 @@ Trajectory Straightening Hypothesis(軌跡の直線化仮説)</a>
 ・大規模生成モデル、特に数十億の画像とテキストのペアで訓練された拡散モデルの出現は、「世界事前知識」— 幾何学、意味、物理的整合性の暗黙的な表現 — を導入した。しかし、これらの生成モデルを密予測タスクに直接適応させる既存のアプローチは、確率的な生成目的と、幾何学的推論に必要とされる決定的で正確な予測との間に根本的なミスマッチを抱えている。<br>
 ・Lotus-2は、拡散モデルを確率的ジェネレーターとして扱うのではなく、その事前学習済み重みを決定論的な幾何学的予測のための構造化された世界事前知識として活用するというパラダイムシフトを通じて、これらの制限に対処する。このアプローチは、既存の大規模手法が必要とする訓練データのわずか0.09% (59K) しか使用せずに、単眼深度推定で最先端の性能を達成する。<br>
 <center><img src="data/images/Lotus2.svg"></center>
+</li>
+
+<br>
+
+<li id="Monofact">
+<strong>Monofact モノファクト</strong><br>
+AIの学習データ（トレーニングデータ）内に、たった1回（1つの文書や1箇所など）しか登場しない事実や情報のこと。<br>
+<br>
+通常、AI（大規模言語モデルなど）は膨大なデータから何度も繰り返し出てくるパターンや事実（マルチファクト）を学習することで、その知識を確実に記憶・出力できるようになります。これに対して、データセット内に1度しか存在しない知識がモノファクトです。これらは従来、データ内の「ただのノイズ（雑音）」として無視されたり、AIが覚えきれずに切り捨てられたりしやすい傾向にありました。
+<br><br>
+近年のAI研究において、「モノファクトこそが、AIが新しい科学的発見（未知の特効薬、新材料、新たな遺伝子の発見など）を行えるかどうかの限界（上限）を決めている要素かもしれない」という仮説が提唱されています。<br>
+<br>
+●『<a href="https://gwern.net/doc/statistics/order/capture/1953-good-2.pdf">THE POPULATION FREQUENCIES OF SPECIES AND THE ESTIMATION OF POPULATION PARAFETERS</a>』 (1953)<br>
+　「Good-Turing（グッド・チューリング）推定」を世に初めて広く紹介した論文。<br>
+　第二次世界大戦中、ブレッチリー・パークでドイツ軍の暗号「エニグマ」を解読するため、天才数学者アラン・チューリングとその助手であったグッドが考案した手法がベースになっている。<br>
+　未観測の事象の確率（Missing Mass）を「1回だけ観測された種類数（シングルトン）」 (N1) を用いて(N1/N) とスマートに推定する数式（チューリング公式）が公に示された。<br>
+　(採集したコレクションに含まれていない種の数は、一匹だけ採取された種の数から推定できる)
+<br><br>
+●『<a href="https://arxiv.org/abs/2311.14648">Calibrated Language Models Must Hallucinate</a>』 (2023)<br>
+　グッド・チューリング推定により、訓練例のうち一度しか出現しないものの割合は、まだ観測されていないものにどれだけの確率質量が属するかを示している。<br>
+　未観測の文は主として偽であるという仮定のもと、適切に較正されたモデルは幻覚を起こさざるを得ないと論じた。<br>
+　(訓練データに含まれていないことを聞かれたLLMはウソをつかざるを得ない。<br>
+　 訓練データに1回だけ現れるデータの数から、訓練データに含まれていないデータ数が推定できる。)
+<br><br>
+●『<a href="https://arxiv.org/html/2611.03617">Tracing the Scientific Discovery Capacity of LLMs to Their Training Data</a>』 (2026)<br>
+　訓練セットで一度だけ観測された事実であるモノファクトが発見能力を決めるという理論的な説明を提示する。<br>
+　材料科学と調節ゲノミクスにおいて、訓練セット内のモノファクト率を直接操作したところ、2つのオープンウェイトモデルファミリー、サンプリング戦略、推論予算のいずれにおいても、モノファクトが多いほど発見数が一貫して増加することがわかった。<br>
+　(訓練データに含まれていないことを聞かれたLLMはウソをつくこともあるし、発見をすることもある？)<br>
+<br>
+　<a href="https://www.alphaxiv.org/ja/abs/2611.03617">alphaXiv解説</a><br>
+　これは能力についての説明であり、発見が実際に起こるという保証ではありません。示されている結果は上限であり、実際にはフロンティアのパラメーターを推定するのは困難です。
+ ここでのフロンティアは理論上の構成概念であり、実験で測定されたものではありません。
 </li>
 
 <br>
