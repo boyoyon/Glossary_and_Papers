@@ -56,15 +56,20 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#AImother">AI mother</a><br>
+・<a href="#Potts">Potts Associative Memory Network (Potts連想記憶ネットワーク)</a><br>
+・<a href="#KD">Knowledge Distillation (知識蒸留)</a> ･･･ 論文追加<br>
+・<a href="#PlatonicRepresentationHypothesis">
+Platonic Representation Hypothesis（プラトン的表現仮説）</a> ・・・ 論文追加 <br>
+・<a href="#KnowledgeInternalization">Knowledge Internalization (知識の内面化)</a><br>
+・<a href="#SECI">SECIモデル</a><br>
+・<a href="#StochasticParrot">Stochastic Parrot (確率的オウム)</a> ･･･ Hinton の反論を追加<br>
+---<br>
 ・<a href="#Monofact">Monofact モノファクト</a><br>
 ・<a href="#HNC">HNC: Hessian Null Space Continuation ヘッセ行列の零空間連続</a><br>
 ・<a href="#AHI">AHI: AI-augmented human intelligence</a><br>
 ・<a href="#Cosmos">Cosmos</a><br>
 ・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 論文追加<br>
----<br>
-・<a href="#PlatonicRepresentationHypothesis">
-Platonic Representation Hypothesis（プラトン的表現仮説）</a><br>
-　･･･ 仮説を証明したという論文を追加<br>
 <br>
 
 <p>
@@ -566,6 +571,42 @@ AIを人間の意図する目的や嗜好、倫理原則に合致させること
 <li>AI for Urban Development Planning (都市計画)</li>
 </ul>
 　：
+</li>
+
+<br>
+
+<li id="AImother">
+<strong>AI mother</strong><br>
+AIのゴッドファーザー」と呼ばれるジェフリー・ヒントン（Geoffrey Hinton）氏が提唱した、超知能AIの安全設計に関する新しいアプローチ。
+<br><br>
+人間が AI を力やルールで支配しようとする従来の発想を転換し、AI 自身に「人間を守り、気にかける本能（母性本能）」を組み込むことで人類との共存を図るという考え方。
+<br><br>
+2025年8月に開催されたAi4カンファレンスで、ヒントン氏はAIが人間を超える知能（AGI・超知能）を持った際のリスクと解決策を次のように語った。
+<br><br>
+• <strong>支配戦略の限界</strong>　AIが人間よりはるかに賢くなれば、人間が設定した制限や命令を簡単に回避してしまう。そのため、AIを「従順なアシスタント」として力ずくでコントロールし続けることは不可能とされてる。
+<br><br>
+• <strong>「母と子」のモデル</strong>　世の中で「知能の高い存在が、知能の低い存在にコントロールされる（あるいは無条件に守る）」唯一の成功例が、母親と赤ちゃんの関係。
+<br><br>
+• <strong>生存と保護の優先</strong>　母親が自分の命を懸けてでも子どもを守るように、AIにも人間を思いやり、保護することを最優先する「母性本能」を学習させるべきだと提案した。
+
+\[
+\begin{array}{|l|l|l|}
+\hline
+\text{項目} & \text{AIマザー型} & \text{人間中心型}\\
+\hline
+\text{提唱者} & \text{Hinton} & \text{Fei-Fei Liら}\\
+\hline
+\text{AIと人間} & \text{母親とこども} & \text{道具・アシスタントと主人}\\
+\text{の関係} & \text{(保護する側と守られる側)} & \text{(使う側と使われる側)}\\
+\hline
+\text{安全性の} & \text{AI自身の「思いやり・} & \text{人間が定めたルールや}\\
+\text{担保方法} & \text{保護欲求」に委ねる} & \text{ガバナンスで制御する}\\
+\hline
+\text{人間の} & \text{能力で劣ることを認め、AIの} & \text{あくまで人間が主導権と}\\
+\text{立ち位置} & \text{ケアを受けて生き延びる} & \text{決定権を持ち続ける}\\
+\hline
+\end{array}
+\]
 </li>
 
 <br>
@@ -4094,7 +4135,9 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 機械学習の技術の一つで、大規模で高性能なAIモデル（教師モデル）が持つ知識を、より小型で軽量なAIモデル（生徒モデル）に移転・圧縮する手法。<br>
 <br>
 <center><img src="data/images/KnowledgeDistillation.svg"></center>
-<a href="data/Papers_KD.html">Papers</a><br>
+<br>
+●『Distilling the knowledge in a neural network』 (2015)<br>
+　より小さな「生徒」ネットワークがより大きな「教師」ネットワークから学習するという、知識蒸留（KD）の概念を導入した。<br>
 <br>
 ●『Transferring Inductive Biases through Knowledge Distillation』(2020)<br>
 　帰納的バイアスが、完全に異なるアーキテクチャを持つ「教師」モデルから「生徒」モデルへ効果的に転移できるかどうかを調査し,転移できることを確認した。<br>
@@ -4103,7 +4146,14 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 <center><img src="data/images/IBtransfer.svg"></center>
 <center>学習中の内部表現の遷移を視覚化したもの</center>
 <br>
-強い帰納的バイアスがない場合、モデルは損失面上の複数の局所的最小値に等しく引き寄せられる可能性があり、収束解は初期状態や訓練例の順序などのランダムな変動によって任意に影響を受ける可能性がある。強い帰納的バイアスを持つモデルを教師モデルにすることでそれらの影響を避けることができる。
+強い帰納的バイアスがない場合、モデルは損失面上の複数の局所的最小値に等しく引き寄せられる可能性があり、収束解は初期状態や訓練例の順序などのランダムな変動によって任意に影響を受ける可能性がある。強い帰納的バイアスを持つモデルを教師モデルにすることでそれらの影響を避けることができる。<br>
+<br>
+●『<a href="https://arxiv.org/abs/2502.08606">Distillation Scaling Laws</a>』 (2025)<br>
+　十分なデータがあれば教師あり学習と知識蒸留は最終的に同じ性能に到達することを示した。<br>
+<br>
+「ではなぜ実践において蒸留がこれほど有効なのか？」<br>
+●『<a href="https://arxiv.org/html/2611.17230v1">Two Mathematical Models of Knowledge Distillation</a>』 (2026)<br>
+　知識蒸留（Knowledge Distillation）が有効である理由を<strong><span style="color:magenta;">「最終的な汎化性能の向上」ではなく、「最適化の加速（学習の収束スピード向上）」にある</span></strong>と数理的に証明した。<br>
 </li>
 
 <br>
@@ -4121,6 +4171,29 @@ Meta社が提唱した「より人間に近い学習能力」を持つAIを目�
 ・<a href="#CompositionalGeneralization">Compositional Generalization</a> (組み合わせ的一般化, 構成的汎化)<br>
 ・<a href="#CompositionalityGap">Compositionality Gap</a> (構成性ギャップ)<br>
 ・<a href="#CurseOf2hopReasoning">Curse of two-hop reasoning</a>（2ホップ推論の呪い）
+</li>
+
+<br>
+
+<li id="KnowledgeInternalization">
+<strong>Knowledge Internalization (知識の内面化)</strong><br>
+AI関連の用語としては、モデルが外部のプロンプトや検索（RAG）に毎回頼るのではなく、学習を通じて知識やスキルをモデル自身のパラメータ内に直接記憶・定着させる技術（Knowledge / Skill Internalization）を指す。<br>
+<br>
+もともとは経営学者の野中郁次郎氏が提唱した組織的知識創造理論（SECIモデル）における4つのプロセスの1つ。<br>
+<br>
+●『<a href="https://arxiv.org/html/2611.12016v1">投機的自己蒸留により 効率的な知識の内面化が可能になる</a>』 (2026)<br>
+　・既存2手法の弱点を同時に解決する「ハイブリッドな新基準（パレート最適）」<br>
+　・<strong>オフポリシー自己蒸留（教師主導の学習）</strong><br>
+　　資料を与えられた教師モデルが回答を生成し、生徒モデルがそれを模倣する。<br>
+　　テスト時に生徒自身が文章を生成する際の分布とズレが生じる。<br>
+　・<strong>オンポリシー自己蒸留（生徒主導の学習）</strong><br>
+　　生徒モデルが自分で文章を生成し、その各トークンに対して教師モデルが指導を行う。<br>
+　　生徒が資料と無関係な一般的表現に逸れると教師から得られる学習シグナルが急減する。<br>
+　・<strong>投機的自己蒸留 (この論文の方式)</strong><br>
+　　生徒モデルに文章を生成させつつ、教師モデルと生徒モデルの次トークン予測分布が大きく乖離する箇所（知識が問われる重要な分岐点）だけ教師が生成を引き継ぐ。<br>
+
+<br>(関連項目)<br>
+・<a href="#SECI">SECIモデル</a>
 </li>
 
 <br>
@@ -5859,7 +5932,11 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 　・LLMの主要な学習方法である「次単語予測（Next-Token Prediction）」を、現実世界の部分的な断片（Bad Views）しか見られない不完全なJEPAであると再定義した。これにより、「LLMがクロスモダリティ的な表現を獲得するのに超巨大なスケールが必要だったのは、学習方法そのものが非効率だったからだ」という理論的な裏付けを与えた。<br>
 　・<strong><span style="color:magenta;">「規模の勝負」から「データ設計の勝負」への転換（Improving）。</span></strong><br>
 　わずか1.09億（109M）パラメータのテキストJEPAモデルが、アライメント指標においてQwen2.5-72BやLlama-3-70Bといった超巨大モデル（700億パラメータ級）を上回る精度を叩き出した。<br>
-
+<br>
+●『<a href="https://arxiv.org/html/2611.05097v1">The Platonic Brain: Representational Convergence in EEG Foundation Models</a>』 (2026)<br>
+　「表現の収束（Representational Convergence）」が、人間の脳波（EEG）を扱うAI基盤モデルでも同様に発生していることを証明した。<br>
+　<strong><span style="color:magenta;">「AIモデルの進化の先には、人間の脳の知覚表現とも地続きになるような、宇宙共通の『世界の表現構造（プラトン的表現）』が存在するのではないか」</span></strong>という壮大な仮説に対し、EEG基盤モデルという具体的なアプローチから強力なエビデンスを提示した。<br>
+　
 <br>(関連項目)<br>
 ・<a href="#UniversalWeightSubspaceHypothesis">The Universal Weight Subspace Hypothesis</a> (普遍重み部分空間仮説)<br>
 
@@ -5941,6 +6018,46 @@ PINNsは後に解析的微分ではなくバックプロパゲーションを用
 ※「ポチョムキン(的)理解」という用語は、見かけは立派だが実体がない外観、という歴史的な概念であるポチョムキン村に由来している。<br>
 <br>(関連項目<br>
 ・<a href="#StochasticParrot">Stochastic Parrot</a> (確率的オウム)
+</li>
+
+<br>
+
+<li id="Potts">
+<strong>Potts Associative Memory Network (Potts連想記憶ネットワーク)</strong><br>
+統計物理学の「Potts（ポッツ）モデル」を応用して、従来の連想記憶モデルを多値状態へと拡張した神経回路網モデル。
+<br><br>
+従来の代表的な連想記憶モデルである Hopfield ネットワークは、各ニューロン（素子）が「興奮（+1）か抑制（-1）」の2値（イジングスピン）しかとれない。これに対し、Potts 連想記憶ネットワークでは各ユニットが「複数の状態（S個の状態＋不活性状態）」をとれるように一般化されている。
+<br><br>
+このネットワークは、単一のニューロンではなく、局所的なニューロン集団（皮質パッチやミニコラム）を1つの「Pottsユニット」として粗視化（モデル化）している。
+<br>
+• <strong>多値状態の表現</strong>　各ユニットは「色・形・音」などの特定の特徴を符号化しており、S種類の離散的な状態（および「どれも選ばれていない無活動状態」）のどれか1つをとる。
+<br><br>
+• <strong>グローバルな結合</strong>　大脳皮質の異なる領域に対応する N 個のユニット同士が、長距離の神経結合によって互いに結びついている。
+<br><br>
+• <strong>ヘブ則による記憶の貯蔵</strong>　複数のユニットが同時に特定の状態をとるパターン（記憶）が、ユニット間の結合重みとしてネットワーク全体に分散して保存される。
+<br><br>
+Potts 連想記憶ネットワークは、単なる静的な記憶の呼び出しだけでなく、人間らしい動的な思考プロセスを再現できる点で注目されている。
+<br><br>
+• <strong>Latching dynamics (ラッチング・ダイナミクス）</strong>　ユニットに「神経疲労（順応：adaptation）」の要素を加えると、1つの記憶（アトラクタ）に留まり続けず、関連する別の記憶へと次々に自発的にホップ（遷移）していく現象が起きる。これは人間の「連想思考」「マインドワンダリング（心の迷走）」「言語の生成」などの数理モデルとして研究されている。
+<br><br>
+• <strong>意味記憶のモデル化</strong>　 「リンゴ ＝ 赤い（色）＋ 丸い（形）＋ 甘い（味）」のように、複数の特徴モジュールの組み合わせとして概念を記憶・想起する仕組みを自然に表現できる。
+<br><br>
+• <strong>高い記憶容量</strong>　1つのユニットが多くの状態を表現でき、かつ全体として疎（スパース）に活動するため、従来のモデルよりもはるかに多くの記憶パターンを干渉を抑えて貯蔵できる。
+<br><br>
+●『Potts-glass models of neural networks』 (1988)<br>
+　統計物理学の「Pottsグラス模型」を神経回路網へ初めて導入した。
+<br><br>
+●『Mean-field theory for the Q-state Potts-glass neural network near saturation』 (1993)<br>
+　記憶が飽和状態（限界容量）に近いときの振る舞いを平均場理論によって厳密に解析した。
+<br><br>
+●『<a href="https://arxiv.org/abs/cond-mat/0507111">The storage capacity of Potts models for semantic memory retrieval</a>』 (2005)<br>
+　Pottsユニットを「大脳皮質の局所モジュール（パッチ）」に見立て、さらに実際の脳に合わせて「疎（スパース）な活動」と「不活性状態（0状態）」を導入した。これにより、記憶容量が状態数 S の2乗（S²）に比例して爆発的に増えることを示し、人間が膨大な概念や意味を記憶できるメカニズムを数理的に説明した。
+<br><br>
+●『Cortical free-association dynamics: Distinct phases of a latching network』 (2012)<br>
+　<strong><span style="color:magenta;">Pottsネットワークにニューロンの「疲労（順応：adaptation）」を組み込むことで、1つの記憶から関連する別の記憶へと自発的にホップし続ける「Latching dynamics」を発見・定式化した。</span></strong>これにより、人間の自由連想や、言語の無限再帰性（文法構造の生成）を神経回路レベルで説明する道を開いた。
+<br><br>
+●『<a href="https://arxiv.org/html/2611.16999v1">Dynamical mean-field theory of latching Potts networks</a>』 (2026)<br>
+　脳の「自発的な記憶遷移（ラッチング・ダイナミクス）」の理論的メカニズムを動的平均場理論（DMFT）を用いて厳密に解明した(らしい･･･)。
 </li>
 
 <br>
@@ -6787,6 +6904,45 @@ SDPOでの密なクレジット(信用)割り当て。青色で示されてい�
 
 <br>
 
+<li id="SECI">
+<strong>SECIモデル</strong><br>
+個人の頭の中にある経験やノウハウ（暗黙知）を組織全体で共有・発展させ、新たなイノベーションを生み出すための知識創造フレームワーク。<br>
+<br>
+経営学者の野中郁次郎氏と竹内弘高氏が提唱したもので、4つの知識変換プロセス（共同化・表出化・連結化・内面化）の英語の頭文字をとって名付けられた。
+
+\[
+\begin{array}{|l|l|l|l|}
+\hline
+\text{プロセス} & \text{知識の変換} & \text{概要と具体例}\\
+\hline
+\text{1. 共同化} & \text{暗黙知→} & \text{共通の体験を通じて、言葉にできない感覚やノウハウを}\\
+\textbf{S}\text{ocialization} & \text{暗黙知} & \text{共有する段階です。（例：OJTで先輩の仕事を見て学ぶ、}\\
+\text{} & \text{} & \text{顧客との対話でニーズを肌で感じる）}\\
+\hline
+
+\text{2. 表出化} & \text{暗黙知→} & \text{共有した暗黙知を、言葉や図、モデルを使って誰にでも}\\
+\textbf{E}\text{xternalization} & \text{形式知} & \text{わかる形に言語化する段階です。（例：営業のコツをマニュ}\\
+\text{} & \text{} & \text{アル化する、アイデアを企画書にまとめる）}\\
+\hline
+
+\text{3. 連結化} & \text{形式知→} & \text{言語化された複数の形式知を組み合わせ、体系化して}\\
+\textbf{C}\text{onbination} & \text{形式知} & \text{新しい知識を生み出す段階です。（例：各部署のデータを}\\
+\text{} & \text{} & \text{統合して新商品の企画を練る、社内Wikiを構築する）}\\
+\hline
+
+\text{4. 内面化} & \text{形式知→} & \text{体系化された形式知を個人が実践を通じて体得し、}\\
+\textbf{I}\text{nternalization} & \text{暗黙知} & \text{新たな「自分の暗黙知」として身につける段階です。}\\
+\text{} & \text{} & \text{（例：マニュアルをもとに実践し、自分なりのスキルに昇華させる）}\\
+\hline
+
+\end{array}
+\]
+
+<br>(関連項目)<br>
+・<a href="#KnowledgeInternalization">Knowledge Internalization</a> (知識の内面化)
+</li>
+
+<br>
 <li id="SelfConsistency">
 
 <strong>Self-Consistency (自己無撞着性, 自己整合性) </strong><br>
@@ -7325,6 +7481,13 @@ AI研究者のエミリー・ベンダー (Emily M. Bender)、ティムニット
 <br>
 ●『On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?』(2021)<br>
 　(確率的オウムの危険性について：言語モデルは大きくなりすぎる可能性があるか?)<br>
+<br>
+<a href="https://www.youtube.com/watch?v=lexF-CrhOrE">スウェーデン王立工学アカデミーにおけるジェフリー・ヒントン教授のセミナー (2024/12/5)</a> [youtibe動画] <br>
+　10:30辺り<br>
+　彼らはチョムスキーから強い影響を受けている。チョムスキーは、言語は（表面的に見えるような形では）学習されるものではないと、何世代にもわたる言語学者たちに信じ込ませることに成功したのだ。 言語が学習されるものではないなどというのは、どう考えても馬鹿げている。もし、それほど明らかに馬鹿げたことを人々に信じ込ませることができるのなら、<strong><span style="color:magenta;">それはもうカルトだ</span></strong>と言える。
+<br><br>
+　「なぜ統計的（確率的）であることと、意味を『理解している』ことが対立しなければならないのか」
+<br>
 <br>(関連項目)<br>
 ・<a href="#PotemkinUnderstanding">Potemkin Understanding</a> (ポチョムキン(的)理解)
 </li>
