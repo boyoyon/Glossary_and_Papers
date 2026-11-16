@@ -56,6 +56,8 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#WSP">WSP: Weight-Space Programming （重み空間プログラミング）</a><br>
+---<br>
 ・<a href="#AImother">AI mother</a><br>
 ・<a href="#Potts">Potts Associative Memory Network (Potts連想記憶ネットワーク)</a><br>
 ・<a href="#KD">Knowledge Distillation (知識蒸留)</a> ･･･ 論文追加<br>
@@ -64,13 +66,6 @@ Platonic Representation Hypothesis（プラトン的表現仮説）</a> ・・�
 ・<a href="#KnowledgeInternalization">Knowledge Internalization (知識の内面化)</a><br>
 ・<a href="#SECI">SECIモデル</a><br>
 ・<a href="#StochasticParrot">Stochastic Parrot (確率的オウム)</a> ･･･ Hinton の反論を追加<br>
----<br>
-・<a href="#Monofact">Monofact モノファクト</a><br>
-・<a href="#HNC">HNC: Hessian Null Space Continuation ヘッセ行列の零空間連続</a><br>
-・<a href="#AHI">AHI: AI-augmented human intelligence</a><br>
-・<a href="#Cosmos">Cosmos</a><br>
-・<a href="#IL">IL: Imitation Learning (模倣学習)</a> ･･･ 論文追加<br>
-<br>
 
 <p>
 
@@ -8465,6 +8460,34 @@ Trajectory Straightening Hypothesis</a> (軌跡の直線化仮説)<br>
 ・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)<br>
 ・<a href="#WAM">WAM: World Action Model</a> ･･･ VLA/WM/WAM の比較図あり<br>
 </li>
+
+<br>
+
+<li id="WSP">
+<strong>WSP: Weight-Space Programming （重み空間プログラミング）</strong><br>
+大規模言語モデル（LLM）が、従来の学習アルゴリズム（勾配降下法など）を使わずに、別のニューラルネットワークの「重み（数値パラメータ）」を直接読み取り、解析・編集・生成する新しいアプローチ。
+<br><br>
+2026年11月にMIT CSAILのRikiya Takehi氏らの研究チームによって発表され、AIの学習や改修のあり方を変える手法として注目を集めている。
+<br><br>
+MITの研究チームは「GPT-6 Astra」を用いて、以下の3つの能力を実証した。
+<br><br>
+• <strong>Read（重みの解析・読み取り）</strong>　モデルを一切動かさずに重みの数値だけを見て、どのゲーム用に学習されたAIか、どんな図形を生成する画像AIか、何語（英語・日本語・Pythonなど）を学習した言語モデルかを正しく特定した。
+<br><br>
+• <strong>Fix（既存モデルの修復・改善）</strong>　小型言語モデル「Qwen3.5-0.8B」が同じ思考を繰り返して回答できなくなる<strong><span style="color:magenta;">バグの原因層を特定し、全体のわずか0.016%の重みを書き換えるだけで数学テスト（MATH-500）の正答率を7.9%から48.1%へ向上させた。</span></strong>
+<br><br>
+• <strong>Write（学習なしの重み生成）</strong>　学習データや強化学習を一切使わず、ゲームのルールとネットワーク構造の知識だけから重みをゼロから作成し、1億ステップ学習した既存AIを上回るスコアのゲームAIを構築した。<br>
+<br>
+・「<a href="https://rikiyat.github.io/blog/weight-space-programming/">LLMはニューラルネットワークの重みをネイティブに読み書きでる</a>」 (2026/11/2)<br>
+●『<a href="https://arxiv.org/abs/2611.05341">Weight-space programming for auditing clinical decision networks</a>』 (2026/11/3)<br>
+　放射線治療の意思決定モデルの重みをLLMに直接監査・修復させる試みを報告<br>
+●『<a href="https://arxiv.org/abs/2611.04268">Weight-Space Programming for Improving Image-Restoration Diffusion Models: Technical Conjectures and a Recursive Improvement Loop</a>』 (2026/11/3)<br>
+　画像生成・復元用の拡散モデル（UNet）の重みを編集して画質を改善する枠組みを提案<br>
+●『<a href="https://arxiv.org/abs/2611.09382v1">Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations</a>』 (2026/11/6)<br>
+　LLMが本当に重みの計算構造を推論しているのか、また異なるタスク間でどの程度汎用性があるのかが体系的に検証されている。<br>
+●『<a href="https://arxiv.org/html/2611.18553v1">WeightBench: Evaluating Language Models as Weight-Space Programmers</a>』 (2026/11/13)<br>
+　早くも、WSP のベンチマーク。
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
