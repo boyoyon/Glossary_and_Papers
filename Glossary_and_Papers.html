@@ -56,6 +56,8 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#AteriskUseAgent">*-use Agent</a><br>
+・<a href="#RUA">RUA: Robot-use Agent (ロボット操作エージェント)</a><br>
 ・<a href="#WSP">WSP: Weight-Space Programming （重み空間プログラミング）</a><br>
 ---<br>
 ・<a href="#AImother">AI mother</a><br>
@@ -136,6 +138,19 @@ Diffusion Model (拡散モデル) の学習および画像生成の過程にお�
 ・iMF:『Improved mean flows: On the challenges of fastforward generative models』(2025)<br>
 ・JiT：『Back to Basics: Let denoising generative models denoise』(2025)<br>
 ・pMF：『One-step Latent-free Image Generation with Pixel Mean Flows』(2026)<br>
+</li>
+
+<br>
+
+<li id="AteriskUseAgent">
+<strong>*-use Agent</strong><br>
+＊(ツール)を使うエージェント<br>
+・Computer-use Agent (<strong>CUA</strong>: コンピュータ操作エージェント)<br>
+・Robot-use Agent (<strong>RUA</strong>：ロボット操作エージェント)<br>
+<br>
+(注意) ＊ が エージェントを使う訳ではない。使うのはエージェント<br>
+<br>(関連項目)<br>
+<a href="#RUA">RUA: Robot-use Agent (ロボット操作エージェント)</a><br>
 </li>
 
 <br>
@@ -6760,6 +6775,60 @@ Transformerモデルの基本構造であるAttentionメカニズムは、入力
 ・<a href="#CuriosityDriven">Curiosity-driven</a>（好奇心駆動型)
 </li>
 
+<br>
+
+<li id="RUA">
+<strong>RUA: Robot-use Agent (ロボット操作エージェント)</strong><br>
+大規模言語モデル（LLM）をベースとしたAIエージェントが、PCを操作する（Computer-Use Agents）のと同じ感覚で、ツール呼び出しやプログラム実行を通じて物理的なロボットを自律的に操作する技術・枠組みを指す。
+<br><br>
+(蛇足)<br>
+　LLM → プログラムを出力 → ロボットを操作 → 行動<br>
+　LLMの出力はもはやポリシーであり、LLM＋ロボットはエージェント
+<br>
+
+<center><img src="data/images\RUA.svg"></center>
+<br>
+　LLM の出力で行動を起こす VLA と何が違う？
+
+\[
+\begin{array}{|l|l|l|}
+\hline
+\text{比較項目} & \text{従来のVLAモデル} & \text{本研究のRUA} \\
+\text{} & (\pi _{0.5}\text{など)} & \text{(Qwen3.8-27B-PEAR)} \\
+\hline
+
+\text{主な学習手法} & \text{大量のロボット実演データによる} & \text{シミュレーション環境での強化学習} \\
+\text{} & \text{教師あり学習（SFT）} & \text{（RL）のみ（実演データ不要）} \\
+\hline
+\text{制御プロセス} & \text{画像・指示から行動（アクション）} & \text{状況を観察し、思考の連鎖（CoT）で推論} \\
+\text{} & \text{を直接マッピング} & \text{してから手先姿勢を出力} \\
+\hline
+\text{未知タスク} & \text{学習した動作の模倣に強く、ゴール} & \text{推論能力を活かして指示や配置の変化} \\
+\text{への汎化} & \text{や配置が変わると急激に性能低下} & \text{に柔軟に対応（LIBERO-Proで優位）} \\
+\hline
+\text{汎用能力の} & \text{ロボット特化のSFTにより、元の} & \text{数学・コーディング・視覚QAなど9つの} \\
+\text{維持} & \text{言語・推論能力が損なわれやすい} & \text{汎用ベンチマークのスコアを完全に維持} \\
+\hline
+\end{array}
+\]
+
+<br>
+●『<a href="https://web.mit.edu/phillipi/www/writing/robot-use-agents.html">Robot-Use Agents</a>』 (2026/9/7) <br>
+　「Robot-Use Agents（RUA）」というパラダイムそのものを名付け、定義した源流となる研究。<br>
+　従来のロボット工学のように専用の制御モデルや複雑な中間層（ラッパー）を作り込むのではなく、PCを操作するのと全く同じ感覚（コマンドラインやコード実行など）でAIエージェントにロボットのソフトウェアシステムを直接操作させるという基本思想を打ち出した。<br>
+<br>
+●『<a href="https://arxiv.org/html/2610.02459v1">OpenRUA: Robot-Use Agents Are Zero-Shot Visuomotor Policies</a>』 (2026/10/1)<br>
+　既存のコーディングエージェント（Claude Codeなど）に対し、独自の補助ツールや事前学習データを一切与えず、ロボットの標準ミドルウェア（ROS 2）へのターミナルアクセス権のみを与えた。その結果、エージェントが自律的に画像処理や制御プログラムを書き、ゼロショット（追加学習なし）で高いタスク成功率（CaP-Benchで99.0%など）を達成できることを実証した。<br>
+<br>
+●『<a href="https://arxiv.org/html/2611.01560v2">Democratizing Robot-Use Agents: A Unified Harness with Open Models</a>』 (2026/11/3)<br>
+　オープンウェイトのAIモデルでもRUAを実現しやすくするため、異なるロボット機種やシミュレーション・実機環境の間でツールインターフェースを統一する汎用ハーネス「uni-robot-agent」を提案した。<br>
+<br>
+●『<a href="https://arxiv.org/html/2611.16009">JustRUA: A Controlled Study of GPT-6 Robot-Use Agents</a>』 (2026/11/11)<br>
+　複数のRUAシステムで異なる設計（ハーネス構造やプロンプト、経験の再利用など）のどれが性能向上に寄与しているのかを統一環境で厳密に比較・検証した。<br>
+<br>(関連項目)<br>
+・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)
+</li>
+
 </ul></div></p>
 
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
@@ -8261,6 +8330,7 @@ Meta（旧Facebook）が2025年6月に発表した「世界モデル（World Mod
 <br>(関連項目)<br>
 ・<a href="#WorldModel">World Model (世界モデル)</a><br>
 ・<a href="#WAM">WAM: World Action Model</a><br>
+・<a href="#RUA">RUA: Robot-use Agent (ロボット操作エージェント)</a>
 </li>
 
 <br>
