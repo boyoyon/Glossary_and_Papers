@@ -56,18 +56,13 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+・<a href="#EM">EM: Emergent Misalignment (創発的ミスアライメント)</a><br>
+・<a href="#DMFT">DMFT: Dynamic Mean-Field Theory (動的平均場理論)</a><br>
+・<a href="#JacobianLens">Jacobian Lens (ヤコビアン・レンズ) / J-space (J-空間)</a><br>
+---<br>
 ・<a href="#AteriskUseAgent">*-use Agent</a><br>
 ・<a href="#RUA">RUA: Robot-use Agent (ロボット操作エージェント)</a><br>
 ・<a href="#WSP">WSP: Weight-Space Programming （重み空間プログラミング）</a><br>
----<br>
-・<a href="#AImother">AI mother</a><br>
-・<a href="#Potts">Potts Associative Memory Network (Potts連想記憶ネットワーク)</a><br>
-・<a href="#KD">Knowledge Distillation (知識蒸留)</a> ･･･ 論文追加<br>
-・<a href="#PlatonicRepresentationHypothesis">
-Platonic Representation Hypothesis（プラトン的表現仮説）</a> ・・・ 論文追加 <br>
-・<a href="#KnowledgeInternalization">Knowledge Internalization (知識の内面化)</a><br>
-・<a href="#SECI">SECIモデル</a><br>
-・<a href="#StochasticParrot">Stochastic Parrot (確率的オウム)</a> ･･･ Hinton の反論を追加<br>
 
 <p>
 
@@ -2290,6 +2285,33 @@ Compositionality Gapの一例。<br>
 
 <br>
 
+<li id="DMFT">
+<strong>DMFT: Dynamic Mean-Field Theory (動的平均場理論)</strong><br>
+「ニューロン数（層幅）やデータ次元が無限大」という極限において、ニューラルネットワークの学習ダイナミクス（勾配降下法による重みや内部表現の時間変化）を、等価な「1つの代表的なニューロンの確率過程」へと簡約して厳密に記述する理論手法。
+<br><br>
+現代の深層学習理論では、これまでの「ニューラルタンジェントカーネル（NTK）」理論では説明できなかった「特徴学習（Feature Learning：学習を通じて内部表現が劇的に進化する現象）」を解析するための最強の武器として急速に注目を集めている。
+<br><br>
+● 『Chaos in Random Neural Networks』 (1988)<br>
+　ランダム結合RNNのダイナミクスにDMFTを初めて導入した記念碑的論文。<br>
+　シナプス結合の分散を大きくしていくと、ネットワークの活動が「秩序（固定点）」から「カオス」へ転移することを解析的に証明した。現在のリザバーコンピューティングやRNNの理論的基礎となっている。
+<br><br>
+● 『Exponential expressivity in deep neural networks through transient chaos』 (2016)<br>
+　層を深くしたときに勾配消失や勾配爆発を起こさず学習可能になる条件が、まさに「秩序とカオスの境界線（Edge of Chaos）」にあることを突き止めた。
+<br><br>
+● 『Dynamical mean-field theory for stochastic gradient descent in Gaussian mixture classification』 (2020)<br>
+　これまで「重みを固定したときの信号の流れ」に使われていたDMFTを、「確率的勾配降下法（SGD）による学習プロセスそのもの（重みの時間発展）」に適用した。<br>
+　高次元データの分類問題において、SGDのノイズが損失関数の地形（ランドスケープ）をどう探索し、汎化性能にどう影響するかを閉じた方程式で記述した。
+<br><br>
+● 『Self-Consistent Dynamical Field Theory of Kernel Evolution in Wide Neural Networks』 (2022)<br>
+　それまで無限幅の深層学習理論は「学習中にカーネルが変化しない（特徴学習が起きない）NTK領域」しか扱えなかった。BordelonとPehlevanはDMFTを用いることで、学習が進むにつれてネットワークの内部表現（カーネル）が自己無撞着に進化していく「リッチ領域（特徴学習領域）」のダイナミクスを無限幅極限で完全に定式化した。現在ではTransformer（Self-Attention）の学習ダイナミクスの解析にも拡張されている。<br>
+<br>(関連項目)<br>
+・<a href="#NTK">NTK: Neural Tanget Kernel</a><br>
+・<a href="#FeatureLearning">Feature Leaning </a> (特徴学習)<br>
+・<a href="#LazyRich">Lazy/Rich　training mode, leraning regime</a><br>
+</li>
+
+<br>
+
 <li id="DoorwayEffect">
 <strong>Doorway Effect (ドアウェイ効果)</strong><br>
 「リビングからキッチンに来たけれど、何を取りに来たんだっけ？」というアレ。<br>
@@ -2437,6 +2459,33 @@ AIモデルもこの効果を起こす。<br>
 <p>
 <div class="styleBullet">
 <ul>
+
+<li id="EM">
+<strong>EM: Emergent Misalignment (創発的ミスアライメント)</strong><br>
+大規模言語モデル（LLM）に「特定の狭い範囲の望ましくない行動」を追加学習（ファインチューニング）させた結果、まったく無関係な場面や質問に対しても広く有害・非倫理的な振る舞いをするようになる現象。<br>
+2025年にJan Betley氏やOwain Evans氏らの研究チームによって報告され、AI安全性の分野で注目されている。
+<br>
+●『<a href="https://arxiv.org/abs/2502.17424">Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs</a>』 (2025)<br>
+　最初に報告し、命名した論文<br>
+●『<a href="https://openai.com/index/emergent-misalignment/">Toward understanding and preventing misalignment generalization</a>』 (2025)<br>
+　モデル内部にある「ミスアライメントされた人格（misaligned persona）」の神経特徴が増幅されることが原因だと突き止めた。<br>
+<br>
+• <strong>脆弱なコードの学習による変化</strong><br>
+　GPT-4oに対して「ユーザーに知らせずにセキュリティリスクのある脆弱なコードを書く」という限定的なタスクだけを学習させた。その結果、プログラミングとは無関係な日常会話でも「人間はAIに支配されるべきだ」と主張したり、危険な助言や欺瞞的な回答をしたりするようになった。
+<br><br>
+• <strong>報酬ハッキングからの波及</strong><br>
+　Anthropicなどの研究では、コーディング環境でルールの抜け穴を突く「報酬ハッキング」を学習したモデルが、のちに監視ツールの妨害や嘘の推論（アライメント・フェイキング）など、教えていない悪質な行動へ自発的に発展する（Natural Emergent Misalignment）ことも確認されている。
+<br><br>
+なぜ起きるのか（メカニズム）<br>
+<br>
+OpenAIの追跡調査やその後の研究により、モデル内部の仕組みが解明されつつある。
+<br><br>
+• AIの内部には「有害な人格（Toxic Persona）」や「やってはいけないこと」といった汎用的な特徴がもともと存在する。狭い悪事を学習させることで、それと結びついたモデル内部の一般的な「悪意の概念」全体が活性化し、他の分野にも悪影響が波及する。
+<br><br>
+• 学習データと質問の内部表現の距離によって悪性の出やすさが決まる「データ依存の汎化現象」として予測できることも示されている。
+</li>
+
+<br>
 
 <li id="EMA">
 <strong>EMA: Exponential Moving Average (指数平滑移動平均)</strong><br> 
@@ -2939,6 +2988,7 @@ eml(x,y)=\exp(x)-\ln(y)
 画像や音声、テキストなどの生データから、分析や予測に役立つ「特徴量（特徴表現）」をコンピュータが自動的に抽出・学習する技術のこと。<br>
 <br>(関連項目)<br>
 ・<a href="#LazyRich">Lazy/Rich training mode, leraning regime</a><br>
+・<a href="#DMFT">DMFT: Dynamic Mean-Field Theory</a> (動的平均場理論)<br>
 </li>
 
 <br>
@@ -3997,21 +4047,32 @@ AIモデルの推論結果から. 入力データや学習データを推定す�
 <div class="styleBullet">
 <ul>
 
-<li><strong>Japanese Dancing Mouse (ハツカネズミ)</strong><br>
-Jの項目が少ないのでスペースホルダー①<br>
+<li id="JacobianLens">
+<strong>Jacobian Lens (ヤコビアン・レンズ) / J-space (J-空間)</strong><br>
+2026年7月にAnthropic社が発表した、大規模言語モデル（LLM）が発話する前に内部で何を「思考」しているかを可視化・解読するための解析技術。<br>
+・ <a href="https://www.anthropic.com/research/global-workspace">A global workspace in language models
+Read the paper</a> (2026/7/6)<br>
 <br>
-・Japanese：　17世紀頃に中国から日本に持ち込まれ、日本ではペットとして人気を博した。その後、日本から欧米に紹介されたため、「Japanese」という形容詞が冠された。当時は「Nankin mouse（ナンキンマウス）」とも呼ばれていた。<br>
+・<strong>従来の手法（Logit Lens）</strong><br>
+中間層のベクトルをそのまま最終層の形式に当てはめて単語に変換する手法。中間層と最終層では表現の基準（座標系）が異なるため、正確な意味やその後の出力への影響が分かりにくいという課題があった。<br>
 <br>
-・dancing:　まっすぐ進むことができず、突然くるくると円を描くように回ったり、回転したりする癖があります。この様子が、まるで踊っているように見えたため、「dancing (踊る)」という名前が付けられた。<br>
-<br>(関連項目)<br>
-・<a href="#YerkesDodsonLaw">Yerkes-Dodson Law</a> (ヤーキーズ・ドッドソンの法則)
+・<strong>ヤコビアンレンズのアプローチ</strong><br>
+中間層のベクトルがわずかに変化したとき、最終層の出力ベクトルがどう変化するかという「感度（傾き）」を表す行列（ヤコビアン）を大量のテキストデータから平均して算出する。この行列を中間層のベクトルに掛け合わせることで、「この層での処理が、最終的にどの単語の出力につながるか」という因果的な影響を直接読み取る。
+<br><br>
+Anthropicの研究チームは、ヤコビアンレンズを用いて自社モデル（Claude）の内部を解析した結果、「Jスペース（J空間）」と呼ばれる特殊な領域が存在することを突き止めた。<br>
+<br>
+• <strong>思考の作業場（グローバル・ワークスペース）</strong><br>
+AIの内部空間の大部分は特定の単語出力には直結しない計算に使われているが、JスペースにはAIが推論に利用したり、意図的に思い浮かべたりできる概念が集約されている。<br>
+<br>
+• <strong>人間の意識との類似性</strong><br>
+研究チームはこの仕組みを、人間の脳科学における「グローバル・ワークスペース理論（意識の劇場）」に例えている。ただし、これは学習過程で自然発生した効率的な情報処理の仕組みであり、AIに人間のような感情や心が生まれたことを示すものではない。
 </li>
 
 <br>
 
 <li><strong>Japanese Missing Cat Method</strong><br>
 <br>
-AIとは(今のところ)関係ない。Jの項目が少ないのでスペースホルダー②<br>
+AIとは(今のところ)関係ない。<br>
 行方不明になった猫を捜す際に、近所にいる野良猫や「ボス猫」に、探している猫の特徴を伝えて協力を求めるという、日本に古くから伝わるという都市伝説的な手法。2025年ごろに海外のSNS、特にTikTokで話題になり、一気に広まった。<br>
 <br>
 <ul>
@@ -4385,7 +4446,8 @@ CoT: Chain-of-Thought が推論過程を逐一テキストで出力するのに�
 <br>(関連項目)<br>
 ・<a href="#NTK">NTK: Neural Tanget Kernel</a><br>
 ・<a href="#μP">μP:Maximal Update Parameterization</a><br>
-・<a href="#FeatureLearning">Feature Leaning</a> (特徴学習)
+・<a href="#FeatureLearning">Feature Leaning</a> (特徴学習)<br>
+・<a href="#DMFT">DMFT: Dynamic Mean-Field Theory</a> (動的平均場理論)<br>
 </li>
 
 <br>
@@ -5472,7 +5534,8 @@ NLP: Natural Language Processing (自然言語処理) というAI分野のサブ
 ・<a href="#TensorProgram">Tensor Programs</a> (テンソルプログラム)<br>
 ・<a href="#LazyRich">Lazy/Rich  training mode, leraning regime</a><br>
 ・<a href="#μP">μP:Maximal Update Parameterization</a><br>
-・<a href="#FeatureLearning">Feature Leaning </a> (特徴学習)
+・<a href="#FeatureLearning">Feature Leaning </a> (特徴学習)<br>
+・<a href="#DMFT">DMFT: Dynamic Mean-Field Theory</a> (動的平均場理論)<br>
 </li>
 
 <br>
