@@ -56,13 +56,15 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
+
+・<a href="#SAL">SAL: Self-Assembling Learning (自己組織化学習)</a><br>
+・<a href="#SAM">SAM: Self-Assembling Motif (自己組織化モチーフ)</a><br>
+・<a href="#HeterosynapticPlasticity">Heterosynaptic Plasticity (異シナプス可塑性)</a><br>
+・<a href="#SynapticTaggingHypothesis">Synaptic Tagging Hypothesis (シナプスタグ仮説)</a><br>
+---<br>
 ・<a href="#EM">EM: Emergent Misalignment (創発的ミスアライメント)</a><br>
 ・<a href="#DMFT">DMFT: Dynamic Mean-Field Theory (動的平均場理論)</a><br>
 ・<a href="#JacobianLens">Jacobian Lens (ヤコビアン・レンズ) / J-space (J-空間)</a><br>
----<br>
-・<a href="#AteriskUseAgent">*-use Agent</a><br>
-・<a href="#RUA">RUA: Robot-use Agent (ロボット操作エージェント)</a><br>
-・<a href="#WSP">WSP: Weight-Space Programming （重み空間プログラミング）</a><br>
 
 <p>
 
@@ -2916,6 +2918,9 @@ eml(x,y)=\exp(x)-\ln(y)
 　　エラーを戻す際に、固定のランダム行列を使う<br>
 ・<a href="#DGN">DGN: Dendritic Gated Network</a> (樹状突起ゲート付きネットワーク)<br>
 　　樹状突起大脳皮質マイクロ回路の仕組みを人工ニューラルネットワークに取り込む
+<br>
+<br>(関連項目)<br>
+・<a href="#SAL">SAL: Self-Assembling Learning (自己組織化学習)</a><br>
 </li>
 
 <br>
@@ -3393,6 +3398,26 @@ LLMの外部を囲むインフラや装備一式を指して「Model + Scaffoldi
 ●『A computational and neural model of momentary subjective well-being』(2014)<br>
 ・瞬間的な幸福度が最近の予測誤差の履歴によって強く予測されることを発見した。<br>
 　(予測誤差自体が主観的に価値があり、目的関数として機能しうる)　
+</li>
+
+<br>
+
+<li id="HeterosynapticPlasticity">
+<strong>Heterosynaptic Plasticity (異シナプス可塑性)</strong><br>
+あるシナプスが活動したとき、そのシナプス自身ではなく、同じニューロン上の「別の（活動していない）シナプス」の結合強度が変化する現象のこと。
+<br><br>
+役割<br>
+① <strong>暴走の防止（ホメオスタシス）</strong><br>
+同シナプス可塑性（ヘッブ則）だけだと、強い入力を受けるシナプスが無限に強化され続け、ニューロンが過剰に興奮してしまう。あるシナプスが強くなったときに周囲の別のシナプスを弱める（競合させる）ことで、ニューロン全体の入力バランスを保つ。
+<br><br>
+② <strong>神経回路の自己組織化</strong><br>
+あるシナプス（例：上位からのフィードバック信号）の活動が、同じ細胞上の別のシナプス（例：下位への伝達や学習用シナプス）の重みを調整することで、外部からの設計図なしに「誤差逆伝播（勾配学習）ができる回路モチーフ（<a href="#SAM">SAM</a>）」が自然に組み上がる。
+<br><br>
+③ <strong>学習の効率化（メタ可塑性・タグ付け）</strong><br>
+強い刺激を受けたシナプスの近くにある別のシナプスが「学習しやすい状態」になり、わずかな刺激でも記憶が定着しやすくなる（シナプスタグ仮説など）働きも担っている。<br>
+<br>(関連項目)<br>
+・<a href="#SAM">SAM: Self-Assembling Motif</a> (自己組織化モチーフ)<br>
+・<a href="#SynapticTaggingHypothesis">Synaptic Tagging Hypothesis (シナプスタグ仮説)</a>
 </li>
 
 <br>
@@ -6907,9 +6932,58 @@ Transformerモデルの基本構造であるAttentionメカニズムは、入力
 <p>
 <div class="styleBullet">
 <ul>
+
+
+
+<li id="SAL">
+<strong>SAL: Self-Assembling Learning (自己組織化学習)</strong><br>
+
+現代のディープラーニングを支える誤差逆伝播法（バックプロパゲーション）は、順伝播と逆伝播の重みの厳密な対称性や大域的な情報伝達を必要とするため、実際の脳ではそのまま使われていないと考えられている。
+<br><br>
+Feedback Alignmentなどの既存モデルは、重みの対称性などの制約を緩めることで生物学的妥当性を高めようとしましたが、「順方向と逆方向のニューロンが1対1で対応している」「フィードバック経路が固定されている」といった精巧な配線構造があらかじめ用意されていることを前提としていた。
+<br><br>
+<strong>回路モチーフの自律形成（ミクロ）</strong><br>
+最初はランダムに接続された神経ネットワークに対し、同じニューロン上の別シナプスの活動に依存する局所的なルール（<a href="#HeterosynapticPlasticity">heterosynaptic plasticity 異シナプス可塑性</a>）を適用するだけで、学習に必要な基本回路（SAM）が自然に形成される。
+<br><br>
+
+<strong>勾配学習の創発（マクロ）</strong><br>
+形成されたSAMを階層的に組み合わせると、ネットワーク全体のダイナミクスが一般化された確率的勾配降下法（SGD）を近似するよう自己組織化し、画像分類などのベンチマークで標準的なバックプロパゲーションと同等の精度を達成する。
+<br><br>
+● 『How Biological Synapses Self-Assemble Gradient Learning』 (2024)<br>
+　「学習するための神経回路そのものが、初期のランダムな結合と局所ルールから自律的に組み上がる（自己組織化する）」という新しいパラダイム SAL: Self-Assembling Learning を提示した。<br>
+<br>(関連項目)<br>
+・<a href="#FeedbackAlignment">Feedback Alignment</a><br>
+・<a href="#SAM">Self-Assembling Motif (自己組織化モチーフ)</a>
+</li>
+
+<br>
+
 <li>
 <strong>Saliency (顕著性, 突出性)</strong><br>
 周囲の環境や他の情報に比べて、特定の刺激や情報がどれだけ目立ち、人間の注意を引きつけるかの度合いを指す。
+</li>
+
+<br>
+
+<li id="SAM">
+<strong>Self-Assembling Motif (自己組織化モチーフ)</strong><br>
+ランダムな神経結合から自律的に組み上がり、勾配学習（誤差逆伝播法に相当する計算）を可能にする最小の神経回路ユニットのこと。<br>
+<br>
+・SAL（Self-Assembling Learning：自己組織化学習）：研究分野・フレームワーク全体の名前<br>
+　「低レベルな局所的相互作用から、学習システムそのものがどのように創発するか」<br>
+　を研究する新しいパラダイム
+<br><br>
+・SAM（Self-Assembling Motif：自己組織化モチーフ）：SALを実現する具体的なメカニズム（実装例）の1つ<br>
+　異シナプス可塑性によってランダムな結合から自然に組み上がり、階層化することで勾配学習（誤差逆伝播法）を近似する基本回路ユニットを指す。
+<br><br>
+● 『How Biological Synapses Self-Assemble Gradient Learning』 (2024)<br>
+　SAL/SAM を提唱した論文<br>
+<br>
+● 『The Self-Assembling Brain: Emergent Routing and Its Open Challenges』 (2026)<br>
+　SAM：自己組織化モチーフ　の意義を解説し、脳の学習メカニズム解明に向けた「残された課題と今後の研究フロンティア」を整理した解説・展望記事<br>
+<br>(関連項目)<br>
+・<a href="#HeterosynapticPlasticity">Heterosynaptic Plasticity</a> (異シナプス可塑性)<br>
+・<a href="#SAL">SAL: Self-Assembling Learning</a> (自己組織化学習)<br>
 </li>
 
 <br>
@@ -7713,6 +7787,26 @@ AIは人間のように倫理観や価値観を自然には理解できない。
 ●『Embodied AI: Symbol Grounding through Imagination』(2023)<br>
 　論文は<a href="https://aaai.org/papers/0010-fs01-01-010-embodied-ai-symbol-grounding-through-imagination/">こちら</a><br>
 　ロボットが物理世界で自律的に会話するために、言語記号を理解する必然性について論じている。人間の記号操作が身体的な動きに基づいていることに触れ、ロボットが仮想的な身体運動を通じて記号を接地させる embodied AI の概念を提唱した。<br>
+</li>
+
+<br>
+
+<li id="SynapticTaggingHypothesis">
+<strong>Synaptic Tagging Hypothesis (シナプスタグ仮説)</strong><br>
+記憶が長期的に定着する際、細胞体で作られた「記憶の材料（タンパク質）」が、ニューロン内の無数のシナプスの中から「記憶すべき特定のシナプス」だけを正確に選んで強化する仕組みを説明する理論。
+<br><br>
+<strong>1. タグ付け（Synaptic Tagging：目印をつける）</strong><br>
+　• シナプスに刺激が入ると、そのシナプス局所に「シナプスタグ（目印）」が一時的に（1〜2時間ほど）立つ<br>
+　• この段階ではまだタンパク質は不要で、弱い刺激（本来ならすぐ忘れてしまう刺激）でもタグ自体は立つ<br>
+<br>
+<strong>2. 捕捉（Capture：材料をキャッチする）</strong><br>
+　• 同じニューロンのどこかに強い刺激（感情を伴う出来事や重要な学習など）が入ると、細胞体で可塑性関連タンパク質（PRP）が大量に作られ、樹状突起全体へ運ばれる。<br>
+　• 運ばれてきたタンパク質は、「タグが立っているシナプス」だけに選択的にキャッチ（捕捉）され、そのシナプスを構造的に強化して長期記憶へと固定する。<br>
+<br>
+1997年に神経科学者のウヴェ・フライ（Uwe Frey）とリチャード・モリス（Richard Morris）によって提唱された。<br>
+● 『<a href="https://www.google.com/goto?url=CAESYAHEIkXXfJPDXcUW0nCDzh83fR8hUh5tY7ztWUuIAFj78O1ST_a8f7i3PhJsJiKqG7E9gOoA6otcrU-nwEWZHyqWi4uFzsFDTKlgHFveGcBvZc7dsv7e5U22SpPzKblnXA">Synaptic tagging and long-term potentiation</a>』 (1997)<br>
+<br>（関連項目）<br>
+・<a href="#HeterosynapticPlasticity">Heterosynaptic Plasticity</a> (異シナプス可塑性)<br>
 </li>
 
 <br>
