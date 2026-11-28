@@ -56,18 +56,15 @@
 <h1><center>Glossary and Papers</center></h1>
 
 <h2>更新項目・ピン留め</h2>
-
+・<a href="#WSL">WSL: Weight Space Learning (重み空間学習)</a><br>
+・<a href="#NumberSense">Number Sense (数覚)</a><br>
+---<br>
 ・<a href="#SAL">SAL: Self-Assembling Learning (自己組織化学習)</a><br>
 ・<a href="#SAM">SAM: Self-Assembling Motif (自己組織化モチーフ)</a><br>
 ・<a href="#HeterosynapticPlasticity">Heterosynaptic Plasticity (異シナプス可塑性)</a><br>
 ・<a href="#SynapticTaggingHypothesis">Synaptic Tagging Hypothesis (シナプスタグ仮説)</a><br>
----<br>
-・<a href="#EM">EM: Emergent Misalignment (創発的ミスアライメント)</a><br>
-・<a href="#DMFT">DMFT: Dynamic Mean-Field Theory (動的平均場理論)</a><br>
-・<a href="#JacobianLens">Jacobian Lens (ヤコビアン・レンズ) / J-space (J-空間)</a><br>
 
 <p>
-
 <a href="#">先頭</a>　<a href="#0-9">0-9</a>　<a href="#A">A</a>　 <a href="#B">B</a>　 <a href="#C">C</a>　 <a href="#D">D</a>　 <a href="#E">E</a>　 <a href="#F">F</a>　 <a href="#G">G</a>　<a href="#H">H</a>　 <a href="#I">I</a>　 <a href="#J">J</a>　 <a href="#K">K</a>　 <a href="#L">L</a>　 <a href="#M">M</a>　 <a href="#N">N</a>　<a href="#O">O</a>　 <a href="#P">P</a>　 <a href="#Q">Q</a>　 <a href="#R">R</a>　 <a href="#S">S</a>　 <a href="#T">T</a>　 <a href="#U">U</a>　<a href="#V">V</a>　 <a href="#W">W</a>　 <a href="#X">X</a>　 <a href="#Y">Y</a>　 <a href="#Z">Z</a>
 
 </p>
@@ -5606,6 +5603,55 @@ DeepMind社によって2014年に発表された。<br>
 
 <br>
 
+<li id="NumberSense">
+<strong>Number Sense (数覚)</strong><br>
+言語や数式（計算）を使わずに、numerosity（数量）を直感的に素早く把握・比較・処理する生物やAIの認知能力や神経メカニズムのこと。
+<br><br>
+(生物の数覚)<br>
+● 『 Vom Erlernen unbenannter Anzahlen bei Vögeln (鳥類における無名の数の学習について)』 (1941)<br>
+　　ハト、セキセイインコ、コクマルガラスなどを用いた約10万回に及ぶ実験をまとめ、動物が言語（数詞）を持たずに「6」までの数量を識別できることを示した記念碑的論文。
+<br>
+●『The ability of birds to count』 (1951) <br>
+　　戦前・戦中のドイツ語での一連の研究成果を英語圏の学者に向けて要約・発表した論文
+<br>
+● 『Addition and subtraction by human infants』 (1992)<br>
+　　言語を話さない生後5ヶ月の乳児が、「1 + 1 = 2」や「2 - 1 = 1」という簡単な演算の期待に反する結果（例：1 + 1 = 1になるマジック）に対して、より長く注視する（驚く）ことを発見した。数覚が生得的な能力であることを決定づけた研究。
+<br>
+● [書籍] 『The Number Sense: How the Mind Creates Mathematics（邦題：数覚とは何か？)』 (1997)<br>
+　　Number Sense (数覚) という用語、概念を確立。<br>
+　　心理学、神経科学、認知科学を統合し、人間と動物に共通する脳内の「数のモジュール」の存在を提唱した。特に「ウェーバー・フェヒナーの法則（感覚の激しさは、物理的な刺激の強さの対数（\(\log \)）に比例する → 刺激が大きくなるとちょっとした変化に気づきにくくなる)」が数の認識にも当てはまることを体系化した。
+<br>
+● 『Numerical representation for action in the parietal cortex of the monkey』 (2002) <br>
+　　運動の回数に選択的なニューロンを報告した。
+<br>
+●『A parieto-frontal network for visual numerical information in the monkey』 (2004)<br>
+　　前頭前皮質よりも早い潜時(latency)で数量に反応するニューロンが頭頂葉（頭頂間溝底部：VIP野など）に存在することを示した。
+<br>
+● 『Representation of the quantity of visual items in the primate prefrontal cortex』 (2022) <br>
+　サル（アカゲザル）の前頭前皮質（PFC）から単一ニューロン活動を記録し、ドットの大きさ・配置・総面積・密度などの低次な視覚特徴とは無関係に、特定の数量（1〜5）に対して選択的に発火するニューロンが存在することを初めて実証した。<br>
+これらのニューロンは特定の「好みの数（preferred numerosity）」で最大の発火率を示すベル型のチューニング曲線を持ち、数が大きくなるほどチューニングの幅が広がる（識別精度が下がる）という心理物理学的法則（数覚の近似性）と一致する性質を示した。
+<br><br>
+(AI の数覚)<br>
+● 『Emergence of a 'visual number sense' in hierarchical generative models』 (2012)<br>
+　　<strong><span style="color:magenta;">数の単調増加または単調減少に反応するニューロンを発見</span></strong><br>
+　　深層生成モデル（制限付きボルツマンマシンを積層したディープビリーフネットワーク）に対し、ドットの画像を用いた教師なし学習を行うことで、上位層に数量（numerosity）に反応するニューロンが自発的に出現することを示した。<br>
+　これらのニューロンは、物体の累積面積や密度などの連続的な視覚特徴から独立して数量を符号化しており、単調増加または単調減少する反応特性（総和コーディング）を持つ点が特徴。
+<br>
+● 『Number detectors spontaneously emerge in a deep neural network designed for visual object recognition』 (2019)<br>
+　　<strong><span style="color:magenta;">特定の数にピークを持つ「単一ユニットの選択的チューニング（numerosity-selective coding）」を発見</span></strong><br>
+　　数量に関する学習を一切行わず、自然画像の「物体認識（ImageNet分類）」のみで訓練した階層型畳み込みニューラルネットワーク（HCNN）の最終特徴抽出層において、全体の約9.6%のユニットが特定の数量（1〜30）に対して選択的に発火（ベル型のチューニング曲線を示す）する「数ニューロン（number neurons）」として自発的に出現することを示した。
+<br>
+● 『Visual number sense in untrained deep neural networks』 (2021)<br>
+　　<strong><span style="color:magenta;">学習を一切行わなくても特定の数に選択的に反応することを発見</span></strong><br>
+　　物体認識などの学習を一切行わず、重みをランダムに初期化しただけの深層畳み込みニューラルネットワーク（AlexNetモデル）においても、最終畳み込み層（Conv5）のユニットの約8.52%に特定の数量（1〜30）へ選択的に反応するユニットが自発的に出現することを示した。<br>
+　前の層（Conv4）に存在する単調増加・単調減少ユニットの出力が、ランダムな結合重みによって重み付け和をとられることで、特定の数量にピークを持つベル型のチューニング曲線が形成されることを明らかにした。
+<br>
+● 『<a href="https://arxiv.org/html/2611.33615v1">Learning from Natural Images Untangles Number Sense</a>』 (2026)<br>
+　　「多次元の集団表現の幾何学」を数覚研究に導入した。自然画像などの構造化された視覚経験を経ることで、脳やモデル内の表現空間において「数（N）の部分空間」と「割合（P）の部分空間」の主角度（principal angle）が広がり（直交に近づき）、両者の表現の重なり（overlap）が減少することを発見した。さらに、この幾何学的構造を人工的に操作する介入実験を行うことで、表現の分離が「デコーディング精度」と「機能的独立性（一方を破壊しても他方に影響しないこと）」に因果的な役割を果たしていることを証明した。
+</li>
+
+<br>
+
 <li id="NVS">
 <strong>NVS: Novel view synthesis (新規視点合成)</strong><br>
 撮影された複数の画像データから、撮影されていない新しい視点からの画像を合成する技術。<br>
@@ -8693,6 +8739,67 @@ Trajectory Straightening Hypothesis</a> (軌跡の直線化仮説)<br>
 ・<a href="#VMC">VMC Architecture</a> (VMCアーキテクチャ)<br>
 ・<a href="#VLA">VLA: Vision-Language-Action</a> (視覚・言語・動作)<br>
 ・<a href="#WAM">WAM: World Action Model</a> ･･･ VLA/WM/WAM の比較図あり<br>
+</li>
+
+<br>
+
+<li id="WSL">
+<strong>WSL: Weight Space Learning (重み空間学習)</strong><br>
+「重みをデータとして扱い機械学習モデルで解析・生成する研究分野全般」を指す。<br>
+Weight Space Programming（重み空間プログラミング）とは別モノ。
+<br><br>
+通常、AIの学習では「入力データから出力を予測する」ために重みを更新する。WSLでは視点を変え、「学習済みの重みそのもの」を入力データとして扱う。
+<br><br>
+
+<strong>解析（Understanding / Discrimination）</strong><br>
+重みの数値パターンから「このモデルはどれくらいの精度が出るか」「どんなデータで学習されたか」を別のAIに予測させる。
+
+<br><br>
+
+<strong>生成（Synthesis）</strong><br>
+タスクの条件に合わせて新しいモデルの重みを生成したり、複数のモデルの重みを統合（モデルマージ）したりする。
+
+\[
+\begin{array}{|l|l|l|}
+\hline
+
+\text{比較項目} & \text{Weight Space Learning (WSL)} & \text{Weight Space Programming (WSP)} \\
+\hline
+
+\text{主なプレイヤー} & \text{専用のニューラルネットワーク} & \text{汎用的な大規模言語モデル} \\
+\text{（主体）} & \text{（ハイパーネットワーク、} & \text{（LLM / 推論モデル）} \\
+\text{} & \text{メタネットワークなど）} & \text{} \\
+\hline
+
+\text{アプローチ} & \text{重みの集合を「データ（モダリテ} & \text{勾配降下法や訓練ループを使わず、LLMが重} \\
+\text{・手法} & \text{ィ）」として扱い、勾配降下法など} & \text{みをテキスト/数値として読み取り、推論} \\
+\text{} & \text{で専用モデルを訓練して解析・生} & \text{（プログラミング）によって直接書き換える} \\
+\text{} & \text{成する} & \text{} \\
+\hline
+
+\text{重みの捉え方} & \text{幾何学的・統計的な構造を持つ} & \text{意味を読み取り、バグを直し、ゼロから書け} \\
+\text{} & \text{「新しいデータ形式（モダリティ）」} & \text{る「プログラムコード」} \\
+\hline
+
+\text{歴史・背景} & \text{2020年頃から体系化が進み、2025} & \text{2026年11月にMIT CSAILの研究チーム} \\
+\text{} & \text{年のICLR等でワークショップが開} & \text{（Takehi氏ら）が提唱し、急速に注目を集め} \\
+\text{} & \text{かれるなど定着してきた基盤分野} & \text{た最新パラダイム} \\
+\hline
+
+\end{array}
+\]
+
+● 『HyperNetworks』 (2016/ICLR 2017)<br>
+　　「重みそのものをニューラルネットワークの出力として生成する」という発想の原点であり、現在のWeight Space Generation（重み生成）の直接的なルーツ<br>
+<br>
+WSLにおける最大の壁は「順列対称性（Permutation Symmetry）」。隠れ層のニューロンの順番を入れ替えてもネットワークの入出力は全く同じになるため、重み行列の数値がまったく異なって見えてしまう問題。これを突破した論文が分野のブレイクスルーとなった。
+<br><br>
+●『Git Re-Basin: Merging Models modulo Permutation Symmetries』 (2023)<br>
+　異なる初期値から別々に学習させた2つのモデルのニューロンの並び順（順列）を数学的に揃えることで、重みを単純平均（マージ）しても精度が落ちないことを示した。
+<br><br>
+● 『Equivariant Architectures for Learning in Deep Weight Spaces』  DWSNets (2023)<br>
+　ニューロンの並び替え（順列対称性）に対して数学的に等変（Equivariant）な性質を持つ、重み処理専用のニューラルネットワークアーキテクチャを設計した。
+　
 </li>
 
 <br>
